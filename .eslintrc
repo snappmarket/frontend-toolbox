@@ -1,0 +1,53 @@
+{
+  "extends": ["adpyke-es6"],
+
+  "parser": "babel-eslint",
+  "globals": {
+    "require": true,
+    "module": true
+  },
+
+//  "plugins": ["prettier"],
+
+  "rules": {
+    "no-empty-function": [
+      "error",
+      {
+        "allow": ["arrowFunctions"]
+      }
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "MemberExpression": 1
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "never"
+      }
+    ],
+    "space-before-blocks": "off",
+    "key-spacing": [
+      "error",
+      {
+        "align": "colon"
+      }
+    ],
+
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+
+//    "prettier/prettier": ["error", { "singleQuote": true, "parser": "flow" }]
+  }
+}

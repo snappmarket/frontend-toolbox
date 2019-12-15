@@ -1,0 +1,59 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "lerna run start --stream --parallel",
+    "dev": "start-storybook -p 5555",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "bootstrap:seprated": "lerna exec npm install",
+    "build": "build-storybook -c .storybook -o public",
+    "build-lerna": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
+    "coverage": "jest --coverage",
+    "unit": "jest",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint packages/**/*.js",
+    "lint:eslint": "eslint --ignore-path .gitignore packages",
+    "lint:eslint:fix": "eslint --ignore-path .gitignore packages --fix",
+    "lint:js": "npm run lint:eslint -- . ",
+    "prettify": "prettier --write packages/**/*.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.3",
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@storybook/addon-notes": "^5.2.3",
+    "@storybook/addon-viewport": "^5.2.3",
+    "@storybook/react": "^5.2.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.5.1",
+    "eslint-config-adpyke-es6": "^1.4.12",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "jest": "^24.9.0",
+    "jest-haste-map": "^24.9.0",
+    "jest-resolve": "^24.9.0",
+    "jest-styled-components": "^6.3.3",
+    "lerna": "^3.16.5",
+    "prettier": "^1.18.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-test-renderer": "^16.10.2",
+    "webpack": "^4.41.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^4.4.0"
+  }
+}
