@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -15,8 +15,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "react-image": "^2.2.2",
     "react-hgs-input-range": "^1.3.1",
+    "react-image": "^2.2.2",
     "react-router-dom": "^5.1.2",
     "react-slick": "^0.25.2"
   },
