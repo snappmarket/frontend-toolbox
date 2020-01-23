@@ -1,5 +1,3 @@
-import Accordion from './Accordion';
-import AccordionHead from './AccordionHead';
-import AccordionContent from './AccordionContent';
-
-export { Accordion, AccordionHead, AccordionContent };
+export { default as Accordion } from './Accordion';
+export { default as AccordionHead } from './AccordionHead';
+export { default as AccordionContent } from './AccordionContent';

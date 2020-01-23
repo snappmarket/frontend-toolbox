@@ -1,5 +1,3 @@
-import Tab from './Tab';
-import TabPanel from './TabPanel';
-import TabSwitcher from './TabSwitcher';
-
-export { Tab, TabPanel, TabSwitcher };
+export { default as Tab } from './Tab';
+export { default as TabPanel } from './TabPanel';
+export { default as TabSwitcher } from './TabSwitcher';

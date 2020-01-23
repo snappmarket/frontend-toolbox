@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useDidUpdateEffect } from '@snappmarket/hooks';
+
 import { context as tabSwitcherContext } from './context';
+
 import { StyledTab } from './style';
-import useDidUpdateEffect from '../../../constants/Hooks/useDidUpdateEffect';
 
 const Tab = props => {
   const { id, children, onChangeTab, onSwitch, className, ...rest } = props;

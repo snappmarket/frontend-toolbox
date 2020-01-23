@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { StyledTextWrap } from './styles';
 
 const TextWrap = props => <StyledTextWrap {...props} />;

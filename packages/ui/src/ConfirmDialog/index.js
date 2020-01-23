@@ -5,7 +5,6 @@ import { Row } from '../GridSystem';
 import Icon from '../Icon';
 import Button from '../Button';
 
-import generalMessages from '../../../constants/Messages/general.messages';
 import {
   StyledConfirmDialog,
   StyledConfirmDialogContainer,
@@ -98,8 +97,8 @@ ConfirmDialog.defaultProps = {
   onAccept: () => {},
   onDismiss: () => {},
   title: '',
-  acceptTitle: generalMessages.accept,
-  dismissTitle: generalMessages.dismiss,
+  acceptTitle: 'accept',
+  dismissTitle: 'dismiss',
   description: '',
   width: 50,
   position: 'center',

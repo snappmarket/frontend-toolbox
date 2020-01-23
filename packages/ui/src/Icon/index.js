@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { StyledIcon } from './styles';
 
 const Icon = props => {
@@ -11,6 +12,7 @@ const Icon = props => {
     />
   );
 };
+
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
   size: PropTypes.number,
