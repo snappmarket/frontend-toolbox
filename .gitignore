@@ -1,3 +1,4 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 .log
 .DS_Store
 .jest-*
@@ -6,3 +7,20 @@ node_modules
 
 public
 .idea
+
+
+
+# builds
+build
+.rpt2_cache
+
+# misc
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

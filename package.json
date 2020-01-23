@@ -50,9 +50,19 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-test-renderer": "^16.10.2",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-copy": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "rollup-plugin-url": "^2.1.0",
     "webpack": "^4.41.0"
   },
   "dependencies": {
+    "lodash": "^4.17.15",
     "react-router-dom": "^5.1.2",
     "styled-components": "^4.4.0"
   }
