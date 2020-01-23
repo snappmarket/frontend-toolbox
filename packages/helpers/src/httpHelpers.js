@@ -1,11 +1,12 @@
 import fetch from 'isomorphic-unfetch';
 
-import { ApiError, delog } from 'constants/Helpers/debugHelper';
-import arrayHelpers from 'constants/Helpers/arrayHelpers';
-import { makeCookieString } from 'constants/Helpers/objectHelper';
-import { emptyPromise, makeTimeout } from 'constants/Helpers/promiseHelpers';
-import APP_INFO from 'constants/appInfo';
-import apiErrorMapper from 'constants/apiErrorMapper';
+import {
+  ApiError,
+  delog,
+  serializeObject,
+  emptyPromise,
+  makeTimeout
+} from '@snappmarket/helpers';
 
 /**
  * Fetch with options and timeout
@@ -30,7 +31,7 @@ export const fetchWithTimeOut = (url, options, timeout = 5000) =>
  * @param allowedNoContent
  * @returns {Promise<any>}
  */
-export const universalCall = async ({
+export const universalCall = async({
   url,
   method = 'GET',
   credentials = 'include',
@@ -42,19 +43,11 @@ export const universalCall = async ({
   ...rest
   // eslint-disable-next-line consistent-return
 }) => {
-  /**
-   * Add cookies to request header
-   */
-  if (process.env.SSR) {
-    // eslint-disable-next-line no-param-reassign
-    headers.Cookie = makeCookieString(APP_INFO.NODE_GLOBALS.cookies);
-  }
-
   const options = {
     method: method.toUpperCase(),
     credentials,
     headers,
-    ...rest,
+    ...rest
   };
 
   // eslint-disable-next-line no-console
@@ -73,7 +66,7 @@ export const universalCall = async ({
    */
   let callUrl = url;
   if (Object.keys(params).length > 0) {
-    const queryParameters = arrayHelpers.serializeObject(params);
+    const queryParameters = serializeObject(params);
     callUrl += `?${queryParameters}`;
   }
 
@@ -94,8 +87,7 @@ export const universalCall = async ({
    * If we did not got json then throw error message
    */
   if (!contentType || !contentType.includes('application/json')) {
-    console.log('URRRL ', { response, url, contentType });
-    throw new ApiError(apiErrorMapper.SERVER_CONTENT_TYPE_ERROR);
+    throw new ApiError('SERVER_CONTENT_TYPE_ERROR');
   }
 
   /**
@@ -105,7 +97,7 @@ export const universalCall = async ({
   try {
     result = await response.json();
   } catch (e) {
-    throw new ApiError(apiErrorMapper.SERVER_CONTENT_PARSING_ERROR);
+    throw new ApiError('SERVER_CONTENT_PARSING_ERROR');
   }
 
   /**

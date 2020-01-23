@@ -14,4 +14,4 @@ export * from './src/proxyHelpers';
 export * from './src/reduxHelper';
 export * from './src/stringHelpers';
 export * from './src/themeHelpers';
-export * from './src/arrayHelpers';
+export * from './src/windowHelpers';

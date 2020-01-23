@@ -1,5 +1,4 @@
-import { ApiError } from 'constants/Helpers/debugHelper';
-import apiErrorMapper from 'constants/apiErrorMapper';
+import { ApiError } from '@snappmarket/helpers';
 
 /**
  * Make a waiter
@@ -10,7 +9,7 @@ export const racePromise = timeout =>
   new Promise(resolve => {
     const wait = setTimeout(() => {
       clearTimeout(wait);
-      resolve(new ApiError(apiErrorMapper.RACE_TIMEOUT));
+      resolve(new ApiError('RACE_TIMEOUT'));
     }, timeout);
   });
 
@@ -21,8 +20,7 @@ export const racePromise = timeout =>
  */
 export const makeTimeout = ms =>
   new Promise((_, reject) =>
-    setTimeout(() => reject(new ApiError(apiErrorMapper.TIMEOUT)), ms),
-  );
+    setTimeout(() => reject(new ApiError('TIMEOUT')), ms));
 
 /**
  * Empty promise to use as default things

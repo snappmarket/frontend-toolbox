@@ -1,5 +1,3 @@
-const APP_INFO = require('../appInfo').default;
-
 module.exports = {
   /**
    * Gives us a cookie
