@@ -29,6 +29,11 @@ export default {
     external(),
     url({ exclude: ['**/*.svg'] }),
     resolve(),
-    commonjs()
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/react-is/index.js': ['isValidElementType']
+      }
+    })
   ]
 };

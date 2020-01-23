@@ -31,6 +31,11 @@ export default {
       exclude: 'node_modules/**'
     }),
     resolve(),
-    commonjs()
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/react-is/index.js': ['isValidElementType']
+      }
+    })
   ]
 };
