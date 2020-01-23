@@ -1,5 +1,6 @@
 {
   "name": "@snappmarket/use-did-update-effect",
+  "private": false,
   "version": "0.0.5",
   "main": "src/index.js",
   "module": "src/index.js",
@@ -10,5 +11,5 @@
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
-  "gitHead": "498806323c27d0587b732e8fc1487922fc3ddc12"
+  "gitHead": "4246f6edda15a15d446314571fa97f770eb0a6cb"
 }
