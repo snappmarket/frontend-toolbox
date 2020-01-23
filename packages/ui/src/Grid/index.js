@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { StyledGrid } from './styles';
 
 const Grid = props => {
@@ -21,16 +22,16 @@ Grid.propTypes = {
       sm: sizePropType,
       md: sizePropType,
       lg: sizePropType,
-      xl: sizePropType,
-    }),
+      xl: sizePropType
+    })
   ]),
   className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children : PropTypes.node.isRequired
 };
 
 Grid.defaultProps = {
-  perRow: 1,
-  className: '',
+  perRow   : 1,
+  className: ''
 };
 
 export default Grid;

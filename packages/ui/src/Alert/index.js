@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import PlusIcon from 'resources/svg/Icons/PlusIcon';
+
+import { PlusIcon } from '@snappmarket/icons';
+
 import { StyledAlertWrapper, StyledCloseButton } from './styles';
 
 const Alert = props => {
