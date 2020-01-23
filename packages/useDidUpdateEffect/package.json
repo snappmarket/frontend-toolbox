@@ -1,6 +1,6 @@
 {
-  "name": "react-map-gl",
-  "version": "1.0.0",
+  "name": "useDidUpdateEffect",
+  "version": "0.0.3",
   "main": "src/index.js",
   "module": "src/index.js",
   "dependencies": {
