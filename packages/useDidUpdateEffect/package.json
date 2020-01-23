@@ -1,5 +1,5 @@
 {
-  "name": "useDidUpdateEffect",
+  "name": "@snappmarket/use-did-update-effect",
   "version": "0.0.4",
   "main": "src/index.js",
   "module": "src/index.js",
