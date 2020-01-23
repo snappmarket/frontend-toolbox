@@ -1,4 +1,4 @@
-import { ApiError } from '@snappmarket/helpers';
+import { ApiError } from './debugHelper';
 
 /**
  * Make a waiter

@@ -1,4 +1,4 @@
-import { recursiveJsonParse } from '@snappmarket/helpers';
+import { recursiveJsonParse } from './jsonHelpers';
 
 export const getLocalStorageData = key => {
   try {
