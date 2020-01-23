@@ -1,10 +1,11 @@
-# useDidUpdateEffect custom hook
+<p align="center">
+    <img src="./logo.png" alt="react hooks" />
+</p>
+
+<h1>Re-usable react hooks</h1>
+<h3>This hooks are implemented in our project, feel free to use and contribute on them</h3>
 
 > 🧵 do not worry about render phase effect calls
-
-Easily prevent `useEffect` calling on render phase, instead of that use `useDidUpdateEffect` with same API 
-then it will handle it for you :)
-
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/use-did-update-effect.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-did-update-effect)
