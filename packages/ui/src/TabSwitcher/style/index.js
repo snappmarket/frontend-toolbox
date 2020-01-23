@@ -44,7 +44,7 @@ const StyledTab = Styled(StyledPrimaryButton)`
           0.5,
           props.isActive
             ? props.theme.colors.blue.normal
-            : props.theme.colors.blue.light,
+            : props.theme.colors.blue.light
         )};
   }
   border: none;

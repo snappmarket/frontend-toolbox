@@ -19,9 +19,9 @@ module.exports = {
     const d = new Date();
     d.setTime(d.getTime() + expireDays * 24 * 60 * 60 * 1000);
     APP_INFO.NODE_GLOBALS.setCookie(name, value, {
-      expires: d.toUTCString(),
+      expires : d.toUTCString(),
       httpOnly: true,
-      path,
+      path
     });
-  },
+  }
 };

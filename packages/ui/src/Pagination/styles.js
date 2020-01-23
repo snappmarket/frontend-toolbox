@@ -44,5 +44,5 @@ export {
   StyledPaginationWrapper,
   StyledPaginationItemsWrapper,
   StyledNavigateButton,
-  StyledPaginationItem,
+  StyledPaginationItem
 };

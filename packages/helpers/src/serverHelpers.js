@@ -3,5 +3,5 @@ export default {
     window.hydrationFinished = true;
   },
   isHydrationFinish: () =>
-    typeof window.hydrationFinished !== 'undefined' && window.hydrationFinished,
+    typeof window.hydrationFinished !== 'undefined' && window.hydrationFinished
 };

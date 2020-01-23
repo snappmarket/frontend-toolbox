@@ -6,7 +6,7 @@ import {
   StyledTextarea,
   StyledLabel,
   StyledStar,
-  StyledMessage,
+  StyledMessage
 } from './styles';
 
 const Textarea = React.forwardRef((props, ref) => {
@@ -27,24 +27,24 @@ const Textarea = React.forwardRef((props, ref) => {
 });
 
 Textarea.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string,
-  status: PropTypes.oneOf(['gray', 'red', 'blue', 'orange', 'green', 'yellow']),
-  value: PropTypes.any,
+  id         : PropTypes.string,
+  label      : PropTypes.string,
+  status     : PropTypes.oneOf(['gray', 'red', 'blue', 'orange', 'green', 'yellow']),
+  value      : PropTypes.any,
   placeholder: PropTypes.any,
-  className: PropTypes.string,
-  message: PropTypes.object,
-  onChange: PropTypes.func,
-  Children: PropTypes.string,
-  required: PropTypes.bool,
+  className  : PropTypes.string,
+  message    : PropTypes.object,
+  onChange   : PropTypes.func,
+  Children   : PropTypes.string,
+  required   : PropTypes.bool
 };
 
 Textarea.defaultProps = {
-  status: 'gray',
-  id: '',
-  label: '',
-  message: {},
-  required: false,
+  status  : 'gray',
+  id      : '',
+  label   : '',
+  message : {},
+  required: false
 };
 
 export default Textarea;

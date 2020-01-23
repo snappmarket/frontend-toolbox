@@ -29,6 +29,6 @@ export default {
     external(),
     url({ exclude: ['**/*.svg'] }),
     resolve(),
-    commonjs(),
+    commonjs()
   ]
 };

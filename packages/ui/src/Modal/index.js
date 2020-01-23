@@ -9,7 +9,7 @@ import {
   StyledCloseModalButton,
   StyledModalHeader,
   StyledModalContent,
-  StyledModalFooter,
+  StyledModalFooter
 } from './styles';
 
 const Modal = props => {
@@ -22,7 +22,7 @@ const Modal = props => {
     footer,
     visibility,
     width,
-    position: initialPosition,
+    position: initialPosition
   } = props;
   const modalRef = createRef();
 
@@ -76,7 +76,7 @@ const Modal = props => {
   useEffect(() => {
     if (visibility && modalContainer) {
       const {
-        current: { offsetHeight: modalHeight },
+        current: { offsetHeight: modalHeight }
       } = modalRef;
       const { innerHeight: windowHeight } = window;
       if (modalHeight - 20 >= windowHeight) {
@@ -92,11 +92,11 @@ const Modal = props => {
         <StyledModal width={width} position={position} ref={modalRef}>
           {handleClose && typeof handleClose === 'function' && (
             <StyledCloseModalButton
-              className="close-modal-button"
-              modifier="link"
-              icon="cross"
-              size="sm"
-              color="gray"
+              className='close-modal-button'
+              modifier='link'
+              icon='cross'
+              size='sm'
+              color='gray'
               onClick={handleClose}
             />
           )}
@@ -113,27 +113,27 @@ const Modal = props => {
 };
 
 Modal.propTypes = {
-  className: PropTypes.string,
-  visibility: PropTypes.bool,
+  className  : PropTypes.string,
+  visibility : PropTypes.bool,
   handleClose: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-  onOpen: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-  header: PropTypes.node,
-  children: PropTypes.node,
-  footer: PropTypes.node,
-  width: PropTypes.number,
-  position: PropTypes.oneOf(['top', 'center', 'bottom']),
+  onOpen     : PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+  header     : PropTypes.node,
+  children   : PropTypes.node,
+  footer     : PropTypes.node,
+  width      : PropTypes.number,
+  position   : PropTypes.oneOf(['top', 'center', 'bottom'])
 };
 
 Modal.defaultProps = {
-  className: '',
-  visibility: false,
+  className  : '',
+  visibility : false,
   handleClose: false,
-  onOpen: () => {},
-  header: null,
-  children: <></>,
-  footer: null,
-  width: 70,
-  position: 'center',
+  onOpen     : () => {},
+  header     : null,
+  children   : <></>,
+  footer     : null,
+  width      : 70,
+  position   : 'center'
 };
 
 export default Modal;

@@ -12,7 +12,7 @@ const ProgressBar = props => {
   );
 };
 ProgressBar.propTypes = {
-  percent: PropTypes.number,
+  percent: PropTypes.number
 };
 
 ProgressBar.defaultProps = {};

@@ -60,5 +60,5 @@ export {
   StyledInput,
   StyledLabel,
   StyledStar,
-  StyledMessage,
+  StyledMessage
 };

@@ -26,7 +26,7 @@ const StyledCheckboxWrapper = Styled.button`
   }
   .icon {
     font-size: ${props =>
-      `calc(${props.size - 1} * ${props.theme.defaultRem})`};
+    `calc(${props.size - 1} * ${props.theme.defaultRem})`};
     color: 
     ${props => (!props.disabled ? 'white' : props.theme.colors.gray.light)};
   }

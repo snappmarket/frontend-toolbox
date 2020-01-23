@@ -9,7 +9,7 @@ const LinedText = props => {
 
 LinedText.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node,
+  children : PropTypes.node
 };
 
 export default LinedText;

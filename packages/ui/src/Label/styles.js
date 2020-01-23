@@ -55,5 +55,5 @@ export {
   StyledPrimaryLabel,
   StyledMaterialLabel,
   StyledOutlineLabel,
-  StyledQuietLabel,
+  StyledQuietLabel
 };

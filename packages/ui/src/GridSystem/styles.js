@@ -22,7 +22,7 @@ const StyledColumn = Styled.div`
         margin-right: ${(100 * props.layouts[layout].offset) / 12}%;
         order: ${props.layouts[layout].order};
       }
-    `,
+    `
     )}
 `;
 

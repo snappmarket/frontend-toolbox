@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   defineForegroundColor,
   makeRgba,
-  getNextShade,
+  getNextShade
 } from '../../../constants/Helpers/themeHelpers';
 
 export const StyledButton = styled.button`
@@ -50,7 +50,7 @@ export const StyledLabel = styled.span`
       0.25,
       props.theme.colors[
         defineForegroundColor(props.theme.colors[props.color].dark)
-      ],
+      ]
     )};
 `;
 

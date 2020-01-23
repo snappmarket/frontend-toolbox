@@ -166,7 +166,7 @@ const borderBox = css`
       .-ml-${i} {
           margin-left: -${i}rem !important;
       }
-    `,
+    `
   )}
 `;
 
@@ -271,9 +271,8 @@ const colorful = css`
           .bg-${color}-${shade}{
             background-color: ${props.theme.colors[color][shade]};
           }
-        `,
-        ),
-    )}
+        `
+        ))}
 `;
 /* eslint-enable prettier/prettier */
 

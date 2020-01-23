@@ -6,7 +6,7 @@ import { StyledAccordionContent } from './style';
 const AccordionContent = props => {
   const { whenActive, children, className } = props;
   const { activeAccordionId, animate, changeActive } = useContext(
-    accordionContext,
+    accordionContext
   );
   const isActive = activeAccordionId === whenActive;
   const close = () => changeActive('');
@@ -24,8 +24,8 @@ const AccordionContent = props => {
 
 AccordionContent.propTypes = {
   whenActive: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  className: PropTypes.string,
+  children  : PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
+  className : PropTypes.string
 };
 
 export default AccordionContent;

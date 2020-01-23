@@ -6,7 +6,7 @@ export const normalizeProductToNewApi = product => {
     discount,
     discountRatio,
     images,
-    capacity,
+    capacity
   } = product;
 
   const normalizedImages = [];
@@ -15,7 +15,7 @@ export const normalizeProductToNewApi = product => {
       const { imageThumbnailSrc, imageSrc } = image;
       normalizedImages.push({
         thumb: imageThumbnailSrc,
-        image: imageSrc,
+        image: imageSrc
       });
     });
   }
@@ -24,10 +24,10 @@ export const normalizeProductToNewApi = product => {
     id,
     title,
     price,
-    max_order_cap: capacity,
+    max_order_cap   : capacity,
     discount_percent: discountRatio,
     discounted_price: price - discount,
-    images: normalizedImages,
+    images          : normalizedImages
   };
 };
 /* eslint-disable camelcase */
@@ -40,7 +40,7 @@ export const unnormalizeProductToOldApi = product => {
     discount_percent: discountRatio,
     discounted_price,
     images,
-    needs_server_approval,
+    needs_server_approval
   } = product;
 
   const unnormalizedImages = [];
@@ -49,7 +49,7 @@ export const unnormalizeProductToOldApi = product => {
       const { thumb: imageThumbnailSrc, image: imageSrc } = image;
       unnormalizedImages.push({
         imageThumbnailSrc,
-        imageSrc,
+        imageSrc
       });
     });
   }
@@ -58,14 +58,14 @@ export const unnormalizeProductToOldApi = product => {
     id,
     title,
     price,
-    discount: price - discounted_price,
+    discount      : price - discounted_price,
     discountRatio,
-    productId: null,
+    productId     : null,
     containerPrice: 0,
-    vat: 0,
-    images: unnormalizedImages,
+    vat           : 0,
+    images        : unnormalizedImages,
     capacity,
-    needs_server_approval,
+    needs_server_approval
   };
 };
 /* eslint-enable camelcase */

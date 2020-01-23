@@ -13,11 +13,11 @@ const Row = props => {
 
 Row.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node,
+  children : PropTypes.node
 };
 Row.defaultProps = {
   className: '',
-  children: <></>,
+  children : <></>
 };
 
 export default Row;

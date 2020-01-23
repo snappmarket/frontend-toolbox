@@ -54,7 +54,7 @@ const useGeoLocation = (timeout, options) => {
     navigator.geolocation.getCurrentPosition(
       successGetLocation,
       failGetLocation,
-      options,
+      options
     );
 
     return () => {

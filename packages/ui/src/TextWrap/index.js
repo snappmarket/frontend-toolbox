@@ -6,8 +6,8 @@ import { StyledTextWrap } from './styles';
 const TextWrap = props => <StyledTextWrap {...props} />;
 
 TextWrap.propTypes = {
-  lines: PropTypes.number.isRequired,
-  lineHeight: PropTypes.number.isRequired,
+  lines     : PropTypes.number.isRequired,
+  lineHeight: PropTypes.number.isRequired
 };
 
 export default TextWrap;

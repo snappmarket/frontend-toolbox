@@ -11,8 +11,8 @@ export const StyledBigCircle = Styled.div`
   props.theme.defaultRem} * 1.6) 0 rgba(0, 0, 0, 0.16);
   background-image: ${props =>
     props.type === 'green'
-      ? `linear-gradient(228deg, #10e02c 19%, #07bc20 100%);`
-      : `linear-gradient(46deg, #ff3643 19%, #ff6973 100%);`}; 
+      ? 'linear-gradient(228deg, #10e02c 19%, #07bc20 100%);'
+      : 'linear-gradient(46deg, #ff3643 19%, #ff6973 100%);'}; 
 `;
 
 export const StyledBigCircleHolder = Styled.section`
@@ -20,6 +20,6 @@ export const StyledBigCircleHolder = Styled.section`
     margin-top: calc(${props => props.theme.defaultRem} * 4);;
     margin-bottom: calc(${props => props.theme.defaultRem} * 4);;
     font-size: calc(${props => props.theme.defaultRem} * 1.6);
-    color: ${props => (props.type === 'green' ? `#07bc20` : `#ff6973`)}; 
+    color: ${props => (props.type === 'green' ? '#07bc20' : '#ff6973')}; 
   }
 `;

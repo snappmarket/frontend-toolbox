@@ -16,13 +16,13 @@ const Tooltip = props => {
 
 Tooltip.propTypes = {
   className: PropTypes.string,
-  position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node,
+  position : PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+  title    : PropTypes.string.isRequired,
+  children : PropTypes.node
 };
 Tooltip.defaultProps = {
   className: '',
-  position: 'top',
+  position : 'top'
 };
 
 export default Tooltip;

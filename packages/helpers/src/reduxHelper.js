@@ -50,7 +50,7 @@ export const configPersistor = config => {
       if (config.whitelist.includes(reducer)) {
         localStorage.setItem(
           makeItemName(reducer),
-          JSON.stringify(stateToStore[reducer]),
+          JSON.stringify(stateToStore[reducer])
         );
       }
     }
@@ -59,6 +59,6 @@ export const configPersistor = config => {
 
   return {
     makeInitialState,
-    getMiddleware,
+    getMiddleware
   };
 };

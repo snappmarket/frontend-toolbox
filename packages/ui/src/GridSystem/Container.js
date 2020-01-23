@@ -11,12 +11,12 @@ const Container = props => {
 
 Container.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node,
+  children : PropTypes.node
 };
 
 Container.defaultProps = {
   className: '',
-  children: <></>,
+  children : <></>
 };
 
 export default Container;

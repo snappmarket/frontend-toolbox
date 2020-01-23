@@ -16,15 +16,15 @@ const Image = props => {
 };
 
 Image.propTypes = {
-  src: PropTypes.string.isRequired,
+  src   : PropTypes.string.isRequired,
   loader: PropTypes.node,
-  error: PropTypes.node,
+  error : PropTypes.node
 };
 
 // todo: add our loader here
 Image.defaultProps = {
   loader: <LogoAnimation size={3} />,
-  error: <LogoAnimation size={3} />,
+  error : <LogoAnimation size={3} />
 };
 
 export default Image;

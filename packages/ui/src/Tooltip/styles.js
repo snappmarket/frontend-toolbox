@@ -24,8 +24,8 @@ const StyledToolbar = Styled.span`
     content: "";
   }
   ${props =>
-    props.position === 'top' &&
-    `
+    props.position === 'top'
+    && `
     left: 50%;
     top: calc(${props.theme.defaultRem} * -1);
     transform: translate(-50%, -100%);
@@ -38,8 +38,8 @@ const StyledToolbar = Styled.span`
     }
   `}
   ${props =>
-    props.position === 'bottom' &&
-    `
+    props.position === 'bottom'
+    && `
     left: 50%;
     bottom: calc(${props.theme.defaultRem} * -1);
     transform: translate(-50%, 100%);
@@ -52,8 +52,8 @@ const StyledToolbar = Styled.span`
     }
   `}
   ${props =>
-    props.position === 'left' &&
-    `
+    props.position === 'left'
+    && `
     left: calc(${props.theme.defaultRem} * -1);
     top: 50%;
     transform: translate(-100%, -50%);
@@ -66,8 +66,8 @@ const StyledToolbar = Styled.span`
     }
   `}
   ${props =>
-    props.position === 'right' &&
-    `
+    props.position === 'right'
+    && `
     right: calc(${props.theme.defaultRem} * -1);
     top: 50%;
     transform: translate(100%, -50%);

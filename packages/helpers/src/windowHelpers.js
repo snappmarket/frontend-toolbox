@@ -5,6 +5,6 @@ export const getWindowSize = () => {
   const { clientWidth: width, clientHeight: height } = document.body;
   return {
     width,
-    height,
+    height
   };
 };

@@ -14,11 +14,11 @@ const Icon = props => {
 };
 
 Icon.propTypes = {
-  name: PropTypes.string.isRequired,
-  size: PropTypes.number,
-  className: PropTypes.string,
+  name     : PropTypes.string.isRequired,
+  size     : PropTypes.number,
+  className: PropTypes.string
 };
 Icon.defaultProps = {
-  size: 1,
+  size: 1
 };
 export default Icon;

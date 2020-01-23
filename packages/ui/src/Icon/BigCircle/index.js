@@ -7,7 +7,7 @@ const BigCircleIcon = props => {
   return (
     <StyledBigCircleHolder
       type={type}
-      className="justify-center flex-column align-center"
+      className='justify-center flex-column align-center'
     >
       <StyledBigCircle type={type} className={className}>
         {children}
@@ -18,10 +18,10 @@ const BigCircleIcon = props => {
 };
 
 BigCircleIcon.propTypes = {
-  type: PropTypes.oneOf(['green', 'red']).isRequired,
-  children: PropTypes.node.isRequired,
+  type     : PropTypes.oneOf(['green', 'red']).isRequired,
+  children : PropTypes.node.isRequired,
   className: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title    : PropTypes.string.isRequired
 };
 
 export default BigCircleIcon;

@@ -9,7 +9,7 @@ import { currencyPrice } from '../../../constants/Helpers/numberHelpers';
 import {
   StyledInputRangeWrapper,
   StyledRangeLabelWrapper,
-  StyledInputRange,
+  StyledInputRange
 } from './styles';
 
 const InputRange = props => {
@@ -31,11 +31,11 @@ const InputRange = props => {
           rtl
         />
       </StyledInputRange>
-      <StyledRangeLabelWrapper className="justify-between">
-        <span className="text-center">
+      <StyledRangeLabelWrapper className='justify-between'>
+        <span className='text-center'>
           {defaultMessages.filter.range.from} {currencyPrice(min)}
         </span>
-        <span className="text-center">
+        <span className='text-center'>
           {defaultMessages.filter.range.to} {currencyPrice(max)}
         </span>
       </StyledRangeLabelWrapper>
@@ -45,24 +45,24 @@ const InputRange = props => {
 
 InputRange.propTypes = {
   onChangeComplete: PropTypes.func,
-  rangeValue: PropTypes.shape({
+  rangeValue      : PropTypes.shape({
     min: PropTypes.number,
-    max: PropTypes.number,
+    max: PropTypes.number
   }),
   value: PropTypes.shape({
     min: PropTypes.number,
-    max: PropTypes.number,
-  }),
+    max: PropTypes.number
+  })
 };
 InputRange.defaultProps = {
   onChangeComplete: () => {},
-  rangeValue: {
+  rangeValue      : {
     min: 0,
-    max: 0,
+    max: 0
   },
   value: {
     min: 0,
-    max: 0,
-  },
+    max: 0
+  }
 };
 export default InputRange;

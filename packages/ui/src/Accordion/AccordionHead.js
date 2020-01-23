@@ -43,11 +43,11 @@ const AccordionHead = props => {
 };
 
 AccordionHead.propTypes = {
-  id: PropTypes.string.isRequired,
+  id      : PropTypes.string.isRequired,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  onClick: PropTypes.func,
-  onOpen: PropTypes.func,
-  onClose: PropTypes.func,
+  onClick : PropTypes.func,
+  onOpen  : PropTypes.func,
+  onClose : PropTypes.func
 };
 
 AccordionHead.defaultProps = {};

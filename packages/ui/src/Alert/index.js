@@ -13,42 +13,42 @@ const Alert = props => {
   switch (status) {
     case 'error':
       options = {
-        bgColor: 'red',
-        bgShade: 'bright',
-        color: 'red',
-        colorShade: 'dark',
+        bgColor   : 'red',
+        bgShade   : 'bright',
+        color     : 'red',
+        colorShade: 'dark'
       };
       break;
     case 'info':
       options = {
-        bgColor: 'blue',
-        bgShade: 'bright',
-        color: 'blue',
-        colorShade: 'dark',
+        bgColor   : 'blue',
+        bgShade   : 'bright',
+        color     : 'blue',
+        colorShade: 'dark'
       };
       break;
     case 'warning':
       options = {
-        bgColor: 'yellow',
-        bgShade: 'bright',
-        color: 'yellow',
-        colorShade: 'dark',
+        bgColor   : 'yellow',
+        bgShade   : 'bright',
+        color     : 'yellow',
+        colorShade: 'dark'
       };
       break;
     case 'success':
       options = {
-        bgColor: 'green',
-        bgShade: 'bright',
-        color: 'green',
-        colorShade: 'dark',
+        bgColor   : 'green',
+        bgShade   : 'bright',
+        color     : 'green',
+        colorShade: 'dark'
       };
       break;
     default:
       options = {
-        bgColor: 'orange',
-        bgShade: 'bright',
-        color: 'orange',
-        colorShade: 'dark',
+        bgColor   : 'orange',
+        bgShade   : 'bright',
+        color     : 'orange',
+        colorShade: 'dark'
       };
   }
 
@@ -63,12 +63,12 @@ const Alert = props => {
         {closable && (
           <StyledCloseButton
             onClick={handleCloseAlert}
-            icon={<PlusIcon className="closeIcon" />}
-            modifier="link"
-            color="gray"
-            className="circle d-inline-block pull-left closeBtn"
-            shade="ultra-light"
-            size="xs"
+            icon={<PlusIcon className='closeIcon' />}
+            modifier='link'
+            color='gray'
+            className='circle d-inline-block pull-left closeBtn'
+            shade='ultra-light'
+            size='xs'
           />
         )}
         {children}
@@ -78,16 +78,16 @@ const Alert = props => {
 };
 
 Alert.propTypes = {
-  status: PropTypes.oneOf(['error', 'info', 'warning', 'success']),
-  onClose: PropTypes.func,
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  status   : PropTypes.oneOf(['error', 'info', 'warning', 'success']),
+  onClose  : PropTypes.func,
+  children : PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   className: PropTypes.string,
-  closable: PropTypes.bool,
+  closable : PropTypes.bool
 };
 
 Alert.defaultProps = {
-  onClose: f => f,
-  closable: true,
+  onClose : f => f,
+  closable: true
 };
 
 export default Alert;

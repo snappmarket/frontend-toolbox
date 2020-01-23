@@ -8,18 +8,18 @@ import builtins from 'rollup-plugin-node-builtins';
 import pkg from './package.json';
 
 export default {
-  input: 'index.js',
+  input : 'index.js',
   output: [
     {
-      file: pkg.main,
-      format: 'cjs',
-      exports: 'named',
+      file     : pkg.main,
+      format   : 'cjs',
+      exports  : 'named',
       sourcemap: true
     },
     {
-      file: pkg.module,
-      format: 'es',
-      exports: 'named',
+      file     : pkg.module,
+      format   : 'es',
+      exports  : 'named',
       sourcemap: true
     }
   ],

@@ -58,5 +58,5 @@ export {
   StyledMessage,
   StyledStar,
   StyledTextarea,
-  StyledTextareaWrapper,
+  StyledTextareaWrapper
 };

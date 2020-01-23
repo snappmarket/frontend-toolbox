@@ -10,7 +10,7 @@ import {
   StyledConfirmDialogContainer,
   StyledButtonWrapper,
   StyledIconCol,
-  StyledContentCol,
+  StyledContentCol
 } from './styles';
 
 const ConfirmDialog = props => {
@@ -28,22 +28,22 @@ const ConfirmDialog = props => {
 
   return (
     <StyledConfirmDialog
-      className="justify-center"
+      className='justify-center'
       footer={
-        <StyledButtonWrapper className="justify-end">
+        <StyledButtonWrapper className='justify-end'>
           <Button
-            size="sm"
+            size='sm'
             title={acceptTitle}
             onClick={onAccept}
             loading={loading}
-            className="ml-1"
+            className='ml-1'
           />
           <Button
-            size="sm"
+            size='sm'
             title={dismissTitle}
             onClick={onDismiss}
-            modifier="outline"
-            color="gray"
+            modifier='outline'
+            color='gray'
           />
         </StyledButtonWrapper>
       }
@@ -51,17 +51,17 @@ const ConfirmDialog = props => {
     >
       <StyledConfirmDialogContainer>
         <Row>
-          <StyledIconCol className="align-center" sm={2}>
-            <div className="align-center justify-center circle">
-              {!!icon &&
-                (typeof icon === 'string' ? (
+          <StyledIconCol className='align-center' sm={2}>
+            <div className='align-center justify-center circle'>
+              {!!icon
+                && (typeof icon === 'string' ? (
                   <Icon name={icon} size={2} />
                 ) : (
                   icon
                 ))}
             </div>
           </StyledIconCol>
-          <StyledContentCol className="justify-center flex-column" sm={10}>
+          <StyledContentCol className='justify-center flex-column' sm={10}>
             <strong>{title}</strong>
             <p>{description}</p>
           </StyledContentCol>
@@ -72,36 +72,36 @@ const ConfirmDialog = props => {
 };
 
 ConfirmDialog.propTypes = {
-  title: PropTypes.string,
-  acceptTitle: PropTypes.string,
+  title       : PropTypes.string,
+  acceptTitle : PropTypes.string,
   dismissTitle: PropTypes.string,
-  description: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.node]),
-  className: PropTypes.string,
-  visibility: PropTypes.bool,
-  loading: PropTypes.bool,
-  width: PropTypes.number,
-  position: PropTypes.oneOf(['top', 'center', 'bottom']),
-  onClose: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-  onOpen: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-  onAccept: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-  onDismiss: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+  description : PropTypes.string,
+  icon        : PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.node]),
+  className   : PropTypes.string,
+  visibility  : PropTypes.bool,
+  loading     : PropTypes.bool,
+  width       : PropTypes.number,
+  position    : PropTypes.oneOf(['top', 'center', 'bottom']),
+  onClose     : PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+  onOpen      : PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+  onAccept    : PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+  onDismiss   : PropTypes.oneOfType([PropTypes.func, PropTypes.bool])
 };
 
 ConfirmDialog.defaultProps = {
-  className: '',
-  visibility: false,
-  loading: false,
-  onClose: () => {},
-  onOpen: () => {},
-  onAccept: () => {},
-  onDismiss: () => {},
-  title: '',
-  acceptTitle: 'accept',
+  className   : '',
+  visibility  : false,
+  loading     : false,
+  onClose     : () => {},
+  onOpen      : () => {},
+  onAccept    : () => {},
+  onDismiss   : () => {},
+  title       : '',
+  acceptTitle : 'accept',
   dismissTitle: 'dismiss',
-  description: '',
-  width: 50,
-  position: 'center',
+  description : '',
+  width       : 50,
+  position    : 'center'
 };
 
 export default ConfirmDialog;

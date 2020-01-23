@@ -32,27 +32,27 @@ const Tab = props => {
 };
 
 Tab.propTypes = {
-  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  children: PropTypes.node.isRequired,
-  type: PropTypes.oneOf(['primary', 'outline', 'link']),
-  size: PropTypes.oneOf(['xl', 'lg', 'md', 'sm', 'xs']),
-  color: PropTypes.oneOf(['blue', 'red', 'green', 'yellow', 'orange', 'gray']),
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  className: PropTypes.string,
-  direction: PropTypes.oneOf(['right', 'left']),
+  id         : PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  children   : PropTypes.node.isRequired,
+  type       : PropTypes.oneOf(['primary', 'outline', 'link']),
+  size       : PropTypes.oneOf(['xl', 'lg', 'md', 'sm', 'xs']),
+  color      : PropTypes.oneOf(['blue', 'red', 'green', 'yellow', 'orange', 'gray']),
+  icon       : PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  className  : PropTypes.string,
+  direction  : PropTypes.oneOf(['right', 'left']),
   onChangeTab: PropTypes.func,
-  onSwitch: PropTypes.func,
+  onSwitch   : PropTypes.func
 };
 
 Tab.defaultProps = {
-  size: 'sm',
-  type: 'primary',
-  color: 'blue',
-  icon: false,
-  className: '',
+  size       : 'sm',
+  type       : 'primary',
+  color      : 'blue',
+  icon       : false,
+  className  : '',
   // loading: false,
-  direction: 'right',
+  direction  : 'right',
   onChangeTab: f => f,
-  onSwitch: f => f,
+  onSwitch   : f => f
 };
 export default Tab;

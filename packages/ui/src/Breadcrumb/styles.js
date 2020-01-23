@@ -26,5 +26,5 @@ export {
   StyledBreadcrumbWrapper,
   StyledBreadcrumbItem,
   StyledBreadcrumbItemSeparator,
-  StyledBreadcrumbItemWrapper,
+  StyledBreadcrumbItemWrapper
 };

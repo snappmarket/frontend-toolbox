@@ -14,13 +14,13 @@ const LogoAnimation = ({ size, className }) => (
 );
 
 LogoAnimation.propTypes = {
-  size: PropTypes.number,
-  className: PropTypes.string,
+  size     : PropTypes.number,
+  className: PropTypes.string
 };
 
 LogoAnimation.defaultProps = {
-  size: 2.4,
-  className: '',
+  size     : 2.4,
+  className: ''
 };
 
 export default LogoAnimation;
