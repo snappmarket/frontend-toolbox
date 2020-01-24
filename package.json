@@ -25,6 +25,7 @@
     "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@rollup/plugin-commonjs": "^11.0.1",
     "@storybook/addon-notes": "^5.2.3",
     "@storybook/addon-viewport": "^5.2.3",
     "@storybook/react": "^5.2.3",

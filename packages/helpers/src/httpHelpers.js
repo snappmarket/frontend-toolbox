@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-unfetch';
+import { default as fetch } from 'isomorphic-unfetch';
 
 import { ApiError, delog } from './debugHelper';
 import { serializeObject } from './arrayHelpers';

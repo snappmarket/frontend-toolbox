@@ -1,7 +1,6 @@
 import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
-import resolve from 'rollup-plugin-node-resolve';
 import url from 'rollup-plugin-url';
 import builtins from 'rollup-plugin-node-builtins';
 import globals from 'rollup-plugin-node-globals';
@@ -32,11 +31,12 @@ export default {
     babel({
       exclude: 'node_modules/**'
     }),
-    resolve(),
     commonjs({
-      include: 'node_modules/**',
       namedExports: {
-        'node_modules/react-is/index.js': ['isValidElementType']
+        // left-hand side can be an absolute path, a path
+        // relative to the current directory, or the name
+        // of a module in node_modules
+        'isomorphic-unfetch': ['named']
       }
     })
   ]
