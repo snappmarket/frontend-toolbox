@@ -19,7 +19,6 @@ export default function useDebounce(value, delay) {
     handler = setTimeout(() => {
       setDebouncedValue(value);
     }, delay);
-
     return canceller;
   }, [value]);
 
