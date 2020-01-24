@@ -1,0 +1,40 @@
+{
+  "name": "@snappmarket/use-debounce",
+  "private": false,
+  "version": "0.1.4",
+  "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
+  "main": "index.js",
+  "module": "index.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "license": "MIT",
+  "keywords": [
+    "hook",
+    "react-hooks",
+    "custom-hook",
+    "debounce",
+    "useDebounce",
+    "debounce-hook",
+    "useEffect-update",
+    "useUpdateEffect",
+    "useDidUpdateEffect",
+    "useFocus",
+    "focus-hook",
+    "useForceUpdate",
+    "forceUpdate-hook",
+    "geolocation-hook",
+    "useGeolocation",
+    "routeChangeDetect",
+    "routeChange-hook",
+    "useRouteChange",
+    "useTimer",
+    "timer-hook"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snappmarket/react-hooks"
+  },
+  "gitHead": "807efde99896ed74311218197b256917efba7977"
+}

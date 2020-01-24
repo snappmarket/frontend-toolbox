@@ -16,22 +16,33 @@
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
 
-### source code
-```javascript
-import { useRef, useEffect } from 'react';
 
-/**
- * Calls function on component update or inputs change phase
- * @param fn
- * @param inputs
- */
-export default (fn, inputs) => {
-  const didMountRef = useRef(false);
+## Hooks Found Here
 
-  useEffect(() => {
-    if (didMountRef.current) fn();
-    else didMountRef.current = true;
-  }, inputs);
-};
+|                                       |                                                                                           |
+| ------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [useDebounce](packages/useDebounce)   | Debounce on value change                                                                  |
+| [auto-install](packages/auto-install) | Automatically install dependencies that are imported by a bundle.                         |
+| [beep](packages/beep)                 | System beeps on errors and warnings                                                       |
+| [buble](packages/buble)               | Compile ES2015 with buble                                                                 |
+| [commonjs](packages/commonjs)         | Convert CommonJS modules to ES6                                                           |
+| [data-uri](packages/data-uri)         | Import modules from Data URIs                                                             |
+| [dsv](packages/dsv)                   | Convert .csv and .tsv files into JavaScript modules with d3-dsv                           |
+| [html](packages/html)                 | Creates HTML files to serve Rollup bundles                                                |
+| [image](packages/image)               | Import JPG, PNG, GIF, SVG, and WebP files                                                 |
+| [inject](packages/inject)             | Scan modules for global variables and injects `import` statements where necessary         |
+| [json](packages/json)                 | Convert .json files to ES6 modules                                                        |
+| [legacy](packages/legacy)             | Add `export` declarations to legacy non-module scripts                                    |
+| [multi-entry](packages/multi-entry)   | Use multiple entry points for a bundle                                                    |
+| [node-resolve](packages/node-resolve) | Locate and bundle third-party dependencies in node_modules                                |
+| [replace](packages/replace)           | Replace strings in files while bundling                                                   |
+| [run](packages/run)                   | Run your bundles in Node once they're built                                               |
+| [strip](packages/strip)               | Remove debugger statements and functions like assert.equal and console.log from your code |
+| [sucrase](packages/sucrase)           | Compile TypeScript, Flow, JSX, etc with Sucrase                                           |
+| [typescript](packages/typescript)     | Integration between Rollup and Typescript                                                 |
+| [url](packages/url)                   | Import files as data-URIs or ES Modules                                                   |
+| [virtual](packages/virtual)           | Load virtual modules from memory                                                          |
+| [wasm](packages/wasm)                 | Import WebAssembly code with Rollup                                                       |
+| [yaml](packages/yaml)                 | Convert YAML files to ES6 modules                                                         |
+|                                       |                                                                                           |
 
-```

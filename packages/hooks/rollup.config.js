@@ -18,6 +18,6 @@ export default {
     }
   ],
   plugins: [
-    external(),
+    external()
   ]
 };
