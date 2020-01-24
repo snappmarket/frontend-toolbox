@@ -1,5 +1,3 @@
-import isEmpty from 'lodash/isEmpty';
-
 export const arrayItemAddProp = (baseArray, props) => {
   const newArray = [];
   baseArray.forEach(item => newArray.push({ ...item, ...props }));
@@ -23,7 +21,7 @@ export const serializeObject = object => {
           result.push(`${property}[]=${item}`));
       } else if (
         !Array.isArray(object[property])
-          && !isEmpty(object[property])
+          && object[property].length
       ) {
         Object.keys(object[property]).forEach(key =>
           result.push(`${property}[${key}]=${object[property][key]}`));
