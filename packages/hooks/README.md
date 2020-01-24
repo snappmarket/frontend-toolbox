@@ -21,30 +21,34 @@
 
 ## Hooks Found Here
 
-| Hook Name                                         |  Description                                                                                     |
-| ------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [useDebounce](packages/useDebounce)               | 🔂 Change rapidly, do once                                                                  |
-| [useDidUpdateEffect](packages/useDidUpdateEffect) | 🧵 Do not worry about render phase effect calls                        |
-| [useFocus](packages/useFocus)                     | 😵 Focus on every thing you want                                                    |
-| [useForceUpdate](packages/useForceUpdate)         | 👿 force update component                                                               |
-| [commonjs](packages/commonjs)         | Convert CommonJS modules to ES6                                                           |
-| [data-uri](packages/data-uri)         | Import modules from Data URIs                                                             |
-| [dsv](packages/dsv)                   | Convert .csv and .tsv files into JavaScript modules with d3-dsv                           |
-| [html](packages/html)                 | Creates HTML files to serve Rollup bundles                                                |
-| [image](packages/image)               | Import JPG, PNG, GIF, SVG, and WebP files                                                 |
-| [inject](packages/inject)             | Scan modules for global variables and injects `import` statements where necessary         |
-| [json](packages/json)                 | Convert .json files to ES6 modules                                                        |
-| [legacy](packages/legacy)             | Add `export` declarations to legacy non-module scripts                                    |
-| [multi-entry](packages/multi-entry)   | Use multiple entry points for a bundle                                                    |
-| [node-resolve](packages/node-resolve) | Locate and bundle third-party dependencies in node_modules                                |
-| [replace](packages/replace)           | Replace strings in files while bundling                                                   |
-| [run](packages/run)                   | Run your bundles in Node once they're built                                               |
-| [strip](packages/strip)               | Remove debugger statements and functions like assert.equal and console.log from your code |
-| [sucrase](packages/sucrase)           | Compile TypeScript, Flow, JSX, etc with Sucrase                                           |
-| [typescript](packages/typescript)     | Integration between Rollup and Typescript                                                 |
-| [url](packages/url)                   | Import files as data-URIs or ES Modules                                                   |
-| [virtual](packages/virtual)           | Load virtual modules from memory                                                          |
-| [wasm](packages/wasm)                 | Import WebAssembly code with Rollup                                                       |
-| [yaml](packages/yaml)                 | Convert YAML files to ES6 modules                                                         |
-|                                       |                                                                                           |
+| Hook Name                                         |  Description                                                     |
+| ------------------------------------------------- | ---------------------------------------------------------------- |
+| [useDebounce](packages/useDebounce)               | 🔂 Change rapidly, do once                                       |
+| [useDidUpdateEffect](packages/useDidUpdateEffect) | 🧵 Do not worry about render phase effect calls                 |
+| [useFocus](packages/useFocus)                     | 😵 Focus on every thing you want                                 |
+| [useForceUpdate](packages/useForceUpdate)         | 👿 force update component                                        |
+| [useGeoLocation](packages/useGeoLocation)         | 🗺 easily deal with navigator location API                      |
+| [useRouteChange](packages/useRouteChange)         | 🏹 detect when react router dom route changes                    |
+| [useTimer](packages/useTimer)                     | ⏱ easily handle timing                                          |
 
+#### The MIT License (MIT)
+
+Copyright (c) 2020 snappmarket
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

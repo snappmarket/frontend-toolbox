@@ -10,6 +10,31 @@
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
 
+
+## get started 
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/use-timer
+OR
+npm i @snappmarket/hooks
+```
+
+## usage 
+```javascript
+import useTimer from '@snappmarket/use-timer';
+// or 
+// import { useTimer } from '@snappmarket/hooks';
+
+
+const MyComponenet = props => {
+  const { time, start: startTimer, reset: resetTimer } = useTimer({
+    endTime: 0,
+    initialTime: 100,
+    timerType: 'DECREMENTAL',
+  });
+};
+```
+
 ### source code
 ```javascript
 import { useEffect, useRef, useState } from 'react';
@@ -109,5 +134,6 @@ export default config => {
 
   return { pause, reset, start, time };
 };
-
 ```
+
+

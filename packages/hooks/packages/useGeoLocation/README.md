@@ -1,5 +1,5 @@
-# useDebounce
-> 🧵 do not worry about render phase effect calls
+# useGeoLocation
+> 🗺 easily deal with navigator location API
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/use-did-update-effect.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-did-update-effect)
@@ -10,22 +10,95 @@
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
 
+
+## get started 
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/use-geolocation
+OR
+npm i @snappmarket/hooks
+```
+
+## usage 
+```javascript
+import useGeoLocation from '@snappmarket/use-geolocation';
+// or 
+// import { useGeoLocation } from '@snappmarket/hooks';
+
+
+const MyComponenet = props => {
+  const [position, error] = useGeoLocation(LOCATION_ACCESS_TIMEOUT || 5000);
+};
+```
+
 ### source code
 ```javascript
-import { useRef, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
- * Calls function on component update or inputs change phase
- * @param fn
- * @param inputs
+ * Get access to geo location based on timeout
+ * @note : if timeout error it will send TIMEOUT as error
+ * @param timeout number
+ * @param options object for getCurrentPosition options
+ * @returns {[*, *]}
  */
-export default (fn, inputs) => {
-  const didMountRef = useRef(false);
+const useGeoLocation = (timeout, options) => {
+  let timeoutHandler;
+  let canceled = false;
+
+  const [position, setPosition] = useState();
+  const [error, setError] = useState();
 
   useEffect(() => {
-    if (didMountRef.current) fn();
-    else didMountRef.current = true;
-  }, inputs);
+    /**
+     * Handle timeout clear
+     */
+    const timeoutCanceler = () => {
+      clearTimeout(timeoutHandler);
+    };
+
+    /**
+     * Success getting geolocation
+     * @param pos
+     */
+    const successGetLocation = pos => {
+      if (!canceled) {
+        setPosition(pos);
+      }
+      timeoutCanceler();
+    };
+
+    /**
+     * Failure getting geolocation
+     * @param err
+     */
+    const failGetLocation = err => {
+      if (!canceled) {
+        setError(err);
+      }
+      timeoutCanceler();
+    };
+
+    timeoutHandler = setTimeout(() => {
+      setError('TIMEOUT');
+    }, timeout);
+
+    /**
+     * Get geolocation access of navigator
+     */
+    navigator.geolocation.getCurrentPosition(
+      successGetLocation,
+      failGetLocation,
+      options
+    );
+
+    return () => {
+      canceled = true;
+    };
+  }, [options]);
+
+  return [position, error];
 };
 
+export default useGeoLocation;
 ```
