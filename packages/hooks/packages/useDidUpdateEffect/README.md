@@ -53,5 +53,4 @@ export default (fn, inputs) => {
     else didMountRef.current = true;
   }, inputs);
 };
-
 ```

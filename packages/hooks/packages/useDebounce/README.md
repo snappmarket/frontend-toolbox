@@ -42,20 +42,31 @@ const MyComponenet = props => {
 
 ### source code
 ```javascript
-import { useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
- * Calls function on component update or inputs change phase
- * @param fn
- * @param inputs
+ * Debounce setting a value
+ * @param value
+ * @param delay
+ * @returns {[string, fn, fn]}
  */
-export default (fn, inputs) => {
-  const didMountRef = useRef(false);
+export default function useDebounce(value, delay) {
+  // State and setters for debounced value
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  let handler;
+  const canceller = () => {
+    clearTimeout(handler);
+  };
 
   useEffect(() => {
-    if (didMountRef.current) fn();
-    else didMountRef.current = true;
-  }, inputs);
-};
+    handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    return canceller;
+  }, [value]);
+
+  return [debouncedValue, canceller, setDebouncedValue];
+}
 
 ```

@@ -16,21 +16,7 @@
     "custom-hook",
     "debounce",
     "useDebounce",
-    "debounce-hook",
-    "useEffect-update",
-    "useUpdateEffect",
-    "useDidUpdateEffect",
-    "useFocus",
-    "focus-hook",
-    "useForceUpdate",
-    "forceUpdate-hook",
-    "geolocation-hook",
-    "useGeolocation",
-    "routeChangeDetect",
-    "routeChange-hook",
-    "useRouteChange",
-    "useTimer",
-    "timer-hook"
+    "debounce-hook"
   ],
   "repository": {
     "type": "git",

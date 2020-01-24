@@ -34,20 +34,21 @@ const MyComponenet = props => {
 
 ### source code
 ```javascript
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
- * Calls function on component update or inputs change phase
- * @param fn
- * @param inputs
+ * Focus on a ref after render
+ * @param initialRef
+ * @returns {React.MutableRefObject<*>}
  */
-export default (fn, inputs) => {
-  const didMountRef = useRef(false);
-
+export default initialRef => {
+  const ref = useRef(initialRef);
   useEffect(() => {
-    if (didMountRef.current) fn();
-    else didMountRef.current = true;
-  }, inputs);
-};
+    setTimeout(() => {
+      ref.current.focus();
+    }, 100);
+  }, []);
 
+  return ref;
+};
 ```

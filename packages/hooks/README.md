@@ -1,3 +1,6 @@
+# Our apps re-usable hooks
+> ⚓ hooks are good, making custom re-usable ones is better
+
 <p align="center">
     <img src="./logo.png" alt="react hooks" />
 </p>
@@ -5,7 +8,6 @@
 <h1>Re-usable react hooks</h1>
 <h3>This hooks are implemented in our project, feel free to use and contribute on them</h3>
 
-> 🧵 do not worry about render phase effect calls
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/use-did-update-effect.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-did-update-effect)
@@ -19,12 +21,12 @@
 
 ## Hooks Found Here
 
-| Hook Name                             |  Description                                                                                     |
-| ------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [useDebounce](packages/useDebounce)   | Debounce on value change                                                                  |
-| [auto-install](packages/auto-install) | Automatically install dependencies that are imported by a bundle.                         |
-| [beep](packages/beep)                 | System beeps on errors and warnings                                                       |
-| [buble](packages/buble)               | Compile ES2015 with buble                                                                 |
+| Hook Name                                         |  Description                                                                                     |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [useDebounce](packages/useDebounce)               | 🔂 Change rapidly, do once                                                                  |
+| [useDidUpdateEffect](packages/useDidUpdateEffect) | 🧵 Do not worry about render phase effect calls                        |
+| [useFocus](packages/useFocus)                     | 😵 Focus on every thing you want                                                    |
+| [useForceUpdate](packages/useForceUpdate)         | 👿 force update component                                                               |
 | [commonjs](packages/commonjs)         | Convert CommonJS modules to ES6                                                           |
 | [data-uri](packages/data-uri)         | Import modules from Data URIs                                                             |
 | [dsv](packages/dsv)                   | Convert .csv and .tsv files into JavaScript modules with d3-dsv                           |
