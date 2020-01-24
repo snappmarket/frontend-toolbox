@@ -10,6 +10,36 @@
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
 
+## get started 
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/use-debounce
+OR
+npm i @snappmarket/hooks
+```
+
+## usage 
+```javascript
+import useDebounce from '@snappmarket/use-debounce';
+// or 
+// import { useDebounce } from '@snappmarket/hooks';
+
+
+const MyComponenet = props => {
+    const [value, setValue] = useState('');
+    const [debouncedValue] = useDebounce(value, 200);
+
+
+  /**
+   * Call api based on debounced value
+   */
+  useEffect(() => {
+    // do something with debounce
+  }, [debouncedValue]);
+};
+```
+
+
 ### source code
 ```javascript
 import { useRef, useEffect } from 'react';
