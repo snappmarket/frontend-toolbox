@@ -1,13 +1,10 @@
 {
-  "name": "@snappmarket/use-geolocation",
+  "name": "@snappmarket/http-helpers",
   "private": false,
   "version": "0.1.6",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
-  "dependencies": {
-    "react-router-dom": "^5.1.2"
-  },
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -17,12 +14,14 @@
     "hook",
     "react-hooks",
     "custom-hook",
-    "geolocation-hook",
-    "useGeolocation"
+    "debounce",
+    "useDebounce",
+    "debounce-hook"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/snappmarket/react-hooks"
   },
+  "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useDebounce",
   "gitHead": "807efde99896ed74311218197b256917efba7977"
 }

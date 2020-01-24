@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BasicForm from './../src/index';
+import BasicForm from '../packages/index';
 
 describe('Button', () => {
   test('hook did called successfully', () => {

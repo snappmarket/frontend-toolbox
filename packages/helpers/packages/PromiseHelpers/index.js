@@ -1,4 +1,4 @@
-import { ApiError } from './debugHelper';
+import { ApiError } from '../DebugHelpers';
 
 /**
  * Make a waiter

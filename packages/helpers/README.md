@@ -15,22 +15,25 @@ then it will handle it for you :)
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
 
-### source code
-```javascript
-import { useRef, useEffect } from 'react';
 
-/**
- * Calls function on component update or inputs change phase
- * @param fn
- * @param inputs
- */
-export default (fn, inputs) => {
-  const didMountRef = useRef(false);
+## Helpers Found Here
 
-  useEffect(() => {
-    if (didMountRef.current) fn();
-    else didMountRef.current = true;
-  }, inputs);
-};
+| Helper                                            |  Description                                                     |
+| ------------------------------------------------- | ---------------------------------------------------------------- |
+| [ArrayHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ArrayHelpers)      |                                     |
+| [CookieHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/CookieHelpers)             | 🧵 Do not worry about render phase effect calls                 |
+| [DebugHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/DebugHelpers)               | 😵 Focus on every thing you want                                 |
+| [HttpHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/HttpHelpers)                 | 👿 force update component                                        |
+| [JsonHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/JsonHelpers)                 | 🗺 easily deal with navigator location API                      |
+| [StorageHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/StorageHelpers)           | 🏹 detect when react router dom route changes                    |
+| [MapHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/MapHelpers)                   | ⏱ easily handle timing                                          |
+| [NumberHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/NumberHelpers)             | ⏱ easily handle timing                                          |
+| [ObjectHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/ObjectHelpers)             | ⏱ easily handle timing                                          |
+| [OSHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/OSHelpers)                     | ⏱ easily handle timing                                          |
+| [PromiseHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/PromiseHelpers)           | ⏱ easily handle timing                                          |
+| [ProxyHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/ProxyHelpers)               | ⏱ easily handle timing                                          |
+| [ReduxHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/ReduxHelpers)               | ⏱ easily handle timing                                          |
+| [StringHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/StringHelpers)             | ⏱ easily handle timing                                          |
+| [TemplateHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/TemplateHelpers)         | ⏱ easily handle timing                                          |
+| [WindowHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/WindowHelpers)             | ⏱ easily handle timing                                          |
 
-```

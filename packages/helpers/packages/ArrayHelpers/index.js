@@ -1,9 +1,21 @@
+/**
+ * Pops item from an array
+ * @param baseArray
+ * @param props
+ * @returns {[]}
+ */
 export const arrayItemAddProp = (baseArray, props) => {
   const newArray = [];
   baseArray.forEach(item => newArray.push({ ...item, ...props }));
   return newArray;
 };
 
+/**
+ * Flatten array
+ * @param array
+ * @param property
+ * @returns {[]}
+ */
 export const flattenArray = (array, property) => {
   const result = [];
   array.forEach(item => {
@@ -12,6 +24,11 @@ export const flattenArray = (array, property) => {
   return result;
 };
 
+/**
+ * Serialize object
+ * @param object
+ * @returns {string}
+ */
 export const serializeObject = object => {
   const result = [];
   Object.keys(object).forEach(property => {
@@ -21,7 +38,7 @@ export const serializeObject = object => {
           result.push(`${property}[]=${item}`));
       } else if (
         !Array.isArray(object[property])
-          && object[property].length
+        && object[property].length
       ) {
         Object.keys(object[property]).forEach(key =>
           result.push(`${property}[${key}]=${object[property][key]}`));
@@ -33,6 +50,12 @@ export const serializeObject = object => {
   return result.join('&');
 };
 
+/**
+ * Create string from array
+ * @param array
+ * @param properties
+ * @returns {string}
+ */
 export const stringifyArray = (array, properties) => {
   const newArray = [];
   array.forEach(item => {
@@ -45,14 +68,21 @@ export const stringifyArray = (array, properties) => {
   return JSON.stringify(newArray);
 };
 
+/**
+ * Deep flatten an array
+ * @param array
+ * @param property
+ * @param flattenArray
+ * @returns {Array}
+ */
 export const deepFlatten = (array, property, flattenArray = []) => {
   const newArray = { ...array };
   delete newArray[property];
   flattenArray.push(newArray);
   if (
     array[property]
-      && Array.isArray(array[property])
-      && array[property].length
+    && Array.isArray(array[property])
+    && array[property].length
   ) {
     array[property].forEach(item =>
       deepFlatten(item, property, flattenArray));

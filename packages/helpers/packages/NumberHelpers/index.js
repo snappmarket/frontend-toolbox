@@ -1,4 +1,4 @@
-import { recursiveJsonParse } from './jsonHelpers';
+import { recursiveJsonParse } from '../JsonHelpers';
 
 export const getLocalStorageData = key => {
   try {

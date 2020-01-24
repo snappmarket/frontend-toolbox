@@ -1,8 +1,8 @@
 import { default as fetch } from 'isomorphic-unfetch';
 
-import { ApiError, delog } from './debugHelper';
-import { serializeObject } from './arrayHelpers';
-import { emptyPromise, makeTimeout } from './promiseHelpers';
+import { ApiError, delog } from '../DebugHelpers';
+import { serializeObject } from '../ArrayHelpers';
+import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
 /**
  * Fetch with options and timeout
