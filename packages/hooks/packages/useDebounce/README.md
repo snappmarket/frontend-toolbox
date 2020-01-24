@@ -1,5 +1,5 @@
 # useDebounce
-> 🧵 do not worry about render phase effect calls
+> 🔂 change rapidly, do once
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/use-did-update-effect.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-did-update-effect)

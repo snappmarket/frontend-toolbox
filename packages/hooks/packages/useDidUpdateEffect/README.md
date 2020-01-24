@@ -1,4 +1,4 @@
-# useDebounce
+# useDidUpdateEffect
 > 🧵 do not worry about render phase effect calls
 ----
 
@@ -9,6 +9,33 @@
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
+
+## get started 
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/use-did-update-effect
+OR
+npm i @snappmarket/hooks
+```
+
+## usage 
+```javascript
+import useDidUpdateEffect from '@snappmarket/use-did-update-effect';
+// or 
+// import { useDidUpdateEffect } from '@snappmarket/hooks';
+
+
+const MyComponenet = props => {
+  /**
+   * Call api based on debounced value
+   */
+  useDidUpdateEffect(() => {
+    // I will run only when my dependencies update
+  }, [deps]);
+};
+```
+
+
 
 ### source code
 ```javascript

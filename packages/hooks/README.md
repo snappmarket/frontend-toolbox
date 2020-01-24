@@ -19,7 +19,7 @@
 
 ## Hooks Found Here
 
-|                                       |                                                                                           |
+| Hook Name                             |  Description                                                                                     |
 | ------------------------------------- | ----------------------------------------------------------------------------------------- |
 | [useDebounce](packages/useDebounce)   | Debounce on value change                                                                  |
 | [auto-install](packages/auto-install) | Automatically install dependencies that are imported by a bundle.                         |
