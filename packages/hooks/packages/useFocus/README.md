@@ -1,5 +1,5 @@
-# useDebounce
-> 🧵 do not worry about render phase effect calls
+# useFocus
+> 😵 focus on every thing you want
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/use-did-update-effect.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-did-update-effect)
@@ -9,6 +9,28 @@
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
+
+## get started 
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/use-focus
+OR
+npm i @snappmarket/hooks
+```
+
+## usage 
+```javascript
+import useFocus from '@snappmarket/use-did-update-effect';
+// or 
+// import { useFocus } from '@snappmarket/hooks';
+
+
+const MyComponenet = props => {
+  const focusRef = useFocus(null);
+
+  return (<input type="text" ref={focusRef}/>)
+};
+```
 
 ### source code
 ```javascript

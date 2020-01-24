@@ -27,14 +27,13 @@ import useDidUpdateEffect from '@snappmarket/use-did-update-effect';
 
 const MyComponenet = props => {
   /**
-   * Call api based on debounced value
+   * Do not run on render
    */
   useDidUpdateEffect(() => {
     // I will run only when my dependencies update
   }, [deps]);
 };
 ```
-
 
 
 ### source code
