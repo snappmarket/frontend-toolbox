@@ -18,6 +18,16 @@ OR
 npm i @snappmarket/helpers
 ```
 
+
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| arrayItemAddProp                                                 |  
+| flattenArray                                                 |  
+| serializeObject                                                 |  
+| stringifyArray                                                 |  
+| deepFlatten                                                 |   
+
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/array-helpers';

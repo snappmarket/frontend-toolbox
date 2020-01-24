@@ -18,6 +18,14 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| HexToRgb                                                 |  
+| defineForegroundColor                                                 |  
+| makeRgba                                                 |  
+| decideMeasurement                                                 |  
+| makeShadow                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/template-helpers';

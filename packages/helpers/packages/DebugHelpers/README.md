@@ -18,6 +18,13 @@ OR
 npm i @snappmarket/helpers
 ```
 
+
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| delog                                                 |  
+| ApiError                                                 |  
+| globalErrorCatcher                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/debug-helpers';

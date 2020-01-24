@@ -18,6 +18,10 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| getLocalStorageData                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/storage-helpers';

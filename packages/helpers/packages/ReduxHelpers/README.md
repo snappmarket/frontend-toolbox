@@ -18,6 +18,12 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| actionMaker                                                 |  
+| normalizeActionType                                                 |  
+| configPersistor                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/redux-helpers';

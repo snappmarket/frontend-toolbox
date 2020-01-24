@@ -18,6 +18,10 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| recursiveJsonParse                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/json-helpers';

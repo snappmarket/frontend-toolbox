@@ -18,6 +18,12 @@ OR
 npm i @snappmarket/helpers
 ```
 
+
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| fetchWithTimeOut                                                 |  
+| universalCall                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/http-helpers';

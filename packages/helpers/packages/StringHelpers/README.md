@@ -18,6 +18,11 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| stringReplace                                                 |  
+| bulkStringReplace                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/string-helpers';

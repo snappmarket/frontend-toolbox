@@ -18,6 +18,15 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| persianNumber                                                 |  
+| englishNumber                                                 |  
+| generateKey                                                 |  
+| cellphoneValidate                                                 |  
+| cellphoneValidatePattern                                                 |  
+| currencyPrice                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/number-helpers';

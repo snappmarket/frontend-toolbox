@@ -18,6 +18,12 @@ OR
 npm i @snappmarket/helpers
 ```
 
+
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| getCookie                                                 |  
+| setCookie                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/array-helpers';

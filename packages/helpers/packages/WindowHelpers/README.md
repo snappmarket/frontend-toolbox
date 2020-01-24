@@ -18,6 +18,11 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| getPathName                                                 |  
+| getWindowSize                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/window-helpers';

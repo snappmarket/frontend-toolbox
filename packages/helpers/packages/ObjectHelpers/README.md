@@ -18,6 +18,14 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| removeByKey                                                 |  
+| flattenObject                                                 |  
+| makeCookieString                                                 |  
+| safeObjectPropertyRead                                                 |  
+| getNextProp                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/object-helpers';

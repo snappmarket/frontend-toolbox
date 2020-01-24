@@ -18,6 +18,12 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| racePromise                                                 |  
+| makeTimeout                                                 |  
+| emptyPromise                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/promise-helpers';

@@ -1,10 +1,5 @@
-# useDidUpdateEffect custom hook
-
-> 🧵 do not worry about render phase effect calls
-
-Easily prevent `useEffect` calling on render phase, instead of that use `useDidUpdateEffect` with same API 
-then it will handle it for you :)
-
+# Helper methods
+> 😎 it is useful to have mini helper functions which helps you with some thing
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/use-did-update-effect.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-did-update-effect)
@@ -18,22 +13,22 @@ then it will handle it for you :)
 
 ## Helpers Found Here
 
-| Helper                                            |  Description                                                     |
-| ------------------------------------------------- | ---------------------------------------------------------------- |
-| [ArrayHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ArrayHelpers)      |                                     |
-| [CookieHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/CookieHelpers)             | 🧵 Do not worry about render phase effect calls                 |
-| [DebugHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/DebugHelpers)               | 😵 Focus on every thing you want                                 |
-| [HttpHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/HttpHelpers)                 | 👿 force update component                                        |
-| [JsonHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/JsonHelpers)                 | 🗺 easily deal with navigator location API                      |
-| [StorageHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/StorageHelpers)           | 🏹 detect when react router dom route changes                    |
-| [MapHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/MapHelpers)                   | ⏱ easily handle timing                                          |
-| [NumberHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/NumberHelpers)             | ⏱ easily handle timing                                          |
-| [ObjectHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/ObjectHelpers)             | ⏱ easily handle timing                                          |
-| [OSHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/OSHelpers)                     | ⏱ easily handle timing                                          |
-| [PromiseHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/PromiseHelpers)           | ⏱ easily handle timing                                          |
-| [ProxyHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/ProxyHelpers)               | ⏱ easily handle timing                                          |
-| [ReduxHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/ReduxHelpers)               | ⏱ easily handle timing                                          |
-| [StringHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/StringHelpers)             | ⏱ easily handle timing                                          |
-| [TemplateHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/TemplateHelpers)         | ⏱ easily handle timing                                          |
-| [WindowHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/WindowHelpers)             | ⏱ easily handle timing                                          |
+| Helper                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------- | 
+| [ArrayHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ArrayHelpers)                                                                 | 
+| [CookieHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/CookieHelpers)                                                               |  
+| [DebugHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/DebugHelpers)                                                                 |  
+| [HttpHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/HttpHelpers)                                                                   |  
+| [JsonHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/JsonHelpers)                                                                   |  
+| [StorageHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/StorageHelpers)                                                             |  
+| [MapHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/MapHelpers)                                                                     | 
+| [NumberHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/NumberHelpers)                                                               | 
+| [ObjectHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ObjectHelpers)                                                               | 
+| [OSHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/OSHelpers)                                                                       | 
+| [PromiseHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/PromiseHelpers)                                                             | 
+| [ProxyHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ProxyHelpers)                                                                 | 
+| [ReduxHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ReduxHelpers)                                                                 | 
+| [StringHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/StringHelpers)                                                               | 
+| [TemplateHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/TemplateHelpers)                                                           | 
+| [WindowHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/WindowHelpers)                                                               | 
 

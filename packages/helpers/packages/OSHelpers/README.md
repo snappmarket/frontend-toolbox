@@ -18,6 +18,11 @@ OR
 npm i @snappmarket/helpers
 ```
 
+| Helper method name                                                  |
+| --------------------------------------------------------------- | 
+| getOSName                                                 |  
+| getAgent                                                 |  
+
 ## usage 
 ```javascript
 import { METHOD_NAME } from '@snappmarket/os-helpers';
