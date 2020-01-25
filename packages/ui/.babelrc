@@ -1,5 +1,6 @@
 {
   "presets": [
+    "airbnb",
     [
       "@babel/preset-env",
       {
@@ -16,5 +17,5 @@
         "ssr": true
       }
     ],
-  ]
+  ],
 }

@@ -31,7 +31,10 @@ const config = {
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
     inlineSvg(),
-    babel({ exclude: 'node_modules/**' }),
+    babel({
+      exclude       : 'node_modules/**',
+      runtimeHelpers: true
+    }),
     localResolve(),
     resolve(),
     commonjs(),

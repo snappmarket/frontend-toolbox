@@ -1,10 +1,5 @@
-# useDidUpdateEffect custom hook
-
-> 🧵 do not worry about render phase effect calls
-
-Easily prevent `useEffect` calling on render phase, instead of that use `useDidUpdateEffect` with same API 
-then it will handle it for you :)
-
+# pack of useful svg icons
+> 🎭 use svg icons in easy way
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/use-did-update-effect.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-did-update-effect)
@@ -15,22 +10,14 @@ then it will handle it for you :)
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
 
-### source code
-```javascript
-import { useRef, useEffect } from 'react';
+## get started 
+```bash 
+npm i @snappmarket/icons
+```
 
-/**
- * Calls function on component update or inputs change phase
- * @param fn
- * @param inputs
- */
-export default (fn, inputs) => {
-  const didMountRef = useRef(false);
+## usage
+```javascript 
+import { PlusIcon } from '@snappmarket/icons';
 
-  useEffect(() => {
-    if (didMountRef.current) fn();
-    else didMountRef.current = true;
-  }, inputs);
-};
-
+<PlusIcon />
 ```
