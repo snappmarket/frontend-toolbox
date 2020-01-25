@@ -1,7 +1,7 @@
 import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 
-import CheckBox from '../CheckBox';
+import CheckBox from '../../CheckBox/src';
 
 import { StyledOptionGroup, StyledOptionItem } from './styles';
 

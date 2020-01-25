@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Row } from '../GridSystem';
-import Icon from '../Icon';
-import Button from '../Button';
+import { Row } from '../../GridSystem/src';
+import Icon from '../../Icon/src';
+import Button from '../../Button/src';
 
 import {
   StyledConfirmDialog,

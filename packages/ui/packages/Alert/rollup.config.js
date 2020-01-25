@@ -6,7 +6,6 @@ import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
 import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
-import inlineSvg from 'rollup-plugin-inline-svg';
 
 import pkg from './package.json';
 
@@ -31,15 +30,29 @@ const config = {
   external: ['react', 'react-dom', 'prop-types', 'styled-components', 'isomorphic-unfetch', 'polished'],
   plugins: [
     peerDepsExternal(),
-    postcss({ extract: true, plugins: [autoprefixer] }),
-    inlineSvg(),
-    babel({
-      exclude: 'node_modules/**',
-      runtimeHelpers: true,
-    }),
-    localResolve(),
     resolve({
       extensions: ['.js', '.json', '.jsx'],
+    }),
+    localResolve(),
+    postcss({ extract: true, plugins: [autoprefixer] }),
+    babel({
+      runtimeHelpers: true,
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            modules: false,
+          },
+        ],
+        '@babel/preset-react',
+      ],
+      ignore: ['node_modules/**'],
+      plugins: [
+        '@babel/plugin-proposal-class-properties',
+        [
+          'babel-plugin-styled-components',
+        ],
+      ],
     }),
     commonjs({
       include: 'node_modules/**',

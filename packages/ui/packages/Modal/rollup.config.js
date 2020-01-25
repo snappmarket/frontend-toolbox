@@ -34,8 +34,23 @@ const config = {
     postcss({ extract: true, plugins: [autoprefixer] }),
     inlineSvg(),
     babel({
-      exclude: 'node_modules/**',
       runtimeHelpers: true,
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            modules: false,
+          },
+        ],
+        '@babel/preset-react',
+      ],
+      ignore: ['node_modules/**'],
+      plugins: [
+        '@babel/plugin-proposal-class-properties',
+        [
+          'babel-plugin-styled-components',
+        ],
+      ],
     }),
     localResolve(),
     resolve({
