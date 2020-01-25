@@ -1,6 +1,7 @@
 import Styled from 'styled-components';
 import darken from 'polished/lib/color/darken';
-import { decideMeasurement } from 'constants/Helpers/themeHelpers';
+
+import { decideMeasurement } from '@snappmarket/helpers';
 
 const StyledBox = Styled.div`
   background-color: ${props =>

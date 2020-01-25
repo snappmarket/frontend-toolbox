@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Logo from 'resources/svg/Logo';
+import { SnappMarketLogo } from '@snappmarket/icons';
 import { StyledLogoAnimation } from './styles';
 
 const LogoAnimation = ({ size, className }) => (
@@ -9,7 +9,7 @@ const LogoAnimation = ({ size, className }) => (
     className={`align-center justify-center logo-loading-wrapper ${className}`}
     size={size}
   >
-    <Logo />
+    <SnappMarketLogo />
   </StyledLogoAnimation>
 );
 

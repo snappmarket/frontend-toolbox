@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import ReactInputRange from 'react-hgs-input-range';
 import 'resources/styles/react-hgs-input-range.css';
 
-import defaultMessages from '../../../constants/Messages/general.messages';
-import { currencyPrice } from '../../../constants/Helpers/numberHelpers';
+import { currencyPrice } from '@snappmarket/helpers';
 import {
   StyledInputRangeWrapper,
   StyledRangeLabelWrapper,
@@ -13,7 +11,7 @@ import {
 } from './styles';
 
 const InputRange = props => {
-  const { value: initialValue, rangeValue, onChangeComplete } = props;
+  const { value: initialValue, rangeValue, onChangeComplete, fromTitle, toTitle } = props;
   const { min: initialMin, max: initialMax } = rangeValue;
   const [value, setValue] = useState(initialValue);
   const { min, max } = value;
@@ -33,10 +31,10 @@ const InputRange = props => {
       </StyledInputRange>
       <StyledRangeLabelWrapper className='justify-between'>
         <span className='text-center'>
-          {defaultMessages.filter.range.from} {currencyPrice(min)}
+          {fromTitle} {currencyPrice(min)}
         </span>
         <span className='text-center'>
-          {defaultMessages.filter.range.to} {currencyPrice(max)}
+          {toTitle} {currencyPrice(max)}
         </span>
       </StyledRangeLabelWrapper>
     </StyledInputRangeWrapper>
@@ -44,6 +42,8 @@ const InputRange = props => {
 };
 
 InputRange.propTypes = {
+  fromTitle       : PropTypes.string,
+  toTitle         : PropTypes.string,
   onChangeComplete: PropTypes.func,
   rangeValue      : PropTypes.shape({
     min: PropTypes.number,
@@ -55,6 +55,8 @@ InputRange.propTypes = {
   })
 };
 InputRange.defaultProps = {
+  fromTitle       : 'from',
+  toTitle         : 'to',
   onChangeComplete: () => {},
   rangeValue      : {
     min: 0,

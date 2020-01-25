@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { defineForegroundColor } from '../../../constants/Helpers/themeHelpers';
+import { defineForegroundColor } from '@snappmarket/helpers';
 
 const StyledLabel = styled.label`
   text-align: center;

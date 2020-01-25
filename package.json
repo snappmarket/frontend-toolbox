@@ -58,6 +58,8 @@
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-filesize": "^6.2.1",
+    "rollup-plugin-inline-svg": "^1.1.1",
+    "rollup-plugin-local-resolve": "^1.0.7",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.0",

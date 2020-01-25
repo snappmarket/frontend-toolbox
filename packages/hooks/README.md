@@ -15,17 +15,34 @@
 
 ----
 
+## get started 
+```bash 
+npm i @snappmarket/hooks
+```
+
+
 ## Hooks Found Here
 
 | Hook Name                                         |  Description                                                     |
 | ------------------------------------------------- | ---------------------------------------------------------------- |
 | [useDebounce](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useDebounce)      | 🔂 Change rapidly, do once                                       |
-| [useDidUpdateEffect](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/useDidUpdateEffect) | 🧵 Do not worry about render phase effect calls                 |
-| [useFocus](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/useFocus)                     | 😵 Focus on every thing you want                                 |
-| [useForceUpdate](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/useForceUpdate)         | 👿 force update component                                        |
-| [useGeoLocation](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/useGeoLocation)         | 🗺 easily deal with navigator location API                      |
-| [useRouteChange](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/useRouteChange)         | 🏹 detect when react router dom route changes                    |
-| [useTimer](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/useTimer)                     | ⏱ easily handle timing                                          |
+| [useDidUpdateEffect](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useDidUpdateEffect) | 🧵 Do not worry about render phase effect calls                 |
+| [useFocus](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useFocus)                     | 😵 Focus on every thing you want                                 |
+| [useForceUpdate](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useForceUpdate)         | 👿 force update component                                        |
+| [useGeoLocation](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useGeoLocation)         | 🗺 easily deal with navigator location API                      |
+| [useRouteChange](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useRouteChange)         | 🏹 detect when react router dom route changes                    |
+| [useTimer](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useTimer)                     | ⏱ easily handle timing                                          |
+
+
+## usage 
+```javascript
+import { HOOK_NAME } from '@snappmarket/hooks';
+
+
+const MyComponenet = props => {
+  // use hook here
+};
+```
 
 ---
 #### The MIT License (MIT)

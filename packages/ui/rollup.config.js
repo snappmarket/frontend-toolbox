@@ -6,11 +6,12 @@ import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
 import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
+import inlineSvg from 'rollup-plugin-inline-svg';
 
 import pkg from './package.json';
 
 const config = {
-  input : 'src/index.js',
+  input : 'index.js',
   output: [
     {
       file     : pkg.main,
@@ -29,6 +30,7 @@ const config = {
   plugins : [
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
+    inlineSvg(),
     babel({ exclude: 'node_modules/**' }),
     localResolve(),
     resolve(),

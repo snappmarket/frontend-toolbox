@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import {
   defineForegroundColor,
   makeRgba,
-  getNextShade
-} from '../../../constants/Helpers/themeHelpers';
+  getNextProp
+} from '@snappmarket/helpers';
 
 export const StyledButton = styled.button`
   background: none;
@@ -65,7 +65,7 @@ export const StyledPrimaryButton = styled(StyledButton)`
   &:hover,
   &:active {
     background-color: ${props =>
-      getNextShade(props.theme.colors[props.color], props.shade)};
+    getNextProp(props.theme.colors[props.color], props.shade)};
   }
   &:focus,
   &:active {

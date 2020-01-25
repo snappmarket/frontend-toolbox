@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import Button from 'components/Global/Button';
+import Button from '../Button';
 
 export const StyledAlertWrapper = Styled.div`
   background: ${props => props.theme.colors[props.bgColor][props.bgShade]};  
