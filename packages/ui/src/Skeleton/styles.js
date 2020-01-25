@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import darken from 'polished/lib/color/darken';
+import { darken } from 'polished';
 
 import { decideMeasurement } from '@snappmarket/helpers';
 
