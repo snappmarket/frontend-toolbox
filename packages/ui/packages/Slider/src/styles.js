@@ -9,10 +9,10 @@ const StyledSliderWrapper = Styled.div`
 `;
 
 const StyledProductItemSlider = Styled.div`
-    width: calc(${props => props.theme.defaultRem} * 10);
-    height: calc(${props => props.theme.defaultRem} * 10);
+    width: calc(${(props) => props.theme.defaultRem} * 10);
+    height: calc(${(props) => props.theme.defaultRem} * 10);
     text-align: center;
-    min-height: calc(${props => props.theme.defaultRem} * 32);
+    min-height: calc(${(props) => props.theme.defaultRem} * 32);
     > img {
         height: 100%;
         max-width: 100%;

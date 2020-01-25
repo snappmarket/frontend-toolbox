@@ -6,8 +6,10 @@ import { context as tabSwitcherContext } from './context';
 
 import { StyledTab } from './style';
 
-const Tab = props => {
-  const { id, children, onChangeTab, onSwitch, className, ...rest } = props;
+const Tab = (props) => {
+  const {
+    id, children, onChangeTab, onSwitch, className, ...rest
+  } = props;
   const { changeTab, activeTabId } = useContext(tabSwitcherContext);
 
   useDidUpdateEffect(() => {
@@ -32,27 +34,27 @@ const Tab = props => {
 };
 
 Tab.propTypes = {
-  id         : PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  children   : PropTypes.node.isRequired,
-  type       : PropTypes.oneOf(['primary', 'outline', 'link']),
-  size       : PropTypes.oneOf(['xl', 'lg', 'md', 'sm', 'xs']),
-  color      : PropTypes.oneOf(['blue', 'red', 'green', 'yellow', 'orange', 'gray']),
-  icon       : PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  className  : PropTypes.string,
-  direction  : PropTypes.oneOf(['right', 'left']),
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  children: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(['primary', 'outline', 'link']),
+  size: PropTypes.oneOf(['xl', 'lg', 'md', 'sm', 'xs']),
+  color: PropTypes.oneOf(['blue', 'red', 'green', 'yellow', 'orange', 'gray']),
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  className: PropTypes.string,
+  direction: PropTypes.oneOf(['right', 'left']),
   onChangeTab: PropTypes.func,
-  onSwitch   : PropTypes.func
+  onSwitch: PropTypes.func,
 };
 
 Tab.defaultProps = {
-  size       : 'sm',
-  type       : 'primary',
-  color      : 'blue',
-  icon       : false,
-  className  : '',
+  size: 'sm',
+  type: 'primary',
+  color: 'blue',
+  icon: false,
+  className: '',
   // loading: false,
-  direction  : 'right',
-  onChangeTab: f => f,
-  onSwitch   : f => f
+  direction: 'right',
+  onChangeTab: (f) => f,
+  onSwitch: (f) => f,
 };
 export default Tab;

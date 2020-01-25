@@ -26,7 +26,7 @@ const useGeoLocation = (timeout, options) => {
      * Success getting geolocation
      * @param pos
      */
-    const successGetLocation = pos => {
+    const successGetLocation = (pos) => {
       if (!canceled) {
         setPosition(pos);
       }
@@ -37,7 +37,7 @@ const useGeoLocation = (timeout, options) => {
      * Failure getting geolocation
      * @param err
      */
-    const failGetLocation = err => {
+    const failGetLocation = (err) => {
       if (!canceled) {
         setError(err);
       }
@@ -54,7 +54,7 @@ const useGeoLocation = (timeout, options) => {
     navigator.geolocation.getCurrentPosition(
       successGetLocation,
       failGetLocation,
-      options
+      options,
     );
 
     return () => {

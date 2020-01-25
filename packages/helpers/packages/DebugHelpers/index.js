@@ -6,7 +6,7 @@ function delog(body) {
     // eslint-disable-next-line no-console
     console.log(
       `%c${body}`,
-      'color: red; font-weight: bold; font-size: 12px; text-shadow: 0 0 5px rgba(0,0,0,0.2);'
+      'color: red; font-weight: bold; font-size: 12px; text-shadow: 0 0 5px rgba(0,0,0,0.2);',
     );
   }
 }
@@ -25,11 +25,11 @@ function ApiError(...args) {
 }
 ApiError.prototype = Object.create(Error.prototype, {
   constructor: {
-    value       : Error,
-    enumerable  : false,
-    writable    : true,
-    configurable: true
-  }
+    value: Error,
+    enumerable: false,
+    writable: true,
+    configurable: true,
+  },
 });
 Reflect.setPrototypeOf(ApiError, Error);
 

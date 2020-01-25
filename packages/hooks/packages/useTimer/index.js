@@ -5,18 +5,20 @@ import { useEffect, useRef, useState } from 'react';
  * @param config
  * @returns {{start: *, reset: *, time: *, pause: *}}
  */
-export default config => {
+export default (config) => {
   const initialConfig = {
-    endTime    : null,
+    endTime: null,
     initialTime: 0,
-    interval   : 1000,
-    step       : 1,
-    timerType  : 'INCREMENTAL'
+    interval: 1000,
+    step: 1,
+    timerType: 'INCREMENTAL',
   };
 
-  const { endTime, initialTime, interval, step, timerType } = {
+  const {
+    endTime, initialTime, interval, step, timerType,
+  } = {
     ...initialConfig,
-    ...config
+    ...config,
   };
   const intervalRef = useRef(null);
   const pausedTimeRef = useRef(null);
@@ -41,16 +43,14 @@ export default config => {
   };
   const createInterval = () => {
     intervalRef.current = setInterval(() => {
-      setTime(previousTime =>
-        timerType === 'INCREMENTAL' ? previousTime + step : previousTime - step);
+      setTime((previousTime) => timerType === 'INCREMENTAL' ? previousTime + step : previousTime - step);
     }, interval);
   };
   const createTimeout = () => {
     if (endTime === null) {
       return;
     }
-    const delay
-      = Math.abs(endTime - (pausedTimeRef.current || initialTime)) * interval;
+    const delay = Math.abs(endTime - (pausedTimeRef.current || initialTime)) * interval;
     timeoutRef.current = setTimeout(() => {
       cancelInterval();
       setShouldResetTime(true);
@@ -93,5 +93,7 @@ export default config => {
     return cancelTimeout;
   }, []);
 
-  return { pause, reset, start, time };
+  return {
+    pause, reset, start, time,
+  };
 };

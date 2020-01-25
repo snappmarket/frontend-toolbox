@@ -1,6 +1,6 @@
 export const actionMaker = (type, payload = {}) => ({ type, payload });
 
-export const normalizeActionType = type => {
+export const normalizeActionType = (type) => {
   const matches = /(.*)_(REQUEST|SUCCESS|FAILURE)/.exec(type);
 
   if (!matches) {
@@ -14,13 +14,13 @@ export const normalizeActionType = type => {
  * @param config
  * @returns {{makeInitialState: *, getMiddleware: *}}
  */
-export const configPersistor = config => {
-  const makeItemName = name => `${config.prefix}${name}`;
+export const configPersistor = (config) => {
+  const makeItemName = (name) => `${config.prefix}${name}`;
   /**
    * Get persisted state and join it with initial state
    * @param initialState
    */
-  const makeInitialState = initialState => {
+  const makeInitialState = (initialState) => {
     const temp = { ...initialState };
     // eslint-disable-next-line no-restricted-syntax
     for (const item of config.whitelist) {
@@ -37,7 +37,7 @@ export const configPersistor = config => {
    * @param store
    * @returns {function(*): Function}
    */
-  const getMiddleware = store => next => action => {
+  const getMiddleware = (store) => (next) => (action) => {
     if (action.type === config.purgeActionType) {
       localStorage.clear();
       next(action);
@@ -50,7 +50,7 @@ export const configPersistor = config => {
       if (config.whitelist.includes(reducer)) {
         localStorage.setItem(
           makeItemName(reducer),
-          JSON.stringify(stateToStore[reducer])
+          JSON.stringify(stateToStore[reducer]),
         );
       }
     }
@@ -59,6 +59,6 @@ export const configPersistor = config => {
 
   return {
     makeInitialState,
-    getMiddleware
+    getMiddleware,
   };
 };

@@ -14,7 +14,7 @@ export const onChangeReflector = (object, onChange) => {
     deleteProperty(target, property) {
       onChange();
       return Reflect.deleteProperty(target, property);
-    }
+    },
   };
 
   return new Proxy(object, handler);

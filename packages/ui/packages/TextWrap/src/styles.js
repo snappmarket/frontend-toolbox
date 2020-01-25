@@ -5,8 +5,7 @@ const StyledTextWrap = Styled.span`
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
-  height: calc(${props => props.theme.defaultRem} * ${props =>
-  props.lineHeight * props.lines});
+  height: calc(${(props) => props.theme.defaultRem} * ${(props) => props.lineHeight * props.lines});
 `;
 
 export { StyledTextWrap };

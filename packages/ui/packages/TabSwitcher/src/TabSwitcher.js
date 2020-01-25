@@ -11,7 +11,7 @@ function TabSwitcher({ children, initialTab, ...rest }) {
       <TabProvider
         value={{
           activeTabId,
-          changeTab
+          changeTab,
         }}
       >
         {children}
@@ -21,9 +21,9 @@ function TabSwitcher({ children, initialTab, ...rest }) {
 }
 
 TabSwitcher.propTypes = {
-  children  : PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   initialTab: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-    .isRequired
+    .isRequired,
 };
 
 export default TabSwitcher;

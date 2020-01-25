@@ -12,19 +12,17 @@ const StyledToolbarWrapper = Styled.span`
 const StyledToolbar = Styled.span`
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
-  color: ${props => props.theme.colors.white};
-  padding: calc(${props => props.theme.defaultRem} * 0.8) calc(${props =>
-  props.theme.defaultRem} * 1.6);
-  border-radius: calc(${props => props.theme.defaultRem} * 0.5);
+  color: ${(props) => props.theme.colors.white};
+  padding: calc(${(props) => props.theme.defaultRem} * 0.8) calc(${(props) => props.theme.defaultRem} * 1.6);
+  border-radius: calc(${(props) => props.theme.defaultRem} * 0.5);
   opacity: 0;
   transition: all 0.3s ease 0.1s;
   &:after {
     position: absolute;
-    border: calc(${props => props.theme.defaultRem}) solid  rgba(0, 0, 0, 0);
+    border: calc(${(props) => props.theme.defaultRem}) solid  rgba(0, 0, 0, 0);
     content: "";
   }
-  ${props =>
-    props.position === 'top'
+  ${(props) => props.position === 'top'
     && `
     left: 50%;
     top: calc(${props.theme.defaultRem} * -1);
@@ -37,8 +35,7 @@ const StyledToolbar = Styled.span`
       transform: translateX(-50%);
     }
   `}
-  ${props =>
-    props.position === 'bottom'
+  ${(props) => props.position === 'bottom'
     && `
     left: 50%;
     bottom: calc(${props.theme.defaultRem} * -1);
@@ -51,8 +48,7 @@ const StyledToolbar = Styled.span`
       transform: translateX(-50%);
     }
   `}
-  ${props =>
-    props.position === 'left'
+  ${(props) => props.position === 'left'
     && `
     left: calc(${props.theme.defaultRem} * -1);
     top: 50%;
@@ -65,8 +61,7 @@ const StyledToolbar = Styled.span`
       transform: translate(0, -50%);
     }
   `}
-  ${props =>
-    props.position === 'right'
+  ${(props) => props.position === 'right'
     && `
     right: calc(${props.theme.defaultRem} * -1);
     top: 50%;

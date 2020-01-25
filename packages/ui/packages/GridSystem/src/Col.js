@@ -3,23 +3,27 @@ import PropTypes from 'prop-types';
 
 import { StyledColumn } from './styles';
 
-const Col = props => {
-  const { xs, sm, md, lg, xl, className, children } = props;
+const Col = (props) => {
+  const {
+    xs, sm, md, lg, xl, className, children,
+  } = props;
   const layouts = {};
-  Object.keys({ xs, sm, md, lg, xl }).forEach(layout => {
+  Object.keys({
+    xs, sm, md, lg, xl,
+  }).forEach((layout) => {
     if (props[layout]) {
       if (typeof props[layout] === 'object') {
         const { size = 12, order = 'unset', offset = 0 } = props[layout];
         layouts[layout] = {
           size,
           order,
-          offset
+          offset,
         };
       } else {
         layouts[layout] = {
-          size  : parseInt(props[layout], 0),
-          order : 'unset',
-          offset: 0
+          size: parseInt(props[layout], 0),
+          order: 'unset',
+          offset: 0,
         };
       }
     }
@@ -39,31 +43,31 @@ const columnProps = PropTypes.oneOfType([
     size: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.number,
-      PropTypes.string
+      PropTypes.string,
     ]),
-    order : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-  })
+    order: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  }),
 ]);
 
 Col.propTypes = {
-  children : PropTypes.node,
+  children: PropTypes.node,
   className: PropTypes.string,
-  xs       : columnProps,
-  sm       : columnProps,
-  md       : columnProps,
-  lg       : columnProps,
-  xl       : columnProps
+  xs: columnProps,
+  sm: columnProps,
+  md: columnProps,
+  lg: columnProps,
+  xl: columnProps,
 };
 
 Col.defaultProps = {
-  children : <></>,
+  children: <></>,
   className: '',
-  xs       : 12,
-  sm       : false,
-  md       : false,
-  lg       : false,
-  xl       : false
+  xs: 12,
+  sm: false,
+  md: false,
+  lg: false,
+  xl: false,
 };
 
 export default Col;

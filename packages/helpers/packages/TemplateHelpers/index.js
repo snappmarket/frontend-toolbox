@@ -6,7 +6,7 @@ const DEFAULT_REM = '1rem';
  * @returns {{red: number, green: number, blue: number}}
  * @constructor
  */
-export const HexToRgb = hex => {
+export const HexToRgb = (hex) => {
   if (!hex) {
     return { red: 0, green: 0, blue: 0 };
   }
@@ -25,7 +25,7 @@ export const HexToRgb = hex => {
  * @param color
  * @returns {string}
  */
-export const defineForegroundColor = color => {
+export const defineForegroundColor = (color) => {
   const rgb = HexToRgb(color);
   const average = (rgb.red * 299 + rgb.green * 587 + rgb.blue * 114) / 1000;
   return average > 128 ? 'taupe' : 'white';
@@ -47,10 +47,9 @@ export const makeRgba = (opacity, color) => {
  * @param measurement
  * @returns {string}
  */
-export const decideMeasurement = measurement =>
-  typeof measurement === 'string'
-    ? measurement
-    : `calc(${DEFAULT_REM} * ${measurement})`;
+export const decideMeasurement = (measurement) => typeof measurement === 'string'
+  ? measurement
+  : `calc(${DEFAULT_REM} * ${measurement})`;
 
 /**
  * Will create shadow in easy way
@@ -68,9 +67,8 @@ export const makeShadow = (
   blur,
   spread,
   color,
-  inset = false
-) => () =>
-  `calc(${DEFAULT_REM} * ${hOffset})
+  inset = false,
+) => () => `calc(${DEFAULT_REM} * ${hOffset})
   calc(${DEFAULT_REM} * ${vOffset}) 
   calc(${DEFAULT_REM} * ${blur}) 
   calc(${DEFAULT_REM} * ${spread}) 

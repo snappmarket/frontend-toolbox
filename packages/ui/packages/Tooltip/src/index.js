@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 import { StyledToolbarWrapper, StyledToolbar } from './styles';
 
-const Tooltip = props => {
-  const { className, position, title, children } = props;
+const Tooltip = (props) => {
+  const {
+    className, position, title, children,
+  } = props;
 
   return (
     <StyledToolbarWrapper className={className}>
@@ -16,13 +18,13 @@ const Tooltip = props => {
 
 Tooltip.propTypes = {
   className: PropTypes.string,
-  position : PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-  title    : PropTypes.string.isRequired,
-  children : PropTypes.node
+  position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node,
 };
 Tooltip.defaultProps = {
   className: '',
-  position : 'top'
+  position: 'top',
 };
 
 export default Tooltip;

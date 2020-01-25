@@ -1,13 +1,12 @@
-export const removeByKey = (haystack, needle) =>
-  Object.keys(haystack)
-    .filter(key => parseInt(key, 0) !== parseInt(needle, 0))
-    .reduce((result, current) => {
-      // eslint-disable-next-line no-param-reassign
-      result[current] = haystack[current];
-      return result;
-    }, {});
+export const removeByKey = (haystack, needle) => Object.keys(haystack)
+  .filter((key) => parseInt(key, 0) !== parseInt(needle, 0))
+  .reduce((result, current) => {
+    // eslint-disable-next-line no-param-reassign
+    result[current] = haystack[current];
+    return result;
+  }, {});
 
-export const flattenObject = ob => {
+export const flattenObject = (ob) => {
   const toReturn = {};
 
   // eslint-disable-next-line no-restricted-syntax
@@ -31,9 +30,9 @@ export const flattenObject = ob => {
   return toReturn;
 };
 
-export const makeCookieString = cookies => {
+export const makeCookieString = (cookies) => {
   let cookieString = '';
-  Object.keys(cookies).forEach(cookie => {
+  Object.keys(cookies).forEach((cookie) => {
     cookieString += `${cookie}=${cookies[cookie]}; `;
   });
 
@@ -48,13 +47,12 @@ export const makeCookieString = cookies => {
  * @param defaultValue
  * @returns {*}
  */
-export const safeObjectPropertyRead = (obj, key, defaultValue = undefined) =>
-  key.split('.').reduce((nestedObject, index) => {
-    if (nestedObject && index in nestedObject) {
-      return nestedObject[index];
-    }
-    return undefined;
-  }, obj) || defaultValue;
+export const safeObjectPropertyRead = (obj, key, defaultValue = undefined) => key.split('.').reduce((nestedObject, index) => {
+  if (nestedObject && index in nestedObject) {
+    return nestedObject[index];
+  }
+  return undefined;
+}, obj) || defaultValue;
 
 /**
  * Get an object next property

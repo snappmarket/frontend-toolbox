@@ -8,20 +8,20 @@ import globals from 'rollup-plugin-node-globals';
 import pkg from './package.json';
 
 export default {
-  input : 'index.js',
+  input: 'index.js',
   output: [
     {
-      file     : pkg.main,
-      format   : 'cjs',
-      exports  : 'named',
-      sourcemap: true
+      file: pkg.main,
+      format: 'cjs',
+      exports: 'named',
+      sourcemap: true,
     },
     {
-      file     : pkg.module,
-      format   : 'es',
-      exports  : 'named',
-      sourcemap: true
-    }
+      file: pkg.module,
+      format: 'es',
+      exports: 'named',
+      sourcemap: true,
+    },
   ],
   plugins: [
     globals(),
@@ -29,15 +29,15 @@ export default {
     external(),
     url({ exclude: ['**/*.svg'] }),
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
     }),
     commonjs({
       namedExports: {
         // left-hand side can be an absolute path, a path
         // relative to the current directory, or the name
         // of a module in node_modules
-        'isomorphic-unfetch': ['named']
-      }
-    })
-  ]
+        'isomorphic-unfetch': ['named'],
+      },
+    }),
+  ],
 };

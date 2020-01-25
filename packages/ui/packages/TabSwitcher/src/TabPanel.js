@@ -14,7 +14,7 @@ const TabPanel = ({ whenActive, children, ...rest }) => {
 TabPanel.propTypes = {
   whenActive: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
     .isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default TabPanel;

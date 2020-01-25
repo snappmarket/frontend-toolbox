@@ -7,11 +7,13 @@ import { currencyPrice } from '@snappmarket/helpers';
 import {
   StyledInputRangeWrapper,
   StyledRangeLabelWrapper,
-  StyledInputRange
+  StyledInputRange,
 } from './styles';
 
-const InputRange = props => {
-  const { value: initialValue, rangeValue, onChangeComplete, fromTitle, toTitle } = props;
+const InputRange = (props) => {
+  const {
+    value: initialValue, rangeValue, onChangeComplete, fromTitle, toTitle,
+  } = props;
   const { min: initialMin, max: initialMax } = rangeValue;
   const [value, setValue] = useState(initialValue);
   const { min, max } = value;
@@ -29,12 +31,16 @@ const InputRange = props => {
           rtl
         />
       </StyledInputRange>
-      <StyledRangeLabelWrapper className='justify-between'>
-        <span className='text-center'>
-          {fromTitle} {currencyPrice(min)}
+      <StyledRangeLabelWrapper className="justify-between">
+        <span className="text-center">
+          {fromTitle}
+          {' '}
+          {currencyPrice(min)}
         </span>
-        <span className='text-center'>
-          {toTitle} {currencyPrice(max)}
+        <span className="text-center">
+          {toTitle}
+          {' '}
+          {currencyPrice(max)}
         </span>
       </StyledRangeLabelWrapper>
     </StyledInputRangeWrapper>
@@ -42,29 +48,29 @@ const InputRange = props => {
 };
 
 InputRange.propTypes = {
-  fromTitle       : PropTypes.string,
-  toTitle         : PropTypes.string,
+  fromTitle: PropTypes.string,
+  toTitle: PropTypes.string,
   onChangeComplete: PropTypes.func,
-  rangeValue      : PropTypes.shape({
+  rangeValue: PropTypes.shape({
     min: PropTypes.number,
-    max: PropTypes.number
+    max: PropTypes.number,
   }),
   value: PropTypes.shape({
     min: PropTypes.number,
-    max: PropTypes.number
-  })
+    max: PropTypes.number,
+  }),
 };
 InputRange.defaultProps = {
-  fromTitle       : 'from',
-  toTitle         : 'to',
+  fromTitle: 'from',
+  toTitle: 'to',
   onChangeComplete: () => {},
-  rangeValue      : {
+  rangeValue: {
     min: 0,
-    max: 0
+    max: 0,
   },
   value: {
     min: 0,
-    max: 0
-  }
+    max: 0,
+  },
 };
 export default InputRange;

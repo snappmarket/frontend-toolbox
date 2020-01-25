@@ -11,35 +11,35 @@ import inlineSvg from 'rollup-plugin-inline-svg';
 import pkg from './package.json';
 
 const config = {
-  input : 'index.js',
+  input: 'index.js',
   output: [
     {
-      file     : pkg.main,
-      format   : 'cjs',
-      exports  : 'named',
-      sourcemap: true
+      file: pkg.main,
+      format: 'cjs',
+      exports: 'named',
+      sourcemap: true,
     },
     {
-      file     : pkg.module,
-      format   : 'es',
-      exports  : 'named',
-      sourcemap: true
-    }
+      file: pkg.module,
+      format: 'es',
+      exports: 'named',
+      sourcemap: true,
+    },
   ],
   external: ['react', 'react-dom'],
-  plugins : [
+  plugins: [
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
     inlineSvg(),
     babel({
-      exclude       : 'node_modules/**',
-      runtimeHelpers: true
+      exclude: 'node_modules/**',
+      runtimeHelpers: true,
     }),
     localResolve(),
     resolve(),
     commonjs(),
-    filesize()
-  ]
+    filesize(),
+  ],
 };
 
 export default config;

@@ -1,6 +1,6 @@
 import { recursiveJsonParse } from '../JsonHelpers';
 
-export const getLocalStorageData = key => {
+export const getLocalStorageData = (key) => {
   try {
     const collection = {};
     return recursiveJsonParse(collection, localStorage.getItem(key));

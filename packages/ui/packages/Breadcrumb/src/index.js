@@ -8,17 +8,17 @@ import {
   StyledBreadcrumbWrapper,
   StyledBreadcrumbItem,
   StyledBreadcrumbItemSeparator,
-  StyledBreadcrumbItemWrapper
+  StyledBreadcrumbItemWrapper,
 } from './styles';
 
-const Breadcrumb = props => {
+const Breadcrumb = (props) => {
   const { items, className, ...rest } = props;
   const breadcrumbItems = items.map((item, index) => (
     // eslint-disable-next-line react/no-array-index-key
     <StyledBreadcrumbItemWrapper key={index}>
       {!!index && (
         <StyledBreadcrumbItemSeparator>
-          <Icon name='angle-left' />
+          <Icon name="angle-left" />
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>
@@ -35,8 +35,8 @@ const Breadcrumb = props => {
 };
 
 Breadcrumb.propTypes = {
-  items    : PropTypes.array,
-  className: PropTypes.string
+  items: PropTypes.array,
+  className: PropTypes.string,
 };
 
 export default Breadcrumb;

@@ -30,7 +30,7 @@ const Accordion = ({
         value={{
           activeAccordionId,
           changeActive,
-          animate
+          animate,
         }}
       >
         {children}
@@ -40,17 +40,17 @@ const Accordion = ({
 };
 
 Accordion.propTypes = {
-  children        : PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   initialAccordion: PropTypes.string,
-  animate         : PropTypes.bool,
-  onOpen          : PropTypes.func,
-  onClose         : PropTypes.func
+  animate: PropTypes.bool,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
 };
 
 Accordion.defaultProps = {
   animate: true,
-  onOpen : f => f,
-  onClose: f => f
+  onOpen: (f) => f,
+  onClose: (f) => f,
 };
 
 export default Accordion;

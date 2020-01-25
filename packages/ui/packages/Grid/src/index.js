@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StyledGrid } from './styles';
 
-const Grid = props => {
+const Grid = (props) => {
   const { perRow, children, className } = props;
   return (
     <StyledGrid className={className} perRow={perRow}>
@@ -22,16 +22,16 @@ Grid.propTypes = {
       sm: sizePropType,
       md: sizePropType,
       lg: sizePropType,
-      xl: sizePropType
-    })
+      xl: sizePropType,
+    }),
   ]),
   className: PropTypes.string,
-  children : PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 Grid.defaultProps = {
-  perRow   : 1,
-  className: ''
+  perRow: 1,
+  className: '',
 };
 
 export default Grid;

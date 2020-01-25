@@ -5,16 +5,20 @@ import {
   StyledInput,
   StyledLabel,
   StyledStar,
-  StyledMessage
+  StyledMessage,
 } from './styles';
 
 const Input = React.forwardRef((props, ref) => {
-  const { status, message, label, id, required, className, ...rest } = props;
+  const {
+    status, message, label, id, required, className, ...rest
+  } = props;
   return (
     <StyledInputWrapper>
       {label && props.id && (
         <StyledLabel htmlFor={id}>
-          {label} {required && <StyledStar>*</StyledStar>}
+          {label}
+          {' '}
+          {required && <StyledStar>*</StyledStar>}
         </StyledLabel>
       )}
       <StyledInput
@@ -32,24 +36,24 @@ const Input = React.forwardRef((props, ref) => {
 });
 
 Input.propTypes = {
-  id         : PropTypes.string,
-  label      : PropTypes.string,
-  status     : PropTypes.oneOf(['gray', 'red', 'blue', 'orange', 'green', 'yellow']),
-  value      : PropTypes.any,
+  id: PropTypes.string,
+  label: PropTypes.string,
+  status: PropTypes.oneOf(['gray', 'red', 'blue', 'orange', 'green', 'yellow']),
+  value: PropTypes.any,
   placeholder: PropTypes.any,
-  message    : PropTypes.object,
-  className  : PropTypes.string,
-  onChange   : PropTypes.func,
-  Children   : PropTypes.string,
-  required   : PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+  message: PropTypes.object,
+  className: PropTypes.string,
+  onChange: PropTypes.func,
+  Children: PropTypes.string,
+  required: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 };
 
 Input.defaultProps = {
-  id      : '',
-  label   : '',
-  status  : 'gray',
+  id: '',
+  label: '',
+  status: 'gray',
   required: false,
-  message : {}
+  message: {},
 };
 
 export default Input;

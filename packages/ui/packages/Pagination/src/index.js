@@ -7,10 +7,10 @@ import {
   StyledPaginationWrapper,
   StyledPaginationItemsWrapper,
   StyledNavigateButton,
-  StyledPaginationItem
+  StyledPaginationItem,
 } from './styles';
 
-const Pagination = props => {
+const Pagination = (props) => {
   const {
     limit,
     total,
@@ -19,10 +19,10 @@ const Pagination = props => {
     threshold,
     hasNavigateButtons,
     hasSkipButtons,
-    className
+    className,
   } = props;
 
-  const handlePaginate = page => {
+  const handlePaginate = (page) => {
     const newOffset = limit * page;
     if (newOffset >= 0 && newOffset <= total && newOffset !== offset) {
       onPaginate(newOffset);
@@ -53,7 +53,7 @@ const Pagination = props => {
           key={i}
         >
           <span>{persianNumber(i + 1)}</span>
-        </StyledPaginationItem>
+        </StyledPaginationItem>,
       );
     }
     return (
@@ -63,8 +63,8 @@ const Pagination = props => {
             onClick={() => handlePaginate(0)}
             disabled={!currentPage}
           >
-            <Icon name='angle-right' />
-            <Icon name='angle-right' />
+            <Icon name="angle-right" />
+            <Icon name="angle-right" />
           </StyledNavigateButton>
         )}
         {hasNavigateButtons && (
@@ -72,7 +72,7 @@ const Pagination = props => {
             onClick={() => handlePaginate(currentPage - 1)}
             disabled={!currentPage}
           >
-            <Icon name='angle-right' />
+            <Icon name="angle-right" />
           </StyledNavigateButton>
         )}
         {pages}
@@ -81,7 +81,7 @@ const Pagination = props => {
             onClick={() => handlePaginate(currentPage + 1)}
             disabled={(currentPage + 1) * limit >= total}
           >
-            <Icon name='angle-left' />
+            <Icon name="angle-left" />
           </StyledNavigateButton>
         )}
         {hasSkipButtons && (
@@ -89,8 +89,8 @@ const Pagination = props => {
             onClick={() => handlePaginate(pagesCount - 1)}
             disabled={(currentPage + 1) * limit >= total}
           >
-            <Icon name='angle-left' />
-            <Icon name='angle-left' />
+            <Icon name="angle-left" />
+            <Icon name="angle-left" />
           </StyledNavigateButton>
         )}
       </StyledPaginationItemsWrapper>
@@ -107,19 +107,19 @@ const Pagination = props => {
 };
 
 Pagination.propTypes = {
-  className         : PropTypes.string,
-  limit             : PropTypes.number.isRequired,
-  offset            : PropTypes.number.isRequired,
-  total             : PropTypes.number.isRequired,
-  onPaginate        : PropTypes.func.isRequired,
-  threshold         : PropTypes.number,
+  className: PropTypes.string,
+  limit: PropTypes.number.isRequired,
+  offset: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  onPaginate: PropTypes.func.isRequired,
+  threshold: PropTypes.number,
   hasNavigateButtons: PropTypes.bool,
-  hasSkipButtons    : PropTypes.bool
+  hasSkipButtons: PropTypes.bool,
 };
 Pagination.defaultProps = {
-  className         : '',
-  threshold         : 5,
+  className: '',
+  threshold: 5,
   hasNavigateButtons: true,
-  hasSkipButtons    : true
+  hasSkipButtons: true,
 };
 export default Pagination;

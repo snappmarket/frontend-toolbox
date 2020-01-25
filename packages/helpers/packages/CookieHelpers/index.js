@@ -3,7 +3,7 @@
  * @param key
  * @returns {string}
  */
-export const getCookie = key => {
+export const getCookie = (key) => {
   const name = `${key}=`;
   const decodedCookie = decodeURIComponent(document.cookie);
   const cookies = decodedCookie.split(';');

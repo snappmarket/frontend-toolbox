@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StyledContainer } from './styles';
 
-const Container = props => {
+const Container = (props) => {
   const { className, children } = props;
 
   return <StyledContainer className={className}>{children}</StyledContainer>;
@@ -11,12 +11,12 @@ const Container = props => {
 
 Container.propTypes = {
   className: PropTypes.string,
-  children : PropTypes.node
+  children: PropTypes.node,
 };
 
 Container.defaultProps = {
   className: '',
-  children : <></>
+  children: <></>,
 };
 
 export default Container;

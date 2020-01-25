@@ -11,8 +11,7 @@ import { emptyPromise, makeTimeout } from '../PromiseHelpers';
  * @param timeout
  * @returns {Promise<unknown>}
  */
-export const fetchWithTimeOut = (url, options, timeout = 5000) =>
-  Promise.race([fetch(url, options), makeTimeout(timeout)]);
+export const fetchWithTimeOut = (url, options, timeout = 5000) => Promise.race([fetch(url, options), makeTimeout(timeout)]);
 
 /**
  * Call an api in universal way
@@ -27,7 +26,7 @@ export const fetchWithTimeOut = (url, options, timeout = 5000) =>
  * @param allowedNoContent
  * @returns {Promise<any>}
  */
-export const universalCall = async({
+export const universalCall = async ({
   url,
   method = 'GET',
   credentials = 'include',
@@ -43,7 +42,7 @@ export const universalCall = async({
     method: method.toUpperCase(),
     credentials,
     headers,
-    ...rest
+    ...rest,
   };
 
   // eslint-disable-next-line no-console

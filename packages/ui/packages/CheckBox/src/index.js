@@ -5,8 +5,10 @@ import Icon from '../Icon';
 
 import { StyledCheckboxWrapper } from './styles';
 
-const CheckBox = props => {
-  const { status, selected, size, disabled, className, border } = props;
+const CheckBox = (props) => {
+  const {
+    status, selected, size, disabled, className, border,
+  } = props;
 
   const render = () => (
     <StyledCheckboxWrapper
@@ -17,14 +19,14 @@ const CheckBox = props => {
       border={border}
       selected={selected}
     >
-      {selected && !disabled ? <Icon name='check-mark' size={size} /> : ''}
+      {selected && !disabled ? <Icon name="check-mark" size={size} /> : ''}
       {disabled && className !== 'circle' ? (
-        <Icon name='minus' size={size} />
+        <Icon name="minus" size={size} />
       ) : (
         ''
       )}
       {className === 'circle' && disabled ? (
-        <Icon name='circle' size={size} />
+        <Icon name="circle" size={size} />
       ) : (
         ''
       )}
@@ -35,18 +37,18 @@ const CheckBox = props => {
 };
 
 CheckBox.propTypes = {
-  status   : PropTypes.oneOf(['gray', 'green', 'yellow', 'red', 'orange', 'blue']),
+  status: PropTypes.oneOf(['gray', 'green', 'yellow', 'red', 'orange', 'blue']),
   className: PropTypes.string,
-  border   : PropTypes.bool,
-  selected : PropTypes.bool,
-  size     : PropTypes.number,
-  disabled : PropTypes.bool
+  border: PropTypes.bool,
+  selected: PropTypes.bool,
+  size: PropTypes.number,
+  disabled: PropTypes.bool,
 };
 CheckBox.defaultProps = {
-  size    : 2,
-  status  : 'green',
+  size: 2,
+  status: 'green',
   selected: false,
-  border  : true,
-  disabled: false
+  border: true,
+  disabled: false,
 };
 export default CheckBox;

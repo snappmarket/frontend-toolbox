@@ -11,45 +11,45 @@ import inlineSvg from 'rollup-plugin-inline-svg';
 import pkg from './package.json';
 
 const config = {
-  input : 'index.js',
+  input: 'index.js',
   output: [
     {
-      file     : pkg.main,
-      format   : 'cjs',
-      exports  : 'named',
-      globals  : { 'styled-components': 'styled' },
-      sourcemap: true
+      file: pkg.main,
+      format: 'cjs',
+      exports: 'named',
+      globals: { 'styled-components': 'styled' },
+      sourcemap: true,
     },
     {
-      file     : pkg.module,
-      format   : 'es',
-      exports  : 'named',
-      globals  : { 'styled-components': 'styled' },
-      sourcemap: true
-    }
+      file: pkg.module,
+      format: 'es',
+      exports: 'named',
+      globals: { 'styled-components': 'styled' },
+      sourcemap: true,
+    },
   ],
   external: ['react', 'react-dom', 'prop-types', 'styled-components', 'isomorphic-unfetch', 'polished'],
-  plugins : [
+  plugins: [
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
     inlineSvg(),
     babel({
-      exclude       : 'node_modules/**',
-      runtimeHelpers: true
+      exclude: 'node_modules/**',
+      runtimeHelpers: true,
     }),
     localResolve(),
     resolve({
-      extensions: ['.js', '.json', '.jsx']
+      extensions: ['.js', '.json', '.jsx'],
     }),
     commonjs({
-      include     : 'node_modules/**',
+      include: 'node_modules/**',
       namedExports: {
         'node_modules/react-is/index.js': ['isValidElementType'],
-        'node_modules/stylis/stylis.min': ['Stylis']
-      }
+        'node_modules/stylis/stylis.min': ['Stylis'],
+      },
     }),
-    filesize()
-  ]
+    filesize(),
+  ],
 };
 
 export default config;

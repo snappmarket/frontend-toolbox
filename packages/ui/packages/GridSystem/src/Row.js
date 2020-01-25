@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StyledRow } from './styles';
 
-const Row = props => {
+const Row = (props) => {
   const { className, children } = props;
 
   const render = () => <StyledRow className={className}>{children}</StyledRow>;
@@ -13,11 +13,11 @@ const Row = props => {
 
 Row.propTypes = {
   className: PropTypes.string,
-  children : PropTypes.node
+  children: PropTypes.node,
 };
 Row.defaultProps = {
   className: '',
-  children : <></>
+  children: <></>,
 };
 
 export default Row;
