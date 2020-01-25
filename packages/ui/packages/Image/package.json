@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-image",
   "private": false,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
