@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDidUpdateEffect } from '@snappmarket/hooks';
+
 import { AccordionProvider } from './context/accordionContext';
 import { StyledAccordion } from './style';
-
-import { useDidUpdateEffect } from '@snappmarket/hooks';
 
 const Accordion = ({
   children,

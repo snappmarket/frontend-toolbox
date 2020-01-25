@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+
 import { context as accordionContext } from './context/accordionContext';
 import { StyledAccordionHead } from './style';
 

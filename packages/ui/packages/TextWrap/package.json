@@ -1,0 +1,35 @@
+{
+  "name": "@snappmarket/ui-textwrap",
+  "private": false,
+  "version": "0.1.2",
+  "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepare": "yarn run build"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ui-components",
+    "components",
+    "textwrap"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snappmarket/react-hooks"
+  },
+  "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/ui/packages/TextWrap",
+  "gitHead": "6dba5d4ec72091ad7a9e7d97c703dd3ed27c7fb3"
+}
