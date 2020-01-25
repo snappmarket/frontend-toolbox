@@ -17,18 +17,16 @@ const config = {
       file     : pkg.main,
       format   : 'cjs',
       exports  : 'named',
-      globals  : { 'styled-components': 'styled' },
       sourcemap: true
     },
     {
       file     : pkg.module,
       format   : 'es',
       exports  : 'named',
-      globals  : { 'styled-components': 'styled' },
       sourcemap: true
     }
   ],
-  external: ['react', 'react-dom', 'prop-types', 'styled-components'],
+  external: ['react', 'react-dom'],
   plugins : [
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
@@ -38,16 +36,8 @@ const config = {
       runtimeHelpers: true
     }),
     localResolve(),
-    resolve({
-      extensions: ['.js', '.json', '.jsx']
-    }),
-    commonjs({
-      include     : 'node_modules/**',
-      namedExports: {
-        'node_modules/react-is/index.js': ['isValidElementType'],
-        'node_modules/stylis/stylis.min': ['Stylis']
-      }
-    }),
+    resolve(),
+    commonjs(),
     filesize()
   ]
 };

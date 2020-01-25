@@ -2,7 +2,7 @@ import { css, createGlobalStyle } from 'styled-components';
 import '../../resources/styles/fontiran.css';
 import '../../resources/styles/icons.css';
 import '../../resources/styles/sanitize.css';
-import { makeRgba } from '../../constants/Helpers/themeHelpers';
+import { makeRgba } from '@snappmarket/helpers';
 
 const additional = css`
   html {
