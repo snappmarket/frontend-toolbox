@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactInputRange from 'react-hgs-input-range';
-import 'resources/styles/react-hgs-input-range.css';
+import 'react-hgs-input-range/lib/css/index.css';
 
 import { currencyPrice } from '@snappmarket/helpers';
 import {

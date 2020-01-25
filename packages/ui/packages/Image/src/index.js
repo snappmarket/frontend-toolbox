@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'react-image';
 
-import { LogoAnimation } from '../Loading';
+import { LogoAnimation } from '../../Loading/src';
 
 /**
  * A progressive image loader component

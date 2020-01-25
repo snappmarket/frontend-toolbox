@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
-import { LoadingSpinner } from '../Loading';
+import Icon from '../../Icon/src';
+import { LoadingSpinner } from '../../Loading/src';
 
 import {
   StyledPrimaryButton,

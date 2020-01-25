@@ -1,6 +1,6 @@
 import Styled from 'styled-components';
-import Modal from '../Modal';
-import { Container, Col } from '../GridSystem';
+import Modal from '../../Modal/src';
+import { Container, Col } from '../../GridSystem/src';
 
 export const StyledConfirmDialog = Styled(Modal)`
   font-size: 14px;

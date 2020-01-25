@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import Button from '../Button';
+import Button from '../../Button/src';
 
 const StyledModalWrapper = Styled.div`
   position: fixed;

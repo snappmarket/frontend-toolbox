@@ -1,6 +1,6 @@
 import Styled from 'styled-components';
 import { makeRgba } from '@snappmarket/helpers';
-import { StyledPrimaryButton } from '../../Button/styles';
+import { StyledPrimaryButton } from '../../../Button/src';
 
 /* eslint-disable indent */
 const StyledTab = Styled(StyledPrimaryButton)`
