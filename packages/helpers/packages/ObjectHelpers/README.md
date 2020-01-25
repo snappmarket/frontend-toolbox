@@ -18,8 +18,7 @@ OR
 npm i @snappmarket/helpers
 ```
 
-| Helper method name                                                  |
-| --------------------------------------------------------------- | 
+## methods
 | removeByKey                                                 |  
 | flattenObject                                                 |  
 | makeCookieString                                                 |  

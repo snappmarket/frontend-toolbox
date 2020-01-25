@@ -19,8 +19,7 @@ npm i @snappmarket/helpers
 ```
 
 
-| Helper method name                                                  |
-| --------------------------------------------------------------- | 
+## methods
 | fetchWithTimeOut                                                 |  
 | universalCall                                                 |  
 

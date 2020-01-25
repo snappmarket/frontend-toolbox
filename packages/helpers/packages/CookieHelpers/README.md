@@ -18,9 +18,7 @@ OR
 npm i @snappmarket/helpers
 ```
 
-
-| Helper method name                                                  |
-| --------------------------------------------------------------- | 
+## methods
 | getCookie                                                 |  
 | setCookie                                                 |  
 

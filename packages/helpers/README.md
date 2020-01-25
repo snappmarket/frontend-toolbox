@@ -13,22 +13,22 @@
 
 ## Helpers Found Here
 
-| Helper                                                                                                                             |
-| --------------------------------------------------------------------------------------------------------------------- | 
-| [ArrayHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ArrayHelpers)                                                                 | 
-| [CookieHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/CookieHelpers)                                                               |  
-| [DebugHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/DebugHelpers)                                                                 |  
-| [HttpHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/HttpHelpers)                                                                   |  
-| [JsonHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/JsonHelpers)                                                                   |  
-| [StorageHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/StorageHelpers)                                                             |  
-| [MapHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/MapHelpers)                                                                     | 
-| [NumberHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/NumberHelpers)                                                               | 
-| [ObjectHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ObjectHelpers)                                                               | 
-| [OSHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/OSHelpers)                                                                       | 
-| [PromiseHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/PromiseHelpers)                                                             | 
-| [ProxyHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ProxyHelpers)                                                                 | 
-| [ReduxHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ReduxHelpers)                                                                 | 
-| [StringHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/StringHelpers)                                                               | 
-| [TemplateHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/TemplateHelpers)                                                           | 
-| [WindowHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/WindowHelpers)                                                               | 
+| Helper                                                                                                                | Methods |
+| --------------------------------------------------------------------------------------------------------------------- | -------- | 
+| [ArrayHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ArrayHelpers)         | `arrayItemAddProp` ,f`lattenArray` ,s`erializeObject` ,s`tringifyArray` ,d`eepFlatten`   |
+| [CookieHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/CookieHelpers)       | `getCookie`, `setCookie`   |  
+| [DebugHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/DebugHelpers)         | `delog`, `ApiError`, `globalErrorCatcher`    |  
+| [HttpHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/HttpHelpers)           | `fetchWithTimeOut`, `universalCall`   |  
+| [JsonHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/JsonHelpers)           | `recursiveJsonParse` |  
+| [MapHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/MapHelpers)             | `isLocationInIran`    | 
+| [NumberHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/NumberHelpers)       | `persianNumber`, `englishNumber`, `generateKey`, `cellphoneValidate`, `cellphoneValidatePattern`, `currencyPrice`  | 
+| [ObjectHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ObjectHelpers)       | `removeByKey`, `flattenObject`, `makeCookieString`, `safeObjectPropertyRead`, `getNextProp`   | 
+| [OSHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/OSHelpers)               | `getOSName`, `getAgent` | 
+| [PromiseHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/PromiseHelpers)     | `racePromise`, `makeTimeout`, `emptyPromise`  | 
+| [ProxyHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ProxyHelpers)         | `onChangeReflector` | 
+| [ReduxHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ReduxHelpers)         | `actionMaker`, `normalizeActionType`, `configPersistor`   | 
+| [StorageHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/StorageHelpers)     | `getLocalStorageData` |  
+| [StringHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/StringHelpers)       | `stringReplace`, `bulkStringReplace` | 
+| [TemplateHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/TemplateHelpers)   | `HexToRgb`, `defineForegroundColor`, `makeRgba`, `decideMeasurement`, `makeShadow`  | 
+| [WindowHelpers](https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/WindowHelpers)       | `getPathName`, `getWindowSize`    | 
 

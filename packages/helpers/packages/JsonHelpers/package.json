@@ -21,6 +21,6 @@
     "type": "git",
     "url": "https://github.com/snappmarket/react-hooks"
   },
-  "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/useDebounce",
+  "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/JsonHelpers",
   "gitHead": "807efde99896ed74311218197b256917efba7977"
 }
