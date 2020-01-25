@@ -1,10 +1,5 @@
-# useDidUpdateEffect custom hook
-
-> 🧵 do not worry about render phase effect calls
-
-Easily prevent `useEffect` calling on render phase, instead of that use `useDidUpdateEffect` with same API 
-then it will handle it for you :)
-
+# Components that we used frequently on our pages 
+> 🎈 no need to re-create every UI component which you may need
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/use-did-update-effect.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-did-update-effect)
@@ -15,22 +10,34 @@ then it will handle it for you :)
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
 
-### source code
-```javascript
-import { useRef, useEffect } from 'react';
-
-/**
- * Calls function on component update or inputs change phase
- * @param fn
- * @param inputs
- */
-export default (fn, inputs) => {
-  const didMountRef = useRef(false);
-
-  useEffect(() => {
-    if (didMountRef.current) fn();
-    else didMountRef.current = true;
-  }, inputs);
-};
-
+## get started
+```bash 
+npm i @snappmarket/ui
 ```
+
+
+## usage
+```javascript
+import { COMPONENT } from '@snappmarket/ui';
+```
+
+
+## Components found here
+
+| Component                                         |  Description                                                     |
+| ------------------------------------------------- | ---------------------------------------------------------------- |
+| [NAME](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useDebounce)      | Description                                       |
+
+
+
+---
+#### The MIT License (MIT)
+
+Copyright (c) 2020 @snappmarket
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
