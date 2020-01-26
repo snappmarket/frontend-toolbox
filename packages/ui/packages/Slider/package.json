@@ -12,6 +12,9 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build"
   },
+  "dependencies": {
+    "react-slick": "^0.25.2"
+  },
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

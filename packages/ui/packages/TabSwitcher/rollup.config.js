@@ -33,7 +33,8 @@ const config = {
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
     inlineSvg(),
-    babel({runtimeHelpers: true,
+    babel({
+      runtimeHelpers: true,
       presets: [
         [
           '@babel/preset-env',
@@ -49,7 +50,8 @@ const config = {
         [
           'babel-plugin-styled-components',
         ],
-      ],),
+      ],
+    }),
     localResolve(),
     resolve({
       extensions: ['.js', '.json', '.jsx'],
