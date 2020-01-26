@@ -19,6 +19,8 @@ npm i @snappmarket/helpers
 ```
 
 ## methods
+|        |
+| ------ |
 | actionMaker                                                 |  
 | normalizeActionType                                                 |  
 | configPersistor                                                 |  

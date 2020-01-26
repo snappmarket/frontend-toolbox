@@ -20,6 +20,8 @@ npm i @snappmarket/helpers
 
 
 ## methods
+|        |
+| ------ |
 | delog                                                 |  
 | ApiError                                                 |  
 | globalErrorCatcher                                                 |  
