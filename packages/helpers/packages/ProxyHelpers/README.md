@@ -19,6 +19,7 @@ npm i @snappmarket/helpers
 ```
 
 ## methods
+| -- | -- |
 | onChangeReflector                                                 |  
 
 ## usage 
