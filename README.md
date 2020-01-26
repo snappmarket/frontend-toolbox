@@ -1,5 +1,5 @@
 # SnappMarket frontend powerful tools
-`hooks`, `helpers`, `ui components` and `icons` that we used in http://snappmarket
+`hooks`, `helpers`, `ui components` and `icons` that we used in new version of : http://snappmarket
 
 ## Hooks Found Here
 
