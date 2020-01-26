@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/http-helpers",
   "private": false,
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
