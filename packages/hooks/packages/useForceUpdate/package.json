@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/use-force-update",
   "private": false,
-  "version": "0.1.12",
+  "version": "0.1.13",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
@@ -25,5 +25,5 @@
     "url": "https://github.com/snappmarket/react-hooks"
   },
   "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useForceUpdate",
-  "gitHead": "64479e2932da19ddf1f8caf311a3a382c7a758f7"
+  "gitHead": "7474e2b93c723d4ed784d3a8eb9fd341aebbf0f5"
 }

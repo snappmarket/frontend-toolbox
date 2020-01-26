@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-tab-switcher",
   "private": false,
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -33,5 +33,5 @@
     "url": "https://github.com/snappmarket/react-hooks"
   },
   "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/ui/packages/TabSwitcher",
-  "gitHead": "0a9fd0e2a848f8eaeaa4c8dfe6c5ca96f8a85aab"
+  "gitHead": "7474e2b93c723d4ed784d3a8eb9fd341aebbf0f5"
 }
