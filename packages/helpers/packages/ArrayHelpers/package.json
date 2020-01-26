@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/array-helpers",
   "private": false,
-  "version": "0.1.10",
+  "version": "0.1.11",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
@@ -22,5 +22,5 @@
     "url": "https://github.com/snappmarket/react-hooks"
   },
   "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/helpers/packages/ArrayHelpers",
-  "gitHead": "332b8606f368d234d8592582043ab9a48a00aa32"
+  "gitHead": "64479e2932da19ddf1f8caf311a3a382c7a758f7"
 }
