@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from '../../Icon/src';
+import Icon from '../../Icon/src/CssIcon/index';
 import { LoadingSpinner } from '../../Loading/src';
 
 import {

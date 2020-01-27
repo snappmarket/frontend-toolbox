@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Row } from '../../GridSystem/src';
-import Icon from '../../Icon/src';
+import Icon from '../../Icon/src/CssIcon/index';
 import Button from '../../Button/src';
 
 import {
