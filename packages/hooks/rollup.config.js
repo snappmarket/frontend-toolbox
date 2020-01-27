@@ -17,6 +17,7 @@ export default {
       sourcemap: true,
     },
   ],
+  external: ['react', 'react-dom', 'prop-types', 'react-router-dom'],
   plugins: [
     external(),
   ],

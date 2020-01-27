@@ -1,27 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 /**
- * Debounce setting a value
- * @param value
- * @param delay
- * @returns {[string, fn, fn]}
+ * Detect react router dom route change
+ * @param fn
  */
-export default function useDebounce(value, delay) {
-  // State and setters for debounced value
-  const [debouncedValue, setDebouncedValue] = useState(value);
+const useRouteChange = (fn) => {
+  const history = useHistory();
+  useEffect(() => history.listen(fn), [history]);
+};
 
-  let handler;
-  const canceller = () => {
-    clearTimeout(handler);
-  };
-
-  useEffect(() => {
-    handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return canceller;
-  }, [value]);
-
-  return [debouncedValue, canceller, setDebouncedValue];
-}
+export default useRouteChange;
