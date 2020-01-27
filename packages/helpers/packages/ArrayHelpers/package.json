@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/array-helpers",
   "private": false,
-  "version": "0.1.17",
+  "version": "0.1.18",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
@@ -22,5 +22,5 @@
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/ArrayHelpers",
-  "gitHead": "d6fa3bee741550ed5a017754fc0812248e9be92a"
+  "gitHead": "21fcb0d6c5b2aca437b5aa30c2208c6d996163e2"
 }
