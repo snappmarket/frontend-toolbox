@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/icons",
   "private": false,
-  "version": "0.1.17",
+  "version": "0.1.18",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -32,5 +32,5 @@
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "gitHead": "9c0ee075cfb23746dd786100c61aba3ac9206654"
+  "gitHead": "d7b84de37734492df96b8410cee6c962da69288f"
 }
