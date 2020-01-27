@@ -11,7 +11,7 @@ import inlineSvg from 'rollup-plugin-inline-svg';
 import pkg from './package.json';
 
 const config = {
-  input: 'index.js',
+  input: 'src/index.js',
   output: [
     {
       file: pkg.main,
