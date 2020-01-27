@@ -10,7 +10,7 @@ import localResolve from 'rollup-plugin-local-resolve';
 import pkg from './package.json';
 
 const config = {
-  input: 'index.js',
+  input: 'src/index.js',
   output: [
     {
       file: pkg.main,

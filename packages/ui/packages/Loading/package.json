@@ -28,8 +28,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/snappmarket/react-hooks"
+    "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/ui/packages/Loading",
+  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Loading",
   "gitHead": "7474e2b93c723d4ed784d3a8eb9fd341aebbf0f5"
 }

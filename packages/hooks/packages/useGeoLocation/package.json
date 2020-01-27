@@ -22,8 +22,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/snappmarket/react-hooks"
+    "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "homepage": "https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useGeoLocation",
+  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useGeoLocation",
   "gitHead": "7474e2b93c723d4ed784d3a8eb9fd341aebbf0f5"
 }

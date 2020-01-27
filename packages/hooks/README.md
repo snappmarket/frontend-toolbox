@@ -4,10 +4,10 @@
 [![version](https://img.shields.io/npm/v/@snappmarket/hooks.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/hooks)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/hooks.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/hooks)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/hooks.svg?style=flat-square)](https://github.com/snappmarket/react-hooks/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/hooks.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
 
-[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/watchers)
-[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/react-hooks.svg?style=social)](https://github.com/snappmarket/react-hooks/stargazers)
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
 <p align="center">
     <img src="./logo.png" alt="react hooks" />
@@ -25,13 +25,13 @@ npm i @snappmarket/hooks
 
 | Hook Name                                         |  Description                                                     |
 | ------------------------------------------------- | ---------------------------------------------------------------- |
-| [useDebounce](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useDebounce)      | 🔂 Change rapidly, do once                                       |
-| [useDidUpdateEffect](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useDidUpdateEffect) | 🧵 Do not worry about render phase effect calls                 |
-| [useFocus](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useFocus)                     | 😵 Focus on every thing you want                                 |
-| [useForceUpdate](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useForceUpdate)         | 👿 force update component                                        |
-| [useGeoLocation](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useGeoLocation)         | 🗺 easily deal with navigator location API                      |
-| [useRouteChange](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useRouteChange)         | 🏹 detect when react router dom route changes                    |
-| [useTimer](https://github.com/snappmarket/react-hooks/tree/master/packages/hooks/packages/useTimer)                     | ⏱ easily handle timing                                          |
+| [useDebounce](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useDebounce)      | 🔂 Change rapidly, do once                                       |
+| [useDidUpdateEffect](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useDidUpdateEffect) | 🧵 Do not worry about render phase effect calls                 |
+| [useFocus](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useFocus)                     | 😵 Focus on every thing you want                                 |
+| [useForceUpdate](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useForceUpdate)         | 👿 force update component                                        |
+| [useGeoLocation](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useGeoLocation)         | 🗺 easily deal with navigator location API                      |
+| [useRouteChange](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useRouteChange)         | 🏹 detect when react router dom route changes                    |
+| [useTimer](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useTimer)                     | ⏱ easily handle timing                                          |
 
 
 ## usage 
