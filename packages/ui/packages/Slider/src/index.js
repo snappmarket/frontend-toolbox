@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactSlickSlider from 'react-slick';
-import 'resources/styles/slider.css';
+import './style.css';
 
 import { StyledSliderWrapper } from './styles';
 
