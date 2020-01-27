@@ -4,6 +4,7 @@
 .jest-*
 lib
 node_modules
+dist
 
 public
 .idea

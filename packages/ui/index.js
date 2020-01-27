@@ -6,7 +6,7 @@ export { default as CheckBox } from './packages/CheckBox/src/index';
 export { default as ConfirmDialog } from './packages/ConfirmDialog/src/index';
 export { default as Grid } from './packages/Grid/src/index';
 export * from './packages/GridSystem/src/index';
-export { default as Icon } from './packages/Icon/src/index';
+export * from './packages/Icon/src/index';
 export { default as Image } from './packages/Image/src/index';
 export { default as Input } from './packages/Input/src/index';
 export { default as InputRange } from './packages/InputRange/src/index';

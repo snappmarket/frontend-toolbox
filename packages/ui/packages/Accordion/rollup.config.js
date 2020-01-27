@@ -28,7 +28,7 @@ const config = {
       sourcemap: true,
     },
   ],
-  external: ['react', 'react-dom', 'prop-types', 'styled-components', 'isomorphic-unfetch', 'polished'],
+  external: ['react', 'react-dom', 'prop-types', 'react-router-dom', 'react-image', 'styled-components', 'react-hgs-input-range', 'polished', 'react-slick'],
   plugins: [
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
