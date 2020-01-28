@@ -2,6 +2,7 @@ import Styled from 'styled-components';
 
 const StyledTable = Styled.table`
   width: 100%;
+  border: solid calc(${(props) => props.theme.defaultRem} * 0.1) ${(props) => props.theme.colors.gray['ultra-light']};
   border-radius: calc(${(props) => props.theme.defaultRem} * 0.5);
 `;
 
