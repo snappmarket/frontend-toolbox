@@ -25,8 +25,13 @@ const StyledTableRow = Styled.tr`
   }
 `;
 
-const StyledTableHeaderColumn = Styled.th``;
-const StyledTableColumn = Styled.td``;
+const StyledTableHeaderColumn = Styled.th`
+  font-size: calc(${(props) => props.theme.defaultRem} * 1.4);
+  font-weight: 500;
+`;
+const StyledTableColumn = Styled.td`
+  font-size: calc(${(props) => props.theme.defaultRem} * 1.2);
+`;
 
 export {
   StyledTable,
