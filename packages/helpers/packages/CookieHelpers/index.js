@@ -32,3 +32,13 @@ export const setCookie = (name, value, expireDays = 90, path = '/') => {
   const expires = `expires=${d.toUTCString()}`;
   document.cookie = `${name}=${value};${expires};path=${path}`;
 };
+
+/**
+ * delete a cookie
+ * @author Reza Erami
+ * @param name
+ */
+export const deleteCookie = (name) => {
+  const expires = `expires=${0}`;
+  document.cookie = `${name}=${null};${expires}`;
+};
