@@ -4,6 +4,7 @@ import {
   StyledTable,
   StyledTableHeader,
   StyledTableBody,
+  StyledTableFooter,
   StyledTableRow,
   StyledTableHeaderColumn,
   StyledTableColumn,
@@ -11,7 +12,7 @@ import {
 
 /* eslint-disable react/no-array-index-key */
 const Table = props => {
-  const { headers, data, className } = props;
+  const { headers, data, footers, className } = props;
   return (
     <StyledTable className={className}>
       {!!headers.length && (
@@ -36,6 +37,15 @@ const Table = props => {
           ))}
         </StyledTableBody>
       )}
+      {!!footers.length && (
+        <StyledTableFooter>
+          <StyledTableRow>
+            {footers.map((item, key) => (
+              <StyledTableColumn key={key}>{item}</StyledTableColumn>
+            ))}
+          </StyledTableRow>
+        </StyledTableFooter>
+      )}
     </StyledTable>
   );
 };
@@ -44,12 +54,14 @@ Table.propTypes = {
   className: PropTypes.string,
   headers: PropTypes.array,
   data: PropTypes.array,
+  footers: PropTypes.array,
 };
 
 Table.defaultProps = {
   className: '',
   headers: [],
   data: [],
+  footers: [],
 };
 
 export default Table;
