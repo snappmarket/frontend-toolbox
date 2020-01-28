@@ -1,6 +1,8 @@
 import Styled from 'styled-components';
 
-const StyledTable = Styled.table``;
+const StyledTable = Styled.table`
+  width: 100%;
+`;
 const StyledTableHeader = Styled.thead``;
 const StyledTableBody = Styled.tbody``;
 const StyledTableFooter = Styled.tfoot``;

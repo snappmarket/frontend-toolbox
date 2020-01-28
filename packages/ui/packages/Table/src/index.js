@@ -11,8 +11,10 @@ import {
 } from './style';
 
 /* eslint-disable react/no-array-index-key */
-const Table = props => {
-  const { headers, data, footers, className } = props;
+const Table = (props) => {
+  const {
+    headers, data, footers, className,
+  } = props;
   return (
     <StyledTable className={className}>
       {!!headers.length && (
