@@ -19,4 +19,25 @@ describe('ArrayHelpers', () => {
       expect(ArrayHelpers.arrayItemAddProp(payload, props)).toEqual(actual);
     });
   });
+
+  describe('flattenArray', () => {
+    it('should flatten nested  array based on object key ', () => {
+      const payload = [
+        { foo: [{ id: 1 }, { id: 2 }] },
+        { foo: [{ id: 3 }, { id: 4 }] },
+        { foo: [{ id: 5 }, { id: 6 }] },
+      ];
+
+      const actual = [
+        { id: 1 },
+        { id: 2 },
+        { id: 3 },
+        { id: 4 },
+        { id: 5 },
+        { id: 6 },
+      ];
+
+      expect(ArrayHelpers.flattenArray(payload, 'foo')).toEqual(actual);
+    });
+  });
 });
