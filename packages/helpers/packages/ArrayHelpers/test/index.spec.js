@@ -53,4 +53,48 @@ describe('ArrayHelpers', () => {
       expect(ArrayHelpers.serializeObject(payload)).toEqual(actual);
     });
   });
+  describe('stringifyArray', () => {
+    it('should stringify selected properties of object in array ', () => {
+      const payload = [
+        { id: 1, title: 'foo', foo: 'test' },
+        { id: 2, title: 'bar', foo: 'test' },
+        { id: 3, title: 'test', foo: 'test' },
+      ];
+
+      const actual = '[{"id":1,"title":"foo"},{"id":2,"title":"bar"},{"id":3,"title":"test"}]';
+
+      expect(ArrayHelpers.stringifyArray(payload, ['id', 'title'])).toEqual(actual);
+    });
+  });
+  describe('deepFlatten', () => {
+    it('should flatten a nested array recursively by given property name', () => {
+      const payload = {
+        id: 1,
+        options: [
+          {
+            id: 2,
+            options: [
+              {
+                id: 3,
+                options: [
+                  { id: 5 },
+                  { id: 6 },
+                ],
+              },
+              { id: 4 },
+            ],
+          },
+        ],
+      };
+      const actual = [
+        { id: 1 },
+        { id: 2 },
+        { id: 3 },
+        { id: 5 },
+        { id: 6 },
+        { id: 4 },
+      ];
+      expect(ArrayHelpers.deepFlatten(payload, 'options', [])).toEqual(actual);
+    });
+  });
 });
