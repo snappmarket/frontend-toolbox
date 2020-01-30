@@ -40,4 +40,17 @@ describe('ArrayHelpers', () => {
       expect(ArrayHelpers.flattenArray(payload, 'foo')).toEqual(actual);
     });
   });
+  describe('serializeObject', () => {
+    it('should serializeObject an object to query parameter ', () => {
+      const payload = {
+        number: 1,
+        string: 'test',
+        array: [1, 2, 3],
+        object: { foo: 'foo', bar: 'bar' },
+        boolean: true,
+      };
+      const actual = 'number=1&string=test&array[]=1&array[]=2&array[]=3&object[foo]=foo&object[bar]=bar&boolean=true';
+      expect(ArrayHelpers.serializeObject(payload)).toEqual(actual);
+    });
+  });
 });
