@@ -12,4 +12,10 @@ describe('CookieHelpers', () => {
       expect(CookieHelpers.getCookie('bar')).toEqual('');
     });
   });
+  describe('setCookie', () => {
+    it('should set a cookie in document', () => {
+      CookieHelpers.setCookie('bar', 'foo');
+      expect(document.cookie).toEqual('foo=bar; bar=foo')
+    });
+  });
 });
