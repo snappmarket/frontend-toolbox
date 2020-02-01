@@ -1,4 +1,4 @@
-import { default as fetch } from 'isomorphic-unfetch';
+import fetch from 'isomorphic-unfetch';
 
 import { ApiError, delog } from '../DebugHelpers';
 import { serializeObject } from '../ArrayHelpers';
@@ -21,6 +21,7 @@ export const fetchWithTimeOut = (url, options, timeout = 5000) => Promise.race([
  * @param data
  * @param headers
  * @param params
+ * @param jwtToken
  * @param rest
  * @param timeout
  * @param allowedNoContent
@@ -29,10 +30,11 @@ export const fetchWithTimeOut = (url, options, timeout = 5000) => Promise.race([
 export const universalCall = async ({
   url,
   method = 'GET',
-  credentials = 'include',
+  credentials = 'same-origin',
   data = {},
   headers = {},
   params = {},
+  jwtToken = '',
   allowedNoContent = false,
   timeout = 5000,
   ...rest
@@ -42,11 +44,16 @@ export const universalCall = async ({
     method: method.toUpperCase(),
     credentials,
     headers,
-    ...rest,
+    ...rest
   };
 
   // eslint-disable-next-line no-console
   delog(`API called with : ${options.method} ${url}`);
+
+  if (jwtToken) {
+    // eslint-disable-next-line no-param-reassign
+    headers.authorization = `Bearer ${jwtToken}`;
+  }
 
   /**
    * Make body of POST and PUT requests
