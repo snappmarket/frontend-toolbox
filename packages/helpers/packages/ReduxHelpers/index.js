@@ -22,10 +22,13 @@ export const configPersistor = (config) => {
    */
   const makeInitialState = (initialState) => {
     const temp = { ...initialState };
+
     // eslint-disable-next-line no-restricted-syntax
     for (const item of config.whitelist) {
       const itemName = makeItemName(item);
-      if (localStorage.getItem(itemName)) {
+      const localItemValue = localStorage.getItem(itemName);
+
+      if (localItemValue && localItemValue !== 'null') {
         temp[item] = JSON.parse(localStorage.getItem(itemName));
       }
     }
@@ -38,6 +41,7 @@ export const configPersistor = (config) => {
    * @returns {function(*): Function}
    */
   const getMiddleware = (store) => (next) => (action) => {
+
     if (action.type === config.purgeActionType) {
       localStorage.clear();
       next(action);
@@ -45,6 +49,7 @@ export const configPersistor = (config) => {
     }
     next(action);
     const stateToStore = store.getState();
+
     // eslint-disable-next-line no-restricted-syntax
     for (const reducer in stateToStore) {
       if (config.whitelist.includes(reducer)) {

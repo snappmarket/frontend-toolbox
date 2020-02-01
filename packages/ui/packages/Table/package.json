@@ -1,8 +1,8 @@
 {
-  "name": "@snappmarket/ui-progress-bar",
+  "name": "@snappmarket/ui-table",
   "private": false,
-  "version": "0.1.18",
-  "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
+  "version": "0.1.2",
+  "author": "Reza Erami <reza@erami.name>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
@@ -24,13 +24,12 @@
   "keywords": [
     "ui-components",
     "components",
-    "progress-bar",
-    "progress"
+    "table"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/ProgressBar",
+  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Table",
   "gitHead": "2207934c0e1e69a5004aee326f2ccfabe910ee32"
 }

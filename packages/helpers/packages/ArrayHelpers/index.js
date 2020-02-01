@@ -37,7 +37,7 @@ export const serializeObject = (object) => {
         object[property].forEach((item) => result.push(`${property}[]=${item}`));
       } else if (
         !Array.isArray(object[property])
-        && object[property].length
+        && Object.keys(object[property]).length
       ) {
         Object.keys(object[property]).forEach((key) => result.push(`${property}[${key}]=${object[property][key]}`));
       }
