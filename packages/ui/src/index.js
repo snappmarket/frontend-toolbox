@@ -20,6 +20,7 @@ export { default as Pagination } from '../packages/Pagination/src/index';
 export { default as ProgressBar } from '../packages/ProgressBar/src/index';
 export * from '../packages/Skeleton/src/index';
 export { default as Slider } from '../packages/Slider/src/index';
+export { default as Table } from '../packages/Table/src/index';
 export * from '../packages/TabSwitcher/src/index';
 export { default as Textarea } from '../packages/Textarea/src/index';
 export { default as TextWrap } from '../packages/TextWrap/src/index';
