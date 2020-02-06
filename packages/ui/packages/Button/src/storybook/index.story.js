@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Row, Col, Button } from '@snappmarket/ui';
+import ReadMe from '../../README.md';
 
 const modifiers = ['primary', 'outline', 'link'];
 const sizes = ['xl', 'lg', 'md', 'sm', 'xs'];
@@ -27,7 +28,7 @@ storiesOf('components/Globals', module).add(
           <Row key={shade} className="mt-1">
             {colors.map(color => (
               <Col key={color} xs={2}>
-                <Button color={color} shade={shade} modifier='primary' size="sm" title={shade} fullWidth/>
+                <Button color={color} shade={shade} modifier='primary' size="sm" title={shade}/>
               </Col>
             ))}
           </Row>
@@ -56,5 +57,7 @@ storiesOf('components/Globals', module).add(
         ))}
       </div>
     </div>
-  ),
+  ), {
+    notes: ReadMe
+  },
 );
