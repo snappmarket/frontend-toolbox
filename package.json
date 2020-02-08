@@ -19,7 +19,10 @@
     "lint:eslint": "eslint --ignore-path .gitignore packages",
     "lint:eslint:fix": "eslint --ignore-path .gitignore packages --fix",
     "lint:js": "npm run lint:eslint -- . ",
-    "prettify": "prettier --write packages/**/*.js"
+    "prettify": "prettier --write packages/**/*.js",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "docz:serve": "docz build && docz serve"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.3",
@@ -38,6 +41,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "babel-preset-airbnb": "^4.4.0",
+    "docz": "latest",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
