@@ -22,7 +22,7 @@ const Breadcrumb = (props) => {
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>
-        <Link to={item.slug || item.id}>{item.title}</Link>
+        <Link to={item.link}>{item.title}</Link>
       </StyledBreadcrumbItem>
     </StyledBreadcrumbItemWrapper>
     /* eslint-enable indent */

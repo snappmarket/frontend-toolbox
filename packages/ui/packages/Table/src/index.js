@@ -32,7 +32,7 @@ const Table = (props) => {
         <StyledTableBody>
           {data.map((item, key) => (
             <StyledTableRow key={key}>
-              {Object.values(item).map((value, index) => (
+              {item.map((value, index) => (
                 <StyledTableColumn key={index}>{value}</StyledTableColumn>
               ))}
             </StyledTableRow>
