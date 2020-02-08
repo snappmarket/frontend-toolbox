@@ -2,7 +2,7 @@ import {addDecorator, configure} from '@storybook/react';
 // import { withInfo } from '@storybook/addon-info';
 import { addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-
+import ThemeDecorator from './themeDecorator';
 
 addParameters({
   viewport: {
@@ -17,4 +17,5 @@ function loadStories() {
 }
 
 // addDecorator(withInfo);
+addDecorator(ThemeDecorator);
 configure(loadStories, module);

@@ -1,3 +1,4 @@
+export index from '../packages/Theme/src/index';
 export * from '../packages/Accordion/src/index';
 export { default as Alert } from '../packages/Alert/src/index';
 export { default as Breadcrumb } from '../packages/Breadcrumb/src/index';
