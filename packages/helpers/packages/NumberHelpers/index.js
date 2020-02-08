@@ -13,8 +13,4 @@ export const generateKey = () => {
 
 export const cellphoneValidate = () => '(?:(\u0660\u0669[\u0660-\u0669][\u0660-\u0669]{8})|(\u06F0\u06F9[\u06F0-\u06F9][\u06F0-\u06F9]{8})|(09[0-9][0-9]{8}|\\+98[0-9][0-9]{9}))$';
 
-export const cellphoneValidatePattern = () => ({
-  pattern: /(?:(\u0660\u0669[\u0660-\u0669][\u0660-\u0669]{8})|(\u06F0\u06F9[\u06F0-\u06F9][\u06F0-\u06F9]{8})|(09[0-9][0-9]{8}|\\+98[0-9][0-9]{9}))$/,
-});
-
-export const currencyPrice = (amount, hasUnit = true) => `${persianNumber(`${amount}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','))}`;
+export const currencyPrice = (amount) => `${persianNumber(`${amount}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','))}`;
