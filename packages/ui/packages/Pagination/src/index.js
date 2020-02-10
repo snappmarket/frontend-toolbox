@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { persianNumber } from '@snappmarket/helpers';
+import { AngleLeftIcon, AngleRightIcon } from '@snappmarket/icons';
 
-import Icon from '../../Icon/src/CssIcon/index';
 import {
   StyledPaginationWrapper,
   StyledPaginationItemsWrapper,
@@ -63,8 +63,8 @@ const Pagination = (props) => {
             onClick={() => handlePaginate(0)}
             disabled={!currentPage}
           >
-            <Icon name="angle-right" />
-            <Icon name="angle-right" />
+            <AngleRightIcon />
+            <AngleRightIcon />
           </StyledNavigateButton>
         )}
         {hasNavigateButtons && (
@@ -72,7 +72,7 @@ const Pagination = (props) => {
             onClick={() => handlePaginate(currentPage - 1)}
             disabled={!currentPage}
           >
-            <Icon name="angle-right" />
+            <AngleRightIcon />
           </StyledNavigateButton>
         )}
         {pages}
@@ -81,7 +81,7 @@ const Pagination = (props) => {
             onClick={() => handlePaginate(currentPage + 1)}
             disabled={(currentPage + 1) * limit >= total}
           >
-            <Icon name="angle-left" />
+            <AngleLeftIcon />
           </StyledNavigateButton>
         )}
         {hasSkipButtons && (
@@ -89,8 +89,8 @@ const Pagination = (props) => {
             onClick={() => handlePaginate(pagesCount - 1)}
             disabled={(currentPage + 1) * limit >= total}
           >
-            <Icon name="angle-left" />
-            <Icon name="angle-left" />
+            <AngleLeftIcon />
+            <AngleLeftIcon />
           </StyledNavigateButton>
         )}
       </StyledPaginationItemsWrapper>

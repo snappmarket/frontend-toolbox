@@ -1,6 +1,7 @@
 import React, { useEffect, useState, createRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
+import { CrossIcon } from '@snappmarket/icons';
 
 import {
   StyledModalWrapper,
@@ -93,7 +94,7 @@ const Modal = (props) => {
           <StyledCloseModalButton
             className="close-modal-button"
             modifier="link"
-            icon="cross"
+            icon={<CrossIcon />}
             size="sm"
             color="gray"
             onClick={handleClose}
