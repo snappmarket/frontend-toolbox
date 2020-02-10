@@ -17,16 +17,111 @@ npm i @snappmarket/icons
 
 ## usage
 ```javascript 
-import { PlusIcon } from '@snappmarket/icons';
+import { IconName } from '@snappmarket/icons';
 
-<PlusIcon />
+<IconName />
 ```
 
 ## Icons found here
 
-| Icon name                                         |  Description                                                     |
-| ------------------------------------------------- | ---------------------------------------------------------------- |
-| [NAME](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useDebounce)      | Description                                       |
+| Icon name                     |  Description                                                     |
+| ----------------------------- | ---------------------------------------------------------------- |
+| CoinsIcon                     |                                                                  |
+| DeleteIcon                    |                                                                  |
+| EditIcon                      |                                                                  |
+| EmptyBasketIcon               |                                                                  |
+| InstagramIcon                 |                                                                  |
+| LocationIcon                  |                                                                  |
+| LogoutIcon                    |                                                                  |
+| MapMarkerIcon                 |                                                                  |
+| PencilIcon                    |                                                                  |
+| PlusIcon                      |                                                                  |
+| SearchIcon                    |                                                                  |
+| ShoppingBasketIcon            |                                                                  |
+| ShoppingCartIcon              |                                                                  |
+| ThIcon                        |                                                                  |
+| TickIcon                      |                                                                  |
+| TrashIcon                     |                                                                  |
+| TwitterIcon                   |                                                                  |
+| UserIcon                      |                                                                  |
+| VendorIcon                    |                                                                  |
+| SnappMarketLogo               |                                                                  |
+| ----------------------------- | ---------------------------------------------------------------- |
+| DissatisfiedEmoji             |                                                                  |
+| HappyEmoji                    |                                                                  |
+| LaughEmoji                    |                                                                  |
+| NormalEmoji                   |                                                                  |
+| SadEmoji                      |                                                                  |
+| ----------------------------- | ---------------------------------------------------------------- |
+| BoxWithTickIcon               |                                                                  |
+| GroceryBagIcon                |                                                                  |
+| ListSearchIcon                |                                                                  |
+| MotorcyleIcon                 |                                                                  |
+| ShoppingBasketIcon            |                                                                  |
+| ----------------------------- | ---------------------------------------------------------------- |
+| AngleDownIcon                 |                                                                  |
+| AngleLeftIcon                 |                                                                  |
+| AngleRightIcon                |                                                                  |
+| AngleUpIcon                   |                                                                  |
+| ArrowDownIcon                 |                                                                  |
+| ArrowLeftIcon                 |                                                                  |
+| ArrowRightIcon                |                                                                  |
+| ArrowUpIcon                   |                                                                  |
+| BasketNotAllowedIcon          |                                                                  |
+| BikeOIcon                     |                                                                  |
+| BinocularsIcon                |                                                                  |
+| BoxIcon                       |                                                                  |
+| CalendarIcon                  |                                                                  |
+| CategoriesIcon                |                                                                  |
+| CategoriesOIcon               |                                                                  |
+| CellphoneIcon                 |                                                                  |
+| CheckMarkIcon                 |                                                                  |
+| CircleIcon                    |                                                                  |
+| ClockIcon                     |                                                                  |
+| ClockOIcon                    |                                                                  |
+| CommentIcon                   |                                                                  |
+| CreditCardIcon                |                                                                  |
+| CrossIcon                     |                                                                  |
+| DigitsIcon                    |                                                                  |
+| DiscountIcon                  |                                                                  |
+| EnvelopeIcon                  |                                                                  |
+| ExportIcon                    |                                                                  |
+| FilterIcon                    |                                                                  |
+| HeartIcon                     |                                                                  |
+| HomeIcon                      |                                                                  |
+| LogoutIcon                    |                                                                  |
+| LoopIcon                      |                                                                  |
+| MapMarkerIcon                 |                                                                  |
+| MapMarkerAddIcon              |                                                                  |
+| MapMarkerOIcon                |                                                                  |
+| MenuIcon                      |                                                                  |
+| MinusIcon                     |                                                                  |
+| OrdersHistoryIcon             |                                                                  |
+| PaperRocketIcon               |                                                                  |
+| PaperRocketOIcon              |                                                                  |
+| PencilIcon                    |                                                                  |
+| PencilEditIcon                |                                                                  |
+| PictureIcon                   |                                                                  |
+| PlusIcon                      |                                                                  |
+| RingIcon                      |                                                                  |
+| SearchIcon                    |                                                                  |
+| ShareIcon                     |                                                                  |
+| ShoppingBasketIcon            |                                                                  |
+| ShoppingListIcon              |                                                                  |
+| ShoppingListSquareIcon        |                                                                  |
+| SortIcon                      |                                                                  |
+| SpinnerIcon                   |                                                                  |
+| SqureIcon                     |                                                                  |
+| StoreIcon                     |                                                                  |
+| SupportIcon                   |                                                                  |
+| TrashIcon                     |                                                                  |
+| TrashOIcon                    |                                                                  |
+| UserAddIcon                   |                                                                  |
+| UserOIcon                     |                                                                  |
+| UserIcon                      |                                                                  |
+| WalletIcon                    |                                                                  |
+| WarningSign                   |                                                                  |
+
 
 ---
 #### The MIT License (MIT)

@@ -1,7 +1,7 @@
 # SnappMarket frontend powerful tools
 `hooks`, `helpers`, `ui components` and `icons` that we used in new version of : http://snappmarket
 
-## Hooks Found Here
+## [Hooks](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks) Found Here
 
 | Hook Name                                         |  Description                                                     |
 | ------------------------------------------------- | ---------------------------------------------------------------- |
@@ -15,7 +15,7 @@
 
 
 
-## UI Components found here
+## [UI](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui) Components found here
 
 | Component                                         |  Description                                                    |
 | ------------------------------------------------- | --------------------------------------------------------------- |
@@ -51,7 +51,7 @@
 | [Tooltip](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Tooltip)                      | Tooltip Ui component          |     
 
 
-## Helpers Found Here
+## [Helpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers) Found Here
 
 | Helper                                                                                                                | Methods |
 | --------------------------------------------------------------------------------------------------------------------- | -------- | 
@@ -72,3 +72,115 @@
 | [TemplateHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/TemplateHelpers)   | `HexToRgb`, `defineForegroundColor`, `makeRgba`, `decideMeasurement`, `makeShadow`  | 
 | [WindowHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/WindowHelpers)       | `getPathName`, `getWindowSize`    | 
 
+
+## [Icons](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/icons) found here
+
+| Icon name                     |  Description                                                     |
+| ----------------------------- | ---------------------------------------------------------------- |
+| CoinsIcon                     |                                                                  |
+| DeleteIcon                    |                                                                  |
+| EditIcon                      |                                                                  |
+| EmptyBasketIcon               |                                                                  |
+| InstagramIcon                 |                                                                  |
+| LocationIcon                  |                                                                  |
+| LogoutIcon                    |                                                                  |
+| MapMarkerIcon                 |                                                                  |
+| PencilIcon                    |                                                                  |
+| PlusIcon                      |                                                                  |
+| SearchIcon                    |                                                                  |
+| ShoppingBasketIcon            |                                                                  |
+| ShoppingCartIcon              |                                                                  |
+| ThIcon                        |                                                                  |
+| TickIcon                      |                                                                  |
+| TrashIcon                     |                                                                  |
+| TwitterIcon                   |                                                                  |
+| UserIcon                      |                                                                  |
+| VendorIcon                    |                                                                  |
+| SnappMarketLogo               |                                                                  |
+| ----------------------------- | ---------------------------------------------------------------- |
+| DissatisfiedEmoji             |                                                                  |
+| HappyEmoji                    |                                                                  |
+| LaughEmoji                    |                                                                  |
+| NormalEmoji                   |                                                                  |
+| SadEmoji                      |                                                                  |
+| ----------------------------- | ---------------------------------------------------------------- |
+| BoxWithTickIcon               |                                                                  |
+| GroceryBagIcon                |                                                                  |
+| ListSearchIcon                |                                                                  |
+| MotorcyleIcon                 |                                                                  |
+| ShoppingBasketIcon            |                                                                  |
+| ----------------------------- | ---------------------------------------------------------------- |
+| AngleDownIcon                 |                                                                  |
+| AngleLeftIcon                 |                                                                  |
+| AngleRightIcon                |                                                                  |
+| AngleUpIcon                   |                                                                  |
+| ArrowDownIcon                 |                                                                  |
+| ArrowLeftIcon                 |                                                                  |
+| ArrowRightIcon                |                                                                  |
+| ArrowUpIcon                   |                                                                  |
+| BasketNotAllowedIcon          |                                                                  |
+| BikeOIcon                     |                                                                  |
+| BinocularsIcon                |                                                                  |
+| BoxIcon                       |                                                                  |
+| CalendarIcon                  |                                                                  |
+| CategoriesIcon                |                                                                  |
+| CategoriesOIcon               |                                                                  |
+| CellphoneIcon                 |                                                                  |
+| CheckMarkIcon                 |                                                                  |
+| CircleIcon                    |                                                                  |
+| ClockIcon                     |                                                                  |
+| ClockOIcon                    |                                                                  |
+| CommentIcon                   |                                                                  |
+| CreditCardIcon                |                                                                  |
+| CrossIcon                     |                                                                  |
+| DigitsIcon                    |                                                                  |
+| DiscountIcon                  |                                                                  |
+| EnvelopeIcon                  |                                                                  |
+| ExportIcon                    |                                                                  |
+| FilterIcon                    |                                                                  |
+| HeartIcon                     |                                                                  |
+| HomeIcon                      |                                                                  |
+| LogoutIcon                    |                                                                  |
+| LoopIcon                      |                                                                  |
+| MapMarkerIcon                 |                                                                  |
+| MapMarkerAddIcon              |                                                                  |
+| MapMarkerOIcon                |                                                                  |
+| MenuIcon                      |                                                                  |
+| MinusIcon                     |                                                                  |
+| OrdersHistoryIcon             |                                                                  |
+| PaperRocketIcon               |                                                                  |
+| PaperRocketOIcon              |                                                                  |
+| PencilIcon                    |                                                                  |
+| PencilEditIcon                |                                                                  |
+| PictureIcon                   |                                                                  |
+| PlusIcon                      |                                                                  |
+| RingIcon                      |                                                                  |
+| SearchIcon                    |                                                                  |
+| ShareIcon                     |                                                                  |
+| ShoppingBasketIcon            |                                                                  |
+| ShoppingListIcon              |                                                                  |
+| ShoppingListSquareIcon        |                                                                  |
+| SortIcon                      |                                                                  |
+| SpinnerIcon                   |                                                                  |
+| SqureIcon                     |                                                                  |
+| StoreIcon                     |                                                                  |
+| SupportIcon                   |                                                                  |
+| TrashIcon                     |                                                                  |
+| TrashOIcon                    |                                                                  |
+| UserAddIcon                   |                                                                  |
+| UserOIcon                     |                                                                  |
+| UserIcon                      |                                                                  |
+| WalletIcon                    |                                                                  |
+| WarningSign                   |                                                                  |
+
+---
+#### The MIT License (MIT)
+
+Copyright (c) 2020 @snappmarket
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:

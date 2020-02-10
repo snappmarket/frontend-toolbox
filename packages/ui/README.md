@@ -32,10 +32,8 @@ import { COMPONENT } from '@snappmarket/ui';
 | [Button](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Button)                        | Button Ui component           | 
 | [Checkbox](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/CheckBox)                    | CheckBox Ui component         |     
 | [ConfirmDialog](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/ConfirmDialog)          | ConfirmDialog Ui component    |         
-| [Dialog](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Dialog)                        | Dialog Ui component           | 
 | [Grid](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Grid)                            | Grid Ui component             | 
 | [GridSystem](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/GridSystem)                | GridSystem Ui component       |     
-| [Icon](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Icon)                            | Icon Ui component             | 
 | [Image](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Image)                          | Image Ui component            | 
 | [Input](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Input)                          | Input Ui component            | 
 | [InputRange](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/InputRange)                | InputRange Ui component       |     
