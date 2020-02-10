@@ -2,13 +2,13 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from '../resources/styles'
-import theme from '../../../packages/ui/packages/Theme/src'
+import {makeTheme} from '../../../packages/ui/packages/Theme/src'
 
-const Theme = ({ children }) => {
+const Theme = ({children }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={makeTheme()}>
       <GlobalStyles />
-      {children}
+      {children }
     </ThemeProvider>
   )
 }
