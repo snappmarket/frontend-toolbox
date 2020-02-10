@@ -72,5 +72,8 @@
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui",
-  "gitHead": "2207934c0e1e69a5004aee326f2ccfabe910ee32"
+  "gitHead": "2207934c0e1e69a5004aee326f2ccfabe910ee32",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3"
+  }
 }
