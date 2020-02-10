@@ -45,6 +45,36 @@
       }
     },
     {
+      "key": "packages/helpers/README.md",
+      "value": {
+        "id": "8962f2da4664b19ab0672174bb68c60a",
+        "filepath": "packages/helpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\README.md",
+        "link": "",
+        "slug": "packages-helpers-readme",
+        "route": "/packages-helpers-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "helper-methods",
+            "depth": 1,
+            "value": "Helper methods"
+          },
+          {
+            "slug": "-it-is-useful-to-have-mini-helper-functions-which-helps-you-with-some-thing",
+            "depth": 2,
+            "value": "😎 it is useful to have mini helper functions which helps you with some thing"
+          },
+          {
+            "slug": "helpers-found-here",
+            "depth": 2,
+            "value": "Helpers Found Here"
+          }
+        ]
+      }
+    },
+    {
       "key": "packages/hooks/README.md",
       "value": {
         "id": "1de4ffb8aa527ee1b504442a131af776",
@@ -80,36 +110,6 @@
             "slug": "the-mit-license-mit",
             "depth": 4,
             "value": "The MIT License (MIT)"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/helpers/README.md",
-      "value": {
-        "id": "8962f2da4664b19ab0672174bb68c60a",
-        "filepath": "packages/helpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\README.md",
-        "link": "",
-        "slug": "packages-helpers-readme",
-        "route": "/packages-helpers-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "helper-methods",
-            "depth": 1,
-            "value": "Helper methods"
-          },
-          {
-            "slug": "-it-is-useful-to-have-mini-helper-functions-which-helps-you-with-some-thing",
-            "depth": 2,
-            "value": "😎 it is useful to have mini helper functions which helps you with some thing"
-          },
-          {
-            "slug": "helpers-found-here",
-            "depth": 2,
-            "value": "Helpers Found Here"
           }
         ]
       }
@@ -205,26 +205,26 @@
       }
     },
     {
-      "key": "packages/hooks/packages/useDebounce/README.md",
+      "key": "packages/helpers/packages/CookieHelpers/README.md",
       "value": {
-        "id": "6b53b01c1f473c359ea8be75fd3247e5",
-        "filepath": "packages/hooks/packages/useDebounce/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useDebounce\\README.md",
+        "id": "3b99d57db29fa4fad94e0b5bf9d55375",
+        "filepath": "packages/helpers/packages/CookieHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\CookieHelpers\\README.md",
         "link": "",
-        "slug": "packages-hooks-packages-use-debounce-readme",
-        "route": "/packages-hooks-packages-use-debounce-readme",
+        "slug": "packages-helpers-packages-cookie-helpers-readme",
+        "route": "/packages-helpers-packages-cookie-helpers-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "usedebounce",
+            "slug": "cookie-helpers",
             "depth": 1,
-            "value": "useDebounce"
+            "value": "Cookie helpers"
           },
           {
-            "slug": "-change-rapidly-do-once",
+            "slug": "-methods-that-helps-us-dead-with-cookies",
             "depth": 2,
-            "value": "🔂 change rapidly, do once"
+            "value": "✴ Methods that helps us dead with cookies"
           },
           {
             "slug": "get-started",
@@ -232,254 +232,14 @@
             "value": "get started"
           },
           {
-            "slug": "usage",
+            "slug": "methods",
             "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "source-code",
-            "depth": 3,
-            "value": "source code"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/hooks/packages/useDidUpdateEffect/README.md",
-      "value": {
-        "id": "a0ec9678001dd21b9a60b9a464f04117",
-        "filepath": "packages/hooks/packages/useDidUpdateEffect/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useDidUpdateEffect\\README.md",
-        "link": "",
-        "slug": "packages-hooks-packages-use-did-update-effect-readme",
-        "route": "/packages-hooks-packages-use-did-update-effect-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "usedidupdateeffect",
-            "depth": 1,
-            "value": "useDidUpdateEffect"
-          },
-          {
-            "slug": "🧵-do-not-worry-about-render-phase-effect-calls",
-            "depth": 2,
-            "value": "🧵 do not worry about render phase effect calls"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
+            "value": "methods"
           },
           {
             "slug": "usage",
             "depth": 2,
             "value": "usage"
-          },
-          {
-            "slug": "source-code",
-            "depth": 3,
-            "value": "source code"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/hooks/packages/useFocus/README.md",
-      "value": {
-        "id": "1e060a5fa7e5c0dee56da7502b1c7979",
-        "filepath": "packages/hooks/packages/useFocus/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useFocus\\README.md",
-        "link": "",
-        "slug": "packages-hooks-packages-use-focus-readme",
-        "route": "/packages-hooks-packages-use-focus-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "usefocus",
-            "depth": 1,
-            "value": "useFocus"
-          },
-          {
-            "slug": "-focus-on-every-thing-you-want",
-            "depth": 2,
-            "value": "😵 focus on every thing you want"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "source-code",
-            "depth": 3,
-            "value": "source code"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/hooks/packages/useForceUpdate/README.md",
-      "value": {
-        "id": "f85707626d93ea0ea8fb74986815f379",
-        "filepath": "packages/hooks/packages/useForceUpdate/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useForceUpdate\\README.md",
-        "link": "",
-        "slug": "packages-hooks-packages-use-force-update-readme",
-        "route": "/packages-hooks-packages-use-force-update-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "useforceupdate",
-            "depth": 1,
-            "value": "useForceUpdate"
-          },
-          {
-            "slug": "-force-update-component",
-            "depth": 2,
-            "value": "👿 force update component"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "source-code",
-            "depth": 3,
-            "value": "source code"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/hooks/packages/useGeoLocation/README.md",
-      "value": {
-        "id": "613c86a9de4bb6d144a04c31b93faeba",
-        "filepath": "packages/hooks/packages/useGeoLocation/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useGeoLocation\\README.md",
-        "link": "",
-        "slug": "packages-hooks-packages-use-geo-location-readme",
-        "route": "/packages-hooks-packages-use-geo-location-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "usegeolocation",
-            "depth": 1,
-            "value": "useGeoLocation"
-          },
-          {
-            "slug": "-easily-deal-with-navigator-location-api",
-            "depth": 2,
-            "value": "🗺 easily deal with navigator location API"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "source-code",
-            "depth": 3,
-            "value": "source code"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/hooks/packages/useRouteChange/README.md",
-      "value": {
-        "id": "8139b90748e9fa33cb2bb11bab4dadc0",
-        "filepath": "packages/hooks/packages/useRouteChange/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useRouteChange\\README.md",
-        "link": "",
-        "slug": "packages-hooks-packages-use-route-change-readme",
-        "route": "/packages-hooks-packages-use-route-change-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "useroutechange",
-            "depth": 1,
-            "value": "useRouteChange"
-          },
-          {
-            "slug": "-detect-when-react-router-dom-route-changes",
-            "depth": 2,
-            "value": "🏹 detect when react router dom route changes"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "source-code",
-            "depth": 3,
-            "value": "source code"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/hooks/packages/useTimer/README.md",
-      "value": {
-        "id": "feb6fa66dceed324bff2df3efaf9d4d1",
-        "filepath": "packages/hooks/packages/useTimer/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useTimer\\README.md",
-        "link": "",
-        "slug": "packages-hooks-packages-use-timer-readme",
-        "route": "/packages-hooks-packages-use-timer-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "usetimer",
-            "depth": 1,
-            "value": "useTimer"
-          },
-          {
-            "slug": "-easily-handle-timing",
-            "depth": 2,
-            "value": "⏱ easily handle timing"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "source-code",
-            "depth": 3,
-            "value": "source code"
           }
         ]
       }
@@ -505,46 +265,6 @@
             "slug": "-methods-that-helps-us-with-arrays",
             "depth": 2,
             "value": "✴ Methods that helps us with arrays"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "methods",
-            "depth": 2,
-            "value": "methods"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/helpers/packages/CookieHelpers/README.md",
-      "value": {
-        "id": "3b99d57db29fa4fad94e0b5bf9d55375",
-        "filepath": "packages/helpers/packages/CookieHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\CookieHelpers\\README.md",
-        "link": "",
-        "slug": "packages-helpers-packages-cookie-helpers-readme",
-        "route": "/packages-helpers-packages-cookie-helpers-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "cookie-helpers",
-            "depth": 1,
-            "value": "Cookie helpers"
-          },
-          {
-            "slug": "-methods-that-helps-us-dead-with-cookies",
-            "depth": 2,
-            "value": "✴ Methods that helps us dead with cookies"
           },
           {
             "slug": "get-started",
@@ -685,46 +405,6 @@
       }
     },
     {
-      "key": "packages/helpers/packages/MapHelpers/README.md",
-      "value": {
-        "id": "04a621e2c61f3904b8acb627dff93208",
-        "filepath": "packages/helpers/packages/MapHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\MapHelpers\\README.md",
-        "link": "",
-        "slug": "packages-helpers-packages-map-helpers-readme",
-        "route": "/packages-helpers-packages-map-helpers-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "map-helpers",
-            "depth": 1,
-            "value": "Map helpers"
-          },
-          {
-            "slug": "-methods-that-helps-us-to-work-with-maps",
-            "depth": 2,
-            "value": "✴ Methods that helps us to work with maps"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "methods",
-            "depth": 2,
-            "value": "methods"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/helpers/packages/NumberHelpers/README.md",
       "value": {
         "id": "e6c5c52c594409f6c919be55f9070047",
@@ -745,6 +425,46 @@
             "slug": "-methods-that-helps-us-to-control-numbers",
             "depth": 2,
             "value": "✴ Methods that helps us to control numbers"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "methods",
+            "depth": 2,
+            "value": "methods"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/helpers/packages/MapHelpers/README.md",
+      "value": {
+        "id": "04a621e2c61f3904b8acb627dff93208",
+        "filepath": "packages/helpers/packages/MapHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\MapHelpers\\README.md",
+        "link": "",
+        "slug": "packages-helpers-packages-map-helpers-readme",
+        "route": "/packages-helpers-packages-map-helpers-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "map-helpers",
+            "depth": 1,
+            "value": "Map helpers"
+          },
+          {
+            "slug": "-methods-that-helps-us-to-work-with-maps",
+            "depth": 2,
+            "value": "✴ Methods that helps us to work with maps"
           },
           {
             "slug": "get-started",
@@ -925,26 +645,26 @@
       }
     },
     {
-      "key": "packages/helpers/packages/ReduxHelpers/README.md",
+      "key": "packages/helpers/packages/StringHelpers/README.md",
       "value": {
-        "id": "29cbc09f607e4667f0bf8267d52b1dad",
-        "filepath": "packages/helpers/packages/ReduxHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\ReduxHelpers\\README.md",
+        "id": "c2fa75a34be9b9f7fab3128c79a47954",
+        "filepath": "packages/helpers/packages/StringHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\StringHelpers\\README.md",
         "link": "",
-        "slug": "packages-helpers-packages-redux-helpers-readme",
-        "route": "/packages-helpers-packages-redux-helpers-readme",
+        "slug": "packages-helpers-packages-string-helpers-readme",
+        "route": "/packages-helpers-packages-string-helpers-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "redux-helpers",
+            "slug": "string-helpers",
             "depth": 1,
-            "value": "Redux helpers"
+            "value": "String helpers"
           },
           {
-            "slug": "-methods-that-helps-us-to-handle-redux-related-things",
+            "slug": "-methods-that-helps-us-to-work-with-strings",
             "depth": 2,
-            "value": "✴ Methods that helps us to handle redux related things"
+            "value": "✴ Methods that helps us to work with strings"
           },
           {
             "slug": "get-started",
@@ -985,46 +705,6 @@
             "slug": "-methods-that-helps-us-to-manage-storage-on-web",
             "depth": 2,
             "value": "✴ Methods that helps us to manage storage on web"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "methods",
-            "depth": 2,
-            "value": "methods"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          }
-        ]
-      }
-    },
-    {
-      "key": "packages/helpers/packages/StringHelpers/README.md",
-      "value": {
-        "id": "c2fa75a34be9b9f7fab3128c79a47954",
-        "filepath": "packages/helpers/packages/StringHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\StringHelpers\\README.md",
-        "link": "",
-        "slug": "packages-helpers-packages-string-helpers-readme",
-        "route": "/packages-helpers-packages-string-helpers-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "string-helpers",
-            "depth": 1,
-            "value": "String helpers"
-          },
-          {
-            "slug": "-methods-that-helps-us-to-work-with-strings",
-            "depth": 2,
-            "value": "✴ Methods that helps us to work with strings"
           },
           {
             "slug": "get-started",
@@ -1120,6 +800,326 @@
             "slug": "usage",
             "depth": 2,
             "value": "usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/hooks/packages/useDebounce/README.md",
+      "value": {
+        "id": "6b53b01c1f473c359ea8be75fd3247e5",
+        "filepath": "packages/hooks/packages/useDebounce/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useDebounce\\README.md",
+        "link": "",
+        "slug": "packages-hooks-packages-use-debounce-readme",
+        "route": "/packages-hooks-packages-use-debounce-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "usedebounce",
+            "depth": 1,
+            "value": "useDebounce"
+          },
+          {
+            "slug": "-change-rapidly-do-once",
+            "depth": 2,
+            "value": "🔂 change rapidly, do once"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "source-code",
+            "depth": 3,
+            "value": "source code"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/hooks/packages/useFocus/README.md",
+      "value": {
+        "id": "1e060a5fa7e5c0dee56da7502b1c7979",
+        "filepath": "packages/hooks/packages/useFocus/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useFocus\\README.md",
+        "link": "",
+        "slug": "packages-hooks-packages-use-focus-readme",
+        "route": "/packages-hooks-packages-use-focus-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "usefocus",
+            "depth": 1,
+            "value": "useFocus"
+          },
+          {
+            "slug": "-focus-on-every-thing-you-want",
+            "depth": 2,
+            "value": "😵 focus on every thing you want"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "source-code",
+            "depth": 3,
+            "value": "source code"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/hooks/packages/useForceUpdate/README.md",
+      "value": {
+        "id": "f85707626d93ea0ea8fb74986815f379",
+        "filepath": "packages/hooks/packages/useForceUpdate/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useForceUpdate\\README.md",
+        "link": "",
+        "slug": "packages-hooks-packages-use-force-update-readme",
+        "route": "/packages-hooks-packages-use-force-update-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "useforceupdate",
+            "depth": 1,
+            "value": "useForceUpdate"
+          },
+          {
+            "slug": "-force-update-component",
+            "depth": 2,
+            "value": "👿 force update component"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "source-code",
+            "depth": 3,
+            "value": "source code"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/hooks/packages/useDidUpdateEffect/README.md",
+      "value": {
+        "id": "a0ec9678001dd21b9a60b9a464f04117",
+        "filepath": "packages/hooks/packages/useDidUpdateEffect/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useDidUpdateEffect\\README.md",
+        "link": "",
+        "slug": "packages-hooks-packages-use-did-update-effect-readme",
+        "route": "/packages-hooks-packages-use-did-update-effect-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "usedidupdateeffect",
+            "depth": 1,
+            "value": "useDidUpdateEffect"
+          },
+          {
+            "slug": "🧵-do-not-worry-about-render-phase-effect-calls",
+            "depth": 2,
+            "value": "🧵 do not worry about render phase effect calls"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "source-code",
+            "depth": 3,
+            "value": "source code"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/helpers/packages/ReduxHelpers/README.md",
+      "value": {
+        "id": "29cbc09f607e4667f0bf8267d52b1dad",
+        "filepath": "packages/helpers/packages/ReduxHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\ReduxHelpers\\README.md",
+        "link": "",
+        "slug": "packages-helpers-packages-redux-helpers-readme",
+        "route": "/packages-helpers-packages-redux-helpers-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "redux-helpers",
+            "depth": 1,
+            "value": "Redux helpers"
+          },
+          {
+            "slug": "-methods-that-helps-us-to-handle-redux-related-things",
+            "depth": 2,
+            "value": "✴ Methods that helps us to handle redux related things"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "methods",
+            "depth": 2,
+            "value": "methods"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/hooks/packages/useGeoLocation/README.md",
+      "value": {
+        "id": "613c86a9de4bb6d144a04c31b93faeba",
+        "filepath": "packages/hooks/packages/useGeoLocation/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useGeoLocation\\README.md",
+        "link": "",
+        "slug": "packages-hooks-packages-use-geo-location-readme",
+        "route": "/packages-hooks-packages-use-geo-location-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "usegeolocation",
+            "depth": 1,
+            "value": "useGeoLocation"
+          },
+          {
+            "slug": "-easily-deal-with-navigator-location-api",
+            "depth": 2,
+            "value": "🗺 easily deal with navigator location API"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "source-code",
+            "depth": 3,
+            "value": "source code"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/hooks/packages/useRouteChange/README.md",
+      "value": {
+        "id": "8139b90748e9fa33cb2bb11bab4dadc0",
+        "filepath": "packages/hooks/packages/useRouteChange/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useRouteChange\\README.md",
+        "link": "",
+        "slug": "packages-hooks-packages-use-route-change-readme",
+        "route": "/packages-hooks-packages-use-route-change-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "useroutechange",
+            "depth": 1,
+            "value": "useRouteChange"
+          },
+          {
+            "slug": "-detect-when-react-router-dom-route-changes",
+            "depth": 2,
+            "value": "🏹 detect when react router dom route changes"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "source-code",
+            "depth": 3,
+            "value": "source code"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/hooks/packages/useTimer/README.md",
+      "value": {
+        "id": "feb6fa66dceed324bff2df3efaf9d4d1",
+        "filepath": "packages/hooks/packages/useTimer/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useTimer\\README.md",
+        "link": "",
+        "slug": "packages-hooks-packages-use-timer-readme",
+        "route": "/packages-hooks-packages-use-timer-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "usetimer",
+            "depth": 1,
+            "value": "useTimer"
+          },
+          {
+            "slug": "-easily-handle-timing",
+            "depth": 2,
+            "value": "⏱ easily handle timing"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "source-code",
+            "depth": 3,
+            "value": "source code"
           }
         ]
       }
@@ -1230,26 +1230,6 @@
       }
     },
     {
-      "key": "packages/ui/packages/Button/index.mdx",
-      "value": {
-        "name": "Button",
-        "route": "/ui/Button",
-        "id": "efadde90db8a1efc6f958280b821fc6b",
-        "filepath": "packages/ui/packages/Button/index.mdx",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Button\\index.mdx",
-        "link": "",
-        "slug": "packages-ui-packages-button-index",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "button",
-            "depth": 1,
-            "value": "Button"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/ui/packages/Button/README.md",
       "value": {
         "id": "91cd72db015567ee726257aa05a770ac",
@@ -1285,21 +1265,21 @@
       }
     },
     {
-      "key": "packages/ui/packages/ConfirmDialog/README.md",
+      "key": "packages/ui/packages/CheckBox/README.md",
       "value": {
-        "id": "f34a21f8700035141d6cc88e121622d9",
-        "filepath": "packages/ui/packages/ConfirmDialog/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\ConfirmDialog\\README.md",
+        "id": "28ab2de74036277f75193662252ddebd",
+        "filepath": "packages/ui/packages/CheckBox/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\CheckBox\\README.md",
         "link": "",
-        "slug": "packages-ui-packages-confirm-dialog-readme",
-        "route": "/packages-ui-packages-confirm-dialog-readme",
+        "slug": "packages-ui-packages-check-box-readme",
+        "route": "/packages-ui-packages-check-box-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "confirm-dialog-ui-component",
+            "slug": "checkbox-ui-component",
             "depth": 1,
-            "value": "Confirm dialog ui component"
+            "value": "Checkbox ui component"
           },
           {
             "slug": "get-started",
@@ -1320,21 +1300,21 @@
       }
     },
     {
-      "key": "packages/ui/packages/CheckBox/README.md",
+      "key": "packages/ui/packages/ConfirmDialog/README.md",
       "value": {
-        "id": "28ab2de74036277f75193662252ddebd",
-        "filepath": "packages/ui/packages/CheckBox/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\CheckBox\\README.md",
+        "id": "f34a21f8700035141d6cc88e121622d9",
+        "filepath": "packages/ui/packages/ConfirmDialog/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\ConfirmDialog\\README.md",
         "link": "",
-        "slug": "packages-ui-packages-check-box-readme",
-        "route": "/packages-ui-packages-check-box-readme",
+        "slug": "packages-ui-packages-confirm-dialog-readme",
+        "route": "/packages-ui-packages-confirm-dialog-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "checkbox-ui-component",
+            "slug": "confirm-dialog-ui-component",
             "depth": 1,
-            "value": "Checkbox ui component"
+            "value": "Confirm dialog ui component"
           },
           {
             "slug": "get-started",
@@ -1565,21 +1545,21 @@
       }
     },
     {
-      "key": "packages/ui/packages/JsonLD/README.md",
+      "key": "packages/ui/packages/Label/README.md",
       "value": {
-        "id": "7cad957697530efa0e7750aebf0c1070",
-        "filepath": "packages/ui/packages/JsonLD/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\JsonLD\\README.md",
+        "id": "accc8185f879e635c5476a17c6901772",
+        "filepath": "packages/ui/packages/Label/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Label\\README.md",
         "link": "",
-        "slug": "packages-ui-packages-json-ld-readme",
-        "route": "/packages-ui-packages-json-ld-readme",
+        "slug": "packages-ui-packages-label-readme",
+        "route": "/packages-ui-packages-label-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "jsonld-ui-component-like-bootstrap",
+            "slug": "label-ui-component-like-bootstrap",
             "depth": 1,
-            "value": "JsonLD ui component like bootstrap"
+            "value": "Label ui component like bootstrap"
           },
           {
             "slug": "get-started",
@@ -1600,21 +1580,21 @@
       }
     },
     {
-      "key": "packages/ui/packages/Label/README.md",
+      "key": "packages/ui/packages/JsonLD/README.md",
       "value": {
-        "id": "accc8185f879e635c5476a17c6901772",
-        "filepath": "packages/ui/packages/Label/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Label\\README.md",
+        "id": "7cad957697530efa0e7750aebf0c1070",
+        "filepath": "packages/ui/packages/JsonLD/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\JsonLD\\README.md",
         "link": "",
-        "slug": "packages-ui-packages-label-readme",
-        "route": "/packages-ui-packages-label-readme",
+        "slug": "packages-ui-packages-json-ld-readme",
+        "route": "/packages-ui-packages-json-ld-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "label-ui-component-like-bootstrap",
+            "slug": "jsonld-ui-component-like-bootstrap",
             "depth": 1,
-            "value": "Label ui component like bootstrap"
+            "value": "JsonLD ui component like bootstrap"
           },
           {
             "slug": "get-started",
@@ -1775,41 +1755,6 @@
       }
     },
     {
-      "key": "packages/ui/packages/Pagination/README.md",
-      "value": {
-        "id": "7d05136cfee1c37b850aa4f42a0c1aa0",
-        "filepath": "packages/ui/packages/Pagination/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Pagination\\README.md",
-        "link": "",
-        "slug": "packages-ui-packages-pagination-readme",
-        "route": "/packages-ui-packages-pagination-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "pagination-ui-component-like-bootstrap",
-            "depth": 1,
-            "value": "Pagination ui component like bootstrap"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "the-mit-license-mit",
-            "depth": 4,
-            "value": "The MIT License (MIT)"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/ui/packages/ProgressBar/README.md",
       "value": {
         "id": "d75d24fcb8aa6d1cd6d4694de3adfe0e",
@@ -1950,41 +1895,6 @@
       }
     },
     {
-      "key": "packages/ui/packages/TabSwitcher/README.md",
-      "value": {
-        "id": "4d50aa42b5b0086ba3ab5b3274291629",
-        "filepath": "packages/ui/packages/TabSwitcher/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\TabSwitcher\\README.md",
-        "link": "",
-        "slug": "packages-ui-packages-tab-switcher-readme",
-        "route": "/packages-ui-packages-tab-switcher-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "tabswitcher-ui-component-like-bootstrap",
-            "depth": 1,
-            "value": "TabSwitcher ui component like bootstrap"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "the-mit-license-mit",
-            "depth": 4,
-            "value": "The MIT License (MIT)"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/ui/packages/Textarea/README.md",
       "value": {
         "id": "1b479a59ede94757f2c5bf261d55de24",
@@ -2090,21 +2000,21 @@
       }
     },
     {
-      "key": "packages/ui/packages/Toggle/README.md",
+      "key": "packages/ui/packages/TabSwitcher/README.md",
       "value": {
-        "id": "870658f096be0d86c873b967d7ed7d72",
-        "filepath": "packages/ui/packages/Toggle/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Toggle\\README.md",
+        "id": "4d50aa42b5b0086ba3ab5b3274291629",
+        "filepath": "packages/ui/packages/TabSwitcher/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\TabSwitcher\\README.md",
         "link": "",
-        "slug": "packages-ui-packages-toggle-readme",
-        "route": "/packages-ui-packages-toggle-readme",
+        "slug": "packages-ui-packages-tab-switcher-readme",
+        "route": "/packages-ui-packages-tab-switcher-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "tooltip-ui-component-like-bootstrap",
+            "slug": "tabswitcher-ui-component-like-bootstrap",
             "depth": 1,
-            "value": "Tooltip ui component like bootstrap"
+            "value": "TabSwitcher ui component like bootstrap"
           },
           {
             "slug": "get-started",
@@ -2155,6 +2065,106 @@
             "slug": "the-mit-license-mit",
             "depth": 4,
             "value": "The MIT License (MIT)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/ui/packages/Toggle/README.md",
+      "value": {
+        "id": "870658f096be0d86c873b967d7ed7d72",
+        "filepath": "packages/ui/packages/Toggle/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Toggle\\README.md",
+        "link": "",
+        "slug": "packages-ui-packages-toggle-readme",
+        "route": "/packages-ui-packages-toggle-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tooltip-ui-component-like-bootstrap",
+            "depth": 1,
+            "value": "Tooltip ui component like bootstrap"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "the-mit-license-mit",
+            "depth": 4,
+            "value": "The MIT License (MIT)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/ui/packages/Pagination/README.md",
+      "value": {
+        "id": "7d05136cfee1c37b850aa4f42a0c1aa0",
+        "filepath": "packages/ui/packages/Pagination/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Pagination\\README.md",
+        "link": "",
+        "slug": "packages-ui-packages-pagination-readme",
+        "route": "/packages-ui-packages-pagination-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "pagination-ui-component-like-bootstrap",
+            "depth": 1,
+            "value": "Pagination ui component like bootstrap"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "the-mit-license-mit",
+            "depth": 4,
+            "value": "The MIT License (MIT)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/ui/packages/Button/src/docs/index.mdx",
+      "value": {
+        "name": "Button",
+        "route": "/ui/button",
+        "menu": "Ui",
+        "id": "1f2f275aa82f7c587ba9c32ac9e80e3d",
+        "filepath": "packages/ui/packages/Button/src/docs/index.mdx",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Button\\src\\docs\\index.mdx",
+        "link": "",
+        "slug": "packages-ui-packages-button-src-docs-index",
+        "headings": [
+          {
+            "slug": "demo",
+            "depth": 1,
+            "value": "Demo"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 1,
+            "value": "Basic Usage"
+          },
+          {
+            "slug": "props",
+            "depth": 1,
+            "value": "Props"
           }
         ]
       }
@@ -2674,88 +2684,6 @@
       ]
     },
     {
-      "key": "packages/ui/packages/Alert/src/index.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "Alert",
-          "methods": [],
-          "actualName": "Alert",
-          "props": {
-            "status": {
-              "type": {
-                "name": "enum",
-                "value": [
-                  {
-                    "value": "'error'",
-                    "computed": false
-                  },
-                  {
-                    "value": "'info'",
-                    "computed": false
-                  },
-                  {
-                    "value": "'warning'",
-                    "computed": false
-                  },
-                  {
-                    "value": "'success'",
-                    "computed": false
-                  }
-                ]
-              },
-              "required": false,
-              "description": ""
-            },
-            "onClose": {
-              "type": {
-                "name": "func"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "(f) => f",
-                "computed": false
-              }
-            },
-            "children": {
-              "type": {
-                "name": "union",
-                "value": [
-                  {
-                    "name": "node"
-                  },
-                  {
-                    "name": "string"
-                  }
-                ]
-              },
-              "required": false,
-              "description": ""
-            },
-            "className": {
-              "type": {
-                "name": "string"
-              },
-              "required": false,
-              "description": ""
-            },
-            "closable": {
-              "type": {
-                "name": "bool"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "true",
-                "computed": false
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
       "key": "packages/ui/packages/Accordion/src/Accordion.js",
       "value": [
         {
@@ -2908,6 +2836,88 @@
               },
               "required": false,
               "description": ""
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/ui/packages/Alert/src/index.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Alert",
+          "methods": [],
+          "actualName": "Alert",
+          "props": {
+            "status": {
+              "type": {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'error'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'info'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'warning'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'success'",
+                    "computed": false
+                  }
+                ]
+              },
+              "required": false,
+              "description": ""
+            },
+            "onClose": {
+              "type": {
+                "name": "func"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "(f) => f",
+                "computed": false
+              }
+            },
+            "children": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "node"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": ""
+            },
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "closable": {
+              "type": {
+                "name": "bool"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "true",
+                "computed": false
+              }
             }
           }
         }
@@ -3549,6 +3559,94 @@
       ]
     },
     {
+      "key": "packages/ui/packages/InputRange/src/index.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "InputRange",
+          "methods": [],
+          "actualName": "InputRange",
+          "props": {
+            "fromTitle": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'from'",
+                "computed": false
+              }
+            },
+            "toTitle": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'to'",
+                "computed": false
+              }
+            },
+            "onChangeComplete": {
+              "type": {
+                "name": "func"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "() => {}",
+                "computed": false
+              }
+            },
+            "rangeValue": {
+              "type": {
+                "name": "shape",
+                "value": {
+                  "min": {
+                    "name": "number",
+                    "required": false
+                  },
+                  "max": {
+                    "name": "number",
+                    "required": false
+                  }
+                }
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "{\r\n  min: 0,\r\n  max: 0,\r\n}",
+                "computed": false
+              }
+            },
+            "value": {
+              "type": {
+                "name": "shape",
+                "value": {
+                  "min": {
+                    "name": "number",
+                    "required": false
+                  },
+                  "max": {
+                    "name": "number",
+                    "required": false
+                  }
+                }
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "{\r\n  min: 0,\r\n  max: 0,\r\n}",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       "key": "packages/ui/packages/Input/src/index.js",
       "value": [
         {
@@ -3677,94 +3775,6 @@
               "description": "",
               "defaultValue": {
                 "value": "false",
-                "computed": false
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "packages/ui/packages/InputRange/src/index.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "InputRange",
-          "methods": [],
-          "actualName": "InputRange",
-          "props": {
-            "fromTitle": {
-              "type": {
-                "name": "string"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "'from'",
-                "computed": false
-              }
-            },
-            "toTitle": {
-              "type": {
-                "name": "string"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "'to'",
-                "computed": false
-              }
-            },
-            "onChangeComplete": {
-              "type": {
-                "name": "func"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "() => {}",
-                "computed": false
-              }
-            },
-            "rangeValue": {
-              "type": {
-                "name": "shape",
-                "value": {
-                  "min": {
-                    "name": "number",
-                    "required": false
-                  },
-                  "max": {
-                    "name": "number",
-                    "required": false
-                  }
-                }
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "{\r\n  min: 0,\r\n  max: 0,\r\n}",
-                "computed": false
-              }
-            },
-            "value": {
-              "type": {
-                "name": "shape",
-                "value": {
-                  "min": {
-                    "name": "number",
-                    "required": false
-                  },
-                  "max": {
-                    "name": "number",
-                    "required": false
-                  }
-                }
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "{\r\n  min: 0,\r\n  max: 0,\r\n}",
                 "computed": false
               }
             }
@@ -5020,6 +5030,44 @@
       ]
     },
     {
+      "key": "packages/ui/packages/Icon/src/CssIcon/index.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Icon",
+          "methods": [],
+          "actualName": "Icon",
+          "props": {
+            "name": {
+              "type": {
+                "name": "string"
+              },
+              "required": true,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1",
+                "computed": false
+              }
+            },
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            }
+          }
+        }
+      ]
+    },
+    {
       "key": "packages/ui/packages/Icon/src/BigCircle/index.js",
       "value": [
         {
@@ -5064,44 +5112,6 @@
                 "name": "string"
               },
               "required": true,
-              "description": ""
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "packages/ui/packages/Icon/src/CssIcon/index.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "Icon",
-          "methods": [],
-          "actualName": "Icon",
-          "props": {
-            "name": {
-              "type": {
-                "name": "string"
-              },
-              "required": true,
-              "description": ""
-            },
-            "size": {
-              "type": {
-                "name": "number"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "1",
-                "computed": false
-              }
-            },
-            "className": {
-              "type": {
-                "name": "string"
-              },
-              "required": false,
               "description": ""
             }
           }
