@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/cookie-helpers",
   "private": false,
-  "version": "0.1.27",
+  "version": "0.1.28",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
@@ -22,5 +22,5 @@
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/CookieHelpers",
-  "gitHead": "2207934c0e1e69a5004aee326f2ccfabe910ee32"
+  "gitHead": "4aeb9319f3a7864b07df51d49702b855d0a02491"
 }
