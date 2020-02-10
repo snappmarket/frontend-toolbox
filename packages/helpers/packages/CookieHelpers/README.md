@@ -23,6 +23,7 @@ npm i @snappmarket/helpers
 | ------ |
 | getCookie                                                 |  
 | setCookie                                                 |  
+| deleteCookie                                              |  
 
 ## usage 
 ```javascript
