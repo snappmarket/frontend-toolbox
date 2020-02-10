@@ -53,12 +53,7 @@ const ConfirmDialog = (props) => {
         <Row>
           <StyledIconCol className="align-center" sm={2}>
             <div className="align-center justify-center circle">
-              {!!icon
-                && (typeof icon === 'string' ? (
-                  <Icon name={icon} size={2} />
-                ) : (
-                  icon
-                ))}
+              {icon || null}
             </div>
           </StyledIconCol>
           <StyledContentCol className="justify-center flex-column" sm={10}>

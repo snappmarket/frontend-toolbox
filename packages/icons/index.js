@@ -19,5 +19,6 @@ export { default as UserIcon } from './src/UserIcon';
 export { default as VendorIcon } from './src/VendorIcon';
 export { default as SnappMarketLogo } from './src/SnappMarketLogo';
 
+export * from './src/FontIcons';
 export * from './src/Emoji';
 export * from './src/Followup';
