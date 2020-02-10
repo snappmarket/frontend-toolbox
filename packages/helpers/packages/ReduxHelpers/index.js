@@ -41,7 +41,6 @@ export const configPersistor = (config) => {
    * @returns {function(*): Function}
    */
   const getMiddleware = (store) => (next) => (action) => {
-
     if (action.type === config.purgeActionType) {
       localStorage.clear();
       next(action);

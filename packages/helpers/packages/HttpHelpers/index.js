@@ -44,7 +44,7 @@ export const universalCall = async ({
     method: method.toUpperCase(),
     credentials,
     headers,
-    ...rest
+    ...rest,
   };
 
   // eslint-disable-next-line no-console

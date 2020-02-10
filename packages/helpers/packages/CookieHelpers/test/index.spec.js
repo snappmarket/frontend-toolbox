@@ -1,7 +1,7 @@
-import * as CookieHelpers from '../index'
+import * as CookieHelpers from '../index';
 
 beforeAll(() => {
-  document.cookie="foo=bar";
+  document.cookie = 'foo=bar';
 });
 describe('CookieHelpers', () => {
   describe('getCookie', () => {
