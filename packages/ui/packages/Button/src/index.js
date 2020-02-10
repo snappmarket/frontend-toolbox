@@ -69,19 +69,7 @@ const Button = (props) => {
   const content = (
     <>
       {!!loading && <LoadingSpinner direction={direction} />}
-      {!!icon
-        && !loading
-        && (typeof icon === 'string' ? (
-          <Icon
-            className={`${
-              title ? (direction === 'right' ? 'ml-1' : 'mr-1') : ''
-            }`}
-            name={icon}
-            size={boxSizing[size].fontSize}
-          />
-        ) : (
-          icon
-        ))}
+      {!!icon && !loading ? icon : null}
       {!!title && title}
       {!!label && (
         <StyledLabel

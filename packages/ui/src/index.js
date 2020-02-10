@@ -1,3 +1,4 @@
+export index from '../packages/Theme/src/index';
 export * from '../packages/Accordion/src/index';
 export { default as Alert } from '../packages/Alert/src/index';
 export { default as Breadcrumb } from '../packages/Breadcrumb/src/index';
@@ -26,3 +27,4 @@ export { default as Textarea } from '../packages/Textarea/src/index';
 export { default as TextWrap } from '../packages/TextWrap/src/index';
 export { default as Toggle } from '../packages/Toggle/src/index';
 export { default as Tooltip } from '../packages/Tooltip/src/index';
+export * from '../packages/Theme/src/index';

@@ -34,6 +34,9 @@ const config = {
     babel({
       exclude: 'node_modules/**',
       runtimeHelpers: true,
+      plugins: [
+        '@babel/plugin-proposal-export-default-from',
+      ],
     }),
     localResolve(),
     resolve(),

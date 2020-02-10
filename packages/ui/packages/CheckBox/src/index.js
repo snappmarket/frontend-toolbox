@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Icon from '../../Icon/src/CssIcon/index';
+import { CheckMarkIcon, CircleIcon, MinusIcon } from '@snappmarket/icons';
 
 import { StyledCheckboxWrapper } from './styles';
 
@@ -19,14 +18,14 @@ const CheckBox = (props) => {
       border={border}
       selected={selected}
     >
-      {selected && !disabled ? <Icon name="check-mark" size={size} /> : ''}
+      {selected && !disabled ? <CheckMarkIcon size={size} /> : ''}
       {disabled && className !== 'circle' ? (
-        <Icon name="minus" size={size} />
+        <MinusIcon size={size} />
       ) : (
         ''
       )}
       {className === 'circle' && disabled ? (
-        <Icon name="circle" size={size} />
+        <CircleIcon size={size} />
       ) : (
         ''
       )}

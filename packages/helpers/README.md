@@ -15,7 +15,7 @@
 
 | Helper                                                                                                                | Methods |
 | --------------------------------------------------------------------------------------------------------------------- | -------- | 
-| [ArrayHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/ArrayHelpers)         | `arrayItemAddProp` ,f`lattenArray` ,s`erializeObject` ,s`tringifyArray` ,d`eepFlatten`   |
+| [ArrayHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/ArrayHelpers)         | `arrayItemAddProp` ,`flattenArray` ,`serializeObject` ,`stringifyArray` ,`deepFlatten`   |
 | [CookieHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/CookieHelpers)       | `getCookie`, `setCookie`   |  
 | [DebugHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/DebugHelpers)         | `delog`, `ApiError`, `globalErrorCatcher`    |  
 | [HttpHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/HttpHelpers)           | `fetchWithTimeOut`, `universalCall`   |  

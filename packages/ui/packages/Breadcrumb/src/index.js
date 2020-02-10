@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-import Icon from '../../Icon/src/CssIcon/index';
+import { AngleLeftIcon } from '@snappmarket/icons';
 
 import {
   StyledBreadcrumbWrapper,
@@ -18,7 +17,7 @@ const Breadcrumb = (props) => {
     <StyledBreadcrumbItemWrapper key={index}>
       {!!index && (
         <StyledBreadcrumbItemSeparator>
-          <Icon name="angle-left" />
+          <AngleLeftIcon />
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>
