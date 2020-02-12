@@ -1,0 +1,69 @@
+200 error Error: Command failed: git add -- packages/helpers/package.json packages/helpers/package-lock.json packages/icons/package.json packages/icons/package-lock.json packages/ui/package.json packages/ui/package-lock.json packages/helpers/packages/StringHelpers/package.json packages/helpers/packages/StringHelpers/package-lock.json packages/helpers/packages/CookieHelpers/package.json packages/helpers/packages/CookieHelpers/package-lock.json packages/helpers/packages/JsonHelpers/package.json packages/helpers/packages/JsonHelpers/package-lock.json packages/helpers/packages/NumberHelpers/package.json packages/helpers/packages/NumberHelpers/package-lock.json packages/helpers/packages/MapHelpers/package.json packages/helpers/packages/MapHelpers/package-lock.json packages/ui/packages/Breadcrumb/package.json packages/ui/packages/Breadcrumb/package-lock.json packages/ui/packages/Button/package.json packages/ui/packages/Button/package-lock.json packages/ui/packages/CheckBox/package.json packages/ui/packages/CheckBox/package-lock.json packages/ui/packages/ConfirmDialog/package.json packages/ui/packages/ConfirmDialog/package-lock.json packages/ui/packages/Modal/package.json packages/ui/packages/Modal/package-lock.json packages/ui/packages/Pagination/package.json packages/ui/packages/Pagination/package-lock.json packages/ui/packages/Table/package.json packages/ui/packages/Table/package-lock.json packages/ui/packages/Theme/package.json packages/ui/packages/Theme/package-lock.json
+200 error warning: LF will be replaced by CRLF in packages/helpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/CookieHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/CookieHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/JsonHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/JsonHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/MapHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/MapHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/NumberHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/NumberHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/StringHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/StringHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/icons/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/icons/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Breadcrumb/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Breadcrumb/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Button/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Button/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/CheckBox/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/CheckBox/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/ConfirmDialog/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/ConfirmDialog/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Modal/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Modal/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Pagination/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Pagination/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Table/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Theme/package.json.
+200 error The file will have its original line endings in your working directory
+200 error The following paths are ignored by one of your .gitignore files:
+200 error packages/ui/packages/Table/package-lock.json
+200 error packages/ui/packages/Theme/package-lock.json
+200 error Use -f if you really want to add them.
+200 error
+200 error     at makeError (C:\Users\SayJeyHi\PhpstormProjects\react-hooks\node_modules\execa\index.js:174:9)
+200 error     at C:\Users\SayJeyHi\PhpstormProjects\react-hooks\node_modules\execa\index.js:278:16
+200 error     at processTicksAndRejections (internal/process/task_queues.js:93:5)

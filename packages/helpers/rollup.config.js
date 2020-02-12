@@ -23,6 +23,11 @@ export default {
       sourcemap: true,
     },
   ],
+  external: [
+    'react',
+    'react-dom',
+    'isomorphic-unfetch',
+  ],
   plugins: [
     globals(),
     builtins(),

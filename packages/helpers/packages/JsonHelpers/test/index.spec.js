@@ -43,6 +43,6 @@ describe('JsonHelpers', () => {
     it('should return given value, cause it is not a json', () => {
       const payload = 'foo';
       expect(JsonHelpers.recursiveJsonParse({}, payload)).toEqual(payload);
-    })
+    });
   });
 });
