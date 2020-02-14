@@ -97,19 +97,19 @@
 | UserIcon                      |                                                                  |
 | VendorIcon                    |                                                                  |
 | SnappMarketLogo               |                                                                  |
-| ----------------------------- | ---------------------------------------------------------------- |
+|                               |                                                                  |
 | DissatisfiedEmoji             |                                                                  |
 | HappyEmoji                    |                                                                  |
 | LaughEmoji                    |                                                                  |
 | NormalEmoji                   |                                                                  |
 | SadEmoji                      |                                                                  |
-| ----------------------------- | ---------------------------------------------------------------- |
+|                               |                                                                  |
 | BoxWithTickIcon               |                                                                  |
 | GroceryBagIcon                |                                                                  |
 | ListSearchIcon                |                                                                  |
 | MotorcyleIcon                 |                                                                  |
 | ShoppingBasketIcon            |                                                                  |
-| ----------------------------- | ---------------------------------------------------------------- |
+|                               |                                                                  |
 | AngleDownIcon                 |                                                                  |
 | AngleLeftIcon                 |                                                                  |
 | AngleRightIcon                |                                                                  |
