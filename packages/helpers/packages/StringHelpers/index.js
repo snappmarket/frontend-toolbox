@@ -18,3 +18,16 @@ export const autoLink = string => {
   const template = '<a href="$1" target="_blank">$1</a>';
   return string.replace(regex, template);
 };
+
+export const getQueryParams = (url, parameter) => {
+  const myParameter = parameter.replace(/[\[\]]/g, '\\$&');
+  const regex = new RegExp(`[?&]${myParameter}(=([^&#]*)|&|#|$)`);
+  const results = regex.exec(url);
+  if (!results) {
+    return null;
+  }
+  if (!results[2]) {
+    return '';
+  }
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
