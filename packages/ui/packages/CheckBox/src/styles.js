@@ -22,10 +22,9 @@ const StyledCheckboxWrapper = Styled.button`
       background-color: ${(props) => props.theme.colors.gray['ultra-light']};
     border-color: ${(props) => props.theme.colors.gray['ultra-light']};
   }
-  .icon {
-    font-size: ${(props) => `calc(${props.size - 1} * ${props.theme.defaultRem})`};
-    color: 
-    ${(props) => (!props.disabled ? 'white' : props.theme.colors.gray.light)};
+  svg {
+    width: calc(${(props) => props.theme.defaultRem} * 1) !important;
+    height: calc(${(props) => props.theme.defaultRem} * 1) !important;
   }
 `;
 

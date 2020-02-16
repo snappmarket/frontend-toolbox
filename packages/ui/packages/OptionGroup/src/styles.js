@@ -16,6 +16,11 @@ const StyledOptionItem = Styled.div`
   > span {
     width: 100%;
   }
+  button > svg {
+    margin-left: 0 !important;
+    width: calc(${(props) => props.theme.defaultRem} * 1.5) !important;
+    height: calc(${(props) => props.theme.defaultRem} * 1.5) !important;
+  }
 `;
 
 export { StyledOptionGroup, StyledOptionItem };

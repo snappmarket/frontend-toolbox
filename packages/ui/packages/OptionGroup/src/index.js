@@ -68,4 +68,4 @@ OptionGroup.defaultProps = {
   onSelectItem: () => {},
 };
 
-export default memo(OptionGroup);
+export default OptionGroup;
