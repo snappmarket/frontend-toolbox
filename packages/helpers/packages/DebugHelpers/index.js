@@ -33,37 +33,5 @@ ApiError.prototype = Object.create(Error.prototype, {
 });
 Reflect.setPrototypeOf(ApiError, Error);
 
-/**
- * Catch errors happened in global way
- * @param error
- * @param toast
- */
-// eslint-disable-next-line require-yield
-function* globalErrorCatcher(error) {
-  if (error instanceof ApiError) {
-    delog(`Global Api Error catch - ${error.message}`);
 
-    // if (toast) {
-    //   yield put(messageActions.showErrorToast({ title: message }));
-    // }
-
-    /**
-     * Show stack trace of error
-     */
-    if (DEBUG_MODE !== 'false') {
-      // eslint-disable-next-line no-console
-      console.trace();
-    }
-  }
-
-  // TODO : maybe handle all api requests logging here
-  // yield* writeLog({
-  //   payload: {
-  //     medium: 'search location',
-  //     action: 'XHR',
-  //     detail: `failed to get search result of location`,
-  //   },
-  // });
-}
-
-export { ApiError, delog, globalErrorCatcher };
+export { ApiError, delog };
