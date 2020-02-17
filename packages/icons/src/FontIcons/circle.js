@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const IconName = ({ className, size }) => (
+const IconName = ({ className, size, color }) => (
   <svg
     className={className}
     style={{
@@ -13,6 +13,7 @@ const IconName = ({ className, size }) => (
     width="32"
     height="32"
     viewBox="0 0 32 32"
+    fill={color}
   >
     <title>circle</title>
     <path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z" />
@@ -23,10 +24,12 @@ const IconName = ({ className, size }) => (
 IconName.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 IconName.defaultProps = {
   size: 1.5,
+  color: '#000000',
 };
 
 export default IconName;

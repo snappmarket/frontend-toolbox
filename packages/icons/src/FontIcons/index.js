@@ -52,3 +52,4 @@ export { default as UserAddIcon } from './user-add';
 export { default as UserOIcon } from './user-o';
 export { default as WalletIcon } from './wallet';
 export { default as WarningSign } from './warning-sign';
+export { default as InfoIcon } from './info';
