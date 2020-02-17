@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const TrashIcon = (props) => (
+const TrashIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="delete_2_"
@@ -8,7 +9,11 @@ const TrashIcon = (props) => (
     height="15.32"
     data-name="delete (2)"
     viewBox="0 0 12.443 15.32"
-    {...props}
+    className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <path
       id="Path_214"
@@ -40,5 +45,13 @@ const TrashIcon = (props) => (
     />
   </svg>
 );
+TrashIcon.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+TrashIcon.defaultProps = {
+  size: 1.5,
+};
 
 export default TrashIcon;

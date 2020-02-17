@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserIcon = (props) => (
+const UserIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
     viewBox="0 0 16 16"
-    {...props}
+    className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g id="user" transform="translate(-.001)">
       <g>
@@ -19,6 +23,11 @@ const UserIcon = (props) => (
 
 UserIcon.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+UserIcon.defaultProps = {
+  size: 1.5,
 };
 
 export default UserIcon;

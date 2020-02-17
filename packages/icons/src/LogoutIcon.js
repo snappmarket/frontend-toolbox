@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LogoutIcon = ({ className }) => (
+const LogoutIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className={className}
     width="16"
     height="12.153"
     viewBox="0 0 16 12.153"
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g>
       <path
@@ -28,6 +32,11 @@ const LogoutIcon = ({ className }) => (
 
 LogoutIcon.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+LogoutIcon.defaultProps = {
+  size: 1.5,
 };
 
 export default LogoutIcon;

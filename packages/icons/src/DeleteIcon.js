@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DeleteIcon = ({ className, onClick }) => (
+const DeleteIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="50"
     height="50"
     viewBox="0 0 70.711 70.711"
     className={className}
-    onClick={onClick}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g transform="translate(-925 -180)">
       <rect
@@ -31,11 +34,11 @@ const DeleteIcon = ({ className, onClick }) => (
 
 DeleteIcon.propTypes = {
   className: PropTypes.string,
-  onClick: PropTypes.func,
+  size: PropTypes.number,
 };
 
 DeleteIcon.defaultProps = {
-  onClick: (f) => f,
+  size: 1.5,
 };
 
 export default DeleteIcon;

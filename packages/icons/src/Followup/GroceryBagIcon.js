@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GroceryBagIcon = ({ className }) => (
+const GroceryBagIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="25.78"
     height="35.114"
     viewBox="0 0 25.78 35.114"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g transform="translate(0 0)">
       <path
@@ -90,6 +94,11 @@ const GroceryBagIcon = ({ className }) => (
 
 GroceryBagIcon.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+GroceryBagIcon.defaultProps = {
+  size: 1.5,
 };
 
 export default GroceryBagIcon;

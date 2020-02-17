@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const EmptyBasketIcon = ({ className }) => (
+const EmptyBasketIcon = ({ className, size }) => (
   <svg
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +10,10 @@ const EmptyBasketIcon = ({ className }) => (
     viewBox="0 0 588.000000 378.000000"
     preserveAspectRatio="xMidYMid meet"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g
       transform="translate(0.000000,378.000000) scale(0.100000,-0.100000)"
@@ -65,6 +69,11 @@ const EmptyBasketIcon = ({ className }) => (
 
 EmptyBasketIcon.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+EmptyBasketIcon.defaultProps = {
+  size: 1.5,
 };
 
 export default EmptyBasketIcon;

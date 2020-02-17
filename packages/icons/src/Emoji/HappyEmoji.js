@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HappyEmoji = ({ className }) => (
+const HappyEmoji = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="42.256"
     height="42.256"
     viewBox="0 0 42.256 42.256"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g>
       <path
@@ -37,6 +41,11 @@ const HappyEmoji = ({ className }) => (
 
 HappyEmoji.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+HappyEmoji.defaultProps = {
+  size: 1.5,
 };
 
 export default HappyEmoji;

@@ -1,7 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const ThIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+const ThIcon = ({ className, size }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 400 400"
+    className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
+  >
     <defs />
     <path
       fillRule="evenodd"
@@ -10,4 +19,12 @@ const ThIcon = () => (
   </svg>
 );
 
+ThIcon.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+ThIcon.defaultProps = {
+  size: 1.5,
+};
 export default ThIcon;

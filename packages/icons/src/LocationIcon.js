@@ -1,7 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const LocationIcon = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.6 18.3" {...props}>
+const LocationIcon = ({ className, size }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 14.6 18.3"
+    className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
+  >
     <g transform="translate(-47.2)">
       <g transform="translate(47.2)">
         <path
@@ -17,4 +26,12 @@ const LocationIcon = (props) => (
   </svg>
 );
 
+LocationIcon.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+LocationIcon.defaultProps = {
+  size: 1.5,
+};
 export default LocationIcon;

@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NormalEmoji = ({ className }) => (
+const NormalEmoji = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="42.167"
     height="44"
     viewBox="0 0 42.167 44"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g>
       <path
@@ -38,6 +42,11 @@ const NormalEmoji = ({ className }) => (
 
 NormalEmoji.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+NormalEmoji.defaultProps = {
+  size: 1.5,
 };
 
 export default NormalEmoji;

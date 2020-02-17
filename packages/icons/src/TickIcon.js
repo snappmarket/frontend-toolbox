@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TickIcon = ({ className }) => (
+const TickIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="70"
     height="65"
     viewBox="0 0 84.539 70.711"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g transform="translate(-918.322 -182.139)">
       <rect
@@ -30,6 +34,11 @@ const TickIcon = ({ className }) => (
 
 TickIcon.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+TickIcon.defaultProps = {
+  size: 1.5,
 };
 
 export default TickIcon;
