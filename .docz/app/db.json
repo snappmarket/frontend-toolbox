@@ -215,46 +215,6 @@
       }
     },
     {
-      "key": "packages/helpers/packages/ArrayHelpers/README.md",
-      "value": {
-        "id": "cf629fb75c569f247a139ea516dba941",
-        "filepath": "packages/helpers/packages/ArrayHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\ArrayHelpers\\README.md",
-        "link": "",
-        "slug": "packages-helpers-packages-array-helpers-readme",
-        "route": "/packages-helpers-packages-array-helpers-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "arrayhelpers",
-            "depth": 1,
-            "value": "ArrayHelpers"
-          },
-          {
-            "slug": "-methods-that-helps-us-with-arrays",
-            "depth": 2,
-            "value": "✴ Methods that helps us with arrays"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "methods",
-            "depth": 2,
-            "value": "methods"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/helpers/packages/CookieHelpers/README.md",
       "value": {
         "id": "3b99d57db29fa4fad94e0b5bf9d55375",
@@ -295,26 +255,26 @@
       }
     },
     {
-      "key": "packages/helpers/packages/DebugHelpers/README.md",
+      "key": "packages/helpers/packages/ArrayHelpers/README.md",
       "value": {
-        "id": "0b42e48660fba629082f7fcd45db28d5",
-        "filepath": "packages/helpers/packages/DebugHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\DebugHelpers\\README.md",
+        "id": "cf629fb75c569f247a139ea516dba941",
+        "filepath": "packages/helpers/packages/ArrayHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\ArrayHelpers\\README.md",
         "link": "",
-        "slug": "packages-helpers-packages-debug-helpers-readme",
-        "route": "/packages-helpers-packages-debug-helpers-readme",
+        "slug": "packages-helpers-packages-array-helpers-readme",
+        "route": "/packages-helpers-packages-array-helpers-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "debugging-helpers",
+            "slug": "arrayhelpers",
             "depth": 1,
-            "value": "Debugging helpers"
+            "value": "ArrayHelpers"
           },
           {
-            "slug": "-methods-that-helps-us-to-debug-easily",
+            "slug": "-methods-that-helps-us-with-arrays",
             "depth": 2,
-            "value": "✴ Methods that helps us to debug easily"
+            "value": "✴ Methods that helps us with arrays"
           },
           {
             "slug": "get-started",
@@ -375,6 +335,46 @@
       }
     },
     {
+      "key": "packages/helpers/packages/DebugHelpers/README.md",
+      "value": {
+        "id": "0b42e48660fba629082f7fcd45db28d5",
+        "filepath": "packages/helpers/packages/DebugHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\DebugHelpers\\README.md",
+        "link": "",
+        "slug": "packages-helpers-packages-debug-helpers-readme",
+        "route": "/packages-helpers-packages-debug-helpers-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "debugging-helpers",
+            "depth": 1,
+            "value": "Debugging helpers"
+          },
+          {
+            "slug": "-methods-that-helps-us-to-debug-easily",
+            "depth": 2,
+            "value": "✴ Methods that helps us to debug easily"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "methods",
+            "depth": 2,
+            "value": "methods"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          }
+        ]
+      }
+    },
+    {
       "key": "packages/helpers/packages/JsonHelpers/README.md",
       "value": {
         "id": "3f73f969e58dbd4a4ff3ffeac6f7fd97",
@@ -415,46 +415,6 @@
       }
     },
     {
-      "key": "packages/helpers/packages/MapHelpers/README.md",
-      "value": {
-        "id": "04a621e2c61f3904b8acb627dff93208",
-        "filepath": "packages/helpers/packages/MapHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\MapHelpers\\README.md",
-        "link": "",
-        "slug": "packages-helpers-packages-map-helpers-readme",
-        "route": "/packages-helpers-packages-map-helpers-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "map-helpers",
-            "depth": 1,
-            "value": "Map helpers"
-          },
-          {
-            "slug": "-methods-that-helps-us-to-work-with-maps",
-            "depth": 2,
-            "value": "✴ Methods that helps us to work with maps"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "methods",
-            "depth": 2,
-            "value": "methods"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/helpers/packages/NumberHelpers/README.md",
       "value": {
         "id": "e6c5c52c594409f6c919be55f9070047",
@@ -475,6 +435,46 @@
             "slug": "-methods-that-helps-us-to-control-numbers",
             "depth": 2,
             "value": "✴ Methods that helps us to control numbers"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "methods",
+            "depth": 2,
+            "value": "methods"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/helpers/packages/MapHelpers/README.md",
+      "value": {
+        "id": "04a621e2c61f3904b8acb627dff93208",
+        "filepath": "packages/helpers/packages/MapHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\MapHelpers\\README.md",
+        "link": "",
+        "slug": "packages-helpers-packages-map-helpers-readme",
+        "route": "/packages-helpers-packages-map-helpers-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "map-helpers",
+            "depth": 1,
+            "value": "Map helpers"
+          },
+          {
+            "slug": "-methods-that-helps-us-to-work-with-maps",
+            "depth": 2,
+            "value": "✴ Methods that helps us to work with maps"
           },
           {
             "slug": "get-started",
@@ -1610,21 +1610,21 @@
       }
     },
     {
-      "key": "packages/ui/packages/Loading/README.md",
+      "key": "packages/ui/packages/LinedText/README.md",
       "value": {
-        "id": "950dd5ff243d512beb52a92980a86eff",
-        "filepath": "packages/ui/packages/Loading/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Loading\\README.md",
+        "id": "347d1421fb52a9a30259b79c545f99d5",
+        "filepath": "packages/ui/packages/LinedText/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\LinedText\\README.md",
         "link": "",
-        "slug": "packages-ui-packages-loading-readme",
-        "route": "/packages-ui-packages-loading-readme",
+        "slug": "packages-ui-packages-lined-text-readme",
+        "route": "/packages-ui-packages-lined-text-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "loading-ui-component-like-bootstrap",
+            "slug": "linedtext-ui-component-like-bootstrap",
             "depth": 1,
-            "value": "Loading ui component like bootstrap"
+            "value": "LinedText ui component like bootstrap"
           },
           {
             "slug": "get-started",
@@ -1645,21 +1645,21 @@
       }
     },
     {
-      "key": "packages/ui/packages/LinedText/README.md",
+      "key": "packages/ui/packages/Loading/README.md",
       "value": {
-        "id": "347d1421fb52a9a30259b79c545f99d5",
-        "filepath": "packages/ui/packages/LinedText/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\LinedText\\README.md",
+        "id": "950dd5ff243d512beb52a92980a86eff",
+        "filepath": "packages/ui/packages/Loading/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\ui\\packages\\Loading\\README.md",
         "link": "",
-        "slug": "packages-ui-packages-lined-text-readme",
-        "route": "/packages-ui-packages-lined-text-readme",
+        "slug": "packages-ui-packages-loading-readme",
+        "route": "/packages-ui-packages-loading-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "linedtext-ui-component-like-bootstrap",
+            "slug": "loading-ui-component-like-bootstrap",
             "depth": 1,
-            "value": "LinedText ui component like bootstrap"
+            "value": "Loading ui component like bootstrap"
           },
           {
             "slug": "get-started",

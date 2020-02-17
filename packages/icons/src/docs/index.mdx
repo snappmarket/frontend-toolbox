@@ -14,7 +14,9 @@ import * as Icons from '../../index';
     const Icon = Icons[icon];
     return (
       <Col xs={3} className="text-center">
-        <Icon size={4} />
+        <div className="bg-gray-ultra-light p-2">
+          <Icon size={4} />
+        </div>
         <code>{icon}</code>
       </Col>
     )
