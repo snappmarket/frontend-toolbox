@@ -1,0 +1,22 @@
+---
+name: icons
+route: /icons
+---
+import { Playground, Props } from 'docz';
+import { Row, Col} from '@snappmarket/ui';
+
+import * as Icons from '../../index';
+
+# Icons
+
+<Row>
+  {Object.keys(Icons).map(icon => {
+    const Icon = Icons[icon];
+    return (
+      <Col xs={3} className="text-center">
+        <Icon size={4} />
+        <code>{icon}</code>
+      </Col>
+    )
+  })}
+</Row>
