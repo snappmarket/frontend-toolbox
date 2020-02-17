@@ -10,7 +10,7 @@ const LocationIcon = ({ className, size, color }) => (
       width: size * 10,
       height: size * 10,
     }}
-    color={color}
+    fill={color}
   >
     <g transform="translate(-47.2)">
       <g transform="translate(47.2)">

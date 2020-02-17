@@ -14,7 +14,7 @@ const EmptyBasketIcon = ({ className, size, color }) => (
       width: size * 10,
       height: size * 10,
     }}
-    color={color}
+    fill={color}
   >
     <g
       transform="translate(0.000000,378.000000) scale(0.100000,-0.100000)"

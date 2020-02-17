@@ -12,7 +12,7 @@ const TickIcon = ({ className, size, color }) => (
       width: size * 10,
       height: size * 10,
     }}
-    color={color}
+    fill={color}
   >
     <g transform="translate(-918.322 -182.139)">
       <rect
@@ -20,14 +20,12 @@ const TickIcon = ({ className, size, color }) => (
         height="14"
         rx="7"
         transform="translate(928.222 219.322) rotate(45)"
-        fill="#fff"
       />
       <rect
         width="86"
         height="14"
         rx="7"
         transform="translate(1002.862 192.038) rotate(135)"
-        fill="#fff"
       />
     </g>
   </svg>

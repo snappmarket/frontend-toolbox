@@ -12,10 +12,9 @@ const InstagramIcon = ({ className, size, color }) => (
       width: size * 10,
       height: size * 10,
     }}
-    color={color}
+    fill={color}
   >
     <g
-      fill="#4e4e4e"
       stroke="#4e4e4e"
       strokeWidth=".3px"
       transform="translate(.151 .15)"
@@ -41,6 +40,6 @@ InstagramIcon.propTypes = {
 
 InstagramIcon.defaultProps = {
   size: 1.5,
-  color: '#000000'
+  color: '#000000',
 };
 export default InstagramIcon;

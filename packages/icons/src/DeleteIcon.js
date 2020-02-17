@@ -12,7 +12,7 @@ const DeleteIcon = ({ className, size, color }) => (
       width: size * 10,
       height: size * 10,
     }}
-    color={color}
+    fill={color}
   >
     <g transform="translate(-925 -180)">
       <rect
@@ -20,14 +20,12 @@ const DeleteIcon = ({ className, size, color }) => (
         height="14"
         rx="7"
         transform="translate(995.711 189.899) rotate(135)"
-        fill="#fff"
       />
       <rect
         width="86.001"
         height="14"
         rx="7"
         transform="translate(985.812 250.711) rotate(-135)"
-        fill="#fff"
       />
     </g>
   </svg>
