@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SadEmoji = ({ className, size }) => (
+const SadEmoji = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="43.77"
@@ -12,6 +12,7 @@ const SadEmoji = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    fill={color}
   >
     <g transform="translate(-565.109 -185.154)">
       <path
@@ -43,10 +44,12 @@ const SadEmoji = ({ className, size }) => (
 SadEmoji.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 SadEmoji.defaultProps = {
   size: 1.5,
+  color: '#000000',
 };
 
 export default SadEmoji;
