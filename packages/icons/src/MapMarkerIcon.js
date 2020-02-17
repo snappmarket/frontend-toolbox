@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MapMarkerIcon = ({ className, size }) => (
+const MapMarkerIcon = ({ className, size, color }) => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -14,6 +14,7 @@ const MapMarkerIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <path
       fill="#E74C3C"
@@ -35,10 +36,12 @@ C302.497,216.15,346.144,172.498,399.997,172.498z"
 MapMarkerIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 MapMarkerIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 
 export default MapMarkerIcon;

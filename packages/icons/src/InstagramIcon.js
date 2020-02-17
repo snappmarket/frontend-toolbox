@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const InstagramIcon = ({ className, size }) => (
+const InstagramIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20.3"
@@ -12,6 +12,7 @@ const InstagramIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <g
       fill="#4e4e4e"
@@ -35,9 +36,11 @@ const InstagramIcon = ({ className, size }) => (
 InstagramIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 InstagramIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 export default InstagramIcon;

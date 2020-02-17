@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserIcon = ({ className, size }) => (
+const UserIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -12,6 +12,7 @@ const UserIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <g id="user" transform="translate(-.001)">
       <g>
@@ -24,10 +25,12 @@ const UserIcon = ({ className, size }) => (
 UserIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 UserIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 
 export default UserIcon;

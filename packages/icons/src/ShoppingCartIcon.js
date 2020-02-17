@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ShoppingCartIcon = ({ className, size }) => (
+const ShoppingCartIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -12,6 +12,7 @@ const ShoppingCartIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <path
       fill="#757575"
@@ -33,10 +34,12 @@ const ShoppingCartIcon = ({ className, size }) => (
 ShoppingCartIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 ShoppingCartIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 
 export default ShoppingCartIcon;

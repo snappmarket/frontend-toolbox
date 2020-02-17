@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const EditIcon = ({ className, size }) => (
+const EditIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="edit_4_"
@@ -14,6 +14,7 @@ const EditIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <path
       id="Path_212"
@@ -34,10 +35,12 @@ const EditIcon = ({ className, size }) => (
 EditIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 EditIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 
 export default EditIcon;

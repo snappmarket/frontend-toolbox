@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TickIcon = ({ className, size }) => (
+const TickIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="70"
@@ -12,6 +12,7 @@ const TickIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <g transform="translate(-918.322 -182.139)">
       <rect
@@ -35,10 +36,12 @@ const TickIcon = ({ className, size }) => (
 TickIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 TickIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 
 export default TickIcon;

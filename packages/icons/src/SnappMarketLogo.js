@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SnappMarketLogo = ({ className, size }) => (
+const SnappMarketLogo = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -13,6 +13,7 @@ const SnappMarketLogo = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <defs>
       <path id="urtwa" d="M88 284.36h31.418v44.817H88z" />
@@ -138,9 +139,11 @@ const SnappMarketLogo = ({ className, size }) => (
 SnappMarketLogo.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 SnappMarketLogo.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 export default SnappMarketLogo;

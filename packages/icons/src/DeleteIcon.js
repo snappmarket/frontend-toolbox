@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DeleteIcon = ({ className, size }) => (
+const DeleteIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="50"
@@ -12,6 +12,7 @@ const DeleteIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <g transform="translate(-925 -180)">
       <rect
@@ -35,10 +36,12 @@ const DeleteIcon = ({ className, size }) => (
 DeleteIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 DeleteIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 
 export default DeleteIcon;

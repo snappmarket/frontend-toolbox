@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ThIcon = ({ className, size }) => (
+const ThIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 400 400"
@@ -10,6 +10,7 @@ const ThIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <defs />
     <path
@@ -22,9 +23,11 @@ const ThIcon = ({ className, size }) => (
 ThIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 ThIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 export default ThIcon;

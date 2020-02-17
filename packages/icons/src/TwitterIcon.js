@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TwitterIcon = ({ className, size }) => (
+const TwitterIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="25"
@@ -12,6 +12,7 @@ const TwitterIcon = ({ className, size }) => (
       width: size * 10,
       height: size * 10,
     }}
+    color={color}
   >
     <path
       fill="#4e4e4e"
@@ -22,10 +23,12 @@ const TwitterIcon = ({ className, size }) => (
 TwitterIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
 TwitterIcon.defaultProps = {
   size: 1.5,
+  color: '#000000'
 };
 
 export default TwitterIcon;
