@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DeleteIcon = ({ className, size, color }) => (
+const CheckMarkIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="50"
-    height="50"
-    viewBox="0 0 70.711 70.711"
+    width="70"
+    height="65"
+    viewBox="0 0 84.539 70.711"
     className={className}
     style={{
       width: size * 10,
@@ -14,32 +14,32 @@ const DeleteIcon = ({ className, size, color }) => (
     }}
     fill={color}
   >
-    <g transform="translate(-925 -180)">
+    <g transform="translate(-918.322 -182.139)">
+      <rect
+        width="32"
+        height="14"
+        rx="7"
+        transform="translate(928.222 219.322) rotate(45)"
+      />
       <rect
         width="86"
         height="14"
         rx="7"
-        transform="translate(995.711 189.899) rotate(135)"
-      />
-      <rect
-        width="86.001"
-        height="14"
-        rx="7"
-        transform="translate(985.812 250.711) rotate(-135)"
+        transform="translate(1002.862 192.038) rotate(135)"
       />
     </g>
   </svg>
 );
 
-DeleteIcon.propTypes = {
+CheckMarkIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
   color: PropTypes.string,
 };
 
-DeleteIcon.defaultProps = {
+CheckMarkIcon.defaultProps = {
   size: 1.5,
   color: '#000000'
 };
 
-export default DeleteIcon;
+export default CheckMarkIcon;

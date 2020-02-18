@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ThIcon = ({ className, size, color }) => (
+const GridOutlineIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 400 400"
@@ -19,14 +19,14 @@ const ThIcon = ({ className, size, color }) => (
   </svg>
 );
 
-ThIcon.propTypes = {
+GridOutlineIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
   color: PropTypes.string,
 };
 
-ThIcon.defaultProps = {
+GridOutlineIcon.defaultProps = {
   size: 1.5,
   color: '#000000'
 };
-export default ThIcon;
+export default GridOutlineIcon;

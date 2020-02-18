@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LocationIcon = ({ className, size, color }) => (
+const MapMarkerOutlineIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 14.6 18.3"
@@ -27,14 +27,14 @@ const LocationIcon = ({ className, size, color }) => (
   </svg>
 );
 
-LocationIcon.propTypes = {
+MapMarkerOutlineIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
   color: PropTypes.string,
 };
 
-LocationIcon.defaultProps = {
+MapMarkerOutlineIcon.defaultProps = {
   size: 1.5,
-  color: '#000000'
+  color: '#000000',
 };
-export default LocationIcon;
+export default MapMarkerOutlineIcon;

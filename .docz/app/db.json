@@ -215,46 +215,6 @@
       }
     },
     {
-      "key": "packages/helpers/packages/CookieHelpers/README.md",
-      "value": {
-        "id": "3b99d57db29fa4fad94e0b5bf9d55375",
-        "filepath": "packages/helpers/packages/CookieHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\CookieHelpers\\README.md",
-        "link": "",
-        "slug": "packages-helpers-packages-cookie-helpers-readme",
-        "route": "/packages-helpers-packages-cookie-helpers-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "cookie-helpers",
-            "depth": 1,
-            "value": "Cookie helpers"
-          },
-          {
-            "slug": "-methods-that-helps-us-dead-with-cookies",
-            "depth": 2,
-            "value": "✴ Methods that helps us dead with cookies"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "methods",
-            "depth": 2,
-            "value": "methods"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/helpers/packages/ArrayHelpers/README.md",
       "value": {
         "id": "cf629fb75c569f247a139ea516dba941",
@@ -295,26 +255,26 @@
       }
     },
     {
-      "key": "packages/helpers/packages/HttpHelpers/README.md",
+      "key": "packages/helpers/packages/CookieHelpers/README.md",
       "value": {
-        "id": "21a6bb47978d96f4d574af064aa04ee5",
-        "filepath": "packages/helpers/packages/HttpHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\HttpHelpers\\README.md",
+        "id": "3b99d57db29fa4fad94e0b5bf9d55375",
+        "filepath": "packages/helpers/packages/CookieHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\CookieHelpers\\README.md",
         "link": "",
-        "slug": "packages-helpers-packages-http-helpers-readme",
-        "route": "/packages-helpers-packages-http-helpers-readme",
+        "slug": "packages-helpers-packages-cookie-helpers-readme",
+        "route": "/packages-helpers-packages-cookie-helpers-readme",
         "name": "Readme",
         "menu": "",
         "headings": [
           {
-            "slug": "http-helpers",
+            "slug": "cookie-helpers",
             "depth": 1,
-            "value": "Http helpers"
+            "value": "Cookie helpers"
           },
           {
-            "slug": "-methods-that-helps-us-to-mange-http-request-related-things",
+            "slug": "-methods-that-helps-us-dead-with-cookies",
             "depth": 2,
-            "value": "✴ Methods that helps us to mange http request related things"
+            "value": "✴ Methods that helps us dead with cookies"
           },
           {
             "slug": "get-started",
@@ -375,6 +335,46 @@
       }
     },
     {
+      "key": "packages/helpers/packages/HttpHelpers/README.md",
+      "value": {
+        "id": "21a6bb47978d96f4d574af064aa04ee5",
+        "filepath": "packages/helpers/packages/HttpHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\HttpHelpers\\README.md",
+        "link": "",
+        "slug": "packages-helpers-packages-http-helpers-readme",
+        "route": "/packages-helpers-packages-http-helpers-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "http-helpers",
+            "depth": 1,
+            "value": "Http helpers"
+          },
+          {
+            "slug": "-methods-that-helps-us-to-mange-http-request-related-things",
+            "depth": 2,
+            "value": "✴ Methods that helps us to mange http request related things"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "methods",
+            "depth": 2,
+            "value": "methods"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          }
+        ]
+      }
+    },
+    {
       "key": "packages/helpers/packages/JsonHelpers/README.md",
       "value": {
         "id": "3f73f969e58dbd4a4ff3ffeac6f7fd97",
@@ -415,46 +415,6 @@
       }
     },
     {
-      "key": "packages/helpers/packages/NumberHelpers/README.md",
-      "value": {
-        "id": "e6c5c52c594409f6c919be55f9070047",
-        "filepath": "packages/helpers/packages/NumberHelpers/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\NumberHelpers\\README.md",
-        "link": "",
-        "slug": "packages-helpers-packages-number-helpers-readme",
-        "route": "/packages-helpers-packages-number-helpers-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "number-helpers",
-            "depth": 1,
-            "value": "Number helpers"
-          },
-          {
-            "slug": "-methods-that-helps-us-to-control-numbers",
-            "depth": 2,
-            "value": "✴ Methods that helps us to control numbers"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "methods",
-            "depth": 2,
-            "value": "methods"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/helpers/packages/MapHelpers/README.md",
       "value": {
         "id": "04a621e2c61f3904b8acb627dff93208",
@@ -475,6 +435,46 @@
             "slug": "-methods-that-helps-us-to-work-with-maps",
             "depth": 2,
             "value": "✴ Methods that helps us to work with maps"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "methods",
+            "depth": 2,
+            "value": "methods"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/helpers/packages/NumberHelpers/README.md",
+      "value": {
+        "id": "e6c5c52c594409f6c919be55f9070047",
+        "filepath": "packages/helpers/packages/NumberHelpers/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\helpers\\packages\\NumberHelpers\\README.md",
+        "link": "",
+        "slug": "packages-helpers-packages-number-helpers-readme",
+        "route": "/packages-helpers-packages-number-helpers-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "number-helpers",
+            "depth": 1,
+            "value": "Number helpers"
+          },
+          {
+            "slug": "-methods-that-helps-us-to-control-numbers",
+            "depth": 2,
+            "value": "✴ Methods that helps us to control numbers"
           },
           {
             "slug": "get-started",
@@ -975,46 +975,6 @@
       }
     },
     {
-      "key": "packages/hooks/packages/useForceUpdate/README.md",
-      "value": {
-        "id": "f85707626d93ea0ea8fb74986815f379",
-        "filepath": "packages/hooks/packages/useForceUpdate/README.md",
-        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useForceUpdate\\README.md",
-        "link": "",
-        "slug": "packages-hooks-packages-use-force-update-readme",
-        "route": "/packages-hooks-packages-use-force-update-readme",
-        "name": "Readme",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "useforceupdate",
-            "depth": 1,
-            "value": "useForceUpdate"
-          },
-          {
-            "slug": "-force-update-component",
-            "depth": 2,
-            "value": "👿 force update component"
-          },
-          {
-            "slug": "get-started",
-            "depth": 2,
-            "value": "get started"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "usage"
-          },
-          {
-            "slug": "source-code",
-            "depth": 3,
-            "value": "source code"
-          }
-        ]
-      }
-    },
-    {
       "key": "packages/hooks/packages/useGeoLocation/README.md",
       "value": {
         "id": "613c86a9de4bb6d144a04c31b93faeba",
@@ -1035,6 +995,46 @@
             "slug": "-easily-deal-with-navigator-location-api",
             "depth": 2,
             "value": "🗺 easily deal with navigator location API"
+          },
+          {
+            "slug": "get-started",
+            "depth": 2,
+            "value": "get started"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "usage"
+          },
+          {
+            "slug": "source-code",
+            "depth": 3,
+            "value": "source code"
+          }
+        ]
+      }
+    },
+    {
+      "key": "packages/hooks/packages/useForceUpdate/README.md",
+      "value": {
+        "id": "f85707626d93ea0ea8fb74986815f379",
+        "filepath": "packages/hooks/packages/useForceUpdate/README.md",
+        "fullpath": "C:\\Users\\Roach\\Desktop\\frontend-toolbox\\packages\\hooks\\packages\\useForceUpdate\\README.md",
+        "link": "",
+        "slug": "packages-hooks-packages-use-force-update-readme",
+        "route": "/packages-hooks-packages-use-force-update-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "useforceupdate",
+            "depth": 1,
+            "value": "useForceUpdate"
+          },
+          {
+            "slug": "-force-update-component",
+            "depth": 2,
+            "value": "👿 force update component"
           },
           {
             "slug": "get-started",
@@ -2167,6 +2167,48 @@
   ],
   "props": [
     {
+      "key": "packages/icons/src/CheckMarkIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "CheckMarkIcon",
+          "methods": [],
+          "actualName": "CheckMarkIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       "key": "packages/icons/src/CoinsIcon.js",
       "value": [
         {
@@ -2181,19 +2223,41 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
       ]
     },
     {
-      "key": "packages/icons/src/DeleteIcon.js",
+      "key": "packages/icons/src/CrossBoldIcon.js",
       "value": [
         {
           "description": "",
-          "displayName": "DeleteIcon",
+          "displayName": "CrossBoldIcon",
           "methods": [],
-          "actualName": "DeleteIcon",
+          "actualName": "CrossBoldIcon",
           "props": {
             "className": {
               "type": {
@@ -2202,14 +2266,67 @@
               "required": false,
               "description": ""
             },
-            "onClick": {
+            "size": {
               "type": {
-                "name": "func"
+                "name": "number"
               },
               "required": false,
               "description": "",
               "defaultValue": {
-                "value": "(f) => f",
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/CrossIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "CrossIcon",
+          "methods": [],
+          "actualName": "CrossIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
                 "computed": false
               }
             }
@@ -2224,7 +2341,38 @@
           "description": "",
           "displayName": "EditIcon",
           "methods": [],
-          "actualName": "EditIcon"
+          "actualName": "EditIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2243,6 +2391,70 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/GridOutlineIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "GridOutlineIcon",
+          "methods": [],
+          "actualName": "GridOutlineIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2255,18 +2467,38 @@
           "description": "",
           "displayName": "InstagramIcon",
           "methods": [],
-          "actualName": "InstagramIcon"
-        }
-      ]
-    },
-    {
-      "key": "packages/icons/src/LocationIcon.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "LocationIcon",
-          "methods": [],
-          "actualName": "LocationIcon"
+          "actualName": "InstagramIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2285,6 +2517,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2297,7 +2551,80 @@
           "description": "",
           "displayName": "MapMarkerIcon",
           "methods": [],
-          "actualName": "MapMarkerIcon"
+          "actualName": "MapMarkerIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/MapMarkerOutlineIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "MapMarkerOutlineIcon",
+          "methods": [],
+          "actualName": "MapMarkerOutlineIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2316,19 +2643,30 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
-        }
-      ]
-    },
-    {
-      "key": "packages/icons/src/PlusIcon.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "PlusIcon",
-          "methods": [],
-          "actualName": "PlusIcon"
         }
       ]
     },
@@ -2339,7 +2677,38 @@
           "description": "",
           "displayName": "SearchIcon",
           "methods": [],
-          "actualName": "SearchIcon"
+          "actualName": "SearchIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2358,6 +2727,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2378,6 +2769,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2390,29 +2803,7 @@
           "description": "",
           "displayName": "SnappMarketLogo",
           "methods": [],
-          "actualName": "SnappMarketLogo"
-        }
-      ]
-    },
-    {
-      "key": "packages/icons/src/ThIcon.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "ThIcon",
-          "methods": [],
-          "actualName": "ThIcon"
-        }
-      ]
-    },
-    {
-      "key": "packages/icons/src/TickIcon.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "TickIcon",
-          "methods": [],
-          "actualName": "TickIcon",
+          "actualName": "SnappMarketLogo",
           "props": {
             "className": {
               "type": {
@@ -2420,6 +2811,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2432,7 +2845,38 @@
           "description": "",
           "displayName": "TrashIcon",
           "methods": [],
-          "actualName": "TrashIcon"
+          "actualName": "TrashIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2443,7 +2887,38 @@
           "description": "",
           "displayName": "TwitterIcon",
           "methods": [],
-          "actualName": "TwitterIcon"
+          "actualName": "TwitterIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2462,6 +2937,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2474,7 +2971,38 @@
           "description": "",
           "displayName": "VendorIcon",
           "methods": [],
-          "actualName": "VendorIcon"
+          "actualName": "VendorIcon",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2493,6 +3021,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2513,6 +3063,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2533,6 +3105,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2553,6 +3147,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2573,6 +3189,28 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
             }
           }
         }
@@ -2593,6 +3231,17 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
             }
           }
         }
@@ -2613,6 +3262,17 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
             }
           }
         }
@@ -2633,6 +3293,17 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
             }
           }
         }
@@ -2653,19 +3324,30 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
             }
           }
         }
       ]
     },
     {
-      "key": "packages/icons/src/Followup/ShoppingBasketIcon.js",
+      "key": "packages/icons/src/FontIcons/AngleDownIcon.js",
       "value": [
         {
           "description": "",
-          "displayName": "ShoppingBasketIcon",
+          "displayName": "IconName",
           "methods": [],
-          "actualName": "ShoppingBasketIcon",
+          "actualName": "IconName",
           "props": {
             "className": {
               "type": {
@@ -2673,6 +3355,2252 @@
               },
               "required": false,
               "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/AngleLeftIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/AngleRightIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/AngleUpIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ArrowDownIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ArrowLeftIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ArrowRightIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ArrowUpIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/BasketNotAllowedIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/BikeOutlineIconIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/BinocularsIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/BoxIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/CalendarIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/CellphoneIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/CheckMarkBoldIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/CircleIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ClockIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ClockOutlineIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/CommentIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/CreditCardIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/CrossLightIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/DigitsIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/DiscountIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/EnvelopeIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ExportIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/FilterIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/GridIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/HeartIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/HomeIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/InfoIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/LIstIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ListSquareIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/LoopIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/MapMarkerAddIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/MenuIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/MinusIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/OrdersHistoryIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/PaperRocketIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/PaperRocketOutlineIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/PencilEditIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/PictureIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/RingIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/ShareIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/SortIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/SpinnerIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/SquAreIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/StoreIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/SupportIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/TrashOutlineIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/UserAddIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/WalletIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/icons/src/FontIcons/WarningSignIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "IconName",
+          "methods": [],
+          "actualName": "IconName",
+          "props": {
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "size": {
+              "type": {
+                "name": "number"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "1.5",
+                "computed": false
+              }
+            },
+            "color": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#000000'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "packages/ui/packages/Alert/src/index.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Alert",
+          "methods": [],
+          "actualName": "Alert",
+          "props": {
+            "status": {
+              "type": {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'error'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'info'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'warning'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'success'",
+                    "computed": false
+                  }
+                ]
+              },
+              "required": false,
+              "description": ""
+            },
+            "onClose": {
+              "type": {
+                "name": "func"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "(f) => f",
+                "computed": false
+              }
+            },
+            "children": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "node"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": ""
+            },
+            "className": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
+            "closable": {
+              "type": {
+                "name": "bool"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "true",
+                "computed": false
+              }
             }
           }
         }
@@ -2831,88 +5759,6 @@
               },
               "required": false,
               "description": ""
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "packages/ui/packages/Alert/src/index.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "Alert",
-          "methods": [],
-          "actualName": "Alert",
-          "props": {
-            "status": {
-              "type": {
-                "name": "enum",
-                "value": [
-                  {
-                    "value": "'error'",
-                    "computed": false
-                  },
-                  {
-                    "value": "'info'",
-                    "computed": false
-                  },
-                  {
-                    "value": "'warning'",
-                    "computed": false
-                  },
-                  {
-                    "value": "'success'",
-                    "computed": false
-                  }
-                ]
-              },
-              "required": false,
-              "description": ""
-            },
-            "onClose": {
-              "type": {
-                "name": "func"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "(f) => f",
-                "computed": false
-              }
-            },
-            "children": {
-              "type": {
-                "name": "union",
-                "value": [
-                  {
-                    "name": "node"
-                  },
-                  {
-                    "name": "string"
-                  }
-                ]
-              },
-              "required": false,
-              "description": ""
-            },
-            "className": {
-              "type": {
-                "name": "string"
-              },
-              "required": false,
-              "description": ""
-            },
-            "closable": {
-              "type": {
-                "name": "bool"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "true",
-                "computed": false
-              }
             }
           }
         }
