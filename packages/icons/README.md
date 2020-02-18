@@ -44,7 +44,7 @@ import { IconName } from '@snappmarket/icons';
 | TrashIcon                     |                                                                  |
 | TwitterIcon                   |                                                                  |
 | UserIcon                      |                                                                  |
-| VendorIcon                    |                                                                  |
+| BagIcon                    |                                                                  |
 | SnappMarketLogo               |                                                                  |
 | ----------------------------- | ---------------------------------------------------------------- |
 | DissatisfiedEmoji             |                                                                  |

@@ -95,7 +95,7 @@
 | TrashIcon                     |                                                                  |
 | TwitterIcon                   |                                                                  |
 | UserIcon                      |                                                                  |
-| VendorIcon                    |                                                                  |
+| BagIcon                    |                                                                  |
 | SnappMarketLogo               |                                                                  |
 |                               |                                                                  |
 | DissatisfiedEmoji             |                                                                  |

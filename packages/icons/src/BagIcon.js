@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const VendorIcon = ({ className, size, color }) => (
+const BagIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 14.9 18.7"
@@ -18,15 +18,15 @@ const VendorIcon = ({ className, size, color }) => (
     />
   </svg>
 );
-VendorIcon.propTypes = {
+BagIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
   color: PropTypes.string,
 };
 
-VendorIcon.defaultProps = {
+BagIcon.defaultProps = {
   size: 1.5,
   color: '#000000',
 };
 
-export default VendorIcon;
+export default BagIcon;
