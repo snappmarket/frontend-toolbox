@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DissatisfiedEmoji = ({ className }) => (
+const DissatisfiedEmoji = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="45.181"
     height="45.181"
     viewBox="0 0 45.181 45.181"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
+    fill={color}
   >
     <g transform="translate(44)">
       <path
@@ -38,6 +43,13 @@ const DissatisfiedEmoji = ({ className }) => (
 
 DissatisfiedEmoji.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+  color: PropTypes.string,
+};
+
+DissatisfiedEmoji.defaultProps = {
+  size: 1.5,
+  color: '#000000',
 };
 
 export default DissatisfiedEmoji;

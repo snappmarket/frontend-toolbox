@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LaughEmoji = ({ className }) => (
+const LaughEmoji = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="43.516"
     height="43.516"
     viewBox="0 0 43.516 43.516"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
+    fill={color}
   >
     <g>
       <path
@@ -39,6 +44,13 @@ const LaughEmoji = ({ className }) => (
 
 LaughEmoji.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+  color: PropTypes.string,
+};
+
+LaughEmoji.defaultProps = {
+  size: 1.5,
+  color: '#000000',
 };
 
 export default LaughEmoji;

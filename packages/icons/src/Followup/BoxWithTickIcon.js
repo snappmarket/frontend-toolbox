@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BoxWithTickIcon = ({ className }) => (
+const BoxWithTickIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="33.469"
     height="33.469"
     viewBox="0 0 33.469 33.469"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <g transform="translate(-495.511 -268.175)">
       <path
@@ -71,6 +75,11 @@ const BoxWithTickIcon = ({ className }) => (
 
 BoxWithTickIcon.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+BoxWithTickIcon.defaultProps = {
+  size: 1.5,
 };
 
 export default BoxWithTickIcon;

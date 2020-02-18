@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ListSearchIcon = ({ className }) => (
+const ListSearchIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="38.453"
     height="41.2"
     viewBox="0 0 38.453 41.2"
     className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
   >
     <path
       d="M9.373,40H35.467a1.373,1.373,0,0,1,1.373,1.373v30.9a1.373,1.373,0,0,1-1.373,1.373H9.373A1.373,1.373,0,0,1,8,72.273v-30.9A1.373,1.373,0,0,1,9.373,40Zm0,0"
@@ -61,6 +65,11 @@ const ListSearchIcon = ({ className }) => (
 
 ListSearchIcon.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+ListSearchIcon.defaultProps = {
+  size: 1.5,
 };
 
 export default ListSearchIcon;

@@ -1,13 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const SnappMarketLogo = (props) => (
+const SnappMarketLogo = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     width="200"
     height="100"
     viewBox="0 0 200 100"
-    {...props}
+    className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
+    fill={color}
   >
     <defs>
       <path id="urtwa" d="M88 284.36h31.418v44.817H88z" />
@@ -80,54 +86,64 @@ const SnappMarketLogo = (props) => (
         <g>
           <g />
           <g clipPath="url(#urtwb)">
-            <use fill="#1b73f4" xlinkHref="#urtwc" />
+            <use xlinkHref="#urtwc" />
           </g>
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwd" />
+          <use xlinkHref="#urtwd" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwe" />
+          <use xlinkHref="#urtwe" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwf" />
+          <use xlinkHref="#urtwf" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwg" />
+          <use xlinkHref="#urtwg" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwh" />
+          <use xlinkHref="#urtwh" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwi" />
+          <use xlinkHref="#urtwi" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwj" />
+          <use xlinkHref="#urtwj" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwk" />
+          <use xlinkHref="#urtwk" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwl" />
+          <use xlinkHref="#urtwl" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwm" />
+          <use xlinkHref="#urtwm" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwn" />
+          <use xlinkHref="#urtwn" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwo" />
+          <use xlinkHref="#urtwo" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwp" />
+          <use xlinkHref="#urtwp" />
         </g>
         <g>
-          <use fill="#1b73f4" xlinkHref="#urtwq" />
+          <use xlinkHref="#urtwq" />
         </g>
       </g>
     </g>
   </svg>
 );
 
+SnappMarketLogo.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.number,
+  color: PropTypes.string,
+};
+
+SnappMarketLogo.defaultProps = {
+  size: 1.5,
+  color: '#000000'
+};
 export default SnappMarketLogo;

@@ -27,24 +27,24 @@ import { IconName } from '@snappmarket/icons';
 | Icon name                     |  Description                                                     |
 | ----------------------------- | ---------------------------------------------------------------- |
 | CoinsIcon                     |                                                                  |
-| DeleteIcon                    |                                                                  |
+| CrossBoldIcon                 |                                                                  |
 | EditIcon                      |                                                                  |
 | EmptyBasketIcon               |                                                                  |
 | InstagramIcon                 |                                                                  |
-| LocationIcon                  |                                                                  |
+| MapMarkerOutlineIcon                  |                                                                  |
 | LogoutIcon                    |                                                                  |
 | MapMarkerIcon                 |                                                                  |
 | PencilIcon                    |                                                                  |
-| PlusIcon                      |                                                                  |
+| CrossIcon                      |                                                                  |
 | SearchIcon                    |                                                                  |
 | ShoppingBasketIcon            |                                                                  |
 | ShoppingCartIcon              |                                                                  |
-| ThIcon                        |                                                                  |
-| TickIcon                      |                                                                  |
+| GridOutlineIcon                        |                                                                  |
+| CheckMarkIcon                      |                                                                  |
 | TrashIcon                     |                                                                  |
 | TwitterIcon                   |                                                                  |
 | UserIcon                      |                                                                  |
-| VendorIcon                    |                                                                  |
+| BagIcon                    |                                                                  |
 | SnappMarketLogo               |                                                                  |
 | ----------------------------- | ---------------------------------------------------------------- |
 | DissatisfiedEmoji             |                                                                  |
@@ -102,13 +102,13 @@ import { IconName } from '@snappmarket/icons';
 | PencilIcon                    |                                                                  |
 | PencilEditIcon                |                                                                  |
 | PictureIcon                   |                                                                  |
-| PlusIcon                      |                                                                  |
+| CrossIcon                      |                                                                  |
 | RingIcon                      |                                                                  |
 | SearchIcon                    |                                                                  |
 | ShareIcon                     |                                                                  |
 | ShoppingBasketIcon            |                                                                  |
-| ShoppingListIcon              |                                                                  |
-| ShoppingListSquareIcon        |                                                                  |
+| ListIcon              |                                                                  |
+| ListSquareIcon        |                                                                  |
 | SortIcon                      |                                                                  |
 | SpinnerIcon                   |                                                                  |
 | SqureIcon                     |                                                                  |
@@ -121,6 +121,7 @@ import { IconName } from '@snappmarket/icons';
 | UserIcon                      |                                                                  |
 | WalletIcon                    |                                                                  |
 | WarningSign                   |                                                                  |
+| infoIcon                   |                                                                  |
 
 
 ---
