@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { PlusIcon } from '@snappmarket/icons';
+import { CrossIcon } from '@snappmarket/icons';
 
 import { StyledAlertWrapper, StyledCloseButton } from './styles';
 
@@ -65,7 +65,7 @@ const Alert = (props) => {
         {closable && (
           <StyledCloseButton
             onClick={handleCloseAlert}
-            icon={<PlusIcon className="closeIcon" />}
+            icon={<CrossIcon className="closeIcon" />}
             modifier="link"
             color="gray"
             className="circle d-inline-block pull-left closeBtn"
