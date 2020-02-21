@@ -44,7 +44,7 @@ const config = {
         o: false,
         open: false,
         'open-browser': false,
-        root: 'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz',
+        root: 'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz',
         base: '/',
         source: './',
         src: './',
@@ -59,36 +59,39 @@ const config = {
         title: 'Root',
         description: 'My awesome app using docz',
         host: 'localhost',
-        port: 3003,
+        port: 3000,
         p: 3000,
         separator: '-',
         paths: {
-          root: 'C:\\Users\\Roach\\Desktop\\frontend-toolbox',
+          root: 'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox',
           templates:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\node_modules\\docz-core\\dist\\templates',
-          docz: 'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz',
-          cache: 'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz\\.cache',
-          app: 'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz\\app',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\node_modules\\docz-core\\dist\\templates',
+          docz:
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz',
+          cache:
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz\\.cache',
+          app:
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz\\app',
           appPackageJson:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\package.json',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\package.json',
           gatsbyConfig:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\gatsby-config.js',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\gatsby-config.js',
           gatsbyBrowser:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\gatsby-browser.js',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\gatsby-browser.js',
           gatsbyNode:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\gatsby-node.js',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\gatsby-node.js',
           gatsbySSR:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\gatsby-ssr.js',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\gatsby-ssr.js',
           importsJs:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz\\app\\imports.js',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz\\app\\imports.js',
           rootJs:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz\\app\\root.jsx',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz\\app\\root.jsx',
           indexJs:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz\\app\\index.jsx',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz\\app\\index.jsx',
           indexHtml:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz\\app\\index.html',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz\\app\\index.html',
           db:
-            'C:\\Users\\Roach\\Desktop\\frontend-toolbox\\.docz\\app\\db.json',
+            'C:\\Users\\Reza\\Desktop\\Snappmarket\\frontend-toolbox\\.docz\\app\\db.json',
         },
       },
     },
