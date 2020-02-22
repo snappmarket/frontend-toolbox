@@ -10,6 +10,7 @@ public
 .idea
 .docz/.cache
 .docz/app/db.json
+.docz/gatsby-config.js
 
 
 
