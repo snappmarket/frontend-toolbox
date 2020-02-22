@@ -1,4 +1,4 @@
-export { default as angleDownIcon } from './AngleDownIcon';
+export { default as AngleDownIcon } from './AngleDownIcon';
 export { default as AngleLeftIcon } from './AngleLeftIcon';
 export { default as AngleRightIcon } from './AngleRightIcon';
 export { default as AngleUpIcon } from './AngleUpIcon';
@@ -38,7 +38,7 @@ export { default as PencilEditIcon } from './PencilEditIcon';
 export { default as PictureIcon } from './PictureIcon';
 export { default as RingIcon } from './RingIcon';
 export { default as ShareIcon } from './ShareIcon';
-export { default as LIstIcon } from './LIstIcon';
+export { default as ListIcon } from './ListIcon';
 export { default as ListSquareIcon } from './ListSquareIcon';
 export { default as SortIcon } from './SortIcon';
 export { default as SpinnerIcon } from './SpinnerIcon';
