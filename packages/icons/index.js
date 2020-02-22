@@ -12,7 +12,7 @@ export { default as SearchIcon } from './src/SearchIcon';
 export { default as ShoppingBasketIcon } from './src/ShoppingBasketIcon';
 export { default as ShoppingCartIcon } from './src/ShoppingCartIcon';
 export { default as GridOutlineIcon } from './src/GridOutlineIcon';
-export { default as TickIcon } from './src/CheckMarkIcon';
+export { default as CheckMarkIcon } from './src/CheckMarkIcon';
 export { default as TrashIcon } from './src/TrashIcon';
 export { default as TwitterIcon } from './src/TwitterIcon';
 export { default as UserIcon } from './src/UserIcon';

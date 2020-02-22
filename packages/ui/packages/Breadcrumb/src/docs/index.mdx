@@ -1,0 +1,45 @@
+---
+name: Breadcrumb
+route: /ui/breadcrumb
+menu: Ui
+---
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Playground, Props } from 'docz';
+import { Breadcrumb } from '@snappmarket/ui';
+
+export const items = [
+    {
+        title: 'Foo',
+        link: '/path/to/foo',
+    },
+    {
+        title: 'Bar',
+        link: '/path/to/foo/bar',
+    },
+    {
+        title: 'Foobar',
+        link: '/path/to/foo/bar/foobar',
+    },
+]
+
+# Demo
+<Router history={{}}>
+    <div className="p-2 mb-4">
+        <Breadcrumb items={items} />
+    </div>
+</Router>
+
+
+# Basic Usage
+<Playground>
+<Breadcrumb
+    className='foobar'
+    items={[]} // array of items of breadcrumb, items shape: {title: 'foo', link: 'path/to/foo'}
+/>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Breadcrumb} />

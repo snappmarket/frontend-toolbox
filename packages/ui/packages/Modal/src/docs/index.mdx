@@ -1,0 +1,59 @@
+---
+name: Modal
+route: /ui/modal
+menu: Ui
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import { Modal, Button } from '@snappmarket/ui';
+
+export const ModalComponent = props => {
+    const [visibility, setVisibility] = useState(false);
+    return (
+        <>
+            <Button title="Show Modal" onClick={() => setVisibility(true)} />
+            <Modal
+                visibility={visibility}
+                handleClose={() => setVisibility(false)}
+                header={<h3>This Is Modal Header</h3>}
+                footer="This Is Modal Footer"
+            >
+                <div>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </Modal>
+        </>
+    )
+}
+
+# Demo
+Click on the button to see the modal.
+
+<ModalComponent />
+<br />
+
+<Playground>
+<Modal
+    className='foobar'         // class for modal wrapper
+    visibility={false}         // visibility of the modal based on a state
+    handleClose={() => {}}     // function to close the modal from parent
+    onOpen={() => {}}          // function to call after opening the modal
+    header='header content'    // content of the header
+    footer='footer content'    // content of the footer
+    width={70}                 // width of the modal based on Rem, note: 70 equals 70rem
+    position='center'          // position of the modal, one of top, center, and bottom
+>
+    content
+</Modal>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Modal} />
