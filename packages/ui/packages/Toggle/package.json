@@ -27,6 +27,7 @@
     "toggle",
     "switch"
   ],
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"

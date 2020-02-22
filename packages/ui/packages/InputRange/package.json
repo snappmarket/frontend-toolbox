@@ -30,6 +30,7 @@
     "input-range",
     "range-slider"
   ],
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"

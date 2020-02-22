@@ -27,6 +27,7 @@
     "lined-text",
     "text-middle-line"
   ],
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"
