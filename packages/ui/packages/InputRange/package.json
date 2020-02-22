@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-input-range",
   "private": false,
-  "version": "0.1.18",
+  "version": "0.1.19",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
