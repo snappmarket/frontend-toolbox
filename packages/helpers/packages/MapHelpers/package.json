@@ -21,6 +21,7 @@
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/MapHelpers",
+  "sideEffects": false,
+  "homepage"": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/MapHelpers",
   "gitHead": "4aeb9319f3a7864b07df51d49702b855d0a02491"
 }

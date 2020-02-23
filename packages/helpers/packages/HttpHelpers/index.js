@@ -5,7 +5,7 @@ import { ApiError, delog } from '../DebugHelpers';
 import { serializeObject } from '../ArrayHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
-const fetch = f => f;
+const fetch = (f) => f;
 
 /**
  * Fetch with options and timeout
