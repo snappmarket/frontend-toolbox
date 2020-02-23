@@ -22,6 +22,6 @@
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
   "sideEffects": false,
-  "homepage"": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/OSHelpers",
+  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/OSHelpers",
   "gitHead": "2207934c0e1e69a5004aee326f2ccfabe910ee32"
 }
