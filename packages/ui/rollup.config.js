@@ -6,20 +6,14 @@ import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
 import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
-import inlineSvg from 'rollup-plugin-inline-svg';
+import { terser } from 'rollup-plugin-terser';
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
 import pkg from './package.json';
 
 const config = {
   input: 'src/index.js',
   output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      exports: 'named',
-      globals: { 'styled-components': 'styled' },
-      sourcemap: true,
-    },
     {
       file: pkg.module,
       format: 'es',
@@ -43,23 +37,10 @@ const config = {
   plugins: [
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
-    inlineSvg(),
     babel({
+      // We are using @babel/plugin-transform-runtime
       runtimeHelpers: true,
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            modules: false,
-          },
-        ],
-        '@babel/preset-react',
-      ],
-      ignore: ['node_modules/**'],
-      plugins: [
-        '@babel/plugin-proposal-class-properties',
-        ['babel-plugin-styled-components'],
-      ],
+      configFile: '../../babel.config.js',
     }),
     localResolve(),
     resolve({
@@ -73,6 +54,8 @@ const config = {
       },
     }),
     filesize(),
+    sizeSnapshot({ snapshotPath: 'size-snapshot.json' }),
+    terser(),
   ],
 };
 

@@ -1,21 +1,18 @@
 module.exports = {
-  plugins: [
-    'babel-plugin-styled-components',
-    '@babel/plugin-proposal-export-default-from',
-  ],
   presets: [
-    ['@babel/preset-env', {
-      modules: false,
-    }],
+    [
+      '@babel/preset-env',
+      {
+        modules: false,
+      },
+    ],
     '@babel/preset-react',
   ],
-  sourceType: 'unambiguous',
-  env: {
-    test: {
-      plugins: [
-        "transform-es2015-modules-commonjs",
-        "dynamic-import-node"
-      ]
-    }
-  }
+  ignore: ['node_modules/**', /@babel[\\|/]runtime/],
+  plugins: [
+    ['babel-plugin-styled-components'],
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
+    ['@babel/plugin-proposal-object-rest-spread', { loose: true }],
+    ['@babel/plugin-transform-runtime', { useESModules: true }],
+  ],
 };
