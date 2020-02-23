@@ -1,4 +1,5 @@
-import Styled from 'styled-components';
+// eslint-disable-next-line import/no-named-default
+import { default as Styled } from 'styled-components';
 import Modal from '../../Modal/src';
 import { Container, Col } from '../../GridSystem/src';
 
