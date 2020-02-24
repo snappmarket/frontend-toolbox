@@ -1,226 +1,69 @@
-356 error Error: Command failed: git add -- packages/icons/package.json packages/icons/package-lock.json packages/helpers/package.json packages/helpers/package-lock.json packages/hooks/package.json packages/hooks/package-lock.json packages/helpers/packages/ArrayHelpers/package.json packages/helpers/packages/ArrayHelpers/package-lock.json packages/helpers/packages/DebugHelpers/package.json packages/helpers/packages/DebugHelpers/package-lock.json packages/helpers/packages/CookieHelpers/package.json packages/helpers/packages/CookieHelpers/package-lock.json packages/helpers/packages/HttpHelpers/package.json packages/helpers/packages/HttpHelpers/package-lock.json packages/helpers/packages/JsonHelpers/package.json packages/helpers/packages/JsonHelpers/package-lock.json packages/helpers/packages/MapHelpers/package.json packages/helpers/packages/MapHelpers/package-lock.json packages/helpers/packages/ObjectHelpers/package.json packages/helpers/packages/ObjectHelpers/package-lock.json packages/helpers/packages/NumberHelpers/package.json packages/helpers/packages/NumberHelpers/package-lock.json packages/helpers/packages/OSHelpers/package.json packages/helpers/packages/OSHelpers/package-lock.json packages/helpers/packages/PromiseHelpers/package.json packages/helpers/packages/PromiseHelpers/package-lock.json packages/helpers/packages/ProxyHelpers/package.json packages/helpers/packages/ProxyHelpers/package-lock.json packages/helpers/packages/ReduxHelpers/package.json packages/helpers/packages/ReduxHelpers/package-lock.json packages/helpers/packages/StorageHelpers/package.json packages/helpers/packages/StorageHelpers/package-lock.json packages/helpers/packages/StringHelpers/package.json packages/helpers/packages/StringHelpers/package-lock.json packages/helpers/packages/WindowHelpers/package.json packages/helpers/packages/WindowHelpers/package-lock.json packages/helpers/packages/TemplateHelpers/package.json packages/helpers/packages/TemplateHelpers/package-lock.json packages/hooks/packages/useDebounce/package.json packages/hooks/packages/useDebounce/package-lock.json packages/hooks/packages/useDidUpdateEffect/package.json packages/hooks/packages/useDidUpdateEffect/package-lock.json packages/hooks/packages/useFocus/package.json packages/hooks/packages/useFocus/package-lock.json packages/hooks/packages/useForceUpdate/package.json packages/hooks/packages/useForceUpdate/package-lock.json packages/hooks/packages/useGeoLocation/package.json packages/hooks/packages/useGeoLocation/package-lock.json packages/ui/packages/Accordion/package.json packages/ui/packages/Accordion/package-lock.json packages/hooks/packages/useRouteChange/package.json packages/hooks/packages/useRouteChange/package-lock.json packages/hooks/packages/useTimer/package.json packages/hooks/packages/useTimer/package-lock.json packages/ui/packages/Breadcrumb/package.json packages/ui/packages/Breadcrumb/package-lock.json packages/ui/packages/Button/package.json packages/ui/packages/Button/package-lock.json packages/ui/packages/CheckBox/package.json packages/ui/packages/CheckBox/package-lock.json packages/ui/packages/ConfirmDialog/package.json packages/ui/packages/ConfirmDialog/package-lock.json packages/ui/packages/GridSystem/package.json packages/ui/packages/GridSystem/package-lock.json packages/ui/packages/Grid/package.json packages/ui/packages/Grid/package-lock.json packages/ui/packages/InputRange/package.json packages/ui/packages/InputRange/package-lock.json packages/ui/packages/Image/package.json packages/ui/packages/Image/package-lock.json packages/ui/packages/Input/package.json packages/ui/packages/Input/package-lock.json packages/ui/packages/JsonLD/package.json packages/ui/packages/JsonLD/package-lock.json packages/ui/packages/Label/package.json packages/ui/packages/Label/package-lock.json packages/ui/packages/LinedText/package.json packages/ui/packages/LinedText/package-lock.json packages/ui/packages/Loading/package.json packages/ui/packages/Loading/package-lock.json packages/ui/packages/Modal/package.json packages/ui/packages/Modal/package-lock.json packages/ui/packages/OptionGroup/package.json packages/ui/packages/OptionGroup/package-lock.json packages/ui/packages/Pagination/package.json packages/ui/packages/Pagination/package-lock.json packages/ui/packages/ProgressBar/package.json packages/ui/packages/ProgressBar/package-lock.json packages/ui/packages/Skeleton/package.json packages/ui/packages/Skeleton/package-lock.json packages/ui/packages/Slider/package.json packages/ui/packages/Slider/package-lock.json packages/ui/packages/TabSwitcher/package.json packages/ui/packages/TabSwitcher/package-lock.json packages/ui/packages/Table/package.json packages/ui/packages/Table/package-lock.json packages/ui/packages/Textarea/package.json packages/ui/packages/Textarea/package-lock.json packages/ui/packages/TextWrap/package.json packages/ui/packages/TextWrap/package-lock.json packages/ui/packages/Theme/package.json packages/ui/packages/Theme/package-lock.json packages/ui/packages/Tooltip/package.json packages/ui/packages/Tooltip/package-lock.json packages/ui/packages/Toggle/package.json packages/ui/packages/Toggle/package-lock.json packages/ui/packages/Alert/package.json packages/ui/packages/Alert/package-lock.json packages/ui/package.json packages/ui/package-lock.json
-356 error warning: LF will be replaced by CRLF in packages/helpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/ArrayHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/ArrayHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/CookieHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/CookieHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/DebugHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/DebugHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/HttpHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/HttpHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/JsonHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/JsonHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/MapHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/MapHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/NumberHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/NumberHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/OSHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/OSHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/ObjectHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/ObjectHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/PromiseHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/PromiseHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/ProxyHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/ProxyHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/ReduxHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/ReduxHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/StorageHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/StorageHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/StringHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/StringHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/TemplateHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/TemplateHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/WindowHelpers/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/helpers/packages/WindowHelpers/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useDebounce/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useDebounce/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useDidUpdateEffect/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useDidUpdateEffect/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useFocus/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useFocus/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useForceUpdate/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useForceUpdate/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useGeoLocation/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useGeoLocation/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useRouteChange/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useRouteChange/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useTimer/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/hooks/packages/useTimer/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/icons/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/icons/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Accordion/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Accordion/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Alert/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Alert/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Breadcrumb/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Breadcrumb/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Button/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Button/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/CheckBox/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/CheckBox/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/ConfirmDialog/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/ConfirmDialog/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Grid/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Grid/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/GridSystem/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/GridSystem/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Image/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Image/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Input/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Input/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/InputRange/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/InputRange/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/JsonLD/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/JsonLD/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Label/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Label/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/LinedText/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/LinedText/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Loading/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Loading/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Modal/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Modal/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/OptionGroup/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/OptionGroup/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Pagination/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Pagination/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/ProgressBar/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Skeleton/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Skeleton/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Slider/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Slider/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/TabSwitcher/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/TabSwitcher/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Table/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Table/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/TextWrap/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/TextWrap/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Textarea/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Textarea/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Theme/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Theme/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Toggle/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Toggle/package.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Tooltip/package-lock.json.
-356 error The file will have its original line endings in your working directory
-356 error warning: LF will be replaced by CRLF in packages/ui/packages/Tooltip/package.json.
-356 error The file will have its original line endings in your working directory
-356 error The following paths are ignored by one of your .gitignore files:
-356 error packages/ui/packages/ProgressBar/package-lock.json
-356 error Use -f if you really want to add them.
-356 error
-356 error     at makeError (C:\Users\SayJeyHi\PhpstormProjects\react-hooks\node_modules\execa\index.js:174:9)
-356 error     at C:\Users\SayJeyHi\PhpstormProjects\react-hooks\node_modules\execa\index.js:278:16
-356 error     at processTicksAndRejections (internal/process/task_queues.js:93:5)
+200 error Error: Command failed: git add -- packages/helpers/package.json packages/helpers/package-lock.json packages/icons/package.json packages/icons/package-lock.json packages/ui/package.json packages/ui/package-lock.json packages/helpers/packages/StringHelpers/package.json packages/helpers/packages/StringHelpers/package-lock.json packages/helpers/packages/CookieHelpers/package.json packages/helpers/packages/CookieHelpers/package-lock.json packages/helpers/packages/JsonHelpers/package.json packages/helpers/packages/JsonHelpers/package-lock.json packages/helpers/packages/NumberHelpers/package.json packages/helpers/packages/NumberHelpers/package-lock.json packages/helpers/packages/MapHelpers/package.json packages/helpers/packages/MapHelpers/package-lock.json packages/ui/packages/Breadcrumb/package.json packages/ui/packages/Breadcrumb/package-lock.json packages/ui/packages/Button/package.json packages/ui/packages/Button/package-lock.json packages/ui/packages/CheckBox/package.json packages/ui/packages/CheckBox/package-lock.json packages/ui/packages/ConfirmDialog/package.json packages/ui/packages/ConfirmDialog/package-lock.json packages/ui/packages/Modal/package.json packages/ui/packages/Modal/package-lock.json packages/ui/packages/Pagination/package.json packages/ui/packages/Pagination/package-lock.json packages/ui/packages/Table/package.json packages/ui/packages/Table/package-lock.json packages/ui/packages/Theme/package.json packages/ui/packages/Theme/package-lock.json
+200 error warning: LF will be replaced by CRLF in packages/helpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/CookieHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/CookieHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/JsonHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/JsonHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/MapHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/MapHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/NumberHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/NumberHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/StringHelpers/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/helpers/packages/StringHelpers/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/icons/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/icons/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Breadcrumb/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Breadcrumb/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Button/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Button/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/CheckBox/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/CheckBox/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/ConfirmDialog/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/ConfirmDialog/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Modal/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Modal/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Pagination/package-lock.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Pagination/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Table/package.json.
+200 error The file will have its original line endings in your working directory
+200 error warning: LF will be replaced by CRLF in packages/ui/packages/Theme/package.json.
+200 error The file will have its original line endings in your working directory
+200 error The following paths are ignored by one of your .gitignore files:
+200 error packages/ui/packages/Table/package-lock.json
+200 error packages/ui/packages/Theme/package-lock.json
+200 error Use -f if you really want to add them.
+200 error
+200 error     at makeError (C:\Users\SayJeyHi\PhpstormProjects\react-hooks\node_modules\execa\index.js:174:9)
+200 error     at C:\Users\SayJeyHi\PhpstormProjects\react-hooks\node_modules\execa\index.js:278:16
+200 error     at processTicksAndRejections (internal/process/task_queues.js:93:5)

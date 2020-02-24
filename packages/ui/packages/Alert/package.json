@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-alert",
   "private": false,
-  "version": "0.1.26",
+  "version": "0.1.25",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -34,6 +34,6 @@
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Alert",
   "gitHead": "2207934c0e1e69a5004aee326f2ccfabe910ee32",
   "dependencies": {
-    "@snappmarket/icons": "^0.1.26"
+    "@snappmarket/icons": "^0.1.25"
   }
 }

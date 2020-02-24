@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/proxy-helpers",
   "private": false,
-  "version": "0.1.24",
+  "version": "0.1.23",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
