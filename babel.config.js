@@ -38,6 +38,7 @@ module.exports = {
     ['@babel/plugin-proposal-object-rest-spread', { loose: true }],
     // any package needs to declare 7.4.4 as a runtime dependency. default is ^7.0.0
     ['@babel/plugin-transform-runtime', { version: '^7.4.4' }],
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
     // for IE 11 support
     '@babel/plugin-transform-object-assign',
   ],
