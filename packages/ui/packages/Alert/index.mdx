@@ -1,0 +1,69 @@
+---
+name: Alert
+route: /ui/alert
+menu: Ui
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import { Alert, Button, Row, Col } from '@snappmarket/ui';
+
+export const AlertComponent = props => {
+    const [visibility, setVisibility] = useState(false);
+    return (
+        <>
+            <Button title="Show Alert" onClick={() => setVisibility(true)} />
+            {visibility && (
+                <Alert
+                    className="mt-2 mb-2"
+                    status='warning'
+                    onClose={() => setVisibility(false)}
+                    closable
+                >
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </Alert>
+            )}
+        </>
+    )
+}
+export const statuses = ['error', 'info', 'warning', 'success'];
+
+# Demo
+Alerts have four different statuses.
+
+<div className="pt-1 pb-3">
+    <Row>
+        {statuses.map(status => (
+            <Col xs={3}>
+                <Alert
+                    closable={false}
+                    status={status}
+                >
+                    {status}
+                </Alert>
+            </Col>
+        ))}
+    </Row>
+</div>
+
+# Basic Usage
+Click on the button to see the Alert.
+
+<AlertComponent />
+<br />
+
+<Playground>
+<Alert
+    className='foobar'         // class for Alert wrapper
+    status='success'           // status of the alert, one of error, success, warning and info
+    onClose={() => {}}         // callback of alert close
+    closable={false}           // flag to make alert closable
+>
+    content
+</Alert>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Alert} />
