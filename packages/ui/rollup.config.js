@@ -5,11 +5,24 @@ import nodeGlobals from 'rollup-plugin-node-globals';
 import { terser } from 'rollup-plugin-terser';
 import filesize from 'rollup-plugin-filesize';
 import copy from 'rollup-plugin-copy';
+import autoprefixer from 'autoprefixer';
+import postcss from 'rollup-plugin-postcss';
 
 const input = './packages/index.js';
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
+  'prop-types': 'propTypes',
+  'react-router-dom': 'reactRouterDom',
+  'react-image': 'reactImage',
+  'styled-components': 'styledComponents',
+  'react-hgs-input-range': 'reactHgsInputRange',
+  'isomorphic-unfetch': 'isomorphicUnfetch',
+  polished: 'polished',
+  'react-slick': 'reactSlick',
+  '@snappmarket/icons': '@snappmarket/icons',
+  '@snappmarket/hooks': '@snappmarket/hooks',
+  '@snappmarket/helpers': '@snappmarket/helpers',
 };
 const babelOptions = {
   exclude: /node_modules/,
@@ -60,6 +73,7 @@ export default [
       babel(babelOptions),
       commonjs(commonjsOptions),
       nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
+      postcss({ extract: true, plugins: [autoprefixer] }),
       copy({
         targets: [
           { src: input, dest: 'dist' },
@@ -84,6 +98,7 @@ export default [
       babel(babelOptions),
       commonjs(commonjsOptions),
       nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
+      postcss({ extract: true, plugins: [autoprefixer] }),
       terser(),
       filesize(),
     ],
