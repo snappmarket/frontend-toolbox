@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import CheckBox from '../../CheckBox/src';

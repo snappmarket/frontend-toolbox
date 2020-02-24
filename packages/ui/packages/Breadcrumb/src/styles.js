@@ -1,5 +1,5 @@
-import Styled from 'styled-components';
-
+// eslint-disable-next-line import/no-named-default
+import { default as Styled } from 'styled-components';
 const StyledBreadcrumbWrapper = Styled.div`
     display: flex;
     flex-direction: row;

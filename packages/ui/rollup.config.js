@@ -1,79 +1,106 @@
-import babel from 'rollup-plugin-babel';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import resolve from 'rollup-plugin-node-resolve';
+import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import postcss from 'rollup-plugin-postcss';
+import babel from 'rollup-plugin-babel';
+import nodeGlobals from 'rollup-plugin-node-globals';
+import { terser } from 'rollup-plugin-terser';
 import filesize from 'rollup-plugin-filesize';
+import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
-import localResolve from 'rollup-plugin-local-resolve';
-import inlineSvg from 'rollup-plugin-inline-svg';
+import postcss from 'rollup-plugin-postcss';
 
-import pkg from './package.json';
-
-const config = {
-  input: 'src/index.js',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      exports: 'named',
-      globals: { 'styled-components': 'styled' },
-      sourcemap: true,
-    },
-    {
-      file: pkg.module,
-      format: 'es',
-      exports: 'named',
-      globals: { 'styled-components': 'styled' },
-      sourcemap: true,
-    },
-  ],
-  external: [
-    'react',
-    'react-dom',
-    'prop-types',
-    'react-router-dom',
-    'react-image',
-    'styled-components',
-    'react-hgs-input-range',
-    'isomorphic-unfetch',
-    'polished',
-    'react-slick',
-  ],
-  plugins: [
-    peerDepsExternal(),
-    postcss({ extract: true, plugins: [autoprefixer] }),
-    inlineSvg(),
-    babel({
-      runtimeHelpers: true,
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            modules: false,
-          },
-        ],
-        '@babel/preset-react',
-      ],
-      ignore: ['node_modules/**'],
-      plugins: [
-        '@babel/plugin-proposal-class-properties',
-        ['babel-plugin-styled-components'],
-      ],
-    }),
-    localResolve(),
-    resolve({
-      extensions: ['.js', '.json', '.jsx'],
-    }),
-    commonjs({
-      include: 'node_modules/**',
-      namedExports: {
-        'node_modules/react-is/index.js': ['isValidElementType'],
-        'node_modules/stylis/stylis.min': ['Stylis'],
-      },
-    }),
-    filesize(),
-  ],
+const input = './packages/index.js';
+const globals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  'prop-types': 'propTypes',
+  'react-router-dom': 'reactRouterDom',
+  'react-image': 'reactImage',
+  'styled-components': 'styledComponents',
+  'react-hgs-input-range': 'reactHgsInputRange',
+  'isomorphic-unfetch': 'isomorphicUnfetch',
+  polished: 'polished',
+  'react-slick': 'reactSlick',
+  '@snappmarket/icons': '@snappmarket/icons',
+  '@snappmarket/hooks': '@snappmarket/hooks',
+  '@snappmarket/helpers': '@snappmarket/helpers',
+};
+const babelOptions = {
+  exclude: /node_modules/,
+  // We are using @babel/plugin-transform-runtime
+  runtimeHelpers: true,
+  configFile: '../../babel.config.js',
+};
+const commonjsOptions = {
+  ignoreGlobal: true,
+  include: /node_modules/,
+  namedExports: {
+    '../../node_modules/prop-types/index.js': [
+      'elementType',
+      'bool',
+      'func',
+      'object',
+      'oneOfType',
+      'element',
+    ],
+    '../../node_modules/react-is/index.js': [
+      'ForwardRef',
+      'isFragment',
+      'isLazy',
+      'isMemo',
+      'Memo',
+      'isValidElementType',
+    ],
+  },
 };
 
-export default config;
+function onwarn(warning) {
+  throw Error(warning.message);
+}
+
+export default [
+  {
+    input,
+    onwarn,
+    output: {
+      file: 'dist/umd/ui.development.js',
+      format: 'umd',
+      name: 'SnappMarketHooks',
+      globals,
+    },
+    external: Object.keys(globals),
+    plugins: [
+      nodeResolve(),
+      babel(babelOptions),
+      commonjs(commonjsOptions),
+      nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
+      postcss({ extract: true, plugins: [autoprefixer] }),
+      copy({
+        targets: [
+          { src: input, dest: 'dist' },
+          { src: input, dest: 'dist/es' },
+          { src: input, dest: 'dist/esm' },
+        ],
+      }),
+    ],
+  },
+  {
+    input,
+    onwarn,
+    output: {
+      file: 'dist/umd/ui.production.js',
+      format: 'umd',
+      name: 'SnappMarketHooks',
+      globals,
+    },
+    external: Object.keys(globals),
+    plugins: [
+      nodeResolve(),
+      babel(babelOptions),
+      commonjs(commonjsOptions),
+      nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
+      postcss({ extract: true, plugins: [autoprefixer] }),
+      terser(),
+      filesize(),
+    ],
+  },
+];

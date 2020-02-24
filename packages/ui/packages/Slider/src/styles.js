@@ -1,5 +1,5 @@
-import Styled from 'styled-components';
-
+// eslint-disable-next-line import/no-named-default
+import { default as Styled } from 'styled-components';
 const StyledSliderWrapper = Styled.div`
     > .slick-slider {
         div {
