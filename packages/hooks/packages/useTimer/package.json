@@ -9,6 +9,9 @@
     "node": ">=8",
     "npm": ">=5"
   },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
   "license": "MIT",
   "keywords": [
     "hook",

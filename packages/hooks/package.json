@@ -19,11 +19,9 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {
-    "react-router-dom": "^5.1.2"
-  },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.8.6",
+    "react-router-dom": "^5.1.2"
   },
   "engines": {
     "node": ">=8",
