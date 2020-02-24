@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import Styled from 'styled-components';
-
+// eslint-disable-next-line import/no-named-default
+import { default as Styled } from 'styled-components';
 const StyledInputWrapper = Styled.div`
   display: inline-flex;
   flex-direction: column;

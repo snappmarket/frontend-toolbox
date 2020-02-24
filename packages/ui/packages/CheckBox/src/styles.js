@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import Styled from 'styled-components';
-
+// eslint-disable-next-line import/no-named-default
+import { default as Styled } from 'styled-components';
 const StyledCheckboxWrapper = Styled.button`
   background-color: ${(props) => !props.selected ? 'transparent' : props.theme.colors[props.status].light};
   display: flex;    

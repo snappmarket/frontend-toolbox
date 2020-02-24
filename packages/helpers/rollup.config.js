@@ -1,48 +1,91 @@
+import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-import commonjs from '@rollup/plugin-commonjs';
-import external from 'rollup-plugin-peer-deps-external';
-import url from 'rollup-plugin-url';
-import builtins from 'rollup-plugin-node-builtins';
-import globals from 'rollup-plugin-node-globals';
+import nodeGlobals from 'rollup-plugin-node-globals';
+import { terser } from 'rollup-plugin-terser';
+import filesize from 'rollup-plugin-filesize';
+import copy from 'rollup-plugin-copy';
 
-import pkg from './package.json';
-
-export default {
-  input: 'index.js',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      exports: 'named',
-      sourcemap: true,
-    },
-    {
-      file: pkg.module,
-      format: 'es',
-      exports: 'named',
-      sourcemap: true,
-    },
-  ],
-  external: [
-    'react',
-    'react-dom',
-    'isomorphic-unfetch',
-  ],
-  plugins: [
-    globals(),
-    builtins(),
-    external(),
-    url({ exclude: ['**/*.svg'] }),
-    babel({
-      exclude: 'node_modules/**',
-    }),
-    commonjs({
-      namedExports: {
-        // left-hand side can be an absolute path, a path
-        // relative to the current directory, or the name
-        // of a module in node_modules
-        'isomorphic-unfetch': ['named'],
-      },
-    }),
-  ],
+const input = './packages/index.js';
+const globals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
 };
+const babelOptions = {
+  exclude: /node_modules/,
+  // We are using @babel/plugin-transform-runtime
+  runtimeHelpers: true,
+  configFile: '../../babel.config.js',
+};
+const commonjsOptions = {
+  ignoreGlobal: true,
+  include: /node_modules/,
+  namedExports: {
+    '../../node_modules/prop-types/index.js': [
+      'elementType',
+      'bool',
+      'func',
+      'object',
+      'oneOfType',
+      'element',
+    ],
+    '../../node_modules/react-is/index.js': [
+      'ForwardRef',
+      'isFragment',
+      'isLazy',
+      'isMemo',
+      'Memo',
+      'isValidElementType',
+    ],
+  },
+};
+
+function onwarn(warning) {
+  throw Error(warning.message);
+}
+
+export default [
+  {
+    input,
+    onwarn,
+    output: {
+      file: 'dist/umd/hooks.development.js',
+      format: 'umd',
+      name: 'SnappMarketIcons',
+      globals,
+    },
+    external: Object.keys(globals),
+    plugins: [
+      nodeResolve(),
+      babel(babelOptions),
+      commonjs(commonjsOptions),
+      nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
+      copy({
+        targets: [
+          { src: input, dest: 'dist' },
+          { src: input, dest: 'dist/es' },
+          { src: input, dest: 'dist/esm' },
+        ],
+      }),
+    ],
+  },
+  {
+    input,
+    onwarn,
+    output: {
+      file: 'dist/umd/hooks.production.js',
+      format: 'umd',
+      name: 'SnappMarketIcons',
+      globals,
+    },
+    external: Object.keys(globals),
+    plugins: [
+      nodeResolve(),
+      babel(babelOptions),
+      commonjs(commonjsOptions),
+      nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
+      terser(),
+      filesize(),
+    ],
+  },
+];

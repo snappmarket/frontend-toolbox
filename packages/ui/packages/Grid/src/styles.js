@@ -1,5 +1,5 @@
-import Styled from 'styled-components';
-
+// eslint-disable-next-line import/no-named-default
+import { default as Styled } from 'styled-components';
 /* eslint-disable prettier/prettier */
 const StyledGrid = Styled.div`
   display: flex;
