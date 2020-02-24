@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/use-route-change",
   "private": false,
-  "version": "0.1.21",
+  "version": "0.1.22",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
@@ -9,7 +9,8 @@
     "node": ">=8",
     "npm": ">=5"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "react": "^16.8.6",
     "react-router-dom": "^5.1.2"
   },
   "license": "MIT",

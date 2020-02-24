@@ -10,7 +10,9 @@ const input = './packages/index.js';
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
+  'react-router-dom': 'ReactRouterDOM',
 };
+
 const babelOptions = {
   exclude: /node_modules/,
   // We are using @babel/plugin-transform-runtime

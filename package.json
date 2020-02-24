@@ -25,10 +25,11 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.6.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-proposal-export-default-from": "^7.8.3",
     "@babel/plugin-transform-object-assign": "^7.8.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-multi-entry": "^3.0.0",
     "autoprefixer": "^9.7.4",
@@ -79,10 +80,10 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-typescript2": "^0.19.2",
-    "rollup-plugin-url": "^2.1.0",
     "rollup-plugin-size-snapshot": "^0.11.0",
     "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "rollup-plugin-url": "^2.1.0",
     "webpack": "^4.41.0"
   },
   "dependencies": {
