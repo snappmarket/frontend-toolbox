@@ -27,7 +27,6 @@
 //   ],
 // };
 
-
 let defaultPresets;
 
 // We release a ES version of Material-UI.
@@ -40,7 +39,9 @@ if (process.env.BABEL_ENV === 'es') {
     [
       '@babel/preset-env',
       {
-        modules: ['esm', 'production-umd'].includes(process.env.BABEL_ENV) ? false : 'commonjs',
+        modules: ['esm', 'production-umd'].includes(process.env.BABEL_ENV)
+          ? false
+          : 'commonjs',
       },
     ],
   ];
@@ -69,7 +70,13 @@ module.exports = {
     // for IE 11 support
     '@babel/plugin-transform-object-assign',
   ],
-  ignore: [/@babel[\\|/]runtime/], // Fix a Windows issue.
+  ignore: [
+    /@babel[\\|/]runtime/,
+    'node_modules/**',
+    '**/dist/**',
+    '**/*.spec.js',
+    '**/rollup.config.js',
+  ],
   env: {
     cjs: {
       plugins: productionPlugins,
@@ -87,16 +94,28 @@ module.exports = {
       ],
     },
     esm: {
-      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]],
+      plugins: [
+        ...productionPlugins,
+        ['@babel/plugin-transform-runtime', { useESModules: true }],
+      ],
     },
     es: {
-      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]],
+      plugins: [
+        ...productionPlugins,
+        ['@babel/plugin-transform-runtime', { useESModules: true }],
+      ],
     },
     production: {
-      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]],
+      plugins: [
+        ...productionPlugins,
+        ['@babel/plugin-transform-runtime', { useESModules: true }],
+      ],
     },
     'production-umd': {
-      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]],
+      plugins: [
+        ...productionPlugins,
+        ['@babel/plugin-transform-runtime', { useESModules: true }],
+      ],
     },
   },
 };
