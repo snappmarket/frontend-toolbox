@@ -51,7 +51,7 @@ export default [
     output: {
       file: 'dist/umd/helpers.development.js',
       format: 'umd',
-      name: 'SnappMarketIcons',
+      name: 'SnappMarketHelpers',
       globals,
     },
     external: Object.keys(globals),
@@ -75,7 +75,7 @@ export default [
     output: {
       file: 'dist/umd/helpers.production.js',
       format: 'umd',
-      name: 'SnappMarketIcons',
+      name: 'SnappMarketHelpers',
       globals,
     },
     external: Object.keys(globals),
