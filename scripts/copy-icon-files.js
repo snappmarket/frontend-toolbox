@@ -7,6 +7,8 @@ const packagePath = process.cwd();
 const buildPath = path.join(packagePath, './dist');
 const srcPath = path.join(packagePath, './packages');
 
+
+console.log({ packagePath });
 async function createPackageFile() {
   const packageData = await fse.readFile(path.resolve(packagePath, './package.json'), 'utf8');
   const {
@@ -37,8 +39,9 @@ async function createPackageFile() {
  * @param {string} rootDir
  */
 async function createModulePackages({ from, to }) {
-  const directoryPackages = glob.sync('*/index.js', { cwd: from }).map(path.dirname);
+  const directoryPackages = glob.sync('**/index.js', { cwd: from }).map(path.dirname);
 
+  console.log(directoryPackages);
   await Promise.all(
     directoryPackages.map(async (directoryPackage) => {
       const packageJson = {
