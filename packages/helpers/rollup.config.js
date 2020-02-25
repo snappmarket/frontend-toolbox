@@ -49,7 +49,7 @@ export default [
     input,
     onwarn,
     output: {
-      file: 'dist/umd/hooks.development.js',
+      file: 'dist/umd/helpers.development.js',
       format: 'umd',
       name: 'SnappMarketIcons',
       globals,
@@ -73,7 +73,7 @@ export default [
     input,
     onwarn,
     output: {
-      file: 'dist/umd/hooks.production.js',
+      file: 'dist/umd/helpers.production.js',
       format: 'umd',
       name: 'SnappMarketIcons',
       globals,
