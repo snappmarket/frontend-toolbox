@@ -7,8 +7,6 @@ const packagePath = process.cwd();
 const buildPath = path.join(packagePath, './dist');
 const srcPath = path.join(packagePath, './packages');
 
-
-console.log({ packagePath });
 async function createPackageFile() {
   const packageData = await fse.readFile(path.resolve(packagePath, './package.json'), 'utf8');
   const {
@@ -32,8 +30,6 @@ async function createPackageFile() {
 
 /**
  * Puts a package.json into every immediate child directory of rootDir.
- * That package.json contains information about esm for bundlers so that imports
- * like import Typography from '@material-ui/core/Typography' are tree-shakeable.
  *
  * It also tests that an this import can be used in typescript by checking
  * if an index.d.ts is present at that path.
