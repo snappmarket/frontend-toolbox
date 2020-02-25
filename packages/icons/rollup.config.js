@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import filesize from 'rollup-plugin-filesize';
 import copy from 'rollup-plugin-copy';
 
-const input = './src/index.js';
+const input = './packages/index.js';
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
