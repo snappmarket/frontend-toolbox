@@ -6,7 +6,7 @@ import {
   getNextProp,
 } from '@snappmarket/helpers';
 
-export const StyledButton = styled.button`
+export const StyledButton = Styled.button`
   background: none;
   border-radius: calc(${(props) => props.theme.defaultRem} * 0.5);
   font-family: ${(props) => props.theme.defaultFont};
@@ -38,7 +38,7 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const StyledLabel = styled.span`
+export const StyledLabel = Styled.span`
   font-family: ${(props) => props.theme.defaultFont};
   border-radius: 50%;
   font-size: calc(${(props) => props.theme.defaultRem} * 1.1);
@@ -52,7 +52,7 @@ export const StyledLabel = styled.span`
 `;
 
 /* eslint-disable indent */
-export const StyledPrimaryButton = styled(StyledButton)`
+export const StyledPrimaryButton = Styled(StyledButton)`
   background-color: ${(props) => props.theme.colors[props.color][props.shade]};
   border-color: ${(props) => props.theme.colors[props.color][props.shade]};
   color: ${(props) => props.theme.colors[
@@ -78,7 +78,7 @@ export const StyledPrimaryButton = styled(StyledButton)`
   }
 `;
 
-export const StyledOutlineButton = styled(StyledPrimaryButton)`
+export const StyledOutlineButton = Styled(StyledPrimaryButton)`
   background: none;
   color: ${(props) => props.theme.colors[props.color][props.shade]};
   &:hover,
@@ -95,7 +95,7 @@ export const StyledOutlineButton = styled(StyledPrimaryButton)`
 `;
 /* eslint-enable indent */
 
-export const StyledLinkButton = styled(StyledOutlineButton)`
+export const StyledLinkButton = Styled(StyledOutlineButton)`
   &,
   &:hover,
   &:active,
