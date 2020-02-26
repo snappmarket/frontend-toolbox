@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-lined-text",
   "private": false,
-  "version": "0.1.21",
+  "version": "0.2.1-alpha.0",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -33,5 +33,5 @@
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/LinedText",
-  "gitHead": "2207934c0e1e69a5004aee326f2ccfabe910ee32"
+  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e"
 }
