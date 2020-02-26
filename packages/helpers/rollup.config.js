@@ -10,6 +10,7 @@ const input = './packages/index.js';
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
+  'isomorphic-unfetch': 'isomorphicUnfetch',
 };
 const babelOptions = {
   exclude: /node_modules/,

@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/json-helpers",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.2.1-alpha.0",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
@@ -23,5 +23,5 @@
   },
   "sideEffects": false,
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/JsonHelpers",
-  "gitHead": "4aeb9319f3a7864b07df51d49702b855d0a02491"
+  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e"
 }
