@@ -1,11 +1,9 @@
 // eslint-disable-next-line import/no-named-default
-// import { default as fetch } from 'isomorphic-unfetch';
+import { default as fetch } from 'isomorphic-unfetch';
 
 import { ApiError, delog } from '../DebugHelpers';
 import { serializeObject } from '../ArrayHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
-
-const fetch = (f) => f;
 
 /**
  * Fetch with options and timeout
