@@ -82,7 +82,7 @@
   },
   "sideEffects": false,
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui",
-  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e",
+  "gitHead": "a5f063027da3f3200d940137c39f875842280b46",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3"
   }
