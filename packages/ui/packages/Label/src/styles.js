@@ -2,7 +2,7 @@
 import { default as Styled } from 'styled-components';
 import { defineForegroundColor } from '@snappmarket/helpers';
 
-const StyledLabel = styled.label`
+const StyledLabel = Styled.label`
   text-align: center;
   display: inline-block;
   margin: 0;
@@ -21,7 +21,7 @@ const StyledLabel = styled.label`
     : props.radius};
 `;
 
-const StyledPrimaryLabel = styled(StyledLabel)`
+const StyledPrimaryLabel = Styled(StyledLabel)`
   background-color: ${(props) => props.theme.colors[props.color].normal};
   border-color: ${(props) => props.theme.colors[props.color].normal};
   color: ${(props) => props.theme.colors[
@@ -29,19 +29,19 @@ const StyledPrimaryLabel = styled(StyledLabel)`
   ]};
 `;
 
-const StyledMaterialLabel = styled(StyledLabel)`
+const StyledMaterialLabel = Styled(StyledLabel)`
   background-color: ${(props) => props.theme.colors[props.color].bright};
   border-color: ${(props) => props.theme.colors[props.color].bright};
   color: ${(props) => props.theme.colors[props.color].normal};
 `;
 
-const StyledOutlineLabel = styled(StyledLabel)`
+const StyledOutlineLabel = Styled(StyledLabel)`
   background-color: transparent;
   border-color: ${(props) => props.theme.colors[props.color].normal};
   color: ${(props) => props.theme.colors[props.color].normal};
 `;
 
-const StyledQuietLabel = styled(StyledLabel)`
+const StyledQuietLabel = Styled(StyledLabel)`
   background: none;
   border-color: transparent;
   color: ${(props) => props.theme.colors[props.color].normal};

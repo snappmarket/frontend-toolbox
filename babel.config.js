@@ -1,4 +1,5 @@
 let defaultPresets;
+let ignorePaths = [];
 
 // We release a ES version of Material-UI.
 // It's something that matches the latest official supported features of JavaScript.
@@ -16,6 +17,19 @@ if (process.env.BABEL_ENV === 'es') {
       },
     ],
   ];
+}
+
+if (process.env.BABEL_ENV !== 'docz') {
+  ignorePaths = [
+    /@babel[\\|/]runtime/,
+    'node_modules/**',
+    '**/dist/**',
+    '**/LICENCE',
+    '**/README.md',
+    '**/package-lock.json',
+    '**/*.spec.js',
+    '**/rollup.config.js',
+  ]
 }
 
 const productionPlugins = [
@@ -42,16 +56,7 @@ module.exports = {
     // for IE 11 support
     '@babel/plugin-transform-object-assign',
   ],
-  ignore: [
-    /@babel[\\|/]runtime/,
-    'node_modules/**',
-    '**/dist/**',
-    '**/LICENCE',
-    '**/README.md',
-    '**/package-lock.json',
-    '**/*.spec.js',
-    '**/rollup.config.js',
-  ],
+  ignore: ignorePaths,
   env: {
     cjs: {
       plugins: productionPlugins,
