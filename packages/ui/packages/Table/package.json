@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-table",
   "private": false,
-  "version": "0.1.10",
+  "version": "1.0.0",
   "author": "Reza Erami <reza@erami.name>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
