@@ -8,10 +8,10 @@ import { useEffect, useRef } from 'react';
 export default (initialRef) => {
   const ref = useRef(initialRef);
   useEffect(() => {
-    setTimeout(() => {
+    if(ref.current) {
       ref.current.focus();
-    }, 100);
-  }, []);
+    }
+}, [ref.current]);
 
   return ref;
 };
