@@ -7,8 +7,6 @@ const packagePath = process.cwd();
 const buildPath = path.join(packagePath, './dist');
 const srcPath = path.join(packagePath, './packages');
 
-
-console.log({ packagePath });
 async function createPackageFile() {
   const packageData = await fse.readFile(path.resolve(packagePath, './package.json'), 'utf8');
   const {
