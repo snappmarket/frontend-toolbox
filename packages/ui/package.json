@@ -4,7 +4,7 @@
   "version": "0.2.1-alpha.4",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./index.js",
-  "module": "./es/index.js",
+  "module": "./esm/index.js",
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
