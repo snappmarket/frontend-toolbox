@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDidUpdateEffect } from '@snappmarket/hooks/index';
 

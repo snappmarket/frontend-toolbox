@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactInputRange from 'react-hgs-input-range';
 import 'react-hgs-input-range/lib/css/index.css';
