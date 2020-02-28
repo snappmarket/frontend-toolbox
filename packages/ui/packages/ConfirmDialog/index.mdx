@@ -1,0 +1,59 @@
+---
+name: Confirm Dialog
+route: /ui/confirm-dialog
+menu: Ui
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import { ConfirmDialog, Button } from '@snappmarket/ui';
+import { WarningSignIcon } from '@snappmarket/icons';
+
+export const ModalComponent = props => {
+    const [visibility, setVisibility] = useState(false);
+    return (
+        <>
+            <Button title="Show Confirm Dialog" onClick={() => setVisibility(true)} />
+            <ConfirmDialog
+                visibility={visibility}
+                acceptTitle="Accept"
+                dismissTitle="Dismiss"
+                description="Are you sure about it?"
+                icon={<WarningSignIcon size={3} color="gray" />}
+                width={50}
+                position="center"
+                onClose={() => {}}
+                onOpen={() => {}}
+                onAccept={() => setVisibility(false)}
+                onDismiss={() => setVisibility(false)}
+            />
+        </>
+    )
+}
+
+# Demo
+Click on the button to see the confirm dialog.
+
+<ModalComponent />
+<br />
+
+<Playground>
+<ConfirmDialog
+    visibility={false} // visibility of the confirm dialog
+    acceptTitle="Accept" // title of the accept button
+    dismissTitle="Dismiss" // title of the dismiss button
+    description="Are you sure about it?" // description of the dialog
+    icon={<WarningSignIcon size={3} color="gray" />} // icon shown in top left
+    width={50} // width based on rem
+    position="center" // position of dialog, one of top, center, bottom
+    onClose={() => {}} // callback after closeing the dialog
+    onOpen={() => {}} // callback after opening the dialog
+    onAccept={() => {}} // callback after accepting the dialog
+    onDismiss={() => {}} // callback after dismissing the dialog
+/>
+</Playground>
+
+<br />
+
+# Props
+<Props of={ConfirmDialog} />
