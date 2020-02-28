@@ -1,6 +1,11 @@
-152 warn complete Waiting for 1 child process to exit. CTRL-C to exit immediately.
-153 error Error: Command failed: git tag @snappmarket/helpers@0.2.1-alpha.1 -m @snappmarket/helpers@0.2.1-alpha.1
-153 error fatal: tag '@snappmarket/helpers@0.2.1-alpha.1' already exists
-153 error
-153 error     at makeError (/Users/macbook/Desktop/frontend-toolbox/node_modules/execa/index.js:174:9)
-153 error     at /Users/macbook/Desktop/frontend-toolbox/node_modules/execa/index.js:278:16
+0 silly argv {
+0 silly argv   _: [ 'exec' ],
+0 silly argv   args: [ 'install' ],
+0 silly argv   lernaVersion: '3.20.2',
+0 silly argv   '$0': 'node_modules\\lerna\\cli.js',
+0 silly argv   cmd: 'npm'
+0 silly argv }
+1 notice cli v3.20.2
+2 verbose rootPath C:\Users\Reza\Desktop\Snappmarket\frontend-toolbox
+3 info versioning independent
+4 error
