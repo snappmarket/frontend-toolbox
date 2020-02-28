@@ -20,9 +20,9 @@ const globals = {
   'isomorphic-unfetch': 'isomorphicUnfetch',
   polished: 'polished',
   'react-slick': 'reactSlick',
-  '@snappmarket/icons': '@snappmarket/icons',
-  '@snappmarket/hooks': '@snappmarket/hooks',
-  '@snappmarket/helpers': '@snappmarket/helpers',
+  '@snappmarket/icons': 'snappmarketIcons',
+  '@snappmarket/hooks': 'snappmarketHooks',
+  '@snappmarket/helpers': 'snappmarketHelpers',
 };
 const babelOptions = {
   exclude: /node_modules/,

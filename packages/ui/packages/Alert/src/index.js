@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { CrossIcon } from '@snappmarket/icons';
+import { CrossIcon } from '@snappmarket/icons/index';
 
 import { StyledAlertWrapper, StyledCloseButton } from './styles';
 

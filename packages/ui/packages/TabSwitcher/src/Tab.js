@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useDidUpdateEffect } from '@snappmarket/hooks';
+import { useDidUpdateEffect } from '@snappmarket/hooks/index';
 
 import { context as tabSwitcherContext } from './context';
 
