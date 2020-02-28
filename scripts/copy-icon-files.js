@@ -37,9 +37,8 @@ async function createPackageFile() {
  * @param {string} rootDir
  */
 async function createModulePackages({ from, to }) {
-  const directoryPackages = glob.sync('**/index.js', { cwd: from }).map(path.dirname);
+  const directoryPackages = glob.sync('*/index.js', { cwd: from }).map(path.dirname);
 
-  console.log(directoryPackages);
   await Promise.all(
     directoryPackages.map(async (directoryPackage) => {
       const packageJson = {
