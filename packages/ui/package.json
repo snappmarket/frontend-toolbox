@@ -15,6 +15,7 @@
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
     "build:copy-files": "node ../../scripts/copy-files.js",
     "prebuild": "rimraf dist",
+    "release": "yarn build && npm publish dist --tag latest",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
