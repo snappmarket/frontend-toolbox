@@ -76,7 +76,6 @@ export default [
       postcss({ extract: true, plugins: [autoprefixer] }),
       copy({
         targets: [
-          { src: input, dest: 'dist' },
           { src: input, dest: 'dist/es' },
           { src: input, dest: 'dist/esm' },
         ],
