@@ -4,7 +4,7 @@ import {
   defineForegroundColor,
   makeRgba,
   getNextProp,
-} from '@snappmarket/helpers';
+} from '@snappmarket/helpers/index';
 
 export const StyledButton = Styled.button`
   background: none;

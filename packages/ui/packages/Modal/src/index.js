@@ -1,7 +1,8 @@
-import React, { useEffect, useState, createRef } from 'react';
+import * as React from 'react';
+import { useEffect, useState, createRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { CrossIcon } from '@snappmarket/icons';
+import { CrossIcon } from '@snappmarket/icons/index';
 
 import {
   StyledModalWrapper,
