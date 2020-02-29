@@ -18,5 +18,4 @@ jobs:
           mention_if: 'failure'
           channel: '#github-updates'
           username: 'github'
-          channel: '#random'
           url: ${{ secrets.ROCKETCHAT_WEBHOOK }}
