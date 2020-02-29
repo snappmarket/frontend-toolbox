@@ -49,7 +49,7 @@ export default [
     input,
     onwarn,
     output: {
-      file: 'dist/umd/hooks.development.js',
+      file: 'dist/umd/icons.development.js',
       format: 'umd',
       name: 'SnappMarketIcons',
       globals,
@@ -62,7 +62,6 @@ export default [
       nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
       copy({
         targets: [
-          { src: input, dest: 'dist' },
           { src: input, dest: 'dist/es' },
           { src: input, dest: 'dist/esm' },
         ],
@@ -73,7 +72,7 @@ export default [
     input,
     onwarn,
     output: {
-      file: 'dist/umd/hooks.production.js',
+      file: 'dist/umd/icons.production.js',
       format: 'umd',
       name: 'SnappMarketIcons',
       globals,

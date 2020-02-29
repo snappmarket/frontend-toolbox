@@ -63,7 +63,6 @@ export default [
       nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
       copy({
         targets: [
-          { src: input, dest: 'dist' },
           { src: input, dest: 'dist/es' },
           { src: input, dest: 'dist/esm' },
         ],

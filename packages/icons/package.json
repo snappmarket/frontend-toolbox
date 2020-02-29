@@ -1,10 +1,11 @@
 {
   "name": "@snappmarket/icons",
   "private": false,
-  "version": "0.2.1-alpha.0",
+  "version": "0.2.1-alpha.2",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "./index.js",
+  "module": "./esm/index.js",
+  "unpkg": "./umd/icons.production.js",
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
@@ -14,6 +15,7 @@
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./packages --out-dir ./dist/es",
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
     "build:copy-files": "node ../../scripts/copy-icon-files.js",
+    "release": "yarn build && npm publish dist --tag latest",
     "prebuild": "rimraf dist",
     "start": "rollup -c -w",
     "prepare": "yarn run build",

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactInputRange from 'react-hgs-input-range';
-import 'react-hgs-input-range/lib/css/index.css';
 
-import { currencyPrice } from '@snappmarket/helpers';
+import { currencyPrice } from '@snappmarket/helpers/index';
 import {
   StyledInputRangeWrapper,
   StyledRangeLabelWrapper,

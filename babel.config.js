@@ -29,13 +29,13 @@ if (process.env.BABEL_ENV !== 'docz') {
     '**/package-lock.json',
     '**/*.spec.js',
     '**/rollup.config.js',
-  ]
+  ];
 }
 
 const productionPlugins = [
   'babel-plugin-transform-react-constant-elements',
   'babel-plugin-transform-dev-warning',
-  ['babel-plugin-react-remove-properties', { properties: ['data-mui-test'] }],
+  ['babel-plugin-react-remove-properties', { properties: ['data-snp-test'] }],
   [
     'babel-plugin-transform-react-remove-prop-types',
     {

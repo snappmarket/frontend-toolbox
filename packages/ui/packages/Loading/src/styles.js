@@ -5,30 +5,30 @@ export const StyledLoading = Styled.div`
   &.loader,
   &.loader:before,
   &.loader:after {
-      border-radius: 50%;
-      width: 0.7em;
-      height: 0.7em;
-      animation-fill-mode: both;
-      animation: loading 1.8s infinite ease-in-out;
+    border-radius: 50%;
+    width: 0.7em;
+    height: 0.7em;
+    animation-fill-mode: both;
+    animation: loading 1.8s infinite ease-in-out;
   }
   
   &.loader{
-      color: ${(props) => props.theme.colors.white};
-      font-size: inherit;
-      position: absolute;
-      transform: translateZ(0);
-      animation-delay: -0.16s;
-      left: ${(props) => (props.direction === 'left' ? 0 : 'auto')};
-      right: ${(props) => (props.direction === 'right' ? 0 : 'auto')};
-      margin-left: ${(props) => (props.direction === 'left' ? '2em' : 'auto')};
-      margin-right: ${(props) => (props.direction === 'right' ? '2em' : 'auto')};
-      margin-top: -1em;
+    color: ${(props) => props.theme.colors.white};
+    font-size: inherit;
+    position: absolute;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+    left: ${(props) => (props.direction === 'left' ? 0 : 'auto')};
+    right: ${(props) => (props.direction === 'right' ? 0 : 'auto')};
+    margin-left: ${(props) => (props.direction === 'left' ? '2em' : 'auto')};
+    margin-right: ${(props) => (props.direction === 'right' ? '2em' : 'auto')};
+    margin-top: -1em;
   }
   
   &.loader:before, &.loader:after {
-      content: '';
-      position: absolute;
-      top: 0;
+    content: '';
+    position: absolute;
+    top: 0;
   }
   &.loader:before {
       left: -1em;
