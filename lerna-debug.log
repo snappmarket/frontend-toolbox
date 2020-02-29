@@ -1,6 +1,0 @@
-152 warn complete Waiting for 1 child process to exit. CTRL-C to exit immediately.
-153 error Error: Command failed: git tag @snappmarket/helpers@0.2.1-alpha.1 -m @snappmarket/helpers@0.2.1-alpha.1
-153 error fatal: tag '@snappmarket/helpers@0.2.1-alpha.1' already exists
-153 error
-153 error     at makeError (/Users/macbook/Desktop/frontend-toolbox/node_modules/execa/index.js:174:9)
-153 error     at /Users/macbook/Desktop/frontend-toolbox/node_modules/execa/index.js:278:16
