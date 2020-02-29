@@ -50,12 +50,14 @@ const ConfirmDialog = (props) => {
     >
       <StyledConfirmDialogContainer>
         <Row>
-          <StyledIconCol className="align-center" sm={2}>
-            <div className="align-center justify-center circle">
-              {icon || null}
-            </div>
-          </StyledIconCol>
-          <StyledContentCol className="justify-center flex-column" sm={10}>
+          {!!icon && (
+            <StyledIconCol className="align-center" sm={2}>
+              <div className="align-center justify-center circle">
+                {icon}
+              </div>
+            </StyledIconCol>
+          )}
+          <StyledContentCol className="justify-center flex-column" sm={!icon ? 12 : 10}>
             <strong>{title}</strong>
             <p>{description}</p>
           </StyledContentCol>

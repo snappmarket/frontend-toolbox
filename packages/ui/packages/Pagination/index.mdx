@@ -1,0 +1,46 @@
+---
+name: Pagination
+route: /ui/pagination
+menu: Ui
+---
+
+import { Playground, Props } from 'docz';
+import { Pagination, Row, Col } from '@snappmarket/ui';
+
+# Demo
+Powerful component to generate pagination with skip buttons and threshold
+
+# Basic Usage
+Pagination component works based on the limit, offset and the total
+limit is the limit of the items per page, offset is the current offset of items, and total is the total count of the items
+
+<br />
+
+<Playground>
+<Pagination
+    className='foobar' // classname for wrapper of the pagination
+    limit={10} // limit of the items of data
+    offset={0} // current offset of the data
+    total={200} // total items
+    onPaginate={offset => console.log(offset)} // callback after clicking on pagination buttons
+    threshold={5} // limit the items before and after of active item
+    hasNavigateButtons={true} // makes next and prev buttons available
+    hasSkipButtons={true} // makes first and last buttons available
+/>
+</Playground>
+
+<br />
+
+# Note
+<p>
+    <b>threshold</b> is the count of page buttons, before and after active page button.
+    if there are less pages before the active page than the threshold, it would add it to next, and it will do the same for opposite condition
+</p>
+<p>
+    <b>onPaginate</b> would give you offset of clicked page button, you can pass it to your api to get response with new offset.
+</p>
+
+<br />
+
+# Props
+<Props of={Pagination} />
