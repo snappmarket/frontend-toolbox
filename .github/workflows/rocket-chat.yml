@@ -16,5 +16,5 @@ jobs:
           job_name: '*Lint Check*'
           mention: 'here'
           mention_if: 'failure'
-          channel: '#random'
+          channel: '#github-updates'
           url: ${{ secrets.ROCKETCHAT_WEBHOOK }}
