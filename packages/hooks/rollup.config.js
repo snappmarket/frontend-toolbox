@@ -66,6 +66,7 @@ export default [
         targets: [
           { src: input, dest: 'dist/es' },
           { src: input, dest: 'dist/esm' },
+          { src: 'README.md', dest: 'dist' },
         ],
       }),
     ],
