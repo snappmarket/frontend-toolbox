@@ -58,6 +58,11 @@ export const StyledPrimaryButton = Styled(StyledButton)`
   color: ${(props) => props.theme.colors[
       defineForegroundColor(props.theme.colors[props.color][props.shade])
     ]};
+  svg {
+    fill: ${(props) => props.theme.colors[
+      defineForegroundColor(props.theme.colors[props.color][props.shade])
+    ]};
+  }  
   &:hover,
   &:active {
     background-color: ${(props) => getNextProp(props.theme.colors[props.color], props.shade)};
@@ -75,17 +80,30 @@ export const StyledPrimaryButton = Styled(StyledButton)`
     color: ${(props) => props.theme.colors[
         defineForegroundColor(props.theme.colors[props.color].dark)
       ]};
+    svg {
+      fill: ${(props) => props.theme.colors[
+        defineForegroundColor(props.theme.colors[props.color].dark)
+      ]};
+    }
   }
 `;
 
 export const StyledOutlineButton = Styled(StyledPrimaryButton)`
   background: none;
   color: ${(props) => props.theme.colors[props.color][props.shade]};
+  svg {
+    fill: ${(props) => props.theme.colors[props.color][props.shade]};
+  }
   &:hover,
   &:active {
     color: ${(props) => props.theme.colors[
         defineForegroundColor(props.theme.colors[props.color][props.shade])
       ]};
+    svg {
+      fill: ${(props) => props.theme.colors[
+        defineForegroundColor(props.theme.colors[props.color][props.shade])
+      ]};
+    }
   }
   &:disabled {
     background: none;
@@ -104,9 +122,15 @@ export const StyledLinkButton = Styled(StyledOutlineButton)`
     background: none;
     box-shadow: unset;
     color: ${(props) => props.theme.colors[props.color][props.shade]};
+    svg {
+      fill: ${(props) => props.theme.colors[props.color][props.shade]};
+    }
   }
   &:disabled {
     color: ${(props) => props.theme.colors.gray.light};
     border: none;
+    svg {
+      fill: ${(props) => props.theme.colors.gray.light};
+    }
   }
 `;
