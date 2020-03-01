@@ -58,6 +58,7 @@ export { default as UserAddIcon } from './FontIcons/UserAddIcon';
 export { default as WalletIcon } from './FontIcons/WalletIcon';
 export { default as WarningSignIcon } from './FontIcons/WarningSignIcon';
 export { default as InfoIcon } from './FontIcons/InfoIcon';
+export { default as PlusIcon } from './FontIcons/PlusIcon';
 
 // Follow up icons
 export { default as BoxWithTickIcon } from './Followup/BoxWithTickIcon';
