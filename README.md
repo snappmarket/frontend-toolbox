@@ -82,20 +82,20 @@
 | EditIcon                      |                                                                  |
 | EmptyBasketIcon               |                                                                  |
 | InstagramIcon                 |                                                                  |
-| MapMarkerOutlineIcon                  |                                                                  |
+| MapMarkerOutlineIcon          |                                                                  |
 | LogoutIcon                    |                                                                  |
 | MapMarkerIcon                 |                                                                  |
 | PencilIcon                    |                                                                  |
-| CrossIcon                      |                                                                  |
+| CrossIcon                     |                                                                  |
 | SearchIcon                    |                                                                  |
 | ShoppingBasketIcon            |                                                                  |
 | ShoppingCartIcon              |                                                                  |
-| GridOutlineIcon                        |                                                                  |
-| CheckMarkIcon                      |                                                                  |
+| GridOutlineIcon               |                                                                  |
+| CheckMarkIcon                 |                                                                  |
 | TrashIcon                     |                                                                  |
 | TwitterIcon                   |                                                                  |
 | UserIcon                      |                                                                  |
-| BagIcon                    |                                                                  |
+| BagIcon                       |                                                                  |
 | SnappMarketLogo               |                                                                  |
 |                               |                                                                  |
 | DissatisfiedEmoji             |                                                                  |
@@ -153,7 +153,7 @@
 | PencilIcon                    |                                                                  |
 | PencilEditIcon                |                                                                  |
 | PictureIcon                   |                                                                  |
-| CrossIcon      
+| CrossIcon                     |
 | PlusIcon                      |                                                                  |
 | RingIcon                      |                                                                  |
 | SearchIcon                    |                                                                  |
