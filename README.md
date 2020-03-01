@@ -153,7 +153,8 @@
 | PencilIcon                    |                                                                  |
 | PencilEditIcon                |                                                                  |
 | PictureIcon                   |                                                                  |
-| CrossIcon                      |                                                                  |
+| CrossIcon      
+| PlusIcon                      |                                                                  |
 | RingIcon                      |                                                                  |
 | SearchIcon                    |                                                                  |
 | ShareIcon                     |                                                                  |
