@@ -26,10 +26,10 @@ async function createPackageFile() {
 
     switch (myArguments[0]) {
       case '--canary':
-        version = `${semVer.join('.')}-alpha.0+${makeid(6)}`;
+        version = `${semVer.join('.')}-alpha.${makeid(6)}`;
         break;
       case '--beta':
-        version = `${semVer.join('.')}-beta.0+${makeid(6)}`;
+        version = `${semVer.join('.')}-beta.${makeid(6)}`;
         break;
       case '--patch':
         version = `${semVer[0]}.${semVer[1]}.${parseInt(semVer[2], 10) + 1}`;
