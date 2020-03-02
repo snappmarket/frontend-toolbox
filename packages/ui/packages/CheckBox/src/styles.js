@@ -22,6 +22,11 @@ const StyledCheckboxWrapper = Styled.button`
       background-color: ${(props) => props.theme.colors.gray['ultra-light']};
     border-color: ${(props) => props.theme.colors.gray['ultra-light']};
   }
+  &:active {
+    svg {
+      fill: ${(props) => props.theme.colors.white};
+    }
+  }
   svg {
     width: calc(${(props) => props.theme.defaultRem} * 1) !important;
     height: calc(${(props) => props.theme.defaultRem} * 1) !important;
