@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui",
   "private": false,
-  "version": "0.2.1-alpha.canary",
+  "version": "0.2.1-alpha.xxj5w35",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./index.js",
   "module": "./esm/index.js",
@@ -16,7 +16,7 @@
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
     "build:copy-files": "node ../../scripts/copy-files.js",
     "prebuild": "rimraf dist",
-    "release": "yarn build && npm publish dist --tag latest",
+    "release": "node ../../scripts/changeVersion.js --canary && yarn build && npm publish dist --tag latest",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
@@ -87,7 +87,7 @@
   },
   "sideEffects": false,
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui",
-  "gitHead": "a5f063027da3f3200d940137c39f875842280b46",
+  "gitHead": "36dda3b65acbad094685d04eb869ce590c65c2b6",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3"
   }
