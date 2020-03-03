@@ -30,6 +30,7 @@ const StyledCheckboxWrapper = Styled.button`
   svg {
     width: calc(${(props) => props.theme.defaultRem} * 1) !important;
     height: calc(${(props) => props.theme.defaultRem} * 1) !important;
+    fill: ${(props) => props.theme.colors.white};
   }
 `;
 

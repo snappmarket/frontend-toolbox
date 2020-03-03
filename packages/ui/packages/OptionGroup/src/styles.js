@@ -17,6 +17,9 @@ const StyledOptionItem = Styled.div`
     width: 100%;
   }
   button {
+    svg {
+      fill: ${(props) => props.theme.colors.white};
+    }
     &:active {
       svg {
         fill: ${(props) => props.theme.colors.white};
