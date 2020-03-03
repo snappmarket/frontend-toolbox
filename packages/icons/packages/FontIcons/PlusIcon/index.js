@@ -14,8 +14,8 @@ const PlusIcon = ({ className, size, color }) => (
     height="40"
     viewBox="0 0 204 204"
   >
-    <rect id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" x="92" y="1" width="18" height="203" rx="8" ry="8" />
-    <rect id="Rounded_Rectangle_1_copy" data-name="Rounded Rectangle 1 copy" y="94" width="203" height="18" rx="8" ry="8" />
+    <rect x="92" y="1" width="18" height="203" rx="8" ry="8" />
+    <rect y="94" width="203" height="18" rx="8" ry="8" />
   </svg>
 );
 PlusIcon.propTypes = {
