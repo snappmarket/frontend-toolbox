@@ -3,16 +3,19 @@ import PropTypes from 'prop-types';
 
 const PlusIcon = ({ className, size, color }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 47.971 47.971"
     className={className}
     style={{
       width: size * 10,
       height: size * 10,
     }}
     fill={color}
+    xmlns="http://www.w3.org/2000/svg"
+    width="40"
+    height="40"
+    viewBox="0 0 204 204"
   >
-    <path d="M514.744 961.208c-18.097 0-32.768-14.671-32.768-32.768v0-847.872c0-18.097 14.671-32.768 32.768-32.768s32.768 14.671 32.768 32.768v0 847.872c0 18.097-14.671 32.768-32.768 32.768v0zM938.68 537.272h-847.872c-18.097 0-32.768-14.671-32.768-32.768s14.671-32.768 32.768-32.768v0h847.872c18.097 0 32.768 14.671 32.768 32.768s-14.671 32.768-32.768 32.768v0z" />
+    <rect x="92" y="1" width="18" height="203" rx="8" ry="8" />
+    <rect y="94" width="203" height="18" rx="8" ry="8" />
   </svg>
 );
 PlusIcon.propTypes = {
