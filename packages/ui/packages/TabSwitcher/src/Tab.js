@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useDidUpdateEffect } from '@snappmarket/hooks/index';
+import { useDidUpdateEffect } from '@snappmarket/hooks';
 
 import { context as tabSwitcherContext } from './context';
 

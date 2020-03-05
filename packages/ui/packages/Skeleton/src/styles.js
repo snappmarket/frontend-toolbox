@@ -2,7 +2,7 @@
 import { default as Styled } from 'styled-components';
 import darken from 'polished/lib/color/darken';
 
-import { decideMeasurement } from '@snappmarket/helpers/index';
+import { decideMeasurement } from '@snappmarket/helpers';
 
 const StyledBox = Styled.div`
   background-color: ${(props) => props.justBorder
