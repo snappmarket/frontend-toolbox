@@ -30,7 +30,6 @@ const grabVersionAndGenerateNewOne = async (passedVersion, dir = false) => {
     'utf8',
   );
 
-  console.log("++==++==++", packageData);
   const packageParsedData = JSON.parse(packageData);
 
   let { version } = packageParsedData;
@@ -57,7 +56,6 @@ const grabVersionAndGenerateNewOne = async (passedVersion, dir = false) => {
       if (semver.valid(passedVersion)) {
         version = passedVersion;
       } else {
-        console.log('Please provide a valid custom version');
         shell.echo('Please provide a valid custom version');
         shell.exit(1);
       }
