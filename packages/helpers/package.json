@@ -1,1 +1,50 @@
-{}
+{
+  "name": "@snappmarket/helpers",
+  "private": false,
+  "version": "0.2.1-alpha.ul9jtdj",
+  "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
+  "main": "./dist/es/index.js",
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/umd/helpers.production.js",
+  "scripts": {
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn build:copy-files",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js ./packages --out-dir ./dist",
+    "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js ./packages --out-dir ./dist/esm",
+    "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./packages --out-dir ./dist/es",
+    "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
+    "build:copy-files": "node ../../scripts/copy-file/packages-copy.js",
+    "release": "node ../../scripts/release/release-parents.js",
+    "prebuild": "rimraf ./dist",
+    "start": "rollup -c -w",
+    "prepare": "yarn run build",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "license": "MIT",
+  "keywords": [
+    "helpers",
+    "custom-functions",
+    "loadash",
+    "low-size-lodash",
+    "array-helpers",
+    "cookie-helpers"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snappmarket/frontend-toolbox"
+  },
+  "gitHead": "36dda3b65acbad094685d04eb869ce590c65c2b6"
+}

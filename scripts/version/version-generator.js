@@ -29,6 +29,8 @@ const grabVersionAndGenerateNewOne = async (passedVersion, dir = false) => {
     path.resolve(dir || packagePath, './package.json'),
     'utf8',
   );
+
+  console.log("++==++==++", packageData);
   const packageParsedData = JSON.parse(packageData);
 
   let { version } = packageParsedData;
