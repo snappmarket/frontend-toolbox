@@ -15,7 +15,8 @@
   },
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "@snappmarket/icons": "^0.2.1-alpha.canary"
   },
   "engines": {
     "node": ">=8",
@@ -34,7 +35,4 @@
   "sideEffects": false,
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Alert",
   "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e",
-  "dependencies": {
-    "@snappmarket/icons": "^0.2.1-alpha.canary"
-  }
 }
