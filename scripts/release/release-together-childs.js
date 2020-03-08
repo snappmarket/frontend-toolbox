@@ -11,7 +11,16 @@ console.log(`releasing ${passedVersion} together !`);
 let version = '';
 (async function run() {
   try {
-    const gatheredVersionInfo = await grabVersionAndGenerateNewOne(passedVersion, path.join(process.cwd(), 'packages/ui/'));
+    /**
+     * This will just read ui package parent version with no generating new one
+     * @note you may ask why, cuz we will have same version on all packages and sub packages this will helps us with that
+     * @type {{version: *, packageParsedData: *}}
+     */
+    const gatheredVersionInfo = await grabVersionAndGenerateNewOne(
+      passedVersion,
+      path.join(process.cwd(), 'packages/ui/'),
+      true,
+    );
     version = gatheredVersionInfo.version;
   } catch (err) {
     console.error(err);
