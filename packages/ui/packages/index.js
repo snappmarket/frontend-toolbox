@@ -75,6 +75,9 @@ export * from './Toggle/index';
 export { default as Tooltip } from './Tooltip/index';
 export * from './Tooltip/index';
 
+export { default as Carousel } from './Carousel/index';
+export * from './Carousel/index';
+
 export * from './Theme/index';
 
 /* eslint-enable import/export */

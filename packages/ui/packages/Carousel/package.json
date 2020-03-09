@@ -12,14 +12,14 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build"
   },
-
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
     "styled-components": "^5.0.1",
     "prop-types": "^15.7.2"
   },
-
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -37,5 +37,5 @@
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/carousel",
+  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/carousel"
 }
