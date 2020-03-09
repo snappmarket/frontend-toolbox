@@ -10,11 +10,13 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build"
+    "prepare": "yarn run build",
+    "release:child": "yarn build && node ../../../../scripts/release/release-childs.js"
   },
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "@snappmarket/icons": "^0.2.1-alpha.canary"
   },
   "engines": {
     "node": ">=8",

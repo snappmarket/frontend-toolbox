@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-import { makeRgba } from '@snappmarket/helpers/index';
+import { makeRgba } from '@snappmarket/helpers';
 import { StyledPrimaryButton } from '../../../Button/src/styles';
 
 /* eslint-disable indent */

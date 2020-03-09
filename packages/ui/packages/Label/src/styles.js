@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-import { defineForegroundColor } from '@snappmarket/helpers/index';
+import { defineForegroundColor } from '@snappmarket/helpers';
 
 const StyledLabel = Styled.label`
   text-align: center;
