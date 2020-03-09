@@ -8,6 +8,10 @@
   "peerDependencies": {
     "react": "^16.8.6"
   },
+  "scripts": {
+    "build": "echo 0",
+    "release:child": "node ../../../../scripts/release/release-childs.js"
+  },
   "engines": {
     "node": ">=8",
     "npm": ">=5"

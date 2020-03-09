@@ -3,7 +3,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactInputRange from 'react-hgs-input-range';
 
-import { currencyPrice } from '@snappmarket/helpers/index';
+import { currencyPrice } from '@snappmarket/helpers';
 import {
   StyledInputRangeWrapper,
   StyledRangeLabelWrapper,

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDidUpdateEffect } from '@snappmarket/hooks/index';
+import { useDidUpdateEffect } from '@snappmarket/hooks';
 
 import { AccordionProvider } from './context/accordionContext';
 import { StyledAccordion } from './style';
