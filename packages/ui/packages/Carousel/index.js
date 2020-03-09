@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import * as React from 'react'; 
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-// import { Slider } from 'es6-simple-carousel';
 import { Slider } from './src/index';
 import { StyledSimpleCarousel } from './src/styles';
 
-function SimpleCarousel(props) {
+const SimpleCarousel = (props) => {
   const { className, children, slideConfig } = props;
   const refrence = useRef();
   useEffect(() => {

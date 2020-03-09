@@ -1,24 +1,20 @@
 import Styled from 'styled-components';
 
 export const StyledSimpleCarousel = Styled.div`
-
-.slides {
+	.slides {
     display: flex;
     position: relative;
     width: 5000000px;
   }
-  
   .slides.shifting {
     transition: all 0.2s ease-out;
   }
-  
   .slider{
     position: relative;
   }
   .slider .wrapper{
       overflow: hidden;
   }
-  
   .slide {
     cursor: pointer;
     display: flex;
@@ -28,7 +24,6 @@ export const StyledSimpleCarousel = Styled.div`
   .slide > * {
     flex: 1;
   }
-  
   .control {
     position: absolute;
     top: 50%;
@@ -38,18 +33,16 @@ export const StyledSimpleCarousel = Styled.div`
     border-radius: 50px;
     margin-top: -20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-      z-index: 2;
-      align-items: center;
-      justify-content: center;
-      display:flex;
-      direction: ltr;
+		z-index: 2;
+		align-items: center;
+		justify-content: center;
+		display:flex;
+		direction: ltr;
   }
   .control:after{
-      display: block;
-      font-size: 36px;
+		display: block;
+		font-size: 36px;
   }
-  
-  
   .prev {
     background-size: 22px;
     background-position: center;
@@ -57,7 +50,6 @@ export const StyledSimpleCarousel = Styled.div`
     cursor: pointer;
     left: -20px;
   }
-  
   .next {
     background-size: 22px;
     background-position: center;
@@ -65,17 +57,14 @@ export const StyledSimpleCarousel = Styled.div`
     cursor: pointer;
     right: -20px;
   }
-  
   .prev:active,
   .next:active {
     transform: scale(0.8);
   }
-  
   .dots {
-      padding: 0;
-      text-align:center;
+		padding: 0;
+		text-align:center;
   }
-  
   .dots li {
     font-size: 0;
     width: 15px;
@@ -85,13 +74,11 @@ export const StyledSimpleCarousel = Styled.div`
     display: inline-block;
     margin: 0 5px;
   }
-  
   .dots li.active {
     background-color: #efefef;
   }
-  
   .slider-rtl{
-      direction: rtl;
+    direction: rtl;
   }
   .slider-rtl .control{
     transform: rotateY(180deg);
