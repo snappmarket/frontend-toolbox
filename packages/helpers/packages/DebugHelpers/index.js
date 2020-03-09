@@ -4,10 +4,7 @@ const DEBUG_MODE = process.env.DEBUG_MODE || 'false';
 function delog(body) {
   if (DEBUG_MODE !== 'false') {
     // eslint-disable-next-line no-console
-    console.log(
-      `%c${body}`,
-      'color: red; font-weight: bold; font-size: 12px; text-shadow: 0 0 5px rgba(0,0,0,0.2);',
-    );
+    console.log('--', body);
   }
 }
 
