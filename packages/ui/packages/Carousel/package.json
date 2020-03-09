@@ -1,0 +1,41 @@
+{
+  "name": "@snappmarket/ui-carousel",
+  "private": false,
+  "version": "1.3.1",
+  "author": "Mostafa Rastegar <m.rastegar991@gmail.com>",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepare": "yarn run build"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "styled-components": "^5.0.1",
+    "prop-types": "^15.7.2"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ui-components",
+    "components",
+    "slider",
+    "image-slider",
+    "carousel"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snappmarket/frontend-toolbox"
+  },
+  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/carousel"
+}
