@@ -16,15 +16,15 @@ const config = {
       format: 'cjs',
       exports: 'named',
       globals: { 'styled-components': 'styled' },
-      sourcemap: true
+      sourcemap: true,
     },
     {
       file: 'dist/index.es.js',
       format: 'es',
       exports: 'named',
       globals: { 'styled-components': 'styled' },
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   external: [
     'react',
@@ -36,7 +36,10 @@ const config = {
     'react-hgs-input-range',
     'isomorphic-unfetch',
     'polished',
-    'react-slick'
+    'react-slick',
+    '@snappmarket/icons',
+    '@snappmarket/hooks',
+    '@snappmarket/helpers',
   ],
   plugins: [
     peerDepsExternal(),
@@ -48,30 +51,30 @@ const config = {
         [
           '@babel/preset-env',
           {
-            modules: false
-          }
+            modules: false,
+          },
         ],
-        '@babel/preset-react'
+        '@babel/preset-react',
       ],
       ignore: ['node_modules/**'],
       plugins: [
         '@babel/plugin-proposal-class-properties',
-        ['babel-plugin-styled-components']
-      ]
+        ['babel-plugin-styled-components'],
+      ],
     }),
     localResolve(),
     resolve({
-      extensions: ['.js', '.json', '.jsx']
+      extensions: ['.js', '.json', '.jsx'],
     }),
     commonjs({
       include: 'node_modules/**',
       namedExports: {
         'node_modules/react-is/index.js': ['isValidElementType'],
-        'node_modules/stylis/stylis.min': ['Stylis']
-      }
+        'node_modules/stylis/stylis.min': ['Stylis'],
+      },
     }),
-    filesize()
-  ]
+    filesize(),
+  ],
 };
 
 export default config;

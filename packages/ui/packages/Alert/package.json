@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-alert",
   "private": false,
-  "version": "0.2.1-alpha.canary",
+  "version": "0.2.1-alpha.4",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -34,5 +34,5 @@
   },
   "sideEffects": false,
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Alert",
-  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e",
+  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e"
 }
