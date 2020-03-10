@@ -14,11 +14,8 @@
   },
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "dependencies": {
-    "styled-components": "^5.0.1",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "styled-components": "^4.2.0"
   },
   "engines": {
     "node": ">=8",

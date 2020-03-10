@@ -2415,11 +2415,6 @@
     escape-string-regexp "^1.0.5"
     lodash.deburr "^4.1.0"
 
-"@snappmarket/icons@^0.2.1-alpha.canary":
-  version "0.2.1-alpha.uowxmy"
-  resolved "https://registry.yarnpkg.com/@snappmarket/icons/-/icons-0.2.1-alpha.uowxmy.tgz#7b1035c5b8ba236764a3c66a9708087e9636dfb3"
-  integrity sha512-FWhQtSr6KHRMSZjpR4vdktXX800nGMwLgjPENpRwQQS/HTiFJ02YjIlInMYMNIsen/dY4g8XwCDw+rRE3zLqWg==
-
 "@styled-system/css@^5.0.16":
   version "5.1.5"
   resolved "https://registry.yarnpkg.com/@styled-system/css/-/css-5.1.5.tgz#0460d5f3ff962fa649ea128ef58d9584f403bbbc"

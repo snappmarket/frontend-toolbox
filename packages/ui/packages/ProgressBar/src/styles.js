@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-named-default
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-import lighten from 'polished/lib/color/lighten';
+import { lighten } from 'polished';
 
 export const StyledProgressBarWrapper = Styled.div`
   border-radius: calc(${(props) => props.theme.defaultRem} * 2);

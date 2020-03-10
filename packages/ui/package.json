@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.2.1-beta.p2mnvla",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
-  "main": "./dist/es/index.js",
+  "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
   "unpkg": "./dist/umd/ui.production.js",
   "scripts": {
@@ -34,7 +34,8 @@
     "@snappmarket/hooks": "^0.2.1-alpha.3",
     "@snappmarket/icons": "^0.2.1-alpha.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
   },
   "engines": {
     "node": ">=8",
