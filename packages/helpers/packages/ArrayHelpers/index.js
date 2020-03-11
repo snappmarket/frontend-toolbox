@@ -82,7 +82,7 @@ export const deepFlatten = (array, property, flattenArrayTemp = []) => {
     && Array.isArray(array[property])
     && array[property].length
   ) {
-    array[property].forEach((item) => deepFlatten(item, property, flattenArray));
+    array[property].forEach((item) => deepFlatten(item, property, flattenArrayTemp));
   }
   return flattenArrayTemp;
 };

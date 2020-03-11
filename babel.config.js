@@ -27,9 +27,14 @@ if (process.env.BABEL_ENV !== 'docz') {
     '**/LICENCE',
     '**/README.md',
     '**/package-lock.json',
-    '**/*.spec.js',
     '**/rollup.config.js',
   ];
+
+  if (process.env.BABEL_ENV !== 'test') {
+    ignorePaths.push(
+      '**/*.spec.js',
+    );
+  }
 }
 
 const productionPlugins = [
