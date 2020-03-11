@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-checkbox",
   "private": false,
-  "version": "0.2.1-alpha.canary",
+  "version": "0.2.1-beta.cswtgmi",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
