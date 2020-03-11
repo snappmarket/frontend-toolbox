@@ -36,7 +36,7 @@ ShoppingCartIcon.propTypes = {
 
 ShoppingCartIcon.defaultProps = {
   size: 1.5,
-  color: '#000000'
+  color: '#000000',
 };
 
 export default ShoppingCartIcon;

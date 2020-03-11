@@ -103,7 +103,7 @@
     "styled-components": "^4.4.0"
   },
   "lint-staged": {
-    "*.js": [
+    "(?!test|spec).*\\.js": [
       "npm run lint:eslint:fix",
       "git add --force"
     ],

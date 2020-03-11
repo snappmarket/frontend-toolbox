@@ -39,8 +39,6 @@ export { default as ProgressBar } from './ProgressBar/index';
 
 export * from './Skeleton/index';
 
-export { default as Slider } from './Slider/index';
-
 export { default as Table } from './Table/index';
 
 export * from './TabSwitcher/index';

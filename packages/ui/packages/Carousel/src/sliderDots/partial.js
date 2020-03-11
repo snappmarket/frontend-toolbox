@@ -11,7 +11,7 @@ import {
   directionSetter,
 } from '../utils';
 
-export const dotsItemsGenerator = params => {
+export const dotsItemsGenerator = (params) => {
   const { slidesLength, dotsSelector, responsive } = params;
   for (let i = 0; i < calcSliderGroupCount({ responsive, slidesLength }); i++) {
     dotsSelector.innerHTML += `<li class="dots-item${
@@ -21,7 +21,7 @@ export const dotsItemsGenerator = params => {
   return dotsSelector;
 };
 
-export const dotsItemsClick = params => {
+export const dotsItemsClick = (params) => {
   const {
     indexItem,
     perSlide,
@@ -67,7 +67,7 @@ export const dotsItemsClick = params => {
   };
 };
 
-export const setSliderItemsPositionAfterDotClick = params => {
+export const setSliderItemsPositionAfterDotClick = (params) => {
   const {
     indexItem,
     slideSize,

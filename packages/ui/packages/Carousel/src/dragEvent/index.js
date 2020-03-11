@@ -17,7 +17,9 @@ export default class DragEvent {
 
   initialize() {
     const {
-      config: { infinite, responsive, threshold, rtl },
+      config: {
+        infinite, responsive, threshold, rtl,
+      },
       getSliderItems,
       setPosInitial,
       setPosX1,
@@ -61,7 +63,7 @@ export default class DragEvent {
       dragEnd(dragStartParams);
     };
 
-    const dragActionCall = e => {
+    const dragActionCall = (e) => {
       const dragActionParams = {
         e,
         getPosX1,
@@ -83,14 +85,14 @@ export default class DragEvent {
       dragAction(dragActionParams);
     };
 
-    const dragStartCall = e => {
+    const dragStartCall = (e) => {
       const dragStartParams = {
         e,
         sliderItems: getSliderItems(),
         setPosInitial,
         setPosX1,
         dragEndCall,
-        dragActionCall: e => dragActionCall(e),
+        dragActionCall: (e) => dragActionCall(e),
         sliderMainWidth: getSliderMainWidth(),
         rtl,
       };

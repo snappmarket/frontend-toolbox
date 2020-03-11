@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 
 export const StyledSimpleCarousel = Styled.div`
-	.slides {
+  .slides {
     display: flex;
     position: relative;
     width: 5000000px;
@@ -13,7 +13,7 @@ export const StyledSimpleCarousel = Styled.div`
     position: relative;
   }
   .slider .wrapper{
-      overflow: hidden;
+    overflow: hidden;
   }
   .slide {
     cursor: pointer;
@@ -33,15 +33,15 @@ export const StyledSimpleCarousel = Styled.div`
     border-radius: 50px;
     margin-top: -20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-		z-index: 2;
-		align-items: center;
-		justify-content: center;
-		display:flex;
-		direction: ltr;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    direction: ltr;
   }
   .control:after{
-		display: block;
-		font-size: 36px;
+    display: block;
+    font-size: 36px;
   }
   .prev {
     background-size: 22px;
@@ -62,8 +62,8 @@ export const StyledSimpleCarousel = Styled.div`
     transform: scale(0.8);
   }
   .dots {
-		padding: 0;
-		text-align:center;
+    padding: 0;
+    text-align:center;
   }
   .dots li {
     font-size: 0;
