@@ -1,6 +1,10 @@
-import { truncResponsiveItemCount, vdomArrayConvertor } from '../utils';
 
-export const setPageNumberOnChild = params => {
+import {
+  truncResponsiveItemCount,
+  vdomArrayConvertor,
+} from '../utils';
+
+export const setPageNumberOnChild = (params) => {
   const { sliderItems, responsive } = params;
   const perSlide = truncResponsiveItemCount(responsive);
   vdomArrayConvertor(sliderItems.children).forEach((item, itemIndex) => {
@@ -8,11 +12,11 @@ export const setPageNumberOnChild = params => {
   });
 };
 
-export const addCloneClass = item => {
+export const addCloneClass = (item) => {
   item.classList.add('clone');
 };
 
-export const cloneNodeGenerator = params => {
+export const cloneNodeGenerator = (params) => {
   const { perSlide, sliderItems } = params;
   const sliderItemsChildren = vdomArrayConvertor(sliderItems.children);
   const deepCloneSliderItemsChildren = [...sliderItemsChildren];
@@ -25,7 +29,7 @@ export const cloneNodeGenerator = params => {
   cloneNodeInsertBefore(cloneNodeParams);
 };
 
-export const cloneNodeAppendChild = params => {
+export const cloneNodeAppendChild = (params) => {
   const { perSlide, deepCloneSliderItemsChildren, sliderItems } = params;
   deepCloneSliderItemsChildren.forEach((element, index) => {
     if (index <= perSlide) {
@@ -36,7 +40,7 @@ export const cloneNodeAppendChild = params => {
   });
 };
 
-export const cloneNodeInsertBefore = params => {
+export const cloneNodeInsertBefore = (params) => {
   const { perSlide, deepCloneSliderItemsChildren, sliderItems } = params;
   for (
     let i = deepCloneSliderItemsChildren.length - perSlide - 1;

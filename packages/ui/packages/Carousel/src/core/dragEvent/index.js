@@ -1,4 +1,8 @@
-import { dragAction, dragEnd, dragStart } from './partial';
+import {
+  dragAction,
+  dragEnd,
+  dragStart,
+} from './partial';
 
 export default class DragEvent {
   constructor(params) {
@@ -17,7 +21,13 @@ export default class DragEvent {
 
   initialize() {
     const {
-      config: { infinite, responsive, threshold, rtl },
+      config: {
+        responsive,
+        threshold,
+        rtl,
+      },
+      getDrag,
+      getInfinite,
       getSliderItems,
       setPosInitial,
       setPosX1,
@@ -37,6 +47,10 @@ export default class DragEvent {
       transitionendWatcherCall,
     } = this.core;
 
+    const infinite = getInfinite();
+    const sliderItems = getSliderItems();
+    const drag = getDrag();
+
     const dragEndCall = () => {
       const dragStartParams = {
         sliderItems: getSliderItems(),
@@ -53,6 +67,7 @@ export default class DragEvent {
         setPosFinal,
         transitionendWatcherCall,
         dragAction,
+        drag,
         setPosInitial,
         setPosX1,
         setAllowShift,
@@ -61,7 +76,7 @@ export default class DragEvent {
       dragEnd(dragStartParams);
     };
 
-    const dragActionCall = e => {
+    const dragActionCall = (e) => {
       const dragActionParams = {
         e,
         getPosX1,
@@ -83,14 +98,14 @@ export default class DragEvent {
       dragAction(dragActionParams);
     };
 
-    const dragStartCall = e => {
+    const dragStartCall = (e) => {
       const dragStartParams = {
         e,
-        sliderItems: getSliderItems(),
+        sliderItems,
         setPosInitial,
         setPosX1,
         dragEndCall,
-        dragActionCall: e => dragActionCall(e),
+        dragActionCall: (e) => dragActionCall(e),
         sliderMainWidth: getSliderMainWidth(),
         rtl,
       };
@@ -98,10 +113,10 @@ export default class DragEvent {
     };
 
     // Mouse events
-    getSliderItems().onmousedown = dragStartCall;
+    sliderItems.addEventListener('mousedown', dragStartCall);
     // Touch events
-    getSliderItems().addEventListener('touchstart', dragStartCall);
-    getSliderItems().addEventListener('touchend', dragEndCall);
-    getSliderItems().addEventListener('touchmove', dragActionCall);
+    sliderItems.addEventListener('touchstart', dragStartCall);
+    sliderItems.addEventListener('touchend', dragEndCall);
+    sliderItems.addEventListener('touchmove', dragActionCall);
   }
 }
