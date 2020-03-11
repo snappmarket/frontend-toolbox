@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const LogoutIcon = ({ className, size, color}) => (
+const LogoutIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className={className}
@@ -37,7 +37,7 @@ LogoutIcon.propTypes = {
 
 LogoutIcon.defaultProps = {
   size: 1.5,
-  color: '#000000'
+  color: '#000000',
 };
 
 export default LogoutIcon;

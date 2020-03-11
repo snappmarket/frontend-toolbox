@@ -9,7 +9,7 @@ import {
   directionSetter,
 } from '../utils';
 
-export const shiftSlideIsDir = params => {
+export const shiftSlideIsDir = (params) => {
   const {
     sliderItems,
     index,
@@ -34,9 +34,9 @@ export const shiftSlideIsDir = params => {
   const newIndex = index + perSlide;
 
   if (
-    !infinite &&
-    newIndex + perSlide - 1 >= newSlidesLength &&
-    responsiveItem !== 1
+    !infinite
+    && newIndex + perSlide - 1 >= newSlidesLength
+    && responsiveItem !== 1
   ) {
     const result = directionSetter({
       rtl,
@@ -73,7 +73,7 @@ export const shiftSlideIsDir = params => {
   return newIndex;
 };
 
-export const shiftSlideNonDir = params => {
+export const shiftSlideNonDir = (params) => {
   const {
     sliderItems,
     slideSize,

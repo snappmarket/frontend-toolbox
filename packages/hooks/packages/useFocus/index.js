@@ -8,10 +8,10 @@ import { useEffect, useRef } from 'react';
 export default (initialRef) => {
   const ref = useRef(initialRef);
   useEffect(() => {
-    if(ref.current) {
+    if (ref.current) {
       ref.current.focus();
     }
-}, [ref.current]);
+  }, [ref.current]);
 
   return ref;
 };
