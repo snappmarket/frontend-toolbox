@@ -23,16 +23,16 @@ if (process.env.BABEL_ENV !== 'docz') {
   ignorePaths = [
     /@babel[\\|/]runtime/,
     'node_modules/**',
-    '**/dist/**',
     '**/LICENCE',
     '**/README.md',
     '**/package-lock.json',
-    '**/rollup.config.js',
   ];
 
   if (process.env.BABEL_ENV !== 'test') {
     ignorePaths.push(
       '**/*.spec.js',
+      '**/dist/**',
+      '**/rollup.config.js',
     );
   }
 }
