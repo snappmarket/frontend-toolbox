@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const JsonLD = ({ schema }) => (
   <script type="application/ld+json">
-    {encodeURIComponent(JSON.stringify(schema))}
+    {JSON.stringify(schema)}
   </script>
 );
 
