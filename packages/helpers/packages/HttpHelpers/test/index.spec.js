@@ -36,11 +36,11 @@ describe('HttpHelpers', () => {
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
       const options = {
-        credentials: 'include',
+        credentials: 'same-origin',
         headers: {},
         method: 'GET',
       };
-      const response = await HttpHelpers.universalCall({ url, params, ...options });
+      const response = await HttpHelpers.universalCall({ url, params });
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
       expect(response).toEqual(mockResponse);
@@ -73,6 +73,24 @@ describe('HttpHelpers', () => {
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
       expect(response).toEqual(mockResponse);
+    });
+
+    it('should call an API using universal fetch and get empty response cause it is allowed to get empty response', async () => {
+      fetch.mockReturnValue(Promise.resolve({
+        json: () => ({}),
+        headers: {
+          get: (key) => mockHeaders[key],
+        },
+        ok: true,
+        status: 204
+      }));
+      const url = 'http://snapp.market';
+      const params = { foo: 'bar' };
+      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      const response = await HttpHelpers.universalCall({ url, allowedNoContent: true, params, ...options });
+      expect(fetch).toHaveBeenCalledTimes(1);
+      expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
+      expect(response).toEqual({});
     });
   });
 });
