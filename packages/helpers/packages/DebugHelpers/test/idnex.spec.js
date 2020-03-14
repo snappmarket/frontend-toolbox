@@ -1,5 +1,4 @@
 import * as DebugHelpers from '../index';
-import { instanceOf } from 'prop-types';
 
 beforeEach(() => {
   jest.spyOn(console, 'log');
