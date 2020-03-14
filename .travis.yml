@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - stable
+
+install:
+  - npm install
+
+script:
+  - npm run build
+  - npm run test
+  - npm run docz:build
+
+deploy:
+  provider: surge
+  project: /.docz/
+  domain: docs-frontendtoolbox.surge.com
+  skip_cleanup: true
+  all_branches: true
