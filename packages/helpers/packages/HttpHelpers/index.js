@@ -48,7 +48,6 @@ export const universalCall = async ({
     ...rest,
   };
 
-  // eslint-disable-next-line no-console
   delog(`API called with : ${options.method} ${url}`);
 
   if (jwtToken) {
