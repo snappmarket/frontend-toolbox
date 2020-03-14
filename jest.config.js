@@ -1,7 +1,20 @@
 module.exports = {
+  haste: {
+    hasteImplModulePath: null,
+  },
   cacheDirectory: '.jest-cache',
   coverageDirectory: '.jest-coverage',
-  coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
+  moduleFileExtensions: ['js'],
+  collectCoverageFrom: [
+    'packages/*/packages/**/*.js',
+    '!**/node_modules/**',
+    '!**/vendor/**',
+    '!**/dist/**',
+    '!.docz',
+  ],
+  rootDir: process.cwd(),
+  roots: ['<rootDir>/packages', '<rootDir>/scripts'],
+  // coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
   coverageReporters: ['html', 'text'],
   coverageThreshold: {
     global: {
@@ -11,5 +24,5 @@ module.exports = {
       statements: 100,
     },
   },
-  testPathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
+  // testPathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
 };

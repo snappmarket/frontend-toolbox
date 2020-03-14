@@ -169,7 +169,7 @@ export const responsiveItemCount = (getConfig) => {
       return item;
     }
   });
-  return getConfig[parseInt(newResp.pop())].items;
+  return getConfig[parseInt(newResp.pop(), 10)].items;
 };
 
 export const switchInfiniteResponsiveCount = (itemCont, infinite) => infinite ? itemCont : 0;
