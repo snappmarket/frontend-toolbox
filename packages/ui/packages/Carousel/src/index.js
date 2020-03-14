@@ -5,16 +5,26 @@ import { Slider } from './core/index';
 import { StyledSimpleCarousel } from './core/styles';
 
 const SimpleCarousel = (props) => {
-  const { className, children, slideConfig } = props;
+  const {
+    className, children, slideConfig, showingSlide,
+  } = props;
   const sliderRed = useRef(null);
+  // eslint-disable-next-line no-unused-vars
+  let newSlider = null;
 
   useEffect(() => {
-    // eslint-disable-next-line no-new
-    new Slider({
+    newSlider = new Slider({
       slider: sliderRed.current,
       ...slideConfig,
     });
-  }, []);
+    goTo(showingSlide);
+  }, [showingSlide]);
+
+  const goTo = (index) => {
+    if (typeof index === 'number' || index >= 0) {
+      newSlider.goTo(index);
+    }
+  };
 
   return (
     <StyledSimpleCarousel>
@@ -30,6 +40,7 @@ SimpleCarousel.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   slideConfig: PropTypes.object.isRequired,
+  showingSlide: PropTypes.number,
 };
 SimpleCarousel.defaultProps = {
   className: '',
