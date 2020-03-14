@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-carousel",
   "private": false,
-  "version": "0.2.1-beta.cswtgmi",
+  "version": "0.2.1-alpha.wbn5hp",
   "author": "Mostafa Rastegar <m.rastegar991@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
