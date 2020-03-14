@@ -82,15 +82,82 @@ describe('HttpHelpers', () => {
           get: (key) => mockHeaders[key],
         },
         ok: true,
-        status: 204
+        status: 204,
       }));
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
       const options = { credentials: 'include', headers: {}, method: 'GET' };
-      const response = await HttpHelpers.universalCall({ url, allowedNoContent: true, params, ...options });
+      const response = await HttpHelpers.universalCall({
+        url, allowedNoContent: true, params, ...options,
+      });
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
       expect(response).toEqual({});
+    });
+    it('should call an API using universal fetch and get epi error, because response is invalid', async () => {
+      fetch.mockReturnValue(Promise.resolve({
+        json: () => ({}),
+        headers: {
+          get: () => {},
+        },
+        ok: true,
+      }));
+      const url = 'http://snapp.market';
+      const params = { foo: 'bar' };
+      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      try {
+        await HttpHelpers.universalCall({
+          url, allowedNoContent: true, params, ...options,
+        });
+      } catch (e) {
+        expect(fetch).toHaveBeenCalledTimes(1);
+        expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
+        expect(e.message).toEqual('SERVER_CONTENT_TYPE_ERROR');
+      }
+    });
+    it('should call an API using universal fetch and get epi error, because response can not be parsed', async () => {
+      fetch.mockReturnValue(Promise.resolve({
+        headers: {
+          get: (key) => mockHeaders[key],
+        },
+        ok: true,
+      }));
+      const url = 'http://snapp.market';
+      const params = { foo: 'bar' };
+      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      try {
+        await HttpHelpers.universalCall({
+          url, allowedNoContent: true, params, ...options,
+        });
+      } catch (e) {
+        expect(fetch).toHaveBeenCalledTimes(1);
+        expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
+        expect(e.message).toEqual('SERVER_CONTENT_PARSING_ERROR');
+      }
+    });
+    it('should call an API using universal fetch and get epi error, because response can not be parsed', async () => {
+      const error = {
+        message: 'something bad happened',
+      };
+      fetch.mockReturnValue(Promise.resolve({
+        json: () => (error),
+        headers: {
+          get: (key) => mockHeaders[key],
+        },
+        ok: false,
+      }));
+      const url = 'http://snapp.market';
+      const params = { foo: 'bar' };
+      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      try {
+        await HttpHelpers.universalCall({
+          url, allowedNoContent: true, params, ...options,
+        });
+      } catch (e) {
+        expect(fetch).toHaveBeenCalledTimes(1);
+        expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
+        expect(e).toEqual(error);
+      }
     });
   });
 });
