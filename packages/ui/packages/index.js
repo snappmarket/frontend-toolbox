@@ -39,8 +39,6 @@ export { default as ProgressBar } from './ProgressBar/index';
 
 export * from './Skeleton/index';
 
-export { default as Slider } from './Slider/index';
-
 export { default as Table } from './Table/index';
 
 export * from './TabSwitcher/index';
@@ -54,7 +52,6 @@ export { default as Toggle } from './Toggle/index';
 export { default as Tooltip } from './Tooltip/index';
 
 export { default as Carousel } from './Carousel/index';
-export * from './Carousel/index';
 
 export * from './Theme/index';
 

@@ -70,13 +70,13 @@ export const stringifyArray = (array, properties) => {
  * Deep flatten an array
  * @param array
  * @param property
- * @param flattenArray
+ * @param flattenArrayTemp
  * @returns {Array}
  */
-export const deepFlatten = (array, property, flattenArray = []) => {
+export const deepFlatten = (array, property, flattenArrayTemp = []) => {
   const newArray = { ...array };
   delete newArray[property];
-  flattenArray.push(newArray);
+  flattenArrayTemp.push(newArray);
   if (
     array[property]
     && Array.isArray(array[property])
@@ -84,5 +84,5 @@ export const deepFlatten = (array, property, flattenArray = []) => {
   ) {
     array[property].forEach((item) => deepFlatten(item, property, flattenArray));
   }
-  return flattenArray;
+  return flattenArrayTemp;
 };

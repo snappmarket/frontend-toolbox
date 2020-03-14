@@ -25,91 +25,91 @@ class SliderCore {
     this.initialize();
   }
 
-  setConfig = config => {
+  setConfig = (config) => {
     this.config = config;
   };
 
   getConfig = () => this.config;
 
-  setSlider = slider => {
+  setSlider = (slider) => {
     this.slider = slider;
   };
 
   getSlider = () => this.slider;
 
-  setPosX1 = posX1 => {
+  setPosX1 = (posX1) => {
     this.posX1 = posX1;
   };
 
   getPosX1 = () => this.posX1;
 
-  setPosX2 = posX2 => {
+  setPosX2 = (posX2) => {
     this.posX2 = posX2;
   };
 
   getPosX2 = () => this.posX2;
 
-  setPerSlide = perSlide => {
+  setPerSlide = (perSlide) => {
     this.perSlide = perSlide;
   };
 
   getPerSlide = () => this.perSlide;
 
-  setSliderItems = sliderItems => {
+  setSliderItems = (sliderItems) => {
     this.sliderItems = sliderItems;
   };
 
   getSliderItems = () => this.sliderItems;
 
-  setPosInitial = posInitial => {
+  setPosInitial = (posInitial) => {
     this.posInitial = posInitial;
   };
 
   getPosInitial = () => this.posInitial;
 
-  setPosFinal = posFinal => {
+  setPosFinal = (posFinal) => {
     this.posFinal = posFinal;
   };
 
   getPosFinal = () => this.posFinal;
 
-  setSlidesLength = slidesLength => {
+  setSlidesLength = (slidesLength) => {
     this.slidesLength = slidesLength;
   };
 
   getSlidesLength = () => this.slidesLength;
 
-  setSliderMainWidth = sliderMainWidth => {
+  setSliderMainWidth = (sliderMainWidth) => {
     this.sliderMainWidth = sliderMainWidth;
   };
 
   getSliderMainWidth = () => this.sliderMainWidth;
 
-  setOrginSlider = orginSlider => {
+  setOrginSlider = (orginSlider) => {
     this.orginSlider = orginSlider;
   };
 
   getOrginSlider = () => this.orginSlider;
 
-  setSlideSize = slideSize => {
+  setSlideSize = (slideSize) => {
     this.slideSize = slideSize;
   };
 
   getSlideSize = () => this.slideSize;
 
-  setSliderItemWidth = sliderItemWidth => {
+  setSliderItemWidth = (sliderItemWidth) => {
     this.sliderItemWidth = sliderItemWidth;
   };
 
   getSliderItemWidth = () => this.sliderItemWidth;
 
-  setIndex = index => {
+  setIndex = (index) => {
     this.index = index;
   };
 
   getIndex = () => this.index;
 
-  setAllowShift = allowShift => {
+  setAllowShift = (allowShift) => {
     this.allowShift = allowShift;
   };
 
@@ -229,7 +229,9 @@ class SliderCore {
       slideSize,
       slidesLength,
       sliderMainWidth,
-      config: { infinite, slider, responsive, rtl },
+      config: {
+        infinite, slider, responsive, rtl,
+      },
     } = this;
     const classItemParams = {
       item: childFider({
@@ -258,7 +260,9 @@ class SliderCore {
 
   transitionendWatcherCall = () => {
     const {
-      config: { slider, infinite, responsive, dots, nav, rtl },
+      config: {
+        slider, infinite, responsive, dots, nav, rtl,
+      },
       index,
       getIndex,
       setIndex,
