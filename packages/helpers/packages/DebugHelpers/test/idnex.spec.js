@@ -1,4 +1,5 @@
 import * as DebugHelpers from '../index';
+import { instanceOf } from 'prop-types';
 
 beforeEach(() => {
   jest.spyOn(console, 'log');
@@ -24,6 +25,16 @@ describe('DebugHelpers', () => {
       expect(console.log.mock.calls.length).toBe(0);
       DebugHelpers.delog(body);
       expect(console.log.mock.calls.length).toBe(0);
+    });
+  });
+  describe('ApiError', () => {
+    it('should throw an API error', () => {
+      const message = 'something bad happened!';
+      try {
+        throw new DebugHelpers.ApiError(message);
+      } catch (e) {
+        expect(e.message).toEqual(message);
+      }
     });
   });
 });
