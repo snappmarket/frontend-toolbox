@@ -4,11 +4,12 @@
   "plugins": ["prettier", "react", "jsx-a11y", "react-hooks"],
   "globals": {
     "require": true,
-    "module": true
+    "module": true,
+    "window": true,
+    "navigator": true,
+    "localStorage": true,
+    "document": true
   },
-
-  //  "plugins": ["prettier"],
-
   "rules": {
     "arrow-body-style": [2, "as-needed"],
     "class-methods-use-this": 0,

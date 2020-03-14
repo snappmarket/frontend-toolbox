@@ -1,4 +1,4 @@
-workflow "Pull Request" {
+wworkflow "Pull Request" {
   on = "pull_request"
   resolves = ["ESLint"]
 }

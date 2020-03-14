@@ -13,7 +13,7 @@ script:
 
 deploy:
   provider: surge
-  project: /.docz/
+  project: /.docz/dist/
   domain: docs-frontendtoolbox.surge.com
   skip_cleanup: true
   all_branches: true

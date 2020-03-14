@@ -20,8 +20,8 @@
     "lint:staged": "lint-staged",
     "prettify": "prettier --write packages/**/*.js",
     "docz:dev": "cross-env BABEL_ENV=docz docz dev",
-    "docz:build": "docz build",
-    "docz:serve": "docz build && docz serve",
+    "docz:build": "cross-env BABEL_ENV=docz docz build",
+    "docz:serve": "cross-env BABEL_ENV=docz docz build && docz serve",
     "release:parents": "node ./scripts/release/release-together.js",
     "release:childs": "node ./scripts/release/release-together-childs.js"
   },
