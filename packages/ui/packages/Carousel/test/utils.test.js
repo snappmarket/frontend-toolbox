@@ -10,7 +10,7 @@ import {
   getTranslate3d,
   switchInfiniteResponsiveCount,
   vdomArrayConvertor,
-} from './utils';
+} from '../src/core/utils';
 const { JSDOM } = require('jsdom');
 
 test('responsiveItemCount 0:{items:2.5} to equal 2.5', () => {
