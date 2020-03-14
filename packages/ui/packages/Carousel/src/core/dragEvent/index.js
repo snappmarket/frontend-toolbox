@@ -22,12 +22,17 @@ export default class DragEvent {
   initialize() {
     const {
       config: {
+<<<<<<< HEAD
         responsive,
         threshold,
         rtl,
       },
       getDrag,
       getInfinite,
+=======
+        infinite, responsive, threshold, rtl,
+      },
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
       getSliderItems,
       setPosInitial,
       setPosX1,

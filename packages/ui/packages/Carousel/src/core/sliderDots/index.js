@@ -31,12 +31,17 @@ export default class SliderDots {
   initialize() {
     const {
       config: {
+<<<<<<< HEAD
         slider,
         responsive,
         nav,
         rtl,
       },
       getInfinite,
+=======
+        slider, infinite, responsive, nav, rtl,
+      },
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
       getSlidesLength,
       getSliderItemWidth,
       getSliderMainWidth,

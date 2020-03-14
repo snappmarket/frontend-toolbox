@@ -1,9 +1,12 @@
 
+<<<<<<< HEAD
 import {
   truncResponsiveItemCount,
   vdomArrayConvertor,
 } from '../utils';
 
+=======
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
 export const setPageNumberOnChild = (params) => {
   const { sliderItems, responsive } = params;
   const perSlide = truncResponsiveItemCount(responsive);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const IconName = ({ className, size , color}) => (
+const IconName = ({ className, size, color }) => (
   <svg
     className={className}
     style={{

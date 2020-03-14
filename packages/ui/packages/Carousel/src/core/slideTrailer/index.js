@@ -28,11 +28,16 @@ export default class SliderTrailer {
   initialize() {
     const {
       config: {
+<<<<<<< HEAD
         responsive,
         slider,
         rtl,
       },
       getInfinite,
+=======
+        infinite, responsive, slider, rtl,
+      },
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
       getSliderItems,
       getSliderItemWidth,
       getPerSlide,

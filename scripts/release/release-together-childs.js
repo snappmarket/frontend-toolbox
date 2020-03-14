@@ -19,16 +19,16 @@ let version = '';
     const gatheredVersionInfo = await grabVersionAndGenerateNewOne(
       passedVersion,
       path.join(process.cwd(), 'packages/ui/'),
-      true,
+      false,
     );
     version = gatheredVersionInfo.version;
+
+    if (shell.exec(`lerna run --parallel release:child -- -- ${version}`).code !== 0) {
+      shell.echo('Release build, or publish failed');
+      shell.exit(1);
+    }
   } catch (err) {
     console.error(err);
     process.exit(1);
   }
 }());
-
-if (shell.exec(`lerna run --parallel release:child -- -- ${version}`).code !== 0) {
-  shell.echo('Release build, or publish failed');
-  shell.exit(1);
-}

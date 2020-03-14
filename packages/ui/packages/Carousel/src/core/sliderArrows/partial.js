@@ -33,7 +33,15 @@ export const shiftSlideIsDir = (params) => {
   };
   const newIndex = index + perSlide;
 
+<<<<<<< HEAD
   if (!infinite && newIndex + perSlide - 1 >= newSlidesLength && responsiveItem !== 1) {
+=======
+  if (
+    !infinite
+    && newIndex + perSlide - 1 >= newSlidesLength
+    && responsiveItem !== 1
+  ) {
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
     const result = directionSetter({
       rtl,
       input: calcFinalItemPosition(calcFinalItemPositionParams),

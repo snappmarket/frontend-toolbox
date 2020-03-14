@@ -91,9 +91,17 @@ export const dragActionCalcPosition = (params) => {
 
   if (!infinite && !rtl) {
     // stop drag when firstItem go to lastItem on drag
+<<<<<<< HEAD
     const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() > (sliderItemWidthNew() * perSlide) + thresholdNew();
     // stop drag when lastItem go to fistItem on drag
     const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() <= calcFinalItemPositionNew - thresholdNew();
+=======
+    const firstTolastDrag = getTranslate3d(sliderItems) - posX2New()
+      > sliderItemWidthNew() * perSlide + thresholdNew();
+    // stop drag when lastItem go to fistItem on drag
+    const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New()
+      <= calcFinalItemPositionNew - thresholdNew();
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
 
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
@@ -104,7 +112,12 @@ export const dragActionCalcPosition = (params) => {
     // stop drag when firstItem go to lastItem on drag
     const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() > 0;
     // stop drag when lastItem go to fistItem on drag
+<<<<<<< HEAD
     const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() + 5 < sliderItemWidthNew() * (slidesLength + perSlide + 1);
+=======
+    const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() + 5
+      < sliderItemWidthNew() * (slidesLength + perSlide + 1);
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
 
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
@@ -113,9 +126,17 @@ export const dragActionCalcPosition = (params) => {
 
   if (!infinite && rtl) {
     // stop drag when firstItem go to lastItem on drag
+<<<<<<< HEAD
     const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() < (sliderItemWidthNew() * perSlide) + thresholdNew();
     // stop drag when lastItem go to fistItem on drag
     const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() >= calcFinalItemPositionNew - thresholdNew();
+=======
+    const firstTolastDrag = getTranslate3d(sliderItems) - posX2New()
+      < sliderItemWidthNew() * perSlide + thresholdNew();
+    // stop drag when lastItem go to fistItem on drag
+    const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New()
+      >= calcFinalItemPositionNew - thresholdNew();
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
 
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
@@ -125,7 +146,12 @@ export const dragActionCalcPosition = (params) => {
     // stop drag when firstItem go to lastItem on drag
     const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() < 0;
     // stop drag when lastItem go to fistItem on drag
+<<<<<<< HEAD
     const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() - 5 > sliderItemWidthNew() * (slidesLength + perSlide + 1);
+=======
+    const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() - 5
+      > sliderItemWidthNew() * (slidesLength + perSlide + 1);
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
     }
@@ -282,9 +308,17 @@ export const dragEnd = (params) => {
   });
   setIndex(calcIndex);
 
+<<<<<<< HEAD
 
   if (!infinite && calcIndex > slidesLength && calcIndex < slidesLength + perSlide
 		|| infinite && calcIndex + perSlide === perSlide
+=======
+  if (
+    (!infinite
+      && calcIndex > slidesLength
+      && calcIndex < slidesLength + perSlide)
+    || (infinite && calcIndex + perSlide === perSlide)
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
   ) {
     sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
   }
@@ -301,23 +335,46 @@ export const dragEnd = (params) => {
   }
 
   if (
+<<<<<<< HEAD
     !infinite
 		&& (getTranslate3d(sliderItems) <= thresholdNew()
 		&& getTranslate3d(sliderItems) >= 0)
 		|| (rtl && getTranslate3d(sliderItems) <= 0)
+=======
+    (!infinite
+      && getTranslate3d(sliderItems) <= thresholdNew()
+      && getTranslate3d(sliderItems) >= 0)
+    || (rtl && getTranslate3d(sliderItems) <= 0)
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
   ) {
     sliderItems.style.transform = setTranslate3d(0);
     prevNone(slider);
     nextBlock(slider);
   }
 
+<<<<<<< HEAD
   if (!infinite && !rtl && getTranslate3d(sliderItems) <= calcFinalItemPositionNew) {
+=======
+  if (
+    !infinite
+    && !rtl
+    && getTranslate3d(sliderItems) <= calcFinalItemPositionNew
+  ) {
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
     sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
     nextNone(slider);
     prevBlock(slider);
   }
 
+<<<<<<< HEAD
   if (!infinite && rtl && getTranslate3d(sliderItems) >= calcFinalItemPositionNew) {
+=======
+  if (
+    !infinite
+    && rtl
+    && getTranslate3d(sliderItems) >= calcFinalItemPositionNew
+  ) {
+>>>>>>> 2350cfad6f6e3899ef5e0b54404cbabc29a1d882
     sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
     nextNone(slider);
     prevBlock(slider);
