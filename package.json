@@ -9,6 +9,7 @@
     "start": "lerna run start --stream --parallel",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bootstrap:seprated": "lerna exec npm install",
+    "build": "lerna run --parallel build",
     "build-lerna": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.spec.js",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
     "test": "cross-env BABEL_ENV=test jest",
@@ -20,8 +21,8 @@
     "lint:staged": "lint-staged",
     "prettify": "prettier --write packages/**/*.js",
     "docz:dev": "cross-env BABEL_ENV=docz docz dev",
-    "docz:build": "docz build",
-    "docz:serve": "docz build && docz serve",
+    "docz:build": "cross-env BABEL_ENV=docz docz build",
+    "docz:serve": "cross-env BABEL_ENV=docz docz build && docz serve",
     "release:parents": "node ./scripts/release/release-together.js",
     "release:childs": "node ./scripts/release/release-together-childs.js"
   },
