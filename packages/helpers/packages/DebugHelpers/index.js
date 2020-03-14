@@ -1,7 +1,6 @@
-const DEBUG_MODE = process.env.DEBUG_MODE || 'false';
-
 // eslint-disable-next-line func-style
 function delog(body) {
+  const DEBUG_MODE = process.env.DEBUG_MODE || 'false';
   if (DEBUG_MODE !== 'false') {
     // eslint-disable-next-line no-console
     console.log('--', body);
