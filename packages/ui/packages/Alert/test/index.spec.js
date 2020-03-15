@@ -1,29 +1,58 @@
-
-import renderer from 'react-test-renderer';
 import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+
+import { Wrapper, theme } from '../../../test/test.helpers';
 import Alert from '../index';
 
-test('Alert changes the class when get different props', () => {
-  const component = renderer.create(
-    <Alert status="error" closable="true" onClose={() => {}}><h3>مشکلی وجود دارد</h3></Alert>,
-  );
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
 
-  tree.props.status;
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+describe('Alert ui component tests', () => {
+  it('Should render with orange color at default', () => {
+    const { queryByTestId } = render(
+      <Wrapper><Alert data-testid="alert-default-value"><h3>some text !</h3></Alert></Wrapper>,
+    );
 
+    expect(queryByTestId('alert-default-value')).toHaveStyle({
+      backgroundColor: theme.colors.orange.bright,
+      color: theme.colors.orange.dark,
+    });
+  });
 
-  tree.props.onClose;
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  it('Should changes the class when get different props', () => {
+    const { queryByTestId, rerender } = render(
+      <Wrapper><Alert data-testid="alert" status="error"><h3>some text !</h3></Alert></Wrapper>,
+    );
 
-  tree.props.children;
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+    expect(queryByTestId('alert')).toHaveStyle({
+      backgroundColor: theme.colors.red.bright,
+      color: theme.colors.red.dark,
+    });
 
-  tree.props.closable;
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+    rerender(<Wrapper><Alert data-testid="alert" status="info"><h3>some text !</h3></Alert></Wrapper>);
+    expect(queryByTestId('alert')).toHaveStyle({
+      backgroundColor: theme.colors.blue.bright,
+      color: theme.colors.blue.dark,
+    });
+
+    rerender(<Wrapper><Alert data-testid="alert" status="warning"><h3>some text !</h3></Alert></Wrapper>);
+    expect(queryByTestId('alert')).toHaveStyle({
+      backgroundColor: theme.colors.yellow.bright,
+      color: theme.colors.yellow.dark,
+    });
+
+    rerender(<Wrapper><Alert data-testid="alert" status="success"><h3>some text !</h3></Alert></Wrapper>);
+    expect(queryByTestId('alert')).toHaveStyle({
+      backgroundColor: theme.colors.green.bright,
+      color: theme.colors.green.dark,
+    });
+  });
+
+  it('Should close Alert on close button click', () => {
+    const { queryByTestId } = render(
+      <Wrapper><Alert data-testid="alert" status="error" closable="true"><h3>some text !</h3></Alert></Wrapper>,
+    );
+
+    fireEvent(queryByTestId('close-button'), 'click');
+    expect(queryByTestId('alert')).not.toBeVisible();
+  });
 });

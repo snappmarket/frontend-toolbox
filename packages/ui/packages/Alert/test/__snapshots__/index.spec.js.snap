@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert tests Should changes the class when get different props 1`] = `
+<div
+  className="sc-EHOje dFtRRb"
+  color="red"
+>
+  <button
+    className="sc-bdVaJa sc-bZQynM fTnRNf circle d-inline-block pull-left closeBtn"
+    color="gray"
+    onClick={[Function]}
+    size="xs"
+  />
+  <h3>
+    مشکلی وجود دارد
+  </h3>
+</div>
+`;
+
+exports[`Alert tests Should changes the class when get different props 2`] = `
+<div
+  className="sc-EHOje dFtRRb"
+  color="red"
+>
+  <button
+    className="sc-bdVaJa sc-bZQynM fTnRNf circle d-inline-block pull-left closeBtn"
+    color="gray"
+    onClick={[Function]}
+    size="xs"
+  />
+  <h3>
+    مشکلی وجود دارد
+  </h3>
+</div>
+`;
+
+exports[`Alert tests Should changes the class when get different props 3`] = `
+<div
+  className="sc-EHOje dFtRRb"
+  color="red"
+>
+  <button
+    className="sc-bdVaJa sc-bZQynM fTnRNf circle d-inline-block pull-left closeBtn"
+    color="gray"
+    onClick={[Function]}
+    size="xs"
+  />
+  <h3>
+    مشکلی وجود دارد
+  </h3>
+</div>
+`;
+
+exports[`Alert tests Should changes the class when get different props 4`] = `
+<div
+  className="sc-EHOje dFtRRb"
+  color="red"
+>
+  <button
+    className="sc-bdVaJa sc-bZQynM fTnRNf circle d-inline-block pull-left closeBtn"
+    color="gray"
+    onClick={[Function]}
+    size="xs"
+  />
+  <h3>
+    مشکلی وجود دارد
+  </h3>
+</div>
+`;
+
+exports[`Alert tests Should changes the class when get different props 5`] = `
+<div
+  className="sc-EHOje dFtRRb"
+  color="red"
+>
+  <button
+    className="sc-bdVaJa sc-bZQynM fTnRNf circle d-inline-block pull-left closeBtn"
+    color="gray"
+    onClick={[Function]}
+    size="xs"
+  />
+  <h3>
+    مشکلی وجود دارد
+  </h3>
+</div>
+`;

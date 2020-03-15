@@ -65,6 +65,7 @@ const Alert = (props) => {
       <StyledAlertWrapper className={className} {...options}>
         {closable && (
           <StyledCloseButton
+            data-testid="close-button"
             onClick={handleCloseAlert}
             icon={<CrossIcon className="closeIcon" />}
             modifier="link"

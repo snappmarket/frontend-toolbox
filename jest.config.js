@@ -12,8 +12,9 @@ module.exports = {
     '!**/dist/**',
     '!.docz',
   ],
+  transform: { '\\.js$': ['babel-jest', { rootMode: 'upward' }] },
   rootDir: process.cwd(),
-  roots: ['<rootDir>/packages', '<rootDir>/scripts'],
+  roots: ['<rootDir>/packages', '<rootDir>/scripts', '<rootDir>/test'],
   // coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
   coverageReporters: ['html', 'text'],
   coverageThreshold: {
