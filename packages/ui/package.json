@@ -17,12 +17,12 @@
     "build:copy-files": "node ../../scripts/copy-file/packages-copy.js",
     "prebuild": "rimraf ./dist",
     "release": "node ../../scripts/release/release-parents.js",
-    "start": "rollup -c -w",
-    "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "start": "rollup -c -w"
   },
   "dependencies": {
+    "@snappmarket/helpers": "^0.2.1-alpha.4",
+    "@snappmarket/hooks": "^0.2.1-alpha.3",
+    "@snappmarket/icons": "^0.2.1-alpha.2",
     "polished": "^3.4.2",
     "react-hgs-input-range": "^1.3.1",
     "react-image": "^2.2.2",
@@ -30,9 +30,6 @@
     "react-slick": "^0.25.2"
   },
   "peerDependencies": {
-    "@snappmarket/helpers": "^0.2.1-alpha.4",
-    "@snappmarket/hooks": "^0.2.1-alpha.3",
-    "@snappmarket/icons": "^0.2.1-alpha.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"

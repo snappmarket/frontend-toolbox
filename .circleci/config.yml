@@ -1,7 +1,4 @@
-version: 2.1
-
-orbs:
-  heroku: circleci/heroku@x.y # Use the Heroku orb in your config
+version: 2
 
 aliases:
   - &docker
@@ -21,10 +18,6 @@ aliases:
     run:
       name: Install Packages
       command: yarn --frozen-lockfile
-
-  - &attach_workspace
-    at: dist
-
 
 jobs:
   setup:
@@ -69,7 +62,7 @@ jobs:
   build:
     docker: *docker
     environment: *environment
-    parallelism: 20
+    parallelism: 4
     steps:
       - checkout
       - *restore_yarn_cache
@@ -77,18 +70,26 @@ jobs:
       - run:
           command: yarn build
       - persist_to_workspace:
-          root: build
+          root: packages
           paths:
-            - node_modules
-            - dist
+            - helpers/dist
+            - helpers/node_modules
+            - hooks/dist
+            - hooks/node_modules
+            - icons/dist
+            - icons/node_modules
+            - ui/dist
+            - ui/node_modules
   deploy:
-    - build
-      - heroku/deploy-via-git
-      requires:
-        - build # only run deploy-via-git job if the build job has completed
-      filters:
-        branches:
-          only: master # only run deploy-via-git job on master branch
+    docker: *docker
+    environment: *environment
+    parallelism: 4
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 workflows:
   version: 2
@@ -98,54 +99,20 @@ workflows:
       - lint:
           requires:
             - setup
-      - flow:
-          requires:
-            - setup
-      - test_source:
-          requires:
-            - setup
-      - test_source_prod:
-          requires:
-            - setup
-      - test_source_persistent:
-          requires:
-            - setup
-      - test_source_www:
-          requires:
-            - setup
-      - test_source_www_variant:
-          requires:
-            - setup
-      - test_source_www_prod:
-          requires:
-            - setup
-      - test_source_www_variant_prod:
-          requires:
-            - setup
       - build:
           requires:
             - setup
-      - process_artifacts:
+      - test:
           requires:
-            - build
-      - sizebot:
-          requires:
-            - build
-      - lint_build:
-          requires:
-            - build
-      - test_build:
-          requires:
-            - build
-      - test_build_prod:
-          requires:
-            - build
-      - test_dom_fixtures:
-          requires:
-            - build
+            - setup
 
-
-  heroku_deploy:
+  build-deploy:
     jobs:
-      - deploy
-
+      - build
+      - deploy:
+          context: globals
+          requires:
+            - build # only run deploy-via-git job if the build job has completed
+          filters:
+            branches:
+              only: master # only run deploy-via-git job on master branch
