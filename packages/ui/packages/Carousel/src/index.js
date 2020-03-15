@@ -13,31 +13,31 @@ const SimpleCarousel = (props) => {
   let newSlider = null;
 
   useEffect(() => {
-    newSlider = new Slider({
-      slider: sliderRed.current,
-      ...slideConfig,
-    });
-    goTo(showingSlide);
+    if (typeof showingSlide === 'number' || showingSlide >= 0) {
+      newSlider = new Slider({
+        slider: sliderRed.current,
+        ...slideConfig,
+      });
+      goTo(showingSlide);
+    }
   }, [showingSlide]);
 
   useEffect(() => {
-    newSlider = new Slider({
-      slider: sliderRed.current,
-      ...slideConfig,
-    });
-    onRefresh(refresh);
+    if (refresh) {
+      newSlider = new Slider({
+        slider: sliderRed.current,
+        ...slideConfig,
+      });
+      onRefresh(refresh);
+    }
   }, [refresh]);
 
   const goTo = (index) => {
-    if (typeof index === 'number' || index >= 0) {
-      newSlider.goTo(index);
-    }
+    newSlider.goTo(index);
   };
 
-  const onRefresh = () => {
-    if (refresh) {
-      newSlider.refresh(refresh);
-    }
+  const onRefresh = (refreshFlag) => {
+    newSlider.refresh(refreshFlag);
   };
 
   return (

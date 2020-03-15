@@ -16,13 +16,13 @@ import {
 export const directionClientX = (params) => {
 	const {rtl,e,sliderMainWidth} = params;
 	if(rtl) return sliderMainWidth - e.clientX;
-  return e.clientX;	
+  return e.clientX;
 };
 
 export const directionTouchClientX = (params) => {
 	const {rtl,e,sliderMainWidth} = params;
 	if(rtl) return sliderMainWidth - e.touches[0].clientX;
-  return e.touches[0].clientX;	
+  return e.touches[0].clientX;
 };
 
 export const caroueslTouchStart = (params) => directionTouchClientX(params);
@@ -59,7 +59,7 @@ export const dragActionCalcPosition = params => {
     infinite,
     threshold,
 	} = params;
-	
+
 	const posX2New = () => {
 		if(rtl) return -posX2;
 		return posX2;
@@ -108,13 +108,13 @@ export const dragActionCalcPosition = params => {
 			return false;
 		}
 	};
-	
+
 	if(!infinite && rtl){
 		// stop drag when firstItem go to lastItem on drag
 		const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() < (sliderItemWidthNew() * perSlide) + thresholdNew();
 		// stop drag when lastItem go to fistItem on drag
 		const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() >= calcFinalItemPositionNew - thresholdNew();
-		
+
 		if(firstTolastDrag || lastToFirstDrag){
 			return false;
 		}
@@ -194,7 +194,14 @@ export const dragAction = (params) => {
 	} = params;
 	const sliderMainWidth = getSliderMainWidth();
 	e = e || window.event;
-	const clientXParams = {e,rtl,sliderMainWidth};
+  const clientXParams = {e,rtl,sliderMainWidth};
+  const perSlide = truncResponsiveItemCount(responsive);
+
+	// when drag false or slidesLength <= perSlide dragEvent is disable
+	if(getSlidesLength() <= perSlide){
+		return false;
+	}
+
 	if (e.type == "touchmove") {
 		const dragActionTouchmovePosX2Params = {
 			posX1: getPosX1(),
@@ -247,11 +254,11 @@ export const dragEnd = (params) => {
 		nav,
 		rtl
 	} = params;
-	
+
 	const perSlide = truncResponsiveItemCount(responsive);
-	
+
 	// when drag false or slidesLength <= perSlide dragEvent is disable
-	if(!drag || slidesLength <= perSlide){
+	if(slidesLength <= perSlide){
 		mouseEventNull();
 		return false;
 	}
