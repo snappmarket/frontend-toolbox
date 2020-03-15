@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  heroku: circleci/heroku@x.y # Use the Heroku orb in your config
-
 aliases:
   - &docker
     - image: circleci/openjdk:8-jdk-node-browsers
@@ -21,10 +18,6 @@ aliases:
     run:
       name: Install Packages
       command: yarn --frozen-lockfile
-
-  - &attach_workspace
-    at: dist
-
 
 jobs:
   setup:
@@ -82,13 +75,13 @@ jobs:
             - node_modules
             - dist
   deploy:
-    - build
-      - heroku/deploy-via-git
-      requires:
-        - build # only run deploy-via-git job if the build job has completed
-      filters:
-        branches:
-          only: master # only run deploy-via-git job on master branch
+    executor: heroku/default
+      steps:
+        - checkout
+        - heroku/install
+        - heroku/deploy-via-git
+    requires:
+      - build
 
 workflows:
   version: 2
@@ -98,54 +91,16 @@ workflows:
       - lint:
           requires:
             - setup
-      - flow:
-          requires:
-            - setup
-      - test_source:
-          requires:
-            - setup
-      - test_source_prod:
-          requires:
-            - setup
-      - test_source_persistent:
-          requires:
-            - setup
-      - test_source_www:
-          requires:
-            - setup
-      - test_source_www_variant:
-          requires:
-            - setup
-      - test_source_www_prod:
-          requires:
-            - setup
-      - test_source_www_variant_prod:
-          requires:
-            - setup
       - build:
           requires:
             - setup
-      - process_artifacts:
+      - test:
           requires:
-            - build
-      - sizebot:
-          requires:
-            - build
-      - lint_build:
-          requires:
-            - build
-      - test_build:
-          requires:
-            - build
-      - test_build_prod:
-          requires:
-            - build
-      - test_dom_fixtures:
-          requires:
-            - build
-
+            - setup
 
   heroku_deploy:
     jobs:
       - deploy
 
+orbs:
+  heroku: circleci/heroku@x.y # Use the Heroku orb in your config
