@@ -74,3 +74,18 @@ InputRange.defaultProps = {
   },
 };
 export default InputRange;
+
+
+export const deepFlatten = (array, property, flattenArrayTemp = []) => {
+  const newArray = { ...array };
+  delete newArray[property];
+  flattenArrayTemp.push(newArray);
+  if (
+    array[property]
+    && Array.isArray(array[property])
+    && array[property].length
+  ) {
+    array[property].forEach((item) => deepFlatten(item, property, flattenArrayTemp));
+  }
+  return flattenArrayTemp;
+};

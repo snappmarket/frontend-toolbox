@@ -70,10 +70,16 @@ jobs:
       - run:
           command: yarn build
       - persist_to_workspace:
-          root: packages/**
+          root: packages
           paths:
-            - node_modules
-            - dist
+            - helpers/dist
+            - helpers/node_modules
+            - hooks/dist
+            - hooks/node_modules
+            - icons/dist
+            - icons/node_modules
+            - ui/dist
+            - ui/node_modules
   deploy:
     docker: *docker
     environment: *environment

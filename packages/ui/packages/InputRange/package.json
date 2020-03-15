@@ -14,6 +14,7 @@
     "release:child": "yarn build && node ../../../../scripts/release/release-childs.js"
   },
   "dependencies": {
+    "@snappmarket/helpers": "^0.2.1-beta.cswtgmi",
     "react-hgs-input-range": "^1.3.1"
   },
   "peerDependencies": {
