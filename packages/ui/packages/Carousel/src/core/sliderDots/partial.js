@@ -80,6 +80,11 @@ export const setSliderItemsPositionAfterDotClick = params => {
 		rtl
 	} = params;
 
+	// when slidesLength <= perSlide dots is disable
+	if(slidesLength <= perSlide){
+		return false;
+	};
+
 	if (!infinite && indexItem + perSlide >= slidesLength) {
 		const calcFinalItemPositionParams = {
 			slideSize,

@@ -83,6 +83,11 @@ export const dragActionCalcPosition = params => {
     })
 	});
 
+	// when slidesLength <= perSlide dragEvent is disable
+	if(slidesLength <= perSlide){
+		return false;
+	}
+
 	if(!infinite && !rtl){
 		// stop drag when firstItem go to lastItem on drag
 		const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() > (sliderItemWidthNew() * perSlide) + thresholdNew();
@@ -242,13 +247,15 @@ export const dragEnd = (params) => {
 		nav,
 		rtl
 	} = params;
-
-	if(!drag){
+	
+	const perSlide = truncResponsiveItemCount(responsive);
+	
+	// when drag false or slidesLength <= perSlide dragEvent is disable
+	if(!drag || slidesLength <= perSlide){
 		mouseEventNull();
 		return false;
 	}
 
-	const perSlide = truncResponsiveItemCount(responsive);
 
 	const thresholdNew = () => {
 		if(rtl) return -threshold;
