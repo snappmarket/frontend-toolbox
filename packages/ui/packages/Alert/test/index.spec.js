@@ -56,4 +56,25 @@ describe('Alert ui component tests', () => {
     fireEvent.click(getByTestId('close-button'));
     expect(alert).not.toBeInTheDocument();
   });
+
+  it('Should call afterClose callback on close button click', () => {
+    // eslint-disable-next-line no-console
+    const callback = jest.fn();
+    const { getByTestId } = render(
+      <Wrapper><Alert onClose={callback} closable><h3>some text !</h3></Alert></Wrapper>,
+    );
+
+    fireEvent.click(getByTestId('close-button'));
+    expect(callback).toHaveBeenCalledTimes(1);
+  });
+
+
+  it('Should add class to element', () => {
+    const { getByTestId } = render(
+      <Wrapper><Alert className="my-custom-class"><h3>some text !</h3></Alert></Wrapper>,
+    );
+    const alert = getByTestId('alert');
+
+    expect(alert).toHaveClass('my-custom-class');
+  });
 });
