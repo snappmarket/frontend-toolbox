@@ -62,7 +62,7 @@ const Alert = (props) => {
 
   return (
     isOpen && (
-      <StyledAlertWrapper className={className} {...options}>
+      <StyledAlertWrapper data-testid="alert" className={className} {...options}>
         {closable && (
           <StyledCloseButton
             data-testid="close-button"
