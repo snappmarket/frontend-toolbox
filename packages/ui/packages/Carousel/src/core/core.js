@@ -238,7 +238,7 @@ class SliderCore {
 		
 		sliderSlidesSelector.addEventListener("transitionend", this.transitionendWatcherCall);
 		this.windowResizeWatcher();
-	}
+	};
 
 	goTo(newPosition){
 		const {
@@ -257,7 +257,13 @@ class SliderCore {
 			rtl
 		}));
 		this.transitionendWatcherCall();
-	}
+	};
+
+	refresh(flag){
+		if(flag){
+			this.initialize();
+		}
+	};
 
 	next() {
 		const {
