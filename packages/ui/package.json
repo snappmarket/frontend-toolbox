@@ -17,10 +17,7 @@
     "build:copy-files": "node ../../scripts/copy-file/packages-copy.js",
     "prebuild": "rimraf ./dist",
     "release": "node ../../scripts/release/release-parents.js",
-    "start": "rollup -c -w",
-    "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "start": "rollup -c -w"
   },
   "dependencies": {
     "@snappmarket/helpers": "^0.2.1-alpha.4",
