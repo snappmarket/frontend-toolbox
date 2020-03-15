@@ -6,9 +6,12 @@
  * @return {{}}
  */
 export const removeByKey = (haystack, needle) => Object.keys(haystack)
-  .filter((key) => parseInt(key, 0) !== parseInt(needle, 0))
+  .filter((key) => {
+    if (Number.isInteger(needle)) return parseInt(key, 0) !== parseInt(needle, 0);
+    return key !== needle;
+  })
   .reduce((result, current) => {
-    // eslint-disable-next-line no-param-reassign
+    // eslint-disable-next-line no-param-r eassign
     result[current] = haystack[current];
     return result;
   }, {});
