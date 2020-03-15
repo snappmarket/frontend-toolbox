@@ -1,7 +1,12 @@
 language: node_js
+dist: xenial
+os: linux
 
 node_js:
   - stable
+
+before_install:
+  - yarn link
 
 install:
   - npm install
@@ -12,9 +17,11 @@ script:
   - ls
   - npm run docz:build
 
+jobs:
+  fast_finish: true
+
 deploy:
   provider: surge
   project: /.docz/dist/
   domain: docs-frontendtoolbox.surge.com
-  skip_cleanup: true
-  all_branches: true
+  cleanup: true

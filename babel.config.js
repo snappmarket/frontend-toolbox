@@ -31,6 +31,7 @@ if (process.env.BABEL_ENV !== 'docz') {
   if (process.env.BABEL_ENV !== 'test') {
     ignorePaths.push(
       '**/*.spec.js',
+      'test/**',
       '**/dist/**',
       '**/rollup.config.js',
     );
