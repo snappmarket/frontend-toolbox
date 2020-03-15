@@ -5,6 +5,7 @@ export const persianNumber = (string) => {
 export const englishNumber = (string) => `${string}`
   .replace(/[\u0660-\u0669]/g, (c) => c.charCodeAt(0) - 0x0660)
   .replace(/[\u06f0-\u06f9]/g, (c) => c.charCodeAt(0) - 0x06f0);
+
 export const generateKey = () => {
   const timeStamp = Math.round(new Date().getTime() / 1000);
   const rand = Math.floor(Math.random() * 10000 + 1);
