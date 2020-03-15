@@ -1,4 +1,9 @@
 // eslint-disable-next-line func-style
+/**
+ * @name delog
+ * @description logs body of request on the console
+ * @param body
+ */
 function delog(body) {
   if (process.env.DEBUG_MODE === 'true') {
     // eslint-disable-next-line no-console
@@ -7,7 +12,8 @@ function delog(body) {
 }
 
 /**
- * Custom error handler to api requests
+ * @name ApiError
+ * @description Custom error handler to api requests
  * @param args
  * @returns {any}
  * @constructor
