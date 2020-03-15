@@ -69,17 +69,24 @@ jobs:
       - *run_yarn
       - run:
           command: yarn build
+      - run:
+          name: "Run Jest and Collect Coverage Reports"
+          command: yarn jest --collectCoverage=true
+      - store_artifacts:
+          path: coverage
+
       - persist_to_workspace:
-          root: packages
+          root: /
           paths:
-            - helpers/dist
-            - helpers/node_modules
-            - hooks/dist
-            - hooks/node_modules
-            - icons/dist
-            - icons/node_modules
-            - ui/dist
-            - ui/node_modules
+            - node_modules
+            - packages/helpers/dist
+            - packages/helpers/node_modules
+            - packages/hooks/dist
+            - packages/hooks/node_modules
+            - packages/icons/dist
+            - packages/icons/node_modules
+            - packages/ui/dist
+            - packages/ui/node_modules
   deploy:
     docker: *docker
     environment: *environment
@@ -93,15 +100,21 @@ jobs:
 
 workflows:
   version: 2
-  stable:
+  build:
+    jobs:
+      - setup
+      - build:
+          requires:
+            - setup
+  lint:
     jobs:
       - setup
       - lint:
           requires:
             - setup
-      - build:
-          requires:
-            - setup
+  test:
+    jobs:
+      - setup
       - test:
           requires:
             - setup
