@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 aliases:
   - &docker
@@ -104,6 +104,7 @@ workflows:
     jobs:
       - build
       - deploy:
+          context: globals
           requires:
             - build # only run deploy-via-git job if the build job has completed
           filters:
