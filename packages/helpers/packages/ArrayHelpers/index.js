@@ -1,5 +1,6 @@
 /**
- * Pops item from an array
+ * @name arrayItemAddProp
+ * @description adds similar properties to children of an array
  * @param baseArray
  * @param props
  * @returns {[]}
@@ -11,7 +12,8 @@ export const arrayItemAddProp = (baseArray, props) => {
 };
 
 /**
- * Flatten array
+ * @name flattenArray
+ * @description makes a flat array from sub-arrays of an array
  * @param array
  * @param property
  * @returns {[]}
@@ -25,7 +27,8 @@ export const flattenArray = (array, property) => {
 };
 
 /**
- * Serialize object
+ * @name serializeObject
+ * @description serializes the properties of given object
  * @param object
  * @returns {string}
  */
@@ -49,7 +52,8 @@ export const serializeObject = (object) => {
 };
 
 /**
- * Create string from array
+ * @name stringifyArray
+ * @description Create string from array
  * @param array
  * @param properties
  * @returns {string}
@@ -67,7 +71,8 @@ export const stringifyArray = (array, properties) => {
 };
 
 /**
- * Deep flatten an array
+ * @name deepFlatten
+ * @description Deep flatten an array
  * @param array
  * @param property
  * @param flattenArrayTemp
