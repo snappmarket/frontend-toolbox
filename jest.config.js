@@ -6,7 +6,7 @@ module.exports = {
   coverageDirectory: '.jest-coverage',
   moduleFileExtensions: ['js'],
   collectCoverageFrom: [
-    'packages/*/packages/**/*.js',
+    '**/*.js',
     '!**/node_modules/**',
     '!**/vendor/**',
     '!**/dist/**',
