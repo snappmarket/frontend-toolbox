@@ -75,13 +75,15 @@ jobs:
             - node_modules
             - dist
   deploy:
-    executor: heroku/default
-      steps:
-        - checkout
-        - heroku/install
-        - heroku/deploy-via-git
-    requires:
-      - build
+    docker: *docker
+    environment: *environment
+    parallelism: 20
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 workflows:
   version: 2
@@ -98,9 +100,12 @@ workflows:
           requires:
             - setup
 
-  heroku_deploy:
+  build-deploy:
     jobs:
-      - deploy
-
-orbs:
-  heroku: circleci/heroku@x.y # Use the Heroku orb in your config
+      - build
+      - deploy:
+          requires:
+            - build # only run deploy-via-git job if the build job has completed
+          filters:
+            branches:
+              only: master # only run deploy-via-git job on master branch
