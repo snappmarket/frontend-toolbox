@@ -26,23 +26,16 @@ export const flattenObject = (object) => {
   const result = {};
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const key in object) {
-    // eslint-disable-next-line no-prototype-builtins,no-continue
-    if (!object.hasOwnProperty(key)) continue;
-
+  Object.keys(object).forEach((key) => {
     if (typeof object[key] === 'object' && object[key] !== null) {
       const flatObject = flattenObject(object[key]);
-      // eslint-disable-next-line no-restricted-syntax
-      for (const itemKey in flatObject) {
-        // eslint-disable-next-line no-prototype-builtins,no-continue
-        if (!flatObject.hasOwnProperty(itemKey)) continue;
-
+      Object.keys(flatObject).forEach((itemKey) => {
         result[`${key}.${itemKey}`] = flatObject[itemKey];
-      }
+      });
     } else {
       result[key] = object[key];
     }
-  }
+  });
   return result;
 };
 
