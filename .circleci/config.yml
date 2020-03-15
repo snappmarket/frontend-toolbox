@@ -70,7 +70,7 @@ jobs:
       - run:
           command: yarn build
       - persist_to_workspace:
-          root: build
+          root: packages/**
           paths:
             - node_modules
             - dist
