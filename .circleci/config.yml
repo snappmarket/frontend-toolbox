@@ -14,7 +14,7 @@ aliases:
         - v2-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
         - v2-node-{{ arch }}-{{ .Branch }}-
         - v2-node-{{ arch }}-
-    - run:
+    run:
         name: Link yarn packages
         command: yarn link
   - &run_yarn
