@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "mesbah68",
+      "name": "mahsa mesbah",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/21215334?v=4",
+      "profile": "https://github.com/mesbah68",
+      "contributions": [
+        "infra",
+        "test",
+        "doc",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "frontend-toolbox",
+  "projectOwner": "snappmarket",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
