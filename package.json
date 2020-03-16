@@ -19,15 +19,13 @@
     "lint:eslint:fix": "eslint --ignore-path .gitignore packages --fix",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
-    "prettify": "prettier --write packages/**/*.js",
+    "prettify": "prettier --write \"**/*.{js,jsx,mdx}\" --ignore-path .docz",
     "docz:dev": "cross-env BABEL_ENV=docz docz dev",
     "docz:build": "cross-env BABEL_ENV=docz docz build",
     "docz:serve": "cross-env BABEL_ENV=docz docz serve",
     "docz:deploy": "surge .docz/dist",
-    "prettier:fix": "prettier --write \"**/*.{js,jsx,md}\" --ignore-path .docz",
     "release:parents": "node ./scripts/release/release-together.js",
-    "release:childs": "node ./scripts/release/release-together-childs.js",
-    "prettier-all": "node ./scripts/tasks/prettier.js write"
+    "release:childs": "node ./scripts/release/release-together-childs.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

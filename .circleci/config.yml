@@ -57,7 +57,7 @@ jobs:
 
       # prettier and linter
       - run:
-          command: yarn prettier-all
+          command: yarn prettify
       - run:
           command: yarn lint:eslint:fix
 
