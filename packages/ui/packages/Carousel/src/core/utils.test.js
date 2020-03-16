@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
   responsiveItemCount,
   truncResponsiveItemCount,
@@ -7,7 +8,6 @@ import {
   calcSliderChildWidth,
   directionSetter,
   setTranslate3d,
-  getTranslate3d,
   switchInfiniteResponsiveCount,
   vdomArrayConvertor,
 } from './utils';
