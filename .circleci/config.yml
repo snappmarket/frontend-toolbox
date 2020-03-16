@@ -109,8 +109,6 @@ workflows:
     jobs:
       - deploy:
           context: globals
-          requires:
-            - setup
           filters:
             branches:
               only: master # only run deploy-via-git job on master branch
