@@ -14,6 +14,9 @@ aliases:
         - v2-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
         - v2-node-{{ arch }}-{{ .Branch }}-
         - v2-node-{{ arch }}-
+    - run:
+        name: Link yarn packages
+        command: yarn link
   - &run_yarn
     run:
       name: Install Packages
@@ -30,9 +33,6 @@ jobs:
           name: Nodejs Version
           command: node --version
       - *restore_yarn_cache
-      - run:
-          name: Link yarn packages
-          command: yarn link
       - *run_yarn
       - save_cache:
           name: Save node_modules cache
