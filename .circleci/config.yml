@@ -14,13 +14,10 @@ aliases:
         - v2-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
         - v2-node-{{ arch }}-{{ .Branch }}-
         - v2-node-{{ arch }}-
-    run:
-        name: Link yarn packages
-        command: yarn link
   - &run_yarn
     run:
-      name: Install Packages
-      command: yarn --frozen-lockfile
+      name: Link and Install Packages
+      command: yarn link && yarn --frozen-lockfile
 
 jobs:
   setup:
