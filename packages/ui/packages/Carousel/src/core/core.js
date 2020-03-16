@@ -58,8 +58,8 @@ class SliderCore {
 			rtl,
 			drag,
 			nextSpeed,
-			threshold	
-		} 
+			threshold
+		}
 	};
 	getConfig = () => this.config;
 
@@ -138,19 +138,19 @@ class SliderCore {
 			wrapper: slider,
 			className: 'clone'
 		});
-	
+
 		//----------- start init variables  -----
 		this.setSlider(slider);
-		
+
 		const sliderClienWidth = this.getSlider().clientWidth;
 		this.setSliderMainWidth(sliderClienWidth);
-		
+
 		let sliderSlidesSelector = childFider({
 			wrapper: slider,
 			className: '.slides'
 		});
 		this.setSliderItems(sliderSlidesSelector);
-		
+
 		const sliderChildWidth = calcSliderChildWidth({
 			responsiveItemCount: responsiveItemCount(responsive),
 			slider: this.getSlider()
@@ -167,14 +167,14 @@ class SliderCore {
 		const slides = vdomArrayConvertor(sliderSlidesSelector.children);
 		const sliderLength = slides.length;
 		this.setSlidesLength(sliderLength);
-		
+
 		const perSlide = switchInfiniteResponsiveCount(
 			truncResponsiveItemCount(responsive),
 			infinite
 			);
-			
+
 		this.setPerSlide(perSlide);
-			
+
 		const infCheck = infiniteChecker({
 			infinite,
 			perSlide,
@@ -189,7 +189,7 @@ class SliderCore {
 		});
 
 		this.setDrag(dragCheck);
-				
+
 		// set init index
 		if(infCheck){
 			this.setIndex(perSlide + 1)
@@ -232,10 +232,10 @@ class SliderCore {
 		}
 
 		this.sliderTrailer = new SliderTrailer({ core: this });
-		
+
 		// action drag event
 		this.dragEvent = new DragEvent({ core: this });
-		
+
 		sliderSlidesSelector.addEventListener("transitionend", this.transitionendWatcherCall);
 		this.windowResizeWatcher();
 	}
@@ -257,7 +257,13 @@ class SliderCore {
 			rtl
 		}));
 		this.transitionendWatcherCall();
-	}
+  };
+
+  refresh(flag){
+		if(flag){
+			this.initialize();
+		}
+	};
 
 	next() {
 		const {
