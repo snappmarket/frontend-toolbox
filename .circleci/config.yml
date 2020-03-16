@@ -76,15 +76,15 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - node_modules
-            - packages/helpers/dist
-            - packages/helpers/node_modules
-            - packages/hooks/dist
-            - packages/hooks/node_modules
-            - packages/icons/dist
-            - packages/icons/node_modules
-            - packages/ui/dist
-            - packages/ui/node_modules
+            - project/node_modules
+            - project/packages/helpers/dist
+            - project/packages/helpers/node_modules
+            - project/packages/hooks/dist
+            - project/packages/hooks/node_modules
+            - project/packages/icons/dist
+            - project/packages/icons/node_modules
+            - project/packages/ui/dist
+            - project/packages/ui/node_modules
   deploy:
     docker: *docker
     environment: *environment
