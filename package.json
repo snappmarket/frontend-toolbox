@@ -6,10 +6,10 @@
     "packages/*/packages/*"
   ],
   "scripts": {
-    "start": "lerna run start --stream --parallel",
+    "start": "yarn docz:serve",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bootstrap:seprated": "lerna exec yarn",
-    "build": "lerna run --parallel build",
+    "build": "lerna run --parallel build && yarn docz:build",
     "build-lerna": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.spec.js",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
     "test": "cross-env BABEL_ENV=test jest",
@@ -22,8 +22,9 @@
     "prettify": "prettier --write packages/**/*.js",
     "docz:dev": "cross-env BABEL_ENV=docz docz dev",
     "docz:build": "cross-env BABEL_ENV=docz docz build",
-    "docz:serve": "cross-env BABEL_ENV=docz docz build && docz serve",
+    "docz:serve": "cross-env BABEL_ENV=docz docz serve",
     "docz:deploy": "surge .docz/dist",
+    "prettier:fix": "prettier --write \"**/*.{js,jsx,md}\" --ignore-path .docz",
     "release:parents": "node ./scripts/release/release-together.js",
     "release:childs": "node ./scripts/release/release-together-childs.js",
     "prettier-all": "node ./scripts/tasks/prettier.js write"
