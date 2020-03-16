@@ -20,7 +20,7 @@ aliases:
       command: yarn link && yarn --frozen-lockfile
 
 jobs:
-  setup:
+  main:
     docker: *docker
     environment: *environment
 
@@ -31,46 +31,15 @@ jobs:
           command: node --version
       - *restore_yarn_cache
       - *run_yarn
+
+      # cache node_modules and etc
       - save_cache:
           name: Save node_modules cache
           key: v2-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
 
-  lint:
-    docker: *docker
-    environment: *environment
-
-    steps:
-      - checkout
-      - *restore_yarn_cache
-      - *run_yarn
-      - run:
-          command: yarn prettier-all
-      - run:
-          command: yarn lint:eslint:fix
-
-  test:
-    docker: *docker
-    environment: *environment
-    steps:
-      - checkout
-      - *restore_yarn_cache
-      - *run_yarn
-      - run:
-          name: "Run Jest and Collect Coverage Reports"
-          command: yarn test --maxWorkers=2 --collectCoverage=true
-      - store_artifacts:
-          path: .jest-coverage/coverage-final.json
-
-  build:
-    docker: *docker
-    environment: *environment
-    parallelism: 4
-    steps:
-      - checkout
-      - *restore_yarn_cache
-      - *run_yarn
+      # build packages
       - run:
           command: yarn build
       - persist_to_workspace:
@@ -85,12 +54,46 @@ jobs:
             - project/packages/icons/node_modules
             - project/packages/ui/dist
             - project/packages/ui/node_modules
+
+      # prettier and linter
+      - run:
+          command: yarn prettier-all
+      - run:
+          command: yarn lint:eslint:fix
+
+
+      # test and coverage
+      - run:
+          name: Run Jest and Collect Coverage Reports
+          command: yarn test --maxWorkers=2 --collectCoverage=true
+      - store_artifacts:
+          path: .jest-coverage/coverage-final.json
+
+
   deploy:
     docker: *docker
     environment: *environment
     parallelism: 4
     steps:
       - checkout
+
+      # build packages
+      - run:
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project/node_modules
+            - project/packages/helpers/dist
+            - project/packages/helpers/node_modules
+            - project/packages/hooks/dist
+            - project/packages/hooks/node_modules
+            - project/packages/icons/dist
+            - project/packages/icons/node_modules
+            - project/packages/ui/dist
+            - project/packages/ui/node_modules
+
+      # deploy to heroku
       - run:
           name: Deploy Master to Heroku
           command: |
@@ -101,23 +104,17 @@ workflows:
   build:
     jobs:
       - setup
-      - build:
-          requires:
-            - setup
-      - lint:
-          requires:
-            - setup
-      - test:
+      - main:
           requires:
             - setup
 
   build-deploy:
     jobs:
-      - build
+      - setup
       - deploy:
           context: globals
           requires:
-            - build # only run deploy-via-git job if the build job has completed
+            - setup
           filters:
             branches:
               only: master # only run deploy-via-git job on master branch
