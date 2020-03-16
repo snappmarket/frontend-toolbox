@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "sayjeyhi",
+      "name": "Jafar Rezaei",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6254009?v=4",
+      "profile": "http://sayjeyhi.com",
+      "contributions": [
+        "infra",
+        "test",
+        "doc",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "frontend-toolbox",
+  "projectOwner": "snappmarket",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
