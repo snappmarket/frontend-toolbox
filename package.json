@@ -19,7 +19,7 @@
     "lint:eslint:fix": "eslint --ignore-path .gitignore packages --fix",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
-    "prettify": "prettier --write \"**/*.{js,jsx,mdx}\" --ignore-path .docz",
+    "prettify": "prettier --write \"packages/**/*.{js,jsx,mdx}\" --ignore-path",
     "docz:dev": "cross-env BABEL_ENV=docz docz dev",
     "docz:build": "cross-env BABEL_ENV=docz docz build",
     "docz:serve": "cross-env BABEL_ENV=docz docz serve",
