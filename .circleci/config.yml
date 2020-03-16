@@ -104,15 +104,9 @@ workflows:
       - build:
           requires:
             - setup
-  lint:
-    jobs:
-      - setup
       - lint:
           requires:
             - setup
-  test:
-    jobs:
-      - setup
       - test:
           requires:
             - setup
