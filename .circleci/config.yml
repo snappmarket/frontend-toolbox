@@ -64,7 +64,8 @@ jobs:
 
       # test and coverage
       - run:
-          name: "Run Jest and Collect Coverage Reports"
+          command: yarn test --verbose=true --maxWorkers=2
+      - run:
           command: yarn test --maxWorkers=2 --collectCoverage=true
       - store_artifacts:
           path: .jest-coverage/coverage-final.json
