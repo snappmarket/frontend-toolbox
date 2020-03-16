@@ -9,12 +9,12 @@ before_install:
   - yarn link
 
 install:
-  - npm install
+  - yarn --frozen-lockfile
 
 script:
-  - npm run build
-  - npm run test
-  - npm run docz:build
+  - yarn build
+  - yarn test
+  - yarn docz:build
 
 jobs:
   fast_finish: true
