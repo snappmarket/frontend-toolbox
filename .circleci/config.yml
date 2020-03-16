@@ -61,7 +61,7 @@ jobs:
           name: "Run Jest and Collect Coverage Reports"
           command: yarn test --maxWorkers=2 --collectCoverage=true
       - store_artifacts:
-          path: coverage
+          path: .jest-coverage/coverage-final.json
 
   build:
     docker: *docker
@@ -74,7 +74,7 @@ jobs:
       - run:
           command: yarn build
       - persist_to_workspace:
-          root: /
+          root: root
           paths:
             - node_modules
             - packages/helpers/dist
