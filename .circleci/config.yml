@@ -45,9 +45,10 @@ jobs:
       - checkout
       - *restore_yarn_cache
       - *run_yarn
-      - run: node ./scripts/tasks/prettier
-      - run: node ./scripts/tasks/eslint
-
+      - run:
+          command: yarn prettier-all
+      - run:
+          command: yarn lint:eslint:fix
 
   test:
     docker: *docker
@@ -57,7 +58,10 @@ jobs:
       - *restore_yarn_cache
       - *run_yarn
       - run:
-          command: yarn test --maxWorkers=2
+          name: "Run Jest and Collect Coverage Reports"
+          command: yarn test --maxWorkers=2 --collectCoverage=true
+      - store_artifacts:
+          path: coverage
 
   build:
     docker: *docker
@@ -69,12 +73,6 @@ jobs:
       - *run_yarn
       - run:
           command: yarn build
-      - run:
-          name: "Run Jest and Collect Coverage Reports"
-          command: yarn jest --collectCoverage=true
-      - store_artifacts:
-          path: coverage
-
       - persist_to_workspace:
           root: /
           paths:

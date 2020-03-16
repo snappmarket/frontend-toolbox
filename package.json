@@ -24,7 +24,8 @@
     "docz:build": "cross-env BABEL_ENV=docz docz build",
     "docz:serve": "cross-env BABEL_ENV=docz docz build && docz serve",
     "release:parents": "node ./scripts/release/release-together.js",
-    "release:childs": "node ./scripts/release/release-together-childs.js"
+    "release:childs": "node ./scripts/release/release-together-childs.js",
+    "prettier-all": "node ./scripts/tasks/prettier.js write"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

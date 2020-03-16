@@ -3,12 +3,17 @@
   "extends": ["airbnb"],
   "plugins": ["prettier", "react", "jsx-a11y", "react-hooks"],
   "globals": {
-    "require": true,
-    "module": true,
-    "window": true,
-    "navigator": true,
-    "localStorage": true,
-    "document": true
+    "require": false,
+    "module": false,
+    "window": false,
+    "navigator": false,
+    "localStorage": false,
+    "describe": false,
+    "it": false,
+    "test": false,
+    "expect": false,
+    "beforeAll": false,
+    "document": false
   },
   "rules": {
     "arrow-body-style": [2, "as-needed"],

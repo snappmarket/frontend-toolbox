@@ -14,7 +14,6 @@ install:
 script:
   - npm run build
   - npm run test
-  - ls
   - npm run docz:build
 
 jobs:
