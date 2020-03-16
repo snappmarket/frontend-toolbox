@@ -74,6 +74,7 @@ jobs:
       - run:
           command: yarn build
       - persist_to_workspace:
+          root: ~/
           paths:
             - node_modules
             - packages/helpers/dist
