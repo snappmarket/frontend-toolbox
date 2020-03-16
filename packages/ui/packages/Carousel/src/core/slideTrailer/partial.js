@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 
 import {
   truncResponsiveItemCount,
@@ -45,7 +46,6 @@ export const cloneNodeInsertBefore = (params) => {
   for (
     let i = deepCloneSliderItemsChildren.length - perSlide - 1;
     i < deepCloneSliderItemsChildren.length;
-    // eslint-disable-next-line no-plusplus
     i++
   ) {
     const cln = deepCloneSliderItemsChildren[i].cloneNode(true);
