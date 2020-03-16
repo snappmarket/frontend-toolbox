@@ -29,10 +29,10 @@ jobs:
       - run:
           name: Nodejs Version
           command: node --version
+      - *restore_yarn_cache
       - run:
           name: Link yarn packages
           command: yarn link
-      - *restore_yarn_cache
       - *run_yarn
       - save_cache:
           name: Save node_modules cache
