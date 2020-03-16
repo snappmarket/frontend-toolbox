@@ -103,14 +103,10 @@ workflows:
   version: 2
   build:
     jobs:
-      - setup
-      - main:
-          requires:
-            - setup
+      - main
 
   build-deploy:
     jobs:
-      - setup
       - deploy:
           context: globals
           requires:
