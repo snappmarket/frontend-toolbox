@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "MostafaRastegar",
+      "name": "Mostafa Rastegar",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13585454?v=4",
+      "profile": "https://github.com/MostafaRastegar",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "frontend-toolbox",
+  "projectOwner": "snappmarket",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
