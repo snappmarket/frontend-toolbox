@@ -17,6 +17,7 @@ describe('Alert ui component tests', () => {
       color: theme.colors.orange.dark,
     });
   });
+  
 
   it('Should changes the class when get different props', () => {
     const { rerender, getByTestId } = render(
