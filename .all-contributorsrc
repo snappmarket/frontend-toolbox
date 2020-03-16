@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "rezaerami",
+      "name": "Reza Erami",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/29011692?v=4",
+      "profile": "http://erami.name",
+      "contributions": [
+        "infra",
+        "test",
+        "doc",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "frontend-toolbox",
+  "projectOwner": "snappmarket",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
