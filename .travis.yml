@@ -1,9 +1,10 @@
 language: node_js
+
 dist: xenial
 os: linux
 
 node_js:
-  - stable
+  - 10.16.1
 
 before_install:
   - yarn link

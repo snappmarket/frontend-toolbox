@@ -2,7 +2,7 @@ version: 2
 
 aliases:
   - &docker
-    - image: circleci/openjdk:8-jdk-node-browsers
+    - image: circleci/node:10.16.1
 
   - &environment
     TZ: /usr/share/zoneinfo/America/Los_Angeles
