@@ -1,11 +1,11 @@
 {
   "name": "@snappmarket/ui",
   "private": false,
-  "version": "0.2.1-alpha.7",
+  "version": "0.2.1-beta.cswtgmi",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
-  "main": "./index.js",
-  "module": "./esm/index.js",
-  "unpkg": "./umd/ui.production.js",
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/umd/ui.production.js",
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
@@ -14,9 +14,9 @@
     "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js ./packages --out-dir ./dist/esm",
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./packages --out-dir ./dist/es",
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
-    "build:copy-files": "node ../../scripts/copy-files.js",
-    "prebuild": "rimraf dist",
-    "release": "yarn build && npm publish dist --tag latest",
+    "build:copy-files": "node ../../scripts/copy-file/packages-copy.js",
+    "prebuild": "rimraf ./dist",
+    "release": "node ../../scripts/release/release-parents.js",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
@@ -30,11 +30,12 @@
     "react-slick": "^0.25.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "@snappmarket/helpers": "^0.2.1-alpha.4",
     "@snappmarket/hooks": "^0.2.1-alpha.3",
-    "@snappmarket/icons": "^0.2.1-alpha.2"
+    "@snappmarket/icons": "^0.2.1-alpha.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
   },
   "engines": {
     "node": ">=8",
@@ -87,7 +88,7 @@
   },
   "sideEffects": false,
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui",
-  "gitHead": "a5f063027da3f3200d940137c39f875842280b46",
+  "gitHead": "36dda3b65acbad094685d04eb869ce590c65c2b6",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3"
   }

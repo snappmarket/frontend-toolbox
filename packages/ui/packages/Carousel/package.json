@@ -1,8 +1,8 @@
 {
-  "name": "@snappmarket/ui-slider",
+  "name": "@snappmarket/ui-carousel",
   "private": false,
-  "version": "0.2.1-alpha.0",
-  "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
+  "version": "0.2.1-alpha.rhj2jq",
+  "author": "Mostafa Rastegar <m.rastegar991@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
@@ -10,14 +10,13 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build"
-  },
-  "dependencies": {
-    "react-slick": "^0.25.2"
+    "prepare": "yarn run build",
+    "release:child": "yarn build && node ../../../../scripts/release/release-childs.js"
   },
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "prop-types": "^15.7.2",
+    "styled-components": "^4.2.0"
   },
   "engines": {
     "node": ">=8",
@@ -36,6 +35,5 @@
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Slider",
-  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e"
+  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/carousel"
 }

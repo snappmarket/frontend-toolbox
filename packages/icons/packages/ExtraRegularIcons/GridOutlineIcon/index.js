@@ -27,6 +27,6 @@ GridOutlineIcon.propTypes = {
 
 GridOutlineIcon.defaultProps = {
   size: 1.5,
-  color: '#000000'
+  color: '#000000',
 };
 export default GridOutlineIcon;

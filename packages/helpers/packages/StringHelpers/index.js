@@ -13,7 +13,7 @@ export const bulkStringReplace = (replacments, string) => {
  * Wparam string
  * @return string
  */
-export const autoLink = string => {
+export const autoLink = (string) => {
   const regex = /(?![^<]*>|[^<>]*<\/)((https?:)\/\/[a-z0-9&#=.\/\-?_]+)/gi;
   const template = '<a href="$1" target="_blank">$1</a>';
   return string.replace(regex, template);
@@ -30,4 +30,4 @@ export const getQueryParams = (url, parameter) => {
     return '';
   }
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+};

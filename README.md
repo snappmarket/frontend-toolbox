@@ -1,4 +1,7 @@
 # SnappMarket frontend powerful tools
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 `hooks`, `helpers`, `ui components` and `icons` that we used in new version of : http://snappmarket
 
 ## [Hooks](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks) Found Here
@@ -185,3 +188,23 @@ in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://sayjeyhi.com"><img src="https://avatars1.githubusercontent.com/u/6254009?v=4" width="100px;" alt=""/><br /><sub><b>Jafar Rezaei</b></sub></a><br /><a href="#infra-sayjeyhi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Code">💻</a></td>
+    <td align="center"><a href="http://erami.name"><img src="https://avatars1.githubusercontent.com/u/29011692?v=4" width="100px;" alt=""/><br /><sub><b>Reza Erami</b></sub></a><br /><a href="#infra-rezaerami" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

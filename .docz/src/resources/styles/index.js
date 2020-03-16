@@ -1,5 +1,5 @@
 import { css, createGlobalStyle } from 'styled-components';
-import { makeRgba } from '@snappmarket/helpers';
+import { makeRgba } from '../../../../packages/helpers';
 
 import './fontiran.css';
 import './icons.css';

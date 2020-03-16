@@ -9,18 +9,22 @@
     "start": "lerna run start --stream --parallel",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bootstrap:seprated": "lerna exec npm install",
+    "build": "lerna run --parallel build",
     "build-lerna": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.spec.js",
-    "coverage": "jest --coverage",
-    "unit": "jest",
+    "coverage": "cross-env BABEL_ENV=test jest --coverage",
+    "test": "cross-env BABEL_ENV=test jest",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint packages/**/*.js",
     "lint:eslint": "eslint --ignore-path .gitignore packages",
     "lint:eslint:fix": "eslint --ignore-path .gitignore packages --fix",
     "lint:js": "npm run lint:eslint -- . ",
+    "lint:staged": "lint-staged",
     "prettify": "prettier --write packages/**/*.js",
     "docz:dev": "cross-env BABEL_ENV=docz docz dev",
-    "docz:build": "docz build",
-    "docz:serve": "docz build && docz serve"
+    "docz:build": "cross-env BABEL_ENV=docz docz build",
+    "docz:serve": "cross-env BABEL_ENV=docz docz build && docz serve",
+    "release:parents": "node ./scripts/release/release-together.js",
+    "release:childs": "node ./scripts/release/release-together-childs.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -46,6 +50,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "babel-preset-airbnb": "^4.4.0",
+    "chalk": "^3.0.0",
     "cross-env": "^7.0.0",
     "docz": "^2.2.0",
     "eslint": "^6.6.0",
@@ -66,6 +71,8 @@
     "jest-resolve": "^24.9.0",
     "jest-styled-components": "^6.3.3",
     "lerna": "^3.16.5",
+    "lint-staged": "^10.0.8",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.18.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -86,6 +93,8 @@
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-typescript2": "^0.19.2",
     "rollup-plugin-url": "^2.1.0",
+    "semver": "^7.1.3",
+    "shelljs": "^0.8.3",
     "webpack": "^4.41.0"
   },
   "dependencies": {
@@ -94,5 +103,16 @@
     "prop-types": "^15.7.2",
     "react-router-dom": "^5.1.2",
     "styled-components": "^4.4.0"
-  }
+  },
+  "lint-staged": {
+    "(?!test|spec).*\\.js": [
+      "npm run lint:eslint:fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "pre-commit": "lint:staged"
 }

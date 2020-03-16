@@ -1,12 +1,16 @@
 {
   "name": "@snappmarket/use-did-update-effect",
   "private": false,
-  "version": "0.2.1-alpha.0",
+  "version": "0.2.1-beta.cswtgmi",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
   "peerDependencies": {
     "react": "^16.8.6"
+  },
+  "scripts": {
+    "build": "echo Releasing ...",
+    "release:child": "node ../../../../scripts/release/release-childs.js"
   },
   "engines": {
     "node": ">=8",

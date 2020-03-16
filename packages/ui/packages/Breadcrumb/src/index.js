@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { AngleLeftIcon } from '@snappmarket/icons/index';
+import { AngleLeftIcon } from '@snappmarket/icons';
 
 import {
   StyledBreadcrumbWrapper,
@@ -36,6 +36,10 @@ const Breadcrumb = (props) => {
 Breadcrumb.propTypes = {
   items: PropTypes.array,
   className: PropTypes.string,
+};
+
+Breadcrumb.defaultProps = {
+  items: [],
 };
 
 export default Breadcrumb;

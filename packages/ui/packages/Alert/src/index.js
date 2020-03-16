@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { CrossIcon } from '@snappmarket/icons/index';
+import { CrossIcon } from '@snappmarket/icons';
 
 import { StyledAlertWrapper, StyledCloseButton } from './styles';
 

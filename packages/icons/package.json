@@ -1,11 +1,11 @@
 {
   "name": "@snappmarket/icons",
   "private": false,
-  "version": "0.2.1-alpha.2",
+  "version": "0.2.1-beta.cswtgmi",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
-  "main": "./index.js",
-  "module": "./esm/index.js",
-  "unpkg": "./umd/icons.production.js",
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/umd/icons.production.js",
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
@@ -14,9 +14,9 @@
     "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js ./packages --out-dir ./dist/esm",
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./packages --out-dir ./dist/es",
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
-    "build:copy-files": "node ../../scripts/copy-icon-files.js",
-    "release": "yarn build && npm publish dist --tag latest",
-    "prebuild": "rimraf dist",
+    "build:copy-files": "node ../../scripts/copy-file/icons-packages-copy.js",
+    "release": "node ../../scripts/release/release-parents.js",
+    "prebuild": "rimraf ./dist",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
@@ -41,5 +41,5 @@
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e"
+  "gitHead": "36dda3b65acbad094685d04eb869ce590c65c2b6"
 }

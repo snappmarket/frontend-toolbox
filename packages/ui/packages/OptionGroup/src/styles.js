@@ -16,6 +16,16 @@ const StyledOptionItem = Styled.div`
   > span {
     width: 100%;
   }
+  button {
+    svg {
+      fill: ${(props) => props.theme.colors.white};
+    }
+    &:active {
+      svg {
+        fill: ${(props) => props.theme.colors.white};
+      }
+    }
+  }
   button > svg {
     margin-left: 0 !important;
     width: calc(${(props) => props.theme.defaultRem} * 1.5) !important;

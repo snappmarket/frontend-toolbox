@@ -30,6 +30,7 @@ import { COMPONENT } from '@snappmarket/ui';
 | [Alert](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Alert)                          | Alert Ui component            | 
 | [Breadcrumb](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Breadcrumb)                | Breadcrumb Ui component       |     
 | [Button](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Button)                        | Button Ui component           | 
+| [Carousel‌](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Carousel‌)                    | Carousel Ui component           | 
 | [Checkbox](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/CheckBox)                    | CheckBox Ui component         |     
 | [ConfirmDialog](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/ConfirmDialog)          | ConfirmDialog Ui component    |         
 | [Grid](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Grid)                            | Grid Ui component             | 
@@ -37,7 +38,7 @@ import { COMPONENT } from '@snappmarket/ui';
 | [Image](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Image)                          | Image Ui component            | 
 | [Input](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Input)                          | Input Ui component            | 
 | [InputRange](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/InputRange)                | InputRange Ui component       |     
-| [Json-ld](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/JsonLD)                            | Json Ui component             | 
+| [Json-ld](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/JsonLD)                       | Json Ui component             | 
 | [Label](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Label)                          | Label Ui component            | 
 | [LinedText](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/LinedText)                  | LinedText Ui component        |     
 | [Loading](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Loading)                      | Loading Ui component          |     
@@ -47,7 +48,6 @@ import { COMPONENT } from '@snappmarket/ui';
 | [Pagination](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Pagination)                | Pagination Ui component       |     
 | [ProgressBar](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/ProgressBar)              | ProgressBar Ui component      |         
 | [Skeleton](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Skeleton)                    | Skeleton Ui component         |     
-| [Slider](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Slider)                        | Slider Ui component           | 
 | [TabSwitcher](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/TabSwitcher)              | TabSwitcher Ui component      |         
 | [TextWrap](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/TextWrap)                    | TextWrap Ui component         |     
 | [Toggle](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Toggle)                        | Toggle Ui component           | 

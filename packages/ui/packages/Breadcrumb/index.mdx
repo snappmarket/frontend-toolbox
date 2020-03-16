@@ -3,8 +3,6 @@ name: Breadcrumb
 route: /ui/breadcrumb
 menu: Ui
 ---
-
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Playground, Props } from 'docz';
 import { Breadcrumb } from '..';
 
@@ -24,12 +22,9 @@ export const items = [
 ]
 
 # Demo
-<Router history={{}}>
-    <div className="p-2 mb-4">
-        <Breadcrumb items={items} />
-    </div>
-</Router>
-
+<div className="p-2 mb-4">
+    <Breadcrumb items={items} />
+</div>
 
 # Basic Usage
 <Playground>

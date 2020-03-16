@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-toggle",
   "private": false,
-  "version": "0.2.1-alpha.0",
+  "version": "0.2.1-beta.cswtgmi",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,7 +10,8 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build"
+    "prepare": "yarn run build",
+    "release:child": "yarn build && node ../../../../scripts/release/release-childs.js"
   },
   "peerDependencies": {
     "react": "^16.8.6",

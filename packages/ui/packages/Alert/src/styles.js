@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-import Button from '../../Button/src';
+import { StyledButton } from '../../Button/src/styles';
 
 export const StyledAlertWrapper = Styled.div`
   background: ${(props) => props.theme.colors[props.bgColor][props.bgShade]};  
@@ -11,7 +11,7 @@ export const StyledAlertWrapper = Styled.div`
   padding: ${(props) => `calc(${props.theme.defaultRem} * 0.8) calc(${props.theme.defaultRem} * 1.6) calc(${props.theme.defaultRem} * 0.8) calc(${props.theme.defaultRem} * 1.6)`};
 `;
 
-export const StyledCloseButton = Styled(Button)`
+export const StyledCloseButton = Styled(StyledButton)`
   position: relative;
   left: calc(${(props) => props.theme.defaultRem} * -1.1);
   top: calc(${(props) => props.theme.defaultRem} * 0.4);
