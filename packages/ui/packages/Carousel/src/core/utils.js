@@ -356,3 +356,18 @@ export const vdomArrayConvertor = (items) => {
   if (isArrayCheck) return items;
   return Object.values(items);
 };
+export const infiniteChecker = (params) => {
+  const { infinite, sliderLength, perSlide } = params;
+  if (infinite && sliderLength === perSlide) {
+    return false;
+  }
+  return infinite;
+};
+
+export const dragChecker = (params) => {
+  const { drag, sliderLength, perSlide } = params;
+  if (drag && sliderLength === perSlide) {
+    return false;
+  }
+  return drag;
+};
