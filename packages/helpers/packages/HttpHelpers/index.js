@@ -6,7 +6,8 @@ import { serializeObject } from '../ArrayHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
 /**
- * Fetch with options and timeout
+ * @name fetchWithTimeOut
+ * @description fetches the request, if it takes to long, it will be timed out
  * @param url
  * @param options
  * @param timeout
@@ -15,7 +16,8 @@ import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 export const fetchWithTimeOut = (url, options, timeout = 5000) => Promise.race([fetch(url, options), makeTimeout(timeout)]);
 
 /**
- * Call an api in universal way
+ * @name universalCall
+ * @description Call an api in universal way
  * @param url
  * @param method
  * @param credentials
@@ -48,7 +50,6 @@ export const universalCall = async ({
     ...rest,
   };
 
-  // eslint-disable-next-line no-console
   delog(`API called with : ${options.method} ${url}`);
 
   if (jwtToken) {

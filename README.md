@@ -1,4 +1,7 @@
 # SnappMarket frontend powerful tools
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 `hooks`, `helpers`, `ui components` and `icons` that we used in new version of : http://snappmarket
 
 ## [Hooks](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks) Found Here
@@ -75,113 +78,27 @@
 
 ## [Icons](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/icons) found here
 
-| Icon name                     |  Description                                                     |
-| ----------------------------- | ---------------------------------------------------------------- |
-| CoinsIcon                     |                                                                  |
-| DeleteIcon                    |                                                                  |
-| EditIcon                      |                                                                  |
-| EmptyBasketIcon               |                                                                  |
-| InstagramIcon                 |                                                                  |
-| MapMarkerOutlineIcon          |                                                                  |
-| LogoutIcon                    |                                                                  |
-| MapMarkerIcon                 |                                                                  |
-| PencilIcon                    |                                                                  |
-| CrossIcon                     |                                                                  |
-| SearchIcon                    |                                                                  |
-| ShoppingBasketIcon            |                                                                  |
-| ShoppingCartIcon              |                                                                  |
-| GridOutlineIcon               |                                                                  |
-| CheckMarkIcon                 |                                                                  |
-| TrashIcon                     |                                                                  |
-| TwitterIcon                   |                                                                  |
-| UserIcon                      |                                                                  |
-| BagIcon                       |                                                                  |
-| SnappMarketLogo               |                                                                  |
-|                               |                                                                  |
-| DissatisfiedEmoji             |                                                                  |
-| HappyEmoji                    |                                                                  |
-| LaughEmoji                    |                                                                  |
-| NormalEmoji                   |                                                                  |
-| SadEmoji                      |                                                                  |
-|                               |                                                                  |
-| BoxWithTickIcon               |                                                                  |
-| GroceryBagIcon                |                                                                  |
-| ListSearchIcon                |                                                                  |
-| MotorcyleIcon                 |                                                                  |
-| ShoppingBasketIcon            |                                                                  |
-|                               |                                                                  |
-| AngleDownIcon                 |                                                                  |
-| AngleLeftIcon                 |                                                                  |
-| AngleRightIcon                |                                                                  |
-| AngleUpIcon                   |                                                                  |
-| ArrowDownIcon                 |                                                                  |
-| ArrowLeftIcon                 |                                                                  |
-| ArrowRightIcon                |                                                                  |
-| ArrowUpIcon                   |                                                                  |
-| BasketNotAllowedIcon          |                                                                  |
-| BikeOIcon                     |                                                                  |
-| BinocularsIcon                |                                                                  |
-| BoxIcon                       |                                                                  |
-| CalendarIcon                  |                                                                  |
-| CategoriesIcon                |                                                                  |
-| CategoriesOIcon               |                                                                  |
-| CellphoneIcon                 |                                                                  |
-| CheckMarkIcon                 |                                                                  |
-| CircleIcon                    |                                                                  |
-| ClockIcon                     |                                                                  |
-| ClockOIcon                    |                                                                  |
-| CommentIcon                   |                                                                  |
-| CreditCardIcon                |                                                                  |
-| CrossIcon                     |                                                                  |
-| DigitsIcon                    |                                                                  |
-| DiscountIcon                  |                                                                  |
-| EnvelopeIcon                  |                                                                  |
-| ExportIcon                    |                                                                  |
-| FilterIcon                    |                                                                  |
-| HeartIcon                     |                                                                  |
-| HomeIcon                      |                                                                  |
-| LogoutIcon                    |                                                                  |
-| LoopIcon                      |                                                                  |
-| MapMarkerIcon                 |                                                                  |
-| MapMarkerAddIcon              |                                                                  |
-| MapMarkerOIcon                |                                                                  |
-| MenuIcon                      |                                                                  |
-| MinusIcon                     |                                                                  |
-| OrdersHistoryIcon             |                                                                  |
-| PaperRocketIcon               |                                                                  |
-| PaperRocketOIcon              |                                                                  |
-| PencilIcon                    |                                                                  |
-| PencilEditIcon                |                                                                  |
-| PictureIcon                   |                                                                  |
-| CrossIcon                     |
-| PlusIcon                      |                                                                  |
-| RingIcon                      |                                                                  |
-| SearchIcon                    |                                                                  |
-| ShareIcon                     |                                                                  |
-| ShoppingBasketIcon            |                                                                  |
-| ShoppingListIcon              |                                                                  |
-| ShoppingListSquareIcon        |                                                                  |
-| SortIcon                      |                                                                  |
-| SpinnerIcon                   |                                                                  |
-| SqureIcon                     |                                                                  |
-| StoreIcon                     |                                                                  |
-| SupportIcon                   |                                                                  |
-| TrashIcon                     |                                                                  |
-| TrashOIcon                    |                                                                  |
-| UserAddIcon                   |                                                                  |
-| UserOIcon                     |                                                                  |
-| UserIcon                      |                                                                  |
-| WalletIcon                    |                                                                  |
-| WarningSign                   |                                                                  |
+- 💯 100% tested react 100+ svg icon components
 
----
-#### The MIT License (MIT)
 
-Copyright (c) 2020 @snappmarket
+## Contributors ✨
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://sayjeyhi.com"><img src="https://avatars1.githubusercontent.com/u/6254009?v=4" width="100px;" alt=""/><br /><sub><b>Jafar Rezaei</b></sub></a><br /><a href="#infra-sayjeyhi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Code">💻</a></td>
+    <td align="center"><a href="http://erami.name"><img src="https://avatars1.githubusercontent.com/u/29011692?v=4" width="100px;" alt=""/><br /><sub><b>Reza Erami</b></sub></a><br /><a href="#infra-rezaerami" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/mesbah68"><img src="https://avatars2.githubusercontent.com/u/21215334?v=4" width="100px;" alt=""/><br /><sub><b>mahsa mesbah</b></sub></a><br /><a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/MostafaRastegar"><img src="https://avatars2.githubusercontent.com/u/13585454?v=4" width="100px;" alt=""/><br /><sub><b>Mostafa Rastegar</b></sub></a><br /><a href="#ideas-MostafaRastegar" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=MostafaRastegar" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=MostafaRastegar" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

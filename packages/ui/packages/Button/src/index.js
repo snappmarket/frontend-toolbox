@@ -57,7 +57,7 @@ const Button = (props) => {
     direction,
     fontSize: boxSizing[size].fontSize,
     height: boxSizing[size].height,
-    minWidth: title ? boxSizing[size].minWidth : boxSizing[size].height,
+    minWidth: title ? boxSizing[size].minWidth : boxSizing[size].minWidth,
     ...rest,
   };
 
@@ -72,6 +72,7 @@ const Button = (props) => {
       {!!title && title}
       {!!label && (
         <StyledLabel
+          data-testid="buttonLabel"
           className={direction === 'right' ? 'mr-1' : 'ml-1'}
           color={props.color}
         >
@@ -82,17 +83,17 @@ const Button = (props) => {
   );
   const buttons = {
     primary: (
-      <StyledPrimaryButton fullWidth={fullWidth} {...options}>
+      <StyledPrimaryButton data-testid="button" fullWidth={fullWidth} {...options}>
         {content}
       </StyledPrimaryButton>
     ),
     outline: (
-      <StyledOutlineButton fullWidth={fullWidth} {...options}>
+      <StyledOutlineButton data-testid="button" fullWidth={fullWidth} {...options}>
         {content}
       </StyledOutlineButton>
     ),
     link: (
-      <StyledLinkButton fullWidth={fullWidth} {...options}>
+      <StyledLinkButton data-testid="button" fullWidth={fullWidth} {...options}>
         {content}
       </StyledLinkButton>
     ),
