@@ -1,4 +1,3 @@
-/* eslint-disable radix */
 import {
   truncResponsiveItemCount,
   childFider,
@@ -68,7 +67,7 @@ export default class SliderDots {
     // dots item click for transition on active index
     vdomArrayConvertor(dotsSelector.children).forEach((item) => {
       item.addEventListener('click', () => {
-        const dotIndex = parseInt(item.getAttribute('data-dot-index'));
+        const dotIndex = parseInt(item.getAttribute('data-dot-index'), 10);
         const indexItem = truncResponsiveItemCount(responsive) * (dotIndex - 1);
         const dotsItemsClickParams = {
           indexItem,

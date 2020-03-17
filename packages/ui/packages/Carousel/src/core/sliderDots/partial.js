@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 /* eslint-disable no-plusplus */
 import {
   calcSliderGroupCount,
@@ -68,6 +67,7 @@ export const dotsItemsClick = (params) => {
   };
 };
 
+// eslint-disable-next-line consistent-return
 export const setSliderItemsPositionAfterDotClick = (params) => {
   const {
     indexItem,

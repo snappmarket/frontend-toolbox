@@ -1,5 +1,3 @@
-/* eslint-disable no-mixed-operators */
-/* eslint-disable consistent-return */
 import {
   getTranslate3d,
   calcFinalItemPosition,
@@ -54,6 +52,7 @@ export const dragActionMousemove = (params) => {
 };
 export const dragActionMousemovePosX1 = ({ rtl, e, sliderMainWidth }) => directionClientX({ rtl, e, sliderMainWidth });
 
+// eslint-disable-next-line consistent-return
 export const dragActionCalcPosition = (params) => {
   const {
     sliderItems,
@@ -182,6 +181,7 @@ export const dragStart = (params) => {
   }
 };
 
+// eslint-disable-next-line consistent-return
 export const dragAction = (params) => {
   let { e } = params;
   const {
@@ -244,6 +244,7 @@ export const dragAction = (params) => {
   dragActionCalcPosition(dragActionCalcPositionParams);
 };
 
+// eslint-disable-next-line consistent-return
 export const dragEnd = (params) => {
   const {
     sliderItems,
@@ -298,8 +299,8 @@ export const dragEnd = (params) => {
   setIndex(calcIndex);
 
 
-  if (!infinite && calcIndex > slidesLength && calcIndex < slidesLength + perSlide
-    || infinite && calcIndex + perSlide === perSlide
+  if ((!infinite && calcIndex > slidesLength && calcIndex < slidesLength + perSlide)
+    || (infinite && calcIndex + perSlide === perSlide)
   ) {
     sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
   }
@@ -316,9 +317,9 @@ export const dragEnd = (params) => {
   }
 
   if (
-    !infinite
+    (!infinite
     && (getTranslate3d(sliderItems) <= thresholdNew()
-    && getTranslate3d(sliderItems) >= 0)
+    && getTranslate3d(sliderItems) >= 0))
     || (rtl && getTranslate3d(sliderItems) <= 0)
   ) {
     sliderItems.style.transform = setTranslate3d(0);
