@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/no-named-default
+import AbortController from 'abort-controller';
 import fetch from 'isomorphic-unfetch';
 
 import { ApiError, delog } from '../DebugHelpers';
@@ -13,7 +14,19 @@ import { emptyPromise, makeTimeout } from '../PromiseHelpers';
  * @param timeout
  * @returns {Promise<unknown>}
  */
-export const fetchWithTimeOut = (url, options, timeout = 5000) => Promise.race([fetch(url, options), makeTimeout(timeout)]);
+export const fetchWithTimeOut = (url, options, timeout = 5000) => {
+  const controller = new AbortController();
+  const { signal } = controller;
+  const request = fetch(url, { ...options, signal });
+  const challenger = makeTimeout(timeout);
+  const race = Promise.race([request, challenger]);
+  race.catch(e => {
+    if (e.message === 'TIMEOUT') {
+      controller.abort();
+    }
+  });
+  return race;
+};
 
 /**
  * @name universalCall

@@ -6,22 +6,24 @@ import { StyledSimpleCarousel } from './core/styles';
 
 const SimpleCarousel = (props) => {
   const {
-    className, children, slideConfig, showingSlide, refresh
+    className, children, slideConfig, showingSlide, refresh,
   } = props;
   const sliderRed = useRef(null);
   // eslint-disable-next-line no-unused-vars
   let newSlider = null;
 
   useEffect(() => {
-    newSlider = new Slider({
-      slider: sliderRed.current,
-      ...slideConfig,
-    });
-    goTo(showingSlide);
+    if (typeof showingSlide === 'number' || showingSlide >= 0) {
+      newSlider = new Slider({
+        slider: sliderRed.current,
+        ...slideConfig,
+      });
+      goTo(showingSlide);
+    }
   }, [showingSlide]);
 
   useEffect(() => {
-    if(refresh){
+    if (refresh) {
       newSlider = new Slider({
         slider: sliderRed.current,
         ...slideConfig,
@@ -31,9 +33,11 @@ const SimpleCarousel = (props) => {
   }, [refresh]);
 
   const goTo = (index) => {
-    if (typeof index === 'number' || index >= 0) {
-      newSlider.goTo(index);
-    }
+    newSlider.goTo(index);
+  };
+
+  const onRefresh = (refreshFlag) => {
+    newSlider.refresh(refreshFlag);
   };
 
   const onRefresh = (refreshFlag) => {

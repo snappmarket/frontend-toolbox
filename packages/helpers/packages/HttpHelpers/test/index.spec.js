@@ -1,4 +1,6 @@
 import fetch from 'isomorphic-unfetch';
+import AbortController from 'abort-controller';
+
 import * as HttpHelpers from '../index';
 
 jest.mock('isomorphic-unfetch');
@@ -23,7 +25,7 @@ describe('HttpHelpers', () => {
   describe('fetchWithTimeOut', () => {
     it('should fetch, and fetch should win the race', async () => { // @todo: should write another test when fetch loses the race and times out
       const url = 'http://snapp.market';
-      const options = { foo: 'bar' };
+      const options = { foo: 'bar', signal: new AbortController().signal };
       const response = await HttpHelpers.fetchWithTimeOut(url, options);
       const result = await response.json();
       expect(fetch).toHaveBeenCalledTimes(1);
@@ -39,6 +41,7 @@ describe('HttpHelpers', () => {
         credentials: 'same-origin',
         headers: {},
         method: 'GET',
+        signal: new AbortController().signal,
       };
       const response = await HttpHelpers.universalCall({ url, params });
       expect(fetch).toHaveBeenCalledTimes(1);
@@ -49,7 +52,9 @@ describe('HttpHelpers', () => {
     it('should call an API using universal fetch with jwtToken', async () => {
       const url = 'http://snapp.market';
       const data = { foo: 'bar' };
-      const options = { credentials: 'include', headers: {}, method: 'POST' };
+      const options = {
+        credentials: 'include', headers: {}, method: 'POST', signal: new AbortController().signal,
+      };
       const jwtToken = 'here is my token';
       const response = await HttpHelpers.universalCall({
         url, data, jwtToken, ...options,
@@ -68,7 +73,9 @@ describe('HttpHelpers', () => {
     it('should call an API using universal fetch and get response', async () => {
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
-      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      const options = {
+        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+      };
       const response = await HttpHelpers.universalCall({ url, params, ...options });
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
@@ -86,7 +93,9 @@ describe('HttpHelpers', () => {
       }));
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
-      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      const options = {
+        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+      };
       const response = await HttpHelpers.universalCall({
         url, allowedNoContent: true, params, ...options,
       });
@@ -104,7 +113,9 @@ describe('HttpHelpers', () => {
       }));
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
-      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      const options = {
+        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+      };
       try {
         await HttpHelpers.universalCall({
           url, allowedNoContent: true, params, ...options,
@@ -124,7 +135,9 @@ describe('HttpHelpers', () => {
       }));
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
-      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      const options = {
+        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+      };
       try {
         await HttpHelpers.universalCall({
           url, allowedNoContent: true, params, ...options,
@@ -148,7 +161,9 @@ describe('HttpHelpers', () => {
       }));
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
-      const options = { credentials: 'include', headers: {}, method: 'GET' };
+      const options = {
+        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+      };
       try {
         await HttpHelpers.universalCall({
           url, allowedNoContent: true, params, ...options,

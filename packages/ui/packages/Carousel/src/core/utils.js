@@ -8,6 +8,7 @@ export const removeClassFromElement = (params) => {
   item.classList.remove(className);
 };
 
+// eslint-disable-next-line consistent-return
 export const calcCurrentIndex = (params) => {
   const {
     sliderItems,
@@ -20,8 +21,7 @@ export const calcCurrentIndex = (params) => {
   if (infinite) {
     return Math.abs(
       Math.floor(
-        getTranslate3d(sliderItems)
-          / vdomArrayConvertor(sliderItems.children)[0].clientWidth,
+        getTranslate3d(sliderItems) / vdomArrayConvertor(sliderItems.children)[0].clientWidth,
       ),
     );
   }
@@ -68,9 +68,11 @@ export const setActiveclassToCurrent = (params) => {
   });
 };
 
+
 export const sliderClientWidth = (slider) => slider.clientWidth;
 
 export const truncResponsiveItemCount = (responsive) => Math.trunc(responsiveItemCount(responsive));
+
 
 export const calcFinalItemPosition = (params) => {
   const {
@@ -80,12 +82,10 @@ export const calcFinalItemPosition = (params) => {
     slidesLength,
     infinite,
   } = params;
-  const infiniteSlideLength = infinite
-    ? slidesLength + perSlide + 1
-    : slidesLength;
+  const infiniteSlideLength = infinite ? slidesLength + perSlide + 1 : slidesLength;
   const box = perSlide * slideSize;
   const cost = sliderMainWidth - box;
-  const finalResult = (infiniteSlideLength - perSlide) * slideSize - cost;
+  const finalResult = ((infiniteSlideLength - perSlide) * slideSize) - cost;
   return -finalResult;
 };
 
@@ -109,10 +109,13 @@ export const calcSliderChildWidth = (params) => {
 export const setSliderItemsChildWidth = (params) => {
   const { responsive, slider, sliderItems } = params;
   vdomArrayConvertor(sliderItems.children).forEach(
-    (child) => (child.style.width = `${calcSliderChildWidth({
-      responsiveItemCount: responsiveItemCount(responsive),
-      slider,
-    })}px`),
+    (child) => {
+      const newChild = child;
+      newChild.style.width = `${calcSliderChildWidth({
+        responsiveItemCount: responsiveItemCount(responsive),
+        slider,
+      })}px`;
+    },
   );
 };
 
@@ -140,7 +143,7 @@ export const setTranslate3d = (getValue) => `translate3d(${getValue}px,0px,0px)`
 
 export const getTranslate3d = (sliderItems) => {
   const values = sliderItems.style.transform.match(
-    /translate3d\((.*)px\, (.*)px\, (.*)px\)/,
+    /translate3d\((.*)px (.*)px, (.*)px\)/,
   );
   if (!values[1] || !values[1].length) {
     return 0;
@@ -153,6 +156,7 @@ export const arrGenerator = (arr, part) => {
   const round = Math.ceil(arr.length / partTrunc);
   let counter = 0;
   const newArry = [];
+  // eslint-disable-next-line no-plusplus
   for (counter; round > counter; counter++) {
     newArry[counter] = arr.slice(
       counter * partTrunc,
@@ -168,30 +172,40 @@ export const responsiveItemCount = (getConfig) => {
     if (item <= document.body.clientWidth) {
       return item;
     }
+    return [];
   });
   return getConfig[parseInt(newResp.pop(), 10)].items;
 };
 
 export const switchInfiniteResponsiveCount = (itemCont, infinite) => infinite ? itemCont : 0;
 
-export const prevNone = (slider) => (childFider({
-  wrapper: slider,
-  className: '.prev',
-}).style.display = 'none');
+export const prevNone = (slider) => {
+  childFider({
+    wrapper: slider,
+    className: '.prev',
+  }).style.display = 'none';
+};
 
-export const prevBlock = (slider) => (childFider({
-  wrapper: slider,
-  className: '.prev',
-}).style.display = 'block');
+export const prevBlock = (slider) => {
+  childFider({
+    wrapper: slider,
+    className: '.prev',
+  }).style.display = 'block';
+};
 
-export const nextNone = (slider) => (childFider({
-  wrapper: slider,
-  className: '.next',
-}).style.display = 'none');
-export const nextBlock = (slider) => (childFider({
-  wrapper: slider,
-  className: '.next',
-}).style.display = 'block');
+export const nextNone = (slider) => {
+  childFider({
+    wrapper: slider,
+    className: '.next',
+  }).style.display = 'none';
+};
+export const nextBlock = (slider) => {
+  childFider({
+    wrapper: slider,
+    className: '.next',
+  }).style.display = 'block';
+};
+
 
 export const transitionendWatcher = (params) => {
   const {
@@ -213,53 +227,64 @@ export const transitionendWatcher = (params) => {
   } = params;
 
   const perSlide = truncResponsiveItemCount(responsive);
-  if (
-    infinite
-    && index > perSlide + slidesLength
-    && Math.abs(getTranslate3d(sliderItems))
-      >= (perSlide + 1 + slidesLength) * sliderItemWidth
+  if (infinite && index > perSlide + slidesLength
+    && Math.abs(getTranslate3d(sliderItems)) >= (perSlide + 1 + slidesLength) * sliderItemWidth
   ) {
-    setIndex(
-      setSliderItemsPosition({
-        indexItem: index - slidesLength,
-        sliderItemWidth,
-        sliderItems,
-        rtl,
-      }),
-    );
+    setIndex(setSliderItemsPosition({
+      indexItem: index - slidesLength,
+      sliderItemWidth,
+      sliderItems,
+      rtl,
+    }));
   }
 
   // if page-index === 1 && clone === true
   if (infinite && index === perSlide + 1 + slidesLength) {
-    setIndex(
-      setSliderItemsPosition({
-        indexItem: perSlide + 1,
-        sliderItemWidth,
-        sliderItems,
-        rtl,
-      }),
-    );
+    setIndex(setSliderItemsPosition({
+      indexItem: perSlide + 1,
+      sliderItemWidth,
+      sliderItems,
+      rtl,
+    }));
   }
 
   // shift to end from start item
-  if (
-    infinite
-    && (Math.abs(getTranslate3d(sliderItems)) <= 1
-      || Math.abs(getTranslate3d(sliderItems)) === sliderItemWidth)
+  if (infinite && (
+    Math.abs(getTranslate3d(sliderItems)) <= 1
+    || Math.abs(getTranslate3d(sliderItems)) === sliderItemWidth)
   ) {
-    setIndex(
-      setSliderItemsPosition({
-        indexItem: slidesLength + index,
-        sliderItemWidth,
-        sliderItems,
-        rtl,
-      }),
-    );
+    setIndex(setSliderItemsPosition({
+      indexItem: slidesLength + index,
+      sliderItemWidth,
+      sliderItems,
+      rtl,
+    }));
   }
 
-  if (!infinite && nav && index === 0) {
-    prevNone(slider);
-    nextBlock(slider);
+  if (!infinite && nav) {
+    const finalPos = {
+      slideSize,
+      sliderMainWidth,
+      perSlide,
+      slidesLength,
+      infinite,
+    };
+    const finalConst = Math.abs(Math.trunc(calcFinalItemPosition(finalPos)));
+    const translate3dCosnt = Math.abs(Math.trunc(getTranslate3d(sliderItems)));
+    if (finalConst === translate3dCosnt) {
+      prevBlock(slider);
+      nextNone(slider);
+    }
+    if (index >= 0 && finalConst > translate3dCosnt) {
+      nextBlock(slider);
+    }
+    if (index === 0) {
+      prevNone(slider);
+      nextBlock(slider);
+    }
+    if (index !== 0) {
+      prevBlock(slider);
+    }
   }
 
   // run for set active class
@@ -294,7 +319,10 @@ export const transitionendWatcher = (params) => {
 };
 
 export const dotActive = (params) => {
-  const { sliderItems, slider } = params;
+  const {
+    sliderItems,
+    slider,
+  } = params;
   const dotsSelector = childFider({
     wrapper: slider,
     className: '.dots',
@@ -316,6 +344,7 @@ export const dotActive = (params) => {
     addClassToElement(classItemParams);
   }
 };
+
 
 export const elementCreator = (params) => {
   const { tag, wrapper, className } = params;
@@ -348,7 +377,7 @@ export const activeChecker = (sliderItems) => {
       activeChild.push(child.dataset.page);
     }
   });
-  return parseInt(activeChild.sort().pop() - 1);
+  return parseInt(activeChild.sort().pop() - 1, 10);
 };
 
 export const vdomArrayConvertor = (items) => {
@@ -356,6 +385,7 @@ export const vdomArrayConvertor = (items) => {
   if (isArrayCheck) return items;
   return Object.values(items);
 };
+
 export const infiniteChecker = (params) => {
   const { infinite, sliderLength, perSlide } = params;
   if (infinite && sliderLength === perSlide) {
@@ -366,7 +396,8 @@ export const infiniteChecker = (params) => {
 
 export const dragChecker = (params) => {
   const { drag, sliderLength, perSlide } = params;
-  if (drag && sliderLength === perSlide) {
+  if (drag === false || sliderLength <= perSlide
+  ) {
     return false;
   }
   return drag;
