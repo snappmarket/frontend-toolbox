@@ -38,4 +38,8 @@ Breadcrumb.propTypes = {
   className: PropTypes.string,
 };
 
+Breadcrumb.defaultProps = {
+  items: [],
+};
+
 export default Breadcrumb;
