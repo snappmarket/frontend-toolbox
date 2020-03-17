@@ -104,7 +104,7 @@ export const universalCall = async ({
    * If we did not got json then throw error message
    */
   if (!contentType || !contentType.includes('application/json')) {
-    throw new ApiError('SERVER_CONTENT_TYPE_ERROR');
+    throw new ApiError(`SERVER_CONTENT_TYPE_ERROR:${url}`);
   }
 
   /**
@@ -114,7 +114,7 @@ export const universalCall = async ({
   try {
     result = await response.json();
   } catch (e) {
-    throw new ApiError('SERVER_CONTENT_PARSING_ERROR');
+    throw new ApiError(`SERVER_CONTENT_PARSING_ERROR:${url}`);
   }
 
   /**
