@@ -1,3 +1,9 @@
+/**
+ * @name getOSName
+ * @description returns the name of the operating system based on appVersion
+ * @param OSVersion
+ * @return {*}
+ */
 export const getOSName = (OSVersion) => {
   let OSName = OSVersion;
   const oSMapper = {
@@ -16,6 +22,11 @@ export const getOSName = (OSVersion) => {
   return OSName;
 };
 
+/**
+ * @name getAgent
+ * @description returns an object created of user agent and operating system
+ * @return {{OSVersion: *, userAgent: string}}
+ */
 export const getAgent = () => {
   const { userAgent, appVersion } = navigator;
 

@@ -1,5 +1,6 @@
 /**
- * Gives us a cookie
+ * @name getCookie
+ * @desc Gives us a cookie by name
  * @param key
  * @returns {string}
  */
@@ -20,7 +21,8 @@ export const getCookie = (key) => {
 };
 
 /**
- * Set a cookie
+ * @name setCookie
+ * @description Sets a cookie
  * @param name
  * @param value
  * @param expireDays
@@ -34,7 +36,8 @@ export const setCookie = (name, value, expireDays = 90, path = '/') => {
 };
 
 /**
- * delete a cookie
+ * @name deleteCookie
+ * @description delete a cookie
  * @author Reza Erami
  * @param name
  */
