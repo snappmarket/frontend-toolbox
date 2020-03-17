@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyledLoading } from './styles';
 
 const LoadingSpinner = ({ direction }) => (
-  <StyledLoading direction={direction} className="loader" />
+  <StyledLoading data-testid="loadingSpinner" direction={direction} className="loader" />
 );
 
 LoadingSpinner.propTypes = {
