@@ -6,6 +6,7 @@ import { StyledLogoAnimation } from './styles';
 
 const LogoAnimation = ({ size, className }) => (
   <StyledLogoAnimation
+    data-testid="logoAnimation"
     className={`align-center justify-center logo-loading-wrapper ${className}`}
     size={size}
   >
