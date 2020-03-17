@@ -72,7 +72,7 @@ const Button = (props) => {
       {!!title && title}
       {!!label && (
         <StyledLabel
-          data-testid="label"
+          data-testid="buttonLabel"
           className={direction === 'right' ? 'mr-1' : 'ml-1'}
           color={props.color}
         >

@@ -141,9 +141,10 @@ describe('Button ui component tests', () => {
         <Button label="label testing" />
       </Wrapper>,
     );
-    const label = getByTestId('label');
+    const buttonLabel = getByTestId('buttonLabel');
 
-    expect(getByTestId('button')).toContainElement(label);
+
+    expect(getByTestId('button')).toContainElement(buttonLabel);
   });
 
   it('Should add title in button when get title props', () => {
