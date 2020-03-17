@@ -39,6 +39,17 @@
         "doc",
         "code"
       ]
+    },
+    {
+      "login": "MostafaRastegar",
+      "name": "Mostafa Rastegar",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13585454?v=4",
+      "profile": "https://github.com/MostafaRastegar",
+      "contributions": [
+        "ideas",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
