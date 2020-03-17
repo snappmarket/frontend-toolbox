@@ -123,7 +123,7 @@ describe('HttpHelpers', () => {
       } catch (e) {
         expect(fetch).toHaveBeenCalledTimes(1);
         expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
-        expect(e.message).toEqual('SERVER_CONTENT_TYPE_ERROR');
+        expect(e.message).toEqual(`SERVER_CONTENT_TYPE_ERROR:${url}`);
       }
     });
     it('should call an API using universal fetch and get epi error, because response can not be parsed', async () => {
@@ -145,7 +145,7 @@ describe('HttpHelpers', () => {
       } catch (e) {
         expect(fetch).toHaveBeenCalledTimes(1);
         expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
-        expect(e.message).toEqual('SERVER_CONTENT_PARSING_ERROR');
+        expect(e.message).toEqual(`SERVER_CONTENT_PARSING_ERROR:${url}`);
       }
     });
     it('should call an API using universal fetch and get epi error, because response can not be parsed', async () => {
