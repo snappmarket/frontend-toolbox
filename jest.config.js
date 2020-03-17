@@ -18,10 +18,10 @@ module.exports = {
   coverageReporters: ['html', 'text'],
   coverageThreshold: {
     global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
+      branches: 15,
+      functions: 15,
+      lines: 15,
+      statements: 15,
     },
   },
   // testPathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],

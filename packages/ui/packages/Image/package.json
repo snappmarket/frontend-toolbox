@@ -12,6 +12,9 @@
     "prepare": "yarn run build",
     "release:child": "yarn build && node ../../../../scripts/release/release-childs.js"
   },
+  "dependencies": {
+    "react-image": "^2.2.2"
+  },
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

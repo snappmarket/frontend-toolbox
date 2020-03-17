@@ -1,11 +1,8 @@
-version: 2.1
-
-orbs:
-  heroku: circleci/heroku@x.y # Use the Heroku orb in your config
+version: 2
 
 aliases:
   - &docker
-    - image: circleci/openjdk:8-jdk-node-browsers
+    - image: circleci/node:10.16.1
 
   - &environment
     TZ: /usr/share/zoneinfo/America/Los_Angeles
@@ -19,15 +16,11 @@ aliases:
         - v2-node-{{ arch }}-
   - &run_yarn
     run:
-      name: Install Packages
-      command: yarn --frozen-lockfile
-
-  - &attach_workspace
-    at: dist
-
+      name: Link and Install Packages
+      command: yarn link && yarn --frozen-lockfile
 
 jobs:
-  setup:
+  main:
     docker: *docker
     environment: *environment
 
@@ -38,114 +31,85 @@ jobs:
           command: node --version
       - *restore_yarn_cache
       - *run_yarn
+
+      # cache node_modules and etc
       - save_cache:
           name: Save node_modules cache
           key: v2-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
 
-  lint:
-    docker: *docker
-    environment: *environment
-
-    steps:
-      - checkout
-      - *restore_yarn_cache
-      - *run_yarn
-      - run: node ./scripts/tasks/prettier
-      - run: node ./scripts/tasks/eslint
-
-
-  test:
-    docker: *docker
-    environment: *environment
-    steps:
-      - checkout
-      - *restore_yarn_cache
-      - *run_yarn
-      - run:
-          command: yarn test --maxWorkers=2
-
-  build:
-    docker: *docker
-    environment: *environment
-    parallelism: 20
-    steps:
-      - checkout
-      - *restore_yarn_cache
-      - *run_yarn
+      # build packages
       - run:
           command: yarn build
       - persist_to_workspace:
-          root: build
+          root: ~/
           paths:
-            - node_modules
-            - dist
+            - project/node_modules
+            - project/packages/helpers/dist
+            - project/packages/helpers/node_modules
+            - project/packages/hooks/dist
+            - project/packages/hooks/node_modules
+            - project/packages/icons/dist
+            - project/packages/icons/node_modules
+            - project/packages/ui/dist
+            - project/packages/ui/node_modules
+
+      # test and coverage
+      - run:
+          command: yarn test --verbose=true --maxWorkers=2
+      - run:
+          command: yarn test --maxWorkers=2 --collectCoverage=true
+
+      # prettier and linter
+      - run:
+          command: yarn prettify
+      - run:
+          command: yarn lint:eslint:fix
+
+      - store_artifacts:
+          path: .jest-coverage/coverage-final.json
+
+
   deploy:
-    - build
-      - heroku/deploy-via-git
-      requires:
-        - build # only run deploy-via-git job if the build job has completed
-      filters:
-        branches:
-          only: master # only run deploy-via-git job on master branch
+    docker: *docker
+    environment: *environment
+    parallelism: 4
+    steps:
+      - checkout
+
+      # build packages
+      - run:
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project/node_modules
+            - project/packages/helpers/dist
+            - project/packages/helpers/node_modules
+            - project/packages/hooks/dist
+            - project/packages/hooks/node_modules
+            - project/packages/icons/dist
+            - project/packages/icons/node_modules
+            - project/packages/ui/dist
+            - project/packages/ui/node_modules
+
+      # deploy to heroku
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 workflows:
   version: 2
-  stable:
+  build:
     jobs:
-      - setup
-      - lint:
-          requires:
-            - setup
-      - flow:
-          requires:
-            - setup
-      - test_source:
-          requires:
-            - setup
-      - test_source_prod:
-          requires:
-            - setup
-      - test_source_persistent:
-          requires:
-            - setup
-      - test_source_www:
-          requires:
-            - setup
-      - test_source_www_variant:
-          requires:
-            - setup
-      - test_source_www_prod:
-          requires:
-            - setup
-      - test_source_www_variant_prod:
-          requires:
-            - setup
-      - build:
-          requires:
-            - setup
-      - process_artifacts:
-          requires:
-            - build
-      - sizebot:
-          requires:
-            - build
-      - lint_build:
-          requires:
-            - build
-      - test_build:
-          requires:
-            - build
-      - test_build_prod:
-          requires:
-            - build
-      - test_dom_fixtures:
-          requires:
-            - build
+      - main
 
-
-  heroku_deploy:
+  build-deploy:
     jobs:
-      - deploy
-
+      - deploy:
+          context: globals
+          filters:
+            branches:
+              only: master # only run deploy-via-git job on master branch

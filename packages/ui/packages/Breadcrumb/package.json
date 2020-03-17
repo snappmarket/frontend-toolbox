@@ -16,6 +16,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
+  "dependencies": {
+    "@snappmarket/icons": "^0.2.1-alpha.2",
+    "react-router-dom": "^5.1.2"
+  },
   "engines": {
     "node": ">=8",
     "npm": ">=5"

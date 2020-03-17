@@ -14,12 +14,14 @@ export const bulkStringReplace = (replacments, string) => {
  * @return string
  */
 export const autoLink = (string) => {
+  // eslint-disable-next-line no-useless-escape
   const regex = /(?![^<]*>|[^<>]*<\/)((https?:)\/\/[a-z0-9&#=.\/\-?_]+)/gi;
   const template = '<a href="$1" target="_blank">$1</a>';
   return string.replace(regex, template);
 };
 
 export const getQueryParams = (url, parameter) => {
+  // eslint-disable-next-line no-useless-escape
   const myParameter = parameter.replace(/[\[\]]/g, '\\$&');
   const regex = new RegExp(`[?&]${myParameter}(=([^&#]*)|&|#|$)`);
   const results = regex.exec(url);

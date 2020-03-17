@@ -14,8 +14,10 @@
   },
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "@snappmarket/icons": "^0.2.1-alpha.canary"
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "@snappmarket/icons": "^0.2.1-alpha.2"
   },
   "engines": {
     "node": ">=8",

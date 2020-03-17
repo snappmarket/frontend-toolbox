@@ -1,20 +1,22 @@
 language: node_js
+
 dist: xenial
 os: linux
 
 node_js:
-  - stable
+  - 10.16.1
 
 before_install:
   - yarn link
 
 install:
-  - npm install
+  - yarn --frozen-lockfile
 
 script:
-  - npm run build
-  - npm run test
-  - npm run docz:build
+  - yarn build
+  - yarn test
+  - yarn lint:eslint:fix
+  - yarn docz:build
 
 jobs:
   fast_finish: true
@@ -24,3 +26,5 @@ deploy:
   project: /.docz/dist/
   domain: docs-frontendtoolbox.surge.com
   cleanup: true
+  on:
+    branch: master
