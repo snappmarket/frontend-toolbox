@@ -1,5 +1,6 @@
 /**
- * Check if user lat lng is in iran
+ * @name isLocationInIran
+ * @description Check if user lat lng is in iran
  * @param lat
  * @param lng
  * @returns {boolean}

@@ -2,6 +2,7 @@ import * as CookieHelpers from '../index';
 
 beforeAll(() => {
   document.cookie = 'foo=bar';
+  document.cookie = 'test=test';
 });
 describe('CookieHelpers', () => {
   describe('getCookie', () => {
@@ -15,14 +16,14 @@ describe('CookieHelpers', () => {
   describe('setCookie', () => {
     it('should set a cookie in document', () => {
       CookieHelpers.setCookie('bar', 'foo');
-      expect(document.cookie).toEqual('foo=bar; bar=foo');
+      expect(document.cookie).toEqual('foo=bar; test=test; bar=foo');
       CookieHelpers.deleteCookie('bar'); // remove it for next test
     });
   });
   describe('deleteCookie', () => {
     it('should delete a cookie in document', () => {
       CookieHelpers.deleteCookie('foo');
-      expect(document.cookie).toEqual('');
+      expect(document.cookie).toEqual('test=test');
     });
   });
 });

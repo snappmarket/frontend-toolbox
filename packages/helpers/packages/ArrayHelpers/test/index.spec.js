@@ -41,7 +41,7 @@ describe('ArrayHelpers', () => {
     });
   });
   describe('serializeObject', () => {
-    it('should serializeObject an object to query parameter ', () => {
+    it('should convert object properties to query parameter ', () => {
       const payload = {
         number: 1,
         string: 'test',
@@ -50,6 +50,15 @@ describe('ArrayHelpers', () => {
         boolean: true,
       };
       const actual = 'number=1&string=test&array[]=1&array[]=2&array[]=3&object[foo]=foo&object[bar]=bar&boolean=true';
+      expect(ArrayHelpers.serializeObject(payload)).toEqual(actual);
+    });
+    it('should not convert empty object properties to query parameter ', () => {
+      const payload = {
+        number: undefined,
+        object: {},
+        array: []
+      };
+      const actual = '';
       expect(ArrayHelpers.serializeObject(payload)).toEqual(actual);
     });
   });
@@ -94,7 +103,7 @@ describe('ArrayHelpers', () => {
         { id: 6 },
         { id: 4 },
       ];
-      expect(ArrayHelpers.deepFlatten(payload, 'options', [])).toEqual(actual);
+      expect(ArrayHelpers.deepFlatten(payload, 'options')).toEqual(actual);
     });
   });
 });

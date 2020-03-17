@@ -1,13 +1,12 @@
 {
   "name": "@snappmarket/ui-carousel",
   "private": false,
-  "version": "0.2.1-beta.cswtgmi",
+  "version": "0.2.1-alpha.rhj2jq",
   "author": "Mostafa Rastegar <m.rastegar991@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
-    "test": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
+    "test": "cross-env BABEL_ENV=test jest --config ../../../../jest.config.js",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",

@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
 import * as UiComponents from '../packages/index';
-
-import { makeTheme } from '../packages/Theme/src';
+import { Wrapper } from './test.helpers';
 
 // RENDER TEST
 describe('UI components render test : ', () => {
@@ -24,12 +22,9 @@ describe('UI components render test : ', () => {
     'AccordionHead',
     'Tooltip',
   ];
-  const Wrapper = ({ children }) => (
-    <ThemeProvider theme={makeTheme()}>{children}</ThemeProvider>
-  );
 
   /**
-   * Run test on all ui components
+   * Loop on all ui components and test them
    */
   Object.keys(UiComponents).forEach((uiComponent) => {
     if (!EXCLUDED_PACKAGES.includes(uiComponent)) {

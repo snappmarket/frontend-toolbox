@@ -44,5 +44,9 @@ describe('JsonHelpers', () => {
       const payload = 'foo';
       expect(JsonHelpers.recursiveJsonParse({}, payload)).toEqual(payload);
     });
+    it('should return given value, cause json is invalid', () => {
+      const payload = '{"foo":"bar}';
+      expect(JsonHelpers.recursiveJsonParse({}, payload)).toEqual(payload);
+    });
   });
 });

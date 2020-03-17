@@ -6,8 +6,7 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
-    "test": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
+    "test": "cross-env BABEL_ENV=test jest --config ../../../../jest.config.js",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
