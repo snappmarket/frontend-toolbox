@@ -40,10 +40,6 @@ const SimpleCarousel = (props) => {
     newSlider.refresh(refreshFlag);
   };
 
-  const onRefresh = (refreshFlag) => {
-    newSlider.refresh(refreshFlag);
-  };
-
   return (
     <StyledSimpleCarousel>
       <div className={`slider ${className}`} ref={sliderRed}>
