@@ -1,6 +1,6 @@
 # SnappMarket frontend powerful tools
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 `hooks`, `helpers`, `ui components` and `icons` that we used in new version of : http://snappmarket
 
@@ -93,6 +93,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://sayjeyhi.com"><img src="https://avatars1.githubusercontent.com/u/6254009?v=4" width="100px;" alt=""/><br /><sub><b>Jafar Rezaei</b></sub></a><br /><a href="#infra-sayjeyhi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Code">💻</a></td>
     <td align="center"><a href="http://erami.name"><img src="https://avatars1.githubusercontent.com/u/29011692?v=4" width="100px;" alt=""/><br /><sub><b>Reza Erami</b></sub></a><br /><a href="#infra-rezaerami" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/mesbah68"><img src="https://avatars2.githubusercontent.com/u/21215334?v=4" width="100px;" alt=""/><br /><sub><b>mahsa mesbah</b></sub></a><br /><a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/MostafaRastegar"><img src="https://avatars2.githubusercontent.com/u/13585454?v=4" width="100px;" alt=""/><br /><sub><b>Mostafa Rastegar</b></sub></a><br /><a href="#ideas-MostafaRastegar" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=MostafaRastegar" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=MostafaRastegar" title="Code">💻</a></td>
   </tr>
 </table>
 
