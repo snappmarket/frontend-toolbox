@@ -78,21 +78,15 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Nodejs Version
+          command: node --version
+      - *restore_yarn_cache
+      - *run_yarn
+
       # build packages
       - run:
           command: yarn build
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project/node_modules
-            - project/packages/helpers/dist
-            - project/packages/helpers/node_modules
-            - project/packages/hooks/dist
-            - project/packages/hooks/node_modules
-            - project/packages/icons/dist
-            - project/packages/icons/node_modules
-            - project/packages/ui/dist
-            - project/packages/ui/node_modules
 
       # deploy to heroku
       - run:
