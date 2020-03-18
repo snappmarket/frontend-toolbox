@@ -20,9 +20,11 @@ jobs:
       - name: Run Build
         run: yarn build
       - name: Run Jest Tests
-        run: yarn test
+        run: yarn test --coverage
       - name: Report Code Coverage
         uses: codecov/codecov-action@v1
         with:
           flags: unittests
+          name: codecov-umbrella
           fail_ci_if_error: true
+          file: ./.jest-coverage/coverage-final.json
