@@ -13,7 +13,7 @@ describe('Input ui component tests', () => {
   //   );
 
   //   expect(getByTestId('input')).toHaveStyle({
-  //     border: theme.colors.gray['ultra-light'],
+  //     borderColor: theme.colors.gray['ultra-light'],
   //   });
   // });
 

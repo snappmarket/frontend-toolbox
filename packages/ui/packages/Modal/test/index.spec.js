@@ -19,7 +19,7 @@ describe('Modal ui component tests', () => {
     });
   });
 
-  // it('Should change the class when  get different types of position props', () => {
+  // it('Should change style when get different types of position props', () => {
   //   const { rerender, getByTestId } = render(
   //     <Wrapper><Modal visibility position="top" /></Wrapper>,
   //   );
