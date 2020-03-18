@@ -4,7 +4,7 @@ import { StyledLinedText } from './styles';
 
 const LinedText = props => {
   const { className, children } = props;
-  return <StyledLinedText className={className}>{children}</StyledLinedText>;
+  return <StyledLinedText data-testid="linedText" className={className}>{children}</StyledLinedText>;
 };
 
 LinedText.propTypes = {

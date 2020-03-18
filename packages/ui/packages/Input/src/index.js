@@ -11,13 +11,16 @@ import {
 const Input = React.forwardRef((props, ref) => {
   const { status, message, label, id, required, className, ...rest } = props;
   return (
-    <StyledInputWrapper>
+    <StyledInputWrapper data-testid="inputWrapper">
       {label && props.id && (
-        <StyledLabel htmlFor={id}>
-          {label} {required && <StyledStar>*</StyledStar>}
+        <StyledLabel data-testid="inputLabel" htmlFor={id}>
+          {label}
+          {' '}
+          {required && <StyledStar data-testid="labelRequiredFlag">*</StyledStar>}
         </StyledLabel>
       )}
       <StyledInput
+        data-testid="input"
         className={className}
         status={status}
         ref={ref}
@@ -25,7 +28,7 @@ const Input = React.forwardRef((props, ref) => {
         {...rest}
       />
       {Object.keys(message).length > 0 && (
-        <StyledMessage type={message.type}>{message.content}</StyledMessage>
+        <StyledMessage data-testid="inputMessages" type={message.type}>{message.content}</StyledMessage>
       )}
     </StyledInputWrapper>
   );
