@@ -15,7 +15,7 @@ module.exports = {
   rootDir: process.cwd(),
   roots: ['<rootDir>/packages', '<rootDir>/scripts'],
   // coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
-  coverageReporters: ['json', 'html', 'text'],
+  coverageReporters: ['json', 'lcov', 'clover', 'html', 'text'],
   coverageThreshold: {
     global: {
       branches: 35,
