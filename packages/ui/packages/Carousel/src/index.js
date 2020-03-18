@@ -34,9 +34,9 @@ const SimpleCarousel = props => {
     newSlider.goTo(index);
   };
 
-  // const onRefresh = (refreshFlag) => {
-  //   newSlider.refresh(refreshFlag);
-  // };
+  const onRefresh = (refreshFlag) => {
+    newSlider.refresh(refreshFlag);
+  };
 
   return (
     <StyledSimpleCarousel>
