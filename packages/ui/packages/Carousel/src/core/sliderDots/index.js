@@ -4,10 +4,7 @@ import {
   vdomArrayConvertor,
 } from '../utils';
 
-import {
-  dotsItemsGenerator,
-  dotsItemsClick,
-} from './partial';
+import { dotsItemsGenerator, dotsItemsClick } from './partial';
 
 export default class SliderDots {
   constructor(params) {
@@ -24,18 +21,17 @@ export default class SliderDots {
     return this.core;
   }
 
-  setDotsSelector(dotsSelector) { this.dotsSelector = dotsSelector; }
+  setDotsSelector(dotsSelector) {
+    this.dotsSelector = dotsSelector;
+  }
 
-  getDotsSelector() { return this.dotsSelector; }
+  getDotsSelector() {
+    return this.dotsSelector;
+  }
 
   initialize() {
     const {
-      config: {
-        slider,
-        responsive,
-        nav,
-        rtl,
-      },
+      config: { slider, responsive, nav, rtl },
       getInfinite,
       getSlidesLength,
       getSliderItemWidth,
@@ -65,7 +61,7 @@ export default class SliderDots {
     dotsItemsGenerator(dotsItemsParams);
 
     // dots item click for transition on active index
-    vdomArrayConvertor(dotsSelector.children).forEach((item) => {
+    vdomArrayConvertor(dotsSelector.children).forEach(item => {
       item.addEventListener('click', () => {
         const dotIndex = parseInt(item.getAttribute('data-dot-index'), 10);
         const indexItem = truncResponsiveItemCount(responsive) * (dotIndex - 1);
@@ -86,11 +82,9 @@ export default class SliderDots {
           rtl,
           item,
         };
-        const {
-          index,
-          allowShift,
-          posInitial,
-        } = dotsItemsClick(dotsItemsClickParams);
+        const { index, allowShift, posInitial } = dotsItemsClick(
+          dotsItemsClickParams,
+        );
         setIndex(index);
         setAllowShift(allowShift);
         setPosInitial(posInitial);

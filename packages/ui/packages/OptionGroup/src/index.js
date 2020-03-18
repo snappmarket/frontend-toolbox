@@ -6,7 +6,7 @@ import CheckBox from '../../CheckBox/src';
 
 import { StyledOptionGroup, StyledOptionItem } from './styles';
 
-const OptionGroup = (props) => {
+const OptionGroup = props => {
   const {
     className,
     options,
@@ -17,7 +17,7 @@ const OptionGroup = (props) => {
     ...rest
   } = props;
   const [selectedItem, setSelectedItem] = useState(initialSelectedItem);
-  const handleSetItem = (option) => {
+  const handleSetItem = option => {
     if (!option.disabled) {
       setSelectedItem(option.value);
       onSelectItem(option.value);
@@ -26,7 +26,7 @@ const OptionGroup = (props) => {
 
   const render = () => (
     <StyledOptionGroup className={className} {...rest}>
-      {options.map((option) => (
+      {options.map(option => (
         <div className="flex-row align-center" key={option.value}>
           <StyledOptionItem
             selected={option.value === selectedItem}

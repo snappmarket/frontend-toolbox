@@ -6,11 +6,9 @@ import { CrossIcon } from '@snappmarket/icons';
 
 import { StyledAlertWrapper, StyledCloseButton } from './styles';
 
-const Alert = (props) => {
+const Alert = props => {
   const [isOpen, setIsOpen] = useState(true);
-  const {
-    status, closable, onClose, children, className,
-  } = props;
+  const { status, closable, onClose, children, className } = props;
 
   let options = {};
   switch (status) {
@@ -62,7 +60,11 @@ const Alert = (props) => {
 
   return (
     isOpen && (
-      <StyledAlertWrapper data-testid="alert" className={className} {...options}>
+      <StyledAlertWrapper
+        data-testid="alert"
+        className={className}
+        {...options}
+      >
         {closable && (
           <StyledCloseButton
             data-testid="close-button"
@@ -90,7 +92,7 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
-  onClose: (f) => f,
+  onClose: f => f,
   closable: true,
 };
 

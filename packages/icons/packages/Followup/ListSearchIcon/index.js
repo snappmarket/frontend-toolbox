@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const ListSearchIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="ListSearchIcon"
     width="38.453"
     height="41.2"
     viewBox="0 0 38.453 41.2"

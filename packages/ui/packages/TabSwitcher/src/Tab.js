@@ -6,7 +6,7 @@ import { context as tabSwitcherContext } from './context';
 
 import { StyledTab } from './style';
 
-const Tab = (props) => {
+const Tab = props => {
   const {
     id, children, onChangeTab, className, ...rest
   } = props;
@@ -50,6 +50,6 @@ Tab.defaultProps = {
   className: '',
   // loading: false,
   direction: 'right',
-  onChangeTab: (f) => f,
+  onChangeTab: f => f,
 };
 export default Tab;

@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 
 import { StyledToggleWrapper } from './styles';
 
-const Toggle = (props) => {
-  const {
-    status, selected, size, disabled, className, ...rest
-  } = props;
+const Toggle = props => {
+  const { status, selected, size, disabled, className, ...rest } = props;
 
   const render = () => (
     <StyledToggleWrapper

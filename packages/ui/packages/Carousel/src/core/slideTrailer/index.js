@@ -5,10 +5,7 @@ import {
   addClassToElement,
 } from '../utils';
 
-import {
-  setPageNumberOnChild,
-  cloneNodeGenerator,
-} from './partial';
+import { setPageNumberOnChild, cloneNodeGenerator } from './partial';
 
 export default class SliderTrailer {
   constructor(params) {
@@ -27,11 +24,7 @@ export default class SliderTrailer {
 
   initialize() {
     const {
-      config: {
-        responsive,
-        slider,
-        rtl,
-      },
+      config: { responsive, slider, rtl },
       getInfinite,
       getSliderItems,
       getSliderItemWidth,
@@ -58,15 +51,16 @@ export default class SliderTrailer {
     });
 
     // init slider position
-    setIndex(setSliderItemsPosition({
-      indexItem: index,
-      sliderItemWidth,
-      sliderItems,
-      rtl,
-    }));
+    setIndex(
+      setSliderItemsPosition({
+        indexItem: index,
+        sliderItemWidth,
+        sliderItems,
+        rtl,
+      }),
+    );
 
     setPageNumberOnChild({ sliderItems, responsive });
-
 
     // Clone group of slide from infinite carousel
     if (infinite) {

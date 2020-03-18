@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
  * Detect react router dom route change
  * @param fn
  */
-const useRouteChange = (fn) => {
+const useRouteChange = fn => {
   const history = useHistory();
   useEffect(() => history.listen(fn), [history]);
 

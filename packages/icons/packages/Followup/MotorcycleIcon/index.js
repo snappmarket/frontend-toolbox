@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const MotorcycleIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="MotorcycleIcon"
     width="32.448"
     height="24.462"
     viewBox="0 0 32.448 24.462"

@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { StyledCircleWave } from './styles';
 
-const CircleWaveAnimation = (props) => <StyledCircleWave {...props} />;
+const CircleWaveAnimation = props => <StyledCircleWave {...props} />;
 
 CircleWaveAnimation.propTypes = {
   size: PropTypes.number,

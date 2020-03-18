@@ -36,18 +36,24 @@ describe('NumberHelpers', () => {
       jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
       const timestamp = Math.floor(now / 1000);
 
-      expect(NumberHelpers.generateKey()).toEqual(`${timestamp}${randomNumber}`);
+      expect(NumberHelpers.generateKey()).toEqual(
+        `${timestamp}${randomNumber}`,
+      );
     });
   });
 
   describe('cellphoneValidate', () => {
     it('should pass the cellphone pattern', () => {
       const cellphone = '09121234567';
-      expect(!!cellphone.match(NumberHelpers.cellphoneValidate())).toEqual(true);
+      expect(!!cellphone.match(NumberHelpers.cellphoneValidate())).toEqual(
+        true,
+      );
     });
     it('should not pass the cellphone pattern', () => {
       const cellphone = '0123456';
-      expect(!!cellphone.match(NumberHelpers.cellphoneValidate())).toEqual(false);
+      expect(!!cellphone.match(NumberHelpers.cellphoneValidate())).toEqual(
+        false,
+      );
     });
   });
   describe('currencyPrice', () => {

@@ -7,7 +7,7 @@
  */
 export const arrayItemAddProp = (baseArray, props) => {
   const newArray = [];
-  baseArray.forEach((item) => newArray.push({ ...item, ...props }));
+  baseArray.forEach(item => newArray.push({ ...item, ...props }));
   return newArray;
 };
 
@@ -20,7 +20,7 @@ export const arrayItemAddProp = (baseArray, props) => {
  */
 export const flattenArray = (array, property) => {
   const result = [];
-  array.forEach((item) => {
+  array.forEach(item => {
     result.push(...item[property]);
   });
   return result;
@@ -32,17 +32,19 @@ export const flattenArray = (array, property) => {
  * @param object
  * @returns {string}
  */
-export const serializeObject = (object) => {
+export const serializeObject = object => {
   const result = [];
-  Object.keys(object).forEach((property) => {
+  Object.keys(object).forEach(property => {
     if (typeof object[property] === 'object') {
       if (Array.isArray(object[property]) && object[property].length) {
-        object[property].forEach((item) => result.push(`${property}[]=${item}`));
+        object[property].forEach(item => result.push(`${property}[]=${item}`));
       } else if (
-        !Array.isArray(object[property])
-        && Object.keys(object[property]).length
+        !Array.isArray(object[property]) &&
+        Object.keys(object[property]).length
       ) {
-        Object.keys(object[property]).forEach((key) => result.push(`${property}[${key}]=${object[property][key]}`));
+        Object.keys(object[property]).forEach(key =>
+          result.push(`${property}[${key}]=${object[property][key]}`),
+        );
       }
     } else if (typeof object[property] !== 'undefined') {
       result.push(`${property}=${object[property]}`);
@@ -60,9 +62,9 @@ export const serializeObject = (object) => {
  */
 export const stringifyArray = (array, properties) => {
   const newArray = [];
-  array.forEach((item) => {
+  array.forEach(item => {
     const filteredProperties = {};
-    properties.forEach((property) => {
+    properties.forEach(property => {
       filteredProperties[property] = item[property];
     });
     newArray.push(filteredProperties);
@@ -83,11 +85,13 @@ export const deepFlatten = (array, property, flattenArrayTemp = []) => {
   delete newArray[property];
   flattenArrayTemp.push(newArray);
   if (
-    array[property]
-    && Array.isArray(array[property])
-    && array[property].length
+    array[property] &&
+    Array.isArray(array[property]) &&
+    array[property].length
   ) {
-    array[property].forEach((item) => deepFlatten(item, property, flattenArrayTemp));
+    array[property].forEach(item =>
+      deepFlatten(item, property, flattenArrayTemp),
+    );
   }
   return flattenArrayTemp;
 };

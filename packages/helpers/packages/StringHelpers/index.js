@@ -1,8 +1,9 @@
-export const stringReplace = (find, replace, string) => `${string}`.split(find).join(replace);
+export const stringReplace = (find, replace, string) =>
+  `${string}`.split(find).join(replace);
 
 export const bulkStringReplace = (replacments, string) => {
   let modifiedString = string;
-  Object.keys(replacments).forEach((key) => {
+  Object.keys(replacments).forEach(key => {
     modifiedString = stringReplace(key, replacments[key], modifiedString);
   });
   return modifiedString;
@@ -13,7 +14,7 @@ export const bulkStringReplace = (replacments, string) => {
  * Wparam string
  * @return string
  */
-export const autoLink = (string) => {
+export const autoLink = string => {
   // eslint-disable-next-line no-useless-escape
   const regex = /(?![^<]*>|[^<>]*<\/)((https?:)\/\/[a-z0-9&#=.\/\-?_]+)/gi;
   const template = '<a href="$1" target="_blank">$1</a>';
