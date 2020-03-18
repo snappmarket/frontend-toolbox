@@ -1,9 +1,10 @@
 /**
- * Gives us a cookie
+ * @name getCookie
+ * @desc Gives us a cookie by name
  * @param key
  * @returns {string}
  */
-export const getCookie = (key) => {
+export const getCookie = key => {
   const name = `${key}=`;
   const decodedCookie = decodeURIComponent(document.cookie);
   const cookies = decodedCookie.split(';');
@@ -20,7 +21,8 @@ export const getCookie = (key) => {
 };
 
 /**
- * Set a cookie
+ * @name setCookie
+ * @description Sets a cookie
  * @param name
  * @param value
  * @param expireDays
@@ -34,11 +36,12 @@ export const setCookie = (name, value, expireDays = 90, path = '/') => {
 };
 
 /**
- * delete a cookie
+ * @name deleteCookie
+ * @description delete a cookie
  * @author Reza Erami
  * @param name
  */
-export const deleteCookie = (name) => {
+export const deleteCookie = name => {
   const expires = 'expires=Thu, 01 Jan 1970 00:00:01 GMT';
   document.cookie = `${name}=${null};${expires}`;
 };

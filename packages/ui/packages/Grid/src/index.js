@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StyledGrid } from './styles';
 
-const Grid = (props) => {
+const Grid = props => {
   const { perRow, children, className } = props;
   return (
     <StyledGrid className={className} perRow={perRow}>

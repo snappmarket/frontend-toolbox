@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const GroceryBagIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="GroceryBagIcon"
     width="25.78"
     height="35.114"
     viewBox="0 0 25.78 35.114"

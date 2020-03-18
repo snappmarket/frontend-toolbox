@@ -7,7 +7,6 @@ import {
   calcSliderChildWidth,
   directionSetter,
   setTranslate3d,
-  getTranslate3d,
   switchInfiniteResponsiveCount,
   vdomArrayConvertor,
 } from '../src/core/utils';

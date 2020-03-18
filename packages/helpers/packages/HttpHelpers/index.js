@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/no-named-default
+import AbortController from 'abort-controller';
 import fetch from 'isomorphic-unfetch';
 
 import { ApiError, delog } from '../DebugHelpers';
@@ -6,16 +7,30 @@ import { serializeObject } from '../ArrayHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
 /**
- * Fetch with options and timeout
+ * @name fetchWithTimeOut
+ * @description fetches the request, if it takes to long, it will be timed out
  * @param url
  * @param options
  * @param timeout
  * @returns {Promise<unknown>}
  */
-export const fetchWithTimeOut = (url, options, timeout = 5000) => Promise.race([fetch(url, options), makeTimeout(timeout)]);
+export const fetchWithTimeOut = (url, options, timeout = 5000) => {
+  const controller = new AbortController();
+  const { signal } = controller;
+  const request = fetch(url, { ...options, signal });
+  const challenger = makeTimeout(timeout);
+  const race = Promise.race([request, challenger]);
+  race.catch(e => {
+    if (e.message === 'TIMEOUT') {
+      controller.abort();
+    }
+  });
+  return race;
+};
 
 /**
- * Call an api in universal way
+ * @name universalCall
+ * @description Call an api in universal way
  * @param url
  * @param method
  * @param credentials
@@ -48,7 +63,6 @@ export const universalCall = async ({
     ...rest,
   };
 
-  // eslint-disable-next-line no-console
   delog(`API called with : ${options.method} ${url}`);
 
   if (jwtToken) {
@@ -90,7 +104,7 @@ export const universalCall = async ({
    * If we did not got json then throw error message
    */
   if (!contentType || !contentType.includes('application/json')) {
-    throw new ApiError('SERVER_CONTENT_TYPE_ERROR');
+    throw new ApiError(`SERVER_CONTENT_TYPE_ERROR:${url}`);
   }
 
   /**
@@ -100,7 +114,7 @@ export const universalCall = async ({
   try {
     result = await response.json();
   } catch (e) {
-    throw new ApiError('SERVER_CONTENT_PARSING_ERROR');
+    throw new ApiError(`SERVER_CONTENT_PARSING_ERROR:${url}`);
   }
 
   /**

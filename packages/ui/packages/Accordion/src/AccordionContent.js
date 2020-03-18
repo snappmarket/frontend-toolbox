@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { context as accordionContext } from './context/accordionContext';
 import { StyledAccordionContent } from './style';
 
-const AccordionContent = (props) => {
-  const { whenActive, children, className } = props;
+const AccordionContent = props => {
+  const { whenActive, children, className, ...rest } = props;
   const { activeAccordionId, animate, changeActive } = useContext(
     accordionContext,
   );
@@ -17,6 +17,7 @@ const AccordionContent = (props) => {
       className={`${
         isActive && animate ? 'showAnimation' : 'hideAnimation'
       } ${className}`}
+      {...rest}
     >
       {typeof children === 'function' ? children(close) : children}
     </StyledAccordionContent>

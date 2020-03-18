@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const PencilIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="PencilIcon"
     width="293.334"
     height="293.359"
     viewBox="0 0 293.334 293.359"

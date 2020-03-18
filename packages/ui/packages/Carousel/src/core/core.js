@@ -7,9 +7,13 @@ import {
   elementCreator,
   childFider,
   prevNone,
+  nextNone,
   addClassToElement,
   vdomArrayConvertor,
   removeAllChildren,
+  infiniteChecker,
+  dragChecker,
+  setSliderItemsPosition,
 } from './utils';
 
 import { shiftSlideIsDir } from './sliderArrows/partial';
@@ -25,99 +29,134 @@ class SliderCore {
     this.initialize();
   }
 
-  setConfig = (config) => {
-    this.config = config;
+  setConfig = config => {
+    const {
+      slider,
+      infinite = false,
+      responsive = {
+        0: {
+          items: 1,
+        },
+      },
+      nav = false,
+      dots = false,
+      autoPlay = false,
+      rtl = false,
+      drag = true,
+      nextSpeed = 2000,
+      threshold = 50,
+    } = config;
+    this.config = {
+      slider,
+      infinite,
+      responsive,
+      nav,
+      dots,
+      autoPlay,
+      rtl,
+      drag,
+      nextSpeed,
+      threshold,
+    };
   };
 
   getConfig = () => this.config;
 
-  setSlider = (slider) => {
+  setSlider = slider => {
     this.slider = slider;
   };
 
   getSlider = () => this.slider;
 
-  setPosX1 = (posX1) => {
+  setPosX1 = posX1 => {
     this.posX1 = posX1;
   };
 
   getPosX1 = () => this.posX1;
 
-  setPosX2 = (posX2) => {
+  setInfinite = infinite => {
+    this.infinite = infinite;
+  };
+
+  getInfinite = () => this.infinite;
+
+  setDrag = drag => {
+    this.drag = drag;
+  };
+
+  getDrag = () => this.drag;
+
+  setPosX2 = posX2 => {
     this.posX2 = posX2;
   };
 
   getPosX2 = () => this.posX2;
 
-  setPerSlide = (perSlide) => {
+  setPerSlide = perSlide => {
     this.perSlide = perSlide;
   };
 
   getPerSlide = () => this.perSlide;
 
-  setSliderItems = (sliderItems) => {
+  setSliderItems = sliderItems => {
     this.sliderItems = sliderItems;
   };
 
   getSliderItems = () => this.sliderItems;
 
-  setPosInitial = (posInitial) => {
+  setPosInitial = posInitial => {
     this.posInitial = posInitial;
   };
 
   getPosInitial = () => this.posInitial;
 
-  setPosFinal = (posFinal) => {
+  setPosFinal = posFinal => {
     this.posFinal = posFinal;
   };
 
   getPosFinal = () => this.posFinal;
 
-  setSlidesLength = (slidesLength) => {
+  setSlidesLength = slidesLength => {
     this.slidesLength = slidesLength;
   };
 
   getSlidesLength = () => this.slidesLength;
 
-  setSliderMainWidth = (sliderMainWidth) => {
+  setSliderMainWidth = sliderMainWidth => {
     this.sliderMainWidth = sliderMainWidth;
   };
 
   getSliderMainWidth = () => this.sliderMainWidth;
 
-  setOrginSlider = (orginSlider) => {
+  setOrginSlider = orginSlider => {
     this.orginSlider = orginSlider;
   };
 
   getOrginSlider = () => this.orginSlider;
 
-  setSlideSize = (slideSize) => {
+  setSlideSize = slideSize => {
     this.slideSize = slideSize;
   };
 
   getSlideSize = () => this.slideSize;
 
-  setSliderItemWidth = (sliderItemWidth) => {
+  setSliderItemWidth = sliderItemWidth => {
     this.sliderItemWidth = sliderItemWidth;
   };
 
   getSliderItemWidth = () => this.sliderItemWidth;
 
-  setIndex = (index) => {
+  setIndex = index => {
     this.index = index;
   };
 
   getIndex = () => this.index;
 
-  setAllowShift = (allowShift) => {
+  setAllowShift = allowShift => {
     this.allowShift = allowShift;
   };
 
   getAllowShift = () => this.allowShift;
-
-  updateLog = () => {
-    console.log(this.index);
-  };
 
   initialize = () => {
     const {
@@ -128,12 +167,19 @@ class SliderCore {
       dots,
       autoPlay,
       rtl,
+      drag,
+      nextSpeed,
     } = this.getConfig();
 
+    // reset Slider
+    const mainSlider = slider;
+    const mainSliderClone = mainSlider.cloneNode(true);
+    this.setSlider(mainSliderClone);
     removeAllChildren({
       wrapper: slider,
       className: 'clone',
     });
+
     // ----------- start init variables  -----
     this.setSlider(slider);
 
@@ -159,8 +205,9 @@ class SliderCore {
     this.setSliderItemWidth(sliderItemWidth);
 
     // init slider for start
-    const slides = vdomArrayConvertor(this.getSliderItems().children);
-    this.setSlidesLength(slides.length);
+    const slides = vdomArrayConvertor(sliderSlidesSelector.children);
+    const sliderLength = slides.length;
+    this.setSlidesLength(sliderLength);
 
     const perSlide = switchInfiniteResponsiveCount(
       truncResponsiveItemCount(responsive),
@@ -169,8 +216,23 @@ class SliderCore {
 
     this.setPerSlide(perSlide);
 
+    const infCheck = infiniteChecker({
+      infinite,
+      perSlide,
+      sliderLength,
+    });
+    this.setInfinite(infCheck);
+
+    const dragCheck = dragChecker({
+      drag,
+      perSlide: truncResponsiveItemCount(responsive),
+      sliderLength,
+    });
+
+    this.setDrag(dragCheck);
+
     // set init index
-    if (infinite) {
+    if (infCheck) {
       this.setIndex(perSlide + 1);
     } else {
       this.setIndex(0);
@@ -197,8 +259,14 @@ class SliderCore {
       });
       this.sliderArrows = new SliderArrows({ core: this });
       const index = this.getIndex();
-      if (!infinite && index === 0) {
+      if (sliderLength <= truncResponsiveItemCount(responsive)) {
         prevNone(slider);
+        nextNone(slider);
+      }
+      if (!infCheck) {
+        if (index === 0) {
+          prevNone(slider);
+        }
       }
     }
 
@@ -208,10 +276,13 @@ class SliderCore {
     }
 
     if (autoPlay) {
-      setInterval(() => this.next(), 3000);
+      const time = nextSpeed || 2000;
+      setInterval(() => this.next(), time);
     }
 
     this.sliderTrailer = new SliderTrailer({ core: this });
+
+    // action drag event
     this.dragEvent = new DragEvent({ core: this });
 
     sliderSlidesSelector.addEventListener(
@@ -221,6 +292,31 @@ class SliderCore {
     this.windowResizeWatcher();
   };
 
+  goTo(newPosition) {
+    const {
+      sliderItems,
+      setIndex,
+      getSliderItemWidth,
+      config: { rtl },
+    } = this;
+    // goTo slide position
+    setIndex(
+      setSliderItemsPosition({
+        indexItem: newPosition,
+        sliderItemWidth: getSliderItemWidth(),
+        sliderItems,
+        rtl,
+      }),
+    );
+    this.transitionendWatcherCall();
+  }
+
+  refresh(flag) {
+    if (flag) {
+      this.initialize();
+    }
+  }
+
   next() {
     const {
       sliderItems,
@@ -229,9 +325,8 @@ class SliderCore {
       slideSize,
       slidesLength,
       sliderMainWidth,
-      config: {
-        infinite, slider, responsive, rtl,
-      },
+      getInfinite,
+      config: { slider, responsive, rtl },
     } = this;
     const classItemParams = {
       item: childFider({
@@ -251,7 +346,7 @@ class SliderCore {
         slidesLength,
         sliderMainWidth,
         responsiveItem: responsiveItemCount(responsive),
-        infinite,
+        infinite: getInfinite(),
         slider,
         rtl,
       }),
@@ -260,9 +355,8 @@ class SliderCore {
 
   transitionendWatcherCall = () => {
     const {
-      config: {
-        slider, infinite, responsive, dots, nav, rtl,
-      },
+      config: { slider, responsive, dots, nav, rtl },
+      getInfinite,
       index,
       getIndex,
       setIndex,
@@ -278,7 +372,7 @@ class SliderCore {
     } = this;
     transitionendWatcher({
       slider,
-      infinite,
+      infinite: getInfinite(),
       responsive,
       dots,
       nav,

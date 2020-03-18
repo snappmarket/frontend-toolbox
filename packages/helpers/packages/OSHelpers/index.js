@@ -1,4 +1,10 @@
-export const getOSName = (OSVersion) => {
+/**
+ * @name getOSName
+ * @description returns the name of the operating system based on appVersion
+ * @param OSVersion
+ * @return {*}
+ */
+export const getOSName = OSVersion => {
   let OSName = OSVersion;
   const oSMapper = {
     Win: 'Windows',
@@ -8,7 +14,7 @@ export const getOSName = (OSVersion) => {
     Android: 'Android',
     iPhone: 'IOS',
   };
-  Object.keys(oSMapper).forEach((key) => {
+  Object.keys(oSMapper).forEach(key => {
     if (OSName.indexOf(key) !== -1) {
       OSName = oSMapper[key];
     }
@@ -16,6 +22,11 @@ export const getOSName = (OSVersion) => {
   return OSName;
 };
 
+/**
+ * @name getAgent
+ * @description returns an object created of user agent and operating system
+ * @return {{OSVersion: *, userAgent: string}}
+ */
 export const getAgent = () => {
   const { userAgent, appVersion } = navigator;
 

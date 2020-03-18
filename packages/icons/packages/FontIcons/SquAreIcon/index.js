@@ -1,8 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const IconName = ({ className, size, color }) => (
+const SquAreIcon = ({ className, size, color }) => (
   <svg
+    data-testid="SquAreIcon"
     className={className}
     style={{
       width: size * 10,
@@ -16,20 +17,19 @@ const IconName = ({ className, size, color }) => (
     fill={color}
   >
     <title>squre</title>
-    <path d="M28.006 32h-24.003c-2.209 0-4-1.791-4-4v0-24.003c0-2.209 1.791-4 4-4v0h24.003c2.209 0 4 1.791 4 4v0 24.003c0 2.209-1.791 4-4 4v0zM4.003 1.996c-1.105 0-2 0.896-2 2v0 24.003c0 1.105 0.896 2 2 2v0h24.003c1.105 0 2-0.896 2-2v0-24.003c0-1.105-0.896-2-2-2v0z" />
-    {' '}
+    <path d="M28.006 32h-24.003c-2.209 0-4-1.791-4-4v0-24.003c0-2.209 1.791-4 4-4v0h24.003c2.209 0 4 1.791 4 4v0 24.003c0 2.209-1.791 4-4 4v0zM4.003 1.996c-1.105 0-2 0.896-2 2v0 24.003c0 1.105 0.896 2 2 2v0h24.003c1.105 0 2-0.896 2-2v0-24.003c0-1.105-0.896-2-2-2v0z" />{' '}
   </svg>
 );
 
-IconName.propTypes = {
+SquAreIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
   color: PropTypes.string,
 };
 
-IconName.defaultProps = {
+SquAreIcon.defaultProps = {
   size: 1.5,
   color: '#000000',
 };
 
-export default IconName;
+export default SquAreIcon;

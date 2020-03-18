@@ -6,6 +6,7 @@ const BagIcon = ({ className, size, color }) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 14.9 18.7"
     className={className}
+    data-testid="BagIcon"
     style={{
       width: size * 10,
       height: size * 10,

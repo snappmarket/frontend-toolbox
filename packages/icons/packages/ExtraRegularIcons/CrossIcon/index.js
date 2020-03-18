@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const CrossIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="CrossIcon"
     viewBox="0 0 47.971 47.971"
     className={className}
     style={{

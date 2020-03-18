@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const CrossBoldIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="CrossBoldIcon"
     width="50"
     height="50"
     viewBox="0 0 70.711 70.711"

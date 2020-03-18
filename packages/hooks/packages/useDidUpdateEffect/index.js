@@ -12,4 +12,6 @@ export default (fn, inputs) => {
     if (didMountRef.current) fn();
     else didMountRef.current = true;
   }, inputs);
+
+  return true;
 };

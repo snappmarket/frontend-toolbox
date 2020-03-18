@@ -5,6 +5,7 @@ const SearchIcon = ({ className, size, color }) => (
   <svg
     id="SearchIcon"
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="SearchIcon"
     width="20"
     height="20"
     viewBox="0 0 20 20"

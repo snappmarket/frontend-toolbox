@@ -4,10 +4,8 @@ import { CheckMarkIcon, CircleIcon, MinusIcon } from '@snappmarket/icons';
 
 import { StyledCheckboxWrapper } from './styles';
 
-const CheckBox = (props) => {
-  const {
-    status, selected, size, disabled, className, border,
-  } = props;
+const CheckBox = props => {
+  const { status, selected, size, disabled, className, border } = props;
 
   const render = () => (
     <StyledCheckboxWrapper
@@ -20,16 +18,8 @@ const CheckBox = (props) => {
       selected={selected}
     >
       {selected && !disabled ? <CheckMarkIcon size={size} /> : ''}
-      {disabled && className !== 'circle' ? (
-        <MinusIcon size={size} />
-      ) : (
-        ''
-      )}
-      {className === 'circle' && disabled ? (
-        <CircleIcon size={size} />
-      ) : (
-        ''
-      )}
+      {disabled && className !== 'circle' ? <MinusIcon size={size} /> : ''}
+      {className === 'circle' && disabled ? <CircleIcon size={size} /> : ''}
     </StyledCheckboxWrapper>
   );
 

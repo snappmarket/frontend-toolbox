@@ -10,9 +10,13 @@ import {
   StyledInputRange,
 } from './styles';
 
-const InputRange = (props) => {
+const InputRange = props => {
   const {
-    value: initialValue, rangeValue, onChangeComplete, fromTitle, toTitle,
+    value: initialValue,
+    rangeValue,
+    onChangeComplete,
+    fromTitle,
+    toTitle,
   } = props;
   const { min: initialMin, max: initialMax } = rangeValue;
   const [value, setValue] = useState(initialValue);
@@ -33,14 +37,10 @@ const InputRange = (props) => {
       </StyledInputRange>
       <StyledRangeLabelWrapper className="justify-between">
         <span className="text-center">
-          {fromTitle}
-          {' '}
-          {currencyPrice(min)}
+          {fromTitle} {currencyPrice(min)}
         </span>
         <span className="text-center">
-          {toTitle}
-          {' '}
-          {currencyPrice(max)}
+          {toTitle} {currencyPrice(max)}
         </span>
       </StyledRangeLabelWrapper>
     </StyledInputRangeWrapper>

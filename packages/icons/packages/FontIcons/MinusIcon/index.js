@@ -1,8 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const IconName = ({ className, size, color }) => (
+const MinusIcon = ({ className, size, color }) => (
   <svg
+    data-testid="MinusIcon"
     className={className}
     style={{
       width: size * 10,
@@ -16,20 +17,19 @@ const IconName = ({ className, size, color }) => (
     fill={color}
   >
     <title>minus</title>
-    <path d="M29.61 17.152h-27.178c-0.566 0-1.024-0.458-1.024-1.024s0.458-1.024 1.024-1.024v0h27.178c0.566 0 1.024 0.458 1.024 1.024s-0.458 1.024-1.024 1.024v0z" />
-    {' '}
+    <path d="M29.61 17.152h-27.178c-0.566 0-1.024-0.458-1.024-1.024s0.458-1.024 1.024-1.024v0h27.178c0.566 0 1.024 0.458 1.024 1.024s-0.458 1.024-1.024 1.024v0z" />{' '}
   </svg>
 );
 
-IconName.propTypes = {
+MinusIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
   color: PropTypes.string,
 };
 
-IconName.defaultProps = {
+MinusIcon.defaultProps = {
   size: 1.5,
   color: '#000000',
 };
 
-export default IconName;
+export default MinusIcon;

@@ -10,7 +10,7 @@ import {
   StyledPaginationItem,
 } from './styles';
 
-const Pagination = (props) => {
+const Pagination = props => {
   const {
     limit,
     total,
@@ -22,7 +22,7 @@ const Pagination = (props) => {
     className,
   } = props;
 
-  const handlePaginate = (page) => {
+  const handlePaginate = page => {
     const newOffset = limit * page;
     if (newOffset >= 0 && newOffset <= total && newOffset !== offset) {
       onPaginate(newOffset);

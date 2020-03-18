@@ -10,16 +10,12 @@ import {
 } from './styles';
 
 const Textarea = React.forwardRef((props, ref) => {
-  const {
-    status, message, label, required, id, ...rest
-  } = props;
+  const { status, message, label, required, id, ...rest } = props;
   return (
     <StyledTextareaWrapper>
       {label && id && (
         <StyledLabel htmlFor={id}>
-          {label}
-          {' '}
-          {required && <StyledStar>*</StyledStar>}
+          {label} {required && <StyledStar>*</StyledStar>}
         </StyledLabel>
       )}
       <StyledTextarea status={status} ref={ref} id={id} {...rest} />

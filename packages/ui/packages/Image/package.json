@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui-image",
   "private": false,
-  "version": "0.2.1-beta.cswtgmi",
+  "version": "0.2.3",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -11,6 +11,9 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "release:child": "yarn build && node ../../../../scripts/release/release-childs.js"
+  },
+  "dependencies": {
+    "react-image": "^2.2.2"
   },
   "peerDependencies": {
     "react": "^16.8.6",

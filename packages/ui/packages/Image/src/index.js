@@ -10,10 +10,8 @@ import { LogoAnimation } from '../../Loading/src';
  * @returns {*}
  * @constructor
  */
-const Image = (props) => {
-  const {
-    src, loader, error, ...rest
-  } = props;
+const Image = props => {
+  const { src, loader, error, ...rest } = props;
   return <Img data-testid="image" src={src} loader={loader} unloader={error} {...rest} />;
 };
 
@@ -23,7 +21,6 @@ Image.propTypes = {
   error: PropTypes.node,
 };
 
-// todo: add our loader here
 Image.defaultProps = {
   loader: <LogoAnimation size={3} />,
   error: <LogoAnimation size={3} />,

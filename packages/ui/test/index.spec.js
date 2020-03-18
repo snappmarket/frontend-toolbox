@@ -26,7 +26,7 @@ describe('UI components render test : ', () => {
   /**
    * Loop on all ui components and test them
    */
-  Object.keys(UiComponents).forEach((uiComponent) => {
+  Object.keys(UiComponents).forEach(uiComponent => {
     if (!EXCLUDED_PACKAGES.includes(uiComponent)) {
       it(`should render ${uiComponent} without crashing`, () => {
         const div = document.createElement('div');

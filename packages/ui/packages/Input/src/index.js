@@ -9,9 +9,7 @@ import {
 } from './styles';
 
 const Input = React.forwardRef((props, ref) => {
-  const {
-    status, message, label, id, required, className, ...rest
-  } = props;
+  const { status, message, label, id, required, className, ...rest } = props;
   return (
     <StyledInputWrapper data-testid="inputWrapper">
       {label && props.id && (

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const CheckMarkIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="CheckMarkIcon"
     width="70"
     height="65"
     viewBox="0 0 84.539 70.711"

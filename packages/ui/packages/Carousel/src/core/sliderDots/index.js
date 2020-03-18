@@ -31,9 +31,8 @@ export default class SliderDots {
 
   initialize() {
     const {
-      config: {
-        slider, infinite, responsive, nav, rtl,
-      },
+      config: { slider, responsive, nav, rtl },
+      getInfinite,
       getSlidesLength,
       getSliderItemWidth,
       getSliderMainWidth,
@@ -62,9 +61,9 @@ export default class SliderDots {
     dotsItemsGenerator(dotsItemsParams);
 
     // dots item click for transition on active index
-    vdomArrayConvertor(dotsSelector.children).forEach((item) => {
+    vdomArrayConvertor(dotsSelector.children).forEach(item => {
       item.addEventListener('click', () => {
-        const dotIndex = parseInt(item.getAttribute('data-dot-index'));
+        const dotIndex = parseInt(item.getAttribute('data-dot-index'), 10);
         const indexItem = truncResponsiveItemCount(responsive) * (dotIndex - 1);
         const dotsItemsClickParams = {
           indexItem,
@@ -75,7 +74,7 @@ export default class SliderDots {
           slideSize: getSlideSize(),
           slidesLength: getSlidesLength(),
           perSlide: truncResponsiveItemCount(responsive),
-          infinite,
+          infinite: getInfinite(),
           dotIndex,
           responsive,
           getSliderItems,

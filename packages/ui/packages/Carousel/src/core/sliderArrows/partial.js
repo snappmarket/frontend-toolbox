@@ -9,7 +9,7 @@ import {
   directionSetter,
 } from '../utils';
 
-export const shiftSlideIsDir = (params) => {
+export const shiftSlideIsDir = params => {
   const {
     sliderItems,
     index,
@@ -33,10 +33,17 @@ export const shiftSlideIsDir = (params) => {
   };
   const newIndex = index + perSlide;
 
+  // when slidesLength <= perSlide arrow is disable
+  if (slidesLength <= perSlide) {
+    nextNone(slider);
+    prevBlock(slider);
+    return index;
+  }
+
   if (
-    !infinite
-    && newIndex + perSlide - 1 >= newSlidesLength
-    && responsiveItem !== 1
+    !infinite &&
+    newIndex + perSlide - 1 >= newSlidesLength &&
+    responsiveItem !== 1
   ) {
     const result = directionSetter({
       rtl,
@@ -49,14 +56,6 @@ export const shiftSlideIsDir = (params) => {
 
     return newIndex;
   }
-
-  // if (!infinite && newIndex * perSlide >= slidesLength) {
-  // 	sliderItems.style["transform"] = setTranslate3d(
-  // 		calcFinalItemPosition(calcFinalItemPositionParams)
-  // 	);
-  // 	nextNone(slider);
-  // 	prevBlock(slider);
-  // }
 
   // when perSlide === 1
   if (!infinite && newIndex === newSlidesLength) {
@@ -73,7 +72,7 @@ export const shiftSlideIsDir = (params) => {
   return newIndex;
 };
 
-export const shiftSlideNonDir = (params) => {
+export const shiftSlideNonDir = params => {
   const {
     sliderItems,
     slideSize,
@@ -105,23 +104,3 @@ export const shiftSlideNonDir = (params) => {
   sliderItems.style.transform = setTranslate3d(result);
   return newIndex;
 };
-
-// export const shiftFirstToEnd = params => {
-// 	const { sliderItems, slidesLength, slideSize, newIndex,rtl } = params;
-// 	const result = directionSetter({
-// 		rtl,
-// 		input: -((slidesLength + newIndex) * slideSize)
-// 	});
-// 	sliderItems.style["transform"] = setTranslate3d(result);
-// 	return slidesLength + newIndex;
-// };
-
-// export const shiftEndToFirst = params => {
-// 	const { sliderItems, slideSize, newIndex, slidesLength,rtl } = params;
-// 	const result = directionSetter({
-// 		rtl,
-// 		input: -(newIndex - slidesLength) * slideSize
-// 	});
-// 	sliderItems.style["transform"] = setTranslate3d(result);
-// 	return newIndex - slidesLength;
-// };

@@ -4,7 +4,7 @@ import * as Icons from '../packages/index';
 
 // RENDER TEST
 describe('Icons render test : ', () => {
-  Object.keys(Icons).forEach((icon) => {
+  Object.keys(Icons).forEach(icon => {
     it(`should render ${icon} without crashing`, () => {
       const div = document.createElement('div');
       const Icon = Icons[icon];

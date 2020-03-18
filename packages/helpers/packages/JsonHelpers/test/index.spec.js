@@ -37,11 +37,18 @@ describe('JsonHelpers', () => {
           children: [],
         },
       };
-      const collection = JsonHelpers.recursiveJsonParse({}, JSON.stringify(payload));
+      const collection = JsonHelpers.recursiveJsonParse(
+        {},
+        JSON.stringify(payload),
+      );
       expect(collection).toEqual(payload);
     });
     it('should return given value, cause it is not a json', () => {
       const payload = 'foo';
+      expect(JsonHelpers.recursiveJsonParse({}, payload)).toEqual(payload);
+    });
+    it('should return given value, cause json is invalid', () => {
+      const payload = '{"foo":"bar}';
       expect(JsonHelpers.recursiveJsonParse({}, payload)).toEqual(payload);
     });
   });

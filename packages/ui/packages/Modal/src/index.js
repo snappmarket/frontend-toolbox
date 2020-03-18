@@ -14,7 +14,7 @@ import {
   StyledModalFooter,
 } from './styles';
 
-const Modal = (props) => {
+const Modal = props => {
   const {
     className,
     handleClose,
@@ -87,27 +87,28 @@ const Modal = (props) => {
     }
   }, [position, modalContainer, visibility, modalRef]);
 
-  const render = () => visibility ? (
-    <StyledModalWrapper data-testid="modalWrapper" className={className}>
-      <StyledLightBox onClick={handleClose || undefined} />
-      <StyledModal data-testid="modal" width={width} position={position} ref={modalRef}>
-        {handleClose && typeof handleClose === 'function' && (
-          <StyledCloseModalButton
-            data-testid="closeModalButton"
-            className="close-modal-button"
-            modifier="link"
-            icon={<CrossIcon />}
-            size="sm"
-            color="gray"
-            onClick={handleClose}
-          />
-        )}
-        {!!header && <StyledModalHeader data-testid="modalHeader">{header}</StyledModalHeader>}
-        {!!children && <StyledModalContent data-testid="modalContent">{children}</StyledModalContent>}
-        {!!footer && <StyledModalFooter data-testid="modalFooter">{footer}</StyledModalFooter>}
-      </StyledModal>
-    </StyledModalWrapper>
-  ) : null;
+  const render = () =>
+    visibility ? (
+      <StyledModalWrapper data-testid="modalWrapper" className={className}>
+        <StyledLightBox onClick={handleClose || undefined} />
+        <StyledModal data-testid="modal" width={width} position={position} ref={modalRef}>
+          {handleClose && typeof handleClose === 'function' && (
+            <StyledCloseModalButton
+              data-testid="closeModalButton"
+              className="close-modal-button"
+              modifier="link"
+              icon={<CrossIcon />}
+              size="sm"
+              color="gray"
+              onClick={handleClose}
+            />
+          )}
+          {!!header && <StyledModalHeader data-testid="modalHeader">{header}</StyledModalHeader>}
+          {!!children && <StyledModalContent data-testid="modalContent">{children}</StyledModalContent>}
+          {!!footer && <StyledModalFooter data-testid="modalFooter">{footer}</StyledModalFooter>}
+        </StyledModal>
+      </StyledModalWrapper>
+    ) : null;
   if (modalContainer) {
     return createPortal(render(), modalContainer);
   }

@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import {
   calcSliderGroupCount,
   getTranslate3d,
@@ -11,7 +12,7 @@ import {
   directionSetter,
 } from '../utils';
 
-export const dotsItemsGenerator = (params) => {
+export const dotsItemsGenerator = params => {
   const { slidesLength, dotsSelector, responsive } = params;
   for (let i = 0; i < calcSliderGroupCount({ responsive, slidesLength }); i++) {
     dotsSelector.innerHTML += `<li class="dots-item${
@@ -21,7 +22,7 @@ export const dotsItemsGenerator = (params) => {
   return dotsSelector;
 };
 
-export const dotsItemsClick = (params) => {
+export const dotsItemsClick = params => {
   const {
     indexItem,
     perSlide,
@@ -67,7 +68,8 @@ export const dotsItemsClick = (params) => {
   };
 };
 
-export const setSliderItemsPositionAfterDotClick = (params) => {
+// eslint-disable-next-line consistent-return
+export const setSliderItemsPositionAfterDotClick = params => {
   const {
     indexItem,
     slideSize,
@@ -80,6 +82,11 @@ export const setSliderItemsPositionAfterDotClick = (params) => {
     nav,
     rtl,
   } = params;
+
+  // when slidesLength <= perSlide dots is disable
+  if (slidesLength <= perSlide) {
+    return false;
+  }
 
   if (!infinite && indexItem + perSlide >= slidesLength) {
     const calcFinalItemPositionParams = {

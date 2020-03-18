@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const BoxWithTickIcon = ({ className, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="BoxWithTickIcon"
     width="33.469"
     height="33.469"
     viewBox="0 0 33.469 33.469"

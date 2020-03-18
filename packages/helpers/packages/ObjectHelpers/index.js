@@ -1,38 +1,55 @@
-export const removeByKey = (haystack, needle) => Object.keys(haystack)
-  .filter((key) => parseInt(key, 0) !== parseInt(needle, 0))
-  .reduce((result, current) => {
-    // eslint-disable-next-line no-param-reassign
-    result[current] = haystack[current];
-    return result;
-  }, {});
+/**
+ * @name removeByKey
+ * @description returns an object without given key
+ * @param haystack
+ * @param needle
+ * @return {{}}
+ */
+export const removeByKey = (haystack, needle) =>
+  Object.keys(haystack)
+    .filter(key => {
+      if (Number.isInteger(needle))
+        return parseInt(key, 0) !== parseInt(needle, 0);
+      return key !== needle;
+    })
+    .reduce((result, current) => {
+      // eslint-disable-next-line no-param-r eassign
+      result[current] = haystack[current];
+      return result;
+    }, {});
 
-export const flattenObject = (ob) => {
-  const toReturn = {};
+/**
+ * @name flattenObject
+ * @description recursively flattens an object, properties keys would be combination of parent and sub-object keys
+ * @param object
+ * @return {{}}
+ */
+export const flattenObject = object => {
+  const result = {};
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const i in ob) {
-    // eslint-disable-next-line no-prototype-builtins,no-continue
-    if (!ob.hasOwnProperty(i)) continue;
-
-    if (typeof ob[i] === 'object' && ob[i] !== null) {
-      const flatObject = flattenObject(ob[i]);
-      // eslint-disable-next-line no-restricted-syntax
-      for (const x in flatObject) {
-        // eslint-disable-next-line no-prototype-builtins,no-continue
-        if (!flatObject.hasOwnProperty(x)) continue;
-
-        toReturn[`${i}.${x}`] = flatObject[x];
-      }
+  Object.keys(object).forEach(key => {
+    if (typeof object[key] === 'object' && object[key] !== null) {
+      const flatObject = flattenObject(object[key]);
+      Object.keys(flatObject).forEach(itemKey => {
+        result[`${key}.${itemKey}`] = flatObject[itemKey];
+      });
     } else {
-      toReturn[i] = ob[i];
+      result[key] = object[key];
     }
-  }
-  return toReturn;
+  });
+  return result;
 };
 
-export const makeCookieString = (cookies) => {
+/**
+ * @name makeCookieString
+ * @description converts the key-value cookie into concatenated cookie string
+ * @param cookies
+ * @return {string}
+ */
+export const makeCookieString = cookies => {
   let cookieString = '';
-  Object.keys(cookies).forEach((cookie) => {
+  Object.keys(cookies).forEach(cookie => {
     cookieString += `${cookie}=${cookies[cookie]}; `;
   });
 
@@ -41,27 +58,30 @@ export const makeCookieString = (cookies) => {
 };
 
 /**
- * Safe read object property
- * @param obj
+ * @name safeObjectPropertyRead
+ * @description reads properties of an object safely and avoids to throw an error if property or object are undefined
+ * @param object
  * @param key
  * @param defaultValue
  * @returns {*}
  */
-export const safeObjectPropertyRead = (obj, key, defaultValue = undefined) => key.split('.').reduce((nestedObject, index) => {
-  if (nestedObject && index in nestedObject) {
-    return nestedObject[index];
-  }
-  return undefined;
-}, obj) || defaultValue;
+export const safeObjectPropertyRead = (object, key, defaultValue = undefined) =>
+  key.split('.').reduce((nestedObject, index) => {
+    if (nestedObject && index in nestedObject) {
+      return nestedObject[index];
+    }
+    return undefined;
+  }, object) || defaultValue;
 
 /**
- * Get an object next property
- * @param obj
+ * @name getNextProp
+ * @description returns the next property of given property in an object
+ * @param object
  * @param key
  * @returns {boolean|string|*}
  */
-export const getNextProp = (obj, key) => {
-  const keys = Object.keys(obj);
-  const i = keys.indexOf(key);
-  return i !== -1 && keys[i + 1] && obj[keys[i + 1]];
+export const getNextProp = (object, key) => {
+  const keys = Object.keys(object);
+  const index = keys.indexOf(key);
+  return index !== -1 && keys[index + 1] && object[keys[index + 1]];
 };
