@@ -13,47 +13,42 @@ import {
   nextNone,
 } from '../utils';
 
-export const directionClientX = (params) => {
+export const directionClientX = params => {
   const { rtl, e, sliderMainWidth } = params;
   if (rtl) return sliderMainWidth - e.clientX;
   return e.clientX;
 };
 
-export const directionTouchClientX = (params) => {
+export const directionTouchClientX = params => {
   const { rtl, e, sliderMainWidth } = params;
   if (rtl) return sliderMainWidth - e.touches[0].clientX;
   return e.touches[0].clientX;
 };
 
-export const caroueslTouchStart = (params) => directionTouchClientX(params);
+export const caroueslTouchStart = params => directionTouchClientX(params);
 
-export const caroueslDragAction = (params) => {
-  const {
-    e, dragEndCall, dragActionCall, sliderMainWidth, rtl,
-  } = params;
+export const caroueslDragAction = params => {
+  const { e, dragEndCall, dragActionCall, sliderMainWidth, rtl } = params;
   document.onmouseup = dragEndCall;
   document.onmousemove = dragActionCall;
   return directionClientX({ rtl, e, sliderMainWidth });
 };
-export const dragActionTouchmovePosX2 = (params) => {
-  const {
-    e, posX1, rtl, sliderMainWidth,
-  } = params;
+export const dragActionTouchmovePosX2 = params => {
+  const { e, posX1, rtl, sliderMainWidth } = params;
   return posX1 - directionTouchClientX({ rtl, e, sliderMainWidth });
 };
 
-export const dragActionTouchmovePosX1 = (params) => directionTouchClientX(params);
+export const dragActionTouchmovePosX1 = params => directionTouchClientX(params);
 
-export const dragActionMousemove = (params) => {
-  const {
-    posX1, e, rtl, sliderMainWidth,
-  } = params;
+export const dragActionMousemove = params => {
+  const { posX1, e, rtl, sliderMainWidth } = params;
   return posX1 - directionClientX({ rtl, e, sliderMainWidth });
 };
-export const dragActionMousemovePosX1 = ({ rtl, e, sliderMainWidth }) => directionClientX({ rtl, e, sliderMainWidth });
+export const dragActionMousemovePosX1 = ({ rtl, e, sliderMainWidth }) =>
+  directionClientX({ rtl, e, sliderMainWidth });
 
 // eslint-disable-next-line consistent-return
-export const dragActionCalcPosition = (params) => {
+export const dragActionCalcPosition = params => {
   const {
     sliderItems,
     posX2,
@@ -97,9 +92,13 @@ export const dragActionCalcPosition = (params) => {
 
   if (!infinite && !rtl) {
     // stop drag when firstItem go to lastItem on drag
-    const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() > (sliderItemWidthNew() * perSlide) + thresholdNew();
+    const firstTolastDrag =
+      getTranslate3d(sliderItems) - posX2New() >
+      sliderItemWidthNew() * perSlide + thresholdNew();
     // stop drag when lastItem go to fistItem on drag
-    const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() <= calcFinalItemPositionNew - thresholdNew();
+    const lastToFirstDrag =
+      getTranslate3d(sliderItems) - posX2New() <=
+      calcFinalItemPositionNew - thresholdNew();
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
     }
@@ -109,7 +108,9 @@ export const dragActionCalcPosition = (params) => {
     // stop drag when firstItem go to lastItem on drag
     const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() > 0;
     // stop drag when lastItem go to fistItem on drag
-    const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() + 5 < sliderItemWidthNew() * (slidesLength + perSlide + 1);
+    const lastToFirstDrag =
+      getTranslate3d(sliderItems) - posX2New() + 5 <
+      sliderItemWidthNew() * (slidesLength + perSlide + 1);
 
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
@@ -118,9 +119,13 @@ export const dragActionCalcPosition = (params) => {
 
   if (!infinite && rtl) {
     // stop drag when firstItem go to lastItem on drag
-    const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() < (sliderItemWidthNew() * perSlide) + thresholdNew();
+    const firstTolastDrag =
+      getTranslate3d(sliderItems) - posX2New() <
+      sliderItemWidthNew() * perSlide + thresholdNew();
     // stop drag when lastItem go to fistItem on drag
-    const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() >= calcFinalItemPositionNew - thresholdNew();
+    const lastToFirstDrag =
+      getTranslate3d(sliderItems) - posX2New() >=
+      calcFinalItemPositionNew - thresholdNew();
 
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
@@ -130,7 +135,9 @@ export const dragActionCalcPosition = (params) => {
     // stop drag when firstItem go to lastItem on drag
     const firstTolastDrag = getTranslate3d(sliderItems) - posX2New() < 0;
     // stop drag when lastItem go to fistItem on drag
-    const lastToFirstDrag = getTranslate3d(sliderItems) - posX2New() - 5 > sliderItemWidthNew() * (slidesLength + perSlide + 1);
+    const lastToFirstDrag =
+      getTranslate3d(sliderItems) - posX2New() - 5 >
+      sliderItemWidthNew() * (slidesLength + perSlide + 1);
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
     }
@@ -140,13 +147,12 @@ export const dragActionCalcPosition = (params) => {
   sliderItems.style.transform = setTranslate3d(result());
 };
 
-
 export const mouseEventNull = () => {
   document.onmouseup = null;
   document.onmousemove = null;
 };
 
-export const dragStart = (params) => {
+export const dragStart = params => {
   let { e } = params;
   const {
     sliderItems,
@@ -163,11 +169,13 @@ export const dragStart = (params) => {
   const posInitial = getTranslate3d(sliderItems);
   if (e.type === 'touchstart') {
     setPosInitial(posInitial);
-    setPosX1(caroueslTouchStart({
-      e,
-      rtl,
-      sliderMainWidth,
-    }));
+    setPosX1(
+      caroueslTouchStart({
+        e,
+        rtl,
+        sliderMainWidth,
+      }),
+    );
   } else {
     const dragActionParams = {
       e,
@@ -182,7 +190,7 @@ export const dragStart = (params) => {
 };
 
 // eslint-disable-next-line consistent-return
-export const dragAction = (params) => {
+export const dragAction = params => {
   let { e } = params;
   const {
     getPosX1,
@@ -245,7 +253,7 @@ export const dragAction = (params) => {
 };
 
 // eslint-disable-next-line consistent-return
-export const dragEnd = (params) => {
+export const dragEnd = params => {
   const {
     sliderItems,
     threshold,
@@ -270,7 +278,6 @@ export const dragEnd = (params) => {
     mouseEventNull();
     return false;
   }
-
 
   const thresholdNew = () => {
     if (rtl) return -threshold;
@@ -298,9 +305,11 @@ export const dragEnd = (params) => {
   });
   setIndex(calcIndex);
 
-
-  if ((!infinite && calcIndex > slidesLength && calcIndex < slidesLength + perSlide)
-    || (infinite && calcIndex + perSlide === perSlide)
+  if (
+    (!infinite &&
+      calcIndex > slidesLength &&
+      calcIndex < slidesLength + perSlide) ||
+    (infinite && calcIndex + perSlide === perSlide)
   ) {
     sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
   }
@@ -317,10 +326,10 @@ export const dragEnd = (params) => {
   }
 
   if (
-    (!infinite
-    && (getTranslate3d(sliderItems) <= thresholdNew()
-    && getTranslate3d(sliderItems) >= 0))
-    || (rtl && getTranslate3d(sliderItems) <= 0)
+    (!infinite &&
+      getTranslate3d(sliderItems) <= thresholdNew() &&
+        getTranslate3d(sliderItems) >= 0) ||
+    (rtl && getTranslate3d(sliderItems) <= 0)
   ) {
     sliderItems.style.transform = setTranslate3d(0);
     if (nav) {
@@ -329,7 +338,11 @@ export const dragEnd = (params) => {
     }
   }
 
-  if (!infinite && !rtl && getTranslate3d(sliderItems) <= calcFinalItemPositionNew) {
+  if (
+    !infinite &&
+    !rtl &&
+    getTranslate3d(sliderItems) <= calcFinalItemPositionNew
+  ) {
     sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
     if (nav) {
       nextNone(slider);
@@ -337,7 +350,11 @@ export const dragEnd = (params) => {
     }
   }
 
-  if (!infinite && rtl && getTranslate3d(sliderItems) >= calcFinalItemPositionNew) {
+  if (
+    !infinite &&
+    rtl &&
+    getTranslate3d(sliderItems) >= calcFinalItemPositionNew
+  ) {
     sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
     if (nav) {
       nextNone(slider);

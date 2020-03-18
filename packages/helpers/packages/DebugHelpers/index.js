@@ -34,5 +34,4 @@ ApiError.prototype = Object.create(Error.prototype, {
 });
 Reflect.setPrototypeOf(ApiError, Error);
 
-
 export { ApiError, delog };

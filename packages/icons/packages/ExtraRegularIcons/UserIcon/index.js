@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const UserIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="UserIcon"
     width="16"
     height="16"
     viewBox="0 0 16 16"

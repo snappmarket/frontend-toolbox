@@ -17,7 +17,9 @@ describe('ObjectHelpers', () => {
   describe('flattenObject', () => {
     it('should recursively flatten an object', () => {
       const payload = { foo: { bar: 'foobar' } };
-      expect(ObjectHelpers.flattenObject(payload)).toEqual({ 'foo.bar': 'foobar' });
+      expect(ObjectHelpers.flattenObject(payload)).toEqual({
+        'foo.bar': 'foobar',
+      });
     });
     it('should return an empty object cause given object is empty', () => {
       const payload = {};
@@ -27,21 +29,29 @@ describe('ObjectHelpers', () => {
   describe('makeCookieString', () => {
     it('should make a concatenated string of keys and values of an object', () => {
       const payload = { foo: 'foo', bar: 'bar' };
-      expect(ObjectHelpers.makeCookieString(payload)).toEqual('foo=foo; bar=bar');
+      expect(ObjectHelpers.makeCookieString(payload)).toEqual(
+        'foo=foo; bar=bar',
+      );
     });
   });
   describe('safeObjectPropertyRead ', () => {
     it('should safely get a property value from an object', () => {
       const payload = { foo: 'bar' };
-      expect(ObjectHelpers.safeObjectPropertyRead(payload, 'foo')).toEqual('bar');
+      expect(ObjectHelpers.safeObjectPropertyRead(payload, 'foo')).toEqual(
+        'bar',
+      );
     });
     it('should safely get undefined because property is undefined', () => {
-      const payload = { };
-      expect(ObjectHelpers.safeObjectPropertyRead(payload, 'foo')).toEqual(undefined);
+      const payload = {};
+      expect(ObjectHelpers.safeObjectPropertyRead(payload, 'foo')).toEqual(
+        undefined,
+      );
     });
     it('should get default given value, because requested property is undefined', () => {
-      const payload = { };
-      expect(ObjectHelpers.safeObjectPropertyRead(payload, 'foo', 'bar')).toEqual('bar');
+      const payload = {};
+      expect(
+        ObjectHelpers.safeObjectPropertyRead(payload, 'foo', 'bar'),
+      ).toEqual('bar');
     });
   });
   describe('getNextProp ', () => {

@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 import { Slider } from './core/index';
 import { StyledSimpleCarousel } from './core/styles';
 
-const SimpleCarousel = (props) => {
-  const {
-    className, children, slideConfig, showingSlide, refresh,
-  } = props;
+const SimpleCarousel = props => {
+  const { className, children, slideConfig, showingSlide, refresh } = props;
   const sliderRed = useRef(null);
   // eslint-disable-next-line no-unused-vars
   let newSlider = null;
@@ -32,7 +30,7 @@ const SimpleCarousel = (props) => {
     }
   }, [refresh]);
 
-  const goTo = (index) => {
+  const goTo = index => {
     newSlider.goTo(index);
   };
 

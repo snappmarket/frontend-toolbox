@@ -6,11 +6,12 @@ import { Wrapper, theme } from '../../../test/test.helpers';
 import Button from '../index';
 // import IconName from '../../../../icons/packages/FontIcons/InfoIcon';
 
-
 describe('Button ui component tests', () => {
   it('Should render with primary mode and blue color with normal shade and lg size at default', () => {
     const { getByTestId } = render(
-      <Wrapper><Button /></Wrapper>,
+      <Wrapper>
+        <Button />
+      </Wrapper>,
     );
 
     expect(getByTestId('button')).toHaveStyle({
@@ -22,10 +23,11 @@ describe('Button ui component tests', () => {
     });
   });
 
-
   it('Should changes the class when get different types of modifier props', () => {
     const { rerender, getByTestId } = render(
-      <Wrapper><Button modifier="outline" /></Wrapper>,
+      <Wrapper>
+        <Button modifier="outline" />
+      </Wrapper>,
     );
 
     expect(getByTestId('button')).toHaveStyle({
@@ -33,7 +35,11 @@ describe('Button ui component tests', () => {
       color: theme.colors.blue.normal,
     });
 
-    rerender(<Wrapper><Button modifier="link" /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <Button modifier="link" />
+      </Wrapper>,
+    );
     expect(getByTestId('button')).toHaveStyle({
       backgroundColor: '',
       color: theme.colors.blue.normal,
@@ -42,7 +48,9 @@ describe('Button ui component tests', () => {
 
   it('Should changes the class when get different types of size props', () => {
     const { rerender, getByTestId } = render(
-      <Wrapper><Button size="xl" /></Wrapper>,
+      <Wrapper>
+        <Button size="xl" />
+      </Wrapper>,
     );
 
     expect(getByTestId('button')).toHaveStyle({
@@ -51,28 +59,44 @@ describe('Button ui component tests', () => {
       minWidth: 'calc(30 * 1rem)',
     });
 
-    rerender(<Wrapper><Button size="lg" /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <Button size="lg" />
+      </Wrapper>,
+    );
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(4.5 * 1rem)',
       fontSize: 'calc(1.8 * 1rem)',
       minWidth: 'calc(20.6 * 1rem)',
     });
 
-    rerender(<Wrapper><Button size="md" /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <Button size="md" />
+      </Wrapper>,
+    );
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(3.5 * 1rem)',
       fontSize: 'calc(1.4 * 1rem)',
       minWidth: 'calc(20 * 1rem)',
     });
 
-    rerender(<Wrapper><Button size="sm" /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <Button size="sm" />
+      </Wrapper>,
+    );
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(3 * 1rem)',
       fontSize: 'calc(1.4 * 1rem)',
       minWidth: 'calc(16 * 1rem)',
     });
 
-    rerender(<Wrapper><Button size="xs" /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <Button size="xs" />
+      </Wrapper>,
+    );
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(2.5 * 1rem)',
       fontSize: 'calc(1.2 * 1rem)',
@@ -82,7 +106,9 @@ describe('Button ui component tests', () => {
 
   it('Should changes the class when get fullWidth props', () => {
     const { getByTestId } = render(
-      <Wrapper><Button fullWidth /></Wrapper>,
+      <Wrapper>
+        <Button fullWidth />
+      </Wrapper>,
     );
 
     expect(getByTestId('button')).toHaveStyle({
@@ -92,7 +118,9 @@ describe('Button ui component tests', () => {
 
   it('Should changes the class of loadingSpinner when button get direction props', () => {
     const { rerender, getByTestId } = render(
-      <Wrapper><Button direction="right" loading /></Wrapper>,
+      <Wrapper>
+        <Button direction="right" loading />
+      </Wrapper>,
     );
 
     expect(getByTestId('loadingSpinner')).toHaveStyle({
@@ -100,7 +128,11 @@ describe('Button ui component tests', () => {
       marginRight: '2em',
     });
 
-    rerender(<Wrapper><Button direction="left" loading /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <Button direction="left" loading />
+      </Wrapper>,
+    );
     expect(getByTestId('loadingSpinner')).toHaveStyle({
       left: '0',
       marginLeft: '2em',
@@ -111,11 +143,18 @@ describe('Button ui component tests', () => {
     const { getByTestId } = render(
       <Wrapper>
         <Button
-          icon={(
+          icon={
             <svg height="100" width="100" data-testid="buttonIcon">
-              <circle cx="50" cy="50" r="40" stroke="black" strokeWidth="3" fill="red" />
+              <circle
+                cx="50"
+                cy="50"
+                r="40"
+                stroke="black"
+                strokeWidth="3"
+                fill="red"
+              />
             </svg>
-          )}
+          }
         />
       </Wrapper>,
     );
@@ -143,7 +182,6 @@ describe('Button ui component tests', () => {
     );
     const buttonLabel = getByTestId('buttonLabel');
 
-
     expect(getByTestId('button')).toContainElement(buttonLabel);
   });
 
@@ -157,10 +195,11 @@ describe('Button ui component tests', () => {
     expect(getByTestId('button')).toContainHTML('buttonTitle');
   });
 
-
   it('Should add class to element', () => {
     const { getByTestId } = render(
-      <Wrapper><Button className="my-custom-class" /></Wrapper>,
+      <Wrapper>
+        <Button className="my-custom-class" />
+      </Wrapper>,
     );
     const button = getByTestId('button');
 

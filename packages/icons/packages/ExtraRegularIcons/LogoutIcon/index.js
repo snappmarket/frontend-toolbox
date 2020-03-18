@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const LogoutIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="LogoutIcon"
     className={className}
     width="16"
     height="12.153"

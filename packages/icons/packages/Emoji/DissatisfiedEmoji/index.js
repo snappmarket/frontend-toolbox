@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const DissatisfiedEmoji = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="DissatisfiedEmoji"
     width="45.181"
     height="45.181"
     viewBox="0 0 45.181 45.181"

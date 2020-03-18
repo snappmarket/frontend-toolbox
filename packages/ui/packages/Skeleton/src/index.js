@@ -8,7 +8,7 @@ import { StyledBox } from './styles';
  * @returns {*}
  * @constructor
  */
-const BoxSkeleton = (props) => <StyledBox {...props} />;
+const BoxSkeleton = props => <StyledBox {...props} />;
 
 /**
  * Prop types

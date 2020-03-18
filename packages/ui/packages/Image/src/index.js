@@ -10,10 +10,8 @@ import { LogoAnimation } from '../../Loading/src';
  * @returns {*}
  * @constructor
  */
-const Image = (props) => {
-  const {
-    src, loader, error, ...rest
-  } = props;
+const Image = props => {
+  const { src, loader, error, ...rest } = props;
   return <Img src={src} loader={loader} unloader={error} {...rest} />;
 };
 

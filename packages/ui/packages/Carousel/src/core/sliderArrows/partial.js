@@ -9,7 +9,7 @@ import {
   directionSetter,
 } from '../utils';
 
-export const shiftSlideIsDir = (params) => {
+export const shiftSlideIsDir = params => {
   const {
     sliderItems,
     index,
@@ -33,7 +33,6 @@ export const shiftSlideIsDir = (params) => {
   };
   const newIndex = index + perSlide;
 
-
   // when slidesLength <= perSlide arrow is disable
   if (slidesLength <= perSlide) {
     nextNone(slider);
@@ -41,11 +40,14 @@ export const shiftSlideIsDir = (params) => {
     return index;
   }
 
-  if (!infinite && newIndex + perSlide - 1 >= newSlidesLength && responsiveItem !== 1) {
+  if (
+    !infinite &&
+    newIndex + perSlide - 1 >= newSlidesLength &&
+    responsiveItem !== 1
+  ) {
     const result = directionSetter({
       rtl,
       input: calcFinalItemPosition(calcFinalItemPositionParams),
-
     });
     sliderItems.style.transform = setTranslate3d(result);
 
@@ -70,7 +72,7 @@ export const shiftSlideIsDir = (params) => {
   return newIndex;
 };
 
-export const shiftSlideNonDir = (params) => {
+export const shiftSlideNonDir = params => {
   const {
     sliderItems,
     slideSize,

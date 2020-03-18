@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const CoinsIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="CoinsIcon"
     width="16"
     height="14.4"
     viewBox="0 0 16 14.4"

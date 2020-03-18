@@ -7,7 +7,7 @@ import {
   StyledQuietLabel,
 } from './styles';
 
-const Label = (props) => {
+const Label = props => {
   const { type, children, ...rest } = props;
 
   const labels = {

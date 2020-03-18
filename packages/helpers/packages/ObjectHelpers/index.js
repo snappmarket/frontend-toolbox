@@ -5,16 +5,18 @@
  * @param needle
  * @return {{}}
  */
-export const removeByKey = (haystack, needle) => Object.keys(haystack)
-  .filter((key) => {
-    if (Number.isInteger(needle)) return parseInt(key, 0) !== parseInt(needle, 0);
-    return key !== needle;
-  })
-  .reduce((result, current) => {
-    // eslint-disable-next-line no-param-r eassign
-    result[current] = haystack[current];
-    return result;
-  }, {});
+export const removeByKey = (haystack, needle) =>
+  Object.keys(haystack)
+    .filter(key => {
+      if (Number.isInteger(needle))
+        return parseInt(key, 0) !== parseInt(needle, 0);
+      return key !== needle;
+    })
+    .reduce((result, current) => {
+      // eslint-disable-next-line no-param-r eassign
+      result[current] = haystack[current];
+      return result;
+    }, {});
 
 /**
  * @name flattenObject
@@ -22,14 +24,14 @@ export const removeByKey = (haystack, needle) => Object.keys(haystack)
  * @param object
  * @return {{}}
  */
-export const flattenObject = (object) => {
+export const flattenObject = object => {
   const result = {};
 
   // eslint-disable-next-line no-restricted-syntax
-  Object.keys(object).forEach((key) => {
+  Object.keys(object).forEach(key => {
     if (typeof object[key] === 'object' && object[key] !== null) {
       const flatObject = flattenObject(object[key]);
-      Object.keys(flatObject).forEach((itemKey) => {
+      Object.keys(flatObject).forEach(itemKey => {
         result[`${key}.${itemKey}`] = flatObject[itemKey];
       });
     } else {
@@ -45,9 +47,9 @@ export const flattenObject = (object) => {
  * @param cookies
  * @return {string}
  */
-export const makeCookieString = (cookies) => {
+export const makeCookieString = cookies => {
   let cookieString = '';
-  Object.keys(cookies).forEach((cookie) => {
+  Object.keys(cookies).forEach(cookie => {
     cookieString += `${cookie}=${cookies[cookie]}; `;
   });
 
@@ -63,12 +65,13 @@ export const makeCookieString = (cookies) => {
  * @param defaultValue
  * @returns {*}
  */
-export const safeObjectPropertyRead = (object, key, defaultValue = undefined) => key.split('.').reduce((nestedObject, index) => {
-  if (nestedObject && index in nestedObject) {
-    return nestedObject[index];
-  }
-  return undefined;
-}, object) || defaultValue;
+export const safeObjectPropertyRead = (object, key, defaultValue = undefined) =>
+  key.split('.').reduce((nestedObject, index) => {
+    if (nestedObject && index in nestedObject) {
+      return nestedObject[index];
+    }
+    return undefined;
+  }, object) || defaultValue;
 
 /**
  * @name getNextProp

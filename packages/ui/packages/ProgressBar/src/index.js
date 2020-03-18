@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StyledProgressBarWrapper, StyledProgressBar } from './styles';
 
-const ProgressBar = (props) => {
+const ProgressBar = props => {
   const { percent, ...rest } = props;
   return (
     <StyledProgressBarWrapper {...rest}>

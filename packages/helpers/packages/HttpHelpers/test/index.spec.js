@@ -9,13 +9,15 @@ const mockHeaders = {
   'content-type': 'application/json',
 };
 beforeEach(() => {
-  fetch.mockReturnValue(Promise.resolve({
-    json: () => (mockResponse),
-    headers: {
-      get: (key) => mockHeaders[key],
-    },
-    ok: true,
-  }));
+  fetch.mockReturnValue(
+    Promise.resolve({
+      json: () => mockResponse,
+      headers: {
+        get: key => mockHeaders[key],
+      },
+      ok: true,
+    }),
+  );
 });
 afterEach(() => {
   jest.clearAllMocks();
@@ -23,7 +25,8 @@ afterEach(() => {
 
 describe('HttpHelpers', () => {
   describe('fetchWithTimeOut', () => {
-    it('should fetch, and fetch should win the race', async () => { // @todo: should write another test when fetch loses the race and times out
+    it('should fetch, and fetch should win the race', async () => {
+      // @todo: should write another test when fetch loses the race and times out
       const url = 'http://snapp.market';
       const options = { foo: 'bar', signal: new AbortController().signal };
       const response = await HttpHelpers.fetchWithTimeOut(url, options);
@@ -53,11 +56,17 @@ describe('HttpHelpers', () => {
       const url = 'http://snapp.market';
       const data = { foo: 'bar' };
       const options = {
-        credentials: 'include', headers: {}, method: 'POST', signal: new AbortController().signal,
+        credentials: 'include',
+        headers: {},
+        method: 'POST',
+        signal: new AbortController().signal,
       };
       const jwtToken = 'here is my token';
       const response = await HttpHelpers.universalCall({
-        url, data, jwtToken, ...options,
+        url,
+        data,
+        jwtToken,
+        ...options,
       });
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}`, {
@@ -74,51 +83,74 @@ describe('HttpHelpers', () => {
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
       const options = {
-        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+        credentials: 'include',
+        headers: {},
+        method: 'GET',
+        signal: new AbortController().signal,
       };
-      const response = await HttpHelpers.universalCall({ url, params, ...options });
+      const response = await HttpHelpers.universalCall({
+        url,
+        params,
+        ...options,
+      });
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
       expect(response).toEqual(mockResponse);
     });
 
     it('should call an API using universal fetch and get empty response cause it is allowed to get empty response', async () => {
-      fetch.mockReturnValue(Promise.resolve({
-        json: () => ({}),
-        headers: {
-          get: (key) => mockHeaders[key],
-        },
-        ok: true,
-        status: 204,
-      }));
+      fetch.mockReturnValue(
+        Promise.resolve({
+          json: () => ({}),
+          headers: {
+            get: key => mockHeaders[key],
+          },
+          ok: true,
+          status: 204,
+        }),
+      );
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
       const options = {
-        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+        credentials: 'include',
+        headers: {},
+        method: 'GET',
+        signal: new AbortController().signal,
       };
       const response = await HttpHelpers.universalCall({
-        url, allowedNoContent: true, params, ...options,
+        url,
+        allowedNoContent: true,
+        params,
+        ...options,
       });
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
       expect(response).toEqual({});
     });
     it('should call an API using universal fetch and get epi error, because response is invalid', async () => {
-      fetch.mockReturnValue(Promise.resolve({
-        json: () => ({}),
-        headers: {
-          get: () => {},
-        },
-        ok: true,
-      }));
+      fetch.mockReturnValue(
+        Promise.resolve({
+          json: () => ({}),
+          headers: {
+            get: () => {},
+          },
+          ok: true,
+        }),
+      );
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
       const options = {
-        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+        credentials: 'include',
+        headers: {},
+        method: 'GET',
+        signal: new AbortController().signal,
       };
       try {
         await HttpHelpers.universalCall({
-          url, allowedNoContent: true, params, ...options,
+          url,
+          allowedNoContent: true,
+          params,
+          ...options,
         });
       } catch (e) {
         expect(fetch).toHaveBeenCalledTimes(1);
@@ -127,20 +159,28 @@ describe('HttpHelpers', () => {
       }
     });
     it('should call an API using universal fetch and get epi error, because response can not be parsed', async () => {
-      fetch.mockReturnValue(Promise.resolve({
-        headers: {
-          get: (key) => mockHeaders[key],
-        },
-        ok: true,
-      }));
+      fetch.mockReturnValue(
+        Promise.resolve({
+          headers: {
+            get: key => mockHeaders[key],
+          },
+          ok: true,
+        }),
+      );
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
       const options = {
-        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+        credentials: 'include',
+        headers: {},
+        method: 'GET',
+        signal: new AbortController().signal,
       };
       try {
         await HttpHelpers.universalCall({
-          url, allowedNoContent: true, params, ...options,
+          url,
+          allowedNoContent: true,
+          params,
+          ...options,
         });
       } catch (e) {
         expect(fetch).toHaveBeenCalledTimes(1);
@@ -152,21 +192,29 @@ describe('HttpHelpers', () => {
       const error = {
         message: 'something bad happened',
       };
-      fetch.mockReturnValue(Promise.resolve({
-        json: () => (error),
-        headers: {
-          get: (key) => mockHeaders[key],
-        },
-        ok: false,
-      }));
+      fetch.mockReturnValue(
+        Promise.resolve({
+          json: () => error,
+          headers: {
+            get: key => mockHeaders[key],
+          },
+          ok: false,
+        }),
+      );
       const url = 'http://snapp.market';
       const params = { foo: 'bar' };
       const options = {
-        credentials: 'include', headers: {}, method: 'GET', signal: new AbortController().signal,
+        credentials: 'include',
+        headers: {},
+        method: 'GET',
+        signal: new AbortController().signal,
       };
       try {
         await HttpHelpers.universalCall({
-          url, allowedNoContent: true, params, ...options,
+          url,
+          allowedNoContent: true,
+          params,
+          ...options,
         });
       } catch (e) {
         expect(fetch).toHaveBeenCalledTimes(1);
