@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 /* eslint-disable no-nested-ternary */
-const Button = (props) => {
+const Button = props => {
   const {
     modifier,
     size,
@@ -83,12 +83,20 @@ const Button = (props) => {
   );
   const buttons = {
     primary: (
-      <StyledPrimaryButton data-testid="button" fullWidth={fullWidth} {...options}>
+      <StyledPrimaryButton
+        data-testid="button"
+        fullWidth={fullWidth}
+        {...options}
+      >
         {content}
       </StyledPrimaryButton>
     ),
     outline: (
-      <StyledOutlineButton data-testid="button" fullWidth={fullWidth} {...options}>
+      <StyledOutlineButton
+        data-testid="button"
+        fullWidth={fullWidth}
+        {...options}
+      >
         {content}
       </StyledOutlineButton>
     ),

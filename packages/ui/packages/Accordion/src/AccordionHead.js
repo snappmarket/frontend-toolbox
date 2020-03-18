@@ -5,10 +5,8 @@ import PropTypes from 'prop-types';
 import { context as accordionContext } from './context/accordionContext';
 import { StyledAccordionHead } from './style';
 
-const AccordionHead = (props) => {
-  const {
-    id, children, onClick, onOpen, onClose, ...rest
-  } = props;
+const AccordionHead = props => {
+  const { id, children, onClick, onOpen, onClose, ...rest } = props;
   const { changeActive, activeAccordionId } = useContext(accordionContext);
   const isActive = activeAccordionId === id;
   const isChildFunction = typeof children === 'function';

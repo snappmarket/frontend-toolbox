@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const EditIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    id="edit_4_"
+    data-testid="EditIcon"
     width="15"
     height="15.002"
     data-name="edit (4)"

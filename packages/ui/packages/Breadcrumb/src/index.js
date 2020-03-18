@@ -10,7 +10,7 @@ import {
   StyledBreadcrumbItemWrapper,
 } from './styles';
 
-const Breadcrumb = (props) => {
+const Breadcrumb = props => {
   const { items, className, ...rest } = props;
   const breadcrumbItems = items.map((item, index) => (
     // eslint-disable-next-line react/no-array-index-key

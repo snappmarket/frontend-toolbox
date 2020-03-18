@@ -1,8 +1,4 @@
-import {
-  dragAction,
-  dragEnd,
-  dragStart,
-} from './partial';
+import { dragAction, dragEnd, dragStart } from './partial';
 
 export default class DragEvent {
   constructor(params) {
@@ -21,12 +17,7 @@ export default class DragEvent {
 
   initialize() {
     const {
-      config: {
-        responsive,
-        threshold,
-        rtl,
-        nav,
-      },
+      config: { responsive, threshold, rtl, nav },
       getDrag,
       getInfinite,
       getSliderItems,
@@ -78,7 +69,7 @@ export default class DragEvent {
       dragEnd(dragStartParams);
     };
 
-    const dragActionCall = (e) => {
+    const dragActionCall = e => {
       const dragActionParams = {
         e,
         getPosX1,
@@ -100,7 +91,7 @@ export default class DragEvent {
       dragAction(dragActionParams);
     };
 
-    const dragStartCall = (e) => {
+    const dragStartCall = e => {
       const dragStartParams = {
         e,
         sliderItems,

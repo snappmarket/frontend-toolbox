@@ -4,7 +4,7 @@
  * @param key
  * @returns {string}
  */
-export const getCookie = (key) => {
+export const getCookie = key => {
   const name = `${key}=`;
   const decodedCookie = decodeURIComponent(document.cookie);
   const cookies = decodedCookie.split(';');
@@ -41,7 +41,7 @@ export const setCookie = (name, value, expireDays = 90, path = '/') => {
  * @author Reza Erami
  * @param name
  */
-export const deleteCookie = (name) => {
+export const deleteCookie = name => {
   const expires = 'expires=Thu, 01 Jan 1970 00:00:01 GMT';
   document.cookie = `${name}=${null};${expires}`;
 };

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const PlusIcon = ({ className, size, color }) => (
   <svg
+    data-testid="PlusIcon"
     className={className}
     style={{
       width: size * 10,

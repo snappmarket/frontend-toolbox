@@ -12,16 +12,17 @@ import {
   directionSetter,
 } from '../utils';
 
-export const dotsItemsGenerator = (params) => {
+export const dotsItemsGenerator = params => {
   const { slidesLength, dotsSelector, responsive } = params;
   for (let i = 0; i < calcSliderGroupCount({ responsive, slidesLength }); i++) {
-    dotsSelector.innerHTML += `<li class="dots-item${!i
-      ? ' active' : ''}" data-dot-index="${i + 1}">${i + 1}</li>`;
+    dotsSelector.innerHTML += `<li class="dots-item${
+      !i ? ' active' : ''
+    }" data-dot-index="${i + 1}">${i + 1}</li>`;
   }
   return dotsSelector;
 };
 
-export const dotsItemsClick = (params) => {
+export const dotsItemsClick = params => {
   const {
     indexItem,
     perSlide,
@@ -61,14 +62,14 @@ export const dotsItemsClick = (params) => {
     allowShift = false;
   }
   return {
-    index: infinite ? (indexItem + perSlide + 1) : indexItem,
+    index: infinite ? indexItem + perSlide + 1 : indexItem,
     allowShift,
     posInitial: getTranslate3d(sliderItems),
   };
 };
 
 // eslint-disable-next-line consistent-return
-export const setSliderItemsPositionAfterDotClick = (params) => {
+export const setSliderItemsPositionAfterDotClick = params => {
   const {
     indexItem,
     slideSize,

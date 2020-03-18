@@ -14,7 +14,7 @@ import {
   StyledModalFooter,
 } from './styles';
 
-const Modal = (props) => {
+const Modal = props => {
   const {
     className,
     handleClose,
@@ -87,26 +87,27 @@ const Modal = (props) => {
     }
   }, [position, modalContainer, visibility, modalRef]);
 
-  const render = () => visibility ? (
-    <StyledModalWrapper className={className}>
-      <StyledLightBox onClick={handleClose || undefined} />
-      <StyledModal width={width} position={position} ref={modalRef}>
-        {handleClose && typeof handleClose === 'function' && (
-          <StyledCloseModalButton
-            className="close-modal-button"
-            modifier="link"
-            icon={<CrossIcon />}
-            size="sm"
-            color="gray"
-            onClick={handleClose}
-          />
-        )}
-        {!!header && <StyledModalHeader>{header}</StyledModalHeader>}
-        {!!children && <StyledModalContent>{children}</StyledModalContent>}
-        {!!footer && <StyledModalFooter>{footer}</StyledModalFooter>}
-      </StyledModal>
-    </StyledModalWrapper>
-  ) : null;
+  const render = () =>
+    visibility ? (
+      <StyledModalWrapper className={className}>
+        <StyledLightBox onClick={handleClose || undefined} />
+        <StyledModal width={width} position={position} ref={modalRef}>
+          {handleClose && typeof handleClose === 'function' && (
+            <StyledCloseModalButton
+              className="close-modal-button"
+              modifier="link"
+              icon={<CrossIcon />}
+              size="sm"
+              color="gray"
+              onClick={handleClose}
+            />
+          )}
+          {!!header && <StyledModalHeader>{header}</StyledModalHeader>}
+          {!!children && <StyledModalContent>{children}</StyledModalContent>}
+          {!!footer && <StyledModalFooter>{footer}</StyledModalFooter>}
+        </StyledModal>
+      </StyledModalWrapper>
+    ) : null;
   if (modalContainer) {
     return createPortal(render(), modalContainer);
   }

@@ -11,7 +11,7 @@ export const recursiveJsonParse = (collection = {}, value) => {
   if (typeof value === 'string' && /^[\[|\{](\s|.*|\w)*[\]|\}]$/.test(value)) {
     try {
       const parsedValue = JSON.parse(value);
-      Object.keys(parsedValue).forEach((key) => {
+      Object.keys(parsedValue).forEach(key => {
         collection[key] = recursiveJsonParse(collection[key], parsedValue[key]);
       });
     } catch (e) {

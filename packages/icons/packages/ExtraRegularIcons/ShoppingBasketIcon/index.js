@@ -6,6 +6,7 @@ const ShoppingBasketIcon = ({ className, size, color }) => (
     xmlns="http://www.w3.org/2000/svg"
     height="21.013"
     viewBox="0 0 23 21.013"
+    data-testid="ShoppingBasketIcon"
     className={className}
     style={{
       width: size * 10,

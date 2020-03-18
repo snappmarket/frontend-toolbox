@@ -9,16 +9,12 @@ import {
 } from './styles';
 
 const Input = React.forwardRef((props, ref) => {
-  const {
-    status, message, label, id, required, className, ...rest
-  } = props;
+  const { status, message, label, id, required, className, ...rest } = props;
   return (
     <StyledInputWrapper>
       {label && props.id && (
         <StyledLabel htmlFor={id}>
-          {label}
-          {' '}
-          {required && <StyledStar>*</StyledStar>}
+          {label} {required && <StyledStar>*</StyledStar>}
         </StyledLabel>
       )}
       <StyledInput

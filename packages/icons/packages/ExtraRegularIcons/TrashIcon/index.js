@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const TrashIcon = ({ className, size, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    data-testid="TrashIcon"
     id="delete_2_"
     width="12.443"
     height="15.32"

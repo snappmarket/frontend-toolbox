@@ -7,10 +7,8 @@ import { context as tabSwitcherContext } from './context';
 
 import { StyledTab } from './style';
 
-const Tab = (props) => {
-  const {
-    id, children, onChangeTab, onSwitch, className, ...rest
-  } = props;
+const Tab = props => {
+  const { id, children, onChangeTab, onSwitch, className, ...rest } = props;
   const { changeTab, activeTabId } = useContext(tabSwitcherContext);
 
   useDidUpdateEffect(() => {
@@ -55,7 +53,7 @@ Tab.defaultProps = {
   className: '',
   // loading: false,
   direction: 'right',
-  onChangeTab: (f) => f,
-  onSwitch: (f) => f,
+  onChangeTab: f => f,
+  onSwitch: f => f,
 };
 export default Tab;

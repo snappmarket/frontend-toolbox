@@ -4,7 +4,7 @@
  * @param OSVersion
  * @return {*}
  */
-export const getOSName = (OSVersion) => {
+export const getOSName = OSVersion => {
   let OSName = OSVersion;
   const oSMapper = {
     Win: 'Windows',
@@ -14,7 +14,7 @@ export const getOSName = (OSVersion) => {
     Android: 'Android',
     iPhone: 'IOS',
   };
-  Object.keys(oSMapper).forEach((key) => {
+  Object.keys(oSMapper).forEach(key => {
     if (OSName.indexOf(key) !== -1) {
       OSName = oSMapper[key];
     }

@@ -4,9 +4,9 @@
  * @param string
  * @return {string}
  */
-export const persianNumber = (string) => {
+export const persianNumber = string => {
   const numbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-  return `${string}`.replace(/[0-9]/g, (word) => numbers[+word]);
+  return `${string}`.replace(/[0-9]/g, word => numbers[+word]);
 };
 
 /**
@@ -15,9 +15,10 @@ export const persianNumber = (string) => {
  * @param string
  * @return {string}
  */
-export const englishNumber = (string) => `${string}`
-  .replace(/[\u0660-\u0669]/g, (c) => c.charCodeAt(0) - 0x0660)
-  .replace(/[\u06f0-\u06f9]/g, (c) => c.charCodeAt(0) - 0x06f0);
+export const englishNumber = string =>
+  `${string}`
+    .replace(/[\u0660-\u0669]/g, c => c.charCodeAt(0) - 0x0660)
+    .replace(/[\u06f0-\u06f9]/g, c => c.charCodeAt(0) - 0x06f0);
 
 /**
  * @name generateKey
@@ -35,7 +36,8 @@ export const generateKey = () => {
  * @description returns a regular expression for validating cellphone number with format of cellphone numbers of Iran
  * @return {string}
  */
-export const cellphoneValidate = () => '(?:(\u0660\u0669[\u0660-\u0669][\u0660-\u0669]{8})|(\u06F0\u06F9[\u06F0-\u06F9][\u06F0-\u06F9]{8})|(09[0-9][0-9]{8}|\\+98[0-9][0-9]{9}))$';
+export const cellphoneValidate = () =>
+  '(?:(\u0660\u0669[\u0660-\u0669][\u0660-\u0669]{8})|(\u06F0\u06F9[\u06F0-\u06F9][\u06F0-\u06F9]{8})|(09[0-9][0-9]{8}|\\+98[0-9][0-9]{9}))$';
 
 /**
  * @name currencyPrice
@@ -43,4 +45,5 @@ export const cellphoneValidate = () => '(?:(\u0660\u0669[\u0660-\u0669][\u0660-\
  * @param amount
  * @return {string}
  */
-export const currencyPrice = (amount) => `${persianNumber(`${amount}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','))}`;
+export const currencyPrice = amount =>
+  `${persianNumber(`${amount}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','))}`;
