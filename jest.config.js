@@ -6,14 +6,15 @@ module.exports = {
   coverageDirectory: '.jest-coverage',
   moduleFileExtensions: ['js'],
   collectCoverageFrom: [
-    'packages/*/packages/**/*.js',
+    '**/*.js',
     '!**/node_modules/**',
     '!**/vendor/**',
     '!**/dist/**',
     '!.docz',
   ],
   rootDir: process.cwd(),
-  roots: ['<rootDir>/packages', '<rootDir>/scripts'],
+  roots: ['<rootDir>/packages', '<rootDir>/scripts', '<rootDir>/test'],
+  transform: { '\\.js$': ['babel-jest', { rootMode: 'upward' }] },
   // coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
   coverageReporters: ['html', 'text'],
   coverageThreshold: {
