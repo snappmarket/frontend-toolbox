@@ -122,8 +122,8 @@
     ]
   },
   "engines": {
-    "npm": "6.11.2",
-    "node": "10.16.1"
+    "npm": "^6.11.2",
+    "node": "^10.16.1"
   },
   "pre-commit": "lint:staged"
 }

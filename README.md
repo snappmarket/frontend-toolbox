@@ -1,10 +1,20 @@
-# SnappMarket frontend powerful tools
+# ⚙ SnappMarket frontend powerful tools
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![version](https://img.shields.io/npm/v/@snappmarket/ui.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/ui)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/ui.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/ui)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/ui.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+
 `hooks`, `helpers`, `ui components` and `icons` that we used in new version of : http://snappmarket
 
-## [Hooks](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks) Found Here
+## get started
+```bash 
+npm i @snappmarket/ui
+```
+
+## ⚒ [Hooks](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks) Found Here
 
 | Hook Name                                         |  Description                                                     |
 | ------------------------------------------------- | ---------------------------------------------------------------- |
@@ -18,7 +28,7 @@
 
 
 
-## [UI](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui) Components found here
+## 💈 [UI](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui) Components found here
 
 | Component                                         |  Description                                                    |
 | ------------------------------------------------- | --------------------------------------------------------------- |
@@ -54,7 +64,7 @@
 | [Tooltip](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui/packages/Tooltip)                      | Tooltip Ui component          |     
 
 
-## [Helpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers) Found Here
+## 💊 [Helpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers) Found Here
 
 | Helper                                                                                                                | Methods |
 | --------------------------------------------------------------------------------------------------------------------- | -------- | 
@@ -76,7 +86,7 @@
 | [WindowHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/WindowHelpers)       | `getPathName`, `getWindowSize`    | 
 
 
-## [Icons](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/icons) found here
+## 💎 [Icons](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/icons) found here
 
 - 💯 100% tested react 100+ svg icon components
 

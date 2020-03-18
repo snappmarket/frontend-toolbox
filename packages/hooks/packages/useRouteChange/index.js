@@ -8,6 +8,8 @@ import { useHistory } from 'react-router-dom';
 const useRouteChange = (fn) => {
   const history = useHistory();
   useEffect(() => history.listen(fn), [history]);
+
+  return true;
 };
 
 export default useRouteChange;
