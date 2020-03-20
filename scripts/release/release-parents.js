@@ -12,7 +12,7 @@ console.log(`- releasing ${passedVersion} !`);
     await changeVersionInPackageJson(passedVersion);
 
     // Run external tool synchronously
-    if (shell.exec(`yarn build && npm publish dist ${!['--canary', '--alpha'].includes(passedVersion) ? '--tag latest' : ''}`).code !== 0) {
+    if (shell.exec(`npm publish dist ${!['--canary', '--alpha'].includes(passedVersion) ? '--tag latest' : ''}`).code !== 0) {
       shell.echo('Release build, or publish failed');
       shell.exit(1);
     }
