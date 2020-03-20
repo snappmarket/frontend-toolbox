@@ -1,0 +1,13 @@
+name: Pull Request updated
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  history:
+    name: Pull Request Body
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.pull_request.head.ref, 'release/')
+    steps:
+      - name: Pull Request Body
+        uses: technote-space/pr-commit-body-action@v1
