@@ -1,18 +1,29 @@
 # ⚙ SnappMarket frontend powerful tools
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![version](https://img.shields.io/npm/v/@snappmarket/ui.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/ui)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/ui.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/ui)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![MIT License](https://img.shields.io/npm/l/@snappmarket/ui.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+[![CodeFactor](https://www.codefactor.io/repository/github/snappmarket/frontend-toolbox/badge/develop)](https://www.codefactor.io/repository/github/snappmarket/frontend-toolbox/overview/develop)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 `hooks`, `helpers`, `ui components` and `icons` that we used in new version of : http://snappmarket
 
+
 ## get started
-```bash 
+```bash
 npm i @snappmarket/ui
+npm i @snappmarket/hooks
+npm i @snappmarket/helpers
+
+// OR 
+
+yarn add @snappmarket/ui
+yarn add @snappmarket/hooks
+yarn add @snappmarket/helpers
 ```
+
 
 ## ⚒ [Hooks](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks) Found Here
 

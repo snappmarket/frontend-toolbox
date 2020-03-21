@@ -1,23 +1,18 @@
 ---
-name: icons
+name: .intro
 route: /icons
+menu: 4.Icons
 ---
-import { Playground, Props } from 'docz';
-import { Row, Col} from '../ui/packages';
-import * as Icons from './packages/index';
 
-# Icons
+## 💎 [Icons](/icons) found here
 
-<Row>
-  {Object.keys(Icons).map(icon => {
-    const Icon = Icons[icon];
-    return (
-      <Col xs={3} className="text-center">
-        <div className="bg-gray-ultra-light p-2">
-          <Icon size={4} />
-        </div>
-        <code>{icon}</code>
-      </Col>
-    )
-  })}
-</Row>
+- 💯 100% tested react 100+ svg icon components
+- super minified and small packages
+
+
+| Icons pack                                              | Description |
+| ------------------------------------------------------- | ----------- |
+| [Emoji](/icons/Emoji)                                   |             |
+| [FontIcons](/icons/FontIcons)                           |             |
+| [Followup](/icons/Followup)                             |             |
+| [ExtraRegularIcons](/icons/ExtraRegularIcons)           |             |
