@@ -1,3 +1,5 @@
+console.log(process.cwd());
+
 module.exports = {
   haste: {
     hasteImplModulePath: null,
@@ -6,22 +8,24 @@ module.exports = {
   coverageDirectory: '.jest-coverage',
   moduleFileExtensions: ['js'],
   collectCoverageFrom: [
-    'packages/*/packages/**/*.js',
+    '**/*.js',
     '!**/node_modules/**',
     '!**/vendor/**',
     '!**/dist/**',
     '!.docz',
   ],
   rootDir: process.cwd(),
-  roots: ['<rootDir>/packages', '<rootDir>/scripts'],
+  roots: [ '<rootDir>'],
+  transform: { '.js$': ['babel-jest', { rootMode: 'upward' }] },
+  testPathIgnorePatterns: ['<rootDir>/.docz'],
   // coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
   coverageReporters: ['html', 'text'],
   coverageThreshold: {
     global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
+      branches: 15,
+      functions: 15,
+      lines: 15,
+      statements: 15,
     },
   },
   // testPathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
