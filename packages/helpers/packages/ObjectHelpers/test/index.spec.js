@@ -60,4 +60,27 @@ describe('ObjectHelpers', () => {
       expect(ObjectHelpers.getNextProp(payload, 'foo')).toEqual('bar');
     });
   });
+  describe('serializeObject', () => {
+    it('should convert object properties to query parameter ', () => {
+      const payload = {
+        number: 1,
+        string: 'test',
+        array: [1, 2, 3],
+        object: { foo: 'foo', bar: 'bar' },
+        boolean: true,
+      };
+      const actual =
+        'number=1&string=test&array[]=1&array[]=2&array[]=3&object[foo]=foo&object[bar]=bar&boolean=true';
+      expect(ObjectHelpers.serializeObject(payload)).toEqual(actual);
+    });
+    it('should not convert empty object properties to query parameter ', () => {
+      const payload = {
+        number: undefined,
+        object: {},
+        array: [],
+      };
+      const actual = '';
+      expect(ObjectHelpers.serializeObject(payload)).toEqual(actual);
+    });
+  });
 });

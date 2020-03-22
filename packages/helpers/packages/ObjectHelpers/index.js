@@ -85,3 +85,31 @@ export const getNextProp = (object, key) => {
   const index = keys.indexOf(key);
   return index !== -1 && keys[index + 1] && object[keys[index + 1]];
 };
+
+/**
+ * @function
+ * @name serializeObject
+ * @description serializes the properties of given object
+ * @param   object    {object}    object to be serialized by keys
+ * @returns {string}
+ */
+export const serializeObject = object => {
+  const result = [];
+  Object.keys(object).forEach(property => {
+    if (typeof object[property] === 'object') {
+      if (Array.isArray(object[property]) && object[property].length) {
+        object[property].forEach(item => result.push(`${property}[]=${item}`));
+      } else if (
+        !Array.isArray(object[property]) &&
+        Object.keys(object[property]).length
+      ) {
+        Object.keys(object[property]).forEach(key =>
+          result.push(`${property}[${key}]=${object[property][key]}`),
+        );
+      }
+    } else if (typeof object[property] !== 'undefined') {
+      result.push(`${property}=${object[property]}`);
+    }
+  });
+  return result.join('&');
+};
