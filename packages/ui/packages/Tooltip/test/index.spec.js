@@ -13,7 +13,7 @@ describe('Tooltip ui component tests', () => {
     );
 
     expect(getByTestId('tooltip')).toHaveStyle({
-      left: '50%',
+   
       top: 'calc(1rem * -1)',
       transform: 'translate(-50%, -100%)',
     });

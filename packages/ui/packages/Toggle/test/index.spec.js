@@ -25,8 +25,8 @@ describe('Toggle ui component tests', () => {
     );
 
     expect(getByTestId('toggle')).toHaveStyle({
-      backgroundColor: theme.colors.gray.light,
-      justifyContent: 'flex-end',
+      backgroundColor: theme.colors.green.light,
+      justifyContent: 'start',
     });
 
   });
