@@ -1,7 +1,8 @@
 /**
+ * @function
  * @name getCookie
  * @desc Gives us a cookie by name
- * @param key
+ * @param   key       {string}    name of the cookie you want
  * @returns {string}
  */
 export const getCookie = key => {
@@ -21,12 +22,13 @@ export const getCookie = key => {
 };
 
 /**
+ * @function
  * @name setCookie
  * @description Sets a cookie
- * @param name
- * @param value
- * @param expireDays
- * @param path
+ * @param name          {string}      name of the cookie
+ * @param value         {string}      value of the cookie
+ * @param expireDays    {number}      number of the days that cookie could be valid
+ * @param path          {string}      path of the cookie to set
  */
 export const setCookie = (name, value, expireDays = 90, path = '/') => {
   const d = new Date();
@@ -36,10 +38,11 @@ export const setCookie = (name, value, expireDays = 90, path = '/') => {
 };
 
 /**
+ * @function
  * @name deleteCookie
- * @description delete a cookie
+ * @description deletes a cookie
  * @author Reza Erami
- * @param name
+ * @param name    {string}    name of the cookie you want to delete
  */
 export const deleteCookie = name => {
   const expires = 'expires=Thu, 01 Jan 1970 00:00:01 GMT';
