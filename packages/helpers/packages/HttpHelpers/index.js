@@ -3,7 +3,7 @@ import AbortController from 'abort-controller';
 import fetch from 'isomorphic-unfetch';
 
 import { ApiError, delog } from '../DebugHelpers';
-import { serializeObject } from '../ArrayHelpers';
+import { serializeObject } from '../ObjectHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
 /**
