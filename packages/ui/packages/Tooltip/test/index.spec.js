@@ -13,34 +13,30 @@ describe('Tooltip ui component tests', () => {
     );
 
     expect(getByTestId('tooltip')).toHaveStyle({
-   
+      left: '50%',
       top: 'calc(1rem * -1)',
-      transform: 'translate(-50%, -100%)',
     });
 
-    rerender(<Wrapper><Tooltip position='bottom'>tooltip title</Tooltip></Wrapper>)
+    rerender(<Wrapper><Tooltip position='bottom'>tooltip</Tooltip></Wrapper>)
     expect(getByTestId('tooltip')).toHaveStyle({
       left: '50%',
       bottom: 'calc(1rem * -1)',
-      transform: 'translate(-50%, -100%)',
     });
 
-    rerender(<Wrapper><Tooltip position='left'>tooltip title</Tooltip></Wrapper>)
+    rerender(<Wrapper><Tooltip position='left'>tooltip</Tooltip></Wrapper>)
     expect(getByTestId('tooltip')).toHaveStyle({
       left: 'calc(1rem * -1)',
       top: '50%',
-      transform: 'translate(-100%, -50%)',
     });
 
-    rerender(<Wrapper><Tooltip position='right'>tooltip title</Tooltip></Wrapper>)
+    rerender(<Wrapper><Tooltip position='right'>tooltip</Tooltip></Wrapper>)
     expect(getByTestId('tooltip')).toHaveStyle({
       right: 'calc(1rem * -1)',
       top: '50%',
-      transform: 'translate(-100%, -50%)',
     });
 
-    rerender(<Wrapper><Tooltip position='right'>tooltip title</Tooltip></Wrapper>)
-    expect(getByTestId('tooltip')).toContainHTML('tooltip title')
+    rerender(<Wrapper><Tooltip position='right'>tooltip</Tooltip></Wrapper>)
+    expect(getByTestId('tooltip')).toContainHTML('tooltip')
   });
 
   it('Should add class to element', () => {
