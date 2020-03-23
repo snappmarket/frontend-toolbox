@@ -21,12 +21,12 @@ describe('Toggle ui component tests', () => {
 
   it('Should changes the style when selected props get false value', () => {
     const { getByTestId } = render(
-      <Wrapper><Toggle selected="false" /></Wrapper>,
+      <Wrapper><Toggle selected={false} /></Wrapper>,
     );
 
     expect(getByTestId('toggle')).toHaveStyle({
-      backgroundColor: theme.colors.green.light,
-      justifyContent: 'start',
+      backgroundColor: theme.colors.gray.light,
+      justifyContent: 'flex-end',
     });
 
   });

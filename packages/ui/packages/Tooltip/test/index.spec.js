@@ -17,19 +17,19 @@ describe('Tooltip ui component tests', () => {
       top: 'calc(1rem * -1)',
     });
 
-    rerender(<Wrapper><Tooltip position='bottom'>tooltip</Tooltip></Wrapper>)
+    rerender(<Wrapper><Tooltip position='bottom'>tooltip title</Tooltip></Wrapper>)
     expect(getByTestId('tooltip')).toHaveStyle({
       left: '50%',
       bottom: 'calc(1rem * -1)',
     });
 
-    rerender(<Wrapper><Tooltip position='left'>tooltip</Tooltip></Wrapper>)
+    rerender(<Wrapper><Tooltip position='left'>tooltip title</Tooltip></Wrapper>)
     expect(getByTestId('tooltip')).toHaveStyle({
       left: 'calc(1rem * -1)',
       top: '50%',
     });
 
-    rerender(<Wrapper><Tooltip position='right'>tooltip</Tooltip></Wrapper>)
+    rerender(<Wrapper><Tooltip position='right'>tooltip title</Tooltip></Wrapper>)
     expect(getByTestId('tooltip')).toHaveStyle({
       right: 'calc(1rem * -1)',
       top: '50%',
