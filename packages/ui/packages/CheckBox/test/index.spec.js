@@ -5,11 +5,32 @@ import '@testing-library/jest-dom/extend-expect';
 import { Wrapper, theme } from '../../../test/test.helpers';
 import CheckBox from '../index';
 
-
 describe('CheckBox ui component tests', () => {
+  it('Find circle SVG on disable', () => {
+    const { container } = render(
+      <Wrapper>
+        <CheckBox disabled className="circle" />
+      </Wrapper>,
+    );
+    const selectSvgTitle = container.querySelector('svg title');
+    const convertValuesToArray = Object.values(selectSvgTitle).pop();
+    expect(convertValuesToArray.children).toBe('circle');
+  });
+
+  it('Should change className to circle', () => {
+    const { getByTestId } = render(
+      <Wrapper>
+        <CheckBox disabled className="circle" />
+      </Wrapper>,
+    );
+    expect(getByTestId('checkBox')).toHaveClass('circle');
+  });
+
   it('Should render with green status and size of 2rem at default', () => {
     const { getByTestId } = render(
-      <Wrapper><CheckBox /></Wrapper>,
+      <Wrapper>
+        <CheckBox />
+      </Wrapper>,
     );
 
     expect(getByTestId('checkBox')).toHaveStyle({
@@ -33,29 +54,47 @@ describe('CheckBox ui component tests', () => {
 
   it('Should changes the class when get different types of status props', () => {
     const { rerender, getByTestId } = render(
-      <Wrapper><CheckBox status="gray" selected /></Wrapper>,
+      <Wrapper>
+        <CheckBox status="gray" selected />
+      </Wrapper>,
     );
 
     expect(getByTestId('checkBox')).toHaveStyle({
       backgroundColor: theme.colors.gray.light,
     });
 
-    rerender(<Wrapper><CheckBox status="yellow" selected /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <CheckBox status="yellow" selected />
+      </Wrapper>,
+    );
     expect(getByTestId('checkBox')).toHaveStyle({
       backgroundColor: theme.colors.yellow.light,
     });
 
-    rerender(<Wrapper><CheckBox status="red" selected /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <CheckBox status="red" selected />
+      </Wrapper>,
+    );
     expect(getByTestId('checkBox')).toHaveStyle({
       backgroundColor: theme.colors.red.light,
     });
 
-    rerender(<Wrapper><CheckBox status="orange" selected /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <CheckBox status="orange" selected />
+      </Wrapper>,
+    );
     expect(getByTestId('checkBox')).toHaveStyle({
       backgroundColor: theme.colors.orange.light,
     });
 
-    rerender(<Wrapper><CheckBox status="blue" selected /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <CheckBox status="blue" selected />
+      </Wrapper>,
+    );
     expect(getByTestId('checkBox')).toHaveStyle({
       backgroundColor: theme.colors.blue.light,
     });
@@ -63,7 +102,9 @@ describe('CheckBox ui component tests', () => {
 
   it('Should changes the class when get disabled props', () => {
     const { getByTestId } = render(
-      <Wrapper><CheckBox disabled /></Wrapper>,
+      <Wrapper>
+        <CheckBox disabled />
+      </Wrapper>,
     );
 
     expect(getByTestId('checkBox')).toHaveStyle({
@@ -73,7 +114,9 @@ describe('CheckBox ui component tests', () => {
 
   it('Should add class to element', () => {
     const { getByTestId } = render(
-      <Wrapper><CheckBox className="my-custom-class" /></Wrapper>,
+      <Wrapper>
+        <CheckBox className="my-custom-class" />
+      </Wrapper>,
     );
 
     expect(getByTestId('checkBox')).toHaveClass('my-custom-class');
