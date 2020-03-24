@@ -58,17 +58,12 @@ jobs:
       # test and coverage
       - run:
           command: yarn test --verbose=true --maxWorkers=2
-      - run:
-          command: yarn test --maxWorkers=2 --collectCoverage=true
 
       # prettier and linter
       - run:
           command: yarn prettify
       - run:
           command: yarn lint:eslint:fix
-
-      - store_artifacts:
-          path: .jest-coverage/coverage-final.json
 
 
   deploy:

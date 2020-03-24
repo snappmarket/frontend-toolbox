@@ -23,7 +23,7 @@ let version = '';
     );
     version = gatheredVersionInfo.version;
 
-    if (shell.exec(`lerna run --parallel release:child -- -- ${version}`).code !== 0) {
+    if (shell.exec(`lerna run --parallel build && lerna run --parallel release:child -- -- ${version}`).code !== 0) {
       shell.echo('Release build, or publish failed');
       shell.exit(1);
     }
