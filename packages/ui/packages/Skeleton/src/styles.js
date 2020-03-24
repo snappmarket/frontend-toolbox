@@ -21,8 +21,8 @@ const StyledBox = Styled.div`
   animation-iteration-count: infinite;
   animation-duration: ${props => `${ props.animationDuration}s`};
   display: 'flex';
-  justify-content: ${props => props.justifyContent || 'center'};
-  align-items: ${props => props.alignItems || 'center'};
+  justify-content: ${props => props.justifyContent ? 'center': 'flex-start'};
+  align-items: ${props => props.alignItems ? props.alignItems: 'center'};
   width: ${props => decideMeasurement(props.width)};
   height: ${props => decideMeasurement(props.height)};
   @keyframes alertPulse {

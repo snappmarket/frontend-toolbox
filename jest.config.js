@@ -11,12 +11,14 @@ module.exports = {
     '!**/vendor/**',
     '!**/dist/**',
     '!.docz',
+    '!scripts',
+    '!*.config.js',
   ],
   rootDir: process.cwd(),
   roots: ['<rootDir>'],
   testPathIgnorePatterns: ['<rootDir>/.docz'],
   transform: { '.js$': ['babel-jest', { rootMode: 'upward' }] },
-  // coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
+  coveragePathIgnorePatterns: ['<rootDir>/scripts'],
   coverageReporters: ['json', 'lcov', 'clover', 'html', 'text'],
   coverageThreshold: {
     global: {
