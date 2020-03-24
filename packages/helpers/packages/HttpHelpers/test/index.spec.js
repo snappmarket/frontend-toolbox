@@ -8,6 +8,7 @@ const mockResponse = { foo: 'bar' };
 const mockHeaders = {
   'content-type': 'application/json',
 };
+const abortController = new AbortController();
 beforeEach(() => {
   fetch.mockReturnValue(
     Promise.resolve({
@@ -26,14 +27,27 @@ afterEach(() => {
 describe('HttpHelpers', () => {
   describe('fetchWithTimeOut', () => {
     it('should fetch, and fetch should win the race', async () => {
-      // @todo: should write another test when fetch loses the race and times out
       const url = 'http://snapp.market';
-      const options = { foo: 'bar', signal: new AbortController().signal };
+      const options = { foo: 'bar', signal: abortController.signal };
       const response = await HttpHelpers.fetchWithTimeOut(url, options);
       const result = await response.json();
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(url, options);
       expect(result).toEqual(mockResponse);
+    });
+    it('should not fetch, and kill the request because of timeout', () => {
+      fetch.mockReturnValue(Promise.reject(new Error('TIMEOUT')))
+      const url = 'http://snapp.market';
+      const options = { foo: 'bar', signal: abortController.signal };
+      HttpHelpers.fetchWithTimeOut(url, options, 0);
+      expect(fetch).toHaveBeenCalledTimes(1);
+    });
+    it('should not fetch, but not kill the request meanwhile', () => {
+      fetch.mockReturnValue(Promise.reject(new Error('SOMETHING_BUT_TIMEOUT')))
+      const url = 'http://snapp.market';
+      const options = { foo: 'bar', signal: abortController.signal };
+      HttpHelpers.fetchWithTimeOut(url, options, 0);
+      expect(fetch).toHaveBeenCalledTimes(1);
     });
   });
   describe('universalCall', () => {
@@ -44,7 +58,7 @@ describe('HttpHelpers', () => {
         credentials: 'same-origin',
         headers: {},
         method: 'GET',
-        signal: new AbortController().signal,
+        signal: abortController.signal,
       };
       const response = await HttpHelpers.universalCall({ url, params });
       expect(fetch).toHaveBeenCalledTimes(1);
@@ -59,7 +73,7 @@ describe('HttpHelpers', () => {
         credentials: 'include',
         headers: {},
         method: 'POST',
-        signal: new AbortController().signal,
+        signal: abortController.signal,
       };
       const jwtToken = 'here is my token';
       const response = await HttpHelpers.universalCall({
@@ -86,7 +100,7 @@ describe('HttpHelpers', () => {
         credentials: 'include',
         headers: {},
         method: 'GET',
-        signal: new AbortController().signal,
+        signal: abortController.signal,
       };
       const response = await HttpHelpers.universalCall({
         url,
@@ -115,7 +129,7 @@ describe('HttpHelpers', () => {
         credentials: 'include',
         headers: {},
         method: 'GET',
-        signal: new AbortController().signal,
+        signal: abortController.signal,
       };
       const response = await HttpHelpers.universalCall({
         url,
@@ -143,7 +157,7 @@ describe('HttpHelpers', () => {
         credentials: 'include',
         headers: {},
         method: 'GET',
-        signal: new AbortController().signal,
+        signal: abortController.signal,
       };
       try {
         await HttpHelpers.universalCall({
@@ -173,7 +187,7 @@ describe('HttpHelpers', () => {
         credentials: 'include',
         headers: {},
         method: 'GET',
-        signal: new AbortController().signal,
+        signal: abortController.signal,
       };
       try {
         await HttpHelpers.universalCall({
@@ -207,7 +221,7 @@ describe('HttpHelpers', () => {
         credentials: 'include',
         headers: {},
         method: 'GET',
-        signal: new AbortController().signal,
+        signal: abortController.signal,
       };
       try {
         await HttpHelpers.universalCall({

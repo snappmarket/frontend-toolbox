@@ -9,6 +9,7 @@ const CheckBox = props => {
 
   const render = () => (
     <StyledCheckboxWrapper
+      data-testid="checkBox"
       className={className}
       disabled={disabled}
       size={size}

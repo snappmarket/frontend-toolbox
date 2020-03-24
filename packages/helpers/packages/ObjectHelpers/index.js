@@ -13,7 +13,7 @@ export const removeByKey = (haystack, needle) =>
       return key !== needle;
     })
     .reduce((result, current) => {
-      // eslint-disable-next-line no-param-r eassign
+      // eslint-disable-next-line no-param-reassign
       result[current] = haystack[current];
       return result;
     }, {});
