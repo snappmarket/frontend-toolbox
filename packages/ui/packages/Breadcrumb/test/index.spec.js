@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { Wrapper } from '../../../test/test.helpers';
+import { Wrapper, theme } from '../../../test/test.helpers';
 import Breadcrumb from '../index';
 
 describe('Should add class to element ', () => {
@@ -14,7 +14,6 @@ describe('Should add class to element ', () => {
     expect(getByTestId('breadcrumb')).toHaveClass('my-custom-class');
   });
 });
-
 
 describe('Should handle items', () => {
 
@@ -31,6 +30,14 @@ describe('Should handle items', () => {
     const selectAllSvg = renderByContainer(data).querySelectorAll('svg');
     return Object.keys(selectAllSvg).length;
   };
+
+  it('Should render empty div when data is []', () => {
+    const mockData = [];
+    const { getByTestId } = render(
+      <Wrapper><Breadcrumb items={mockData}/></Wrapper>,
+    );
+    expect(getByTestId('breadcrumb')).toContainHTML('');
+  });
 
   it('Should create a link without svg icon for Breadcrumb items', () => {
 
@@ -61,5 +68,26 @@ describe('Should handle items', () => {
       },
     ];
     expect(lengthOfAllSvg(mockData)).toBe(2);
+  });
+});
+
+describe('Breadcrumb ui component tests', () => {
+  it('Should render with primary mode and blue color with normal shade and lg size at default', () => {
+    const { getByTestId } = render(
+      <Wrapper>
+        <Breadcrumb />
+      </Wrapper>,
+    );
+
+    expect(getByTestId('breadcrumb')).toHaveStyle({
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'start',
+      alignItems: 'center',
+      backgroundColor:  theme.colors.white,
+      borderRadius: 'calc(1rem * 0.2)',
+      fontSize: 'calc(1rem * 1.5)',
+    });
+
   });
 });
