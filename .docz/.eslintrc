@@ -1,7 +1,10 @@
 {
   "parser": "babel-eslint",
   "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["prettier", "react", "jsx-a11y", "react-hooks"],
+  "env": {
+    "jest/globals": true
+  },
+  "plugins": ["prettier", "react", "jsx-a11y", "react-hooks","jest"],
   "globals": {
     "require": false,
     "module": false,
@@ -27,6 +30,11 @@
     "import/no-unresolved": 2,
     "import/no-webpack-loader-syntax": 0,
     "import/prefer-default-export": 0,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
     "jsx-a11y/anchor-is-valid": [
       "error",
       {

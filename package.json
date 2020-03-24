@@ -16,7 +16,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint packages/**/*.js",
     "lint:eslint": "eslint --ignore-path .gitignore packages",
-    "lint:eslint:fix": "eslint --ignore-path .gitignore packages --fix",
+    "lint:eslint:fix": "eslint packages --fix",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
     "prettify": "prettier --write \"packages/**/*.{js,jsx}\" --ignore-path",
