@@ -32,14 +32,23 @@ describe('Skeleton ui component tests', () => {
       border: `2px solid ${darken(0.06, theme.colors.white)}`,
     });
 
-    rerender(<Wrapper><BoxSkeleton justifyContent /></Wrapper>)
+    rerender(<Wrapper><BoxSkeleton /></Wrapper>)
     expect(getByTestId('skeleton')).toHaveStyle({
       justifyContent: 'center',
     });
 
-    rerender(<Wrapper><BoxSkeleton alignItems /></Wrapper>)
+    rerender(<Wrapper><BoxSkeleton /></Wrapper>)
     expect(getByTestId('skeleton')).toHaveStyle({
-      alignItems: 'left',
+      alignItems: 'center',
+    });
+    rerender(<Wrapper><BoxSkeleton justifyContent="flex-start" /></Wrapper>)
+    expect(getByTestId('skeleton')).toHaveStyle({
+      justifyContent: 'flex-start',
+    });
+
+    rerender(<Wrapper><BoxSkeleton alignItems="flex-start" /></Wrapper>)
+    expect(getByTestId('skeleton')).toHaveStyle({
+      alignItems: 'flex-start',
     });
 
   });
