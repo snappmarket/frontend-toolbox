@@ -1,5 +1,3 @@
-console.log(process.cwd());
-
 module.exports = {
   haste: {
     hasteImplModulePath: null,
@@ -15,17 +13,17 @@ module.exports = {
     '!.docz',
   ],
   rootDir: process.cwd(),
-  roots: [ '<rootDir>'],
-  transform: { '.js$': ['babel-jest', { rootMode: 'upward' }] },
+  roots: ['<rootDir>'],
   testPathIgnorePatterns: ['<rootDir>/.docz'],
+  transform: { '.js$': ['babel-jest', { rootMode: 'upward' }] },
   // coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
-  coverageReporters: ['html', 'text'],
+  coverageReporters: ['json', 'lcov', 'clover', 'html', 'text'],
   coverageThreshold: {
     global: {
-      branches: 15,
-      functions: 15,
-      lines: 15,
-      statements: 15,
+      branches: 35,
+      functions: 35,
+      lines: 35,
+      statements: 35,
     },
   },
   // testPathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
