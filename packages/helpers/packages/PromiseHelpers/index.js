@@ -1,7 +1,8 @@
 import { ApiError } from '../DebugHelpers';
 
 /**
- * Make a waiter
+ * @name racePromise
+ * @description makes a race promise which returns rejection error on timeout
  * @param timeout
  * @returns {Promise<unknown>}
  */
@@ -14,13 +15,14 @@ export const racePromise = timeout =>
   });
 
 /**
- * Gives us a promise to timeout
- * @param ms
+ * @name makeTimeout
+ * @description returns a rejected promise with TIMEOUT message
+ * @param timeout
  * @returns {Promise<unknown>}
  */
-export const makeTimeout = ms =>
+export const makeTimeout = timeout =>
   new Promise((_, reject) =>
-    setTimeout(() => reject(new ApiError('TIMEOUT')), ms),
+    setTimeout(() => reject(new ApiError('TIMEOUT')), timeout),
   );
 
 /**
