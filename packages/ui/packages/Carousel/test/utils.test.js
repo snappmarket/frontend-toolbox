@@ -1,3 +1,6 @@
+import * as React from 'react';
+import { useEffect, useRef } from 'react';
+import { render } from '@testing-library/react';
 import {
   responsiveItemCount,
   truncResponsiveItemCount,
@@ -7,10 +10,15 @@ import {
   calcSliderChildWidth,
   directionSetter,
   setTranslate3d,
+  // getTranslate3d,
   switchInfiniteResponsiveCount,
   vdomArrayConvertor,
 } from '../src/core/utils';
 const { JSDOM } = require('jsdom');
+import '@testing-library/jest-dom/extend-expect';
+import { Wrapper } from '../../../test/test.helpers';
+import Carousel from '../index';
+// import { Slider } from '../src/core/index';
 
 test('responsiveItemCount 0:{items:2.5} to equal 2.5', () => {
   const config = {
@@ -163,4 +171,49 @@ test('vdomArrayConvertor to equal  [1,2],[1,2]', () => {
   if (obj) {
     expect(vdomArrayConvertor(obj)).toStrictEqual([1, 2]);
   }
+});
+
+describe('Carousel ui component tests', () => {
+  const slideConfig = {
+    threshold: 50,
+    infinite: false,
+    nav: true,
+    dots: false,
+    autoPlay: false,
+    rtl: true,
+    responsive: {
+      0: {
+        items: 1.5,
+      },
+      560: {
+        items: 2,
+      },
+      760: {
+        items: 4,
+      },
+      920: {
+        items: 6,
+      },
+    },
+  };
+
+  const wrapperGenerator = () => {
+    const { getByTestId } = render(
+      <Wrapper>
+        <Carousel
+          className="test-class"
+          slideConfig={slideConfig}
+        >
+          <div className="item">1</div>
+          <div className="item">2</div>
+          <div className="item">3</div>
+          <div className="item">4</div>
+        </Carousel>
+      </Wrapper>,
+    );
+    return getByTestId('carousel');
+  };
+  it('Carousel change class', () => {
+    expect(wrapperGenerator()).toHaveClass('test-class');
+  });
 });
