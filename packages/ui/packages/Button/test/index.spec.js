@@ -116,6 +116,29 @@ describe('Button ui component tests', () => {
     });
   });
 
+  it('Should changes the class of button when button get direction props', () => {
+    const { rerender, getByTestId } = render(
+      <Wrapper>
+        <Button direction="right" loading />
+      </Wrapper>,
+    );
+
+    expect(getByTestId('button')).toHaveStyle({
+      flexDirection: 'row',
+    });
+
+    rerender(
+      <Wrapper>
+        <Button direction="left" loading />
+      </Wrapper>,
+    );
+
+    expect(getByTestId('button')).toHaveStyle({
+      flexDirection: 'row-reverse',
+    });
+
+  });
+
   it('Should changes the class of loadingSpinner when button get direction props', () => {
     const { rerender, getByTestId } = render(
       <Wrapper>
@@ -137,6 +160,23 @@ describe('Button ui component tests', () => {
       left: '0',
       marginLeft: '2em',
     });
+  });
+
+  it('Should changes the class of buttonLabel when button get direction props', () => {
+    const { rerender, getByTestId } = render(
+      <Wrapper>
+        <Button direction="right" label="label" />
+      </Wrapper>,
+    );
+    expect(getByTestId('buttonLabel')).toHaveClass('mr-1');
+
+    rerender(
+      <Wrapper>
+        <Button direction="left" label="label" />
+      </Wrapper>,
+    );
+    expect(getByTestId('buttonLabel')).toHaveClass('ml-1');
+
   });
 
   it('Should add icon in button when get icon props', () => {
