@@ -12,15 +12,15 @@ import {
 const Textarea = React.forwardRef((props, ref) => {
   const { status, message, label, required, id, ...rest } = props;
   return (
-    <StyledTextareaWrapper>
+    <StyledTextareaWrapper data-testid="textareaWrapper">
       {label && id && (
-        <StyledLabel htmlFor={id}>
+        <StyledLabel data-testid="textareaLabel" htmlFor={id}>
           {label} {required && <StyledStar>*</StyledStar>}
         </StyledLabel>
       )}
-      <StyledTextarea status={status} ref={ref} id={id} {...rest} />
+      <StyledTextarea data-testid="textarea" status={status} ref={ref} id={id} {...rest} />
       {Object.keys(message).length > 0 && (
-        <StyledMessage type={message.type}>{message.content}</StyledMessage>
+        <StyledMessage data-testid="textareaMessage" type={message.type}>{message.content}</StyledMessage>
       )}
     </StyledTextareaWrapper>
   );
