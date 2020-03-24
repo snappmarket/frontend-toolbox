@@ -33,9 +33,9 @@ const StyledToggleWrapper = Styled.button`
   `}
   border: solid ${props => `calc(${props.theme.defaultRem} * 0.1)`}
     ${props =>
-      !props.selected
-        ? props.theme.colors.gray.light
-        : props.theme.colors[props.status].light};
+    !props.selected
+      ? props.theme.colors.gray.light
+      : props.theme.colors[props.status].light};
   line-height: 0;
 `;
 

@@ -8,11 +8,11 @@ const StyledGrid = Styled.div`
   ${props =>
     typeof props.perRow === 'object'
       ? Object.keys(props.perRow).map(
-          viewport => `
+        viewport => `
     @media(min-width: ${props.theme.viewports[viewport]}px){
       width: ${100 / props.perRow[viewport]}%;
     }`,
-        )
+      )
       : `
     width: calc(100% / ${props.perRow});`}
   }
