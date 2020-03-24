@@ -1,3 +1,12 @@
+/**
+ * @name onChangeReflector
+ * @description
+ * returns a proxy wrapper to get target safely,
+ * and call onChange callback after defining or deleting any property in created proxy to use in reflector
+ * @param object
+ * @param onChange
+ * @return {boolean|any}
+ */
 export const onChangeReflector = (object, onChange) => {
   const handler = {
     get(target, property, receiver) {
