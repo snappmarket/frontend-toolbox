@@ -1,9 +1,10 @@
 /**
+ * @function
  * @name arrayItemAddProp
  * @description adds similar properties to children of an array
- * @param baseArray
- * @param props
- * @returns {[]}
+ * @param     baseArray   {array}     the given array to add property to items
+ * @param     props       {object}    object that should be attached to each item
+ * @returns  {array}
  */
 export const arrayItemAddProp = (baseArray, props) => {
   const newArray = [];
@@ -12,11 +13,12 @@ export const arrayItemAddProp = (baseArray, props) => {
 };
 
 /**
+ * @function
  * @name flattenArray
  * @description makes a flat array from sub-arrays of an array
- * @param array
- * @param property
- * @returns {[]}
+ * @param     array       {array}     given array to flatten sub-objects
+ * @param     property    {string}    name of the key of the of the sub-objects that want to be merged
+ * @returns   {array}
  */
 export const flattenArray = (array, property) => {
   const result = [];
@@ -27,37 +29,11 @@ export const flattenArray = (array, property) => {
 };
 
 /**
- * @name serializeObject
- * @description serializes the properties of given object
- * @param object
- * @returns {string}
- */
-export const serializeObject = object => {
-  const result = [];
-  Object.keys(object).forEach(property => {
-    if (typeof object[property] === 'object') {
-      if (Array.isArray(object[property]) && object[property].length) {
-        object[property].forEach(item => result.push(`${property}[]=${item}`));
-      } else if (
-        !Array.isArray(object[property]) &&
-        Object.keys(object[property]).length
-      ) {
-        Object.keys(object[property]).forEach(key =>
-          result.push(`${property}[${key}]=${object[property][key]}`),
-        );
-      }
-    } else if (typeof object[property] !== 'undefined') {
-      result.push(`${property}=${object[property]}`);
-    }
-  });
-  return result.join('&');
-};
-
-/**
+ * @function
  * @name stringifyArray
  * @description Create string from array
- * @param array
- * @param properties
+ * @param   array         {array}     base array that wants to be stringify
+ * @param   properties    {array}     list of properties that want to be in stringified result
  * @returns {string}
  */
 export const stringifyArray = (array, properties) => {
@@ -73,12 +49,13 @@ export const stringifyArray = (array, properties) => {
 };
 
 /**
+ * @function
  * @name deepFlatten
  * @description Deep flatten an array
- * @param array
- * @param property
- * @param flattenArrayTemp
- * @returns {Array}
+ * @param     array                 {array}     the multi dimensional array that want to be flatten
+ * @param     property              {string}    name of the property of array that want to navigate through
+ * @param     flattenArrayTemp      {array}     temp array to put the result of the flatten to
+ * @returns   {Array}
  */
 export const deepFlatten = (array, property, flattenArrayTemp = []) => {
   const newArray = { ...array };

@@ -36,29 +36,6 @@ describe('ArrayHelpers', () => {
       expect(ArrayHelpers.flattenArray(payload, 'foo')).toEqual(actual);
     });
   });
-  describe('serializeObject', () => {
-    it('should convert object properties to query parameter ', () => {
-      const payload = {
-        number: 1,
-        string: 'test',
-        array: [1, 2, 3],
-        object: { foo: 'foo', bar: 'bar' },
-        boolean: true,
-      };
-      const actual =
-        'number=1&string=test&array[]=1&array[]=2&array[]=3&object[foo]=foo&object[bar]=bar&boolean=true';
-      expect(ArrayHelpers.serializeObject(payload)).toEqual(actual);
-    });
-    it('should not convert empty object properties to query parameter ', () => {
-      const payload = {
-        number: undefined,
-        object: {},
-        array: [],
-      };
-      const actual = '';
-      expect(ArrayHelpers.serializeObject(payload)).toEqual(actual);
-    });
-  });
   describe('stringifyArray', () => {
     it('should stringify selected properties of object in array ', () => {
       const payload = [
