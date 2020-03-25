@@ -1,9 +1,10 @@
 import { ApiError } from '../DebugHelpers';
 
 /**
+ * @function
  * @name racePromise
  * @description makes a race promise which returns rejection error on timeout
- * @param timeout
+ * @param   timeout   {number}    timout in ms to throw an error with resolve
  * @returns {Promise<unknown>}
  */
 export const racePromise = timeout =>
@@ -15,9 +16,10 @@ export const racePromise = timeout =>
   });
 
 /**
+ * @function
  * @name makeTimeout
  * @description returns a rejected promise with TIMEOUT message
- * @param timeout
+ * @param   timeout   {number}    timout in ms to throw an error with promise reject
  * @returns {Promise<unknown>}
  */
 export const makeTimeout = timeout =>
@@ -26,6 +28,7 @@ export const makeTimeout = timeout =>
   );
 
 /**
+ * @function
  * Empty promise to use as default things
  * @returns {Promise<any>}
  */
