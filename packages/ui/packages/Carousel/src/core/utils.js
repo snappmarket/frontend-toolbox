@@ -143,7 +143,7 @@ export const setTranslate3d = getValue => `translate3d(${getValue}px,0px,0px)`;
 
 export const getTranslate3d = sliderItems => {
   const values = sliderItems.style.transform.match(
-    /translate3d\((.*)px (.*)px, (.*)px\)/,
+    /translate3d\((.*)px, (.*)px, (.*)px\)/,
   );
   if (!values[1] || !values[1].length) {
     return 0;
