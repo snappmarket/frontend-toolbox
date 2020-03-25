@@ -1,11 +1,13 @@
 export const addClassToElement = params => {
   const { item, className } = params;
   item.classList.add(className);
+  return item;
 };
 
 export const removeClassFromElement = params => {
   const { item, className } = params;
   item.classList.remove(className);
+  return item;
 };
 
 // eslint-disable-next-line consistent-return
@@ -143,7 +145,7 @@ export const setTranslate3d = getValue => `translate3d(${getValue}px,0px,0px)`;
 
 export const getTranslate3d = sliderItems => {
   const values = sliderItems.style.transform.match(
-    /translate3d\((.*)px (.*)px, (.*)px\)/,
+    /translate3d\((.*)px, (.*)px, (.*)px\)/,
   );
   if (!values[1] || !values[1].length) {
     return 0;
@@ -181,30 +183,38 @@ export const switchInfiniteResponsiveCount = (itemCont, infinite) =>
   infinite ? itemCont : 0;
 
 export const prevNone = slider => {
-  childFider({
+  const childFind = childFider({
     wrapper: slider,
     className: '.prev',
-  }).style.display = 'none';
+  });
+  childFind.style.display = 'none';
+  return childFind;
 };
 
 export const prevBlock = slider => {
-  childFider({
+  const childFind = childFider({
     wrapper: slider,
     className: '.prev',
-  }).style.display = 'block';
+  });
+  childFind.style.display = 'block';
+  return childFind;
 };
 
 export const nextNone = slider => {
-  childFider({
+  const childFind = childFider({
     wrapper: slider,
     className: '.next',
-  }).style.display = 'none';
+  });
+  childFind.style.display = 'none';
+  return childFind;
 };
 export const nextBlock = slider => {
-  childFider({
+  const childFind = childFider({
     wrapper: slider,
     className: '.next',
-  }).style.display = 'block';
+  });
+  childFind.style.display = 'block';
+  return childFind;
 };
 
 export const transitionendWatcher = params => {
@@ -358,6 +368,7 @@ export const elementCreator = params => {
   const node = document.createElement(tag);
   node.className = className;
   wrapper.appendChild(node);
+  return node;
 };
 
 export const childFider = params => {
@@ -374,6 +385,7 @@ export const removeAllChildren = params => {
       child.remove();
     });
   }
+  return findElements.length;
 };
 
 export const activeChecker = sliderItems => {
