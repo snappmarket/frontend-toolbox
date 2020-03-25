@@ -26,14 +26,6 @@ describe('ObjectHelpers', () => {
       expect(ObjectHelpers.flattenObject(payload)).toEqual(payload);
     });
   });
-  describe('makeCookieString', () => {
-    it('should make a concatenated string of keys and values of an object', () => {
-      const payload = { foo: 'foo', bar: 'bar' };
-      expect(ObjectHelpers.makeCookieString(payload)).toEqual(
-        'foo=foo; bar=bar',
-      );
-    });
-  });
   describe('safeObjectPropertyRead ', () => {
     it('should safely get a property value from an object', () => {
       const payload = { foo: 'bar' };

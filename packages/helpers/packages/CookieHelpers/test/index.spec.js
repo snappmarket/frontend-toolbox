@@ -26,4 +26,12 @@ describe('CookieHelpers', () => {
       expect(document.cookie).toEqual('test=test');
     });
   });
+  describe('makeCookieString', () => {
+    it('should make a concatenated string of keys and values of an object', () => {
+      const payload = { foo: 'foo', bar: 'bar' };
+      expect(CookieHelpers.makeCookieString(payload)).toEqual(
+        'foo=foo; bar=bar',
+      );
+    });
+  });
 });

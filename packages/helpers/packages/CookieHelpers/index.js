@@ -48,3 +48,20 @@ export const deleteCookie = name => {
   const expires = 'expires=Thu, 01 Jan 1970 00:00:01 GMT';
   document.cookie = `${name}=${null};${expires}`;
 };
+
+/**
+ * @function
+ * @name makeCookieString
+ * @description converts the key-value cookie into concatenated cookie string
+ * @param  cookies    {object}    object of cookies you want to convert too cookie string
+ * @return {string}
+ */
+export const makeCookieString = cookies => {
+  let cookieString = '';
+  Object.keys(cookies).forEach(cookie => {
+    cookieString += `${cookie}=${cookies[cookie]}; `;
+  });
+
+  cookieString = cookieString.substr(0, cookieString.length - 2);
+  return cookieString;
+};
