@@ -11,6 +11,8 @@ public
 .docz/.cache
 .docz/app/db.json
 .docz/gatsby-config.js
+.docz/gatsby-node.js
+.docz/reduxcache*
 
 
 # builds
