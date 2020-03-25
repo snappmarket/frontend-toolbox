@@ -26,5 +26,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: true
+          name: github-umbrella
+          fail_ci_if_error: false

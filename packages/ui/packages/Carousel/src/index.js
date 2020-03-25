@@ -7,8 +7,14 @@ import { StyledSimpleCarousel } from './core/styles';
 const SimpleCarousel = props => {
   const { className, children, slideConfig, showingSlide, refresh } = props;
   const sliderRed = useRef(null);
-  // eslint-disable-next-line no-unused-vars
   let newSlider = null;
+
+  useEffect(() => {
+    newSlider = new Slider({
+      slider: sliderRed.current,
+      ...slideConfig,
+    });
+  }, []);
 
   useEffect(() => {
     if (typeof showingSlide === 'number' || showingSlide >= 0) {
