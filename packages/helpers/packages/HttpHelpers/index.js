@@ -7,11 +7,12 @@ import { serializeObject } from '../ObjectHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
 /**
+ * @function
  * @name fetchWithTimeOut
  * @description fetches the request, if it takes to long, it will be timed out
- * @param url
- * @param options
- * @param timeout
+ * @param   url         {string}    the URL you want to fetch
+ * @param   options     {object}    the options such as get parameters, method etc...
+ * @param   timeout     {number}    timeout in ms to kill the request if it's taking too long
  * @returns {Promise<unknown>}
  */
 export const fetchWithTimeOut = (url, options, timeout = 5000) => {
@@ -29,18 +30,19 @@ export const fetchWithTimeOut = (url, options, timeout = 5000) => {
 };
 
 /**
+ * @function
  * @name universalCall
  * @description Call an api in universal way
- * @param url
- * @param method
- * @param credentials
- * @param data
- * @param headers
- * @param params
- * @param jwtToken
- * @param rest
- * @param timeout
- * @param allowedNoContent
+ * @param   url                   {string}    the URL you want to fetch
+ * @param   method                {string}    method of the request e.g. POST
+ * @param   credentials           {string}    credentials to include the third party cookies or not e.g. same-origin
+ * @param   data                  {object}    object of the data you want to send, not for get
+ * @param   headers               {object}    object of the request headers
+ * @param   params                {object}    URL parameters
+ * @param   jwtToken              {string}    the JWA token for end-points with authentication, Bearer prefix would be added automatically
+ * @param   rest                  {any}       any additional options which is supported by the isomorphic fetch
+ * @param   timeout               {number}    timeout to kill the request if it's taking too long
+ * @param   allowedNoContent      {boolean}   flag to allow the request be handle even if there is no content
  * @returns {Promise<any>}
  */
 export const universalCall = async ({
