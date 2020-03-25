@@ -2,14 +2,17 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 const { JSDOM } = require('jsdom');
+// import { Wrapper } from '../../../test/test.helpers';
+// import Carousel from '../index';
+// import { Slider } from '../src/core/index';
 
 import {
   addClassToElement,
   removeClassFromElement,
   calcCurrentIndex,
-  sliderClientWidth,
+  // sliderClientWidth,
   responsiveItemCount,
-  setActiveclassToCurrent,
+  // setActiveclassToCurrent,
   setSliderItemsPosition,
   truncResponsiveItemCount,
   calcFinalItemPosition,
@@ -30,11 +33,8 @@ import {
   prevBlock,
   prevNone,
   nextBlock,
-  nextNone
+  nextNone,
 } from '../src/core/utils';
-import { Wrapper } from '../../../test/test.helpers';
-import Carousel from '../index';
-// import { Slider } from '../src/core/index';
 
 // real DOM generator
 const stringToHTML = str => {
@@ -43,7 +43,7 @@ const stringToHTML = str => {
   return doc.body.firstChild;
 };
 
-const mockSlider = (`
+const mockSlider = `
   <div id="slider" class="slider loaded">
     <div class="wrapper">
       <div class="slides" style="transform: translate3d(0px, 0px, 0px);">
@@ -61,8 +61,8 @@ const mockSlider = (`
       <li class="dots-item" data-dot-index="3">3</li>
     </ul>
   </div>
-`);
-const mockSlides = (`
+`;
+const mockSlides = `
     <div class="slides" style="transform: translate3d(0px, 0px, 0px);">
       <span class="slide active" data-page="1" style="width: 607.5px;">Slide 1</span>
       <span class="slide active" data-page="1" style="width: 607.5px;">Slide 2</span>
@@ -70,10 +70,10 @@ const mockSlides = (`
       <span class="slide" data-page="2" style="width: 607.5px;">Slide 4</span>
       <span class="slide" data-page="3" style="width: 607.5px;">Slide 5</span>
     </div>
-`);
-const mockTranslate3d = (`
+`;
+const mockTranslate3d = `
     <div class="slides" style="transform: translate3d(1000px, 0px, 0px);"></div>
-`);
+`;
 
 test('responsiveItemCount 0:{items:2.5} to equal 2.5', () => {
   const config = {
@@ -246,45 +246,55 @@ describe('Carousel ui component tests', () => {
     },
   };
 
-  const wrapperGenerator = () => {
-    const { getByTestId } = render(
-      <Wrapper>
-        <Carousel
-          className="test-class"
-          slideConfig={slideConfig}
-        >
-          <div className="item">1</div>
-          <div className="item">2</div>
-          <div className="item">3</div>
-          <div className="item">4</div>
-        </Carousel>
-      </Wrapper>,
-    );
-    return getByTestId('carousel');
-  };
-  test('Carousel change class', () => {
-    expect(wrapperGenerator()).toHaveClass('test-class');
-  });
+  // const wrapperGenerator = () => {
+  //   const { getByTestId } = render(
+  //     <Wrapper>
+  //       <Carousel
+  //         className="test-class"
+  //         slideConfig={slideConfig}
+  //       >
+  //         <div className="item">1</div>
+  //         <div className="item">2</div>
+  //         <div className="item">3</div>
+  //         <div className="item">4</div>
+  //       </Carousel>
+  //     </Wrapper>,
+  //   );
+  //   return getByTestId('carousel');
+  // };
+  // test('Carousel change class', () => {
+  //   expect(wrapperGenerator()).toHaveClass('test-class');
+  // });
 
   test('Carousel dragChecker for false or true', () => {
-    const paramsDragFalse =  { drag: false, sliderLength:2, perSlide:2 };
+    const paramsDragFalse = { drag: false, sliderLength: 2, perSlide: 2 };
     expect(dragChecker(paramsDragFalse)).toBe(false);
 
-    const paramsDragTrue =  { drag: true, sliderLength:10, perSlide:2 };
+    const paramsDragTrue = { drag: true, sliderLength: 10, perSlide: 2 };
     expect(dragChecker(paramsDragTrue)).toBe(true);
-
   });
 
   test('Carousel infiniteChecker for false or true', () => {
-    const paramsInfiniteFalse =  { infinite: false, sliderLength:2, perSlide:2 };
+    const paramsInfiniteFalse = {
+      infinite: false,
+      sliderLength: 2,
+      perSlide: 2,
+    };
     expect(infiniteChecker(paramsInfiniteFalse)).toBe(false);
 
-    const paramsInfiniteFalseWidthSliderLength =  { infinite: true, sliderLength:2, perSlide:2 };
+    const paramsInfiniteFalseWidthSliderLength = {
+      infinite: true,
+      sliderLength: 2,
+      perSlide: 2,
+    };
     expect(infiniteChecker(paramsInfiniteFalseWidthSliderLength)).toBe(false);
 
-    const paramsInfiniteTrue =  { infinite: true, sliderLength:10, perSlide:2 };
+    const paramsInfiniteTrue = {
+      infinite: true,
+      sliderLength: 10,
+      perSlide: 2,
+    };
     expect(infiniteChecker(paramsInfiniteTrue)).toBe(true);
-
   });
 
   test('Check data-page for first active item', () => {
@@ -294,7 +304,7 @@ describe('Carousel ui component tests', () => {
   test('Remove all child with class name', () => {
     const testParams = {
       wrapper: stringToHTML(mockSlides),
-      className: 'slide active'
+      className: 'slide active',
     };
     expect(removeAllChildren(testParams)).toBe(2);
   });
@@ -302,20 +312,25 @@ describe('Carousel ui component tests', () => {
   test('Find a child with class name', () => {
     const testParams = {
       wrapper: stringToHTML(mockSlider),
-      className: '.dots'
+      className: '.dots',
     };
     const findElement = childFider(testParams);
     const expectIs = stringToHTML(
-    `<ul class="dots">
+      `<ul class="dots">
       <li class="dots-item active" data-dot-index="1">1</li>
       <li class="dots-item" data-dot-index="2">2</li>
       <li class="dots-item" data-dot-index="3">3</li>
-    </ul>`);
+    </ul>`,
+    );
     expect(findElement).toStrictEqual(expectIs);
   });
 
   test('Check Element Generator', () => {
-    const testParams = { tag: 'Ul', wrapper: stringToHTML(mockSlider), className: 'dots' };
+    const testParams = {
+      tag: 'Ul',
+      wrapper: stringToHTML(mockSlider),
+      className: 'dots',
+    };
     const expectIs = stringToHTML(`<ul class="dots" />`);
     expect(elementCreator(testParams)).toStrictEqual(expectIs);
   });
@@ -323,7 +338,7 @@ describe('Carousel ui component tests', () => {
   test('Check Add class to element', () => {
     const testParams = {
       item: stringToHTML(`<ul class="dots" />`),
-      className: 'test-class'
+      className: 'test-class',
     };
     const expectIs = stringToHTML(`<ul class="dots test-class" />`);
     expect(addClassToElement(testParams)).toStrictEqual(expectIs);
@@ -332,7 +347,7 @@ describe('Carousel ui component tests', () => {
   test('Check remove class from element', () => {
     const testParams = {
       item: stringToHTML(`<ul class="dots test-class" />`),
-      className: 'test-class'
+      className: 'test-class',
     };
     const expectIs = stringToHTML(`<ul class="dots" />`);
     expect(removeClassFromElement(testParams)).toStrictEqual(expectIs);
@@ -363,7 +378,7 @@ describe('Carousel ui component tests', () => {
   });
 
   test('Check setSliderItemsPosition', () => {
-    const testParams =  {
+    const testParams = {
       sliderItemWidth: 607.5,
       sliderItems: stringToHTML(mockSlides),
       rtl: true,
@@ -374,14 +389,21 @@ describe('Carousel ui component tests', () => {
 
   test('Check Next and Prev button', () => {
     const mockElement = stringToHTML(mockSlider);
-    const expectIs = stringToHTML(`<span class="control prev" style="display: block;" />`);
-    const expectIsNone = stringToHTML(`<span class="control prev" style="display: none;" />`);
-    const expectIsNext = stringToHTML(`<span class="control next" style="display: block;" />`);
-    const expectIsNextNone = stringToHTML(`<span class="control next" style="display: none;" />`);
+    const expectIs = stringToHTML(
+      `<span class="control prev" style="display: block;" />`,
+    );
+    const expectIsNone = stringToHTML(
+      `<span class="control prev" style="display: none;" />`,
+    );
+    const expectIsNext = stringToHTML(
+      `<span class="control next" style="display: block;" />`,
+    );
+    const expectIsNextNone = stringToHTML(
+      `<span class="control next" style="display: none;" />`,
+    );
     expect(prevBlock(mockElement)).toStrictEqual(expectIs);
     expect(prevNone(mockElement)).toStrictEqual(expectIsNone);
     expect(nextBlock(mockElement)).toStrictEqual(expectIsNext);
     expect(nextNone(mockElement)).toStrictEqual(expectIsNextNone);
   });
-
 });

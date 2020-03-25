@@ -38,7 +38,8 @@ export const cloneNodeAppendChild = params => {
 
 export const cloneNodeInsertBefore = params => {
   const { perSlide, deepCloneSliderItemsChildren, sliderItems } = params;
-  const itemsChildrenLength = deepCloneSliderItemsChildren.length - perSlide - 1;
+  const itemsChildrenLength =
+    deepCloneSliderItemsChildren.length - perSlide - 1;
   deepCloneSliderItemsChildren.forEach((element, index) => {
     if (index <= itemsChildrenLength) {
       const cln = element.cloneNode(true);
