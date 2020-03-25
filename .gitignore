@@ -13,6 +13,7 @@ public
 .docz/gatsby-config.js
 .docz/gatsby-node.js
 .docz/reduxcache*
+.docz/.eslintrc
 
 
 # builds
