@@ -328,7 +328,7 @@ export const dragEnd = params => {
   if (
     (!infinite &&
       getTranslate3d(sliderItems) <= thresholdNew() &&
-        getTranslate3d(sliderItems) >= 0) ||
+      getTranslate3d(sliderItems) >= 0) ||
     (rtl && getTranslate3d(sliderItems) <= 0)
   ) {
     sliderItems.style.transform = setTranslate3d(0);

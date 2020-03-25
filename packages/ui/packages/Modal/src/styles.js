@@ -50,6 +50,7 @@ const StyledCloseModalButton = Styled(Button)`
   position: absolute;
   top: calc(${props => props.theme.defaultRem} * 0.8);
   left: calc(${props => props.theme.defaultRem} * 0.8);
+  min-width: auto;
 `;
 const StyledModalHeader = Styled.header`
   border-bottom: solid calc(${props => props.theme.defaultRem} * 0.1) ${props =>
