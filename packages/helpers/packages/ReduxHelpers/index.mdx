@@ -1,38 +1,44 @@
 ---
 name: ReduxHelpers
 route: /helpers/ReduxHelpers
-menu: 6.Helpers
+menu: Helpers
 ---
-# Redux helpers
-> ✴ Methods that helps us to handle redux related things
+## ReduxHelpers
+<a name="configPersistor"></a>
 
-[![version](https://img.shields.io/npm/v/@snappmarket/redux-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/redux-helpers)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/redux-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/redux-helpers)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/redux-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+## configPersistor ⇒ Object
+A simple persistor
 
-[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
-[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+**Kind**: global constant  
 
-## get started
-We provide two way of using this package `single` or `multi` :
-```bash
-npm i @snappmarket/redux-helpers
-OR
-npm i @snappmarket/helpers
-```
+| Param |
+| --- |
+| config | 
 
-## methods
-|        |
-| ------ |
-| actionMaker                                                 |
-| normalizeActionType                                                 |
-| configPersistor                                                 |
 
-## usage
-```javascript
-import { METHOD_NAME } from '@snappmarket/redux-helpers';
-// or
-// import { METHOD_NAME } from '@snappmarket/helpers';
-```
-``
+* [configPersistor](#configPersistor) ⇒ Object
+    * [~makeInitialState(initialState)](#configPersistor..makeInitialState)
+    * [~getMiddleware(store)](#configPersistor..getMiddleware) ⇒ function
+
+<a name="configPersistor..makeInitialState"></a>
+
+### configPersistor~makeInitialState(initialState)
+Get persisted state and join it with initial state
+
+**Kind**: inner method of [configPersistor](#configPersistor)  
+
+| Param |
+| --- |
+| initialState | 
+
+<a name="configPersistor..getMiddleware"></a>
+
+### configPersistor~getMiddleware(store) ⇒ function
+Make a middleware for our persistor
+
+**Kind**: inner method of [configPersistor](#configPersistor)  
+
+| Param |
+| --- |
+| store | 
+

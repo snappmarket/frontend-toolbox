@@ -1,40 +1,72 @@
 ---
 name: ArrayHelpers
 route: /helpers/ArrayHelpers
-menu: 6.Helpers
+menu: Helpers
 ---
+## ArrayHelpers
+## Functions
 
-# ArrayHelpers
-> ✴ Methods that helps us with arrays
+<dl>
+<dt><a href="#arrayItemAddProp">arrayItemAddProp(baseArray, props)</a> ⇒ array</dt>
+<dd><p>adds similar properties to children of an array</p>
+</dd>
+<dt><a href="#flattenArray">flattenArray(array, property)</a> ⇒ array</dt>
+<dd><p>makes a flat array from sub-arrays of an array</p>
+</dd>
+<dt><a href="#stringifyArray">stringifyArray(array, properties)</a> ⇒ string</dt>
+<dd><p>Create string from array</p>
+</dd>
+<dt><a href="#deepFlatten">deepFlatten(array, property, flattenArrayTemp)</a> ⇒ Array</dt>
+<dd><p>Deep flatten an array</p>
+</dd>
+</dl>
 
-[![version](https://img.shields.io/npm/v/@snappmarket/array-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/array-helpers)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/array-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/array-helpers)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/array-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+<a name="arrayItemAddProp"></a>
 
-[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
-[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+## arrayItemAddProp(baseArray, props) ⇒ array
+adds similar properties to children of an array
 
-## get started
-We provide two way of using this package `single` or `multi` :
-```bash
-npm i @snappmarket/array-helpers
-OR
-npm i @snappmarket/helpers
-```
+**Kind**: global function  
 
-## methods
-|        |
-| ------ |
-| arrayItemAddProp                                                 |
-| flattenArray                                                 |
-| stringifyArray                                                 |
-| deepFlatten                                                 |
+| Param | Type | Description |
+| --- | --- | --- |
+| baseArray | array | the given array to add property to items |
+| props | object | object that should be attached to each item |
 
+<a name="flattenArray"></a>
 
-## usage
-```javascript
-import { METHOD_NAME } from '@snappmarket/array-helpers';
-// or
-// import { METHOD_NAME } from '@snappmarket/helpers';
-```
+## flattenArray(array, property) ⇒ array
+makes a flat array from sub-arrays of an array
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | array | given array to flatten sub-objects |
+| property | string | name of the key of the of the sub-objects that want to be merged |
+
+<a name="stringifyArray"></a>
+
+## stringifyArray(array, properties) ⇒ string
+Create string from array
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | array | base array that wants to be stringify |
+| properties | array | list of properties that want to be in stringified result |
+
+<a name="deepFlatten"></a>
+
+## deepFlatten(array, property, flattenArrayTemp) ⇒ Array
+Deep flatten an array
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | array | the multi dimensional array that want to be flatten |
+| property | string | name of the property of array that want to navigate through |
+| flattenArrayTemp | array | temp array to put the result of the flatten to |
+

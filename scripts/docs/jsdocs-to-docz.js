@@ -8,38 +8,31 @@ async function run(){
   glob(path, (err, files) => {
     files.forEach(file => {
       const fileParentDir = file.substr(0, file.lastIndexOf('/'));
+      const packagesName = fileParentDir.substr(fileParentDir.lastIndexOf('/')+1);
+      const packageRoute = fileParentDir.replace(/packages\//g, '');
+      const packageParent = packageRoute.split('/')[0];
+      const capitalizedParent = `${packageParent.charAt(0).toUpperCase()}${packageParent.slice(1)}`;
+
       const fileName = file.substr(file.lastIndexOf('/')+1);
-      const markdownFileName = fileName.replace(/\.(.*)/,'.mdx');
-      // const reachMarkdownFileName = fileName.replace(/\.(.*)/,'.mdx');
+      const mdxFileName = fileName.replace(/\.(.*)/,'.mdx');
+
       try {
         exec(`jsdoc2md ${file}`, (_, stdout)=>{
-          try{
-            console.log(`writing docs for ${file}`);
-            fs.writeFile(`${fileParentDir}/${markdownFileName}`, stdout, (error) => {
-              if(error){
-                console.log(`error on writing docs of: ${file} ==>`, error);
-              }
-              else {
-                console.log(`successfully created docs for ${file}`)
-              }
-            });
-            // console.log(`writing docz for ${file}`);
-            // fs.writeFile(`${fileParentDir}/${reachMarkdownFileName}`, stdout, (error) => {
-            //   if(error){
-            //     console.log(`error on writing docs of: ${file} ==>`, error);
-            //   }
-            //   else {
-            //     console.log(`successfully created docs for ${file}`)
-            //   }
-            // });
-          }
-          catch(e){
-            console.log('an error occurred in writing file ==>', e)
-          }
+          const output = stdout.replace(/<(|\/)code>/g, '');
+          const doczInfo = `---\nname: ${packagesName}\nroute: /${packageRoute}\nmenu: ${capitalizedParent}\n---\n## ${packagesName}`;
+          const content = `${doczInfo}\n${output}`;
+
+          console.log(`writing docz for ${file}`);
+          fs.writeFile(`${fileParentDir}/${mdxFileName}`, content, (error) => {
+            if(error){
+              throw error;
+            }
+            console.log(`successfully created docs for ${file}`)
+          });
         })
       }
       catch (e) {
-        console.log('an error occurred running markdown command ==>', e)
+        console.log('an error occurred ==>', e)
       }
     });
   });

@@ -1,39 +1,46 @@
 ---
-name: DebuggingHelpers
-route: /helpers/DebuggingHelpers
-menu: 6.Helpers
+name: DebugHelpers
+route: /helpers/DebugHelpers
+menu: Helpers
 ---
+## DebugHelpers
+## Classes
 
-# Debugging helpers
-> ✴ Methods that helps us to debug easily
+<dl>
+<dt><a href="#ApiError">ApiError</a></dt>
+<dd></dd>
+</dl>
 
-[![version](https://img.shields.io/npm/v/@snappmarket/debug-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/debug-helpers)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/debug-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/debug-helpers)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/debug-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+## Functions
 
-[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
-[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+<dl>
+<dt><a href="#delog">delog(body)</a></dt>
+<dd><p>logs body of request on the console</p>
+</dd>
+</dl>
 
-## get started
-We provide two way of using this package `single` or `multi` :
-```bash
-npm i @snappmarket/debug-helpers
-OR
-npm i @snappmarket/helpers
-```
+<a name="ApiError"></a>
+
+## ApiError
+**Kind**: global class  
+<a name="new_ApiError_new"></a>
+
+### new ApiError(args)
+Custom error handler to api requests
 
 
-## methods
-|        |
-| ------ |
-| delog                                                 |
-| ApiError                                                 |
-| globalErrorCatcher                                                 |
+| Param |
+| --- |
+| args | 
 
-## usage
-```javascript
-import { METHOD_NAME } from '@snappmarket/debug-helpers';
-// or
-// import { METHOD_NAME } from '@snappmarket/helpers';
-```
+<a name="delog"></a>
+
+## delog(body)
+logs body of request on the console
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| body | string | body of the message you want to log on console |
+
