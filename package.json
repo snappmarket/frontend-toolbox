@@ -76,6 +76,8 @@
     "jest-haste-map": "^24.9.0",
     "jest-resolve": "^24.9.0",
     "jest-styled-components": "^6.3.3",
+    "jsdoc": "^3.6.3",
+    "jsdoc-to-markdown": "^5.0.3",
     "lerna": "^3.16.5",
     "lint-staged": "^10.0.8",
     "pre-commit": "^1.2.2",
