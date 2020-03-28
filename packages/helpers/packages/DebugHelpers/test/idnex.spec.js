@@ -12,18 +12,18 @@ describe('DebugHelpers', () => {
     it('should log body of request in debug mode', () => {
       const body = 'Hello Snappmarket!';
       process.env.DEBUG_MODE = 'true';
-      expect(console.log.mock.calls.length).toBe(0);
+      expect(console.log.mock.calls).toHaveLength(0);
       DebugHelpers.delog(body);
-      expect(console.log.mock.calls.length).toBe(1);
+      expect(console.log.mock.calls).toHaveLength(1);
       expect(console.log.mock.calls[0][0]).toBe('--');
       expect(console.log.mock.calls[0][1]).toBe(body);
     });
     it('should not log body of request in non-debug mode', () => {
       const body = 'Hello Snappmarket!';
       process.env.DEBUG_MODE = 'false';
-      expect(console.log.mock.calls.length).toBe(0);
+      expect(console.log.mock.calls).toHaveLength(0);
       DebugHelpers.delog(body);
-      expect(console.log.mock.calls.length).toBe(0);
+      expect(console.log.mock.calls).toHaveLength(0);
     });
   });
   describe('ApiError', () => {

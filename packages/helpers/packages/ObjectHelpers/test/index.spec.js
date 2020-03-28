@@ -26,14 +26,6 @@ describe('ObjectHelpers', () => {
       expect(ObjectHelpers.flattenObject(payload)).toEqual(payload);
     });
   });
-  describe('makeCookieString', () => {
-    it('should make a concatenated string of keys and values of an object', () => {
-      const payload = { foo: 'foo', bar: 'bar' };
-      expect(ObjectHelpers.makeCookieString(payload)).toEqual(
-        'foo=foo; bar=bar',
-      );
-    });
-  });
   describe('safeObjectPropertyRead ', () => {
     it('should safely get a property value from an object', () => {
       const payload = { foo: 'bar' };
@@ -58,6 +50,29 @@ describe('ObjectHelpers', () => {
     it('should get value of next property of given property name', () => {
       const payload = { foo: 'foo', bar: 'bar' };
       expect(ObjectHelpers.getNextProp(payload, 'foo')).toEqual('bar');
+    });
+  });
+  describe('serializeObject', () => {
+    it('should convert object properties to query parameter ', () => {
+      const payload = {
+        number: 1,
+        string: 'test',
+        array: [1, 2, 3],
+        object: { foo: 'foo', bar: 'bar' },
+        boolean: true,
+      };
+      const actual =
+        'number=1&string=test&array[]=1&array[]=2&array[]=3&object[foo]=foo&object[bar]=bar&boolean=true';
+      expect(ObjectHelpers.serializeObject(payload)).toEqual(actual);
+    });
+    it('should not convert empty object properties to query parameter ', () => {
+      const payload = {
+        number: undefined,
+        object: {},
+        array: [],
+      };
+      const actual = '';
+      expect(ObjectHelpers.serializeObject(payload)).toEqual(actual);
     });
   });
 });

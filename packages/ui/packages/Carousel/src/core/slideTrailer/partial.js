@@ -1,5 +1,3 @@
-/* eslint-disable no-plusplus */
-
 import { truncResponsiveItemCount, vdomArrayConvertor } from '../utils';
 
 export const setPageNumberOnChild = params => {
@@ -40,13 +38,12 @@ export const cloneNodeAppendChild = params => {
 
 export const cloneNodeInsertBefore = params => {
   const { perSlide, deepCloneSliderItemsChildren, sliderItems } = params;
-  for (
-    let i = deepCloneSliderItemsChildren.length - perSlide - 1;
-    i < deepCloneSliderItemsChildren.length;
-    i++
-  ) {
-    const cln = deepCloneSliderItemsChildren[i].cloneNode(true);
-    addCloneClass(cln);
-    sliderItems.insertBefore(cln, deepCloneSliderItemsChildren[0]);
-  }
+  const itemsChildrenLength = deepCloneSliderItemsChildren.length - perSlide - 1;
+  deepCloneSliderItemsChildren.forEach((element, index) => {
+    if (index <= itemsChildrenLength) {
+      const cln = element.cloneNode(true);
+      addCloneClass(cln);
+      sliderItems.insertBefore(cln, deepCloneSliderItemsChildren[0]);
+    }
+  });
 };

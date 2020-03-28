@@ -8,6 +8,7 @@ const Toggle = props => {
 
   const render = () => (
     <StyledToggleWrapper
+      data-testid="toggle"
       className={className}
       size={size}
       disabled={disabled}
