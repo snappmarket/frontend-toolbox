@@ -1,3 +1,11 @@
+/**
+ * @function
+ * @name actionMaker
+ * @description creates an action
+ * @param  type       {string}    type of the action
+ * @param  payload    {any}       payload of the action
+ * @return {object}
+ */
 export const actionMaker = (type, payload = {}) => ({ type, payload });
 
 export const normalizeActionType = type => {
