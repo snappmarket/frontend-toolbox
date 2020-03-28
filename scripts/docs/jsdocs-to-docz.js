@@ -2,7 +2,7 @@ const fs = require('fs');
 const glob = require('glob');
 const {exec} = require('child_process');
 
-async function run(menu){
+async function run(){
   const args = process.argv.slice(2);
   const path = args[0];
   const menuName = args[1] ? args[1].split('=')[1] : false;
@@ -22,7 +22,13 @@ async function run(menu){
         exec(`jsdoc2md ${file}`, (_, stdout)=>{
           const output = stdout.replace(/<(|\/)code>/g, '');
           const doczInfo = `---\nname: ${packagesName}\nroute: /${packageRoute}\nmenu: ${menuName || capitalizedParent}\n---\n`;
-          const content = `${doczInfo}\n\n${markdownContent}\n\n${output}`;
+          let content = `${doczInfo}\n\n${markdownContent}`;
+          if(content.indexOf('<JsDocs />') >= 0){
+            content = content.replace('<JsDocs />', `\n${output}\n`);
+          }
+          else {
+            content += `\n${output}`;
+          }
 
           console.log(`writing docz for ${file}`);
           fs.writeFile(`${fileParentDir}/${mdxFileName}`, content, (error) => {
