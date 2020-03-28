@@ -3,11 +3,17 @@
  * @name actionMaker
  * @description creates an action
  * @param  type       {string}    type of the action
- * @param  payload    {any}       payload of the action
- * @return {object}
+ * @param  payload    {object}       payload of the action
+ * @return {{payload: {}, type: *}}
  */
 export const actionMaker = (type, payload = {}) => ({ type, payload });
 
+/**
+ * @name normalizeActionType
+ * @description separates the postfix of the action name
+ * @param type    {string}    type of the action you want to get the postfix
+ * @return {string[]|(RegExpExecArray & {groups: {}})}
+ */
 export const normalizeActionType = type => {
   const matches = /(.*)_(REQUEST|SUCCESS|FAILURE)/.exec(type);
 
