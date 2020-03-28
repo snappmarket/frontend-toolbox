@@ -2,9 +2,10 @@ const fs = require('fs');
 const glob = require('glob');
 const {exec} = require('child_process');
 
-async function run(){
+async function run(menu){
   const args = process.argv.slice(2);
   const path = args[0];
+  const menuName = args[1] ? args[1].split('=')[1] : false;
   glob(path, (err, files) => {
     files.forEach(file => {
       const fileParentDir = file.substr(0, file.lastIndexOf('/'));
@@ -20,7 +21,7 @@ async function run(){
         const markdownContent = fs.existsSync(markdownFile) ? fs.readFileSync(markdownFile, 'utf-8') : '';
         exec(`jsdoc2md ${file}`, (_, stdout)=>{
           const output = stdout.replace(/<(|\/)code>/g, '');
-          const doczInfo = `---\nname: ${packagesName}\nroute: /${packageRoute}\nmenu: ${capitalizedParent}\n---\n`;
+          const doczInfo = `---\nname: ${packagesName}\nroute: /${packageRoute}\nmenu: ${menuName || capitalizedParent}\n---\n`;
           const content = `${doczInfo}\n\n${markdownContent}\n\n${output}`;
 
           console.log(`writing docz for ${file}`);
