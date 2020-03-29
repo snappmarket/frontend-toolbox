@@ -5,13 +5,15 @@
 lib
 node_modules
 dist
-
+out
 public
 .idea
 .docz/.cache
 .docz/app/db.json
 .docz/gatsby-config.js
-
+.docz/gatsby-node.js
+.docz/reduxcache*
+.docz/.eslintrc
 
 
 # builds

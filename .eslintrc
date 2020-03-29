@@ -4,7 +4,7 @@
   "env": {
     "jest/globals": true
   },
-  "ignorePatterns": ["*.test.js", "*.config.js"],
+  "ignorePatterns": ["*.test.js","*.spec.js", "*.config.js", "**/dist/*",  "**/node_modules/*"],
   "plugins": ["prettier", "react", "jsx-a11y", "react-hooks","jest"],
   "globals": {
     "require": false,

@@ -19,7 +19,7 @@ describe('Button ui component tests', () => {
       color: theme.colors.white,
       height: 'calc(4.5 * 1rem)',
       fontSize: 'calc(1.8 * 1rem)',
-      minWidth: 'calc(20.6 * 1rem)',
+      minWidth: 'calc(4.5 * 1rem)',
     });
   });
 
@@ -56,7 +56,7 @@ describe('Button ui component tests', () => {
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(6 * 1rem)',
       fontSize: 'calc(1.8 * 1rem)',
-      minWidth: 'calc(30 * 1rem)',
+      minWidth: 'calc(6 * 1rem)',
     });
 
     rerender(
@@ -67,7 +67,7 @@ describe('Button ui component tests', () => {
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(4.5 * 1rem)',
       fontSize: 'calc(1.8 * 1rem)',
-      minWidth: 'calc(20.6 * 1rem)',
+      minWidth: 'calc(4.5 * 1rem)',
     });
 
     rerender(
@@ -78,7 +78,7 @@ describe('Button ui component tests', () => {
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(3.5 * 1rem)',
       fontSize: 'calc(1.4 * 1rem)',
-      minWidth: 'calc(20 * 1rem)',
+      minWidth: 'calc(3.5 * 1rem)',
     });
 
     rerender(
@@ -89,7 +89,7 @@ describe('Button ui component tests', () => {
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(3 * 1rem)',
       fontSize: 'calc(1.4 * 1rem)',
-      minWidth: 'calc(16 * 1rem)',
+      minWidth: 'calc(3 * 1rem)',
     });
 
     rerender(
@@ -100,7 +100,7 @@ describe('Button ui component tests', () => {
     expect(getByTestId('button')).toHaveStyle({
       height: 'calc(2.5 * 1rem)',
       fontSize: 'calc(1.2 * 1rem)',
-      minWidth: 'calc(12 * 1rem)',
+      minWidth: 'calc(2.5 * 1rem)',
     });
   });
 

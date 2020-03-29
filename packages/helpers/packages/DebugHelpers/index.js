@@ -1,8 +1,9 @@
 // eslint-disable-next-line func-style
 /**
+ * @function
  * @name delog
  * @description logs body of request on the console
- * @param body
+ * @param   body  {string}  body of the message you want to log on console
  */
 function delog(body) {
   if (process.env.DEBUG_MODE === 'true') {

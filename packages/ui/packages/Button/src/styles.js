@@ -68,7 +68,7 @@ export const StyledPrimaryButton = Styled(StyledButton)`
       props.theme.colors[
         defineForegroundColor(props.theme.colors[props.color][props.shade])
       ]};
-  }  
+  }
   &:hover,
   &:active {
     background-color: ${props =>

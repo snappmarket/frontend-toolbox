@@ -1,9 +1,10 @@
 /**
+ * @function
  * @name removeByKey
  * @description returns an object without given key
- * @param haystack
- * @param needle
- * @return {{}}
+ * @param   haystack    {object}    object you want to remove key from
+ * @param   needle      {string}    key you want to remove from object
+ * @return  {object}
  */
 export const removeByKey = (haystack, needle) =>
   Object.keys(haystack)
@@ -19,10 +20,11 @@ export const removeByKey = (haystack, needle) =>
     }, {});
 
 /**
+ * @function
  * @name flattenObject
  * @description recursively flattens an object, properties keys would be combination of parent and sub-object keys
- * @param object
- * @return {{}}
+ * @param   object    {object}    object you want to make it single dimensional
+ * @return  {object}
  */
 export const flattenObject = object => {
   const result = {};
@@ -42,28 +44,13 @@ export const flattenObject = object => {
 };
 
 /**
- * @name makeCookieString
- * @description converts the key-value cookie into concatenated cookie string
- * @param cookies
- * @return {string}
- */
-export const makeCookieString = cookies => {
-  let cookieString = '';
-  Object.keys(cookies).forEach(cookie => {
-    cookieString += `${cookie}=${cookies[cookie]}; `;
-  });
-
-  cookieString = cookieString.substr(0, cookieString.length - 2);
-  return cookieString;
-};
-
-/**
+ * @function
  * @name safeObjectPropertyRead
  * @description reads properties of an object safely and avoids to throw an error if property or object are undefined
- * @param object
- * @param key
- * @param defaultValue
- * @returns {*}
+ * @param   object          {object}    object you want to get value from
+ * @param   key             {string}    key of the object you want to get it's value
+ * @param   defaultValue    {any}       default value of what you want if it was undefiend
+ * @returns {any}
  */
 export const safeObjectPropertyRead = (object, key, defaultValue = undefined) =>
   key.split('.').reduce((nestedObject, index) => {
@@ -74,14 +61,43 @@ export const safeObjectPropertyRead = (object, key, defaultValue = undefined) =>
   }, object) || defaultValue;
 
 /**
+ * @function
  * @name getNextProp
  * @description returns the next property of given property in an object
- * @param object
- * @param key
- * @returns {boolean|string|*}
+ * @param   object    {object}    object you want navigate through
+ * @param   key       {string}    name of the key you want to get next prop right after
+ * @returns {any}
  */
 export const getNextProp = (object, key) => {
   const keys = Object.keys(object);
   const index = keys.indexOf(key);
   return index !== -1 && keys[index + 1] && object[keys[index + 1]];
+};
+
+/**
+ * @function
+ * @name serializeObject
+ * @description serializes the properties of given object
+ * @param   object    {object}    object to be serialized by keys
+ * @returns {string}
+ */
+export const serializeObject = object => {
+  const result = [];
+  Object.keys(object).forEach(property => {
+    if (typeof object[property] === 'object') {
+      if (Array.isArray(object[property]) && object[property].length) {
+        object[property].forEach(item => result.push(`${property}[]=${item}`));
+      } else if (
+        !Array.isArray(object[property]) &&
+        Object.keys(object[property]).length
+      ) {
+        Object.keys(object[property]).forEach(key =>
+          result.push(`${property}[${key}]=${object[property][key]}`),
+        );
+      }
+    } else if (typeof object[property] !== 'undefined') {
+      result.push(`${property}=${object[property]}`);
+    }
+  });
+  return result.join('&');
 };

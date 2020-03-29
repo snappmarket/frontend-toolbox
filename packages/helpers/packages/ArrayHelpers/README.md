@@ -1,5 +1,5 @@
 # ArrayHelpers
-> ✴ Methods that helps us with arrays  
+> ✴ Methods that helps us with arrays
 ----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/array-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/array-helpers)
@@ -10,7 +10,7 @@
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
-## get started 
+## get started
 We provide two way of using this package `single` or `multi` :
 ```bash
 npm i @snappmarket/array-helpers
@@ -21,16 +21,15 @@ npm i @snappmarket/helpers
 ## methods
 |        |
 | ------ |
-| arrayItemAddProp                                                 |  
-| flattenArray                                                 |  
-| serializeObject                                                 |  
-| stringifyArray                                                 |  
-| deepFlatten                                                 |   
+| arrayItemAddProp                                                 |
+| flattenArray                                                 |
+| stringifyArray                                                 |
+| deepFlatten                                                 |
 
 
-## usage 
+## usage
 ```javascript
 import { METHOD_NAME } from '@snappmarket/array-helpers';
-// or 
+// or
 // import { METHOD_NAME } from '@snappmarket/helpers';
 ```

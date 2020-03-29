@@ -57,7 +57,7 @@ const Button = props => {
     direction,
     fontSize: boxSizing[size].fontSize,
     height: boxSizing[size].height,
-    minWidth: title ? boxSizing[size].minWidth : boxSizing[size].minWidth,
+    minWidth: title ? boxSizing[size].minWidth : boxSizing[size].height,
     ...rest,
   };
 
