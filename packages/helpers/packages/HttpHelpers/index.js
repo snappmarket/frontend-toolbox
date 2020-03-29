@@ -65,8 +65,6 @@ export const universalCall = async ({
     ...rest,
   };
 
-  delog(`API called with : ${options.method} ${url}`);
-
   if (jwtToken) {
     // eslint-disable-next-line no-param-reassign
     headers.authorization = `Bearer ${jwtToken}`;
