@@ -6,7 +6,11 @@ import { StyledRow } from './styles';
 const Row = props => {
   const { className, children } = props;
 
-  const render = () => <StyledRow className={className}>{children}</StyledRow>;
+  const render = () => (
+    <StyledRow className={className} data-testid="gridRow">
+      {children}
+    </StyledRow>
+  );
 
   return render();
 };

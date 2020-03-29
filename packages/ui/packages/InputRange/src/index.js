@@ -23,8 +23,8 @@ const InputRange = props => {
   const { min, max } = value;
 
   return (
-    <StyledInputRangeWrapper>
-      <StyledInputRange>
+    <StyledInputRangeWrapper data-testid="inputRangeWrapper">
+      <StyledInputRange data-testid="inputRange">
         <ReactInputRange
           minValue={initialMin}
           value={value}
@@ -35,8 +35,8 @@ const InputRange = props => {
           rtl
         />
       </StyledInputRange>
-      <StyledRangeLabelWrapper className="justify-between">
-        <span className="text-center">
+      <StyledRangeLabelWrapper data-testid="inputRangeLabel" className="justify-between">
+        <span className="text-center" data-testid="inputRangeLabelItem">
           {fromTitle} {currencyPrice(min)}
         </span>
         <span className="text-center">
@@ -66,11 +66,11 @@ InputRange.defaultProps = {
   onChangeComplete: () => {},
   rangeValue: {
     min: 0,
-    max: 0,
+    max: 1,
   },
   value: {
     min: 0,
-    max: 0,
+    max: 1,
   },
 };
 export default InputRange;

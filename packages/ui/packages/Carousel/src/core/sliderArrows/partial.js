@@ -22,7 +22,6 @@ export const shiftSlideIsDir = params => {
     slider,
     rtl,
   } = params;
-  const newSlidesLength = infinite ? slidesLength : slidesLength - 1;
 
   const calcFinalItemPositionParams = {
     slideSize,
@@ -42,7 +41,7 @@ export const shiftSlideIsDir = params => {
 
   if (
     !infinite &&
-    newIndex + perSlide - 1 >= newSlidesLength &&
+    newIndex + perSlide - 1 >= slidesLength - 1 &&
     responsiveItem !== 1
   ) {
     const result = directionSetter({
@@ -58,7 +57,7 @@ export const shiftSlideIsDir = params => {
   }
 
   // when perSlide === 1
-  if (!infinite && newIndex === newSlidesLength) {
+  if (!infinite && newIndex === slidesLength - 1) {
     nextNone(slider);
     prevBlock(slider);
   }

@@ -6,7 +6,7 @@ import { StyledGrid } from './styles';
 const Grid = props => {
   const { perRow, children, className } = props;
   return (
-    <StyledGrid className={className} perRow={perRow}>
+    <StyledGrid data-testid="grid" className={className} perRow={perRow}>
       {children}
     </StyledGrid>
   );
