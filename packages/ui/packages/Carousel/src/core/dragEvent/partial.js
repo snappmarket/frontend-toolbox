@@ -13,12 +13,6 @@ import {
   nextNone,
 } from '../utils';
 
-export const directionClientX = params => {
-  const { rtl, e, sliderMainWidth } = params;
-  if (rtl) return sliderMainWidth - e.clientX;
-  return e.clientX;
-};
-
 export const directionTouchClientX = params => {
   const { rtl, e, sliderMainWidth } = params;
   if (rtl) return sliderMainWidth - e.touches[0].clientX;
@@ -26,19 +20,25 @@ export const directionTouchClientX = params => {
 };
 
 export const caroueslTouchStart = params => directionTouchClientX(params);
-
-export const caroueslDragAction = params => {
-  const { e, dragEndCall, dragActionCall, sliderMainWidth, rtl } = params;
-  document.onmouseup = dragEndCall;
-  document.onmousemove = dragActionCall;
-  return directionClientX({ rtl, e, sliderMainWidth });
-};
 export const dragActionTouchmovePosX2 = params => {
   const { e, posX1, rtl, sliderMainWidth } = params;
   return posX1 - directionTouchClientX({ rtl, e, sliderMainWidth });
 };
 
 export const dragActionTouchmovePosX1 = params => directionTouchClientX(params);
+
+export const directionClientX = params => {
+  const { rtl, e, sliderMainWidth } = params;
+  if (rtl) return sliderMainWidth - e.clientX;
+  return e.clientX;
+};
+
+export const caroueslDragStart = params => {
+  const { e, dragEndCall, dragActionCall, sliderMainWidth, rtl } = params;
+  document.onmouseup = dragEndCall;
+  document.onmousemove = dragActionCall;
+  return directionClientX({ rtl, e, sliderMainWidth });
+};
 
 export const dragActionMousemove = params => {
   const { posX1, e, rtl, sliderMainWidth } = params;
@@ -185,7 +185,7 @@ export const dragStart = params => {
       sliderMainWidth,
     };
     setPosInitial(posInitial);
-    setPosX1(caroueslDragAction(dragActionParams));
+    setPosX1(caroueslDragStart(dragActionParams));
   }
 };
 
