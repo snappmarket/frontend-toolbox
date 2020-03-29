@@ -32,7 +32,11 @@ const Col = props => {
   });
 
   return (
-    <StyledColumn layouts={layouts} className={className}>
+    <StyledColumn
+      layouts={layouts}
+      className={className}
+      data-testid="colGridSystem"
+    >
       {children}
     </StyledColumn>
   );

@@ -14,8 +14,7 @@ const StyledGrid = Styled.div`
     }`,
       )
       : `
-    width: calc(100% / ${props.perRow});`}
-  }
+    width: ${100 / props.perRow}%`}
 `;
 /* eslint-enable prettier/prettier */
 export { StyledGrid };
