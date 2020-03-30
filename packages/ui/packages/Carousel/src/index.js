@@ -46,7 +46,11 @@ const SimpleCarousel = props => {
 
   return (
     <StyledSimpleCarousel>
-      <div className={`slider ${className}`} ref={sliderRed}>
+      <div
+        data-testid="carousel"
+        className={`slider ${className}`}
+        ref={sliderRed}
+      >
         <div className="wrapper">
           <div className="slides">{children}</div>
         </div>

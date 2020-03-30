@@ -5,7 +5,7 @@ const StyledBreadcrumbWrapper = Styled.div`
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    background-color:  ${props => props.theme.colors.white};s
+    background-color:  ${props => props.theme.colors.white};
     border-radius: calc(${props => props.theme.defaultRem} * 0.2);
     font-size: calc(${props => props.theme.defaultRem} * 1.5);
 `;

@@ -8,8 +8,10 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-`hooks`, `helpers`, `ui components` and `icons` that we used in new version of : http://snappmarket
+`hooks`, `helpers`, `ui components` and `icons` that we used in new version of snappmarket website
 
+## demo 
+You can see demo at : https://ft-box.netlify.com/
 
 ## get started
 ```bash

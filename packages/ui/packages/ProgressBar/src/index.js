@@ -6,8 +6,8 @@ import { StyledProgressBarWrapper, StyledProgressBar } from './styles';
 const ProgressBar = props => {
   const { percent, ...rest } = props;
   return (
-    <StyledProgressBarWrapper {...rest}>
-      <StyledProgressBar percent={percent} />
+    <StyledProgressBarWrapper data-testid="progressBarWrapper"  {...rest}>
+      <StyledProgressBar data-testid="progressBar" percent={percent} />
     </StyledProgressBarWrapper>
   );
 };
