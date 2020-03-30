@@ -20,7 +20,8 @@ async function run(){
       try {
         const markdownContent = fs.existsSync(markdownFile) ? fs.readFileSync(markdownFile, 'utf-8') : '';
         exec(`jsdoc2md ${file}`, (_, stdout)=>{
-          const output = stdout.replace(/<(|\/)code>/g, '');
+          let output = stdout.replace(/<(|\/)code>/g, '');
+          output = output.replace(/##+(.*)/g, value => `${value.length < 30 ? value: value.slice(0,30)}...`)
           const doczInfo = `---\nname: ${packagesName}\nroute: /${packageRoute}\nmenu: ${menuName || capitalizedParent}\n---\n`;
           let content = `${doczInfo}\n\n${markdownContent}`;
           if(content.indexOf('<JsDocs />') >= 0){
