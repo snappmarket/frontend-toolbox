@@ -6,6 +6,7 @@ async function run(){
   const args = process.argv.slice(2);
   const path = args[0];
   const menuName = args[1] ? args[1].split('=')[1] : false;
+  const titleLimit = 20;
   glob(path, (err, files) => {
     files.forEach(file => {
       const fileParentDir = file.substr(0, file.lastIndexOf('/'));
@@ -21,7 +22,7 @@ async function run(){
         const markdownContent = fs.existsSync(markdownFile) ? fs.readFileSync(markdownFile, 'utf-8') : '';
         exec(`jsdoc2md ${file}`, (_, stdout)=>{
           let output = stdout.replace(/<(|\/)code>/g, '');
-          output = output.replace(/##+(.*)/g, value => `${value.length < 30 ? value: value.slice(0,30)}...`)
+          output = output.replace(/##+(.*)/g, value => `${value.length < titleLimit ? value: value.slice(0,titleLimit-3)}...`)
           const doczInfo = `---\nname: ${packagesName}\nroute: /${packageRoute}\nmenu: ${menuName || capitalizedParent}\n---\n`;
           let content = `${doczInfo}\n\n${markdownContent}`;
           if(content.indexOf('<JsDocs />') >= 0){
