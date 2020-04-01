@@ -27,7 +27,7 @@ const Breadcrumb = props => {
     /* eslint-enable indent */
   ));
   return (
-    <StyledBreadcrumbWrapper className={className} {...rest}>
+    <StyledBreadcrumbWrapper data-testid="breadcrumb" className={className} {...rest}>
       {breadcrumbItems}
     </StyledBreadcrumbWrapper>
   );
