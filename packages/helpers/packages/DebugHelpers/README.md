@@ -1,6 +1,5 @@
 # Debugging helpers
 > ✴ Methods that helps us to debug easily
-----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/debug-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/debug-helpers)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/debug-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/debug-helpers)
@@ -10,7 +9,7 @@
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
-## get started 
+## get started
 We provide two way of using this package `single` or `multi` :
 ```bash
 npm i @snappmarket/debug-helpers
@@ -22,13 +21,13 @@ npm i @snappmarket/helpers
 ## methods
 |        |
 | ------ |
-| delog                                                 |  
-| ApiError                                                 |  
-| globalErrorCatcher                                                 |  
+| delog                                                 |
+| ApiError                                                 |
+| globalErrorCatcher                                                 |
 
-## usage 
+## usage
 ```javascript
 import { METHOD_NAME } from '@snappmarket/debug-helpers';
-// or 
+// or
 // import { METHOD_NAME } from '@snappmarket/helpers';
 ```
