@@ -19,6 +19,12 @@ const StyledNavigateButton = Styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
+  svg {
+    &:first-child {
+      margin-left: calc(${props => props.theme.defaultRem} * -0.8)
+
+    }
+  }
 `;
 const StyledPaginationItem = Styled(StyledNavigateButton)`
   background-color: ${props => props.theme.colors.blue.bright};

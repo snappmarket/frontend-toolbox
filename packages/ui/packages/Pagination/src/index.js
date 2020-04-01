@@ -63,8 +63,8 @@ const Pagination = props => {
             onClick={() => handlePaginate(0)}
             disabled={!currentPage}
           >
-            <AngleRightIcon />
-            <AngleRightIcon />
+            <AngleRightIcon color="gray" />
+            <AngleRightIcon color="gray" />
           </StyledNavigateButton>
         )}
         {hasNavigateButtons && (
@@ -72,7 +72,7 @@ const Pagination = props => {
             onClick={() => handlePaginate(currentPage - 1)}
             disabled={!currentPage}
           >
-            <AngleRightIcon />
+            <AngleRightIcon color="gray" />
           </StyledNavigateButton>
         )}
         {pages}
@@ -81,7 +81,7 @@ const Pagination = props => {
             onClick={() => handlePaginate(currentPage + 1)}
             disabled={(currentPage + 1) * limit >= total}
           >
-            <AngleLeftIcon />
+            <AngleLeftIcon color="gray" />
           </StyledNavigateButton>
         )}
         {hasSkipButtons && (
@@ -89,8 +89,8 @@ const Pagination = props => {
             onClick={() => handlePaginate(pagesCount - 1)}
             disabled={(currentPage + 1) * limit >= total}
           >
-            <AngleLeftIcon />
-            <AngleLeftIcon />
+            <AngleLeftIcon color="gray" />
+            <AngleLeftIcon color="gray" />
           </StyledNavigateButton>
         )}
       </StyledPaginationItemsWrapper>

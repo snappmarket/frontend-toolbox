@@ -2,7 +2,7 @@
 import AbortController from 'abort-controller';
 import fetch from 'isomorphic-unfetch';
 
-import { ApiError, delog } from '../DebugHelpers';
+import { ApiError } from '../DebugHelpers';
 import { serializeObject } from '../ObjectHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
@@ -64,8 +64,6 @@ export const universalCall = async ({
     headers,
     ...rest,
   };
-
-  delog(`API called with : ${options.method} ${url}`);
 
   if (jwtToken) {
     // eslint-disable-next-line no-param-reassign
