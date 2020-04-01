@@ -17,7 +17,7 @@ const Breadcrumb = props => {
     <StyledBreadcrumbItemWrapper key={index}>
       {!!index && (
         <StyledBreadcrumbItemSeparator>
-          <AngleLeftIcon />
+          <AngleLeftIcon size={1.3} color="gray" />
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>

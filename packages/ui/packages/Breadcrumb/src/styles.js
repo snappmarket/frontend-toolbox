@@ -13,6 +13,7 @@ const StyledBreadcrumbItem = Styled.div`
     padding: calc(${props => props.theme.defaultRem});
     a {
         text-decoration: none;
+        color: ${props => props.theme.colors.gray.normal};
         font-size: calc(${props => props.theme.defaultRem} * 1.2);
     }
 `;
