@@ -15208,7 +15208,6 @@ reduce-without@^1.0.1:
   integrity sha1-aK0OrRGFXJo31OglbBW7+Hly/Iw=
   dependencies:
     test-value "^2.0.0"
-
 redux-mock-store@^1.5.4:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/redux-mock-store/-/redux-mock-store-1.5.4.tgz#90d02495fd918ddbaa96b83aef626287c9ab5872"
