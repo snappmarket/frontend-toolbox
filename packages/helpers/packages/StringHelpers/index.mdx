@@ -39,12 +39,66 @@ import { METHOD_NAME } from '@snappmarket/string-helpers';
 ```
 ``
 
+## Members...
+
+<dl>
+<dt><a href="#stringReplace">stringReplace</a> ⇒ string</dt>
+<dd><p>replace a string with another in a text</p>
+</dd>
+<dt><a href="#bulkStringReplace">bulkStringReplace</a> ⇒ *</dt>
+<dd><p>replaces multiple strings in a text</p>
+</dd>
+<dt><a href="#autoLink">autoLink</a> ⇒</dt>
+<dd><p>links urls in the string</p>
+</dd>
+<dt><a href="#getQueryParams">getQueryParams</a> ⇒ string | null</dt>
+<dd><p>gets value of a query parameter</p>
+</dd>
+</dl>
+
+<a name="stringReplace"></a>
+
+## stringReplace ...
+replace a string with another in a text
+
+**Kind**: global variable  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| find | string | string you want to be replaced |
+| replace | string | string you wont to replace |
+| string | string | string you want to modify |
+
+<a name="bulkStringReplace"></a>
+
+## bulkStringRepl...
+replaces multiple strings in a text
+
+**Kind**: global variable  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| replacments | object | object of replacement, key is string you want to find, and value is the string you want to replace |
+| string | string | string you want to modify |
+
 <a name="autoLink"></a>
 
 ## autoLink ⇒...
 links urls in the string
 
-**Kind**: global constant  
+**Kind**: global variable  
 **Returns**: string  
 **Author**: Reza Erami <reza@erami.name>
-Wparam string  
+Wparam string    {string}    string you want to make URLs linked  
+<a name="getQueryParams"></a>
+
+## getQueryParams...
+gets value of a query parameter
+
+**Kind**: global variable  
+
+| Param |
+| --- |
+| url | 
+| parameter | 
+
