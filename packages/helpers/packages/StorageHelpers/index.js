@@ -1,5 +1,11 @@
 import { recursiveJsonParse } from '../JsonHelpers';
 
+/**
+ * @name getLocalStorageData
+ * @description gets the local storage data, deep parsed to json
+ * @param key   {string}    key of the item in the local storage
+ * @return {string|Object}
+ */
 export const getLocalStorageData = key => {
   try {
     const collection = {};

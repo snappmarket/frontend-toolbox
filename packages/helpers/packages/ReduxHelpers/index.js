@@ -1,5 +1,19 @@
+/**
+ * @function
+ * @name actionMaker
+ * @description creates an action
+ * @param  type       {string}    type of the action
+ * @param  payload    {object}       payload of the action
+ * @return {{payload: {}, type: *}}
+ */
 export const actionMaker = (type, payload = {}) => ({ type, payload });
 
+/**
+ * @name normalizeActionType
+ * @description separates the postfix of the action name
+ * @param type    {string}    type of the action you want to get the postfix
+ * @return {string[]|(RegExpExecArray & {groups: {}})}
+ */
 export const normalizeActionType = type => {
   const matches = /(.*)_(REQUEST|SUCCESS|FAILURE)/.exec(type);
 
@@ -10,15 +24,26 @@ export const normalizeActionType = type => {
 };
 
 /**
- * A simple persistor
- * @param config
- * @returns {{makeInitialState: *, getMiddleware: *}}
+ *
+ * @name configPersistor
+ * @desription A simple persistor
+ * @param   config    {object}    configuration of the persistor such as prefix for the localstorage key or whitelist to make the reducer persisted
+ * @return {{makeInitialState: (function(Object): {}), getMiddleware: (function(*=): function(*): function(...[*]=))}}
  */
 export const configPersistor = config => {
-  const makeItemName = name => `${config.prefix}${name}`;
   /**
-   * Get persisted state and join it with initial state
-   * @param initialState
+   * @name makeItemName
+   * @description concatenates the name of the reducer with the given prefix
+   * @param  name    {string}    name of the reducer
+   * @return {string}
+   */
+  const makeItemName = name => `${config.prefix}${name}`;
+
+  /**
+   * @name makeInitialState
+   * @description Get persisted state and join it with initial state
+   * @param initialState    {object}    default state of the application
+   * @returns {object}
    */
   const makeInitialState = initialState => {
     const temp = { ...initialState };
@@ -36,9 +61,10 @@ export const configPersistor = config => {
   };
 
   /**
-   * Make a middleware for our persistor
+   * @name getMiddleware
+   * @description Make a middleware for our persistor
    * @param store
-   * @returns {function(*): Function}
+   * @return {function(*): function(...[*]=)}
    */
   const getMiddleware = store => next => action => {
     if (action.type === config.purgeActionType) {
