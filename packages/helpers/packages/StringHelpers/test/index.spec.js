@@ -3,8 +3,8 @@ import * as StringHelpers from '../index';
 describe('StingHelpers', () => {
   describe('stringReplace', () => {
     it('should find and replace a word in a string', () => {
-      const payload = 'Hello World!';
-      const expected = 'Hello Snappmarket!';
+      const payload = 'Hello World, this is World!';
+      const expected = 'Hello Snappmarket, this is Snappmarket!';
       expect(
         StringHelpers.stringReplace('World', 'Snappmarket', payload),
       ).toEqual(expected);

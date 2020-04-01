@@ -1,6 +1,20 @@
-export const stringReplace = (find, replace, string) =>
-  `${string}`.split(find).join(replace);
+/**
+ * @name stringReplace
+ * @description replace a string with another in a text
+ * @param find      {string}    string you want to be replaced
+ * @param replace   {string}    string you wont to replace
+ * @param string    {string}    string you want to modify
+ * @return {string}
+ */
+export const stringReplace = (find, replace, string) => `${string}`.replace(new RegExp(find, "g"), replace)
 
+/**
+ * @name bulkStringReplace
+ * @description replaces multiple strings in a text
+ * @param replacments   {object}    object of replacement, key is string you want to find, and value is the string you want to replace
+ * @param string        {string}    string you want to modify
+ * @return {*}
+ */
 export const bulkStringReplace = (replacments, string) => {
   let modifiedString = string;
   Object.keys(replacments).forEach(key => {
@@ -9,9 +23,10 @@ export const bulkStringReplace = (replacments, string) => {
   return modifiedString;
 };
 /**
- * links urls in the string
+ * @name autoLink
+ * @description links urls in the string
  * @author Reza Erami <reza@erami.name>
- * Wparam string
+ * Wparam string    {string}    string you want to make URLs linked
  * @return string
  */
 export const autoLink = string => {
@@ -21,6 +36,13 @@ export const autoLink = string => {
   return string.replace(regex, template);
 };
 
+/**
+ * @name getQueryParams
+ * @description gets value of a query parameter
+ * @param url
+ * @param parameter
+ * @return {string|null}
+ */
 export const getQueryParams = (url, parameter) => {
   // eslint-disable-next-line no-useless-escape
   const myParameter = parameter.replace(/[\[\]]/g, '\\$&');
