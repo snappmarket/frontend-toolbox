@@ -4,8 +4,10 @@ route: /helpers/CookieHelpers
 menu: 6.Helpers
 ---
 
+
 # Cookie helpers
 > ✴ Methods that helps us dead with cookies
+----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/cookie-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/cookie-helpers)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/cookie-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/cookie-helpers)
@@ -36,3 +38,69 @@ import { METHOD_NAME } from '@snappmarket/array-helpers';
 // or
 // import { METHOD_NAME } from '@snappmarket/helpers';
 ```
+
+## Functions...
+
+<dl>
+<dt><a href="#getCookie">getCookie(key)</a> ⇒ string</dt>
+<dd><p>Gives us a cookie by name</p>
+</dd>
+<dt><a href="#setCookie">setCookie(name, value, expireDays, path)</a></dt>
+<dd><p>Sets a cookie</p>
+</dd>
+<dt><a href="#deleteCookie">deleteCookie(name)</a></dt>
+<dd><p>deletes a cookie</p>
+</dd>
+<dt><a href="#makeCookieString">makeCookieString(cookies)</a> ⇒ string</dt>
+<dd><p>converts the key-value cookie into concatenated cookie string</p>
+</dd>
+</dl>
+
+<a name="getCookie"></a>
+
+## getCookie(key) ⇒ string...
+Gives us a cookie by name
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | string | name of the cookie you want |
+
+<a name="setCookie"></a>
+
+## setCookie(name, value, expi...
+Sets a cookie
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | string | name of the cookie |
+| value | string | value of the cookie |
+| expireDays | number | number of the days that cookie could be valid |
+| path | string | path of the cookie to set |
+
+<a name="deleteCookie"></a>
+
+## deleteCookie(name)...
+deletes a cookie
+
+**Kind**: global function  
+**Author**: Reza Erami  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | string | name of the cookie you want to delete |
+
+<a name="makeCookieString"></a>
+
+## makeCookieString(cookies) ⇒...
+converts the key-value cookie into concatenated cookie string
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| cookies | object | object of cookies you want to convert too cookie string |
+
