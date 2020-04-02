@@ -23,7 +23,7 @@ export const hexToRgb = hex => {
 /**
  * @function
  * @name defineForegroundColor
- * @description Decide between dark or light color based on background color contrast
+ * @description Decide between dark or light color based on background color brightness
  * @param backgroundColor   {string}    background color in hex
  * @returns {string}
  */
@@ -43,7 +43,7 @@ export const defineForegroundColor = backgroundColor => {
  */
 export const makeRgba = (opacity, color) => {
   const rgb = hexToRgb(color);
-  return `rgba(${rgb.red},${rgb.green},${rgb.blue}, ${opacity})`;
+  return `rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, ${opacity})`;
 };
 
 /**
@@ -62,10 +62,10 @@ export const decideMeasurement = measurement =>
  * @function
  * @name makeShadow
  * @description returns a shadow suitable for css
- * @param   hOffset   {number}    horizontal offset of shadow, wil be multiplied in rem
- * @param   vOffset   {number}    vertical offset of shadow, wil be multiplied in rem
- * @param   blur      {number}    blur of the shadow, wil be multiplied in rem
- * @param   spread    {number}    spread of the shadow, wil be multiplied in rem
+ * @param   hOffset   {number|string}    horizontal offset of shadow, wil be multiplied in rem
+ * @param   vOffset   {number|string}    vertical offset of shadow, wil be multiplied in rem
+ * @param   blur      {number|string}    blur of the shadow, wil be multiplied in rem
+ * @param   spread    {number|string}    spread of the shadow, wil be multiplied in rem
  * @param   color     {string}    color of the shadow
  * @param   inset     {boolean}    blur of the shadow, wil be multiplied in rem
  * @returns {string}
@@ -77,10 +77,4 @@ export const makeShadow = (
   spread,
   color,
   inset = false,
-) => `calc(${theme.defaultRem} * ${hOffset})
-  calc(${theme.defaultRem} * ${vOffset})
-  calc(${theme.defaultRem} * ${blur})
-  calc(${theme.defaultRem} * ${spread})
-  ${color}
-  ${inset ? 'inset' : ''}
-`;
+) => `${decideMeasurement(hOffset)} ${decideMeasurement(vOffset)} ${decideMeasurement(blur)} ${decideMeasurement(spread)} ${color}${inset ? ' inset' : ''}`;
