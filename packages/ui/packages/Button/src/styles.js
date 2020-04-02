@@ -42,7 +42,7 @@ export const StyledButton = Styled.button`
 
 export const StyledLabel = Styled.span`
   font-family: ${props => props.theme.defaultFont};
-  border-radius: 50%;
+  border-radius: calc(${props => props.theme.defaultRem});
   font-size: calc(${props => props.theme.defaultRem} * 1.1);
   padding: ${props =>
     `calc(${props.theme.defaultRem} * 0.2) calc(${props.theme.defaultRem} * 0.8)`};
