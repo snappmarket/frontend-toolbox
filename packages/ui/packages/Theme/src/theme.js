@@ -1,4 +1,4 @@
-const index = {
+const theme = {
   defaultRem: '1rem',
   defaultFont: 'IRANSans',
   containerWidth: '1628px',
@@ -61,4 +61,4 @@ const index = {
   },
 };
 
-export default index;
+export default theme;

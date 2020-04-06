@@ -1,4 +1,5 @@
 /**
+ * @function
  * @name stringReplace
  * @description replace a string with another in a text
  * @param find      {string}    string you want to be replaced
@@ -9,6 +10,7 @@
 export const stringReplace = (find, replace, string) => `${string}`.replace(new RegExp(find, "g"), replace)
 
 /**
+ * @function
  * @name bulkStringReplace
  * @description replaces multiple strings in a text
  * @param replacments   {object}    object of replacement, key is string you want to find, and value is the string you want to replace
@@ -23,10 +25,11 @@ export const bulkStringReplace = (replacments, string) => {
   return modifiedString;
 };
 /**
+ * @function
  * @name autoLink
  * @description links urls in the string
  * @author Reza Erami <reza@erami.name>
- * Wparam string    {string}    string you want to make URLs linked
+ * @param string    {string}    string you want to make URLs linked
  * @return string
  */
 export const autoLink = string => {
@@ -37,6 +40,7 @@ export const autoLink = string => {
 };
 
 /**
+ * @function
  * @name getQueryParams
  * @description gets value of a query parameter
  * @param url
