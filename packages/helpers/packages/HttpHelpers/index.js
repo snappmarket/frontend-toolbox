@@ -84,7 +84,7 @@ export const universalCall = async ({
   let callUrl = url;
   if (Object.keys(params).length > 0) {
     const queryParameters = serializeObject(params);
-    callUrl += `?${queryParameters}`;
+    callUrl += `?${decodeURIComponent(queryParameters)}`;
   }
 
   /**
