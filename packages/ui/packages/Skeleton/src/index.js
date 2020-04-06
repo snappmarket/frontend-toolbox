@@ -10,12 +10,12 @@ import { StyledBox, StyledImage, StyledMap } from './styles';
  */
 const BoxSkeleton = props => {
 
-  const { type } = props;
+  const { type, ...rest } = props;
 
   const skeleton = {
-    box: <StyledBox data-testid="skeleton" {...props} />,
-    image: <StyledImage data-testid="skeleton" {...props} />,
-    map: <StyledMap data-testid="skeleton" {...props} />,
+    box: <StyledBox data-testid="skeleton" {...rest} />,
+    image: <StyledImage data-testid="skeleton" {...rest} />,
+    map: <StyledMap data-testid="skeleton" {...rest} />,
   };
 
   return skeleton[type];
