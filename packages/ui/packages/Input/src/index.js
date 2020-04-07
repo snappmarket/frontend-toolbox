@@ -21,7 +21,6 @@ const Input = React.forwardRef((props, ref) => {
       )}
       <StyledInput
         data-testid="input"
-        autocomplete="off"
         className={className}
         status={status}
         ref={ref}
