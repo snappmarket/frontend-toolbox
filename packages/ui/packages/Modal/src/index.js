@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useEffect, useState, createRef } from 'react';
+import React, { useEffect, useState, createRef, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { CrossIcon } from '@snappmarket/icons';
@@ -14,7 +13,7 @@ import {
   StyledModalFooter,
 } from './styles';
 
-const Modal = props => {
+const Modal = forwardRef((props, ref) => {
   const {
     className,
     handleClose,
@@ -70,7 +69,11 @@ const Modal = props => {
 
   const render = () =>
     visibility ? (
-      <StyledModalWrapper data-testid="modalWrapper" className={className}>
+      <StyledModalWrapper
+        data-testid="modalWrapper"
+        className={className}
+        ref={ref}
+      >
         <StyledLightBox onClick={handleClose || undefined} />
         <StyledModal
           data-testid="modal"
@@ -109,7 +112,7 @@ const Modal = props => {
     ) : null;
 
   return createPortal(render(), document.body);
-};
+});
 
 Modal.propTypes = {
   className: PropTypes.string,
