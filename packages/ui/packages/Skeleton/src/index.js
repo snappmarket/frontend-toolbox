@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { StyledBox } from './styles';
+import { StyledBox, StyledImage, StyledMap } from './styles';
 
 /**
  * Just a wrapper to box skeleton
@@ -8,13 +8,25 @@ import { StyledBox } from './styles';
  * @returns {*}
  * @constructor
  */
-const BoxSkeleton = props => <StyledBox data-testid="skeleton" {...props} />;
+const BoxSkeleton = props => {
+
+  const { type, ...rest } = props;
+
+  const skeleton = {
+    box: <StyledBox data-testid="skeleton" {...rest} />,
+    image: <StyledImage data-testid="skeleton" {...rest} />,
+    map: <StyledMap data-testid="skeleton" {...rest} />,
+  };
+
+  return skeleton[type];
+};
 
 /**
  * Prop types
  * @type {{animationDuration: *, alignItems: *, background: *, width: *, className: *, backgroundSize: *, float: *, radius: *, justifyContent: *, height: *}}
  */
 BoxSkeleton.propTypes = {
+  type: PropTypes.oneOf(['box', 'image', 'map']),
   className: PropTypes.string,
   justBorder: PropTypes.bool,
   background: PropTypes.string,
@@ -28,6 +40,7 @@ BoxSkeleton.propTypes = {
 };
 
 BoxSkeleton.defaultProps = {
+  type: 'box',
   animationDuration: 3,
   width: 3,
   height: 3,
