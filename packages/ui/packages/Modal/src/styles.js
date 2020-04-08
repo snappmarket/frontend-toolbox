@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-import { Button } from '@snappmarket/ui';
+import Button from '../../Button/src';
 
 const StyledModalWrapper = Styled.div`
   position: fixed;
