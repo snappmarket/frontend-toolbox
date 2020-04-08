@@ -27,8 +27,6 @@ const Modal = props => {
     position: initialPosition,
   } = props;
   const modalRef = createRef();
-
-  const [modalContainer, setModalContainer] = useState(null);
   const [position, setPosition] = useState(initialPosition);
 
   /**
@@ -45,9 +43,8 @@ const Modal = props => {
       }
     };
 
-    const body = document.getElementsByTagName('body')[0];
+    const { body } = document;
     body.style['overflow-y'] = 'hidden';
-    setModalContainer(document.createElement('div'));
 
     handleVisibility();
 
@@ -57,26 +54,10 @@ const Modal = props => {
   }, [handleClose, onOpen, visibility]);
 
   /**
-   * Create container for modal portal
-   */
-  useEffect(() => {
-    const body = document.getElementsByTagName('body')[0];
-    if (modalContainer) {
-      body.appendChild(modalContainer);
-    }
-
-    return () => {
-      if (modalContainer) {
-        body.removeChild(modalContainer);
-      }
-    };
-  }, [modalContainer]);
-
-  /**
    * Define modal position based on  window size
    */
   useEffect(() => {
-    if (visibility && modalContainer) {
+    if (visibility) {
       const {
         current: { offsetHeight: modalHeight },
       } = modalRef;
@@ -85,13 +66,18 @@ const Modal = props => {
         setPosition('top');
       }
     }
-  }, [position, modalContainer, visibility, modalRef]);
+  }, [position, visibility, modalRef]);
 
   const render = () =>
     visibility ? (
       <StyledModalWrapper data-testid="modalWrapper" className={className}>
         <StyledLightBox onClick={handleClose || undefined} />
-        <StyledModal data-testid="modal" width={width} position={position} ref={modalRef}>
+        <StyledModal
+          data-testid="modal"
+          width={width}
+          position={position}
+          ref={modalRef}
+        >
           {handleClose && typeof handleClose === 'function' && (
             <StyledCloseModalButton
               data-testid="closeModalButton"
@@ -103,16 +89,26 @@ const Modal = props => {
               onClick={handleClose}
             />
           )}
-          {!!header && <StyledModalHeader data-testid="modalHeader">{header}</StyledModalHeader>}
-          {!!children && <StyledModalContent data-testid="modalContent">{children}</StyledModalContent>}
-          {!!footer && <StyledModalFooter data-testid="modalFooter">{footer}</StyledModalFooter>}
+          {!!header && (
+            <StyledModalHeader data-testid="modalHeader">
+              {header}
+            </StyledModalHeader>
+          )}
+          {!!children && (
+            <StyledModalContent data-testid="modalContent">
+              {children}
+            </StyledModalContent>
+          )}
+          {!!footer && (
+            <StyledModalFooter data-testid="modalFooter">
+              {footer}
+            </StyledModalFooter>
+          )}
         </StyledModal>
       </StyledModalWrapper>
     ) : null;
-  if (modalContainer) {
-    return createPortal(render(), modalContainer);
-  }
-  return null;
+
+  return createPortal(render(), document.body);
 };
 
 Modal.propTypes = {
