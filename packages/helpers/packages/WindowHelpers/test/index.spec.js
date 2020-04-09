@@ -9,4 +9,13 @@ describe("WindowHelpers", () => {
       expect(WindowHelpers.getPathName('/foo')).toEqual('foo_page');
     });
   });
+  describe("getWindowSize", () => {
+    it("should get window dimension", () => {
+      const width = 768;
+      const height = 1050;
+      jest.spyOn(document.body, 'clientWidth', 'get').mockReturnValue(width);
+      jest.spyOn(document.body, 'clientHeight', 'get').mockReturnValue(height);
+      expect(WindowHelpers.getWindowSize()).toEqual({width, height})
+    });
+  });
 });
