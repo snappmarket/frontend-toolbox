@@ -16,7 +16,7 @@ const StyledModalWrapper = Styled.div`
 `;
 const StyledLightBox = Styled(StyledModalWrapper)`
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1002;
 `;
 const StyledModal = Styled.div`
@@ -30,18 +30,18 @@ const StyledModal = Styled.div`
   width: calc(${props => props.theme.defaultRem} * ${props => props.width});
   ${props =>
     props.position === 'top' &&
-    `
+  `
     top: calc(${props.theme.defaultRem} * 1);
   `}
   ${props =>
     props.position === 'center' &&
-    `
+  `
     top:50%;
     transform: translateY(-50%);
   `}
   ${props =>
     props.position === 'bottom' &&
-    `
+  `
     top: 100%;
     transform: translateY(calc(-100% - calc(${props.theme.defaultRem} * 1)));
   `}
@@ -51,6 +51,7 @@ const StyledCloseModalButton = Styled(Button)`
   top: calc(${props => props.theme.defaultRem} * 0.8);
   left: calc(${props => props.theme.defaultRem} * 0.8);
   min-width: auto;
+  z-index: 9999;
 `;
 const StyledModalHeader = Styled.header`
   border-bottom: solid calc(${props => props.theme.defaultRem} * 0.1) ${props =>

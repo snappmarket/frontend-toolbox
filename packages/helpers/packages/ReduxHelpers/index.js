@@ -9,6 +9,7 @@
 export const actionMaker = (type, payload = {}) => ({ type, payload });
 
 /**
+ * @function
  * @name normalizeActionType
  * @description separates the postfix of the action name
  * @param type    {string}    type of the action you want to get the postfix
@@ -24,7 +25,7 @@ export const normalizeActionType = type => {
 };
 
 /**
- *
+ * @function
  * @name configPersistor
  * @desription A simple persistor
  * @param   config    {object}    configuration of the persistor such as prefix for the localstorage key or whitelist to make the reducer persisted
@@ -32,6 +33,7 @@ export const normalizeActionType = type => {
  */
 export const configPersistor = config => {
   /**
+   * @function
    * @name makeItemName
    * @description concatenates the name of the reducer with the given prefix
    * @param  name    {string}    name of the reducer
@@ -40,6 +42,7 @@ export const configPersistor = config => {
   const makeItemName = name => `${config.prefix}${name}`;
 
   /**
+   * @function
    * @name makeInitialState
    * @description Get persisted state and join it with initial state
    * @param initialState    {object}    default state of the application
@@ -61,6 +64,7 @@ export const configPersistor = config => {
   };
 
   /**
+   * @function
    * @name getMiddleware
    * @description Make a middleware for our persistor
    * @param store
