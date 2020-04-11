@@ -1,6 +1,5 @@
 # Storage helpers
 > ✴ Methods that helps us to manage storage on web
-----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/storage-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/storage-helpers)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/storage-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/storage-helpers)
@@ -10,7 +9,7 @@
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
-## get started 
+## get started
 We provide two way of using this package `single` or `multi` :
 ```bash
 npm i @snappmarket/storage-helpers
@@ -21,12 +20,12 @@ npm i @snappmarket/helpers
 ## methods
 |        |
 | ------ |
-| getLocalStorageData                                                 |  
+| getLocalStorageData                                                 |
 
-## usage 
+## usage
 ```javascript
 import { METHOD_NAME } from '@snappmarket/storage-helpers';
-// or 
+// or
 // import { METHOD_NAME } from '@snappmarket/helpers';
 ```
 ``

@@ -1,6 +1,5 @@
 # Object helpers
 > ✴ Methods that helps us to work with objects
-----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/object-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/object-helpers)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/object-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/object-helpers)

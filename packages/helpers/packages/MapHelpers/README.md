@@ -1,6 +1,5 @@
 # Map helpers
 > ✴ Methods that helps us to work with maps
-----
 
 [![version](https://img.shields.io/npm/v/@snappmarket/map-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/map-helpers)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/map-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/map-helpers)
@@ -10,7 +9,7 @@
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
-## get started 
+## get started
 We provide two way of using this package `single` or `multi` :
 ```bash
 npm i @snappmarket/map-helpers
@@ -21,12 +20,12 @@ npm i @snappmarket/helpers
 ## methods
 |        |
 | ------ |
-| isLocationInIran                                                 |  
+| isLocationInIran                                                 |
 
-## usage 
+## usage
 ```javascript
 import { METHOD_NAME } from '@snappmarket/map-helpers';
-// or 
+// or
 // import { METHOD_NAME } from '@snappmarket/helpers';
 ```
 ``
