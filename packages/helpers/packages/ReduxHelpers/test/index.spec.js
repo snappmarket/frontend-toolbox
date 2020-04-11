@@ -6,7 +6,7 @@ describe("ReduxHelpers", () => {
     it("should create an action with payload", () => {
       const type = "FOO_TYPE";
       const payload = {foo: 'bar'};
-      expect(ReduxHelpers.actionMaker(type, payload)).toEqual({type, payload});
+      expect(ReduxHelpers.actionMaker(type)(payload)).toEqual({type, payload});
     });
     it("should create an action without payload", () => {
       const type = "FOO_TYPE";
