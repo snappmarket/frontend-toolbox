@@ -2,11 +2,10 @@
  * @function
  * @name actionMaker
  * @description creates an action
- * @param  type       {string}    type of the action
- * @param  payload    {object}       payload of the action
- * @return {{payload: {}, type: *}}
+ * @param type
+ * @returns {function(*=): {payload: *, type: *}}
  */
-export const actionMaker = (type, payload = {}) => ({ type, payload });
+export const actionMaker = (type) => (payload = {}) => ({ type, payload });
 
 /**
  * @function
