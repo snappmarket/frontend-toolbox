@@ -10,7 +10,7 @@ describe("ReduxHelpers", () => {
     });
     it("should create an action without payload", () => {
       const type = "FOO_TYPE";
-      expect(ReduxHelpers.actionMaker(type)).toEqual({type, payload: {}});
+      expect(ReduxHelpers.actionMaker(type)()).toEqual({type, payload: {}});
     });
   });
   describe("normalizeActionType", () => {
