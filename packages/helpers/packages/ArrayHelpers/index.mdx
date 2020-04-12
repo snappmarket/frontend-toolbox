@@ -52,7 +52,7 @@ import { METHOD_NAME } from '@snappmarket/array-helpers';
 <dt><a href="#stringifyArray">stringifyArray(array, properties)</a> ⇒ string</dt>
 <dd><p>Create string from array</p>
 </dd>
-<dt><a href="#deepFlatten">deepFlatten(array, property, flattenArrayTemp)</a> ⇒ Array</dt>
+<dt><a href="#deepFlatten">deepFlatten(array, property, levelKey)</a> ⇒ Array</dt>
 <dd><p>Deep flatten an array</p>
 </dd>
 </dl>
@@ -104,5 +104,5 @@ Deep flatten an array
 | --- | --- | --- |
 | array | array | the multi dimensional array that want to be flatten |
 | property | string | name of the property of array that want to navigate through |
-| flattenArrayTemp | array | temp array to put the result of the flatten to |
+| levelKey | string | name of the property you want to store the level of item |
 
