@@ -78,3 +78,31 @@ export const deepFlatten = (array, property, levelKey = "") => {
   flatten(array);
   return result;
 };
+
+
+/**
+ * @function
+ * @name arraySeparator
+ * @description separates an array based on criterion into several groups
+ * @param array          {array}      array of strings
+ * @param separators     {object}     object of regex separators
+ * @param noDuplicates   {boolean}     flag to remove duplicates
+ * return {object}
+*/
+export const arraySeparator = (array, separators, noDuplicates=false) => {
+  if (!array || !array.length) {
+    throw new Error('array should be defined');
+  }
+  if (!separators || !Object.keys(separators).length) {
+    throw new Error('separator should be defined');
+  }
+  let arrayTemp = [...array];
+  const result = {};
+  Object.keys(separators).forEach(key => {
+    result[key] = arrayTemp.filter(item => item.match(separators[key]));
+    if(noDuplicates){
+      arrayTemp = arrayTemp.filter(item => !result[key].includes(item))
+    }
+  });
+  return result;
+};

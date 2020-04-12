@@ -91,4 +91,59 @@ describe('ArrayHelpers', () => {
       expect(ArrayHelpers.deepFlatten(payload, 'options', 'level')).toEqual(actual);
     });
   });
+  describe('arraySeparator', () => {
+    const array = ['foo', 'foobar', 'bar', 'barfoo', 'snafu'];
+    const separators = {
+      'haveFoo': /foo/,
+      'startWithFoo': /^foo/,
+      'endWithFoo': /foo$/,
+      'noFoo': /^((?!foo).)*$/
+    };
+    it('should separate array items in several groups based on given regex', () => {
+      const expected = {
+        haveFoo: ['foo', 'foobar', 'barfoo'],
+        startWithFoo: ['foo', 'foobar'],
+        endWithFoo: ['foo', 'barfoo'],
+        noFoo: ['bar', 'snafu']
+      };
+      expect(ArrayHelpers.arraySeparator(array, separators)).toEqual(expected)
+    });
+    it('should separate array items in several groups based on given regex with no duplication', () => {
+      const expected = {
+        haveFoo: ['foo', 'foobar', 'barfoo'],
+        startWithFoo: [],
+        endWithFoo: [],
+        noFoo: ['bar', 'snafu']
+      };
+      expect(ArrayHelpers.arraySeparator(array, separators, true)).toEqual(expected)
+    });
+    it('should throw array error cause no array is given', () => {
+      try {
+        ArrayHelpers.arraySeparator()
+      } catch (e) {
+        expect(e.message).toEqual('array should be defined')
+      }
+    });
+    it('should throw array error cause empty array is given', () => {
+      try {
+        ArrayHelpers.arraySeparator([])
+      } catch (e) {
+        expect(e.message).toEqual('array should be defined')
+      }
+    });
+    it('should throw separator error cause no separator is given', () => {
+      try {
+        ArrayHelpers.arraySeparator(['foo'])
+      } catch (e) {
+        expect(e.message).toEqual('separator should be defined')
+      }
+    });
+    it('should throw separator error cause empty separator is given', () => {
+      try {
+        ArrayHelpers.arraySeparator(['foo'], {})
+      } catch (e) {
+        expect(e.message).toEqual('separator should be defined')
+      }
+    });
+  });
 });

@@ -55,6 +55,9 @@ import { METHOD_NAME } from '@snappmarket/array-helpers';
 <dt><a href="#deepFlatten">deepFlatten(array, property, levelKey)</a> ⇒ Array</dt>
 <dd><p>Deep flatten an array</p>
 </dd>
+<dt><a href="#arraySeparator">arraySeparator(array, separators, noDuplicates)</a></dt>
+<dd><p>separates an array based on criterion into several groups</p>
+</dd>
 </dl>
 
 <a name="arrayItemAddProp"></a>
@@ -105,4 +108,17 @@ Deep flatten an array
 | array | array | the multi dimensional array that want to be flatten |
 | property | string | name of the property of array that want to navigate through |
 | levelKey | string | name of the property you want to store the level of item |
+
+<a name="arraySeparator"></a>
+
+## arraySeparator
+separates an array based on criterion into several groups
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | array | array of strings |
+| separators | object | object of regex separators |
+| noDuplicates | boolean | flag to remove duplicates return {object} |
 
