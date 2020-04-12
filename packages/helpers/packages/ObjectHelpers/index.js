@@ -52,13 +52,16 @@ export const flattenObject = object => {
  * @param   defaultValue    {any}       default value of what you want if it was undefiend
  * @returns {any}
  */
-export const safeObjectPropertyRead = (object, key, defaultValue = undefined) =>
-  key.split('.').reduce((nestedObject, index) => {
+export const safeObjectPropertyRead = (object, key, defaultValue = undefined) => {
+  const result = key.split('.').reduce((nestedObject, index) => {
     if (nestedObject && index in nestedObject) {
       return nestedObject[index];
     }
     return undefined;
-  }, object) || defaultValue;
+  }, object);
+
+  return result !== undefined ? result : defaultValue
+};
 
 /**
  * @function
