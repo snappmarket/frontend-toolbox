@@ -10,6 +10,7 @@ export const StyledLoading = Styled.div`
     height: 0.7em;
     animation-fill-mode: both;
     animation: loading 1.8s infinite ease-in-out;
+    will-change: box-shadow;
   }
   
   &.loader{
@@ -68,6 +69,7 @@ export const StyledCircleWave = Styled.div`
   border-radius: 50%;
   background: ${props => props.theme.colors[props.color].normal};
   animation: fade-circle-wave 1.4s infinite;
+  will-change: box-shadow;
   @keyframes fade-circle-wave {
     0% {
       box-shadow: nones
@@ -87,8 +89,9 @@ export const StyledCircleWave = Styled.div`
 `;
 
 export const StyledLogoAnimation = Styled.div`
-  animation: alertPulse 1s ease-out;
+  animation: alertPulse 1.2s ease-out;
   animation-iteration-count: infinite;
+  will-change: opacity;
   min-width: ${props => `calc(${props.theme.defaultRem} * ${props.size * 2})`}; 
   min-height: ${props =>
     `calc(${props.theme.defaultRem} * ${props.size * 2})`}; 
@@ -104,7 +107,7 @@ export const StyledLogoAnimation = Styled.div`
   @keyframes alertPulse {
     0% {opacity: 1}
     50% {opacity: 1}
-    75% {opacity: 0.65}
+    75% {opacity: 0.6}
     100% {opacity: 1}
   }
 `;
