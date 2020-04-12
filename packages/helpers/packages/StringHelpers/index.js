@@ -60,3 +60,12 @@ export const getQueryParams = (url, parameter) => {
   }
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 };
+
+/**
+ * @function
+ * @name camelToSnakeCase
+ * @description Convert camelCase string to snake_case
+ * @param    string    {string}     string you want to change from camel to snake case
+ * @returns {*}
+ */
+export const camelToSnakeCase = string => string.replace(/([A-Z])/g, char => `_${char.toLowerCase()}`);
