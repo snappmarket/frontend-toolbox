@@ -33,3 +33,12 @@ export const makeTimeout = timeout =>
  * @returns {Promise<any>}
  */
 export const emptyPromise = () => new Promise(resolve => resolve({}));
+
+/**
+ * @function
+ * @name sleep
+ * @description makes a promise which resolves after a delay
+ * @param delay
+ * @returns {Promise<unknown>}
+ */
+export const sleep = delay => new Promise(resolve => setTimeout(() => resolve(), delay));
