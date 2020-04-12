@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import CheckBox from '../../CheckBox/src';
@@ -23,7 +23,9 @@ const OptionGroup = props => {
       onSelectItem(option.value);
     }
   };
-
+  useEffect(() => {
+    setSelectedItem(initialSelectedItem);
+  }, [initialSelectedItem]);
   const render = () => (
     <StyledOptionGroup className={className} {...rest}>
       {options.map(option => (
