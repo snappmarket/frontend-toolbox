@@ -16,21 +16,11 @@ const StyledBox = Styled.div`
     props.justBorder
       ? `2px solid ${darken(0.06, props.theme.colors.white)}`
       : 'none'};
-
-  animation: alertPulse 1.2s ease-out;
-  animation-iteration-count: infinite;
-  animation-duration: ${props => `${ props.animationDuration}s`};
   display: 'flex';
   justify-content: ${props => props.justifyContent ? props.justifyContent: 'center'};
   align-items: ${props => props.alignItems ? props.alignItems: 'center'};
   width: ${props => decideMeasurement(props.width)};
   height: ${props => decideMeasurement(props.height)};
-  @keyframes alertPulse {
-    0% {opacity: 1}
-    50% {opacity: 1}
-    75% {opacity: 0.65}
-    100% {opacity: 1}
-  }
 `;
 
 const StyledImage = Styled(StyledBox)`
