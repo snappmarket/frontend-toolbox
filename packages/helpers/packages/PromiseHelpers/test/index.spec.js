@@ -16,11 +16,17 @@ describe('PromiseHelpers', () => {
         expect(e.message).toEqual('TIMEOUT')
       }
     });
-  })
+  });
   describe('emptyPromise', () => {
     it('should get an empty promise', async () => {
       const emptyPromise = await PromiseHelpers.emptyPromise();
       expect(emptyPromise).toEqual({})
+    });
+  });
+  describe('sleep', () => {
+    it('should get an empty promise after a delay', async () => {
+      const emptyPromise = await PromiseHelpers.sleep();
+      expect(emptyPromise).toEqual(undefined)
     });
   })
 });

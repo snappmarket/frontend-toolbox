@@ -38,29 +38,32 @@ import { METHOD_NAME } from '@snappmarket/string-helpers';
 ```
 ``
 
-## Members
+## Functions
 
 <dl>
-<dt><a href="#stringReplace">stringReplace</a> ⇒ string</dt>
+<dt><a href="#stringReplace">stringReplace(find, replace, string)</a> ⇒ string</dt>
 <dd><p>replace a string with another in a text</p>
 </dd>
-<dt><a href="#bulkStringReplace">bulkStringReplace</a> ⇒ *</dt>
+<dt><a href="#bulkStringReplace">bulkStringReplace(replacments, string)</a> ⇒ *</dt>
 <dd><p>replaces multiple strings in a text</p>
 </dd>
-<dt><a href="#autoLink">autoLink</a> ⇒</dt>
+<dt><a href="#autoLink">autoLink(string)</a> ⇒</dt>
 <dd><p>links urls in the string</p>
 </dd>
-<dt><a href="#getQueryParams">getQueryParams</a> ⇒ string | null</dt>
+<dt><a href="#getQueryParams">getQueryParams(url, parameter)</a> ⇒ string | null</dt>
 <dd><p>gets value of a query parameter</p>
+</dd>
+<dt><a href="#camelToSnakeCase">camelToSnakeCase(string)</a> ⇒ string</dt>
+<dd><p>Convert camelCase string to snake_case</p>
 </dd>
 </dl>
 
 <a name="stringReplace"></a>
 
-## stringReplace ⇒ string
+## stringReplace
 replace a string with another in a text
 
-**Kind**: global variable  
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -70,10 +73,10 @@ replace a string with another in a text
 
 <a name="bulkStringReplace"></a>
 
-## bulkStringReplace ⇒ \*
+## bulkStringReplace
 replaces multiple strings in a text
 
-**Kind**: global variable  
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -82,22 +85,37 @@ replaces multiple strings in a text
 
 <a name="autoLink"></a>
 
-## autoLink ⇒
+## autoLink
 links urls in the string
 
-**Kind**: global variable  
+**Kind**: global function  
 **Returns**: string  
-**Author**: Reza Erami <reza@erami.name>
-Wparam string    {string}    string you want to make URLs linked  
+**Author**: Reza Erami <reza@erami.name>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | string | string you want to make URLs linked |
+
 <a name="getQueryParams"></a>
 
-## getQueryParams ⇒ string \| null
+## getQueryParams
 gets value of a query parameter
 
-**Kind**: global variable  
+**Kind**: global function  
 
 | Param |
 | --- |
 | url | 
 | parameter | 
+
+<a name="camelToSnakeCase"></a>
+
+## camelToSnakeCase
+Convert camelCase string to snake_case
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | string | string you want to change from camel to snake case |
 

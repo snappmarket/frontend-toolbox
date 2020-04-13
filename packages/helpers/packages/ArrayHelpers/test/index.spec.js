@@ -53,22 +53,22 @@ describe('ArrayHelpers', () => {
     });
   });
   describe('deepFlatten', () => {
+    const payload = {
+      id: 1,
+      options: [
+        {
+          id: 2,
+          options: [
+            {
+              id: 3,
+              options: [{ id: 5 }, { id: 6 }],
+            },
+            { id: 4 },
+          ],
+        },
+      ],
+    };
     it('should flatten a nested array recursively by given property name', () => {
-      const payload = {
-        id: 1,
-        options: [
-          {
-            id: 2,
-            options: [
-              {
-                id: 3,
-                options: [{ id: 5 }, { id: 6 }],
-              },
-              { id: 4 },
-            ],
-          },
-        ],
-      };
       const actual = [
         { id: 1 },
         { id: 2 },
@@ -78,6 +78,72 @@ describe('ArrayHelpers', () => {
         { id: 4 },
       ];
       expect(ArrayHelpers.deepFlatten(payload, 'options')).toEqual(actual);
+    });
+    it('should flatten a nested array recursively by given property name and add level to each child', () => {
+      const actual = [
+        { id: 1, level: 0 },
+        { id: 2, level: 1 },
+        { id: 3, level: 2 },
+        { id: 5, level: 3 },
+        { id: 6, level: 3 },
+        { id: 4, level: 2 },
+      ];
+      expect(ArrayHelpers.deepFlatten(payload, 'options', 'level')).toEqual(actual);
+    });
+  });
+  describe('arraySeparator', () => {
+    const array = ['foo', 'foobar', 'bar', 'barfoo', 'snafu'];
+    const separators = {
+      'haveFoo': /foo/,
+      'startWithFoo': /^foo/,
+      'endWithFoo': /foo$/,
+      'noFoo': /^((?!foo).)*$/
+    };
+    it('should separate array items in several groups based on given regex', () => {
+      const expected = {
+        haveFoo: ['foo', 'foobar', 'barfoo'],
+        startWithFoo: ['foo', 'foobar'],
+        endWithFoo: ['foo', 'barfoo'],
+        noFoo: ['bar', 'snafu']
+      };
+      expect(ArrayHelpers.arraySeparator(array, separators)).toEqual(expected)
+    });
+    it('should separate array items in several groups based on given regex with no duplication', () => {
+      const expected = {
+        haveFoo: ['foo', 'foobar', 'barfoo'],
+        startWithFoo: [],
+        endWithFoo: [],
+        noFoo: ['bar', 'snafu']
+      };
+      expect(ArrayHelpers.arraySeparator(array, separators, true)).toEqual(expected)
+    });
+    it('should throw array error cause no array is given', () => {
+      try {
+        ArrayHelpers.arraySeparator()
+      } catch (e) {
+        expect(e.message).toEqual('array should be defined')
+      }
+    });
+    it('should throw array error cause empty array is given', () => {
+      try {
+        ArrayHelpers.arraySeparator([])
+      } catch (e) {
+        expect(e.message).toEqual('array should be defined')
+      }
+    });
+    it('should throw separator error cause no separator is given', () => {
+      try {
+        ArrayHelpers.arraySeparator(['foo'])
+      } catch (e) {
+        expect(e.message).toEqual('separator should be defined')
+      }
+    });
+    it('should throw separator error cause empty separator is given', () => {
+      try {
+        ArrayHelpers.arraySeparator(['foo'], {})
+      } catch (e) {
+        expect(e.message).toEqual('separator should be defined')
+      }
     });
   });
 });

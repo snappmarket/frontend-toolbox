@@ -52,23 +52,57 @@ export const stringifyArray = (array, properties) => {
  * @function
  * @name deepFlatten
  * @description Deep flatten an array
- * @param     array                 {array}     the multi dimensional array that want to be flatten
- * @param     property              {string}    name of the property of array that want to navigate through
- * @param     flattenArrayTemp      {array}     temp array to put the result of the flatten to
+ * @param     array       {array}     the multi dimensional array that want to be flatten
+ * @param     property    {string}    name of the property of array that want to navigate through
+ * @param     levelKey   {string}    name of the property you want to store the level of item
  * @returns   {Array}
  */
-export const deepFlatten = (array, property, flattenArrayTemp = []) => {
-  const newArray = { ...array };
-  delete newArray[property];
-  flattenArrayTemp.push(newArray);
-  if (
-    array[property] &&
-    Array.isArray(array[property]) &&
-    array[property].length
-  ) {
-    array[property].forEach(item =>
-      deepFlatten(item, property, flattenArrayTemp),
-    );
+export const deepFlatten = (array, property, levelKey = "") => {
+  const result = [];
+  const flatten = (items, level = 0) => {
+    const itemsTemp = { ...items };
+    delete itemsTemp[property];
+    if(levelKey){
+      itemsTemp[levelKey] = level
+    }
+    result.push({ ...itemsTemp });
+
+    if (
+      items[property] &&
+      Array.isArray(items[property]) &&
+      items[property].length
+    ) {
+      items[property].forEach(item => flatten(item, level + 1));
+    }
+  };
+  flatten(array);
+  return result;
+};
+
+
+/**
+ * @function
+ * @name arraySeparator
+ * @description separates an array based on criterion into several groups
+ * @param array          {array}      array of strings
+ * @param separators     {object}     object of regex separators
+ * @param noDuplicates   {boolean}     flag to remove duplicates
+ * return {object}
+*/
+export const arraySeparator = (array, separators, noDuplicates=false) => {
+  if (!array || !array.length) {
+    throw new Error('array should be defined');
   }
-  return flattenArrayTemp;
+  if (!separators || !Object.keys(separators).length) {
+    throw new Error('separator should be defined');
+  }
+  let arrayTemp = [...array];
+  const result = {};
+  Object.keys(separators).forEach(key => {
+    result[key] = arrayTemp.filter(item => item.match(separators[key]));
+    if(noDuplicates){
+      arrayTemp = arrayTemp.filter(item => !result[key].includes(item))
+    }
+  });
+  return result;
 };

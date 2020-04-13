@@ -47,4 +47,9 @@ describe('StingHelpers', () => {
       expect(StringHelpers.getQueryParams(url, 'foo')).toEqual(null)
     });
   });
+  describe('camelToSnakeCase', () => {
+    it("should convert a camel case to a snake case string", () => {
+      expect(StringHelpers.camelToSnakeCase('camelIsTheBestBandEver')).toEqual('camel_is_the_best_band_ever')
+    });
+  });
 });
