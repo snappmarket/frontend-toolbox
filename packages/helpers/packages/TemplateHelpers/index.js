@@ -1,4 +1,5 @@
-import theme from '../../../ui/packages/Theme/src/theme'
+// @todo: in next release we should make a config package to let the users use configs also
+// import theme from '../../../ui/packages/Theme/src/theme'
 
 /**
  * @function
@@ -53,10 +54,12 @@ export const makeRgba = (opacity, color) => {
  * @param measurement what measurement to use, given measurement or multiplying it in rem unit
  * @returns {string}
  */
-export const decideMeasurement = measurement =>
-  typeof measurement === 'string'
+export const decideMeasurement = measurement => {
+  const defaultRem = '1rem'; // @todo: gonna remove it in next release
+  return typeof measurement === 'string'
     ? measurement
-    : `calc(${theme.defaultRem} * ${measurement})`;
+    : `calc(${defaultRem} * ${measurement})`
+};
 
 /**
  * @function
