@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef, forwardRef } from 'react';
+import React, { useEffect, useState, createRef, forwardRef, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { CrossIcon } from '@snappmarket/icons';
@@ -25,8 +25,13 @@ const Modal = forwardRef((props, ref) => {
     width,
     position: initialPosition,
   } = props;
+  const bodyRef = useRef(null)
   const modalRef = createRef();
   const [position, setPosition] = useState(initialPosition);
+
+  useEffect(() => {
+    bodyRef.current = document.body;
+  }, [])
 
   /**
    * Set scroll of body
@@ -111,7 +116,9 @@ const Modal = forwardRef((props, ref) => {
       </StyledModalWrapper>
     ) : null;
 
-  return createPortal(render(), document.body);
+  if(bodyRef.current) {
+    return createPortal(render(), bodyRef.current);
+  }
 });
 
 Modal.propTypes = {
