@@ -63,16 +63,12 @@ const SimpleCarousel = props => {
         <div className="wrapper">
           <div className="slides">{children}</div>
         </div>
-        {customArrow && 
+        {customArrow && (
           <>
-            {!!nextArrow && (
-              <span className="control next">{nextArrow}</span>
-            )}
-            {!!prevArrow && (
-              <span className="control prev">{prevArrow}</span>
-            )}
+            {!!nextArrow && <span className="control next">{nextArrow}</span>}
+            {!!prevArrow && <span className="control prev">{prevArrow}</span>}
           </>
-        }
+        )}
       </div>
     </StyledSimpleCarousel>
   );
