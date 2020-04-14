@@ -27,12 +27,12 @@ export const StyledSimpleCarousel = Styled.div`
   .control {
     position: absolute;
     top: 50%;
-    width: 50px;
-    height: 50px;
-    background: #fff;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0 0 10px 0 rgba(41, 0, 255, 0.16);
+    background-color: #2446f5;
     border-radius: 50px;
     margin-top: -20px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     z-index: 2;
     align-items: center;
     justify-content: center;
