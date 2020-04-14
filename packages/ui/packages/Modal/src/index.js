@@ -119,6 +119,7 @@ const Modal = forwardRef((props, ref) => {
   if(bodyRef.current) {
     return createPortal(render(), bodyRef.current);
   }
+  return null;
 });
 
 Modal.propTypes = {
