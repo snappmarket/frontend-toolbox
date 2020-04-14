@@ -87,7 +87,7 @@ export const deepFlatten = (array, property, levelKey = "") => {
  * @param array          {array}      array of strings
  * @param separators     {object}     object of regex separators
  * @param noDuplicates   {boolean}     flag to remove duplicates
- * return {object}
+ * @returns {object}
 */
 export const arraySeparator = (array, separators, noDuplicates=false) => {
   if (!array || !array.length) {
