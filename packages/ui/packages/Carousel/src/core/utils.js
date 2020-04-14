@@ -196,7 +196,7 @@ export const prevBlock = slider => {
     wrapper: slider,
     className: '.prev',
   });
-  childFind.style.display = 'block';
+  childFind.style.display = 'flex';
   return childFind;
 };
 
@@ -213,7 +213,7 @@ export const nextBlock = slider => {
     wrapper: slider,
     className: '.next',
   });
-  childFind.style.display = 'block';
+  childFind.style.display = 'flex';
   return childFind;
 };
 

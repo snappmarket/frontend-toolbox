@@ -5,8 +5,17 @@ import { Slider } from './core/index';
 import { StyledSimpleCarousel } from './core/styles';
 
 const SimpleCarousel = props => {
-  const { className, children, slideConfig, showingSlide, refresh } = props;
+  const {
+    className,
+    children,
+    slideConfig,
+    showingSlide,
+    refresh,
+    nextArrow,
+    prevArrow,
+  } = props;
   const sliderRed = useRef(null);
+  const { customArrow } = slideConfig;
   let newSlider = null;
 
   useEffect(() => {
@@ -54,6 +63,12 @@ const SimpleCarousel = props => {
         <div className="wrapper">
           <div className="slides">{children}</div>
         </div>
+        {customArrow && (
+          <>
+            {!!nextArrow && <span className="control next">{nextArrow}</span>}
+            {!!prevArrow && <span className="control prev">{prevArrow}</span>}
+          </>
+        )}
       </div>
     </StyledSimpleCarousel>
   );
@@ -64,6 +79,8 @@ SimpleCarousel.propTypes = {
   slideConfig: PropTypes.object.isRequired,
   showingSlide: PropTypes.number,
   refresh: PropTypes.bool,
+  nextArrow: PropTypes.node,
+  prevArrow: PropTypes.node,
 };
 SimpleCarousel.defaultProps = {
   className: '',

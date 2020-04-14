@@ -38,6 +38,9 @@ class SliderCore {
           items: 1,
         },
       },
+      prevArrow = null,
+      nextArrow = null,
+      customArrow = false,
       nav = false,
       dots = false,
       autoPlay = false,
@@ -50,6 +53,9 @@ class SliderCore {
       slider,
       infinite,
       responsive,
+      prevArrow,
+      nextArrow,
+      customArrow,
       nav,
       dots,
       autoPlay,
@@ -169,6 +175,7 @@ class SliderCore {
       rtl,
       drag,
       nextSpeed,
+      customArrow,
     } = this.getConfig();
 
     // reset Slider
@@ -247,16 +254,18 @@ class SliderCore {
     }
 
     if (nav) {
-      elementCreator({
-        tag: 'Span',
-        wrapper: slider,
-        className: 'control next',
-      });
-      elementCreator({
-        tag: 'Span',
-        wrapper: slider,
-        className: 'control prev',
-      });
+      if (!customArrow) {
+        elementCreator({
+          tag: 'Span',
+          wrapper: slider,
+          className: 'control next',
+        });
+        elementCreator({
+          tag: 'Span',
+          wrapper: slider,
+          className: 'control prev',
+        });
+      }
       this.sliderArrows = new SliderArrows({ core: this });
       const index = this.getIndex();
       if (sliderLength <= truncResponsiveItemCount(responsive)) {
