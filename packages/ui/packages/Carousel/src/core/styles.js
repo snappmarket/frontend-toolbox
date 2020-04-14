@@ -39,6 +39,9 @@ export const StyledSimpleCarousel = Styled.div`
     display:flex;
     direction: ltr;
   }
+  .control svg {
+    fill: #fff;
+  }
   .control:after{
     display: block;
     font-size: 36px;
@@ -48,14 +51,14 @@ export const StyledSimpleCarousel = Styled.div`
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    left: -20px;
+    left: 10px;
   }
   .next {
     background-size: 22px;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    right: -20px;
+    right: 10px;
   }
   .prev:active,
   .next:active {
@@ -89,10 +92,10 @@ export const StyledSimpleCarousel = Styled.div`
   }
   .slider-rtl .next{
     right:auto;
-    left:-20px;
+    left:10px;
   }
   .slider-rtl .prev{
     left:auto;
-    right:-20px;
+    right:10px;
   }
 `;
