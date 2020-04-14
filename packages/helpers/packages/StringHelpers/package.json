@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/string-helpers",
   "private": false,
-  "version": "0.2.3-beta.qaoe83s",
+  "version": "0.2.5",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
