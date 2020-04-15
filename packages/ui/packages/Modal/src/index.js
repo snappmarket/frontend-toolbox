@@ -61,7 +61,7 @@ const Modal = forwardRef((props, ref) => {
    * Define modal position based on  window size
    */
   useEffect(() => {
-    if (visibility) {
+    if (modalRef.current && visibility) {
       const {
         current: { offsetHeight: modalHeight },
       } = modalRef;
