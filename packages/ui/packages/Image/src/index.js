@@ -10,19 +10,15 @@ import { LogoAnimation } from '../../Loading/src';
  * @returns {*}
  * @constructor
  */
-const Image = props => {
-  const { src, size, ...rest } = props;
-  let { loader, error } = props;
-
-  if(!loader) {
-    loader = <LogoAnimation size={size} />;
-  }
-  if(!error) {
-    error = <LogoAnimation size={size} />;
-  }
-
-  return <Img data-testid="image" src={src} loader={loader} unloader={error} {...rest} />;
-};
+const Image = ({src, size, loader, error, ...rest}) => (
+  <Img
+    data-testid="image"
+    src={src}
+    loader={loader || <LogoAnimation size={size} />}
+    unloader={error || <LogoAnimation size={size} />}
+    {...rest}
+  />
+);
 
 Image.propTypes = {
   src: PropTypes.string.isRequired,
