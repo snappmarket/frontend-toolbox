@@ -390,13 +390,13 @@ describe('Carousel ui component tests', () => {
   test('Check Next and Prev button', () => {
     const mockElement = stringToHTML(mockSlider);
     const expectIs = stringToHTML(
-      `<span class="control prev" style="display: block;" />`,
+      `<span class="control prev" style="display: flex;" />`,
     );
     const expectIsNone = stringToHTML(
       `<span class="control prev" style="display: none;" />`,
     );
     const expectIsNext = stringToHTML(
-      `<span class="control next" style="display: block;" />`,
+      `<span class="control next" style="display: flex;" />`,
     );
     const expectIsNextNone = stringToHTML(
       `<span class="control next" style="display: none;" />`,
