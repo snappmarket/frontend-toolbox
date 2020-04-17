@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef, forwardRef, useRef } from 'react';
+import React, { useEffect, useState, createRef, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { CrossIcon } from '@snappmarket/icons';
@@ -25,13 +25,18 @@ const Modal = forwardRef((props, ref) => {
     width,
     position: initialPosition,
   } = props;
-  const bodyRef = useRef(null)
+  const [bodyRef, setBodyRef] = useState(null);
   const modalRef = createRef();
   const [position, setPosition] = useState(initialPosition);
 
+  /**
+   * should put body as an state for two reasons,
+   * first to make it SSR friendly cause document is not allowd in component body
+   * and second, to re-render the component to make modal work for when you pass true visibility by parent as default prop
+   */
   useEffect(() => {
-    bodyRef.current = document.body;
-  }, [])
+    setBodyRef(document.body);
+  }, []);
 
   /**
    * Set scroll of body
@@ -116,8 +121,10 @@ const Modal = forwardRef((props, ref) => {
       </StyledModalWrapper>
     ) : null;
 
-  if(bodyRef.current) {
-    return createPortal(render(), bodyRef.current);
+  // return createPortal(render(), document.body);
+
+  if(bodyRef) {
+    return createPortal(render(), bodyRef);
   }
   return null;
 });
