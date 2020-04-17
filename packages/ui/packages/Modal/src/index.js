@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef, forwardRef } from 'react';
+import React, { useEffect, useState, createRef, forwardRef, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { CrossIcon } from '@snappmarket/icons';
@@ -25,7 +25,8 @@ const Modal = forwardRef((props, ref) => {
     width,
     position: initialPosition,
   } = props;
-  const [bodyRef, setBodyRef] = useState(null);
+  const bodyRef = useRef(null)
+  const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const modalRef = createRef();
   const [position, setPosition] = useState(initialPosition);
 
@@ -35,7 +36,8 @@ const Modal = forwardRef((props, ref) => {
    * and second, to re-render the component to make modal work for when you pass true visibility by parent as default prop
    */
   useEffect(() => {
-    setBodyRef(document.body);
+    bodyRef.current = document.body;
+    setIsBodyInitialized(true);
   }, []);
 
   /**
@@ -123,8 +125,8 @@ const Modal = forwardRef((props, ref) => {
 
   // return createPortal(render(), document.body);
 
-  if(bodyRef) {
-    return createPortal(render(), bodyRef);
+  if(isBodyInitialized) {
+    return createPortal(render(), bodyRef.current);
   }
   return null;
 });
