@@ -10,22 +10,22 @@ import InputRange from '../index';
 
 describe('InputRange ui component tests', () => {
   it('Should render inputRange when get value and rangeValue props', () => {
+    const value = {min : 4, max: 6};
+    const rangeValue = {min : 2, max: 8};
     const { getByTestId } = render(
       <Wrapper><InputRange value={value} rangeValue={rangeValue} /></Wrapper>,
     );
-    const value = {min : 4, max: 8}
-    const rangeValue = {min : 2, max: 4}
     const inputRange = getByTestId('inputRange');
     expect(getByTestId('inputRangeWrapper')).toContainElement(inputRange)
   });
 
   it('Should render inputRange when get onChange props', () => {
     const callback = jest.fn();
+    const value = {min : 4, max: 6};
+    const rangeValue = {min : 2, max: 8};
     const { getByTestId } = render(
       <Wrapper><InputRange value={value} rangeValue={rangeValue} onChange={callback} /></Wrapper>,
     );
-    const value = {min : 4, max: 8}
-    const rangeValue = {min : 2, max: 4}
     const inputRange = getByTestId('inputRange');
     expect(getByTestId('inputRangeWrapper')).toContainElement(inputRange);
 
@@ -34,20 +34,17 @@ describe('InputRange ui component tests', () => {
   });
 
   it('Should render inputRangeLabel ', () => {
+    const value = {min : 4, max: 6};
+    const rangeValue = {min : 2, max: 8};
     const { rerender, getByTestId } = render(
       <Wrapper><InputRange value={value} rangeValue={rangeValue} /></Wrapper>,
     );
-    const value = {min : 4, max: 8};
-    const rangeValue = {min : 10, max: 20};
     const inputRangeLabel = getByTestId('inputRangeLabel');
-    expect(getByTestId('inputRangeWrapper')).toContainElement(inputRangeLabel)
+    expect(getByTestId('inputRangeWrapper')).toContainElement(inputRangeLabel);
 
     rerender(<Wrapper><InputRange value={value} rangeValue={rangeValue} ><span>{value.min}</span><span>{value.max}</span></InputRange></Wrapper>)
     const inputRangeLabelItem = getByTestId('inputRangeLabelItem');
 
     expect(getByTestId('inputRangeLabel')).toContainElement(inputRangeLabelItem)
-
   });
-
-  
 });
