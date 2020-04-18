@@ -14,7 +14,6 @@ describe('Skeleton ui component tests', () => {
     );
 
     expect(getByTestId('skeleton')).toHaveStyle({
-      animationDuration: '3s',
       width: 'calc(3 * 1rem)',
       height: 'calc(3 * 1rem)',
       backgroundSize: 'calc(1rem * 6)',

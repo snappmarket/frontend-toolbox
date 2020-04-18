@@ -26,12 +26,19 @@ const Modal = forwardRef((props, ref) => {
     position: initialPosition,
   } = props;
   const bodyRef = useRef(null)
+  const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const modalRef = createRef();
   const [position, setPosition] = useState(initialPosition);
 
+  /**
+   * should put body as an state for two reasons,
+   * first to make it SSR friendly cause document is not allowd in component body
+   * and second, to re-render the component to make modal work for when you pass true visibility by parent as default prop
+   */
   useEffect(() => {
     bodyRef.current = document.body;
-  }, [])
+    setIsBodyInitialized(true);
+  }, []);
 
   /**
    * Set scroll of body
@@ -116,7 +123,9 @@ const Modal = forwardRef((props, ref) => {
       </StyledModalWrapper>
     ) : null;
 
-  if(bodyRef.current) {
+  // return createPortal(render(), document.body);
+
+  if(isBodyInitialized) {
     return createPortal(render(), bodyRef.current);
   }
   return null;
