@@ -11,6 +11,8 @@ import {
   prevNone,
   nextBlock,
   nextNone,
+  addClassToElement,
+  removeClassFromElement
 } from '../utils';
 
 export const directionTouchClientX = params => {
@@ -217,6 +219,10 @@ export const dragAction = params => {
   if (getSlidesLength() <= perSlide) {
     return false;
   }
+  addClassToElement({
+    item : getSliderItems(),
+    className: 'avoid-clicks',
+  });
 
   if (e.type === 'touchmove') {
     const dragActionTouchmovePosX2Params = {
@@ -270,6 +276,10 @@ export const dragEnd = params => {
     nav,
     rtl,
   } = params;
+  removeClassFromElement({
+    item : sliderItems,
+    className: 'avoid-clicks',
+  });
 
   const perSlide = truncResponsiveItemCount(responsive);
 
