@@ -37,6 +37,11 @@ if (process.env.BABEL_ENV !== 'docz') {
       '**/rollup.config.js',
     );
   }
+} else {
+  ignorePaths = [
+    /.cache/,
+    '**/dist/*.mdx',
+  ];
 }
 
 const productionPlugins = [
