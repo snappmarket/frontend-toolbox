@@ -9,6 +9,9 @@ export const StyledSimpleCarousel = Styled.div`
   .slides.shifting {
     transition: all 0.2s ease-out;
   }
+  .avoid-clicks {
+    pointer-events: none;
+  }
   .slider{
     position: relative;
   }
