@@ -290,6 +290,7 @@ export const transitionendWatcher = params => {
       infinite,
     };
     const finalConst = Math.abs(Math.trunc(calcFinalItemPosition(finalPos)));
+    const firstConst = Math.abs(Math.trunc(calcFirstItemPosition(finalPos)));
     const translate3dCosnt = Math.abs(Math.trunc(getTranslate3d(sliderItems)));
     if (finalConst === translate3dCosnt) {
       prevBlock(slider);
@@ -304,6 +305,9 @@ export const transitionendWatcher = params => {
     }
     if (index !== 0) {
       prevBlock(slider);
+    }
+    if (firstConst === translate3dCosnt) {
+      prevNone(slider);
     }
   }
 

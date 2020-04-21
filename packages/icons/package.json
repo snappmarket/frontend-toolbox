@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/icons",
   "private": false,
-  "version": "0.2.6-expremental.8",
+  "version": "0.2.7",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -43,7 +43,6 @@
   },
   "gitHead": "36dda3b65acbad094685d04eb869ce590c65c2b6",
   "devDependencies": {
-    "jsdom-no-contextify": "^3.1.0",
     "node-html-parser": "^1.2.16"
   }
 }
