@@ -18,33 +18,15 @@ const ProductsSlider = props => {
 
   // create config for init Carousel
   const slideConfig = {
-    // infinite Carousel true of false 
-    infinite: false,
-
-    // true when use custom icon on arrows
-    customArrow: true,
-
-    // true or false showing nav arrows on Carousel
-    nav: true,
-
-    // true or false showing dots bottom of Carousel
-    dots: false,
-
-    // true or false auto Carousel auto play
-    autoPlay: false,
-   
-    // auto play speed
-    nextSpeed: 2000,
-
-    // true or false rtl mode
-    rtl: false,
-
-    // true or false draggable on Carousel
-    drag: true,
-
-    // set threshold end and first of Carousel for fire actions (drag and calc position ,....)
-    threshold: 50,
-
+    infinite: false,    // infinite Carousel true of false 
+    customArrow: true,  // true when use custom icon on arrows
+    nav: true,          // true or false showing nav arrows on Carousel
+    dots: false,        // true or false showing dots bottom of Carousel
+    autoPlay: false,    // true or false auto Carousel auto play
+    nextSpeed: 2000,    // auto play speed
+    rtl: false,         // true or false rtl mode
+    drag: true,         // true or false draggable on Carousel
+    threshold: 50,      // set threshold end and first of Carousel for fire actions (drag and calc position ,....)
     responsive: {
       0: {
         items: 1.5,
