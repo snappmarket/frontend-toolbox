@@ -47,7 +47,6 @@ async function createModulePackages({ from, to }) {
   const directoryPackages = spritePackages.concat(componentPackages);
   await Promise.all(
     directoryPackages.map(async (directoryPackage) => {
-      console.log(directoryPackage);
       const packageJson = {
         sideEffects: false,
         module: path.join('../../../esm', directoryPackage, 'index.js'),

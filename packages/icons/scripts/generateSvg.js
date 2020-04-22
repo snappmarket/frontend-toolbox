@@ -3,7 +3,7 @@ const glob = require('glob');
 const parser = require('node-html-parser');
 
 // RENDER TEST
-const svgs = glob.sync(`${process.cwd()}/packages/**/*.svg`);
+const svgs = glob.sync(`${process.cwd()}/packages/**/index.svg`);
 
 svgs.forEach(async icon => {
   try {
@@ -30,7 +30,7 @@ svgs.forEach(async icon => {
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import '../${folderName}.svg';
+import './${folderName}.svg';
 
 const ${folderName} = ({ className, size }) => 
   <svg 
@@ -103,7 +103,7 @@ export default ${folderName};
      * Update svg file
      */
     await fse.writeFile(
-      `${fullPath}/${folderName}.svg`,
+      `${fullPath}/sprite/${folderName}.svg`,
       root
         .toString()
         .replace(/xmlns xlink/g, 'xmlns:xlink'),
