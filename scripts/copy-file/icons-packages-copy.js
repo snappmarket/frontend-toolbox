@@ -19,13 +19,20 @@ async function createPackageFile() {
     private: false,
     main: './index.js',
     module: './esm/index.js',
+    unpkg: './umd/icons.production.js',
+  };
+  const newSpritePackageData = {
+    ...packageDataOther,
+    private: false,
+    main: './index.js',
+    module: '../esm/sprite/index.js',
+    unpkg: '../umd/sprite/icons.production.js',
   };
   const targetPath = path.resolve(buildPath, './package.json');
+  const targetPathSprite = path.resolve(buildPath, './sprite/package.json');
 
   await fse.writeFile(targetPath, JSON.stringify(newPackageData, null, 2), 'utf8');
-  console.log(`Created package.json in ${targetPath}`);
-
-  return newPackageData;
+  await fse.writeFile(targetPathSprite, JSON.stringify(newSpritePackageData, null, 2), 'utf8');
 }
 
 /**
