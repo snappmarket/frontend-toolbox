@@ -86,7 +86,7 @@ first: add true to customArrow on slideConfig
   };
 ```
 next:
-add custom icon DOM or Component for nextArrow,prevArrow on <Carousel> attribute
+add custom icon DOM or Component for nextArrow,prevArrow on Carousel attribute
 ```es6
   <Carousel
     ....
