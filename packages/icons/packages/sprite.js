@@ -1,11 +1,89 @@
 // Emoji icons
-export * from './Emoji/sprite';
-
-// Font icons
-export * from './FontIcons/sprite';
-
-// Follow up icons
-export * from './Followup/sprite'
+export { default as DissatisfiedEmoji } from './Emoji/DissatisfiedEmoji/sprite';
+export { default as HappyEmoji } from './Emoji/HappyEmoji/sprite';
+export { default as LaughEmoji } from './Emoji/LaughEmoji/sprite';
+export { default as NormalEmoji } from './Emoji/NormalEmoji/sprite';
+export { default as SadEmoji } from './Emoji/SadEmoji/sprite';
 
 // Extra regular icons
-export * from './ExtraRegularIcons/sprite';
+export { default as CoinsIcon } from './ExtraRegularIcons/CoinsIcon/sprite';
+export { default as CrossBoldIcon } from './ExtraRegularIcons/CrossBoldIcon/sprite';
+export { default as EditIcon } from './ExtraRegularIcons/EditIcon/sprite';
+export { default as EmptyBasketIcon } from './ExtraRegularIcons/EmptyBasketIcon/sprite';
+export { default as InstagramIcon } from './ExtraRegularIcons/InstagramIcon/sprite';
+export { default as MapMarkerOutlineIcon } from './ExtraRegularIcons/MapMarkerOutlineIcon/sprite';
+export { default as LogoutIcon } from './ExtraRegularIcons/LogoutIcon/sprite';
+export { default as MapMarkerIcon } from './ExtraRegularIcons/MapMarkerIcon/sprite';
+export { default as PencilIcon } from './ExtraRegularIcons/PencilIcon/sprite';
+export { default as CrossIcon } from './ExtraRegularIcons/CrossIcon/sprite';
+export { default as SearchIcon } from './ExtraRegularIcons/SearchIcon/sprite';
+export { default as ShoppingBasketIcon } from './ExtraRegularIcons/ShoppingBasketIcon/sprite';
+export { default as ShoppingCartIcon } from './ExtraRegularIcons/ShoppingCartIcon/sprite';
+export { default as GridOutlineIcon } from './ExtraRegularIcons/GridOutlineIcon/sprite';
+export { default as CheckMarkIcon } from './ExtraRegularIcons/CheckMarkIcon/sprite';
+export { default as TrashIcon } from './ExtraRegularIcons/TrashIcon/sprite';
+export { default as TwitterIcon } from './ExtraRegularIcons/TwitterIcon/sprite';
+export { default as UserIcon } from './ExtraRegularIcons/UserIcon/sprite';
+export { default as BagIcon } from './ExtraRegularIcons/BagIcon/sprite';
+export { default as SnappMarketLogo } from './ExtraRegularIcons/SnappMarketLogo/sprite';
+
+// Follow up icons
+export { default as BoxWithTickIcon } from './Followup/BoxWithTickIcon/sprite';
+export { default as GroceryBagIcon } from './Followup/GroceryBagIcon/sprite';
+export { default as ListSearchIcon } from './Followup/ListSearchIcon/sprite';
+export { default as MotorcycleIcon } from './Followup/MotorcycleIcon/sprite';
+
+// Font icons
+export { default as AngleDownIcon } from './FontIcons/AngleDownIcon/sprite';
+export { default as AngleLeftIcon } from './FontIcons/AngleLeftIcon/sprite';
+export { default as AngleRightIcon } from './FontIcons/AngleRightIcon/sprite';
+export { default as AngleUpIcon } from './FontIcons/AngleUpIcon/sprite';
+export { default as ArrowDownIcon } from './FontIcons/ArrowDownIcon/sprite';
+export { default as ArrowLeftIcon } from './FontIcons/ArrowLeftIcon/sprite';
+export { default as ArrowRightIcon } from './FontIcons/ArrowRightIcon/sprite';
+export { default as ArrowUpIcon } from './FontIcons/ArrowUpIcon/sprite';
+export { default as BasketNotAllowedIcon } from './FontIcons/BasketNotAllowedIcon/sprite';
+export { default as BikeOutlineIconIcon } from './FontIcons/BikeOutlineIconIcon/sprite';
+export { default as BinocularsIcon } from './FontIcons/BinocularsIcon/sprite';
+export { default as BoxIcon } from './FontIcons/BoxIcon/sprite';
+export { default as CalendarIcon } from './FontIcons/CalendarIcon/sprite';
+export { default as GridIcon } from './FontIcons/GridIcon/sprite';
+export { default as CellphoneIcon } from './FontIcons/CellphoneIcon/sprite';
+export { default as CheckMarkBoldIcon } from './FontIcons/CheckMarkBoldIcon/sprite';
+export { default as CircleIcon } from './FontIcons/CircleIcon/sprite';
+export { default as ClockIcon } from './FontIcons/ClockIcon/sprite';
+export { default as ClockOutlineIcon } from './FontIcons/ClockOutlineIcon/sprite';
+export { default as CommentIcon } from './FontIcons/CommentIcon/sprite';
+export { default as CreditCardIcon } from './FontIcons/CreditCardIcon/sprite';
+export { default as CrossLightIcon } from './FontIcons/CrossLightIcon/sprite';
+export { default as DigitsIcon } from './FontIcons/DigitsIcon/sprite';
+export { default as DiscountIcon } from './FontIcons/DiscountIcon/sprite';
+export { default as EnvelopeIcon } from './FontIcons/EnvelopeIcon/sprite';
+export { default as ExportIcon } from './FontIcons/ExportIcon/sprite';
+export { default as FilterIcon } from './FontIcons/FilterIcon/sprite';
+export { default as HeartIcon } from './FontIcons/HeartIcon/sprite';
+export { default as HomeIcon } from './FontIcons/HomeIcon/sprite';
+export { default as LoopIcon } from './FontIcons/LoopIcon/sprite';
+export { default as MapMarkerAddIcon } from './FontIcons/MapMarkerAddIcon/sprite';
+export { default as MenuIcon } from './FontIcons/MenuIcon/sprite';
+export { default as MinusIcon } from './FontIcons/MinusIcon/sprite';
+export { default as OrdersHistoryIcon } from './FontIcons/OrdersHistoryIcon/sprite';
+export { default as PaperRocketIcon } from './FontIcons/PaperRocketIcon/sprite';
+export { default as PaperRocketOutlineIcon } from './FontIcons/PaperRocketOutlineIcon/sprite';
+export { default as PencilEditIcon } from './FontIcons/PencilEditIcon/sprite';
+export { default as PictureIcon } from './FontIcons/PictureIcon/sprite';
+export { default as RingIcon } from './FontIcons/RingIcon/sprite';
+export { default as ShareIcon } from './FontIcons/ShareIcon/sprite';
+export { default as ListIcon } from './FontIcons/ListIcon/sprite';
+export { default as ListSquareIcon } from './FontIcons/ListSquareIcon/sprite';
+export { default as SortIcon } from './FontIcons/SortIcon/sprite';
+export { default as SpinnerIcon } from './FontIcons/SpinnerIcon/sprite';
+export { default as SquAreIcon } from './FontIcons/SquAreIcon/sprite';
+export { default as StoreIcon } from './FontIcons/StoreIcon/sprite';
+export { default as SupportIcon } from './FontIcons/SupportIcon/sprite';
+export { default as TrashOutlineIcon } from './FontIcons/TrashOutlineIcon/sprite';
+export { default as UserAddIcon } from './FontIcons/UserAddIcon/sprite';
+export { default as WalletIcon } from './FontIcons/WalletIcon/sprite';
+export { default as WarningSignIcon } from './FontIcons/WarningSignIcon/sprite';
+export { default as InfoIcon } from './FontIcons/InfoIcon/sprite';
+export { default as PlusIcon } from './FontIcons/PlusIcon/sprite';
