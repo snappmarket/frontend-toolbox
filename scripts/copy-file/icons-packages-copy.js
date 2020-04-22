@@ -37,13 +37,20 @@ async function createPackageFile() {
  * @param {string} rootDir
  */
 async function createModulePackages({ from, to }) {
-  const directoryPackages = glob.sync('*/index.js', { cwd: from }).map(path.dirname);
+  /**
+   * Sprite icons
+   * @type {string[]}
+   */
+  const spritePackages = glob.sync('*/**/sprite/index.js', { cwd: from }).map(path.dirname);
+  const componentPackages = glob.sync('*/**/component/index.js', { cwd: from }).map(path.dirname);
 
+  const directoryPackages = spritePackages.concat(componentPackages);
   await Promise.all(
     directoryPackages.map(async (directoryPackage) => {
+      console.log(directoryPackage);
       const packageJson = {
         sideEffects: false,
-        module: path.join('../esm', directoryPackage, 'index.js'),
+        module: path.join('../../../esm', directoryPackage, 'index.js'),
       };
       const packageJsonPath = path.join(to, directoryPackage, 'package.json');
 

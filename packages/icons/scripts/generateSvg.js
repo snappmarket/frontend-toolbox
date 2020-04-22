@@ -7,7 +7,7 @@ const svgs = glob.sync(`${process.cwd()}/packages/**/*.svg`);
 
 svgs.forEach(async icon => {
   try {
-    const fullPath = icon.substr(0, icon.lastIndexOf('/'));
+    const fullPath = icon.substr(0, icon.lastIndexOf('/')).replace('/sprite', '');
     const folderName = fullPath.split('/').pop();
     const svgFileContent = await fse.readFile(icon, 'utf-8');
 
@@ -21,6 +21,9 @@ svgs.forEach(async icon => {
     svgElement.setAttribute('id', folderName);
     svgElement.removeAttribute('fill');
 
+    /**
+     * Make sprite svg
+     */
     const splittableFileContent = `/**
 * THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
 */
@@ -54,6 +57,9 @@ export default ${folderName};
 
 `;
 
+    /**
+     * Make svg component
+     */
     const normalFileContent = `/**
 * THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
 */
@@ -105,14 +111,22 @@ export default ${folderName};
     );
 
     /**
+     * Check directory existence
+     */
+    await fse.ensureDirSync(`${fullPath}/component`);
+    await fse.ensureDirSync(`${fullPath}/sprite`);
+
+
+    /**
      * Update index js file
      */
-    await fse.writeFile(`${fullPath}/index.js`, normalFileContent, 'utf8');
+    await fse.writeFile(`${fullPath}/component/index.js`, normalFileContent, 'utf8');
 
     /**
      * Update sprite js file
      */
-    await fse.writeFile(`${fullPath}/sprite.js`, splittableFileContent, 'utf8');
+    await fse.writeFile(`${fullPath}/sprite/index.js`, splittableFileContent, 'utf8');
+
   } catch (e) {
     console.log(e);
   }

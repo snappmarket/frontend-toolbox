@@ -25,7 +25,9 @@ if (process.env.BABEL_ENV !== 'docz') {
     'node_modules/**',
     '**/LICENCE',
     '**/README.md',
+    '.mdx',
     '**/package-lock.json',
+    /package.json/,
   ];
 
   if (process.env.BABEL_ENV !== 'test') {
