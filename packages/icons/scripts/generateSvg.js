@@ -30,7 +30,7 @@ svgs.forEach(async icon => {
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import './${folderName}.svg';
+import '../${folderName}.svg';
 
 const ${folderName} = ({ className, size }) => 
   <svg 
