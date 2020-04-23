@@ -1,10 +1,13 @@
 /**
-* THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+* THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
 */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import './HeartIcon.svg';
+if(!process.env.SSR) {
+  // eslint-disable-next-line global-require
+  require('./HeartIcon.svg');
+}
 
 const HeartIcon = ({ className, size }) => 
   <svg 
@@ -15,7 +18,7 @@ const HeartIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref="#HeartIcon" />
+    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#HeartIcon`} />
   </svg>;
 
 HeartIcon.propTypes = {

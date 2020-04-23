@@ -1,10 +1,13 @@
 /**
-* THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+* THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
 */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import './InfoIcon.svg';
+if(!process.env.SSR) {
+  // eslint-disable-next-line global-require
+  require('./InfoIcon.svg');
+}
 
 const InfoIcon = ({ className, size }) => 
   <svg 
@@ -15,7 +18,7 @@ const InfoIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref="#InfoIcon" />
+    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#InfoIcon`} />
   </svg>;
 
 InfoIcon.propTypes = {

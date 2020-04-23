@@ -1,10 +1,13 @@
 /**
-* THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+* THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
 */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import './BagIcon.svg';
+if(!process.env.SSR) {
+  // eslint-disable-next-line global-require
+  require('./BagIcon.svg');
+}
 
 const BagIcon = ({ className, size }) => 
   <svg 
@@ -15,7 +18,7 @@ const BagIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref="#BagIcon" />
+    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#BagIcon`} />
   </svg>;
 
 BagIcon.propTypes = {

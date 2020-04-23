@@ -1,10 +1,13 @@
 /**
-* THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+* THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
 */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import './MapMarkerAddIcon.svg';
+if(!process.env.SSR) {
+  // eslint-disable-next-line global-require
+  require('./MapMarkerAddIcon.svg');
+}
 
 const MapMarkerAddIcon = ({ className, size }) => 
   <svg 
@@ -15,7 +18,7 @@ const MapMarkerAddIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref="#MapMarkerAddIcon" />
+    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#MapMarkerAddIcon`} />
   </svg>;
 
 MapMarkerAddIcon.propTypes = {

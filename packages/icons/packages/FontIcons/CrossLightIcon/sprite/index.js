@@ -1,10 +1,13 @@
 /**
-* THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+* THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
 */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import './CrossLightIcon.svg';
+if(!process.env.SSR) {
+  // eslint-disable-next-line global-require
+  require('./CrossLightIcon.svg');
+}
 
 const CrossLightIcon = ({ className, size }) => 
   <svg 
@@ -15,7 +18,7 @@ const CrossLightIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref="#CrossLightIcon" />
+    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#CrossLightIcon`} />
   </svg>;
 
 CrossLightIcon.propTypes = {

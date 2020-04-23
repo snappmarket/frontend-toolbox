@@ -25,12 +25,15 @@ svgs.forEach(async icon => {
      * Make sprite svg
      */
     const splittableFileContent = `/**
-* THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+* THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
 */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import './${folderName}.svg';
+if(!process.env.SSR) {
+  // eslint-disable-next-line global-require
+  require('./${folderName}.svg');
+}
 
 const ${folderName} = ({ className, size }) => 
   <svg 
@@ -41,7 +44,7 @@ const ${folderName} = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref="#${folderName}" />
+    <use xlinkHref={\`/\${process.env.PUBLIC_URL}/sprite.svg#${folderName}\`} />
   </svg>;
 
 ${folderName}.propTypes = {
@@ -106,6 +109,10 @@ export default ${folderName};
       `${fullPath}/sprite/${folderName}.svg`,
       root
         .toString()
+        .replace(/><\/path>/g, ' />')
+        .replace(/><\/use>/g, ' />')
+        .replace(/><\/animate>/g, ' />')
+        .replace(/<g><\/g>/g, '')
         .replace(/xmlns xlink/g, 'xmlns:xlink'),
       'utf8',
     );
@@ -122,6 +129,8 @@ export default ${folderName};
      */
     await fse.writeFile(`${fullPath}/component/index.js`, normalFileContent, 'utf8');
 
+
+    console.log(fullPath);
     /**
      * Update sprite js file
      */

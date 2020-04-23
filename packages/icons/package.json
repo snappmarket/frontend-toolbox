@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/icons",
   "private": false,
-  "version": "0.0.0-expremental.7",
+  "version": "0.2.8.alpha.1",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -9,7 +9,7 @@
   "scripts": {
     "test": "cross-env BABEL_ENV=test jest --config ../../jest.config.js",
     "test:coverage": "cross-env BABEL_ENV=test jest --config ../../jest.config.js --coverage=true",
-    "build": "node scripts/generateSvg.js && yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn build:copy-files",
+    "build": "node generateSvg.js && yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn build:copy-files",
     "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js ./packages --out-dir ./dist --copy-files",
     "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js ./packages --out-dir ./dist/esm --copy-files",
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./packages --out-dir ./dist/es --copy-files",
