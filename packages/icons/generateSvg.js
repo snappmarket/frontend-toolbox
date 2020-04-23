@@ -129,8 +129,6 @@ export default ${folderName};
      */
     await fse.writeFile(`${fullPath}/component/index.js`, normalFileContent, 'utf8');
 
-
-    console.log(fullPath);
     /**
      * Update sprite js file
      */
