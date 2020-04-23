@@ -11,7 +11,7 @@ if(!process.env.SSR) {
 
 const AppStore = ({ className, size }) => 
   <svg 
-    viewBox="44.2 -25 128 40"
+    viewBox="0 0 128 40"
     className={className}
     style={{
       width: size * 10,

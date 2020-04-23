@@ -43,7 +43,7 @@ if(!process.env.SSR) {
 
 const ${folderName} = ({ className, size }) => 
   <svg 
-    viewBox="${viewBox}"
+    viewBox="0 0 ${viewBox.split(' ').slice(2).join(' ')}"
     className={className}
     style={{
       width: size * 10,

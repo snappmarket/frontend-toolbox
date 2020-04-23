@@ -11,7 +11,7 @@ if(!process.env.SSR) {
 
 const GooglePlay = ({ className, size }) => 
   <svg 
-    viewBox="185.5 -25.5 128 40"
+    viewBox="0 0 128 40"
     className={className}
     style={{
       width: size * 10,
