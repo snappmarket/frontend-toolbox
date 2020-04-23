@@ -12,6 +12,12 @@ svgs.forEach(async icon => {
     const svgFileContent = await fse.readFile(icon, 'utf-8');
 
     /**
+     * Check directory existence
+     */
+    await fse.ensureDirSync(`${fullPath}/component`);
+    await fse.ensureDirSync(`${fullPath}/sprite`);
+
+    /**
      * Parse svg to update id and use veiwBox
      * @type {(TextNode & {valid: boolean}) | (HTMLElement & {valid: boolean})}
      */
@@ -116,13 +122,6 @@ export default ${folderName};
         .replace(/xmlns xlink/g, 'xmlns:xlink'),
       'utf8',
     );
-
-    /**
-     * Check directory existence
-     */
-    await fse.ensureDirSync(`${fullPath}/component`);
-    await fse.ensureDirSync(`${fullPath}/sprite`);
-
 
     /**
      * Update index js file
