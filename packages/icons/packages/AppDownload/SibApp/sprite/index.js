@@ -11,7 +11,7 @@ if(!process.env.SSR) {
 
 const SibApp = ({ className, size }) => 
   <svg 
-    viewBox="0 0 155 60"
+    viewBox="0 0 135 40"
     className={className}
     style={{
       width: size * 10,
