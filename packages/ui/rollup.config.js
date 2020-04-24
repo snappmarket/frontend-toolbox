@@ -20,6 +20,7 @@ const globals = {
   'isomorphic-unfetch': 'isomorphicUnfetch',
   polished: 'polished',
   'react-slick': 'reactSlick',
+  '@snappmarket/config': 'snappmarketConfig',
   '@snappmarket/helpers': 'snappmarketHelpers',
   '@snappmarket/hooks': 'snappmarketHooks',
   '@snappmarket/icons': 'snappmarketIcons',
