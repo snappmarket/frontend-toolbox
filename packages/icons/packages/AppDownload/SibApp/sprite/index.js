@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./SibApp.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const SibApp = ({ className, size }) => 
   <svg 
     viewBox="0 0 135 40"
@@ -18,7 +23,7 @@ const SibApp = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#SibApp`} />
+    <use xlinkHref={`${importPrefix}#SibApp`} />
   </svg>;
 
 SibApp.propTypes = {

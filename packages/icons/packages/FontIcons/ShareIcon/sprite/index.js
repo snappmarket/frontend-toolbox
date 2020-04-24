@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./ShareIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const ShareIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 29 32"
@@ -18,7 +23,7 @@ const ShareIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#ShareIcon`} />
+    <use xlinkHref={`${importPrefix}#ShareIcon`} />
   </svg>;
 
 ShareIcon.propTypes = {

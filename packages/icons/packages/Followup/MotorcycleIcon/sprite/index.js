@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./MotorcycleIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const MotorcycleIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32.448 24.462"
@@ -18,7 +23,7 @@ const MotorcycleIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#MotorcycleIcon`} />
+    <use xlinkHref={`${importPrefix}#MotorcycleIcon`} />
   </svg>;
 
 MotorcycleIcon.propTypes = {

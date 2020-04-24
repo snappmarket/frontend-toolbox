@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./ClockIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const ClockIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 32"
@@ -18,7 +23,7 @@ const ClockIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#ClockIcon`} />
+    <use xlinkHref={`${importPrefix}#ClockIcon`} />
   </svg>;
 
 ClockIcon.propTypes = {

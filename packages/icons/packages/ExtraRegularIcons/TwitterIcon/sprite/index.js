@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./TwitterIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const TwitterIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 25"
@@ -18,7 +23,7 @@ const TwitterIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#TwitterIcon`} />
+    <use xlinkHref={`${importPrefix}#TwitterIcon`} />
   </svg>;
 
 TwitterIcon.propTypes = {

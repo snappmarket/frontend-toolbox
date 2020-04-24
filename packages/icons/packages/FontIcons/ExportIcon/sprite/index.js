@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./ExportIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const ExportIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 23 32"
@@ -18,7 +23,7 @@ const ExportIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#ExportIcon`} />
+    <use xlinkHref={`${importPrefix}#ExportIcon`} />
   </svg>;
 
 ExportIcon.propTypes = {

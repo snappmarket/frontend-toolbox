@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./ListSquareIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const ListSquareIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 32"
@@ -18,7 +23,7 @@ const ListSquareIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#ListSquareIcon`} />
+    <use xlinkHref={`${importPrefix}#ListSquareIcon`} />
   </svg>;
 
 ListSquareIcon.propTypes = {

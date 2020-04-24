@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./BagIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const BagIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 14.9 18.7"
@@ -18,7 +23,7 @@ const BagIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#BagIcon`} />
+    <use xlinkHref={`${importPrefix}#BagIcon`} />
   </svg>;
 
 BagIcon.propTypes = {

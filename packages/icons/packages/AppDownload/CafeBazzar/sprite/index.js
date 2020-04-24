@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./CafeBazzar.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const CafeBazzar = ({ className, size }) => 
   <svg 
     viewBox="0 0 182.7 54.8"
@@ -18,7 +23,7 @@ const CafeBazzar = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#CafeBazzar`} />
+    <use xlinkHref={`${importPrefix}#CafeBazzar`} />
   </svg>;
 
 CafeBazzar.propTypes = {

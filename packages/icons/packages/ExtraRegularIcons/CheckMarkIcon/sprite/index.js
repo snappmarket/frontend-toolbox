@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./CheckMarkIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const CheckMarkIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 29"
@@ -18,7 +23,7 @@ const CheckMarkIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#CheckMarkIcon`} />
+    <use xlinkHref={`${importPrefix}#CheckMarkIcon`} />
   </svg>;
 
 CheckMarkIcon.propTypes = {

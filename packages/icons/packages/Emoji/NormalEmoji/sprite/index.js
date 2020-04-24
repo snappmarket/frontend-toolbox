@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./NormalEmoji.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const NormalEmoji = ({ className, size }) => 
   <svg 
     viewBox="0 0 176.000000 183.000000"
@@ -18,7 +23,7 @@ const NormalEmoji = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#NormalEmoji`} />
+    <use xlinkHref={`${importPrefix}#NormalEmoji`} />
   </svg>;
 
 NormalEmoji.propTypes = {

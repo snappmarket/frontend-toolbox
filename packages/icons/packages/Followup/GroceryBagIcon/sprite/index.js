@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./GroceryBagIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const GroceryBagIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 25.78 35.114"
@@ -18,7 +23,7 @@ const GroceryBagIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#GroceryBagIcon`} />
+    <use xlinkHref={`${importPrefix}#GroceryBagIcon`} />
   </svg>;
 
 GroceryBagIcon.propTypes = {

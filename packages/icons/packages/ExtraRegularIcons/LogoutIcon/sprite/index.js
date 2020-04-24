@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./LogoutIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const LogoutIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 24"
@@ -18,7 +23,7 @@ const LogoutIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#LogoutIcon`} />
+    <use xlinkHref={`${importPrefix}#LogoutIcon`} />
   </svg>;
 
 LogoutIcon.propTypes = {

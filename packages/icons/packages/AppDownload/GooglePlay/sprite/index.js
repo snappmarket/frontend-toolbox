@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./GooglePlay.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const GooglePlay = ({ className, size }) => 
   <svg 
     viewBox="0 0 128 40"
@@ -18,7 +23,7 @@ const GooglePlay = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#GooglePlay`} />
+    <use xlinkHref={`${importPrefix}#GooglePlay`} />
   </svg>;
 
 GooglePlay.propTypes = {

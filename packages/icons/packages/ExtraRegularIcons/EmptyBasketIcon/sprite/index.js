@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./EmptyBasketIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const EmptyBasketIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 588.000000 378.000000"
@@ -18,7 +23,7 @@ const EmptyBasketIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#EmptyBasketIcon`} />
+    <use xlinkHref={`${importPrefix}#EmptyBasketIcon`} />
   </svg>;
 
 EmptyBasketIcon.propTypes = {

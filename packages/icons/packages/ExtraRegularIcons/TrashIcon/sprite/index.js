@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./TrashIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const TrashIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 40"
@@ -18,7 +23,7 @@ const TrashIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#TrashIcon`} />
+    <use xlinkHref={`${importPrefix}#TrashIcon`} />
   </svg>;
 
 TrashIcon.propTypes = {

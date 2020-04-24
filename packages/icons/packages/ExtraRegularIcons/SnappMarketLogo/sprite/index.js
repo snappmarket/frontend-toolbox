@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./SnappMarketLogo.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const SnappMarketLogo = ({ className, size }) => 
   <svg 
     viewBox="0 0 200 100"
@@ -18,7 +23,7 @@ const SnappMarketLogo = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#SnappMarketLogo`} />
+    <use xlinkHref={`${importPrefix}#SnappMarketLogo`} />
   </svg>;
 
 SnappMarketLogo.propTypes = {

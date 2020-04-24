@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./AppStore.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const AppStore = ({ className, size }) => 
   <svg 
     viewBox="0 0 128 40"
@@ -18,7 +23,7 @@ const AppStore = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#AppStore`} />
+    <use xlinkHref={`${importPrefix}#AppStore`} />
   </svg>;
 
 AppStore.propTypes = {

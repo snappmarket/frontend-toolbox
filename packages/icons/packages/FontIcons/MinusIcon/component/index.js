@@ -15,7 +15,7 @@ const MinusIcon = ({ className, size }) =>
     }}
     focusable="false"
     fill="currentColor">
-    <title>minus</title><path d="M29.61 17.152h-27.178c-0.566 0-1.024-0.458-1.024-1.024s0.458-1.024 1.024-1.024v0h27.178c0.566 0 1.024 0.458 1.024 1.024s-0.458 1.024-1.024 1.024v0z" /> 
+    <title>minus</title><path d="M29.61 17.152h-27.178c-0.566 0-1.024-0.458-1.024-1.024s0.458-1.024 1.024-1.024v0h27.178c0.566 0 1.024 0.458 1.024 1.024s-0.458 1.024-1.024 1.024v0z"></path> 
   </svg>;
 
 MinusIcon.propTypes = {

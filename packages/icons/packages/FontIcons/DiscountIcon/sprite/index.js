@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./DiscountIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const DiscountIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 33"
@@ -18,7 +23,7 @@ const DiscountIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#DiscountIcon`} />
+    <use xlinkHref={`${importPrefix}#DiscountIcon`} />
   </svg>;
 
 DiscountIcon.propTypes = {

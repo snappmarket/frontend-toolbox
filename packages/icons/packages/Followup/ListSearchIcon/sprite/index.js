@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./ListSearchIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const ListSearchIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 38.453 41.2"
@@ -18,7 +23,7 @@ const ListSearchIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#ListSearchIcon`} />
+    <use xlinkHref={`${importPrefix}#ListSearchIcon`} />
   </svg>;
 
 ListSearchIcon.propTypes = {

@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./LaughEmoji.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const LaughEmoji = ({ className, size }) => 
   <svg 
     viewBox="0 0 43.516 43.516"
@@ -18,7 +23,7 @@ const LaughEmoji = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#LaughEmoji`} />
+    <use xlinkHref={`${importPrefix}#LaughEmoji`} />
   </svg>;
 
 LaughEmoji.propTypes = {

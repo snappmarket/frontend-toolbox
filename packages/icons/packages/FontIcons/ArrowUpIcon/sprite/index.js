@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./ArrowUpIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const ArrowUpIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 32"
@@ -18,7 +23,7 @@ const ArrowUpIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#ArrowUpIcon`} />
+    <use xlinkHref={`${importPrefix}#ArrowUpIcon`} />
   </svg>;
 
 ArrowUpIcon.propTypes = {

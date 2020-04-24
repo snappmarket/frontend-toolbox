@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./AngleRightIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const AngleRightIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 32"
@@ -18,7 +23,7 @@ const AngleRightIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#AngleRightIcon`} />
+    <use xlinkHref={`${importPrefix}#AngleRightIcon`} />
   </svg>;
 
 AngleRightIcon.propTypes = {

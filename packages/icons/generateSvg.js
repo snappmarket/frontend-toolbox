@@ -2,7 +2,7 @@ const fse = require('fs-extra');
 const glob = require('glob');
 const parser = require('node-html-parser');
 
-// RENDER TEST
+// Glob index.svg files inb packages
 const svgs = glob.sync(`${process.cwd()}/packages/**/index.svg`);
 
 svgs.forEach(async icon => {
@@ -41,6 +41,11 @@ if(!process.env.SSR) {
   require('./${folderName}.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = \`/\${process.env.PUBLIC_URL}/sprite.svg\`;
+}
+
 const ${folderName} = ({ className, size }) => 
   <svg 
     viewBox="0 0 ${viewBox.split(' ').slice(2).join(' ')}"
@@ -50,7 +55,7 @@ const ${folderName} = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={\`/\${process.env.PUBLIC_URL}/sprite.svg#${folderName}\`} />
+    <use xlinkHref={\`\${importPrefix}#${folderName}\`} />
   </svg>;
 
 ${folderName}.propTypes = {
@@ -89,8 +94,6 @@ const ${folderName} = ({ className, size }) =>
     ${svgElement.innerHTML
     .replace(/xmlns:xlink/g, 'xmlnsXlink')
     .replace(/xlink:href/g, 'xlinkHref')
-    .replace(/><\/path>/g, ' />')
-    .replace(/><\/use>/g, ' />')
     .replace(/<g><\/g>/g, '')
     .replace(/class=/g, 'className=')}
   </svg>;
@@ -115,9 +118,6 @@ export default ${folderName};
       `${fullPath}/sprite/${folderName}.svg`,
       root
         .toString()
-        .replace(/><\/path>/g, ' />')
-        .replace(/><\/use>/g, ' />')
-        .replace(/><\/animate>/g, ' />')
         .replace(/<g><\/g>/g, '')
         .replace(/xmlns xlink/g, 'xmlns:xlink'),
       'utf8',

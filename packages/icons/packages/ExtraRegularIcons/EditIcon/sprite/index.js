@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./EditIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const EditIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 15 15.002"
@@ -18,7 +23,7 @@ const EditIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#EditIcon`} />
+    <use xlinkHref={`${importPrefix}#EditIcon`} />
   </svg>;
 
 EditIcon.propTypes = {

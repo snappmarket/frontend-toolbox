@@ -20,9 +20,10 @@ const globals = {
   'isomorphic-unfetch': 'isomorphicUnfetch',
   polished: 'polished',
   'react-slick': 'reactSlick',
-  '@snappmarket/icons': 'snappmarketIcons',
-  '@snappmarket/hooks': 'snappmarketHooks',
   '@snappmarket/helpers': 'snappmarketHelpers',
+  '@snappmarket/hooks': 'snappmarketHooks',
+  '@snappmarket/icons': 'snappmarketIcons',
+  '@snappmarket/icons/sprite': 'snappmarketSpriteIcons',
 };
 const babelOptions = {
   exclude: /node_modules/,
@@ -32,7 +33,7 @@ const babelOptions = {
 };
 const commonjsOptions = {
   ignoreGlobal: true,
-  include: /node_modules/,
+  include: 'node_modules/**',
   namedExports: {
     '../../node_modules/prop-types/index.js': [
       'elementType',
@@ -54,7 +55,21 @@ const commonjsOptions = {
 };
 
 function onwarn(warning) {
-  throw Error(warning.message);
+  if (
+    warning.code === 'UNUSED_EXTERNAL_IMPORT' &&
+    warning.source === 'react' &&
+    warning.names.filter((identifier) => identifier !== 'useDebugValue').length === 0
+  ) {
+    // only warn for
+    // import * as React from 'react'
+    // if (__DEV__) React.useDebugValue()
+    // React.useDebug not fully dce'd from prod bundle
+    // in the sense that it's still imported but unused. Downgrading
+    // it to a warning as a reminder to fix at some point
+    console.warn(warning.message);
+  } else {
+    throw Error(warning.message);
+  }
 }
 
 export default [

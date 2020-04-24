@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./PlusIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const PlusIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 32"
@@ -18,7 +23,7 @@ const PlusIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#PlusIcon`} />
+    <use xlinkHref={`${importPrefix}#PlusIcon`} />
   </svg>;
 
 PlusIcon.propTypes = {

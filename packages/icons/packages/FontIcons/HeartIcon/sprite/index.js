@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./HeartIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const HeartIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 38 32"
@@ -18,7 +23,7 @@ const HeartIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#HeartIcon`} />
+    <use xlinkHref={`${importPrefix}#HeartIcon`} />
   </svg>;
 
 HeartIcon.propTypes = {

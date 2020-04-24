@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./MinusIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const MinusIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 32"
@@ -18,7 +23,7 @@ const MinusIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#MinusIcon`} />
+    <use xlinkHref={`${importPrefix}#MinusIcon`} />
   </svg>;
 
 MinusIcon.propTypes = {

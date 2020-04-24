@@ -15,7 +15,7 @@ const CircleIcon = ({ className, size }) =>
     }}
     focusable="false"
     fill="currentColor">
-    <title>circle</title><path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z" /> 
+    <title>circle</title><path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path> 
   </svg>;
 
 CircleIcon.propTypes = {

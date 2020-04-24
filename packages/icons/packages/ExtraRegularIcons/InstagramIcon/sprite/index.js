@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./InstagramIcon.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const InstagramIcon = ({ className, size }) => 
   <svg 
     viewBox="0 0 32 32"
@@ -18,7 +23,7 @@ const InstagramIcon = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#InstagramIcon`} />
+    <use xlinkHref={`${importPrefix}#InstagramIcon`} />
   </svg>;
 
 InstagramIcon.propTypes = {

@@ -2,8 +2,7 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "packages/*/packages/*"
+    "packages/*"
   ],
   "scripts": {
     "start": "yarn docz:serve",

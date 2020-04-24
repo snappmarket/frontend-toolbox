@@ -9,6 +9,11 @@ if(!process.env.SSR) {
   require('./DissatisfiedEmoji.svg');
 }
 
+let importPrefix = '';
+if(process.env.PUBLIC_URL) {
+  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+}
+
 const DissatisfiedEmoji = ({ className, size }) => 
   <svg 
     viewBox="0 0 45.181 45.181"
@@ -18,7 +23,7 @@ const DissatisfiedEmoji = ({ className, size }) =>
       height: size * 10,
     }}
     fill="currentColor">
-    <use xlinkHref={`/${process.env.PUBLIC_URL}/sprite.svg#DissatisfiedEmoji`} />
+    <use xlinkHref={`${importPrefix}#DissatisfiedEmoji`} />
   </svg>;
 
 DissatisfiedEmoji.propTypes = {
