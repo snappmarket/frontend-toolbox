@@ -41,7 +41,7 @@ if (process.env.BABEL_ENV !== 'docz') {
   }
 } else {
   ignorePaths = [
-    /.cache/,
+    '.cache',
     '**/dist/*.mdx',
   ];
 }
