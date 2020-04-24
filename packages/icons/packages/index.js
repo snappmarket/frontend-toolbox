@@ -1,8 +1,11 @@
+// App download buttons
+export * from './AppDownload';
+
 // Emoji icons
 export * from './Emoji';
 
 // Font icons
-export * from './FontIcons';
+export * from './FontIcons';f
 
 // Follow up icons
 export * from './Followup'

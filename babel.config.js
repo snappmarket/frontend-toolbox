@@ -39,12 +39,12 @@ if (process.env.BABEL_ENV !== 'docz') {
       '**/rollup.config.js',
     );
   }
-} else {
-  ignorePaths = [
-    '.cache',
-    '**/dist/*.mdx',
-  ];
 }
+// else {
+//   ignorePaths = [
+//     '.cache',
+//   ];
+// }
 
 const productionPlugins = [
   'babel-plugin-transform-react-constant-elements',
