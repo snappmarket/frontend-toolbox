@@ -12,7 +12,7 @@ import {
   nextBlock,
   nextNone,
   addClassToElement,
-  removeClassFromElement
+  removeClassFromElement,
 } from '../utils';
 
 export const directionTouchClientX = params => {
