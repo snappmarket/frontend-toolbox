@@ -14,7 +14,7 @@ describe('CheckBox ui component tests', () => {
     );
     const selectSvgTitle = getByTestId('CircleIcon');
     const convertValuesToArray = Object.values(selectSvgTitle).pop();
-    expect(convertValuesToArray.children).toBe('circle');
+    expect(convertValuesToArray.children).toBeTruthy();
   });
 
   it('Should change className to circle', () => {
