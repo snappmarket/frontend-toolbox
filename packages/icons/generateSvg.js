@@ -36,7 +36,7 @@ svgs.forEach(async icon => {
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-if(!process.env.SSR) {
+if(!process.env.SSR && !process.env.CI) {
   // eslint-disable-next-line global-require
   require('./${folderName}.svg');
 }
