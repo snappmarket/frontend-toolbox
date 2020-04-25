@@ -5,7 +5,7 @@ export * from './AppDownload';
 export * from './Emoji';
 
 // Font icons
-export * from './FontIcons';f
+export * from './FontIcons';
 
 // Follow up icons
 export * from './Followup'
