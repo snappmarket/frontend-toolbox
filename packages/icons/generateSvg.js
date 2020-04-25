@@ -95,6 +95,9 @@ const ${folderName} = ({ className, size }) =>
     .replace(/xmlns:xlink/g, 'xmlnsXlink')
     .replace(/xlink:href/g, 'xlinkHref')
     .replace(/<g><\/g>/g, '')
+    .replace(/fill-rule/g, 'fillRule')
+    .replace(/fill-rule/g, 'fillRule')
+    .replace(/clip-rule/g, 'clipRule')
     .replace(/class=/g, 'className=')}
   </svg>;
 
