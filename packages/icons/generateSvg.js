@@ -48,6 +48,7 @@ if(process.env.PUBLIC_URL) {
 
 const ${folderName} = ({ className, size }) => 
   <svg 
+    data-testid="${folderName}"
     viewBox="0 0 ${viewBox.split(' ').slice(2).join(' ')}"
     className={className}
     style={{
@@ -98,6 +99,11 @@ const ${folderName} = ({ className, size }) =>
     .replace(/fill-rule/g, 'fillRule')
     .replace(/fill-rule/g, 'fillRule')
     .replace(/clip-rule/g, 'clipRule')
+    .replace(/clip-path/g, 'clipPath')
+    .replace(/stroke-width/g, 'strokeWidth')
+    .replace(/stroke-linecap/g, 'strokeLinecap')
+    .replace(/stroke-linejoin/g, 'strokeLinejoin')
+    .replace(/fill-opacity/g, 'fillOpacity')
     .replace(/class=/g, 'className=')}
   </svg>;
 

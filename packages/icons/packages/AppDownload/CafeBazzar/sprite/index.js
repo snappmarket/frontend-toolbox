@@ -4,7 +4,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-if(!process.env.SSR) {
+if(!process.env.SSR && !process.env.CI) {
   // eslint-disable-next-line global-require
   require('./CafeBazzar.svg');
 }
@@ -16,6 +16,7 @@ if(process.env.PUBLIC_URL) {
 
 const CafeBazzar = ({ className, size }) => 
   <svg 
+    data-testid="CafeBazzar"
     viewBox="0 0 182.7 54.8"
     className={className}
     style={{

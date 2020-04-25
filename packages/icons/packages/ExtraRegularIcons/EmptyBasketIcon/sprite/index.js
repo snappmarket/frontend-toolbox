@@ -4,7 +4,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-if(!process.env.SSR) {
+if(!process.env.SSR && !process.env.CI) {
   // eslint-disable-next-line global-require
   require('./EmptyBasketIcon.svg');
 }
@@ -16,6 +16,7 @@ if(process.env.PUBLIC_URL) {
 
 const EmptyBasketIcon = ({ className, size }) => 
   <svg 
+    data-testid="EmptyBasketIcon"
     viewBox="0 0 588.000000 378.000000"
     className={className}
     style={{

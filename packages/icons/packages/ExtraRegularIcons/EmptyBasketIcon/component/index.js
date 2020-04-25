@@ -18,9 +18,9 @@ const EmptyBasketIcon = ({ className, size }) =>
     
   <g transform="translate(0.000000,378.000000) scale(0.100000,-0.100000)" stroke="none">
     <path className="sleepy-z" fill="rgb(16, 224, 44)"
-          fill-opacity="0.6"
+          fillOpacity="0.6"
           d="M2740 3150 c0 -18 7 -20 70 -20 40 0 70 -4 70 -10 0 -5 -34 -55 -75 -111 -41 -55 -75 -107 -75 -115 0 -11 22 -14 115 -14 96 0 115 3 115 15 0 18 2 17 -83 20 -37 1 -70 5 -74 8 -3 4 29 52 71 107 42 56 76 110 76 121 0 18 -8 19 -105 19 -98 0 -105 -1 -105 -20z">
-      <animate attributeName="fill-opacity"
+      <animate attributeName="fillOpacity"
                begin="0.7s" dur="1.8s"
                values="0.1;1;0.1"
                calcMode="linear"
@@ -28,7 +28,7 @@ const EmptyBasketIcon = ({ className, size }) =>
     </path>
     <path className="sleepy-z" fill="rgb(16, 224, 44)"
           d="M3310 2575 c0 -12 13 -15 55 -15 30 0 55 -2 55 -5 0 -3 -27 -42 -60 -87 -33 -44 -60 -84 -60 -89 0 -5 41 -9 90 -9 73 0 90 3 90 15 0 12 -14 15 -65 15 l-66 0 61 79 c33 44 60 87 60 95 0 13 -14 16 -80 16 -64 0 -80 -3 -80 -15z">
-      <animate attributeName="fill-opacity"
+      <animate attributeName="fillOpacity"
                begin="0.4s" dur="1.8s"
                values="0.1;1;0.1"
                calcMode="linear"
@@ -36,7 +36,7 @@ const EmptyBasketIcon = ({ className, size }) =>
     </path>
     <path className="sleepy-z" fill="rgb(16, 224, 44)"
           d="M2640 2286 c0 -10 14 -16 45 -18 l46 -3 -46 -63 c-59 -81 -55 -94 27 -90 78 4 95 28 19 28 -28 0 -51 3 -51 6 0 3 20 32 45 64 62 81 60 90 -20 90 -50 0 -65 -3 -65 -14z">
-      <animate attributeName="fill-opacity"
+      <animate attributeName="fillOpacity"
                begin="0.2s" dur="1.8s"
                values="0.1;1;0.1"
                calcMode="linear"
@@ -44,7 +44,7 @@ const EmptyBasketIcon = ({ className, size }) =>
     </path>
     <path className="sleepy-z" fill="rgb(16, 224, 44)"
           d="M3065 1770 c3 -5 17 -10 31 -10 31 0 30 -4 -4 -49 -49 -62 -49 -61 14 -61 59 0 66 15 11 22 l-29 3 29 40 c49 67 49 65 -7 65 -32 0 -49 -4 -45 -10z">
-      <animate attributeName="fill-opacity"
+      <animate attributeName="fillOpacity"
                begin="0s" dur="1.8s"
                values="0.1;1;0.1"
                calcMode="linear"

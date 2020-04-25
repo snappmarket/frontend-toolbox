@@ -4,7 +4,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-if(!process.env.SSR) {
+if(!process.env.SSR && !process.env.CI) {
   // eslint-disable-next-line global-require
   require('./UserAddIcon.svg');
 }
@@ -16,6 +16,7 @@ if(process.env.PUBLIC_URL) {
 
 const UserAddIcon = ({ className, size }) => 
   <svg 
+    data-testid="UserAddIcon"
     viewBox="0 0 32 32"
     className={className}
     style={{
