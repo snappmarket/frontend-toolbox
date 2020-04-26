@@ -91,13 +91,15 @@ export const StyledCircleWave = Styled.div`
 `;
 
 export const StyledLogoAnimation = Styled.div`
-  animation: alertPulse 1.2s ease-out;
-  animation-iteration-count: infinite;
-  will-change: opacity;
-  transform: translateZ(0);
   min-width: ${props => `calc(${props.theme.defaultRem} * ${props.size * 2})`}; 
   min-height: ${props =>
-    `calc(${props.theme.defaultRem} * ${props.size * 2})`}; 
+    `calc(${props.theme.defaultRem} * ${props.size * 2})`};
+  &.animating {
+    animation: alertPulse 1.2s ease-out;
+    animation-iteration-count: infinite;
+    will-change: opacity;
+    transform: translateZ(0);
+  }
   svg {
     width: ${props =>
       `calc(${props.theme.defaultRem} * ${props.size * 2})`} !important; 
