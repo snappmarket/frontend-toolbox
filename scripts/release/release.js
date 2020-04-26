@@ -12,7 +12,7 @@ console.log(`releasing ${passedVersion} together !`);
   try {
     const { version } = await grabVersionAndGenerateNewOne(passedVersion, path.join(process.cwd(), 'packages/ui/'));
 
-    if (shell.exec(`lerna run --parallel build && lerna run --parallel release -- -- ${version}`).code !== 0) {
+    if (shell.exec(`lerna run --parallel change-version -- -- ${version} && lerna run --parallel build && lerna run --parallel publish-npm -- -- ${version}`).code !== 0) {
       shell.echo('Release build, or publish failed');
       shell.exit(1);
     }

@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/helpers",
   "private": false,
-  "version": "0.2.7",
+  "version": "0.3.0",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -15,7 +15,8 @@
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./packages --out-dir ./dist/es",
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
     "build:copy-files": "node ../../scripts/copy-file/packages-copy.js",
-    "release": "node ../../scripts/release/release-parents.js",
+    "change-version": "node ../../scripts/release/change-version.js",
+    "publish-npm": "node ../../scripts/release/publish-npm.js",
     "prebuild": "rimraf ./dist",
     "start": "rollup -c -w",
     "prepare": "yarn run build",

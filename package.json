@@ -23,7 +23,7 @@
     "docz:build": "cross-env BABEL_ENV=docz docz build",
     "docz:serve": "cross-env BABEL_ENV=docz docz serve",
     "docz:deploy": "surge .docz/dist",
-    "release:parents": "node ./scripts/release/release-together.js",
+    "release": "node ./scripts/release/release.js",
     "jsdoc2docz": "node ./scripts/docs/jsdocs-to-docz.js"
   },
   "devDependencies": {
