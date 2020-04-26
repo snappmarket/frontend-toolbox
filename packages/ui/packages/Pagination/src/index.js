@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { persianNumber } from '@snappmarket/helpers';
-import { AngleLeftIcon, AngleRightIcon } from '@snappmarket/icons';
+import { AngleLeftIcon, AngleRightIcon } from '@snappmarket/icons/sprite';
 
 import {
   StyledPaginationWrapper,

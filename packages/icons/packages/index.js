@@ -1,3 +1,6 @@
+// App download buttons
+export * from './AppDownload';
+
 // Emoji icons
 export * from './Emoji';
 
