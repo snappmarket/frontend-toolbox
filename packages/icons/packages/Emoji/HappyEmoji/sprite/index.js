@@ -1,21 +1,21 @@
 /**
-* THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
-*/
+ * THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
+ */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-if(!process.env.SSR && !process.env.CI) {
+if (!process.env.SSR && !process.env.CI) {
   // eslint-disable-next-line global-require
   require('./HappyEmoji.svg');
 }
 
 let importPrefix = '';
-if(process.env.PUBLIC_URL) {
+if (process.env.PUBLIC_URL) {
   importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
 }
 
-const HappyEmoji = ({ className, size }) => 
-  <svg 
+const HappyEmoji = ({ className, size }) => (
+  <svg
     data-testid="HappyEmoji"
     viewBox="0 0 42.256 42.256"
     className={className}
@@ -23,9 +23,11 @@ const HappyEmoji = ({ className, size }) =>
       width: size * 10,
       height: size * 10,
     }}
-    fill="currentColor">
+    fill="currentColor"
+  >
     <use xlinkHref={`${importPrefix}#HappyEmoji`} />
-  </svg>;
+  </svg>
+);
 
 HappyEmoji.propTypes = {
   className: PropTypes.string,
@@ -37,4 +39,3 @@ HappyEmoji.defaultProps = {
 };
 
 export default HappyEmoji;
-

@@ -8,7 +8,7 @@ export * from './Emoji';
 export * from './FontIcons';
 
 // Follow up icons
-export * from './Followup'
+export * from './Followup';
 
 // Extra regular icons
 export * from './ExtraRegularIcons';

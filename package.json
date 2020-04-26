@@ -18,7 +18,7 @@
     "lint:eslint:fix": "eslint packages --fix",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
-    "prettify": "prettier --write \"packages/**/*.{js,jsx}\" --ignore-path",
+    "prettify": "prettier --write \"packages/**/*.{js,jsx}\"",
     "docz:dev": "cross-env BABEL_ENV=docz docz dev",
     "docz:build": "cross-env BABEL_ENV=docz docz build",
     "docz:serve": "cross-env BABEL_ENV=docz docz serve",
