@@ -173,7 +173,7 @@ export default ${folderName};
   });
 
 
-  if (shell.exec(`prettier --write "packages/**/*.{js,jsx,svg}"`).code !== 0) {
+  if (shell.exec(`prettier --write "packages/**/*.{js,jsx}"`).code !== 0) {
     shell.echo(`run lint failed`);
   }
 })();
