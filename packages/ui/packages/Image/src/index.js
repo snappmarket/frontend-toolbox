@@ -15,7 +15,7 @@ const Image = ({src, size, loader, error, ...rest}) => (
     data-testid="image"
     src={src}
     loader={loader || <LogoAnimation size={size} />}
-    unloader={error || <LogoAnimation size={size} />}
+    unloader={error || <LogoAnimation size={size} animate={false} />}
     {...rest}
   />
 );
