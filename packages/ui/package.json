@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui",
   "private": false,
-  "version": "0.2.5",
+  "version": "0.2.8-alpha.2",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@snappmarket/helpers": "^0.2.1-alpha.4",
     "@snappmarket/hooks": "^0.2.1-alpha.3",
-    "@snappmarket/icons": "^0.2.1-alpha.2",
+    "@snappmarket/icons": "^0.2.8-alpha.14",
     "polished": "^3.4.2",
     "react-hgs-input-range": "^1.3.1",
     "react-image": "^2.2.2",

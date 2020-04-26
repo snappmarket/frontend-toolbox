@@ -25,7 +25,9 @@ if (process.env.BABEL_ENV !== 'docz') {
     'node_modules/**',
     '**/LICENCE',
     '**/README.md',
+    '.mdx',
     '**/package-lock.json',
+    '**/package.json',
   ];
 
   if (process.env.BABEL_ENV !== 'test') {
@@ -38,6 +40,11 @@ if (process.env.BABEL_ENV !== 'docz') {
     );
   }
 }
+// else {
+//   ignorePaths = [
+//     '.cache',
+//   ];
+// }
 
 const productionPlugins = [
   'babel-plugin-transform-react-constant-elements',

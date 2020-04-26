@@ -34,7 +34,6 @@ export const StyledButton = Styled.button`
       : `calc(${props.minWidth} * ${props.theme.defaultRem})`};
   flex-direction: ${props =>
     props.direction === 'right' ? 'row' : 'row-reverse'};
-  border: calc(${props => props.theme.defaultRem} * 0.1) solid transparent;
   svg {
     max-height: ${props => `calc(${props.height} * ${props.theme.defaultRem})`};
   }
@@ -58,7 +57,6 @@ export const StyledLabel = Styled.span`
 /* eslint-disable indent */
 export const StyledPrimaryButton = Styled(StyledButton)`
   background-color: ${props => props.theme.colors[props.color][props.shade]};
-  border-color: ${props => props.theme.colors[props.color][props.shade]};
   color: ${props =>
     props.theme.colors[
       defineForegroundColor(props.theme.colors[props.color][props.shade])
@@ -84,7 +82,6 @@ export const StyledPrimaryButton = Styled(StyledButton)`
     cursor: not-allowed;
     background-color: ${props =>
       props.theme.colors[props.color]['ultra-light']};
-    border-color: ${props => props.theme.colors[props.color]['ultra-light']};
     color: ${props =>
       props.theme.colors[
         defineForegroundColor(props.theme.colors[props.color].dark)
@@ -100,6 +97,7 @@ export const StyledPrimaryButton = Styled(StyledButton)`
 
 export const StyledOutlineButton = Styled(StyledPrimaryButton)`
   background: none;
+  border: calc(${props => props.theme.defaultRem} * 0.1) solid ${props => props.theme.colors[props.color][props.shade]};
   color: ${props => props.theme.colors[props.color][props.shade]};
   svg {
     fill: ${props => props.theme.colors[props.color][props.shade]};

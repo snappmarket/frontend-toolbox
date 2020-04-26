@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2-beta
         with:
-          fetch-depth: 1
+          fetch-depth: 2
+      - run: git checkout HEAD^
       - uses: preactjs/compressed-size-action@v1
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"

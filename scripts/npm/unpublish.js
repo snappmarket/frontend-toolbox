@@ -1,37 +1,37 @@
 const shell = require('shelljs');
 
-const version = '0.2.1-alpha.canary';
+// const version = '0.2.1-alpha.canary';
 const packages = [
-  '@snappmarket/helpers',
-  '@snappmarket/hooks',
-  '@snappmarket/icons',
-  '@snappmarket/ui',
-
-  '@snappmarket/array-helpers',
-  '@snappmarket/cookie-helpers',
-  '@snappmarket/debug-helpers',
-  '@snappmarket/http-helpers',
-  '@snappmarket/json-helpers',
-  '@snappmarket/map-helpers',
-  '@snappmarket/number-helpers',
-  '@snappmarket/os-helpers',
-  '@snappmarket/object-helpers',
-  '@snappmarket/promise-helpers',
-  '@snappmarket/proxy-helpers',
-  '@snappmarket/redux-helpers',
-  '@snappmarket/storage-helpers',
-  '@snappmarket/string-helpers',
-  '@snappmarket/template-helpers',
-  '@snappmarket/window-helpers',
-
-  '@snappmarket/use-debounce',
-  '@snappmarket/use-did-update-effect',
-  '@snappmarket/use-focus',
-  '@snappmarket/use-force-update',
-  '@snappmarket/use-geolocation',
-  '@snappmarket/use-route-change',
-  '@snappmarket/use-timer',
-
+  // '@snappmarket/helpers',
+  // '@snappmarket/hooks',
+  // '@snappmarket/icons',
+  // '@snappmarket/ui',
+  //
+  // '@snappmarket/array-helpers',
+  // '@snappmarket/cookie-helpers',
+  // '@snappmarket/debug-helpers',
+  // '@snappmarket/http-helpers',
+  // '@snappmarket/json-helpers',
+  // '@snappmarket/map-helpers',
+  // '@snappmarket/number-helpers',
+  // '@snappmarket/os-helpers',
+  // '@snappmarket/object-helpers',
+  // '@snappmarket/promise-helpers',
+  // '@snappmarket/proxy-helpers',
+  // '@snappmarket/redux-helpers',
+  // '@snappmarket/storage-helpers',
+  // '@snappmarket/string-helpers',
+  // '@snappmarket/template-helpers',
+  // '@snappmarket/window-helpers',
+  //
+  // '@snappmarket/use-debounce',
+  // '@snappmarket/use-did-update-effect',
+  // '@snappmarket/use-focus',
+  // '@snappmarket/use-force-update',
+  // '@snappmarket/use-geolocation',
+  // '@snappmarket/use-route-change',
+  // '@snappmarket/use-timer',
+  //
   '@snappmarket/ui-accordion',
   '@snappmarket/ui-alert',
   '@snappmarket/ui-breadcrumb',
@@ -63,10 +63,10 @@ const packages = [
 ];
 
 packages.forEach((p) => {
-  const packageSigniture = `${p}@${version}`;
+  // const packageSigniture = `${p}@${version}`;
 
   // Run external tool synchronously
-  if (shell.exec(`npm unpublish ${packageSigniture}`).code !== 0) {
-    shell.echo(`Error: Unpublish failed : ${packageSigniture}`);
+  if (shell.exec(`npm deprecate ${p} "Please use @snappmarket/ui instead (full tree-shakable)"`).code !== 0) {
+    shell.echo(`Error: deprecate failed : ${p}`);
   }
 });
