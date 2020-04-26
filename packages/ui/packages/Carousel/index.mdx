@@ -17,107 +17,102 @@ menu: 3.Components
 ```bash 
 npm i @snappmarket/ui-carousel
 ```
-import Carousel from './src';
+import Carousel from './src/demo';
 import { Playground, Props } from 'docz';
 import { AngleLeftIcon, AngleRightIcon } from '../../../icons';
 import { Button } from '..';
-import {StyledCarouselDemo} from '../../../ui/packages/Carousel/src/core/demo'
 
 export const ProductsSlider = props => {
-    const slideConfig = {
-        customArrow: true,
-        nav: true,
-        drag: true,
-        threshold: 50,
-        responsive: {
-            0: {
-                items: 2,
-            },
-        },
-    };
+  const slideConfig = {
+      customArrow: true,
+      nav: true,
+      drag: true,
+      threshold: 50,
+      responsive: {
+          0: {
+              items: 2,
+          },
+      },
+  };
   return (
-      <StyledCarouselDemo>
-        <Carousel 
-            slideConfig={slideConfig}
-            nextArrow={
-                <Button
-                    icon={<AngleRightIcon />}
-                    size="xs"
-                    modifier="link"
-                    color="gray"
-                    shade="dark"
-                />
-            }
-            prevArrow={
-                <Button
-                    icon={<AngleLeftIcon />}
-                    size="xs"
-                    modifier="link"
-                    color="gray"
-                    shade="dark"
-                />
-            }
-            >
-            <div class="slide">Slide 1</div>
-            <div class="slide">Slide 2</div>
-            <div class="slide">Slide 3</div>
-            <div class="slide">Slide 4</div>
-            <div class="slide">Slide 5</div>
-        </Carousel>
-      </StyledCarouselDemo>
+    <Carousel 
+        slideConfig={slideConfig}
+        nextArrow={
+            <Button
+                icon={<AngleRightIcon />}
+                size="xs"
+                modifier="link"
+                color="gray"
+                shade="dark"
+            />
+        }
+        prevArrow={
+            <Button
+                icon={<AngleLeftIcon />}
+                size="xs"
+                modifier="link"
+                color="gray"
+                shade="dark"
+            />
+        }
+        >
+        <div class="slide">Slide 1</div>
+        <div class="slide">Slide 2</div>
+        <div class="slide">Slide 3</div>
+        <div class="slide">Slide 4</div>
+        <div class="slide">Slide 5</div>
+    </Carousel>
   )
 }
 
 export const ProductsSliderRtl = props => {
-    const slideConfig = {
-        infinite: true,
-        customArrow: true,
-        nav: true,
-        dots: true,
-        autoPlay: true,
-        nextSpeed: 2000,
-        rtl: true,
-        drag: true,
-        threshold: 50,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            576: {
-                items: 2,
-            },
+  const slideConfig = {
+    infinite: true,
+    customArrow: true,
+    nav: true,
+    dots: true,
+    autoPlay: true,
+    nextSpeed: 4000,
+    rtl: true,
+    drag: true,
+    threshold: 50,
+    responsive: {
+        0: {
+            items: 1,
         },
-    };
+        576: {
+            items: 2,
+        },
+    },
+  };
   return (
-      <StyledCarouselDemo>
-        <Carousel 
-            slideConfig={slideConfig}
-            nextArrow={
-                <Button
-                    icon={<AngleRightIcon />}
-                    size="xs"
-                    modifier="link"
-                    color="gray"
-                    shade="dark"
-                />
-            }
-            prevArrow={
-                <Button
-                    icon={<AngleLeftIcon />}
-                    size="xs"
-                    modifier="link"
-                    color="gray"
-                    shade="dark"
-                />
-            }
-            >
-            <div class="slide">Slide 1</div>
-            <div class="slide">Slide 2</div>
-            <div class="slide">Slide 3</div>
-            <div class="slide">Slide 4</div>
-            <div class="slide">Slide 5</div>
-        </Carousel>
-      </StyledCarouselDemo>
+    <Carousel 
+      slideConfig={slideConfig}
+      nextArrow={
+          <Button
+              icon={<AngleRightIcon />}
+              size="xs"
+              modifier="link"
+              color="gray"
+              shade="dark"
+          />
+      }
+      prevArrow={
+          <Button
+              icon={<AngleLeftIcon />}
+              size="xs"
+              modifier="link"
+              color="gray"
+              shade="dark"
+          />
+      }
+      >
+      <div class="slide">Slide 1</div>
+      <div class="slide">Slide 2</div>
+      <div class="slide">Slide 3</div>
+      <div class="slide">Slide 4</div>
+      <div class="slide">Slide 5</div>
+    </Carousel>
   )
 }
 
