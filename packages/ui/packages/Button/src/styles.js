@@ -25,6 +25,7 @@ export const StyledButton = Styled.button`
   letter-spacing: 0;
   cursor: pointer;
   outline: none;
+  border: none;
   padding: 0 1rem;
   height: ${props => `calc(${props.height} * ${props.theme.defaultRem})`};
   font-size: ${props => `calc(${props.fontSize} * ${props.theme.defaultRem})`};
@@ -57,6 +58,7 @@ export const StyledLabel = Styled.span`
 /* eslint-disable indent */
 export const StyledPrimaryButton = Styled(StyledButton)`
   background-color: ${props => props.theme.colors[props.color][props.shade]};
+  border: none;
   color: ${props =>
     props.theme.colors[
       defineForegroundColor(props.theme.colors[props.color][props.shade])
