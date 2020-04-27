@@ -48,7 +48,7 @@ export const cloneNodeInsertBefore = params => {
   const itemsChildrenLength =
     deepCloneSliderItemsChildren.length - perSlide - 1;
   deepCloneSliderItemsChildren.forEach((element, index) => {
-    if (index <= itemsChildrenLength) {
+    if (index >= itemsChildrenLength) {
       const cln = element.cloneNode(true);
       addCloneClass(cln);
       sliderItems.insertBefore(cln, deepCloneSliderItemsChildren[0]);

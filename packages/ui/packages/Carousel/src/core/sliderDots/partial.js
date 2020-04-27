@@ -81,6 +81,7 @@ export const setSliderItemsPositionAfterDotClick = params => {
     slider,
     nav,
     rtl,
+    autoWidth,
   } = params;
 
   // when slidesLength <= perSlide dots is disable
@@ -95,6 +96,8 @@ export const setSliderItemsPositionAfterDotClick = params => {
       sliderMainWidth,
       perSlide,
       infinite,
+      autoWidth,
+      sliderItems,
     };
     const result = directionSetter({
       rtl,

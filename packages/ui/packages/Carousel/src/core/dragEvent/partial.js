@@ -62,6 +62,7 @@ export const dragActionCalcPosition = params => {
     sliderMainWidth,
     infinite,
     threshold,
+    autoWidth,
   } = params;
 
   const posX2New = () => {
@@ -84,6 +85,8 @@ export const dragActionCalcPosition = params => {
       sliderMainWidth,
       perSlide,
       infinite,
+      autoWidth,
+      sliderItems,
     }),
   });
 
@@ -209,6 +212,7 @@ export const dragAction = params => {
     infinite,
     getSlideSize,
     getSliderMainWidth,
+    autoWidth,
   } = params;
   const sliderMainWidth = getSliderMainWidth();
   e = e || window.event;
@@ -254,6 +258,7 @@ export const dragAction = params => {
     infinite,
     threshold,
     rtl,
+    autoWidth,
   };
   dragActionCalcPosition(dragActionCalcPositionParams);
 };
@@ -275,6 +280,7 @@ export const dragEnd = params => {
     getPosFinal,
     nav,
     rtl,
+    autoWidth,
   } = params;
   removeClassFromElement({
     item : sliderItems,
@@ -302,6 +308,8 @@ export const dragEnd = params => {
       sliderMainWidth,
       perSlide,
       infinite,
+      autoWidth,
+      sliderItems,
     }),
   });
   setPosFinal(getTranslate3d(sliderItems));

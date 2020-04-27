@@ -44,6 +44,9 @@ export const StyledCarouselDemo = Styled.div`
     height: 300px;
     background: #FFCF47;
     border-radius: 2px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
   }
   .dots li.active{
     background: #666;

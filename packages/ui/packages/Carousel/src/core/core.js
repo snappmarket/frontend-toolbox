@@ -46,6 +46,7 @@ class SliderCore {
       autoPlay = false,
       rtl = false,
       drag = true,
+      autoWidth = false,
       nextSpeed = 2000,
       threshold = 50,
     } = config;
@@ -61,6 +62,7 @@ class SliderCore {
       autoPlay,
       rtl,
       drag,
+      autoWidth,
       nextSpeed,
       threshold,
     };
@@ -335,7 +337,7 @@ class SliderCore {
       slidesLength,
       sliderMainWidth,
       getInfinite,
-      config: { slider, responsive, rtl },
+      config: { slider, responsive, rtl, autoWidth },
     } = this;
     const classItemParams = {
       item: childFider({
@@ -358,13 +360,14 @@ class SliderCore {
         infinite: getInfinite(),
         slider,
         rtl,
+        autoWidth,
       }),
     );
   }
 
   transitionendWatcherCall = () => {
     const {
-      config: { slider, responsive, dots, nav, rtl },
+      config: { slider, responsive, dots, nav, rtl, autoWidth },
       getInfinite,
       index,
       getIndex,
@@ -385,6 +388,7 @@ class SliderCore {
       responsive,
       dots,
       nav,
+      autoWidth,
       rtl,
       sliderItems,
       dragAction,

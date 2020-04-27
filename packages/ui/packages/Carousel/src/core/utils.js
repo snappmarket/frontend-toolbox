@@ -79,6 +79,19 @@ export const truncResponsiveItemCount = responsive =>
   Math.trunc(responsiveItemCount(responsive));
 
 export const calcFinalItemPosition = params => {
+  const {autoWidth} = params;
+  if(autoWidth) {
+    return calcFinalWidthAutoWidth(params);
+  }
+  return calcFinalWithoutAutoWidth(params)
+};
+
+export const calcFinalWidthAutoWidth = params => {
+  const {sliderMainWidth, sliderItems} = params;
+  return sliderMainWidth - calcAutoWidthAllSliderItems(sliderItems);
+};
+
+export const calcFinalWithoutAutoWidth = params => {
   const {
     slideSize,
     sliderMainWidth,
@@ -96,31 +109,47 @@ export const calcFinalItemPosition = params => {
 };
 
 export const calcFirstItemPosition = params => {
-  const { slideSize, perSlide, infinite } = params;
+  const { slideSize, perSlide, infinite, autoWidth } = params;
+  if(autoWidth){
+    return 0;
+  }
   const infiSwitchSlideSize = infinite ? slideSize : 0;
   return -(infiSwitchSlideSize * (perSlide + 1));
 };
 
 export const calcSliderGroupCount = params => {
-  const { slidesLength, responsive } = params;
+  const { slidesLength, responsive, autoWidth, sliderItems, sliderMainWidth } = params;
+  if(autoWidth){
+    return Math.ceil(calcAutoWidthAllSliderItems(sliderItems) / sliderMainWidth)
+  }
   return Math.ceil(slidesLength / truncResponsiveItemCount(responsive));
 };
 
 export const calcSliderChildWidth = params => {
   const { responsiveItemCount, slider } = params;
-  // return mainWidthTruncItem - decriseWithForEachItems;
   return sliderClientWidth(slider) / responsiveItemCount;
 };
 
 export const setSliderItemsChildWidth = params => {
-  const { responsive, slider, sliderItems } = params;
+  const { responsive, slider, sliderItems, autoWidth } = params;
   vdomArrayConvertor(sliderItems.children).forEach(child => {
     const newChild = child;
-    newChild.style.width = `${calcSliderChildWidth({
-      responsiveItemCount: responsiveItemCount(responsive),
-      slider,
-    })}px`;
+    newChild.style.width = 
+    !autoWidth ? 
+      (`${calcSliderChildWidth({
+        responsiveItemCount: responsiveItemCount(responsive),
+        slider,
+      })}px`):
+      (`auto`);
   });
+};
+
+export const calcAutoWidthAllSliderItems = sliderItems => {
+  let allChildWidth = 0;
+  vdomArrayConvertor(sliderItems.children).forEach(child => {
+    allChildWidth += child.offsetWidth
+  });
+  return allChildWidth;
 };
 
 export const setSliderItemsPosition = params => {
@@ -234,11 +263,12 @@ export const transitionendWatcher = params => {
     sliderItemWidth,
     nav,
     setIndex,
+    autoWidth,
   } = params;
 
   const perSlide = truncResponsiveItemCount(responsive);
   if (
-    infinite &&
+    infinite && !autoWidth &&
     index > perSlide + slidesLength &&
     Math.abs(getTranslate3d(sliderItems)) >=
       (perSlide + 1 + slidesLength) * sliderItemWidth
@@ -254,7 +284,7 @@ export const transitionendWatcher = params => {
   }
 
   // if page-index === 1 && clone === true
-  if (infinite && index === perSlide + 1 + slidesLength) {
+  if (infinite && !autoWidth && index === perSlide + 1 + slidesLength) {
     setIndex(
       setSliderItemsPosition({
         indexItem: perSlide + 1,
@@ -267,7 +297,7 @@ export const transitionendWatcher = params => {
 
   // shift to end from start item
   if (
-    infinite &&
+    infinite && !autoWidth &&
     (Math.abs(getTranslate3d(sliderItems)) <= 1 ||
       Math.abs(getTranslate3d(sliderItems)) === sliderItemWidth)
   ) {
@@ -288,6 +318,8 @@ export const transitionendWatcher = params => {
       perSlide,
       slidesLength,
       infinite,
+      autoWidth,
+      sliderItems,
     };
     const finalConst = Math.abs(Math.trunc(calcFinalItemPosition(finalPos)));
     const firstConst = Math.abs(Math.trunc(calcFirstItemPosition(finalPos)));
@@ -296,15 +328,17 @@ export const transitionendWatcher = params => {
       prevBlock(slider);
       nextNone(slider);
     }
-    if (index >= 0 && finalConst > translate3dCosnt) {
-      nextBlock(slider);
-    }
-    if (index === 0) {
-      prevNone(slider);
-      nextBlock(slider);
-    }
-    if (index !== 0) {
-      prevBlock(slider);
+    if(!autoWidth){
+      if (index >= 0 && finalConst > translate3dCosnt) {
+        nextBlock(slider);
+      }
+      if (index === 0) {
+        prevNone(slider);
+        nextBlock(slider);
+      }
+      if (index !== 0) {
+        prevBlock(slider);
+      }
     }
     if (firstConst === translate3dCosnt) {
       prevNone(slider);
