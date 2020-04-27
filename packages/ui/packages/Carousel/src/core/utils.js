@@ -323,13 +323,18 @@ export const transitionendWatcher = params => {
     };
     const finalConst = Math.abs(Math.trunc(calcFinalItemPosition(finalPos)));
     const firstConst = Math.abs(Math.trunc(calcFirstItemPosition(finalPos)));
-    const translate3dCosnt = Math.abs(Math.trunc(getTranslate3d(sliderItems)));
-    if (finalConst === translate3dCosnt) {
+    const translate3dConst = Math.abs(Math.trunc(getTranslate3d(sliderItems)));
+    console.log({
+      finalConst,
+      firstConst,
+      translate3dConst,
+    })
+    if (finalConst === translate3dConst) {
       prevBlock(slider);
       nextNone(slider);
     }
     if(!autoWidth){
-      if (index >= 0 && finalConst > translate3dCosnt) {
+      if (index >= 0 && finalConst > translate3dConst) {
         nextBlock(slider);
       }
       if (index === 0) {
@@ -340,8 +345,14 @@ export const transitionendWatcher = params => {
         prevBlock(slider);
       }
     }
-    if (firstConst === translate3dCosnt) {
+    if (firstConst === translate3dConst) {
       prevNone(slider);
+    }
+    if(autoWidth){
+      if (firstConst < translate3dConst && finalConst !== translate3dConst) {
+        nextBlock(slider);
+        prevBlock(slider);
+      }
     }
   }
 

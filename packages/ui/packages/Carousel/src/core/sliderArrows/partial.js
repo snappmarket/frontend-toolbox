@@ -7,6 +7,7 @@ import {
   prevNone,
   calcFirstItemPosition,
   directionSetter,
+  getTranslate3d,
 } from '../utils';
 
 export const shiftSlideIsDir = params => {
@@ -21,6 +22,7 @@ export const shiftSlideIsDir = params => {
     infinite,
     slider,
     rtl,
+    autoWidth,
   } = params;
 
   const calcFinalItemPositionParams = {
@@ -29,9 +31,33 @@ export const shiftSlideIsDir = params => {
     sliderMainWidth,
     perSlide,
     infinite,
+    autoWidth,
+    sliderItems,
   };
-  const newIndex = index + perSlide;
 
+  if(autoWidth) {
+    const result = directionSetter({
+      rtl,
+      input: sliderMainWidth + Math.abs(getTranslate3d(sliderItems)),
+    });
+
+    if(!infinite && 
+      Math.abs(result) >= Math.abs(calcFinalItemPosition(calcFinalItemPositionParams))
+    ){
+      sliderItems.style.transform = setTranslate3d(directionSetter({
+        rtl,
+        input: calcFinalItemPosition(calcFinalItemPositionParams),
+      }));
+
+      nextNone(slider);
+      prevBlock(slider);
+      return index;
+    }
+    sliderItems.style.transform = setTranslate3d(-result);
+    return index;
+  }
+  
+  const newIndex = index + perSlide;
   // when slidesLength <= perSlide arrow is disable
   if (slidesLength <= perSlide) {
     nextNone(slider);
@@ -80,12 +106,34 @@ export const shiftSlideNonDir = params => {
     infinite,
     slider,
     rtl,
+    autoWidth,
+    sliderMainWidth,
   } = params;
+
+  if(autoWidth) {
+    const calcFirstItemPositionParams = { slideSize, perSlide, infinite, autoWidth };
+    const result = directionSetter({
+      rtl,
+      input: Math.abs(getTranslate3d(sliderItems)) - sliderMainWidth,
+    });
+    if(!infinite && (
+      (!rtl && result <= calcFirstItemPosition(calcFirstItemPositionParams)) ||
+      (rtl && result >= calcFirstItemPosition(calcFirstItemPositionParams))
+    )){
+      nextBlock(slider);
+      prevNone(slider);
+      sliderItems.style.transform = setTranslate3d(calcFirstItemPosition(calcFirstItemPositionParams));
+      return index;
+    }
+    sliderItems.style.transform = setTranslate3d(-result);
+    return index;
+  }
+
   const newIndex = index - perSlide;
   const infinitperSlide = infinite ? perSlide : 0;
 
   if (!infinite && index - infinitperSlide <= perSlide && index !== -1) {
-    const calcFirstItemPositionParams = { slideSize, perSlide, infinite };
+    const calcFirstItemPositionParams = { slideSize, perSlide, infinite, autoWidth };
     const result = directionSetter({
       rtl,
       input: calcFirstItemPosition(calcFirstItemPositionParams),
