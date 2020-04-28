@@ -16,6 +16,10 @@ const StyledBreadcrumbItem = Styled.div`
         color: ${props => props.theme.colors.gray.normal};
         font-size: calc(${props => props.theme.defaultRem} * 1.2);
     }
+    h2 {
+        color: ${props => props.theme.colors.gray.normal};
+        font-size: calc(${props => props.theme.defaultRem} * 1.2);
+    }
 `;
 const StyledBreadcrumbItemSeparator = Styled.div``;
 const StyledBreadcrumbItemWrapper = Styled.div`
