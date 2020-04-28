@@ -1,0 +1,94 @@
+---
+name: Grid System
+route: /ui/grid-system
+menu: 3.Components
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import {Container, Row, Col} from './src/index';
+import './docz.css'
+
+export const rows = [12, 6, 4, 3, 2, 1];
+
+# Demo
+The grid system is responsive and supports 5 different viewports
+<Container className="container mb-4">
+  {rows.map(row => (
+    <Row className="row">
+      {[...Array(12/row).keys()].map(item => (
+        <Col className="col" xs={row}>col-{row}</Col>
+      ))}
+    </Row>
+  ))}
+</Container>
+
+# Sizing
+<Playground>
+  <Container className="container">
+    <Row className="row">
+      <Col className="col" xs={12} sm={6} md={4} lg={3} xl={2}>item 1</Col>
+      <Col className="col" xs={12} sm={6} md={4} lg={3} xl={2}>item 2</Col>
+      <Col className="col" xs={12} sm={6} md={4} lg={3} xl={2}>item 3</Col>
+      <Col className="col" xs={12} sm={6} md={4} lg={3} xl={2}>item 4</Col>
+      <Col className="col" xs={12} sm={6} md={4} lg={3} xl={2}>item 5</Col>
+      <Col className="col" xs={12} sm={6} md={4} lg={3} xl={2}>item 6</Col>
+    </Row>
+  </Container>
+</Playground>
+
+<br /><br />
+
+# Offsetting
+<Playground>
+  <Container className="container">
+    <Row className="row">
+      <Col className="col" sm={12} lg={{size: 5, offset: 4}}>item 1</Col>
+      <Col className="col" sm={6} lg={{size: 3}}>item 2</Col>
+      <Col className="col" sm={6} lg={{size: 4, offset: 2}}>item 3</Col>
+      <Col className="col" sm={{size: 6, offset:1}} lg={{size: 4}}>item 4</Col>
+      <Col className="col" sm={{size: 11, offset:1}} lg={{size: 2, offset: 1}}>item 5</Col>
+      <Col className="col" sm={{size: 11}} lg={{size: 2, offset: 1}}>item 6</Col>
+      <Col className="col" sm={{size: 1}} lg={{size: 2, offset: 1}}>item 6</Col>
+      <Col className="col" sm={{size: 4}} lg={{size: 3}}>item 6</Col>
+    </Row>
+  </Container>
+</Playground>
+
+<br /><br />
+
+# Ordering
+Resize your browser and whtch for the changing the order of cols
+<Playground>
+  <Container className="container">
+    <Row className="row">
+      <Col className="col" xs={{size: 12, order: 1}} md={{size: 6, order: 3}} lg={{size: 4, order: 2}}>First Item</Col>
+      <Col className="col" xs={{size: 12, order: 2}} md={{size: 6, order: 1}} lg={{size: 4, order: 3}}>Second Item</Col>
+      <Col className="col" xs={{size: 12, order: 3}} md={{size: 6, order: 2}} lg={{size: 4, order: 1}}>Last Item</Col>
+    </Row>
+  </Container>
+</Playground>
+
+<br />
+
+# Container Props
+The Container defines the max width of its rows
+<Props of={Container} />
+
+# Row Props
+The Row adds negative margin to cols to align them from sides.
+<Props of={Row} />
+
+# Col Props
+The Col supports string, number or object as the sizing props.
+<Props of={Col} />
+
+# View port and break points
+
+| View port       | min       | max       |
+|-----------------|-----------|-----------|
+| XS              |0          |575        |
+| SM              |576        |767        |
+| MD              |768        |991        |
+| LG              |992        |1199       |
+| XL              |1200       |+1200      |
