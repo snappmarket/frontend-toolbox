@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui",
   "private": false,
-  "version": "0.2.8-alpha.2",
+  "version": "0.2.8",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -16,7 +16,8 @@
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
     "build:copy-files": "node ../../scripts/copy-file/packages-copy.js",
     "prebuild": "rimraf ./dist",
-    "release": "node ../../scripts/release/release-parents.js",
+    "change-version": "node ../../scripts/release/change-version.js",
+    "publish-npm": "node ../../scripts/release/publish-npm.js",
     "start": "rollup -c -w"
   },
   "dependencies": {

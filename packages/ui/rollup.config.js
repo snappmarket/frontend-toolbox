@@ -19,6 +19,8 @@ const globals = {
   'react-hgs-input-range': 'reactHgsInputRange',
   'isomorphic-unfetch': 'isomorphicUnfetch',
   polished: 'polished',
+  'polished/lib/color/lighten': 'polishedLighten',
+  'polished/lib/color/darken': 'polishedDarken',
   'react-slick': 'reactSlick',
   '@snappmarket/config': 'snappmarketConfig',
   '@snappmarket/helpers': 'snappmarketHelpers',

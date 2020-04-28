@@ -1,21 +1,21 @@
 /**
-* THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
-*/
+ * THIS IS AN AUTO GENERATED SPRITE FILE, CHANGES WILL NOT APPLY
+ */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-if(!process.env.SSR && !process.env.CI) {
+if (!process.env.SSR && !process.env.CI) {
   // eslint-disable-next-line global-require
   require('./CreditCardIcon.svg');
 }
 
 let importPrefix = '';
-if(process.env.PUBLIC_URL) {
+if (process.env.PUBLIC_URL) {
   importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
 }
 
-const CreditCardIcon = ({ className, size }) => 
-  <svg 
+const CreditCardIcon = ({ className, size }) => (
+  <svg
     data-testid="CreditCardIcon"
     viewBox="0 0 32 32"
     className={className}
@@ -23,9 +23,11 @@ const CreditCardIcon = ({ className, size }) =>
       width: size * 10,
       height: size * 10,
     }}
-    fill="currentColor">
+    fill="currentColor"
+  >
     <use xlinkHref={`${importPrefix}#CreditCardIcon`} />
-  </svg>;
+  </svg>
+);
 
 CreditCardIcon.propTypes = {
   className: PropTypes.string,
@@ -37,4 +39,3 @@ CreditCardIcon.defaultProps = {
 };
 
 export default CreditCardIcon;
-
