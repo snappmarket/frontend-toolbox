@@ -24,7 +24,7 @@ export const calcCurrentIndex = params => {
     return Math.abs(
       Math.floor(
         getTranslate3d(sliderItems) /
-          vdomArrayConvertor(sliderItems.children)[0].clientWidth,
+        vdomArrayConvertor(sliderItems.children)[0].clientWidth,
       ),
     );
   }
@@ -43,20 +43,10 @@ export const setActiveclassToCurrent = params => {
   const {
     sliderItems,
     perSlide,
-    infinite,
-    slideSize,
-    sliderMainWidth,
   } = params;
-  const activeIndex = calcCurrentIndex({
-    sliderItems,
-    perSlide,
-    infinite,
-    slideSize,
-    sliderMainWidth,
-  });
-  const configCount = perSlide;
+  const activeIndex = calcCurrentIndex(params);
   const activeItems = [];
-  [...Array(configCount).keys()].forEach(item =>
+  [...Array(perSlide).keys()].forEach(item =>
     activeItems.push(item + activeIndex),
   );
   vdomArrayConvertor(sliderItems.children).forEach((item, itemIndex) => {
@@ -79,15 +69,15 @@ export const truncResponsiveItemCount = responsive =>
   Math.trunc(responsiveItemCount(responsive));
 
 export const calcFinalItemPosition = params => {
-  const {autoWidth} = params;
-  if(autoWidth) {
+  const { autoWidth } = params;
+  if (autoWidth) {
     return calcFinalWidthAutoWidth(params);
   }
   return calcFinalWithoutAutoWidth(params)
 };
 
 export const calcFinalWidthAutoWidth = params => {
-  const {sliderMainWidth, sliderItems} = params;
+  const { sliderMainWidth, sliderItems } = params;
   return sliderMainWidth - calcAutoWidthAllSliderItems(sliderItems);
 };
 
@@ -110,7 +100,7 @@ export const calcFinalWithoutAutoWidth = params => {
 
 export const calcFirstItemPosition = params => {
   const { slideSize, perSlide, infinite, autoWidth } = params;
-  if(autoWidth){
+  if (autoWidth) {
     return 0;
   }
   const infiSwitchSlideSize = infinite ? slideSize : 0;
@@ -119,7 +109,7 @@ export const calcFirstItemPosition = params => {
 
 export const calcSliderGroupCount = params => {
   const { slidesLength, responsive, autoWidth, sliderItems, sliderMainWidth } = params;
-  if(autoWidth){
+  if (autoWidth) {
     return Math.ceil(calcAutoWidthAllSliderItems(sliderItems) / sliderMainWidth)
   }
   return Math.ceil(slidesLength / truncResponsiveItemCount(responsive));
@@ -134,13 +124,13 @@ export const setSliderItemsChildWidth = params => {
   const { responsive, slider, sliderItems, autoWidth } = params;
   vdomArrayConvertor(sliderItems.children).forEach(child => {
     const newChild = child;
-    newChild.style.width = 
-    !autoWidth ? 
-      (`${calcSliderChildWidth({
-        responsiveItemCount: responsiveItemCount(responsive),
-        slider,
-      })}px`):
-      (`auto`);
+    newChild.style.width =
+      !autoWidth ?
+        (`${calcSliderChildWidth({
+          responsiveItemCount: responsiveItemCount(responsive),
+          slider,
+        })}px`) :
+        (`auto`);
   });
 };
 
@@ -246,6 +236,7 @@ export const nextBlock = slider => {
   return childFind;
 };
 
+
 export const transitionendWatcher = params => {
   const {
     responsive,
@@ -271,7 +262,7 @@ export const transitionendWatcher = params => {
     infinite && !autoWidth &&
     index > perSlide + slidesLength &&
     Math.abs(getTranslate3d(sliderItems)) >=
-      (perSlide + 1 + slidesLength) * sliderItemWidth
+    (perSlide + 1 + slidesLength) * sliderItemWidth
   ) {
     setIndex(
       setSliderItemsPosition({
@@ -328,7 +319,7 @@ export const transitionendWatcher = params => {
       prevBlock(slider);
       nextNone(slider);
     }
-    if(!autoWidth){
+    if (!autoWidth) {
       if (index >= 0 && finalConst > translate3dConst) {
         nextBlock(slider);
       }
@@ -343,7 +334,7 @@ export const transitionendWatcher = params => {
     if (firstConst === translate3dConst) {
       prevNone(slider);
     }
-    if(autoWidth){
+    if (autoWidth) {
       if (firstConst < translate3dConst && finalConst !== translate3dConst) {
         nextBlock(slider);
         prevBlock(slider);
@@ -352,45 +343,51 @@ export const transitionendWatcher = params => {
   }
 
   // run for set active class
-  const setActiveclassToCurrentParams = {
-    index,
-    sliderItems,
-    dotsSelector,
-    perSlide,
-    infinite,
-    slideSize,
-    sliderMainWidth,
-  };
   removeClassFromElement({
     item: sliderItems,
     className: 'shifting',
   });
-  setActiveclassToCurrent(setActiveclassToCurrentParams);
+  if (!autoWidth) {
+    setActiveclassToCurrent({
+      index,
+      sliderItems,
+      dotsSelector,
+      perSlide,
+      infinite,
+      slideSize,
+      sliderMainWidth,
+      autoWidth,
+    });
+  }
   setAllowShift(true);
 
   if (dots) {
-    const dotActiveParams = {
-      index,
-      sliderItems,
-      infinite,
-      dotsSelector,
-      slider,
-      perSlide,
-      sliderMainWidth,
-    };
-    dotActive(dotActiveParams);
+    dotActive(params);
   }
 };
 
 export const dotActive = params => {
-  const { sliderItems, slider } = params;
+
+  const { sliderItems, slider, autoWidth, sliderMainWidth } = params;
   const dotsSelector = childFider({
     wrapper: slider,
     className: '.dots',
   });
-  if (activeChecker(sliderItems) >= 0) {
-    const dotConvertor = vdomArrayConvertor(dotsSelector.children);
-    const currentDot = dotConvertor[activeChecker(sliderItems)];
+
+  const dotConvertor = vdomArrayConvertor(dotsSelector.children);
+  let currentDot = null;
+
+  if (autoWidth) {
+    const dotIndex = Math.ceil(Math.abs(getTranslate3d(sliderItems)) / sliderMainWidth);
+    currentDot = dotConvertor[dotIndex];
+  }
+
+  if (activeChecker(sliderItems) >= 0 && !autoWidth) {
+    currentDot = dotConvertor[activeChecker(sliderItems)];
+  }
+
+
+  if ((autoWidth || activeChecker(sliderItems) >= 0) && currentDot) {
     dotConvertor.forEach(child => {
       const classItemParams = {
         item: child,

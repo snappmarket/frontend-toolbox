@@ -61,10 +61,10 @@ export default class SliderTrailer {
       }),
     );
 
-    setPageNumberOnChild({ sliderItems, responsive });
-    
-    if(!autoWidth){
-    // Clone group of slide from infinite carousel
+
+    if (!autoWidth) {
+      setPageNumberOnChild({ sliderItems, responsive });
+      // Clone group of slide from infinite carousel
       if (infinite) {
         const cloneNodeGeneratorParams = {
           perSlide,

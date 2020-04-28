@@ -17,7 +17,6 @@ export const shiftSlideIsDir = params => {
     perSlide,
     slideSize,
     slidesLength,
-    sliderMainWidth,
     responsiveItem,
     infinite,
     slider,
@@ -25,28 +24,15 @@ export const shiftSlideIsDir = params => {
     autoWidth,
   } = params;
 
-  const FinalItemPosition = calcFinalItemPosition({
-    slideSize,
-    slidesLength,
-    sliderMainWidth,
-    perSlide,
-    infinite,
-    autoWidth,
-    sliderItems,
-  });
+  const FinalItemPosition = calcFinalItemPosition(params);
 
-  if(autoWidth) {
+  if (autoWidth) {
     return shiftSlideIsDirAutoWidth({
-      rtl,
-      sliderMainWidth,
-      sliderItems,
-      infinite,
+      ...params,
       FinalItemPosition,
-      slider,
-      index,
     })
   }
-  
+
   const newIndex = index + perSlide;
   // when slidesLength <= perSlide arrow is disable
   if (slidesLength <= perSlide) {
@@ -97,20 +83,14 @@ export const shiftSlideNonDir = params => {
     slider,
     rtl,
     autoWidth,
-    sliderMainWidth,
   } = params;
 
-  const firstItemPosition = calcFirstItemPosition({ slideSize, perSlide, infinite, autoWidth });
+  const firstItemPosition = calcFirstItemPosition(params);
 
-  if(autoWidth) {
+  if (autoWidth) {
     return shiftSlideNonDirAutoWidth({
-      rtl,
-      sliderMainWidth,
-      sliderItems,
-      infinite,
+      ...params,
       firstItemPosition,
-      slider,
-      index,
     });
   }
 
@@ -150,10 +130,10 @@ export const shiftSlideNonDirAutoWidth = params => {
     rtl,
     input: Math.abs(getTranslate3d(sliderItems)) - sliderMainWidth,
   });
-  if(!infinite && (
+  if (!infinite && (
     (!rtl && result <= firstItemPosition) ||
     (rtl && result >= firstItemPosition)
-  )){
+  )) {
     nextBlock(slider);
     prevNone(slider);
     sliderItems.style.transform = setTranslate3d(firstItemPosition);
@@ -178,7 +158,7 @@ export const shiftSlideIsDirAutoWidth = params => {
     input: sliderMainWidth + Math.abs(getTranslate3d(sliderItems)),
   });
 
-  if(!infinite && Math.abs(result) >= Math.abs(FinalItemPosition)){
+  if (!infinite && Math.abs(result) >= Math.abs(FinalItemPosition)) {
     sliderItems.style.transform = setTranslate3d(directionSetter({
       rtl,
       input: FinalItemPosition,

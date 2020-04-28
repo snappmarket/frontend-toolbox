@@ -22,12 +22,64 @@ import { Playground, Props } from 'docz';
 import { AngleLeftIcon, AngleRightIcon } from '../../../icons';
 import { Button } from '..';
 
-export const ProductsSlider = props => {
+
+export const ProductsSliderNew = props => {
   const slideConfig = {
       customArrow: true,
       nav: true,
       drag: true,
       rtl: false,
+      dots: true,
+      threshold: 50,
+      autoWidth: true,
+      responsive: {
+          0: {
+              items: 2,
+          },
+      },
+  };
+  return (
+    <Carousel 
+        slideConfig={slideConfig}
+        nextArrow={
+            <Button
+                icon={<AngleRightIcon />}
+                size="xs"
+                modifier="link"
+                color="gray"
+                shade="dark"
+            />
+        }
+        prevArrow={
+            <Button
+                icon={<AngleLeftIcon />}
+                size="xs"
+                modifier="link"
+                color="gray"
+                shade="dark"
+            />
+        }
+        >
+        <div class="slide">demo</div>
+        <div class="slide">demo demo</div>
+        <div class="slide">demo demo demo </div>
+        <div class="slide">demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo demo demo demo </div>
+    </Carousel>
+  )
+}
+
+export const ProductsSlider = props => {
+  const slideConfig = {
+      customArrow: true,
+      nav: true,
+      drag: true,
+      rtl: true,
+      dots: true,
       threshold: 50,
       autoWidth: true,
       responsive: {
@@ -73,8 +125,10 @@ export const ProductsSlider = props => {
 
 export const ProductsSliderRtl = props => {
   const slideConfig = {
-    infinite: false,
+    infinite: true,
     customArrow: true,
+    autoPlay: false,
+    nextSpeed: 500,
     nav: true,
     dots: true,
     rtl: true,
@@ -123,7 +177,10 @@ export const ProductsSliderRtl = props => {
 # Demo
 
 <ProductsSlider />
-
+ <br/>
+ <br/>
+ <br/>
+<ProductsSliderNew />
  <br/>
  <br/>
  <br/>
