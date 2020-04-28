@@ -1,0 +1,39 @@
+---
+name: Grid
+route: /ui/grid
+menu: 3.Components
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import Grid from './src/index';
+
+export const items = [...Array(15).keys()];
+
+# Demo
+<div className="mb-4">
+  <Grid className="foobar" perRow={{
+    xs: 1,
+    sm: 2,
+    md: 3,
+    lg: 4,
+    xl: 5
+  }}>
+    {items.map(item => (
+      <div className={`${item % 2 ? 'bg-gray-bright' : 'bg-gray-ultra-light'} p-1 text-center`}>
+        item-{item+1}
+      </div>
+    ))}
+  </Grid>
+</div>
+
+<Playground>
+<Grid className="foobar" perRow={3}>
+  { /* children */ }
+</Grid>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Grid} />
