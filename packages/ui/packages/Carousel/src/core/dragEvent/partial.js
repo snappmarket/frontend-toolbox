@@ -77,7 +77,7 @@ export const dragActionCalcPosition = params => {
     if (rtl) return sliderItemWidth;
     return -sliderItemWidth;
   };
-  const calcFinalItemPositionNew = directionSetter({
+  const finalItemPosition = directionSetter({
     rtl,
     input: calcFinalItemPosition({
       slideSize,
@@ -103,7 +103,7 @@ export const dragActionCalcPosition = params => {
     // stop drag when lastItem go to fistItem on drag
     const lastToFirstDrag =
       getTranslate3d(sliderItems) - posX2New() <=
-      calcFinalItemPositionNew - thresholdNew();
+      finalItemPosition - thresholdNew();
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
     }
@@ -130,7 +130,7 @@ export const dragActionCalcPosition = params => {
     // stop drag when lastItem go to fistItem on drag
     const lastToFirstDrag =
       getTranslate3d(sliderItems) - posX2New() >=
-      calcFinalItemPositionNew - thresholdNew();
+      finalItemPosition - thresholdNew();
 
     if (firstTolastDrag || lastToFirstDrag) {
       return false;
@@ -300,7 +300,7 @@ export const dragEnd = params => {
     return threshold;
   };
 
-  const calcFinalItemPositionNew = directionSetter({
+  const finalItemPosition = directionSetter({
     rtl,
     input: calcFinalItemPosition({
       slideSize,
@@ -329,7 +329,7 @@ export const dragEnd = params => {
       calcIndex < slidesLength + perSlide) ||
     (infinite && calcIndex + perSlide === perSlide)
   ) {
-    sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
+    sliderItems.style.transform = setTranslate3d(finalItemPosition);
   }
 
   if (!infinite && nav) {
@@ -359,9 +359,9 @@ export const dragEnd = params => {
   if (
     !infinite &&
     !rtl &&
-    getTranslate3d(sliderItems) <= calcFinalItemPositionNew
+    getTranslate3d(sliderItems) <= finalItemPosition
   ) {
-    sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
+    sliderItems.style.transform = setTranslate3d(finalItemPosition);
     if (nav) {
       nextNone(slider);
       prevBlock(slider);
@@ -371,9 +371,9 @@ export const dragEnd = params => {
   if (
     !infinite &&
     rtl &&
-    getTranslate3d(sliderItems) >= calcFinalItemPositionNew
+    getTranslate3d(sliderItems) >= finalItemPosition
   ) {
-    sliderItems.style.transform = setTranslate3d(calcFinalItemPositionNew);
+    sliderItems.style.transform = setTranslate3d(finalItemPosition);
     if (nav) {
       nextNone(slider);
       prevBlock(slider);
