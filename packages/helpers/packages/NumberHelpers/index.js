@@ -50,5 +50,7 @@ export const cellphoneValidate = () =>
  * @param   amount    {number}    the english number you want to convert to currency formatted number in persian
  * @return  {string}
  */
-export const currencyPrice = amount =>
-  `${persianNumber(`${amount}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','))}`;
+export const currencyPrice = (amount, hasUnit = true) =>
+  `${persianNumber(`${amount}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','))} ${
+    hasUnit ? 'تومان' : ''
+  }`;
