@@ -39,17 +39,16 @@ describe('Should handle items', () => {
     expect(getByTestId('breadcrumb')).toContainHTML('');
   });
 
-  it('Should create a link without svg icon for Breadcrumb items', () => {
+  it('Should create a h2 tag without svg icon for Breadcrumb items', () => {
 
     const mockData = [
       {
-        link: '/product-1',
         title: 'product-1',
       },
     ];
 
     expect(lengthOfAllSvg(mockData)).toBe(0);
-    expect(renderByContainer(mockData)).toContainHTML('<a href="/product-1">product-1</a>');
+    expect(renderByContainer(mockData)).toContainHTML('<h2>product-1</h2>');
   });
 
   it('Should render 2 svg arrow icon for 3 items in Breadcrumb ', () => {
