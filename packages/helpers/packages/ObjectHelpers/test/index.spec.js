@@ -74,5 +74,8 @@ describe('ObjectHelpers', () => {
       const actual = '';
       expect(ObjectHelpers.serializeObject(payload)).toEqual(actual);
     });
+    it('should return return empty string cause payload is empty ', () => {
+      expect(ObjectHelpers.serializeObject(null)).toEqual('');
+    });
   });
 });
