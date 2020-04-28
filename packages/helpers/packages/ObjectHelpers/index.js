@@ -85,6 +85,9 @@ export const getNextProp = (object, key) => {
  * @returns {string}
  */
 export const serializeObject = object => {
+  if(!object || typeof object !== 'object'){
+    return '';
+  }
   const result = [];
   Object.keys(object).forEach(property => {
     if (typeof object[property] === 'object') {
