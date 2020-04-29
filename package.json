@@ -25,7 +25,7 @@
     "docz:deploy": "surge .docz/dist",
     "release": "node ./scripts/release/release.js",
     "jsdoc2docz": "node ./scripts/docs/jsdocs-to-docz.js",
-    "doczSvgSprite": "node scripts/docs/doczSvgSprite.js packages/icons/packages/**/sprite/*.svg"
+    "doczSvgSprite": "node scripts/docs/doczSvgSprite.js packages/icons/packages/**/sprite/*.svg .docz/public/sprite.svg"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

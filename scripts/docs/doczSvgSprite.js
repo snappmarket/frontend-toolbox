@@ -1,18 +1,10 @@
 const fs = require('fs');
 const glob = require('glob');
-const {exec} = require('child_process');
-
-const asyncForEach = async (array, callback) => {
-  // eslint-disable-next-line no-plusplus
-  for (let index = 0; index < array.length; index++) {
-    // eslint-disable-next-line no-await-in-loop
-    await callback(array[index]);
-  }
-};
 
 async function run() {
   const args = process.argv.slice(2);
   const path = args[0];
+  const dist = args[1];
   glob(path, async (err, files) => {
     const svgs = [];
     files.forEach(file => {
@@ -27,7 +19,7 @@ async function run() {
       svgs.push(symbol);
     });
     const sprite = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${svgs.join('')}<defs></defs></svg>`
-    console.log(sprite)
+    await fs.writeFileSync(dist, sprite)
   });
 }
 
