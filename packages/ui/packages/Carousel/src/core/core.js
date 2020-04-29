@@ -287,8 +287,34 @@ class SliderCore {
     }
 
     if (autoPlay) {
+      let refreshIntervalId = null;
+      // let intervalFlag = false;
+      console.log('main')
       const time = nextSpeed || 2000;
-      setInterval(() => this.next(), time);
+
+      const pause = () => {
+        clearInterval(refreshIntervalId);
+        // intervalFlag = false;
+        console.log('pause')
+
+      }
+      const play = () => {
+        refreshIntervalId = setInterval(() => this.next(), time);
+        // intervalFlag = true;
+        console.log('fire')
+      }
+
+      // toggle on mouseHover
+      slider.addEventListener('mouseover', pause);
+      slider.addEventListener('mouseout', play);
+
+      // toggle on blur and focus browser window tab
+      // window.addEventListener('blur', pause);
+      // window.addEventListener('focus', play);
+
+      play();
+      // if (intervalFlag) {
+      // }
     }
 
     this.sliderTrailer = new SliderTrailer({ core: this });
