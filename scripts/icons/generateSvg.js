@@ -56,11 +56,11 @@ if(!process.env.SSR && !process.env.CI) {
 
 let importPrefix = '';
 if(process.env.PUBLIC_URL) {
-  importPrefix = \`/\${process.env.PUBLIC_URL}/sprite.svg\`;
+  importPrefix = \`\${process.env.PUBLIC_URL}/sprite.svg\`;
 }
 
-const ${folderName} = ({ className, size }) => 
-  <svg 
+const ${folderName} = ({ className, size }) =>
+  <svg
     data-testid="${folderName}"
     viewBox="0 0 ${viewBox
         .split(' ')
@@ -97,8 +97,8 @@ export default ${folderName};
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const ${folderName} = ({ className, size }) => 
-  <svg 
+const ${folderName} = ({ className, size }) =>
+  <svg
     data-testid="${folderName}"
     viewBox="${viewBox}"
     className={className}

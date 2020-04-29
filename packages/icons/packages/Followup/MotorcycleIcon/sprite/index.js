@@ -11,7 +11,7 @@ if (!process.env.SSR && !process.env.CI) {
 
 let importPrefix = '';
 if (process.env.PUBLIC_URL) {
-  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
+  importPrefix = `${process.env.PUBLIC_URL}/sprite.svg`;
 }
 
 const MotorcycleIcon = ({ className, size }) => (
