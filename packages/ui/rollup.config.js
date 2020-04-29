@@ -61,7 +61,8 @@ function onwarn(warning) {
   if (
     warning.code === 'UNUSED_EXTERNAL_IMPORT' &&
     warning.source === 'react' &&
-    warning.names.filter((identifier) => identifier !== 'useDebugValue').length === 0
+    warning.names.filter(identifier => identifier !== 'useDebugValue')
+      .length === 0
   ) {
     // only warn for
     // import * as React from 'react'

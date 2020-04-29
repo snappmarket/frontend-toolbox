@@ -220,7 +220,7 @@ export const dragAction = params => {
     return false;
   }
   addClassToElement({
-    item : getSliderItems(),
+    item: getSliderItems(),
     className: 'avoid-clicks',
   });
 
@@ -277,7 +277,7 @@ export const dragEnd = params => {
     rtl,
   } = params;
   removeClassFromElement({
-    item : sliderItems,
+    item: sliderItems,
     className: 'avoid-clicks',
   });
 

@@ -54,9 +54,9 @@ if(!process.env.SSR && !process.env.CI) {
   require('./${folderName}.svg');
 }
 
-let importPrefix = '';
+let importPrefix = '/sprite.svg';
 if(process.env.PUBLIC_URL) {
-  importPrefix = \`\${process.env.PUBLIC_URL}/sprite.svg\`;
+  importPrefix = \`\${process.env.PUBLIC_URL}\${importPrefix}\`;
 }
 
 const ${folderName} = ({ className, size }) =>

@@ -1,6 +1,10 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { CheckMarkIcon, CircleIcon, MinusIcon } from '@snappmarket/icons/sprite';
+import {
+  CheckMarkIcon,
+  CircleIcon,
+  MinusIcon,
+} from '@snappmarket/icons/sprite';
 
 import { StyledCheckboxWrapper } from './styles';
 

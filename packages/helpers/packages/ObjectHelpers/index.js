@@ -52,7 +52,11 @@ export const flattenObject = object => {
  * @param   defaultValue    {any}       default value of what you want if it was undefiend
  * @returns {any}
  */
-export const safeObjectPropertyRead = (object, key, defaultValue = undefined) => {
+export const safeObjectPropertyRead = (
+  object,
+  key,
+  defaultValue = undefined,
+) => {
   const result = key.split('.').reduce((nestedObject, index) => {
     if (nestedObject && index in nestedObject) {
       return nestedObject[index];
@@ -60,7 +64,7 @@ export const safeObjectPropertyRead = (object, key, defaultValue = undefined) =>
     return undefined;
   }, object);
 
-  return result !== undefined ? result : defaultValue
+  return result !== undefined ? result : defaultValue;
 };
 
 /**
@@ -85,7 +89,7 @@ export const getNextProp = (object, key) => {
  * @returns {string}
  */
 export const serializeObject = object => {
-  if(!object || typeof object !== 'object'){
+  if (!object || typeof object !== 'object') {
     return '';
   }
   const result = [];

@@ -57,13 +57,13 @@ export const stringifyArray = (array, properties) => {
  * @param     levelKey   {string}    name of the property you want to store the level of item
  * @returns   {Array}
  */
-export const deepFlatten = (array, property, levelKey = "") => {
+export const deepFlatten = (array, property, levelKey = '') => {
   const result = [];
   const flatten = (items, level = 0) => {
     const itemsTemp = { ...items };
     delete itemsTemp[property];
-    if(levelKey){
-      itemsTemp[levelKey] = level
+    if (levelKey) {
+      itemsTemp[levelKey] = level;
     }
     result.push({ ...itemsTemp });
 
@@ -79,7 +79,6 @@ export const deepFlatten = (array, property, levelKey = "") => {
   return result;
 };
 
-
 /**
  * @function
  * @name arraySeparator
@@ -88,8 +87,8 @@ export const deepFlatten = (array, property, levelKey = "") => {
  * @param separators     {object}     object of regex separators
  * @param noDuplicates   {boolean}     flag to remove duplicates
  * @returns {object}
-*/
-export const arraySeparator = (array, separators, noDuplicates=false) => {
+ */
+export const arraySeparator = (array, separators, noDuplicates = false) => {
   if (!array || !array.length) {
     throw new Error('array should be defined');
   }
@@ -100,8 +99,8 @@ export const arraySeparator = (array, separators, noDuplicates=false) => {
   const result = {};
   Object.keys(separators).forEach(key => {
     result[key] = arrayTemp.filter(item => item.match(separators[key]));
-    if(noDuplicates){
-      arrayTemp = arrayTemp.filter(item => !result[key].includes(item))
+    if (noDuplicates) {
+      arrayTemp = arrayTemp.filter(item => !result[key].includes(item));
     }
   });
   return result;

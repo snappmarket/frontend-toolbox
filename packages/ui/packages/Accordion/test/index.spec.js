@@ -23,19 +23,21 @@ const AccordionComponent = (onOpen = f => f, onClose = f => f) => (
       >
         Accordion head 1
       </A.AccordionHead>
-      <A.AccordionHead
-        id="accordion-2"
-        data-testid="accordion-2"
-      >
+      <A.AccordionHead id="accordion-2" data-testid="accordion-2">
         Accordion head 2
       </A.AccordionHead>
 
       <A.AccordionContent
         data-testid="accordionPanel-1"
-        className="my-custom-class" whenActive="accordion-1">
+        className="my-custom-class"
+        whenActive="accordion-1"
+      >
         Accordion panel 1
       </A.AccordionContent>
-      <A.AccordionContent data-testid="accordionPanel-2" whenActive="accordion-2">
+      <A.AccordionContent
+        data-testid="accordionPanel-2"
+        whenActive="accordion-2"
+      >
         Accordion panel 2
       </A.AccordionContent>
     </A.Accordion>

@@ -36,14 +36,14 @@ describe('HttpHelpers', () => {
       expect(result).toEqual(mockResponse);
     });
     it('should not fetch, and kill the request because of timeout', () => {
-      fetch.mockReturnValue(Promise.reject(new Error('TIMEOUT')))
+      fetch.mockReturnValue(Promise.reject(new Error('TIMEOUT')));
       const url = 'http://snapp.market';
       const options = { foo: 'bar', signal: abortController.signal };
       HttpHelpers.fetchWithTimeOut(url, options, 0);
       expect(fetch).toHaveBeenCalledTimes(1);
     });
     it('should not fetch, but not kill the request meanwhile', () => {
-      fetch.mockReturnValue(Promise.reject(new Error('SOMETHING_BUT_TIMEOUT')))
+      fetch.mockReturnValue(Promise.reject(new Error('SOMETHING_BUT_TIMEOUT')));
       const url = 'http://snapp.market';
       const options = { foo: 'bar', signal: abortController.signal };
       HttpHelpers.fetchWithTimeOut(url, options, 0);

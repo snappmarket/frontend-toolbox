@@ -9,7 +9,6 @@ import { StyledBox, StyledImage, StyledMap } from './styles';
  * @constructor
  */
 const BoxSkeleton = props => {
-
   const { type, ...rest } = props;
 
   const skeleton = {

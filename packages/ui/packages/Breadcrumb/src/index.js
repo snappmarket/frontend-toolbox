@@ -21,17 +21,21 @@ const Breadcrumb = props => {
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>
-        {items.length - 1 === index ?
+        {items.length - 1 === index ? (
           <h2>{item.title}</h2>
-          : 
+        ) : (
           <Link to={item.link}>{item.title}</Link>
-        }
+        )}
       </StyledBreadcrumbItem>
     </StyledBreadcrumbItemWrapper>
     /* eslint-enable indent */
   ));
   return (
-    <StyledBreadcrumbWrapper data-testid="breadcrumb" className={className} {...rest}>
+    <StyledBreadcrumbWrapper
+      data-testid="breadcrumb"
+      className={className}
+      {...rest}
+    >
       {breadcrumbItems}
     </StyledBreadcrumbWrapper>
   );

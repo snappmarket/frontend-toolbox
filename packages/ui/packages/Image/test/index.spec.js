@@ -5,7 +5,6 @@ import '@testing-library/jest-dom/extend-expect';
 import { Wrapper } from '../../../test/test.helpers';
 import Image from '../index';
 
-
 describe('Image ui component tests', () => {
   it('Should show loading when image wants to load', () => {
     const { getByTestId } = render(

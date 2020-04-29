@@ -5,7 +5,7 @@
  * @param type
  * @returns {function(*=): {payload: *, type: *}}
  */
-export const actionMaker = (type) => (payload = {}) => ({ type, payload });
+export const actionMaker = type => (payload = {}) => ({ type, payload });
 
 /**
  * @function

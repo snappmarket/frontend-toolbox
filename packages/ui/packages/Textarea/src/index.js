@@ -18,9 +18,17 @@ const Textarea = React.forwardRef((props, ref) => {
           {label} {required && <StyledStar>*</StyledStar>}
         </StyledLabel>
       )}
-      <StyledTextarea data-testid="textarea" status={status} ref={ref} id={id} {...rest} />
+      <StyledTextarea
+        data-testid="textarea"
+        status={status}
+        ref={ref}
+        id={id}
+        {...rest}
+      />
       {Object.keys(message).length > 0 && (
-        <StyledMessage data-testid="textareaMessage" type={message.type}>{message.content}</StyledMessage>
+        <StyledMessage data-testid="textareaMessage" type={message.type}>
+          {message.content}
+        </StyledMessage>
       )}
     </StyledTextareaWrapper>
   );

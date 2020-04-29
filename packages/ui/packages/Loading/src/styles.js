@@ -92,8 +92,7 @@ export const StyledCircleWave = Styled.div`
 
 export const StyledLogoAnimation = Styled.div`
   min-width: ${props => `calc(${props.theme.defaultRem} * ${props.size * 2})`}; 
-  min-height: ${props =>
-    `calc(${props.theme.defaultRem} * ${props.size * 2})`};
+  min-height: ${props => `calc(${props.theme.defaultRem} * ${props.size * 2})`};
   &.animating {
     animation: alertPulse 1.2s ease-out;
     animation-iteration-count: infinite;

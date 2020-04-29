@@ -18,7 +18,7 @@ export const hexToRgb = hex => {
     red: parseInt(hexColor.substr(0, 2), 16),
     green: parseInt(hexColor.substr(2, 2), 16),
     blue: parseInt(hexColor.substr(4, 2), 16),
-  }
+  };
 };
 
 /**
@@ -58,7 +58,7 @@ export const decideMeasurement = measurement => {
   const defaultRem = '1rem'; // @todo: gonna remove it in next release
   return typeof measurement === 'string'
     ? measurement
-    : `calc(${defaultRem} * ${measurement})`
+    : `calc(${defaultRem} * ${measurement})`;
 };
 
 /**
@@ -80,4 +80,9 @@ export const makeShadow = (
   spread,
   color,
   inset = false,
-) => `${decideMeasurement(hOffset)} ${decideMeasurement(vOffset)} ${decideMeasurement(blur)} ${decideMeasurement(spread)} ${color}${inset ? ' inset' : ''}`;
+) =>
+  `${decideMeasurement(hOffset)} ${decideMeasurement(
+    vOffset,
+  )} ${decideMeasurement(blur)} ${decideMeasurement(spread)} ${color}${
+    inset ? ' inset' : ''
+  }`;

@@ -9,16 +9,19 @@ const StyledBox = Styled.div`
     props.justBorder
       ? 'transparent'
       : props.background || darken(0.06, props.theme.colors.white)};
-      ${props => typeof props.backgroundSize === 'string' ? `background-size: ${props.backgroundSize}` :
-    `background-size: calc(${props.theme.defaultRem} * ${props.backgroundSize})`}; 
+      ${props =>
+        typeof props.backgroundSize === 'string'
+          ? `background-size: ${props.backgroundSize}`
+          : `background-size: calc(${props.theme.defaultRem} * ${props.backgroundSize})`}; 
   border-radius: ${props => decideMeasurement(props.radius)};
   border:  ${props =>
     props.justBorder
       ? `2px solid ${darken(0.06, props.theme.colors.white)}`
       : 'none'};
   display: 'flex';
-  justify-content: ${props => props.justifyContent ? props.justifyContent: 'center'};
-  align-items: ${props => props.alignItems ? props.alignItems: 'center'};
+  justify-content: ${props =>
+    props.justifyContent ? props.justifyContent : 'center'};
+  align-items: ${props => (props.alignItems ? props.alignItems : 'center')};
   width: ${props => decideMeasurement(props.width)};
   height: ${props => decideMeasurement(props.height)};
 `;

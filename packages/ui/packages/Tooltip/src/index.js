@@ -9,7 +9,9 @@ const Tooltip = props => {
   return (
     <StyledToolbarWrapper data-testid="tooltipWrapper" className={className}>
       {children}
-      <StyledToolbar data-testid="tooltip" position={position}>{title}</StyledToolbar>
+      <StyledToolbar data-testid="tooltip" position={position}>
+        {title}
+      </StyledToolbar>
     </StyledToolbarWrapper>
   );
 };

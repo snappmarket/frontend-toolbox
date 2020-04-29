@@ -99,7 +99,8 @@ export const StyledPrimaryButton = Styled(StyledButton)`
 
 export const StyledOutlineButton = Styled(StyledPrimaryButton)`
   background: none;
-  border: calc(${props => props.theme.defaultRem} * 0.1) solid ${props => props.theme.colors[props.color][props.shade]};
+  border: calc(${props => props.theme.defaultRem} * 0.1) solid ${props =>
+  props.theme.colors[props.color][props.shade]};
   color: ${props => props.theme.colors[props.color][props.shade]};
   svg {
     fill: ${props => props.theme.colors[props.color][props.shade]};

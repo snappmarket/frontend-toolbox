@@ -13,9 +13,7 @@ import {
   // cloneNodeGenerator,
   // cloneNodeInsertBefore,
 } from '../src/core/slideTrailer/partial';
-import {
-  vdomArrayConvertor
-} from '../src/core/utils';
+import { vdomArrayConvertor } from '../src/core/utils';
 
 // real DOM generator
 const stringToHTML = str => {
@@ -90,10 +88,18 @@ describe('Partial Trailer', () => {
       responsive: slideConfig.responsive,
       sliderItems: stringToHTML(mockSlides),
     };
-    expect(setPageNumberOnChild(testParams)).toStrictEqual(["1","1","1","1","1"]);
+    expect(setPageNumberOnChild(testParams)).toStrictEqual([
+      '1',
+      '1',
+      '1',
+      '1',
+      '1',
+    ]);
   });
   test('Check clone node append child', () => {
-    const sliderItemsChildren = vdomArrayConvertor(stringToHTML(mockSlides).children);
+    const sliderItemsChildren = vdomArrayConvertor(
+      stringToHTML(mockSlides).children,
+    );
     const deepCloneSliderItemsChildren = [...sliderItemsChildren];
     const cloneNodeParams = {
       perSlide: 2,
@@ -102,4 +108,4 @@ describe('Partial Trailer', () => {
     };
     expect(cloneNodeAppendChild(cloneNodeParams).length).toStrictEqual(3);
   });
-})
+});

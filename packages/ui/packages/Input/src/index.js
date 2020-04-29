@@ -14,9 +14,10 @@ const Input = React.forwardRef((props, ref) => {
     <StyledInputWrapper data-testid="inputWrapper">
       {label && props.id && (
         <StyledLabel data-testid="inputLabel" htmlFor={id}>
-          {label}
-          {' '}
-          {required && <StyledStar data-testid="labelRequiredFlag">*</StyledStar>}
+          {label}{' '}
+          {required && (
+            <StyledStar data-testid="labelRequiredFlag">*</StyledStar>
+          )}
         </StyledLabel>
       )}
       <StyledInput
@@ -28,7 +29,9 @@ const Input = React.forwardRef((props, ref) => {
         {...rest}
       />
       {Object.keys(message).length > 0 && (
-        <StyledMessage data-testid="inputMessages" type={message.type}>{message.content}</StyledMessage>
+        <StyledMessage data-testid="inputMessages" type={message.type}>
+          {message.content}
+        </StyledMessage>
       )}
     </StyledInputWrapper>
   );

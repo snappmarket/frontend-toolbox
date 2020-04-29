@@ -1,9 +1,9 @@
-import { renderHook } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react-hooks';
 import useTimer from '../index';
 
-describe("useTimer tests:" , () => {
+describe('useTimer tests:', () => {
   it('should use useTimer', () => {
-    const { result } = renderHook(() => useTimer({ }));
+    const { result } = renderHook(() => useTimer({}));
 
     expect(result.current).toBeDefined();
     expect(typeof result.current.start).toBe('function');

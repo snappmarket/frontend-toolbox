@@ -35,7 +35,10 @@ const InputRange = props => {
           rtl
         />
       </StyledInputRange>
-      <StyledRangeLabelWrapper data-testid="inputRangeLabel" className="justify-between">
+      <StyledRangeLabelWrapper
+        data-testid="inputRangeLabel"
+        className="justify-between"
+      >
         <span className="text-center" data-testid="inputRangeLabelItem">
           {fromTitle} {currencyPrice(min)}
         </span>

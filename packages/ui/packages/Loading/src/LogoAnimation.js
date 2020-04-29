@@ -7,7 +7,8 @@ import { StyledLogoAnimation } from './styles';
 const LogoAnimation = ({ size, className, animate }) => (
   <StyledLogoAnimation
     data-testid="logoAnimation"
-    className={`align-center justify-center logo-loading-wrapper ${className} ${animate && 'animating'}`}
+    className={`align-center justify-center logo-loading-wrapper ${className} ${animate &&
+      'animating'}`}
     size={size}
   >
     <SnappMarketLogo />
