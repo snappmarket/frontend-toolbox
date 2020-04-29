@@ -2,29 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { Wrapper, theme } from '../../../test/test.helpers';
+import { Wrapper } from '../../../test/test.helpers';
 import { StyledCarouselDemo } from '../src/core/styles.demo';
 import { StyledSimpleCarousel } from '../src/core/styles';
-// import IconName from '../../../../icons/packages/FontIcons/InfoIcon';
-const mockSlider = `
-  <div id="slider" class="slider loaded">
-    <div class="wrapper">
-      <div class="slides" style="transform: translate3d(0px, 0px, 0px);">
-        <span class="slide active" data-page="1" style="width: 607.5px;">Slide 1</span>
-        <span class="slide active" data-page="1" style="width: 607.5px;">Slide 2</span>
-        <span class="slide" data-page="2" style="width: 607.5px;">Slide 3</span>
-        <span class="slide" data-page="2" style="width: 607.5px;">Slide 4</span>
-        <span class="slide" data-page="3" style="width: 607.5px;">Slide 5</span>
-      </div>
-    </div>
-    <span class="control next" style="display: block;"></span><span class="control prev" style="display: none;"></span>
-    <ul class="dots">
-      <li class="dots-item active" data-dot-index="1">1</li>
-      <li class="dots-item" data-dot-index="2">2</li>
-      <li class="dots-item" data-dot-index="3">3</li>
-    </ul>
-  </div>
-`;
 describe('CarouselDemo ui component tests', () => {
     it('Should get all style', () => {
         const { getByTestId } = render(
@@ -106,7 +86,7 @@ describe('CarouselDemoMain ui component tests', () => {
         );
 
         expect(getByTestId('carousel')).toHaveStyle({
-            position: 'relative'
+            position: 'relative',
         });
         expect(getByTestId('carousel-wrapper')).toHaveStyle({
             overflow: 'hidden',
@@ -126,6 +106,5 @@ describe('CarouselDemoMain ui component tests', () => {
             display: 'inline-block',
             margin: '0 5px',
         });
-
     });
 });
