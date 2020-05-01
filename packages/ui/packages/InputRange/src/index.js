@@ -17,13 +17,14 @@ const InputRange = props => {
     onChangeComplete,
     fromTitle,
     toTitle,
+    className,
   } = props;
   const { min: initialMin, max: initialMax } = rangeValue;
   const [value, setValue] = useState(initialValue);
   const { min, max } = value;
 
   return (
-    <StyledInputRangeWrapper data-testid="inputRangeWrapper">
+    <StyledInputRangeWrapper className={className} data-testid="inputRangeWrapper">
       <StyledInputRange data-testid="inputRange">
         <ReactInputRange
           minValue={initialMin}
@@ -48,6 +49,7 @@ const InputRange = props => {
 };
 
 InputRange.propTypes = {
+  className: PropTypes.string,
   fromTitle: PropTypes.string,
   toTitle: PropTypes.string,
   onChangeComplete: PropTypes.func,
@@ -61,6 +63,7 @@ InputRange.propTypes = {
   }),
 };
 InputRange.defaultProps = {
+  className: '',
   fromTitle: 'from',
   toTitle: 'to',
   onChangeComplete: () => {},

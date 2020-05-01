@@ -1,0 +1,25 @@
+---
+name: InputRange
+route: /ui/input-range
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import InputRange from './src/index';
+
+# Basic Usage
+
+<Playground>
+<InputRange
+    className='foobar'
+    fromTitle="from"
+    toTitle="to"
+    onChangeComplete={value => console.log(value)}
+    rangeValue={{min: 0, max: 10}}
+    value={{min: 3, max: 7}}
+/>
+</Playground>
+
+<br />
+
+# Props
+<Props of={InputRange} />
