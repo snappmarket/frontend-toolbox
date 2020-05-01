@@ -33,7 +33,7 @@ const InputRange = props => {
           onChange={setValue}
           onChangeComplete={onChangeComplete}
           formatLabel={() => false}
-          rtl
+          rtl //@tood: it should be an optional prop, use might want to use LTR
         />
       </StyledInputRange>
       <StyledRangeLabelWrapper data-testid="inputRangeLabel" className="justify-between">
@@ -48,8 +48,10 @@ const InputRange = props => {
   );
 };
 
+//@todo: add other input range props here to make docz complete
 InputRange.propTypes = {
   className: PropTypes.string,
+  //@todo: from and to titles should be template to let user choose other postfixes also
   fromTitle: PropTypes.string,
   toTitle: PropTypes.string,
   onChangeComplete: PropTypes.func,
