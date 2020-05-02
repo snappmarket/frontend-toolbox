@@ -21,10 +21,10 @@ const Breadcrumb = props => {
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>
-        {items.length - 1 === index ?
-          <h2>{item.title}</h2>
-          : 
+        {item.link ? 
           <Link to={item.link}>{item.title}</Link>
+          :
+          item.title
         }
       </StyledBreadcrumbItem>
     </StyledBreadcrumbItemWrapper>
