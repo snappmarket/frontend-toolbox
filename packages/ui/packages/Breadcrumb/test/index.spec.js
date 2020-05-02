@@ -39,6 +39,34 @@ describe('Should handle items', () => {
     expect(getByTestId('breadcrumb')).toContainHTML('');
   });
 
+  it('Should render breadcrumb with link', () => {
+    const mockData = [
+      {
+        title: 'product-1',
+        link: '/product-1'
+      },
+    ];
+    const { getByTestId } = render(
+      <BrowserRouter><Wrapper><Breadcrumb items={mockData}/></Wrapper></BrowserRouter>
+    );
+    const breadcrumbLink = getByTestId('breadcrumbLink');
+
+    expect(getByTestId('breadcrumb')).toContainElement(breadcrumbLink);
+  });
+
+  it('Should render breadcrumb without link', () => {
+    const mockData = [
+      {
+        title: <span>test</span>,
+      },
+    ];
+    const { getByTestId } = render(
+      <Wrapper><Breadcrumb items={mockData}/></Wrapper>
+    );
+
+    expect(getByTestId('breadcrumb')).toContainHTML('<span>test</span>');
+  });
+
   it('Should render without svg icon for Breadcrumb items', () => {
 
     const mockData = [
@@ -49,6 +77,7 @@ describe('Should handle items', () => {
     ];
 
     expect(lengthOfAllSvg(mockData)).toBe(0);
+    
   });
 
   it('Should render 2 svg arrow icon for 3 items in Breadcrumb ', () => {

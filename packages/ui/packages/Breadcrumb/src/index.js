@@ -22,7 +22,7 @@ const Breadcrumb = props => {
       )}
       <StyledBreadcrumbItem>
         {item.link ? 
-          <Link to={item.link}>{item.title}</Link>
+          <Link  data-testid="breadcrumbLink" to={item.link}>{item.title}</Link>
           :
           item.title
         }
