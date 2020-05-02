@@ -287,38 +287,33 @@ class SliderCore {
     }
 
     if (autoPlay) {
-      let refreshIntervalId = null;
-      // let intervalFlag = false;
-      console.log('main')
+      let refreshIntervalId;
+      let isIntervalRunning = false;
       const time = nextSpeed || 2000;
-
-      const pause = () => {
-        clearInterval(refreshIntervalId);
-        // intervalFlag = false;
-        console.log('pause')
-
+      const intervalNext = () => {
+        isIntervalRunning = true
+        this.next()
       }
-      const play = () => {
-        refreshIntervalId = setInterval(() => this.next(), time);
-        // intervalFlag = true;
-        console.log('fire')
+      const intervalPlay = () => {
+        clearInterval(refreshIntervalId); // Clearing interval if for some reason it has not been cleared yet
+        if  (!isIntervalRunning) {
+          refreshIntervalId = setInterval(intervalNext, time);
+        }
       }
-
+      const intervalPause = () => {
+        clearInterval(refreshIntervalId); // Clearing interval on window blur
+        isIntervalRunning = false;
+      }
       // toggle on mouseHover
-      slider.addEventListener('mouseover', pause);
-      slider.addEventListener('mouseout', play);
-
+      slider.addEventListener('mouseover', intervalPause);
+      slider.addEventListener('mouseout', intervalPlay);
       // toggle on blur and focus browser window tab
-      // window.addEventListener('blur', pause);
-      // window.addEventListener('focus', play);
-
-      play();
-      // if (intervalFlag) {
-      // }
+      window.addEventListener('blur', intervalPause);
+      window.addEventListener('focus', intervalPlay);
+      intervalPlay();
     }
 
     this.sliderTrailer = new SliderTrailer({ core: this });
-
     // action drag event
     this.dragEvent = new DragEvent({ core: this });
 
