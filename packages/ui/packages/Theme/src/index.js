@@ -1,2 +1,3 @@
-import snappMarketTheme from './theme';
-export const makeTheme = (theme = {}) => ({ ...snappMarketTheme, ...theme });
+import { theme as ToolboxTheme } from '@snappmarket/config';
+
+export const makeTheme = (theme = {}) => ({ ...ToolboxTheme, ...theme });
