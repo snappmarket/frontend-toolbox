@@ -1,2 +1,9 @@
-export { default as faIR } from './fa-IR';
-export { default as faIR } from './en-US';
+import faIR from './fa-IR';
+import enUS from './en-US';
+
+const languages = {
+  faIR,
+  enUS,
+};
+
+export default languages;

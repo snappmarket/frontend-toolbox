@@ -1,11 +1,11 @@
 {
   "name": "@snappmarket/config",
   "private": false,
-  "version": "0.2.6",
+  "version": "0.2.9",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
-  "unpkg": "./dist/umd/hooks.production.js",
+  "unpkg": "./dist/umd/config.production.js",
   "scripts": {
     "test": "cross-env BABEL_ENV=test jest --config ../../jest.config.js",
     "test:coverage": "cross-env BABEL_ENV=test jest --config ../../jest.config.js --coverage=true",
@@ -15,7 +15,8 @@
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./packages --out-dir ./dist/es",
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
     "build:copy-files": "node ../../scripts/copy-file/packages-copy.js",
-    "release": "node ../../scripts/release/release-parents.js",
+    "change-version": "node ../../scripts/release/change-version.js",
+    "publish-npm": "node ../../scripts/release/publish-npm.js",
     "prebuild": "rimraf ./dist",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
