@@ -19,7 +19,7 @@ export const statuses = ['gray', 'red', 'blue', 'orange', 'green', 'yellow'];
     <Row>
       {statuses.map(status => (
         <Col xs={12} sm={6} md={4} className="mb-1">
-            <Textarea status={status} placeholder={status}  />
+            <Textarea status={status} label={status} placeholder="enter something"  />
         </Col>
       ))}
     </Row>
