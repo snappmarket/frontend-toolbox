@@ -24,7 +24,7 @@ export default class SliderTrailer {
 
   initialize() {
     const {
-      config: { responsive, slider, rtl },
+      config: { responsive, slider, rtl, autoWidth },
       getInfinite,
       getSliderItems,
       getSliderItemWidth,
@@ -48,6 +48,7 @@ export default class SliderTrailer {
       sliderItems,
       slider,
       responsive,
+      autoWidth,
     });
 
     // init slider position
@@ -60,26 +61,27 @@ export default class SliderTrailer {
       }),
     );
 
-    setPageNumberOnChild({ sliderItems, responsive });
 
-    // Clone group of slide from infinite carousel
-    if (infinite) {
-      const cloneNodeGeneratorParams = {
-        perSlide,
+    if (!autoWidth) {
+      setPageNumberOnChild({ sliderItems, responsive });
+      // Clone group of slide from infinite carousel
+      if (infinite) {
+        const cloneNodeGeneratorParams = {
+          perSlide,
+          sliderItems,
+          wrapper: slider,
+        };
+        cloneNodeGenerator(cloneNodeGeneratorParams);
+      }
+      setActiveclassToCurrent({
         sliderItems,
-        wrapper: slider,
-      };
-      cloneNodeGenerator(cloneNodeGeneratorParams);
+        perSlide,
+        slideSize,
+        sliderMainWidth,
+        index: getIndex(),
+        infinite,
+      });
     }
-
-    setActiveclassToCurrent({
-      sliderItems,
-      perSlide,
-      slideSize,
-      sliderMainWidth,
-      index: getIndex(),
-      infinite,
-    });
 
     // add loaded class to main slide after init
     const classItemParams = {

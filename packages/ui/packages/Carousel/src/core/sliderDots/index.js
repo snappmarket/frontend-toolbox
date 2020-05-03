@@ -31,7 +31,7 @@ export default class SliderDots {
 
   initialize() {
     const {
-      config: { slider, responsive, nav, rtl },
+      config: { slider, responsive, nav, rtl, autoWidth },
       getInfinite,
       getSlidesLength,
       getSliderItemWidth,
@@ -55,6 +55,8 @@ export default class SliderDots {
       responsive,
       dotsSelector,
       sliderItems,
+      autoWidth,
+      sliderMainWidth: getSliderMainWidth(),
     };
 
     // generate dots group per show slides
@@ -81,6 +83,7 @@ export default class SliderDots {
           nav,
           rtl,
           item,
+          autoWidth,
         };
         const { index, allowShift, posInitial } = dotsItemsClick(
           dotsItemsClickParams,

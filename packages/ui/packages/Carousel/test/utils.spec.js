@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { render } from '@testing-library/react';
+// import * as React from 'react';
+// import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 const { JSDOM } = require('jsdom');
 // import { Wrapper } from '../../../test/test.helpers';
