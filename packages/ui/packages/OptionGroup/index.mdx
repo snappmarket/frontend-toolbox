@@ -1,0 +1,41 @@
+---
+name: OptionGroup
+route: /ui/option-group
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import OptionGroup from './src/index';
+
+# Basic Usage
+Option Group gives you a list of options you can choose between,
+it throws the selected item to the parent also using onSelectItem callback,
+you can choose between the list of options of selectable labels by using the hasRadio flag.
+also you can use meta property to render anything you want in each option.
+
+<Playground>
+  <OptionGroup
+    className="foobar"
+    radioSize={2}
+    selectedItem="bar"
+    onSelectItem={value => console.log(value)}
+    hasRadio
+    options={[
+      {
+        title: 'foo',
+        value: 'foo',
+        meta: <div style={{width: '200px'}}>this is the foo meta</div>,
+      },
+      {
+        title: 'bar',
+        value: 'bar',
+        meta: <div style={{width: '200px'}}>this is the bar meta</div>,
+      },
+    ]}
+  />
+</Playground>
+
+<br />
+
+# Props
+<Props of={OptionGroup} />
