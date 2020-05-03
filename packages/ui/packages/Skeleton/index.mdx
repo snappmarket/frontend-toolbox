@@ -1,0 +1,50 @@
+---
+name: Skeleton
+route: /ui/skeleton
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import { BoxSkeleton } from './src/index';
+
+export const types = ['box', 'image', 'map'];
+
+# Demo
+
+<div className="mb-4">
+  <div className="text-center">
+    <p className="text-left">
+      Skeleton supports 3 different types.
+    </p>
+    <Row>
+      {types.map(type => (
+        <Col xs={4}>
+          <BoxSkeleton type={type} width="100%" height={20} />
+          <code>{type}</code>
+        </Col>
+      ))}
+    </Row>
+  </div>
+</div>
+
+<br />
+
+
+# Basic Usage
+
+<Playground>
+  <BoxSkeleton
+    className="foobar"
+    type="box"
+    animationDuration={3}
+    width={10}
+    height={10}
+    backgroundSize={6}
+    radius={0.5}
+  />
+</Playground>
+
+<br />
+
+# Props
+<Props of={BoxSkeleton} />
