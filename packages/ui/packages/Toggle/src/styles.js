@@ -1,9 +1,7 @@
-/* eslint-disable prettier/prettier */
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
 const StyledToggleWrapper = Styled.button`
   width: ${props => `calc(${props.theme.defaultRem} * ${props.size} * 2.2)`};
-  height: 100%;
   border-radius: ${props =>
     `calc(${props.theme.defaultRem} * ${props.size + 1})`};
   display: flex;
@@ -11,6 +9,9 @@ const StyledToggleWrapper = Styled.button`
   position: relative;
   outline: none;
   cursor: pointer;
+  ${props => props.disabled ? `
+   filter: grayscale(1);
+  ` : ''}
   > span {
     width: ${props => `calc(${props.theme.defaultRem} * ${props.size})`};
     height: ${props => `calc(${props.theme.defaultRem} * ${props.size})`};
