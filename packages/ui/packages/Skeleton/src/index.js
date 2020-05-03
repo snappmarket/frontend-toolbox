@@ -8,10 +8,7 @@ import { StyledBox, StyledImage, StyledMap } from './styles';
  * @returns {*}
  * @constructor
  */
-const BoxSkeleton = props => {
-
-  const { type, ...rest } = props;
-
+const BoxSkeleton = ({ type, ...rest }) => {
   const skeleton = {
     box: <StyledBox data-testid="skeleton" {...rest} />,
     image: <StyledImage data-testid="skeleton" {...rest} />,
@@ -26,8 +23,8 @@ const BoxSkeleton = props => {
  * @type {{animationDuration: *, alignItems: *, background: *, width: *, className: *, backgroundSize: *, float: *, radius: *, justifyContent: *, height: *}}
  */
 BoxSkeleton.propTypes = {
-  type: PropTypes.oneOf(['box', 'image', 'map']),
   className: PropTypes.string,
+  type: PropTypes.oneOf(['box', 'image', 'map']),
   justBorder: PropTypes.bool,
   background: PropTypes.string,
   backgroundSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -40,6 +37,7 @@ BoxSkeleton.propTypes = {
 };
 
 BoxSkeleton.defaultProps = {
+  className: '',
   type: 'box',
   animationDuration: 3,
   width: 3,

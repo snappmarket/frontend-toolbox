@@ -10,7 +10,7 @@ const StyledBox = Styled.div`
       ? 'transparent'
       : props.background || darken(0.06, props.theme.colors.white)};
       ${props => typeof props.backgroundSize === 'string' ? `background-size: ${props.backgroundSize}` :
-    `background-size: calc(${props.theme.defaultRem} * ${props.backgroundSize})`}; 
+    `background-size: calc(${props.theme.defaultRem} * ${props.backgroundSize})`};
   border-radius: ${props => decideMeasurement(props.radius)};
   border:  ${props =>
     props.justBorder
@@ -24,14 +24,14 @@ const StyledBox = Styled.div`
 `;
 
 const StyledImage = Styled(StyledBox)`
-  background:  linear-gradient(30deg, transparent 37%, #fff 37%), 
-            linear-gradient(-30deg, transparent 37%, #fff 37%), 
+  background:  linear-gradient(30deg, transparent 37%, #fff 37%),
+            linear-gradient(-30deg, transparent 37%, #fff 37%),
             linear-gradient(to bottom, #ccc, #000);
 `;
 
 const StyledMap = Styled(StyledBox)`
-  background:  linear-gradient(30deg, transparent 37%, #fff 37%), 
-            linear-gradient(-30deg, transparent 37%, #fff 37%), 
+  background:  linear-gradient(30deg, transparent 37%, #fff 37%),
+            linear-gradient(-30deg, transparent 37%, #fff 37%),
             linear-gradient(to bottom, #ccc, #000);
 `;
 
