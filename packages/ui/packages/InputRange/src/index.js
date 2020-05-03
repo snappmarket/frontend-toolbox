@@ -17,7 +17,9 @@ const InputRange = props => {
     onChangeComplete,
     fromTitle,
     toTitle,
+    rtl,
     className,
+    ...rest
   } = props;
   const { min: initialMin, max: initialMax } = rangeValue;
   const [value, setValue] = useState(initialValue);
@@ -33,28 +35,28 @@ const InputRange = props => {
           onChange={setValue}
           onChangeComplete={onChangeComplete}
           formatLabel={() => false}
-          rtl //@tood: it should be an optional prop, use might want to use LTR
+          rtl={rtl}
+          {...rest}
         />
       </StyledInputRange>
-      <StyledRangeLabelWrapper data-testid="inputRangeLabel" className="justify-between">
+      <StyledRangeLabelWrapper rtl={rtl} data-testid="inputRangeLabel" className="justify-between">
         <span className="text-center" data-testid="inputRangeLabelItem">
-          {fromTitle} {currencyPrice(min)}
+          {fromTitle(min)}
         </span>
         <span className="text-center">
-          {toTitle} {currencyPrice(max)}
+          {toTitle(max)}
         </span>
       </StyledRangeLabelWrapper>
     </StyledInputRangeWrapper>
   );
 };
 
-//@todo: add other input range props here to make docz complete
 InputRange.propTypes = {
   className: PropTypes.string,
-  //@todo: from and to titles should be template to let user choose other postfixes also
-  fromTitle: PropTypes.string,
-  toTitle: PropTypes.string,
+  fromTitle: PropTypes.func,
+  toTitle: PropTypes.func,
   onChangeComplete: PropTypes.func,
+  rtl: PropTypes.bool,
   rangeValue: PropTypes.shape({
     min: PropTypes.number,
     max: PropTypes.number,
@@ -66,9 +68,10 @@ InputRange.propTypes = {
 };
 InputRange.defaultProps = {
   className: '',
-  fromTitle: 'from',
-  toTitle: 'to',
+  fromTitle: value => `from ${value}`,
+  toTitle: value => `to ${value}`,
   onChangeComplete: () => {},
+  rtl: true,
   rangeValue: {
     min: 0,
     max: 1,
