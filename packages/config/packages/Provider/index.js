@@ -8,6 +8,7 @@ import { ToolboxProvider } from './context';
 
 const DEFAULT_OPTIONS = {
   publicPath: '/',
+  importSpriteSVG: true,
   exportSvgSprite: false,
   SSR: false,
 };
@@ -30,6 +31,7 @@ Provider.propTypes = {
   theme: PropTypes.object,
   language: PropTypes.string,
   options: PropTypes.shape({
+    importSpriteSVG: PropTypes.bool,
     SSR: PropTypes.bool,
     exportSvgSprite: PropTypes.bool,
     publicPath: PropTypes.string,
