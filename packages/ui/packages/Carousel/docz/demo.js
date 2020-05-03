@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Slider } from './core/index';
-import { StyledSimpleCarousel } from './core/styles';
-import { StyledCarouselDemo } from './core/styles.demo';
+import { Slider } from '../src/core/index';
+import { StyledSimpleCarousel } from '../src/core/styles';
+import { StyledCarouselDemo } from '../src/core/styles.demo';
 
 const SimpleCarouselDemo = props => {
   const {
