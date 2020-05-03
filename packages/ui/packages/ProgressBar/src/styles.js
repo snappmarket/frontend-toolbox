@@ -10,7 +10,7 @@ export const StyledProgressBarWrapper = Styled.div`
 `;
 export const StyledProgressBar = Styled.div`
   height: calc(${props => props.theme.defaultRem} * 0.75);
-  background-color: ${props => props.theme.colors.green.normal};
+  background-color: ${props => props.theme.colors[props.color].normal};
   width: ${props => props.percent}%;
   max-width: 100%;
   transition: 0.5s linear;
