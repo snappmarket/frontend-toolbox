@@ -33,7 +33,10 @@ Textarea.propTypes = {
   value: PropTypes.any,
   placeholder: PropTypes.any,
   className: PropTypes.string,
-  message: PropTypes.object,
+  message: PropTypes.shape({
+    type: PropTypes.oneOf(['success', 'danger']),
+    content: PropTypes.string,
+  }),
   onChange: PropTypes.func,
   Children: PropTypes.string,
   required: PropTypes.bool,
