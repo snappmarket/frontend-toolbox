@@ -2,16 +2,21 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { StyledLoading } from './styles';
 
-const LoadingSpinner = ({ direction }) => (
+const LoadingSpinner = ({ direction, className }) => (
   <StyledLoading
     data-testid="loadingSpinner"
     direction={direction}
-    className="loader"
+    className={`${className} loader`}
   />
 );
 
 LoadingSpinner.propTypes = {
-  direction: PropTypes.string,
+  direction: PropTypes.oneOf(['left', 'right']),
+  className: PropTypes.string,
+};
+LoadingSpinner.defaultProps = {
+  direction: 'right',
+  className: '',
 };
 
 export default LoadingSpinner;
