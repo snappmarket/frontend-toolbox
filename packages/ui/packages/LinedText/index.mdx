@@ -1,0 +1,24 @@
+---
+name: LinedText
+route: /ui/lined-text
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import LinedText from './src/index';
+
+# Basic Usage
+shows anything but adds a separator line sides of it
+
+<Playground>
+  <section>
+    <LinedText className='foobar'>
+      <h2>Title of a section</h2>
+    </LinedText>
+    <p>and this is the description of the section.</p>
+  </section>
+</Playground>
+
+<br />
+
+# Props
+<Props of={LinedText} />
