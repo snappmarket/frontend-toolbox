@@ -1,9 +1,7 @@
-/* eslint-disable prettier/prettier */
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
 const StyledToggleWrapper = Styled.button`
   width: ${props => `calc(${props.theme.defaultRem} * ${props.size} * 2.2)`};
-  height: 100%;
   border-radius: ${props =>
     `calc(${props.theme.defaultRem} * ${props.size + 1})`};
   display: flex;
@@ -11,6 +9,19 @@ const StyledToggleWrapper = Styled.button`
   position: relative;
   outline: none;
   cursor: pointer;
+  background-color: ${props => props.theme.colors.gray.light};
+  justify-content: flex-end;
+  border: solid ${props => `calc(${props.theme.defaultRem} * 0.1)`} ${props => props.theme.colors.gray.light};
+  line-height: 0;
+  &.selected {
+    background-color: ${props => props.theme.colors[props.status].light};
+    color: ${props => props.theme.colors[props.status].light};
+    justify-content: start;
+    border-color: ${props => props.theme.colors[props.status].light};
+  }
+  &.disabled {
+    filter: grayscale(1);
+  }
   > span {
     width: ${props => `calc(${props.theme.defaultRem} * ${props.size})`};
     height: ${props => `calc(${props.theme.defaultRem} * ${props.size})`};
@@ -20,23 +31,6 @@ const StyledToggleWrapper = Styled.button`
     border-radius: 50%;
     transition: inherit;
   }
-  ${props =>
-    props.selected
-      ? `
-    background-color: ${props.theme.colors[props.status].light}};
-    color: ${props.theme.colors[props.status].light}};
-    justify-content: start;
-  `
-      : `
-    background-color: ${props.theme.colors.gray.light};
-    justify-content: flex-end;
-  `}
-  border: solid ${props => `calc(${props.theme.defaultRem} * 0.1)`}
-    ${props =>
-    !props.selected
-      ? props.theme.colors.gray.light
-      : props.theme.colors[props.status].light};
-  line-height: 0;
 `;
 
 export { StyledToggleWrapper };
