@@ -1,0 +1,45 @@
+---
+name: Loading
+route: /ui/loading
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import { LoadingSpinner, CircleWaveAnimation, LogoAnimation } from './src/index';
+
+# Loading
+There are three different loading for different purposes
+
+# LoadingSpinner
+<Playground>
+  <LoadingSpinner direction="right" className="foobar" />
+</Playground>
+
+<br />
+
+# LoadingSpinner Props
+<Props of={LoadingSpinner} />
+
+<br />
+
+# CircleWaveAnimation
+<Playground>
+  <CircleWaveAnimation className="foobar" size="1.4" color="green" />
+</Playground>
+
+<br />
+
+# CircleWaveAnimation Props
+<Props of={CircleWaveAnimation} />
+
+<br />
+
+# LogoAnimation
+<Playground>
+  <LogoAnimation className="foobar" size={5} animate={true} />
+</Playground>
+
+<br />
+
+# LogoAnimation Props
+<Props of={LogoAnimation} />

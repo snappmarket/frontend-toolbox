@@ -7,8 +7,7 @@ import { StyledLogoAnimation } from './styles';
 const LogoAnimation = ({ size, className, animate }) => (
   <StyledLogoAnimation
     data-testid="logoAnimation"
-    className={`align-center justify-center logo-loading-wrapper ${className} ${animate &&
-      'animating'}`}
+    className={`align-center justify-center logo-loading-wrapper ${className} ${animate ? 'animating' : ''}`}
     size={size}
   >
     <SnappMarketLogo />
@@ -16,14 +15,14 @@ const LogoAnimation = ({ size, className, animate }) => (
 );
 
 LogoAnimation.propTypes = {
-  size: PropTypes.number,
   className: PropTypes.string,
+  size: PropTypes.number,
   animate: PropTypes.bool,
 };
 
 LogoAnimation.defaultProps = {
-  size: 2.4,
   className: '',
+  size: 2.4,
   animate: true,
 };
 

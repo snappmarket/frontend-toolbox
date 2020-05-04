@@ -53,7 +53,7 @@ export default class SliderArrows {
 
   shiftSlide(dir, action) {
     const {
-      config: { responsive, rtl },
+      config: { responsive, rtl, autoWidth },
       getInfinite,
       getSliderItems,
       setPosInitial,
@@ -84,6 +84,7 @@ export default class SliderArrows {
         dir,
         infinite: getInfinite(),
         rtl,
+        autoWidth,
       };
       if (dir === 1) {
         setIndex(shiftSlideIsDir(shiftSlideParams));

@@ -1,0 +1,58 @@
+---
+name: Label
+route: /ui/label
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import Label from './src/index';
+
+export const colors = ['gray', 'blue', 'red', 'green', 'yellow', 'orange'];
+export const types = ['primary', 'material', 'outline', 'quiet'];
+
+# Demo
+
+<div className="mb-4">
+  <div className="text-center">
+    <p className="text-left">
+      Label supports 6 different colors and 4 types.
+    </p>
+    <Row>
+      {colors.map(color => (
+        <Col xs={2}>
+          {color}
+        </Col>
+      ))}
+    </Row>
+      {types.map(type => (
+    <Row className="mt-1">
+      {colors.map(color => (
+        <Col xs={2}>
+          <Label className="d-block" color={color} type={type}>{type}</Label>
+        </Col>
+      ))}
+    </Row>
+      ))}
+  </div>
+</div>
+
+
+# Basic Usage
+
+<Playground>
+<Label
+    className='foobar'
+    color='green'
+    type='primary'
+    hasBorder={true}
+    radius={0.5}
+    fontSize={1.5}
+>
+  Green Primary Label
+</Label>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Label} />

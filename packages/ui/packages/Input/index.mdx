@@ -1,0 +1,45 @@
+---
+name: Input
+route: /ui/input
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import Input from './src/index';
+
+export const statuses = ['gray', 'red', 'blue', 'orange', 'green', 'yellow'];
+
+# Demo
+
+<div className="mb-4">
+  <div>
+    <p>
+      Input supports 6 different colors, label on top, and a message bellow it to show anything you want like errors and info
+    </p>
+    <Row>
+      {statuses.map(status => (
+        <Col xs={12} sm={6} md={4} className="mb-1">
+            <Input status={status} label={status}  />
+        </Col>
+      ))}
+    </Row>
+  </div>
+</div>
+
+
+# Basic Usage
+
+<Playground>
+<Input
+    className='foobar'
+    status='green'
+    label='foobar'
+    placeholder="enter something here"
+    message={{type: 'success', content:'this is a message'}}
+/>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Input} />
