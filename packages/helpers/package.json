@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/helpers",
   "private": false,
-  "version": "0.2.10-alpha.4",
+  "version": "0.2.10-alpha.9",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -24,7 +24,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "@snappmarket/config": "^0.2.10-alpha.4",
+    "@snappmarket/config": "~0.2.10-alpha.8",
     "abort-controller": "^3.0.0",
     "isomorphic-unfetch": "^3.0.0"
   },

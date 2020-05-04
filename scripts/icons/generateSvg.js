@@ -57,10 +57,10 @@ if (GlobalConfig.options.importSpriteSVG) {
 
 const ${folderName} = ({ className, size }) => {
   const options = useOptions();
-  
+
   let importPrefix = options.useSpriteFile ? '/sprite.svg' : '';
   if(options.publicPath !== '/') {
-    importPrefix = \`\${options.publicPath}\${importPrefix}\`;
+    importPrefix = \`/\${options.publicPath}\${importPrefix}\`;
   }
   
   return (

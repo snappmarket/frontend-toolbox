@@ -15,7 +15,7 @@ const ListSquareIcon = ({ className, size }) => {
 
   let importPrefix = options.useSpriteFile ? '/sprite.svg' : '';
   if (options.publicPath !== '/') {
-    importPrefix = `${options.publicPath}${importPrefix}`;
+    importPrefix = `/${options.publicPath}${importPrefix}`;
   }
 
   return (
