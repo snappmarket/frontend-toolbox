@@ -9,11 +9,9 @@ const Toggle = props => {
   const render = () => (
     <StyledToggleWrapper
       data-testid="toggle"
-      className={className}
+      className={`${className} ${selected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
       size={size}
-      disabled={disabled}
       status={status}
-      selected={selected}
       {...rest}
     >
       <span />
