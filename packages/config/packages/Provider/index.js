@@ -11,7 +11,6 @@ const Provider = ({ theme, language, options, children, ...rest }) => {
   const unifiedOptions = { ...GlobalConfig.options, ...options };
   const unifiedTheme = makeTheme(theme);
 
-  console.log('config: Provider');
   GlobalConfig.language = language;
   GlobalConfig.theme = unifiedTheme;
   GlobalConfig.options = unifiedOptions;
