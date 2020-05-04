@@ -48,32 +48,41 @@ const asyncForEach = async (array, callback) => {
 */
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { useOptions } from '@snappmarket/config';
 
 if(!process.env.SSR && !process.env.CI) {
   // eslint-disable-next-line global-require
   require('./${folderName}.svg');
 }
 
-let importPrefix = '/sprite.svg';
-if(process.env.PUBLIC_URL) {
-  importPrefix = \`\${process.env.PUBLIC_URL}\${importPrefix}\`;
-}
 
-const ${folderName} = ({ className, size }) =>
-  <svg
-    data-testid="${folderName}"
-    viewBox="0 0 ${viewBox
-        .split(' ')
-        .slice(2)
-        .join(' ')}"
-    className={className}
-    style={{
-      width: size * 10,
-      height: size * 10,
-    }}
-    fill="currentColor">
-    <use xlinkHref={\`\${importPrefix}#${folderName}\`} />
-  </svg>;
+
+const ${folderName} = ({ className, size }) => {
+  const options = useOptions();
+  
+  console.log(options);
+  let importPrefix = '/sprite.svg';
+  if(process.env.PUBLIC_URL) {
+    importPrefix = \`\${process.env.PUBLIC_URL}\${importPrefix}\`;
+  }
+  
+  return (
+    <svg
+      data-testid="${folderName}"
+      viewBox="0 0 ${viewBox
+          .split(' ')
+          .slice(2)
+          .join(' ')}"
+      className={className}
+      style={{
+        width: size * 10,
+        height: size * 10,
+      }}
+      fill="currentColor">
+      <use xlinkHref={\`\${importPrefix}#${folderName}\`} />
+    </svg>
+  );
+};
 
 ${folderName}.propTypes = {
   className: PropTypes.string,

@@ -5,13 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import faIR from '../languages/fa-IR';
 import { ToolboxProvider } from './context';
-
-const DEFAULT_OPTIONS = {
-  publicPath: '/',
-  importSpriteSVG: true,
-  exportSvgSprite: false,
-  SSR: false,
-};
+import DEFAULT_OPTIONS from './config';
 
 const Provider = ({ theme, language, options, children, ...rest }) => (
   <ThemeProvider theme={makeTheme(theme)}>

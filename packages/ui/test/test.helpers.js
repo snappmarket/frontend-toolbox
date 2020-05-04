@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { makeTheme } from '../packages/Theme/src';
+import { makeTheme } from '../../config/packages/theme';
 
 const theme = makeTheme();
 
