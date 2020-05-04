@@ -1,0 +1,43 @@
+---
+name: Tab Switcher
+route: /ui/tab-switcher
+menu: 3.Components
+---
+
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import { Tab, TabPanel, TabSwitcher } from './src/index';
+
+<Playground>
+  <TabSwitcher
+    className='foobar'
+    initialTab="foo"
+    onSwitch={() => console.log('tab changed')}
+  >
+    <div className="justify-start">
+      <Tab id="foo">foo</Tab>
+      <Tab id="bar">bar</Tab>
+    </div>
+    <TabPanel whenActive="foo">
+      This is the content of the foo panel
+    </TabPanel>
+    <TabPanel whenActive="bar">
+      This is the content of the bar panel
+    </TabPanel>
+  </TabSwitcher>
+</Playground>
+
+<br />
+
+# TabSwitcher Props
+<Props of={TabSwitcher} />
+
+<br />
+
+# Tab Props
+<Props of={Tab} />
+
+<br />
+
+# TabPanel Props
+<Props of={TabPanel} />
