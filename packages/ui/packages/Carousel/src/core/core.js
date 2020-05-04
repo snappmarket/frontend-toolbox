@@ -14,6 +14,7 @@ import {
   infiniteChecker,
   dragChecker,
   setSliderItemsPosition,
+  calcAutoWidthAllSliderItems,
 } from './utils';
 
 import { shiftSlideIsDir } from './sliderArrows/partial';
@@ -178,6 +179,7 @@ class SliderCore {
       drag,
       nextSpeed,
       customArrow,
+      autoWidth,
     } = this.getConfig();
 
     // reset Slider
@@ -270,7 +272,11 @@ class SliderCore {
       }
       this.sliderArrows = new SliderArrows({ core: this });
       const index = this.getIndex();
-      if (sliderLength <= truncResponsiveItemCount(responsive)) {
+      if (
+        sliderLength <= truncResponsiveItemCount(responsive) ||
+        (autoWidth &&
+          calcAutoWidthAllSliderItems(this.sliderItems) <= this.sliderMainWidth)
+      ) {
         prevNone(slider);
         nextNone(slider);
       }
@@ -291,19 +297,19 @@ class SliderCore {
       let isIntervalRunning = false;
       const time = nextSpeed || 2000;
       const intervalNext = () => {
-        isIntervalRunning = true
-        this.next()
-      }
+        isIntervalRunning = true;
+        this.next();
+      };
       const intervalPlay = () => {
         clearInterval(refreshIntervalId); // Clearing interval if for some reason it has not been cleared yet
-        if  (!isIntervalRunning) {
+        if (!isIntervalRunning) {
           refreshIntervalId = setInterval(intervalNext, time);
         }
-      }
+      };
       const intervalPause = () => {
         clearInterval(refreshIntervalId); // Clearing interval on window blur
         isIntervalRunning = false;
-      }
+      };
       // toggle on mouseHover
       slider.addEventListener('mouseover', intervalPause);
       slider.addEventListener('mouseout', intervalPlay);

@@ -13,6 +13,7 @@ import {
   nextNone,
   addClassToElement,
   removeClassFromElement,
+  calcAutoWidthAllSliderItems,
 } from '../utils';
 
 export const directionTouchClientX = params => {
@@ -223,6 +224,13 @@ export const dragAction = params => {
   if (getSlidesLength() <= perSlide) {
     return false;
   }
+
+  if (autoWidth) {
+    if (calcAutoWidthAllSliderItems(getSliderItems()) <= sliderMainWidth) {
+      return false;
+    }
+  }
+
   addClassToElement({
     item: getSliderItems(),
     className: 'avoid-clicks',
@@ -295,6 +303,12 @@ export const dragEnd = params => {
     return false;
   }
 
+  if (autoWidth) {
+    if (calcAutoWidthAllSliderItems(sliderItems) <= sliderMainWidth) {
+      return false;
+    }
+  }
+
   const thresholdNew = () => {
     if (rtl) return -threshold;
     return threshold;
@@ -356,11 +370,7 @@ export const dragEnd = params => {
     }
   }
 
-  if (
-    !infinite &&
-    !rtl &&
-    getTranslate3d(sliderItems) <= finalItemPosition
-  ) {
+  if (!infinite && !rtl && getTranslate3d(sliderItems) <= finalItemPosition) {
     sliderItems.style.transform = setTranslate3d(finalItemPosition);
     if (nav) {
       nextNone(slider);
@@ -368,11 +378,7 @@ export const dragEnd = params => {
     }
   }
 
-  if (
-    !infinite &&
-    rtl &&
-    getTranslate3d(sliderItems) >= finalItemPosition
-  ) {
+  if (!infinite && rtl && getTranslate3d(sliderItems) >= finalItemPosition) {
     sliderItems.style.transform = setTranslate3d(finalItemPosition);
     if (nav) {
       nextNone(slider);

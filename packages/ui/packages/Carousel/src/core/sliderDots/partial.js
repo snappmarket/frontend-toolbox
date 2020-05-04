@@ -71,12 +71,15 @@ export const setSliderItemsPositionAfterDotClick = params => {
   const finalItemPosition = calcFinalItemPosition(params);
 
   // when slidesLength <= perSlide dots is disable
-  if (slidesLength <= perSlide || (autoWidth && calcAutoWidthAllSliderItems(sliderItems) <= sliderMainWidth)) {
+  if (
+    slidesLength <= perSlide ||
+    (autoWidth && calcAutoWidthAllSliderItems(sliderItems) <= sliderMainWidth)
+  ) {
     return false;
   }
 
   if (autoWidth) {
-    AfterDotClickAutoWidth(params)
+    AfterDotClickAutoWidth(params);
   }
 
   if (!autoWidth) {
@@ -113,17 +116,13 @@ export const setSliderItemsPositionAfterDotClick = params => {
 };
 
 export const AfterDotClickAutoWidth = params => {
-  const {
-    sliderItems,
-    sliderMainWidth,
-    slider,
-    nav,
-    rtl,
-    dotIndex,
-  } = params;
+  const { sliderItems, sliderMainWidth, slider, nav, rtl, dotIndex } = params;
   const firstItemPosition = calcFirstItemPosition(params);
   const finalItemPosition = calcFinalItemPosition(params);
-  if ((dotIndex * sliderMainWidth) >= Math.abs(calcAutoWidthAllSliderItems(sliderItems))) {
+  if (
+    dotIndex * sliderMainWidth >=
+    Math.abs(calcAutoWidthAllSliderItems(sliderItems))
+  ) {
     const result = directionSetter({
       rtl,
       input: finalItemPosition,
@@ -136,7 +135,7 @@ export const AfterDotClickAutoWidth = params => {
     return true;
   }
 
-  if (((dotIndex - 1) * sliderMainWidth) === firstItemPosition) {
+  if ((dotIndex - 1) * sliderMainWidth === firstItemPosition) {
     nextBlock(slider);
     prevNone(slider);
   }
@@ -146,4 +145,4 @@ export const AfterDotClickAutoWidth = params => {
   });
   sliderItems.style.transform = setTranslate3d(result);
   return result;
-}
+};

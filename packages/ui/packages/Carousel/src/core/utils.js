@@ -24,7 +24,7 @@ export const calcCurrentIndex = params => {
     return Math.abs(
       Math.floor(
         getTranslate3d(sliderItems) /
-        vdomArrayConvertor(sliderItems.children)[0].clientWidth,
+          vdomArrayConvertor(sliderItems.children)[0].clientWidth,
       ),
     );
   }
@@ -40,10 +40,7 @@ export const calcCurrentIndex = params => {
 };
 
 export const setActiveclassToCurrent = params => {
-  const {
-    sliderItems,
-    perSlide,
-  } = params;
+  const { sliderItems, perSlide } = params;
   const activeIndex = calcCurrentIndex(params);
   const activeItems = [];
   [...Array(perSlide).keys()].forEach(item =>
@@ -73,7 +70,7 @@ export const calcFinalItemPosition = params => {
   if (autoWidth) {
     return calcFinalWidthAutoWidth(params);
   }
-  return calcFinalWithoutAutoWidth(params)
+  return calcFinalWithoutAutoWidth(params);
 };
 
 export const calcFinalWidthAutoWidth = params => {
@@ -108,9 +105,17 @@ export const calcFirstItemPosition = params => {
 };
 
 export const calcSliderGroupCount = params => {
-  const { slidesLength, responsive, autoWidth, sliderItems, sliderMainWidth } = params;
+  const {
+    slidesLength,
+    responsive,
+    autoWidth,
+    sliderItems,
+    sliderMainWidth,
+  } = params;
   if (autoWidth) {
-    return Math.ceil(calcAutoWidthAllSliderItems(sliderItems) / sliderMainWidth)
+    return Math.ceil(
+      calcAutoWidthAllSliderItems(sliderItems) / sliderMainWidth,
+    );
   }
   return Math.ceil(slidesLength / truncResponsiveItemCount(responsive));
 };
@@ -122,22 +127,24 @@ export const calcSliderChildWidth = params => {
 
 export const setSliderItemsChildWidth = params => {
   const { responsive, slider, sliderItems, autoWidth } = params;
+
   vdomArrayConvertor(sliderItems.children).forEach(child => {
     const newChild = child;
-    newChild.style.width =
-      !autoWidth ?
-        (`${calcSliderChildWidth({
+    /* eslint-disable indent */
+    newChild.style.width = !autoWidth
+      ? `${calcSliderChildWidth({
           responsiveItemCount: responsiveItemCount(responsive),
           slider,
-        })}px`) :
-        (`auto`);
+        })}px`
+      : `auto`;
+    /* eslint-enable indent */
   });
 };
 
 export const calcAutoWidthAllSliderItems = sliderItems => {
   let allChildWidth = 0;
   vdomArrayConvertor(sliderItems.children).forEach(child => {
-    allChildWidth += child.offsetWidth
+    allChildWidth += child.offsetWidth;
   });
   return allChildWidth;
 };
@@ -236,7 +243,6 @@ export const nextBlock = slider => {
   return childFind;
 };
 
-
 export const transitionendWatcher = params => {
   const {
     responsive,
@@ -259,10 +265,11 @@ export const transitionendWatcher = params => {
 
   const perSlide = truncResponsiveItemCount(responsive);
   if (
-    infinite && !autoWidth &&
+    infinite &&
+    !autoWidth &&
     index > perSlide + slidesLength &&
     Math.abs(getTranslate3d(sliderItems)) >=
-    (perSlide + 1 + slidesLength) * sliderItemWidth
+      (perSlide + 1 + slidesLength) * sliderItemWidth
   ) {
     setIndex(
       setSliderItemsPosition({
@@ -288,7 +295,8 @@ export const transitionendWatcher = params => {
 
   // shift to end from start item
   if (
-    infinite && !autoWidth &&
+    infinite &&
+    !autoWidth &&
     (Math.abs(getTranslate3d(sliderItems)) <= 1 ||
       Math.abs(getTranslate3d(sliderItems)) === sliderItemWidth)
   ) {
@@ -367,7 +375,6 @@ export const transitionendWatcher = params => {
 };
 
 export const dotActive = params => {
-
   const { sliderItems, slider, autoWidth, sliderMainWidth } = params;
   const dotsSelector = childFider({
     wrapper: slider,
@@ -378,14 +385,15 @@ export const dotActive = params => {
   let currentDot = null;
 
   if (autoWidth) {
-    const dotIndex = Math.ceil(Math.abs(getTranslate3d(sliderItems)) / sliderMainWidth);
+    const dotIndex = Math.ceil(
+      Math.abs(getTranslate3d(sliderItems)) / sliderMainWidth,
+    );
     currentDot = dotConvertor[dotIndex];
   }
 
   if (activeChecker(sliderItems) >= 0 && !autoWidth) {
     currentDot = dotConvertor[activeChecker(sliderItems)];
   }
-
 
   if ((autoWidth || activeChecker(sliderItems) >= 0) && currentDot) {
     dotConvertor.forEach(child => {
