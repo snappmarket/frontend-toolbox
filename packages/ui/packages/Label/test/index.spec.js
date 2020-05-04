@@ -5,11 +5,12 @@ import '@testing-library/jest-dom/extend-expect';
 import { Wrapper, theme } from '../../../test/test.helpers';
 import Label from '../index';
 
-
 describe('Label ui component tests', () => {
   it('Should render with primary type and blue color at default', () => {
     const { getByTestId } = render(
-      <Wrapper><Label /></Wrapper>,
+      <Wrapper>
+        <Label />
+      </Wrapper>,
     );
 
     expect(getByTestId('label')).toHaveStyle({
@@ -20,7 +21,9 @@ describe('Label ui component tests', () => {
 
   it('Should changes the class when get different colors and type props', () => {
     const { rerender, getByTestId } = render(
-      <Wrapper><Label type="material" color="gray" /></Wrapper>,
+      <Wrapper>
+        <Label type="material" color="gray" />
+      </Wrapper>,
     );
 
     expect(getByTestId('label')).toHaveStyle({
@@ -28,13 +31,21 @@ describe('Label ui component tests', () => {
       color: theme.colors.gray.normal,
     });
 
-    rerender(<Wrapper><Label type="outline" color="red" /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <Label type="outline" color="red" />
+      </Wrapper>,
+    );
     expect(getByTestId('label')).toHaveStyle({
       backgroundColor: 'transparent',
       color: theme.colors.red.normal,
     });
 
-    rerender(<Wrapper><Label type="quiet" color="green" /></Wrapper>);
+    rerender(
+      <Wrapper>
+        <Label type="quiet" color="green" />
+      </Wrapper>,
+    );
     expect(getByTestId('label')).toHaveStyle({
       backgroundColor: '',
       color: theme.colors.green.normal,
@@ -42,7 +53,9 @@ describe('Label ui component tests', () => {
   });
   it('Should changes the class when get fontSize props ', () => {
     const { getByTestId } = render(
-      <Wrapper><Label type="quiet" color="gray" fontSize={5} /></Wrapper>,
+      <Wrapper>
+        <Label type="quiet" color="gray" fontSize={5} />
+      </Wrapper>,
     );
 
     expect(getByTestId('label')).toHaveStyle({
@@ -52,7 +65,9 @@ describe('Label ui component tests', () => {
 
   it('Should add class to element', () => {
     const { getByTestId } = render(
-      <Wrapper><Label className="my-custom-class" /></Wrapper>,
+      <Wrapper>
+        <Label className="my-custom-class" />
+      </Wrapper>,
     );
 
     expect(getByTestId('label')).toHaveClass('my-custom-class');

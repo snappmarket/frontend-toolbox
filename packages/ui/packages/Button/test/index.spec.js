@@ -136,7 +136,6 @@ describe('Button ui component tests', () => {
     expect(getByTestId('button')).toHaveStyle({
       flexDirection: 'row-reverse',
     });
-
   });
 
   it('Should changes the class of loadingSpinner when button get direction props', () => {
@@ -176,7 +175,6 @@ describe('Button ui component tests', () => {
       </Wrapper>,
     );
     expect(getByTestId('buttonLabel')).toHaveClass('ml-1');
-
   });
 
   it('Should add icon in button when get icon props', () => {

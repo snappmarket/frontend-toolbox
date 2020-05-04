@@ -1,7 +1,7 @@
-import { renderHook } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react-hooks';
 import useForceUpdate from '../index';
 
-describe("useForceUpdate tests:" , () => {
+describe('useForceUpdate tests:', () => {
   it('should use useForceUpdate', () => {
     const { result } = renderHook(() => useForceUpdate());
 

@@ -30,18 +30,18 @@ const StyledModal = Styled.div`
   width: calc(${props => props.theme.defaultRem} * ${props => props.width});
   ${props =>
     props.position === 'top' &&
-  `
+    `
     top: calc(${props.theme.defaultRem} * 1);
   `}
   ${props =>
     props.position === 'center' &&
-  `
+    `
     top:50%;
     transform: translateY(-50%);
   `}
   ${props =>
     props.position === 'bottom' &&
-  `
+    `
     top: 100%;
     transform: translateY(calc(-100% - calc(${props.theme.defaultRem} * 1)));
   `}

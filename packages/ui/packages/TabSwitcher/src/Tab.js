@@ -7,9 +7,7 @@ import { context as tabSwitcherContext } from './context';
 import { StyledTab } from './style';
 
 const Tab = props => {
-  const {
-    id, children, onChangeTab, className, ...rest
-  } = props;
+  const { id, children, onChangeTab, className, ...rest } = props;
   const { changeTab, activeTabId } = useContext(tabSwitcherContext);
 
   const handleChangeTab = () => {

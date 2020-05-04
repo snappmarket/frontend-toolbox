@@ -3,31 +3,36 @@
  */
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { useOptions, GlobalConfig } from '@snappmarket/config';
 
-if (!process.env.SSR && !process.env.CI) {
+if (GlobalConfig.options.importSpriteSVG) {
   // eslint-disable-next-line global-require
   require('./MapMarkerIcon.svg');
 }
 
-let importPrefix = '';
-if (process.env.PUBLIC_URL) {
-  importPrefix = `/${process.env.PUBLIC_URL}/sprite.svg`;
-}
+const MapMarkerIcon = ({ className, size }) => {
+  const options = useOptions();
 
-const MapMarkerIcon = ({ className, size }) => (
-  <svg
-    data-testid="MapMarkerIcon"
-    viewBox="0 0 800 800"
-    className={className}
-    style={{
-      width: size * 10,
-      height: size * 10,
-    }}
-    fill="currentColor"
-  >
-    <use xlinkHref={`${importPrefix}#MapMarkerIcon`} />
-  </svg>
-);
+  let importPrefix = options.useSpriteFile ? '/sprite.svg' : '';
+  if (options.publicPath !== '/') {
+    importPrefix = `/${options.publicPath}${importPrefix}`;
+  }
+
+  return (
+    <svg
+      data-testid="MapMarkerIcon"
+      viewBox="0 0 800 800"
+      className={className}
+      style={{
+        width: size * 10,
+        height: size * 10,
+      }}
+      fill="currentColor"
+    >
+      <use xlinkHref={`${importPrefix}#MapMarkerIcon`} />
+    </svg>
+  );
+};
 
 MapMarkerIcon.propTypes = {
   className: PropTypes.string,

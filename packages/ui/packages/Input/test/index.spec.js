@@ -5,7 +5,6 @@ import '@testing-library/jest-dom/extend-expect';
 import { Wrapper, theme } from '../../../test/test.helpers';
 import Input from '../index';
 
-
 describe('Input ui component tests', () => {
   // it('Should render with gray status at default', () => {
   //   const { getByTestId } = render(
@@ -19,7 +18,9 @@ describe('Input ui component tests', () => {
 
   it('Should set id when get id props', () => {
     const { getByTestId } = render(
-      <Wrapper><Input id="inputId" /></Wrapper>,
+      <Wrapper>
+        <Input id="inputId" />
+      </Wrapper>,
     );
 
     expect(getByTestId('input')).toHaveAttribute('id', 'inputId');
@@ -47,12 +48,16 @@ describe('Input ui component tests', () => {
     expect(getByTestId('inputLabel')).toContainElement(labelRequiredFlag);
   });
 
-
   it('Should set value in input when get value props and call onChange callback when get onChange props', () => {
     const callback = jest.fn();
     const { getByTestId } = render(
       <Wrapper>
-        <Input label="input caption" id="inputId" value="inputValue" onChange={callback} />
+        <Input
+          label="input caption"
+          id="inputId"
+          value="inputValue"
+          onChange={callback}
+        />
       </Wrapper>,
     );
     expect(getByTestId('input')).toHaveAttribute('value', 'inputValue');
@@ -61,9 +66,14 @@ describe('Input ui component tests', () => {
 
   it('Should add placeholder when get placeholder props', () => {
     const { getByTestId } = render(
-      <Wrapper><Input placeholder="enter your text here" /></Wrapper>,
+      <Wrapper>
+        <Input placeholder="enter your text here" />
+      </Wrapper>,
     );
 
-    expect(getByTestId('input')).toHaveAttribute('placeholder', 'enter your text here');
+    expect(getByTestId('input')).toHaveAttribute(
+      'placeholder',
+      'enter your text here',
+    );
   });
 });

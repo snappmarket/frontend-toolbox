@@ -7,7 +7,8 @@
  * @param string    {string}    string you want to modify
  * @return {string}
  */
-export const stringReplace = (find, replace, string) => `${string}`.replace(new RegExp(find, "g"), replace)
+export const stringReplace = (find, replace, string) =>
+  `${string}`.replace(new RegExp(find, 'g'), replace);
 
 /**
  * @function
@@ -68,4 +69,5 @@ export const getQueryParams = (url, parameter) => {
  * @param    string    {string}     string you want to change from camel to snake case
  * @returns  {string}
  */
-export const camelToSnakeCase = string => string.replace(/([A-Z])/g, char => `_${char.toLowerCase()}`);
+export const camelToSnakeCase = string =>
+  string.replace(/([A-Z])/g, char => `_${char.toLowerCase()}`);

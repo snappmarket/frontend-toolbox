@@ -10,7 +10,7 @@ import { LogoAnimation } from '../../Loading/src';
  * @returns {*}
  * @constructor
  */
-const Image = ({src, size, loader, error, ...rest}) => (
+const Image = ({ src, size, loader, error, ...rest }) => (
   <Img
     data-testid="image"
     src={src}
@@ -22,14 +22,8 @@ const Image = ({src, size, loader, error, ...rest}) => (
 
 Image.propTypes = {
   src: PropTypes.string.isRequired,
-  loader: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.bool,
-  ]),
-  error: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.bool,
-  ]),
+  loader: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
+  error: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
   size: PropTypes.number,
 };
 

@@ -29,9 +29,7 @@ describe('ObjectHelpers', () => {
   describe('safeObjectPropertyRead ', () => {
     it('should safely get a property value from an object', () => {
       const payload = { foo: '' };
-      expect(ObjectHelpers.safeObjectPropertyRead(payload, 'foo')).toEqual(
-        '',
-      );
+      expect(ObjectHelpers.safeObjectPropertyRead(payload, 'foo')).toEqual('');
     });
     it('should safely get undefined because property is undefined', () => {
       const payload = {};

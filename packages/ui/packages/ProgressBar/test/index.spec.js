@@ -5,11 +5,14 @@ import '@testing-library/jest-dom/extend-expect';
 import { Wrapper } from '../../../test/test.helpers';
 import ProgressBar from '../index';
 
-
 describe('ProgressBar ui component tests', () => {
   it('Should changes the style when get percent props', () => {
     const { getByTestId } = render(
-      <Wrapper><ProgressBar percent={40}><span>test</span></ProgressBar></Wrapper>,
+      <Wrapper>
+        <ProgressBar percent={40}>
+          <span>test</span>
+        </ProgressBar>
+      </Wrapper>,
     );
 
     expect(getByTestId('progressBar')).toHaveStyle({
@@ -19,17 +22,21 @@ describe('ProgressBar ui component tests', () => {
 
   it('Should render progressBar', () => {
     const { getByTestId } = render(
-      <Wrapper><ProgressBar percent={4} /></Wrapper>,
+      <Wrapper>
+        <ProgressBar percent={4} />
+      </Wrapper>,
     );
-    const progressBar = getByTestId('progressBar')
-    expect(getByTestId('progressBarWrapper')).toContainElement(progressBar)
+    const progressBar = getByTestId('progressBar');
+    expect(getByTestId('progressBarWrapper')).toContainElement(progressBar);
   });
 
   it('Should add class to element', () => {
     const { getByTestId } = render(
-      <Wrapper><ProgressBar className="my-custom-class" percent={4}></ProgressBar></Wrapper>,
+      <Wrapper>
+        <ProgressBar className="my-custom-class" percent={4}></ProgressBar>
+      </Wrapper>,
     );
 
-    expect(getByTestId('progressBarWrapper')).toHaveClass("my-custom-class");
+    expect(getByTestId('progressBarWrapper')).toHaveClass('my-custom-class');
   });
 });

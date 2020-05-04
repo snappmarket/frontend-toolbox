@@ -5,11 +5,12 @@ import '@testing-library/jest-dom/extend-expect';
 import { Wrapper, theme } from '../../../test/test.helpers';
 import Toggle from '../index';
 
-
 describe('Toggle ui component tests', () => {
   it('Should render with green status and size of 1.5rem at default', () => {
     const { getByTestId } = render(
-      <Wrapper><Toggle /></Wrapper>,
+      <Wrapper>
+        <Toggle />
+      </Wrapper>,
     );
 
     expect(getByTestId('toggle')).toHaveStyle({
@@ -21,14 +22,14 @@ describe('Toggle ui component tests', () => {
 
   it('Should changes the style when selected props get false value', () => {
     const { getByTestId } = render(
-      <Wrapper><Toggle selected={false} /></Wrapper>,
+      <Wrapper>
+        <Toggle selected={false} />
+      </Wrapper>,
     );
 
     expect(getByTestId('toggle')).toHaveStyle({
       backgroundColor: theme.colors.gray.light,
       justifyContent: 'flex-end',
     });
-
   });
-  
 });

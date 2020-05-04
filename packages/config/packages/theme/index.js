@@ -1,4 +1,4 @@
-const theme = {
+const defaultTheme = {
   defaultRem: '1rem',
   defaultFont: 'IRANSans',
   containerWidth: '1628px',
@@ -61,4 +61,5 @@ const theme = {
   },
 };
 
-export default theme;
+export const makeTheme = (theme = {}) => ({ ...defaultTheme, ...theme });
+export default defaultTheme;

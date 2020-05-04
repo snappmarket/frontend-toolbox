@@ -41,4 +41,5 @@ export const emptyPromise = () => new Promise(resolve => resolve({}));
  * @param delay
  * @returns {Promise<unknown>}
  */
-export const sleep = delay => new Promise(resolve => setTimeout(() => resolve(), delay));
+export const sleep = delay =>
+  new Promise(resolve => setTimeout(() => resolve(), delay));

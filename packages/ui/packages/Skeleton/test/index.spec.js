@@ -6,11 +6,12 @@ import darken from 'polished/lib/color/darken';
 import { Wrapper, theme } from '../../../test/test.helpers';
 import { BoxSkeleton } from '../index';
 
-
 describe('Skeleton ui component tests', () => {
   it('Should render with default props', () => {
     const { getByTestId } = render(
-      <Wrapper><BoxSkeleton /></Wrapper>,
+      <Wrapper>
+        <BoxSkeleton />
+      </Wrapper>,
     );
 
     expect(getByTestId('skeleton')).toHaveStyle({
@@ -23,7 +24,9 @@ describe('Skeleton ui component tests', () => {
 
   it('Should changes the style when get justBorder, justifyContent and alignItems props', () => {
     const { rerender, getByTestId } = render(
-      <Wrapper><BoxSkeleton justBorder  /></Wrapper>,
+      <Wrapper>
+        <BoxSkeleton justBorder />
+      </Wrapper>,
     );
 
     expect(getByTestId('skeleton')).toHaveStyle({
@@ -31,33 +34,49 @@ describe('Skeleton ui component tests', () => {
       border: `2px solid ${darken(0.06, theme.colors.white)}`,
     });
 
-    rerender(<Wrapper><BoxSkeleton /></Wrapper>)
+    rerender(
+      <Wrapper>
+        <BoxSkeleton />
+      </Wrapper>,
+    );
     expect(getByTestId('skeleton')).toHaveStyle({
       justifyContent: 'center',
     });
 
-    rerender(<Wrapper><BoxSkeleton /></Wrapper>)
+    rerender(
+      <Wrapper>
+        <BoxSkeleton />
+      </Wrapper>,
+    );
     expect(getByTestId('skeleton')).toHaveStyle({
       alignItems: 'center',
     });
-    rerender(<Wrapper><BoxSkeleton justifyContent="flex-start" /></Wrapper>)
+    rerender(
+      <Wrapper>
+        <BoxSkeleton justifyContent="flex-start" />
+      </Wrapper>,
+    );
     expect(getByTestId('skeleton')).toHaveStyle({
       justifyContent: 'flex-start',
     });
 
-    rerender(<Wrapper><BoxSkeleton alignItems="flex-start" /></Wrapper>)
+    rerender(
+      <Wrapper>
+        <BoxSkeleton alignItems="flex-start" />
+      </Wrapper>,
+    );
     expect(getByTestId('skeleton')).toHaveStyle({
       alignItems: 'flex-start',
     });
-
   });
 
   it('Should add class to element', () => {
     const { getByTestId } = render(
-      <Wrapper><BoxSkeleton className="my-custom-class" /></Wrapper>,
+      <Wrapper>
+        <BoxSkeleton className="my-custom-class" />
+      </Wrapper>,
     );
 
     expect(getByTestId('skeleton')).toHaveClass('my-custom-class');
   });
 });
-

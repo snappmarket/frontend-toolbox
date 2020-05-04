@@ -19,12 +19,13 @@
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
     "prettify": "prettier --write \"packages/**/*.{js,jsx}\"",
-    "docz:dev": "cross-env BABEL_ENV=docz docz dev",
-    "docz:build": "cross-env BABEL_ENV=docz docz build",
-    "docz:serve": "cross-env BABEL_ENV=docz docz serve",
+    "docz:dev": "yarn docz:generate:svg && cross-env BABEL_ENV=docz docz dev",
+    "docz:build": "yarn docz:generate:svg && cross-env BABEL_ENV=docz docz build",
+    "docz:serve": "yarn docz:generate:svg && cross-env BABEL_ENV=docz docz serve",
     "docz:deploy": "surge .docz/dist",
     "release": "node ./scripts/release/release.js",
-    "jsdoc2docz": "node ./scripts/docs/jsdocs-to-docz.js"
+    "jsdoc2docz": "node ./scripts/docs/jsdocs-to-docz.js",
+    "docz:generate:svg": "node scripts/docs/doczSvgSprite.js packages/icons/packages/**/sprite/*.svg .docz/public/sprite.svg"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

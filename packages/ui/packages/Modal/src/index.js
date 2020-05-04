@@ -1,4 +1,10 @@
-import React, { useEffect, useState, createRef, forwardRef, useRef } from 'react';
+import React, {
+  useEffect,
+  useState,
+  createRef,
+  forwardRef,
+  useRef,
+} from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { CrossIcon } from '@snappmarket/icons/sprite';
@@ -25,7 +31,7 @@ const Modal = forwardRef((props, ref) => {
     width,
     position: initialPosition,
   } = props;
-  const bodyRef = useRef(null)
+  const bodyRef = useRef(null);
   const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const modalRef = createRef();
   const [position, setPosition] = useState(initialPosition);
@@ -125,7 +131,7 @@ const Modal = forwardRef((props, ref) => {
 
   // return createPortal(render(), document.body);
 
-  if(isBodyInitialized) {
+  if (isBodyInitialized) {
     return createPortal(render(), bodyRef.current);
   }
   return null;

@@ -1,23 +1,19 @@
-# TextWrap ui component like bootstrap
-----
+# Snappmarket config
+> 🧮 babel, eslint, theme and etc 
 
-[![version](https://img.shields.io/npm/v/@snappmarket/ui-textwrap.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/ui-textwrap)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/ui-textwrap.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/ui-textwrap)
+[![version](https://img.shields.io/npm/v/@snappmarket/hooks.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/config)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/hooks.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/config)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/ui-textwrap.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/hooks.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/config/blob/master/LICENSE.md)
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
-## get started
+----
+
+## get started 
 ```bash 
-npm i @snappmarket/ui-textwrap
-```
-
-
-## usage
-```javascript
-import { COMPONENT } from '@snappmarket/ui-textwrap';
+npm i @snappmarket/config
 ```
 
 
@@ -32,3 +28,4 @@ in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+

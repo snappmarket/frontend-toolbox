@@ -58,20 +58,15 @@ describe('NumberHelpers', () => {
   });
   describe('currencyPrice', () => {
     it('should apply currency format to a number', () => {
-    
       const number = '1000000';
       const price = '۱,۰۰۰,۰۰۰ تومان';
-     
+
       expect(NumberHelpers.currencyPrice(number)).toEqual(price);
     });
-    it('it should not show unit after price when hasUnit get false value', (hasUnit=false) => {
-      
+    it('it should not show unit after price when hasUnit get false value', (hasUnit = false) => {
       const price = '۱,۰۰۰,۰۰۰';
-     
-      expect(NumberHelpers.currencyPrice(price,hasUnit)).toEqual('۱,۰۰۰,۰۰۰ ');
+
+      expect(NumberHelpers.currencyPrice(price, hasUnit)).toEqual('۱,۰۰۰,۰۰۰ ');
     });
-    
-    
   });
-  
 });

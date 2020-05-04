@@ -11,10 +11,26 @@ const Label = props => {
   const { type, children, ...rest } = props;
 
   const labels = {
-    primary: <StyledPrimaryLabel data-testid="label" {...rest}>{children}</StyledPrimaryLabel>,
-    material: <StyledMaterialLabel data-testid="label" {...rest}>{children}</StyledMaterialLabel>,
-    outline: <StyledOutlineLabel data-testid="label" {...rest}>{children}</StyledOutlineLabel>,
-    quiet: <StyledQuietLabel data-testid="label" {...rest}>{children}</StyledQuietLabel>,
+    primary: (
+      <StyledPrimaryLabel data-testid="label" {...rest}>
+        {children}
+      </StyledPrimaryLabel>
+    ),
+    material: (
+      <StyledMaterialLabel data-testid="label" {...rest}>
+        {children}
+      </StyledMaterialLabel>
+    ),
+    outline: (
+      <StyledOutlineLabel data-testid="label" {...rest}>
+        {children}
+      </StyledOutlineLabel>
+    ),
+    quiet: (
+      <StyledQuietLabel data-testid="label" {...rest}>
+        {children}
+      </StyledQuietLabel>
+    ),
   };
 
   return labels[type];

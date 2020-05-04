@@ -18,14 +18,14 @@ const StyledTableFooter = Styled.tfoot`
 const StyledTableRow = Styled.tr`
   &:not(:last-child){
     border-bottom: solid calc(${props =>
-    props.theme.defaultRem} * 0.1) ${props =>
+      props.theme.defaultRem} * 0.1) ${props =>
   props.theme.colors.gray['ultra-light']};
   }
   > * {
     padding: calc(${props => props.theme.defaultRem} * 1);
     &:not(:first-child){
       border-right: solid calc(${props =>
-    props.theme.defaultRem} * 0.1) ${props =>
+        props.theme.defaultRem} * 0.1) ${props =>
   props.theme.colors.gray['ultra-light']};
     }
   }
