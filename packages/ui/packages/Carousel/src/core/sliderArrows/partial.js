@@ -30,7 +30,7 @@ export const shiftSlideIsDir = params => {
     return shiftSlideIsDirAutoWidth({
       ...params,
       FinalItemPosition,
-    })
+    });
   }
 
   const newIndex = index + perSlide;
@@ -130,10 +130,11 @@ export const shiftSlideNonDirAutoWidth = params => {
     rtl,
     input: Math.abs(getTranslate3d(sliderItems)) - sliderMainWidth,
   });
-  if (!infinite && (
-    (!rtl && result <= firstItemPosition) ||
-    (rtl && result >= firstItemPosition)
-  )) {
+  if (
+    !infinite &&
+    ((!rtl && result <= firstItemPosition) ||
+      (rtl && result >= firstItemPosition))
+  ) {
     nextBlock(slider);
     prevNone(slider);
     sliderItems.style.transform = setTranslate3d(firstItemPosition);
@@ -141,7 +142,7 @@ export const shiftSlideNonDirAutoWidth = params => {
   }
   sliderItems.style.transform = setTranslate3d(-result);
   return index;
-}
+};
 
 export const shiftSlideIsDirAutoWidth = params => {
   const {
@@ -159,10 +160,12 @@ export const shiftSlideIsDirAutoWidth = params => {
   });
 
   if (!infinite && Math.abs(result) >= Math.abs(FinalItemPosition)) {
-    sliderItems.style.transform = setTranslate3d(directionSetter({
-      rtl,
-      input: FinalItemPosition,
-    }));
+    sliderItems.style.transform = setTranslate3d(
+      directionSetter({
+        rtl,
+        input: FinalItemPosition,
+      }),
+    );
     nextNone(slider);
     prevBlock(slider);
     return index;
@@ -170,4 +173,4 @@ export const shiftSlideIsDirAutoWidth = params => {
 
   sliderItems.style.transform = setTranslate3d(-result);
   return index;
-}
+};
