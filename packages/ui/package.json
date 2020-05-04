@@ -21,10 +21,10 @@
     "start": "rollup -c -w"
   },
   "dependencies": {
-    "@snappmarket/config": "^0.2.10",
-    "@snappmarket/helpers": "^0.2.10",
-    "@snappmarket/hooks": "^0.2.10",
-    "@snappmarket/icons": "^0.2.10",
+    "@snappmarket/config": "^0.2.10-alpha.4",
+    "@snappmarket/helpers": "^0.2.10-alpha.4",
+    "@snappmarket/hooks": "^0.2.10-alpha.4",
+    "@snappmarket/icons": "^0.2.10-alpha.4",
     "polished": "^3.4.2",
     "react-hgs-input-range": "^1.3.1",
     "react-image": "^2.2.2",

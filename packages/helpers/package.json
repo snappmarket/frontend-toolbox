@@ -24,7 +24,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "@snappmarket/config": "^0.2.10",
+    "@snappmarket/config": "^0.2.10-alpha.4",
     "abort-controller": "^3.0.0",
     "isomorphic-unfetch": "^3.0.0"
   },
