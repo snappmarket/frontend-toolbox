@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/icons",
   "private": false,
-  "version": "0.2.9",
+  "version": "0.2.10-alpha.1",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -22,6 +22,9 @@
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
+  },
+  "dependencies": {
+    "@snappmarket/config": "^0.2.6"
   },
   "peerDependencies": {
     "prop-types": "^15.0.0",

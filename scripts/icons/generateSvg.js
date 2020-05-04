@@ -48,22 +48,19 @@ const asyncForEach = async (array, callback) => {
 */
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useOptions } from '@snappmarket/config';
+import { useOptions, GlobalConfig } from '@snappmarket/config';
 
-if(!process.env.SSR && !process.env.CI) {
+if (GlobalConfig.options.importSpriteSVG) {
   // eslint-disable-next-line global-require
   require('./${folderName}.svg');
 }
 
-
-
 const ${folderName} = ({ className, size }) => {
   const options = useOptions();
   
-  console.log(options);
-  let importPrefix = '/sprite.svg';
-  if(process.env.PUBLIC_URL) {
-    importPrefix = \`\${process.env.PUBLIC_URL}\${importPrefix}\`;
+  let importPrefix = options.useSpriteFile ? '/sprite.svg' : '';
+  if(options.publicPath !== '/') {
+    importPrefix = \`\${options.publicPath}\${importPrefix}\`;
   }
   
   return (

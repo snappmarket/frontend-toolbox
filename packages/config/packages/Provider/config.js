@@ -1,6 +1,12 @@
-export default {
-  publicPath: '/',
-  importSpriteSVG: true,
-  exportSvgSprite: false,
-  SSR: false,
+const GlobalConfig = {
+  options: {
+    publicPath: '/',
+    importSpriteSVG: false,
+    useSpriteFile: true,
+    SSR: false,
+  },
+  theme: {},
+  language: {},
 };
+
+export default GlobalConfig;

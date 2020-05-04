@@ -3,31 +3,36 @@
  */
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { useOptions, GlobalConfig } from '@snappmarket/config';
 
-if (!process.env.SSR && !process.env.CI) {
+if (GlobalConfig.options.importSpriteSVG) {
   // eslint-disable-next-line global-require
   require('./BinocularsIcon.svg');
 }
 
-let importPrefix = '/sprite.svg';
-if (process.env.PUBLIC_URL) {
-  importPrefix = `${process.env.PUBLIC_URL}${importPrefix}`;
-}
+const BinocularsIcon = ({ className, size }) => {
+  const options = useOptions();
 
-const BinocularsIcon = ({ className, size }) => (
-  <svg
-    data-testid="BinocularsIcon"
-    viewBox="0 0 32 32"
-    className={className}
-    style={{
-      width: size * 10,
-      height: size * 10,
-    }}
-    fill="currentColor"
-  >
-    <use xlinkHref={`${importPrefix}#BinocularsIcon`} />
-  </svg>
-);
+  let importPrefix = options.useSpriteFile ? '/sprite.svg' : '';
+  if (options.publicPath !== '/') {
+    importPrefix = `${options.publicPath}${importPrefix}`;
+  }
+
+  return (
+    <svg
+      data-testid="BinocularsIcon"
+      viewBox="0 0 32 32"
+      className={className}
+      style={{
+        width: size * 10,
+        height: size * 10,
+      }}
+      fill="currentColor"
+    >
+      <use xlinkHref={`${importPrefix}#BinocularsIcon`} />
+    </svg>
+  );
+};
 
 BinocularsIcon.propTypes = {
   className: PropTypes.string,

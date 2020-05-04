@@ -1,33 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeTheme } from '@snappmarket/ui';
 import { ThemeProvider } from 'styled-components';
 
-import faIR from '../languages/fa-IR';
+import { makeTheme } from '../theme';
 import { ToolboxProvider } from './context';
-import DEFAULT_OPTIONS from './config';
+import faIR from '../languages/fa-IR';
+import GlobalConfig from './config';
 
-const Provider = ({ theme, language, options, children, ...rest }) => (
-  <ThemeProvider theme={makeTheme(theme)}>
+const Provider = ({ theme, language, options, children, ...rest }) => {
+  const unifiedOptions = { ...GlobalConfig.options, ...options };
+  const unifiedTheme = makeTheme(theme);
+
+  console.log('config: Provider');
+  GlobalConfig.language = language;
+  GlobalConfig.theme = unifiedTheme;
+  GlobalConfig.options = unifiedOptions;
+
+  return (
     <ToolboxProvider
       value={{
         language,
-        options: { ...DEFAULT_OPTIONS, ...options },
+        options: unifiedOptions,
         ...rest,
       }}
     >
-      {children}
+      <ThemeProvider theme={unifiedTheme}>{children}</ThemeProvider>
     </ToolboxProvider>
-  </ThemeProvider>
-);
+  );
+};
 
 Provider.propTypes = {
   theme: PropTypes.object,
-  language: PropTypes.string,
+  language: PropTypes.object,
   options: PropTypes.shape({
-    importSpriteSVG: PropTypes.bool,
     SSR: PropTypes.bool,
-    exportSvgSprite: PropTypes.bool,
+    importSpriteSVG: PropTypes.bool,
+    useSpriteFile: PropTypes.bool,
     publicPath: PropTypes.string,
   }),
   children: PropTypes.node,
@@ -35,7 +43,7 @@ Provider.propTypes = {
 
 Provider.defaultProps = {
   language: faIR,
-  options: DEFAULT_OPTIONS,
+  options: {},
   theme: {},
 };
 

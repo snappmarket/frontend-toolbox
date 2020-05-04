@@ -11,6 +11,7 @@ const input = './packages/index.js';
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
+  '@snappmarket/config': 'snappmarketConfig',
 };
 const babelOptions = {
   exclude: /node_modules/,
