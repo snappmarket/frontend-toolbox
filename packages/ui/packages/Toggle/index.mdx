@@ -1,0 +1,45 @@
+---
+name: Toggle
+route: /ui/toggle
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import Toggle from './src/index';
+
+export const statuses = ['gray', 'red', 'blue', 'orange', 'green', 'yellow'];
+
+# Demo
+
+<div className="mb-4">
+  <div>
+    <p>
+      Toggle supports 6 different colors, and also a disabled status
+    </p>
+    <Row>
+      {statuses.map(status => (
+        <Col xs={12} sm={6} md={4} className="mb-1 text-center">
+            <Toggle className="mr-1" status={status} size={2} />
+            <code>{status}</code>
+        </Col>
+      ))}
+    </Row>
+  </div>
+</div>
+
+# Basic Usage
+<Playground>
+  <div className="justify-start">
+    <Toggle className="mr-1" status="green" size={3} />
+    <span>Enable</span>
+  </div>
+  <div className="justify-start mt-1">
+    <Toggle className="mr-1" status="green" size={3} disabled />
+    <span>Disable</span>
+  </div>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Toggle} />

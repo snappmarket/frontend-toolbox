@@ -1,0 +1,47 @@
+---
+name: Textarea
+route: /ui/textarea
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import Textarea from './src/index';
+
+export const statuses = ['gray', 'red', 'blue', 'orange', 'green', 'yellow'];
+
+# Demo
+
+<div className="mb-4">
+  <div>
+    <p>
+      Textarea supports 6 different colors, and a message bellow it to show anything you want like errors and info
+    </p>
+    <Row>
+      {statuses.map(status => (
+        <Col xs={12} sm={6} md={4} className="mb-1">
+            <Textarea status={status} label={status} placeholder="enter something"  />
+        </Col>
+      ))}
+    </Row>
+  </div>
+</div>
+
+
+# Basic Usage
+
+<Playground>
+<Textarea
+    className='foobar'
+    status='green'
+    label='foobar'
+    placeholder="enter something here"
+    message={{type: 'success', content:'this is a message'}}
+    onChange={value => console.log(value)}
+/>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Textarea
+} />
