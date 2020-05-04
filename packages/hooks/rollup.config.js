@@ -11,6 +11,7 @@ const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
   'react-router-dom': 'ReactRouterDOM',
+  '@snappmarket/config': 'snappmarketConfig',
 };
 
 const babelOptions = {
