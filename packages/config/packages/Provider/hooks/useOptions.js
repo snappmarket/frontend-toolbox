@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { context } from '../context';
+import ToolboxContext from '../context';
 import GlobalConfig from '../config';
 
 const useOptions = () => {
-  const { options } = useContext(context);
+  const { options } = useContext(ToolboxContext);
 
   if (!options) {
     return GlobalConfig.options;

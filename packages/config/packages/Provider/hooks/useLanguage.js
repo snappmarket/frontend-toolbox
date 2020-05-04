@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { context } from '../context';
+import ToolboxContext from '../context';
 
 const useLanguage = () => {
-  const { language } = useContext(context);
-  return language
+  const { language } = useContext(ToolboxContext);
+  return language;
 };
 
 export default useLanguage;

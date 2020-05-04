@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import { makeTheme } from '../theme';
-import { ToolboxProvider } from './context';
+import ToolboxContext from './context';
 import faIR from '../languages/fa-IR';
 import GlobalConfig from './config';
 
-const Provider = ({ theme, language, options, children, ...rest }) => {
+const Provider = ({ theme, language, options, children }) => {
   const unifiedOptions = { ...GlobalConfig.options, ...options };
   const unifiedTheme = makeTheme(theme);
 
@@ -16,15 +16,11 @@ const Provider = ({ theme, language, options, children, ...rest }) => {
   GlobalConfig.options = unifiedOptions;
 
   return (
-    <ToolboxProvider
-      value={{
-        language,
-        options: unifiedOptions,
-        ...rest,
-      }}
+    <ToolboxContext.Provider
+      value={GlobalConfig}
     >
       <ThemeProvider theme={unifiedTheme}>{children}</ThemeProvider>
-    </ToolboxProvider>
+    </ToolboxContext.Provider>
   );
 };
 
