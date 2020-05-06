@@ -22,6 +22,7 @@ const Button = props => {
     label,
     fullWidth,
     loading,
+    role,
     ...rest
   } = props;
 
@@ -86,6 +87,7 @@ const Button = props => {
       <StyledPrimaryButton
         data-testid="button"
         fullWidth={fullWidth}
+        role={role}
         {...options}
       >
         {content}
@@ -95,13 +97,14 @@ const Button = props => {
       <StyledOutlineButton
         data-testid="button"
         fullWidth={fullWidth}
+        role={role}
         {...options}
       >
         {content}
       </StyledOutlineButton>
     ),
     link: (
-      <StyledLinkButton data-testid="button" fullWidth={fullWidth} {...options}>
+      <StyledLinkButton data-testid="button" fullWidth={fullWidth} role={role} {...options}>
         {content}
       </StyledLinkButton>
     ),
@@ -122,6 +125,7 @@ Button.propTypes = {
     PropTypes.node,
   ]),
   fullWidth: PropTypes.bool,
+  role: PropTypes.string,
   loading: PropTypes.bool,
   label: PropTypes.string,
   className: PropTypes.string,
@@ -139,5 +143,6 @@ Button.defaultProps = {
   className: '',
   loading: false,
   direction: 'right',
+  role:'button',
 };
 export default Button;
