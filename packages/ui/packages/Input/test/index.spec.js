@@ -6,16 +6,6 @@ import { Wrapper, theme } from '../../../test/test.helpers';
 import Input from '../index';
 
 describe('Input ui component tests', () => {
-  // it('Should render with gray status at default', () => {
-  //   const { getByTestId } = render(
-  //     <Wrapper><Input /></Wrapper>,
-  //   );
-
-  //   expect(getByTestId('input')).toHaveStyle({
-  //     borderColor: theme.colors.gray['ultra-light'],
-  //   });
-  // });
-
   it('Should set id when get id props', () => {
     const { getByTestId } = render(
       <Wrapper>
@@ -46,6 +36,28 @@ describe('Input ui component tests', () => {
     const labelRequiredFlag = getByTestId('labelRequiredFlag');
 
     expect(getByTestId('inputLabel')).toContainElement(labelRequiredFlag);
+  });
+  it('Should add success message below the input when it gets a message prop', () => {
+    const { getByTestId } = render(
+      <Wrapper>
+        <Input message={{type: 'success', message: 'this is a success message'}} />
+      </Wrapper>,
+    );
+    const messageWrapper = getByTestId('inputMessages');
+
+    expect(getByTestId('inputLabel')).toContainElement(messageWrapper);
+    expect(messageWrapper).toHaveStyleRule('green', theme.colors.green.normal);
+  });
+  it('Should add error message below the input when it gets a message prop', () => {
+    const { getByTestId } = render(
+      <Wrapper>
+        <Input message={{type: 'error', message: 'this is a error message'}} />
+      </Wrapper>,
+    );
+    const messageWrapper = getByTestId('inputMessages');
+
+    expect(getByTestId('inputLabel')).toContainElement(messageWrapper);
+    expect(messageWrapper).toHaveStyleRule('green', theme.colors.red.normal);
   });
 
   it('Should set value in input when get value props and call onChange callback when get onChange props', () => {
