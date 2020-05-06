@@ -13,13 +13,17 @@ import { Accordion, AccordionHead, AccordionContent } from './src/index'
     onClose={() => console.log('closed')}
   >
     <AccordionHead id="foo">
-      <h2>Foo Header</h2>
+      {(open, close, isOpen) => (
+        <h2 onClick={() => !isOpen ? open() : close()}>Foo Header</h2>
+      )}
     </AccordionHead>
     <AccordionContent whenActive="foo">
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
     </AccordionContent>
     <AccordionHead id="bar">
-      <h2>Bar Header</h2>
+      {(open, close, isOpen) => (
+        <h2 onClick={() => !isOpen ? open() : close()}>Bar Header</h2>
+      )}
     </AccordionHead>
     <AccordionContent whenActive="bar">
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
