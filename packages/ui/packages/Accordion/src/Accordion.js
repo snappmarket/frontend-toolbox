@@ -59,6 +59,7 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
   animate: true,
+  initialAccordion: '',
   onOpen: f => f,
   onClose: f => f,
 };
