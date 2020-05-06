@@ -4,33 +4,42 @@ route: /ui/Accordion
 menu: 3.Components
 ---
 
-# Accordion ui component
-----
+import { Playground, Props } from 'docz';
+import { Accordion, AccordionHead, AccordionContent } from './src/index'
 
-[![version](https://img.shields.io/npm/v/@snappmarket/ui-accordion.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/ui-accordion)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/ui-accordion.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/ui-accordion)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/ui-accordion.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+<Playground>
+  <Accordion
+    onOpen={() => console.log('opened')}
+    onClose={() => console.log('closed')}
+  >
+    <AccordionHead id="foo">
+      <h2>Foo Header</h2>
+    </AccordionHead>
+    <AccordionContent whenActive="foo">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+    </AccordionContent>
+    <AccordionHead id="bar">
+      <h2>Bar Header</h2>
+    </AccordionHead>
+    <AccordionContent whenActive="bar">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+    </AccordionContent>
+  </Accordion>
+</Playground>
 
-[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
-[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+<br />
 
-## get started
-```bash
-// with npm
-npm i @snappmarket/ui # or npm i @snappmarket/ui-accordion
+# Accordion Props
+<Props of={Accordion} />
 
-// with yarn
-yarn add @snappmarket/ui # or yarn add @snappmarket/ui-accordion
-```
+<br />
 
+# AccordionHead Props
+<Props of={AccordionHead} />
 
-## usage
-```javascript
-import { Accordion, AccordionHead, AccordionContent } from '@snappmarket/ui';
+<br />
 
-//OR
+# AccordionContent Props
+<Props of={AccordionContent} />
 
-import { Accordion, AccordionHead, AccordionContent } from '@snappmarket/ui-accordion';
-```
-
+<br />
