@@ -53,11 +53,35 @@ describe('Grid ui component tests on Col', () => {
       media: `(min-width: ${theme.viewports.xs}px)`,
     });
   });
-  it('Should render when layout type is not object ', () => {
+
+  it('Should render when layout type is not an object ', () => {
     const xsGrid = renderer
       .create(
         <Wrapper>
-          <Col layouts="xs">
+          <Col xs={12}>
+            <div data-testid="gridChild">test</div>
+          </Col>
+        </Wrapper>,
+      )
+      .toJSON();
+    expect(xsGrid).toHaveStyleRule('max-width', `100%`, {
+      media: `(min-width: ${theme.viewports.xs}px)`,
+    });
+    expect(xsGrid).toHaveStyleRule('flex', `0 0 100%`, {
+      media: `(min-width: ${theme.viewports.xs}px)`,
+    });
+    expect(xsGrid).toHaveStyleRule('order', 'unset', {
+      media: `(min-width: ${theme.viewports.xs}px)`,
+    });
+    expect(xsGrid).toHaveStyleRule('margin-right', '0%', {
+      media: `(min-width: ${theme.viewports.xs}px)`,
+    });
+  });
+  it('Should render when layout type is an empty object ', () => {
+    const xsGrid = renderer
+      .create(
+        <Wrapper>
+          <Col xs={{}}>
             <div data-testid="gridChild">test</div>
           </Col>
         </Wrapper>,
@@ -87,7 +111,7 @@ describe('Grid ui component tests on Col', () => {
     const xsGrid = renderer
       .create(
         <Wrapper>
-          <Col layouts={layouts}>
+          <Col {...layouts}>
             <div data-testid="gridChild">test</div>
           </Col>
         </Wrapper>,
