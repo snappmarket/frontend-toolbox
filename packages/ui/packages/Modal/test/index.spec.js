@@ -1,8 +1,8 @@
-import React from 'react';
-import {fireEvent, render} from '@testing-library/react';
+import React, { useState } from 'react';
+import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { Wrapper } from '../../../test/test.helpers';
+import { Wrapper, theme } from '../../../test/test.helpers';
 import Modal from '../index';
 
 describe('Modal ui component tests', () => {
@@ -74,59 +74,108 @@ describe('Modal ui component tests', () => {
       expect(modalWrapper).toContainElement(closeModalButton);
     });
   });
-  describe('open and close callbacks tests', () => {
-    
+  describe('test the position of the modal based on position prop', () => {
+    it('Should render modal fixed on top of the page', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility position="top" />
+        </Wrapper>,
+      );
+      const modal = getByTestId('modal');
+      expect(modal).toHaveStyle(`top: calc(${theme.defaultRem} * 1)`);
+    });
+    it('Should render modal fixed on center of the page', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility position="center" />
+        </Wrapper>,
+      )
+      const modal = getByTestId('modal');
+      expect(modal).toHaveStyle({
+        top: `50%`,
+        transform: `translateY(-50%)`,
+      });
+    });
+    it('Should render modal fixed on bottom of the page', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility position="bottom" />
+        </Wrapper>,
+      );
+      const modal = getByTestId('modal');
+      expect(modal).toHaveStyle({
+        top: `100%`,
+        transform: `translateY(calc(-100% - calc(${theme.defaultRem} * 1)))`,
+      });
+    });
+    it('Should ignore the given position by prop and set the position to top cause window height is less than modal height', () => {
+      const originalHeight = window.innerHeight;
+      window.innerHeight = -20;
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility position="center" />
+        </Wrapper>,
+      );
+      const modal = getByTestId('modal');
+      expect(modal).toHaveStyle(`top: calc(${theme.defaultRem} * 1)`);
+      window.innerHeight = originalHeight;
+    });
   });
 
-  // it('Should add header in modal when get header props', () => {
-  //   const { getByTestId } = render(
-  //     <Wrapper>
-  //       <Modal
-  //         visibility
-  //         header={<span>modal header</span>}
-  //       >
-  //       </Modal>
-  //     </Wrapper>,
-  //   );
-  //
-  //   expect(getByTestId('modalHeader')).toContainHTML(
-  //     '<span>modal header</span>',
-  //   );
-  // });
-  //
-  // it('Should add close button modal when get handleClose props and call handleClose when close button has been clicked ', () => {
-  //   const handleClose = jest.fn();
-  //   const { getByTestId } = render(
-  //     <Wrapper>
-  //       <Modal handleClose={handleClose} visibility />
-  //     </Wrapper>,
-  //   );
-  //   const closeModalButton = getByTestId('closeModalButton');
-  //   expect(getByTestId('modalWrapper')).toContainElement(closeModalButton);
-  //
-  //   expect(handleClose).toHaveBeenCalledTimes(0);
-  //   fireEvent.click(closeModalButton);
-  //   expect(handleClose).toHaveBeenCalledTimes(1);
-  //
-  // });
-  //
-  // it('Should call onOpen callback when get onOpen props', () => {
-  //   const onOpen = jest.fn();
-  //   render(
-  //     <Wrapper>
-  //       <Modal onOpen={onOpen} visibility />
-  //     </Wrapper>,
-  //   );
-  //   expect(onOpen).toHaveBeenCalledTimes(1);
-  // });
-  //
-  // it('Should add class to element', () => {
-  //   const { getByTestId } = render(
-  //     <Wrapper>
-  //       <Modal className="my-custom-class" visibility />
-  //     </Wrapper>,
-  //   );
-  //
-  //   expect(getByTestId('modalWrapper')).toHaveClass('my-custom-class');
-  // });
+  describe('open and close callbacks tests', () => {
+    const ModalWrapperComponent = ({onClose, onOpen}) => {
+      const [visibility, setVisibility] = useState(false);
+      const handleClose = () => {
+        onClose();
+        setVisibility(false);
+      }
+      return (
+        <>
+          <button
+            onClick={() => setVisibility(true)}
+            data-testid="modalOpener"
+          >
+            open the modal
+          </button>
+          <Modal
+            visibility={visibility}
+            handleClose={handleClose}
+            onOpen={onOpen}
+          />
+        </>
+      )
+    }
+
+    it('should test modal close button click', () => {
+      const onOpen = jest.fn();
+      const onClose = jest.fn();
+      const { getByTestId } = render(
+        <Wrapper>
+          <ModalWrapperComponent onClose={onClose} onOpen={onOpen} />
+        </Wrapper>,
+      );
+      const modalOpener = getByTestId('modalOpener');
+      expect(onOpen).toHaveBeenCalledTimes(0);
+      expect(onClose).toHaveBeenCalledTimes(0);
+
+      fireEvent.click(modalOpener);
+      expect(onOpen).toHaveBeenCalledTimes(1);
+      expect(onClose).toHaveBeenCalledTimes(0);
+
+      const closeModalButton = getByTestId('closeModalButton');
+      fireEvent.click(closeModalButton);
+      expect(onOpen).toHaveBeenCalledTimes(1);
+      expect(onClose).toHaveBeenCalledTimes(1);
+
+      fireEvent.click(modalOpener);
+      expect(onOpen).toHaveBeenCalledTimes(2);
+      expect(onClose).toHaveBeenCalledTimes(1);
+
+      const modalLightBox = getByTestId('modalLightBox');
+      fireEvent.click(modalLightBox);
+      expect(onOpen).toHaveBeenCalledTimes(2);
+      expect(onClose).toHaveBeenCalledTimes(2);
+
+    });
+  });
 });
