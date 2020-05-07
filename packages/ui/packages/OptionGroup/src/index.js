@@ -32,6 +32,8 @@ const OptionGroup = props => {
         <div className="flex-row align-center" key={option.value}>
           <StyledOptionItem
             selected={option.value === selectedItem}
+            role="radio"
+            aria-checked={option.value === selectedItem ? 'true' : 'false'}
             onClick={() => handleSetItem(option)}
             disabled={option.disabled}
           >
