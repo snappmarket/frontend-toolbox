@@ -15,6 +15,15 @@ describe('Input ui component tests', () => {
 
     expect(getByTestId('input')).toHaveAttribute('id', 'inputId');
   });
+  it('Should not set id and label should have empty htmlFor attribute', () => {
+    const { getByTestId } = render(
+      <Wrapper>
+        <Input label="foo" />
+      </Wrapper>,
+    );
+
+    expect(getByTestId('inputLabel')).toHaveAttribute('for', '');
+  });
 
   it('Should add label in input when get label props', () => {
     const { getByTestId } = render(
@@ -45,19 +54,19 @@ describe('Input ui component tests', () => {
     );
     const messageWrapper = getByTestId('inputMessages');
 
-    expect(getByTestId('inputLabel')).toContainElement(messageWrapper);
-    expect(messageWrapper).toHaveStyleRule('green', theme.colors.green.normal);
+    expect(getByTestId('inputWrapper')).toContainElement(messageWrapper);
+    expect(messageWrapper).toHaveStyle(`color: ${theme.colors.green.normal}`);
   });
   it('Should add error message below the input when it gets a message prop', () => {
     const { getByTestId } = render(
       <Wrapper>
-        <Input message={{type: 'error', message: 'this is a error message'}} />
+        <Input message={{type: 'danger', message: 'this is a error message'}} />
       </Wrapper>,
     );
     const messageWrapper = getByTestId('inputMessages');
 
-    expect(getByTestId('inputLabel')).toContainElement(messageWrapper);
-    expect(messageWrapper).toHaveStyleRule('green', theme.colors.red.normal);
+    expect(getByTestId('inputWrapper')).toContainElement(messageWrapper);
+    expect(messageWrapper).toHaveStyle(`color: ${theme.colors.red.normal}`);
   });
 
   it('Should set value in input when get value props and call onChange callback when get onChange props', () => {
