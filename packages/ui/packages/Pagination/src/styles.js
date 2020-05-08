@@ -22,28 +22,22 @@ const StyledNavigateButton = Styled.li`
   svg {
     &:first-child {
       margin-left: calc(${props => props.theme.defaultRem} * -0.8)
-
     }
+  }
+  &[disabled] {
+    opacity: 0.7;
   }
 `;
 const StyledPaginationItem = Styled(StyledNavigateButton)`
   background-color: ${props => props.theme.colors.blue.bright};
   transition: all 0.3s ease 0.1s;
-  ${props =>
-    props.disabled
-      ? `
-    cursor: not-allowed;
-    opacity: 0.7;
-  `
-      : `
-    &:hover, &.active {
-      background-color: ${props.theme.colors.blue.normal};
-      color: ${props.theme.colors.white};
-    }
-    &.active:hover {
-      cursor: default;
-    }
-  `}
+  &:hover, &.active {
+    background-color: ${props => props.theme.colors.blue.normal};
+    color: ${props => props.theme.colors.white};
+  }
+  &.active:hover {
+    cursor: default;
+  }
 `;
 
 export {
