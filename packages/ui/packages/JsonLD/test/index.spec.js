@@ -5,9 +5,9 @@ import '@testing-library/jest-dom/extend-expect';
 import { Wrapper } from '../../../test/test.helpers';
 import JsonLD from '../index';
 
-describe('Input ui component tests', () => {
+describe('JsonLD ui component tests', () => {
 
-  it('Should set id when get id props', () => {
+  it('Should write schema in a script element wherever JsonLD component was called', () => {
     const schema = {
       "@context": "http://schema.org",
       "@type": "WebPage",
