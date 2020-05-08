@@ -26,8 +26,9 @@ const OptionGroup = props => {
   useEffect(() => {
     setSelectedItem(initialSelectedItem);
   }, [initialSelectedItem]);
+
   const render = () => (
-    <StyledOptionGroup className={className} {...rest}>
+    <StyledOptionGroup className={className} data-testid="optionGroup" {...rest}>
       {options.map(option => (
         <div className="flex-row align-center" key={option.value}>
           <StyledOptionItem
@@ -36,18 +37,20 @@ const OptionGroup = props => {
             aria-checked={option.value === selectedItem ? 'true' : 'false'}
             onClick={() => handleSetItem(option)}
             disabled={option.disabled}
+            data-testid="optionItem"
           >
             {hasRadio && (
               <CheckBox
                 className="circle"
                 size={radioSize}
                 selected={option.value === selectedItem}
+                data-testid="itemRadio"
                 {...rest}
               />
             )}
-            <span className={hasRadio ? 'pr-1' : ''}>{option.title}</span>
+            <span className={hasRadio ? 'pr-1' : ''} data-testid="itemTitle">{option.title}</span>
           </StyledOptionItem>
-          {!!option.meta && option.meta}
+          {!!option.meta && <span data-testid="itemMeta">{option.meta}</span>}
         </div>
       ))}
     </StyledOptionGroup>
@@ -70,7 +73,7 @@ OptionGroup.defaultProps = {
   hasRadio: true,
   radioSize: 1.2,
   selectedItem: '',
-  onSelectItem: () => {},
+  onSelectItem: f => f,
 };
 
 export default OptionGroup;
