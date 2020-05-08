@@ -1,85 +1,181 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { useState } from 'react';
+import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { Wrapper } from '../../../test/test.helpers';
+import { Wrapper, theme } from '../../../test/test.helpers';
 import Modal from '../index';
 
 describe('Modal ui component tests', () => {
-  it('Should render with default size and center position at default', () => {
-    const { getByTestId } = render(
-      <Wrapper>
-        <Modal visibility />
-      </Wrapper>,
-    );
-
-    expect(getByTestId('modal')).toHaveStyle({
-      width: 'calc(70 * 1rem)',
-      top: '50%',
-      transform: 'translateY(-50%)',
+  describe('Modal render tests', () => {
+    it('Should not render the modal', () => {
+      const {queryByTestId} = render(
+        <Wrapper>
+          <Modal visibility={false}/>
+        </Wrapper>,
+      );
+      expect(queryByTestId('modalWrapper')).toBeFalsy();
+    });
+    it('Should render child', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility>
+            <div data-testid='modalChild'>
+              this is some description in modal
+            </div>
+          </Modal>
+        </Wrapper>,
+      );
+      const modalContent = getByTestId('modalContent');
+      const modalChild = getByTestId('modalChild');
+      expect(modalContent).toContainElement(modalChild);
+    });
+    it('Should render header', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal
+            visibility
+            header={(
+              <div data-testid='modalHeaderContent'>
+                this is the header of the modal
+              </div>
+            )}
+          />
+        </Wrapper>,
+      );
+      const modalHeader = getByTestId('modalHeader');
+      const modalHeaderContent = getByTestId('modalHeaderContent');
+      expect(modalHeader).toContainElement(modalHeaderContent);
+    });
+    it('Should render footer', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal
+            visibility
+            footer={(
+              <div data-testid='modalFooterContent'>
+                this is the footer of the modal
+              </div>
+            )}
+          />
+        </Wrapper>,
+      );
+      const modalFooter = getByTestId('modalFooter');
+      const modalFooterContent = getByTestId('modalFooterContent');
+      expect(modalFooter).toContainElement(modalFooterContent);
+    });
+    it('Should render close button when modal is closable', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility handleClose={() => {}} />
+        </Wrapper>,
+      );
+      const modalWrapper = getByTestId('modalWrapper');
+      const closeModalButton = getByTestId('closeModalButton');
+      expect(modalWrapper).toContainElement(closeModalButton);
+    });
+  });
+  describe('test the position of the modal based on position prop', () => {
+    it('Should render modal fixed on top of the page', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility position="top" />
+        </Wrapper>,
+      );
+      const modal = getByTestId('modal');
+      expect(modal).toHaveStyle(`top: calc(${theme.defaultRem} * 1)`);
+    });
+    it('Should render modal fixed on center of the page', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility position="center" />
+        </Wrapper>,
+      )
+      const modal = getByTestId('modal');
+      expect(modal).toHaveStyle({
+        top: `50%`,
+        transform: `translateY(-50%)`,
+      });
+    });
+    it('Should render modal fixed on bottom of the page', () => {
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility position="bottom" />
+        </Wrapper>,
+      );
+      const modal = getByTestId('modal');
+      expect(modal).toHaveStyle({
+        top: `100%`,
+        transform: `translateY(calc(-100% - calc(${theme.defaultRem} * 1)))`,
+      });
+    });
+    it('Should ignore the given position by prop and set the position to top cause window height is less than modal height', () => {
+      const originalHeight = window.innerHeight;
+      window.innerHeight = -20;
+      const { getByTestId } = render(
+        <Wrapper>
+          <Modal visibility position="center" />
+        </Wrapper>,
+      );
+      const modal = getByTestId('modal');
+      expect(modal).toHaveStyle(`top: calc(${theme.defaultRem} * 1)`);
+      window.innerHeight = originalHeight;
     });
   });
 
-  // it('Should change style when get different types of position props', () => {
-  //   const { rerender, getByTestId } = render(
-  //     <Wrapper><Modal visibility position="top" /></Wrapper>,
-  //   );
+  describe('open and close callbacks tests', () => {
+    const ModalWrapperComponent = ({onClose, onOpen}) => {
+      const [visibility, setVisibility] = useState(false);
+      const handleClose = () => {
+        onClose();
+        setVisibility(false);
+      }
+      return (
+        <>
+          <button
+            onClick={() => setVisibility(true)}
+            data-testid="modalOpener"
+          >
+            open the modal
+          </button>
+          <Modal
+            visibility={visibility}
+            handleClose={handleClose}
+            onOpen={onOpen}
+          />
+        </>
+      )
+    }
 
-  //   expect(getByTestId('modal')).toHaveStyle({
-  //     top: 'calc(1 * 1rem)',
-  //   });
+    it('should test modal close button click', () => {
+      const onOpen = jest.fn();
+      const onClose = jest.fn();
+      const { getByTestId } = render(
+        <Wrapper>
+          <ModalWrapperComponent onClose={onClose} onOpen={onOpen} />
+        </Wrapper>,
+      );
+      const modalOpener = getByTestId('modalOpener');
+      expect(onOpen).toHaveBeenCalledTimes(0);
+      expect(onClose).toHaveBeenCalledTimes(0);
 
-  //   rerender(<Wrapper><Modal visibility position="bottom" /></Wrapper>);
-  //   expect(getByTestId('modal')).toHaveStyle({
-  //     top: '100%',
-  //     transform: 'translateY(calc(-100% - calc(1rem * 1)))',
-  //   });
-  // });
+      fireEvent.click(modalOpener);
+      expect(onOpen).toHaveBeenCalledTimes(1);
+      expect(onClose).toHaveBeenCalledTimes(0);
 
-  it('Should add header in modal when get header props', () => {
-    const { getByTestId } = render(
-      <Wrapper>
-        <Modal visibility>
-          <span>modal header</span>
-        </Modal>
-      </Wrapper>,
-    );
+      const closeModalButton = getByTestId('closeModalButton');
+      fireEvent.click(closeModalButton);
+      expect(onOpen).toHaveBeenCalledTimes(1);
+      expect(onClose).toHaveBeenCalledTimes(1);
 
-    expect(getByTestId('modalWrapper')).toContainHTML(
-      '<span>modal header</span>',
-    );
-  });
+      fireEvent.click(modalOpener);
+      expect(onOpen).toHaveBeenCalledTimes(2);
+      expect(onClose).toHaveBeenCalledTimes(1);
 
-  it('Should add close button modal when get handleClose props ', () => {
-    const callback = jest.fn();
-    const { getByTestId } = render(
-      <Wrapper>
-        <Modal handleClose={() => {}} onOpen={callback} visibility />
-      </Wrapper>,
-    );
-    const closeModalButton = getByTestId('closeModalButton');
-    expect(callback).toHaveBeenCalledTimes(1);
-    expect(getByTestId('modalWrapper')).toContainElement(closeModalButton);
-  });
+      const modalLightBox = getByTestId('modalLightBox');
+      fireEvent.click(modalLightBox);
+      expect(onOpen).toHaveBeenCalledTimes(2);
+      expect(onClose).toHaveBeenCalledTimes(2);
 
-  it('Should call onOpen callback when get onOpen props', () => {
-    const callback = jest.fn();
-    const { getByTestId } = render(
-      <Wrapper>
-        <Modal onOpen={callback} visibility />
-      </Wrapper>,
-    );
-
-    expect(callback).toHaveBeenCalledTimes(1);
-  });
-
-  it('Should add class to element', () => {
-    const { getByTestId } = render(
-      <Wrapper>
-        <Modal className="my-custom-class" visibility />
-      </Wrapper>,
-    );
-
-    expect(getByTestId('modalWrapper')).toHaveClass('my-custom-class');
+    });
   });
 });

@@ -50,25 +50,17 @@ const Modal = forwardRef((props, ref) => {
    * Set scroll of body
    */
   useEffect(() => {
-    const handleVisibility = () => {
-      if (visibility) {
-        if (!!onOpen && typeof onOpen === 'function') {
-          onOpen();
-        }
-      } else if (!!handleClose && typeof handleClose === 'function') {
-        handleClose();
-      }
-    };
-
     const { body } = document;
     body.style['overflow-y'] = 'hidden';
 
-    handleVisibility();
+    if (visibility && !!onOpen && typeof onOpen === 'function') {
+      onOpen();
+    }
 
     return () => {
       body.style['overflow-y'] = 'auto';
     };
-  }, [handleClose, onOpen, visibility]);
+  }, [visibility]);
 
   /**
    * Define modal position based on  window size
@@ -92,7 +84,7 @@ const Modal = forwardRef((props, ref) => {
         className={className}
         ref={ref}
       >
-        <StyledLightBox onClick={handleClose || undefined} />
+        <StyledLightBox data-testid="modalLightBox" onClick={handleClose || undefined} />
         <StyledModal
           data-testid="modal"
           width={width}
