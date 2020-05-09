@@ -24,7 +24,7 @@ const Pagination = props => {
 
   const handlePaginate = page => {
     const newOffset = limit * page;
-    if (newOffset >= 0 && newOffset <= total && newOffset !== offset) {
+    if (newOffset >= 0 && newOffset < total && newOffset !== offset) {
       onPaginate(newOffset);
     }
   };
@@ -49,10 +49,11 @@ const Pagination = props => {
       pages.push(
         <StyledPaginationItem
           onClick={() => handlePaginate(i)}
-          className={currentPage === i ? 'active' : ''}
+          className={`page ${currentPage === i ? 'active' : ''}`}
           key={i}
+          data-testid="page"
         >
-          <span>{persianNumber(i + 1)}</span>
+          <span data-testid="pageNumber">{persianNumber(i + 1)}</span>
         </StyledPaginationItem>,
       );
     }
@@ -62,6 +63,8 @@ const Pagination = props => {
           <StyledNavigateButton
             onClick={() => handlePaginate(0)}
             disabled={!currentPage}
+            className="first-page"
+            data-testid="firstPage"
           >
             <AngleRightIcon color="gray" />
             <AngleRightIcon color="gray" />
@@ -71,6 +74,8 @@ const Pagination = props => {
           <StyledNavigateButton
             onClick={() => handlePaginate(currentPage - 1)}
             disabled={!currentPage}
+            className="prev-page"
+            data-testid="prevPage"
           >
             <AngleRightIcon color="gray" />
           </StyledNavigateButton>
@@ -80,6 +85,8 @@ const Pagination = props => {
           <StyledNavigateButton
             onClick={() => handlePaginate(currentPage + 1)}
             disabled={(currentPage + 1) * limit >= total}
+            className="next-page"
+            data-testid="nextPage"
           >
             <AngleLeftIcon color="gray" />
           </StyledNavigateButton>
@@ -88,6 +95,8 @@ const Pagination = props => {
           <StyledNavigateButton
             onClick={() => handlePaginate(pagesCount - 1)}
             disabled={(currentPage + 1) * limit >= total}
+            className="last-page"
+            data-testid="lastPage"
           >
             <AngleLeftIcon color="gray" />
             <AngleLeftIcon color="gray" />
@@ -99,7 +108,7 @@ const Pagination = props => {
 
   return (
     !!total && (
-      <StyledPaginationWrapper className={className}>
+      <StyledPaginationWrapper className={className} data-testid="paginationWrapper">
         {renderPaginationItems()}
       </StyledPaginationWrapper>
     )
