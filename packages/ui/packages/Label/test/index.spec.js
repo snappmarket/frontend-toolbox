@@ -72,4 +72,17 @@ describe('Label ui component tests', () => {
 
     expect(getByTestId('label')).toHaveClass('my-custom-class');
   });
+
+  it('Should test the border and border radius of label', () => {
+    const { getByTestId } = render(
+      <Wrapper>
+        <Label hasBorder={false} radius="10px" />
+      </Wrapper>,
+    );
+
+    expect(getByTestId('label')).toHaveStyle({
+      border: 'none',
+      borderRadius: '10px',
+    });
+  });
 });
