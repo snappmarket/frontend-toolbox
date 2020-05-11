@@ -19,6 +19,7 @@ const CheckBox = props => {
       aria-checked={selected ? 'true' : 'false'}
       className={className}
       disabled={disabled}
+      type="button"
       size={size}
       status={status}
       border={border}
