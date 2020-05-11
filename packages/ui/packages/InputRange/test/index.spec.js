@@ -60,4 +60,15 @@ describe('InputRange ui component tests', () => {
       inputRangeLabelItem,
     );
   });
+  it('Should render LTR inputRange', () => {
+    const value = { min: 4, max: 6 };
+    const rangeValue = { min: 2, max: 8 };
+    const { getByTestId } = render(
+      <Wrapper>
+        <InputRange value={value} rangeValue={rangeValue} rtl={false} />
+      </Wrapper>,
+    );
+    const inputRangeLabel = getByTestId('inputRangeLabel');
+    expect(inputRangeLabel).toHaveStyle("direction: ltr");
+  });
 });
