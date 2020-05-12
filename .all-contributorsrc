@@ -37,7 +37,8 @@
       "contributions": [
         "test",
         "doc",
-        "code"
+        "code",
+        "a11y"
       ]
     },
     {
