@@ -40,9 +40,7 @@ export const StyledSimpleCarousel = Styled.div`
     align-items: center;
     justify-content: center;
     direction: ltr;
-  }
-  .control{
-    display: none;
+    display: none
   }
   .loaded .control {
     display: flex;
