@@ -14,7 +14,11 @@
         "infra",
         "test",
         "doc",
-        "code"
+        "code",
+        "ideas",
+        "maintenance",
+        "platform",
+        "review"
       ]
     },
     {
