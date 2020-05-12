@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { StyledTextWrap } from './styles';
 
 const TextWrap = ({ className, lines, children }) => {
-  const [height, setHeight] = useState(0);
+  const [height, setHeight] = useState(20);
   const textRef = useRef(null);
 
   useEffect(() => {
