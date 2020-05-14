@@ -24,7 +24,7 @@
     "polished": "^3.6.1",
     "react-hgs-input-range": "^1.3.1",
     "react-image": "^2.2.2",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^5.2.0",
     "react-slick": "^0.25.2"
   },
   "peerDependencies": {
