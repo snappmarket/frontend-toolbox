@@ -11,17 +11,15 @@ import {
 } from './style';
 
 /* eslint-disable react/no-array-index-key */
-const Table = (props) => {
-  const {
-    headers, data, footers, className,
-  } = props;
+const Table = props => {
+  const { headers, data, footers, className } = props;
   return (
-    <StyledTable className={className}>
+    <StyledTable className={className} data-testid="tableWrapper">
       {!!headers.length && (
-        <StyledTableHeader>
-          <StyledTableRow>
+        <StyledTableHeader data-testid="tableHeader">
+          <StyledTableRow data-testid="tableHeaderRow">
             {headers.map((item, key) => (
-              <StyledTableHeaderColumn key={key}>
+              <StyledTableHeaderColumn key={key} data-testid="tableHeaderCol">
                 {item}
               </StyledTableHeaderColumn>
             ))}
@@ -29,21 +27,21 @@ const Table = (props) => {
         </StyledTableHeader>
       )}
       {!!data.length && (
-        <StyledTableBody>
+        <StyledTableBody data-testid="tableBody">
           {data.map((item, key) => (
-            <StyledTableRow key={key}>
+            <StyledTableRow key={key} data-testid="tableBodyRow">
               {item.map((value, index) => (
-                <StyledTableColumn key={index}>{value}</StyledTableColumn>
+                <StyledTableColumn key={index} data-testid="tableBodyCol">{value}</StyledTableColumn>
               ))}
             </StyledTableRow>
           ))}
         </StyledTableBody>
       )}
       {!!footers.length && (
-        <StyledTableFooter>
-          <StyledTableRow>
+        <StyledTableFooter data-testid="tableFooter">
+          <StyledTableRow data-testid="tableFooterRow">
             {footers.map((item, key) => (
-              <StyledTableColumn key={key}>{item}</StyledTableColumn>
+              <StyledTableColumn key={key} data-testid="tableFooterCol">{item}</StyledTableColumn>
             ))}
           </StyledTableRow>
         </StyledTableFooter>

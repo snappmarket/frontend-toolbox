@@ -1,21 +1,14 @@
 import * as React from 'react';
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useDidUpdateEffect } from '@snappmarket/hooks';
 
 import { context as tabSwitcherContext } from './context';
 
 import { StyledTab } from './style';
 
-const Tab = (props) => {
-  const {
-    id, children, onChangeTab, onSwitch, className, ...rest
-  } = props;
+const Tab = props => {
+  const { id, children, onChangeTab, className, ...rest } = props;
   const { changeTab, activeTabId } = useContext(tabSwitcherContext);
-
-  useDidUpdateEffect(() => {
-    onSwitch();
-  }, [activeTabId]);
 
   const handleChangeTab = () => {
     changeTab(id);
@@ -55,7 +48,6 @@ Tab.defaultProps = {
   className: '',
   // loading: false,
   direction: 'right',
-  onChangeTab: (f) => f,
-  onSwitch: (f) => f,
+  onChangeTab: f => f,
 };
 export default Tab;

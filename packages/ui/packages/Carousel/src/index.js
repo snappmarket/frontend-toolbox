@@ -4,12 +4,18 @@ import PropTypes from 'prop-types';
 import { Slider } from './core/index';
 import { StyledSimpleCarousel } from './core/styles';
 
-const SimpleCarousel = (props) => {
+const SimpleCarousel = props => {
   const {
-    className, children, slideConfig, showingSlide, refresh
+    className,
+    children,
+    slideConfig,
+    showingSlide,
+    refresh,
+    nextArrow,
+    prevArrow,
   } = props;
   const sliderRed = useRef(null);
-  // eslint-disable-next-line no-unused-vars
+  const { customArrow } = slideConfig;
   let newSlider = null;
 
   useEffect(() => {
@@ -17,11 +23,20 @@ const SimpleCarousel = (props) => {
       slider: sliderRed.current,
       ...slideConfig,
     });
-    goTo(showingSlide);
+  }, []);
+
+  useEffect(() => {
+    if (typeof showingSlide === 'number' || showingSlide >= 0) {
+      newSlider = new Slider({
+        slider: sliderRed.current,
+        ...slideConfig,
+      });
+      goTo(showingSlide);
+    }
   }, [showingSlide]);
 
   useEffect(() => {
-    if(refresh){
+    if (refresh) {
       newSlider = new Slider({
         slider: sliderRed.current,
         ...slideConfig,
@@ -30,22 +45,30 @@ const SimpleCarousel = (props) => {
     }
   }, [refresh]);
 
-  const goTo = (index) => {
-    if (typeof index === 'number' || index >= 0) {
-      newSlider.goTo(index);
-    }
+  const goTo = index => {
+    newSlider.goTo(index);
   };
 
-  const onRefresh = (refreshFlag) => {
+  const onRefresh = refreshFlag => {
     newSlider.refresh(refreshFlag);
   };
 
   return (
     <StyledSimpleCarousel>
-      <div className={`slider ${className}`} ref={sliderRed}>
+      <div
+        data-testid="carousel"
+        className={`slider ${className}`}
+        ref={sliderRed}
+      >
         <div className="wrapper">
           <div className="slides">{children}</div>
         </div>
+        {customArrow && (
+          <>
+            {!!nextArrow && <span className="control next">{nextArrow}</span>}
+            {!!prevArrow && <span className="control prev">{prevArrow}</span>}
+          </>
+        )}
       </div>
     </StyledSimpleCarousel>
   );
@@ -56,6 +79,8 @@ SimpleCarousel.propTypes = {
   slideConfig: PropTypes.object.isRequired,
   showingSlide: PropTypes.number,
   refresh: PropTypes.bool,
+  nextArrow: PropTypes.node,
+  prevArrow: PropTypes.node,
 };
 SimpleCarousel.defaultProps = {
   className: '',

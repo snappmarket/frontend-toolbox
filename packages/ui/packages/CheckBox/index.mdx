@@ -1,0 +1,49 @@
+---
+name: Checkbox
+route: /ui/checkbox
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import Checkbox from './src/index';
+
+export const statuses = ['gray', 'green', 'yellow', 'red', 'orange', 'blue'];
+
+# Demo
+
+<div className="mb-4">
+  <div>
+    <p>
+      Checkbox supports 6 different colors
+    </p>
+    <Row>
+      {statuses.map(status => (
+        <Col xs={6} sm={4} md={2}>
+          <div className="text-center justify-start mb-2">
+            <Checkbox status={status} size={3} selected />
+            <label className="pl-1">{status}</label>
+          </div>
+        </Col>
+      ))}
+    </Row>
+  </div>
+</div>
+
+
+# Basic Usage
+
+<Playground>
+<Checkbox
+    className='foobar'
+    status='green'
+    border={true}
+    selected={true}
+    size={3}
+    disabled={false}
+/>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Checkbox} />

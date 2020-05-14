@@ -2,15 +2,13 @@ import * as React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { CrossIcon } from '@snappmarket/icons';
+import { CrossIcon } from '@snappmarket/icons/sprite';
 
 import { StyledAlertWrapper, StyledCloseButton } from './styles';
 
-const Alert = (props) => {
+const Alert = props => {
   const [isOpen, setIsOpen] = useState(true);
-  const {
-    status, closable, onClose, children, className,
-  } = props;
+  const { status, closable, onClose, children, className } = props;
 
   let options = {};
   switch (status) {
@@ -62,9 +60,14 @@ const Alert = (props) => {
 
   return (
     isOpen && (
-      <StyledAlertWrapper className={className} {...options}>
+      <StyledAlertWrapper
+        data-testid="alert"
+        className={className}
+        {...options}
+      >
         {closable && (
           <StyledCloseButton
+            data-testid="close-button"
             onClick={handleCloseAlert}
             icon={<CrossIcon className="closeIcon" />}
             modifier="link"
@@ -89,7 +92,7 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
-  onClose: (f) => f,
+  onClose: f => f,
   closable: true,
 };
 

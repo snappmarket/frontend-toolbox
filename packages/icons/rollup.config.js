@@ -5,15 +5,16 @@ import nodeGlobals from 'rollup-plugin-node-globals';
 import { terser } from 'rollup-plugin-terser';
 import filesize from 'rollup-plugin-filesize';
 import copy from 'rollup-plugin-copy';
+import inlineSvg from 'rollup-plugin-inline-svg';
 
 const input = './packages/index.js';
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
+  '@snappmarket/config': 'snappmarketConfig',
 };
 const babelOptions = {
   exclude: /node_modules/,
-  // We are using @babel/plugin-transform-runtime
   runtimeHelpers: true,
   configFile: '../../babel.config.js',
 };
@@ -57,6 +58,7 @@ export default [
     external: Object.keys(globals),
     plugins: [
       nodeResolve(),
+      inlineSvg(),
       babel(babelOptions),
       commonjs(commonjsOptions),
       nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
@@ -81,6 +83,14 @@ export default [
     external: Object.keys(globals),
     plugins: [
       nodeResolve(),
+      inlineSvg({
+        removeTags: true,
+        removingTags: ['title', 'desc', 'style'],
+        warnTags: [],
+        removeSVGTagAttrs: false,
+        removingTagAttrs: [],
+        warnTagAttrs: [],
+      }),
       babel(babelOptions),
       commonjs(commonjsOptions),
       nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893

@@ -1,0 +1,49 @@
+---
+name: Accordion
+route: /ui/Accordion
+menu: 3.Components
+---
+
+import { Playground, Props } from 'docz';
+import { Accordion, AccordionHead, AccordionContent } from './src/index'
+
+<Playground>
+  <Accordion
+    onOpen={() => console.log('opened')}
+    onClose={() => console.log('closed')}
+  >
+    <AccordionHead id="foo">
+      {(open, close, isOpen) => (
+        <h2 onClick={() => !isOpen ? open() : close()}>Foo Header</h2>
+      )}
+    </AccordionHead>
+    <AccordionContent whenActive="foo">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+    </AccordionContent>
+    <AccordionHead id="bar">
+      {(open, close, isOpen) => (
+        <h2 onClick={() => !isOpen ? open() : close()}>Bar Header</h2>
+      )}
+    </AccordionHead>
+    <AccordionContent whenActive="bar">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+    </AccordionContent>
+  </Accordion>
+</Playground>
+
+<br />
+
+# Accordion Props
+<Props of={Accordion} />
+
+<br />
+
+# AccordionHead Props
+<Props of={AccordionHead} />
+
+<br />
+
+# AccordionContent Props
+<Props of={AccordionContent} />
+
+<br />

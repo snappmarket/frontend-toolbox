@@ -25,23 +25,31 @@ if (process.env.BABEL_ENV !== 'docz') {
     'node_modules/**',
     '**/LICENCE',
     '**/README.md',
+    '.mdx',
     '**/package-lock.json',
+    '**/package.json',
   ];
 
   if (process.env.BABEL_ENV !== 'test') {
     ignorePaths.push(
       '**/*.spec.js',
-      'test/**',
+      '**/*.test.js',
+      /test/,
       '**/dist/**',
       '**/rollup.config.js',
     );
   }
 }
+// else {
+//   ignorePaths = [
+//     '.cache',
+//   ];
+// }
 
 const productionPlugins = [
   'babel-plugin-transform-react-constant-elements',
   'babel-plugin-transform-dev-warning',
-  ['babel-plugin-react-remove-properties', { properties: ['data-snp-test'] }],
+  ['babel-plugin-react-remove-properties', { properties: ['data-testid'] }],
   [
     'babel-plugin-transform-react-remove-prop-types',
     {

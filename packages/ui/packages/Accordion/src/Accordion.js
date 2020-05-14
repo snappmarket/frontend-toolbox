@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useDidUpdateEffect } from '@snappmarket/hooks';
 
@@ -15,12 +15,21 @@ const Accordion = ({
   ...rest
 }) => {
   const [activeAccordionId, changeActive] = useState(initialAccordion);
+  const isOpenedRef = useRef(!!initialAccordion)
 
   useDidUpdateEffect(() => {
-    // we set current tab id to empty string to close
-    if (activeAccordionId === '') {
+    /**
+     * use a flag to call onOpen only one time when accordion actually opened for the first time
+     */
+    if(!isOpenedRef.current && !!activeAccordionId){
+      isOpenedRef.current = true;
       onOpen();
-    } else {
+    }
+    /**
+     *  by clearing the activeAccordionId, it would be closed, so the open flag should be reset to call onOpen next time
+     */
+    if (activeAccordionId === '') {
+      isOpenedRef.current = false;
       onClose();
     }
   }, [activeAccordionId]);
@@ -50,8 +59,9 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
   animate: true,
-  onOpen: (f) => f,
-  onClose: (f) => f,
+  initialAccordion: '',
+  onOpen: f => f,
+  onClose: f => f,
 };
 
 export default Accordion;

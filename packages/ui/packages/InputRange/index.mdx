@@ -1,0 +1,33 @@
+---
+name: InputRange
+route: /ui/input-range
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import InputRange from './src/index';
+
+# Input Range
+
+<p>
+  the input range components is the customized version of the <a href="https://www.npmjs.com/package/react-hgs-input-range" target="_blank">react-hgs-input-range</a>,
+  <br />
+  see the full documentation <a href="https://github.com/snappmarket/react-input-range#readme" target="_blank">here</a>.
+</p>
+
+# Basic Usage
+
+<Playground>
+  <InputRange
+    className='foobar'
+    fromTitle={value => `from ${value}`}
+    toTitle={value => `to ${value}`}
+    onChangeComplete={value => console.log(value)}
+    rangeValue={{min: 0, max: 10}}
+    value={{min: 3, max: 7}}
+  />
+</Playground>
+
+<br />
+
+# Props
+<Props of={InputRange} />

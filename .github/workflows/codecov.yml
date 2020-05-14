@@ -1,0 +1,30 @@
+name: Node CI Coverage
+
+on: [push]
+
+jobs:
+  report-coverage:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.16.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.16.1
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Install Dependencies
+        run: yarn link && yarn --frozen-lockfile
+      - name: Run Build
+        run: yarn build
+      - name: Run Jest Tests
+        run: yarn test --coverage
+      - name: Report Code Coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          name: github-umbrella
+          fail_ci_if_error: false

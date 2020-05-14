@@ -1,0 +1,88 @@
+---
+name: 2.Getting started
+route: /getting-started
+---
+
+## Installation
+It is easy to install our packages, if you are using `npm` you could easily install it on your
+project by running one of this commands(based on your needs).
+```bash
+// with npm
+npm i @snappmarket/ui
+npm i @snappmarket/hooks
+npm i @snappmarket/helpers
+
+// with yarn
+yarn add @snappmarket/ui
+yarn add @snappmarket/hooks
+yarn add @snappmarket/helpers
+```
+
+Please note that react >= 16.8.0 and react-dom >= 16.8.0 are peer dependencies.
+
+
+We provide single usage possibility to install single module of helpers, hooks or components.
+For this purpose you could run installation with a suffix for example, if you want to use only `Accordion` component
+you could install it by :
+```bash
+// with npm
+npm i @snappmarket/ui-accordion
+
+// with yarn
+yarn add @snappmarket/ui-accordion
+```
+This role is available for every single packages in `hooks` or `helpers`, so you could install them like :
+```bash
+// with npm
+npm i @snappmarket/ui-accordion
+npm i @snappmarket/ui-accordion
+
+// with yarn
+yarn add @snappmarket/ui-accordion
+```
+<br/>
+<br/>
+
+
+
+
+## Usage
+There is not much config to use `helpers`, `hooks` or `icons`, and they are side effect free.
+But we used styled components to make our ui components a little bit styled, so you should add styled component wrapper with our `makeTheme()`
+function to build a theme for you. So you should have some codes like :
+```javascript
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { makeTheme } from '@snappmarket/ui';
+
+const theme = makeTheme();
+
+// eslint-disable-next-line react/prop-types
+const Wrapper = ({ children }) => (
+  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+);
+
+```
+Then you can use any ui component in your project.
+
+<br/>
+<br/>
+
+
+
+## Example projects
+
+1. http://koleposhti.app
+2. http://snapp.market
+
+
+<br/>
+<br/>
+
+
+
+
+## Support
+If you see any issue, please open a github issue:
+
+<a href="https://github.com/snappmarket/frontend-toolbox/issues/new" target="_blank">submit new</a>

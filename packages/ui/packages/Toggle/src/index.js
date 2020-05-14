@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 
 import { StyledToggleWrapper } from './styles';
 
-const Toggle = (props) => {
-  const {
-    status, selected, size, disabled, className, ...rest
-  } = props;
+const Toggle = props => {
+  const { status, selected, size, disabled, className, ...rest } = props;
 
   const render = () => (
     <StyledToggleWrapper
-      className={className}
+      data-testid="toggle"
+      role="button"
+      tabIndex="0"
+      aria-pressed={selected ? 'true' : 'false'}
+      className={`${className} ${selected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
       size={size}
-      disabled={disabled}
       status={status}
-      selected={selected}
       {...rest}
     >
       <span />

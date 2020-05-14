@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 
 import { StyledColumn } from './styles';
 
-const Col = (props) => {
-  const {
-    xs, sm, md, lg, xl, className, children,
-  } = props;
+const Col = props => {
+  const { xs, sm, md, lg, xl, className, children } = props;
   const layouts = {};
   Object.keys({
-    xs, sm, md, lg, xl,
-  }).forEach((layout) => {
+    xs,
+    sm,
+    md,
+    lg,
+    xl,
+  }).forEach(layout => {
     if (props[layout]) {
       if (typeof props[layout] === 'object') {
         const { size = 12, order = 'unset', offset = 0 } = props[layout];
@@ -30,7 +32,11 @@ const Col = (props) => {
   });
 
   return (
-    <StyledColumn layouts={layouts} className={className}>
+    <StyledColumn
+      layouts={layouts}
+      className={className}
+      data-testid="colGridSystem"
+    >
       {children}
     </StyledColumn>
   );

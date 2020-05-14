@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 /* eslint-disable no-nested-ternary */
-const Button = (props) => {
+const Button = props => {
   const {
     modifier,
     size,
@@ -22,6 +22,7 @@ const Button = (props) => {
     label,
     fullWidth,
     loading,
+    role,
     ...rest
   } = props;
 
@@ -72,6 +73,7 @@ const Button = (props) => {
       {!!title && title}
       {!!label && (
         <StyledLabel
+          data-testid="buttonLabel"
           className={direction === 'right' ? 'mr-1' : 'ml-1'}
           color={props.color}
         >
@@ -82,17 +84,27 @@ const Button = (props) => {
   );
   const buttons = {
     primary: (
-      <StyledPrimaryButton fullWidth={fullWidth} {...options}>
+      <StyledPrimaryButton
+        data-testid="button"
+        fullWidth={fullWidth}
+        role={role}
+        {...options}
+      >
         {content}
       </StyledPrimaryButton>
     ),
     outline: (
-      <StyledOutlineButton fullWidth={fullWidth} {...options}>
+      <StyledOutlineButton
+        data-testid="button"
+        fullWidth={fullWidth}
+        role={role}
+        {...options}
+      >
         {content}
       </StyledOutlineButton>
     ),
     link: (
-      <StyledLinkButton fullWidth={fullWidth} {...options}>
+      <StyledLinkButton data-testid="button" fullWidth={fullWidth} role={role} {...options}>
         {content}
       </StyledLinkButton>
     ),
@@ -113,6 +125,7 @@ Button.propTypes = {
     PropTypes.node,
   ]),
   fullWidth: PropTypes.bool,
+  role: PropTypes.string,
   loading: PropTypes.bool,
   label: PropTypes.string,
   className: PropTypes.string,
@@ -130,5 +143,6 @@ Button.defaultProps = {
   className: '',
   loading: false,
   direction: 'right',
+  role:'button',
 };
 export default Button;

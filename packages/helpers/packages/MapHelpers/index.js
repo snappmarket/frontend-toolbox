@@ -1,7 +1,9 @@
 /**
- * Check if user lat lng is in iran
- * @param lat
- * @param lng
+ * @function
+ * @name isLocationInIran
+ * @description Check if user lat lng is in iran
+ * @param   lat   {number}    latitude of the geo location
+ * @param   lng   {number}    longitude of the geo location
  * @returns {boolean}
  */
 export const isLocationInIran = (lat, lng) => {

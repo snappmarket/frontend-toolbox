@@ -9,47 +9,45 @@ import {
 } from './styles';
 
 const Input = React.forwardRef((props, ref) => {
-  const {
-    status, message, label, id, required, className, ...rest
-  } = props;
+  const { status, message, label, required, className, ...rest } = props;
   return (
-    <StyledInputWrapper>
-      {label && props.id && (
-        <StyledLabel htmlFor={id}>
+    <StyledInputWrapper data-testid="inputWrapper">
+      {label && (
+        <StyledLabel data-testid="inputLabel" htmlFor={rest.id || ''}>
           {label}
           {' '}
-          {required && <StyledStar>*</StyledStar>}
+          {required && <StyledStar data-testid="labelRequiredFlag">*</StyledStar>}
         </StyledLabel>
       )}
       <StyledInput
+        data-testid="input"
         className={className}
         status={status}
         ref={ref}
-        id={id}
         {...rest}
       />
       {Object.keys(message).length > 0 && (
-        <StyledMessage type={message.type}>{message.content}</StyledMessage>
+        <StyledMessage data-testid="inputMessages" type={message.type}>{message.content}</StyledMessage>
       )}
     </StyledInputWrapper>
   );
 });
 
 Input.propTypes = {
-  id: PropTypes.string,
   label: PropTypes.string,
   status: PropTypes.oneOf(['gray', 'red', 'blue', 'orange', 'green', 'yellow']),
   value: PropTypes.any,
   placeholder: PropTypes.any,
-  message: PropTypes.object,
+  message: PropTypes.shape({
+    type: PropTypes.oneOf(['success', 'danger']),
+    content: PropTypes.string,
+  }),
   className: PropTypes.string,
   onChange: PropTypes.func,
-  Children: PropTypes.string,
   required: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 };
 
 Input.defaultProps = {
-  id: '',
   label: '',
   status: 'gray',
   required: false,

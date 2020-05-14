@@ -1,0 +1,68 @@
+---
+name: OSHelpers
+route: /helpers/OSHelpers
+menu: 6.Helpers
+---
+
+
+# OS helpers
+> ✴ Methods that helps us to handle os related things
+
+[![version](https://img.shields.io/npm/v/@snappmarket/os-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/os-helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/os-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/os-helpers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/os-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+## get started
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/os-helpers
+OR
+npm i @snappmarket/helpers
+```
+
+## methods
+|        |
+| ------ |
+| getOSName                                                 |
+| getAgent                                                 |
+
+## usage
+```javascript
+import { METHOD_NAME } from '@snappmarket/os-helpers';
+// or
+// import { METHOD_NAME } from '@snappmarket/helpers';
+```
+``
+
+## Functions
+
+<dl>
+<dt><a href="#getOSName">getOSName(OSVersion)</a> ⇒ string</dt>
+<dd><p>returns the name of the operating system based on appVersion</p>
+</dd>
+<dt><a href="#getAgent">getAgent()</a> ⇒ Object</dt>
+<dd><p>returns an object created of user agent and operating system</p>
+</dd>
+</dl>
+
+<a name="getOSName"></a>
+
+## getOSName
+returns the name of the operating system based on appVersion
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| OSVersion | string | the full name of the navigator app version to fin OS name based on it |
+
+<a name="getAgent"></a>
+
+## getAgent
+returns an object created of user agent and operating system
+
+**Kind**: global function  

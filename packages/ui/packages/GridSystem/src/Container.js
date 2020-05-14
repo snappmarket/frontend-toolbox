@@ -3,10 +3,18 @@ import PropTypes from 'prop-types';
 
 import { StyledContainer } from './styles';
 
-const Container = (props) => {
+const Container = props => {
   const { className, children, ...rest } = props;
 
-  return <StyledContainer className={className} {...rest}>{children}</StyledContainer>;
+  return (
+    <StyledContainer
+      data-testid="gridContainer"
+      className={className}
+      {...rest}
+    >
+      {children}
+    </StyledContainer>
+  );
 };
 
 Container.propTypes = {

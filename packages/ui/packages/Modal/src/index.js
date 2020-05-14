@@ -1,8 +1,13 @@
-import * as React from 'react';
-import { useEffect, useState, createRef } from 'react';
+import React, {
+  useEffect,
+  useState,
+  createRef,
+  forwardRef,
+  useRef,
+} from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { CrossIcon } from '@snappmarket/icons';
+import { CrossIcon } from '@snappmarket/icons/sprite';
 
 import {
   StyledModalWrapper,
@@ -14,7 +19,7 @@ import {
   StyledModalFooter,
 } from './styles';
 
-const Modal = (props) => {
+const Modal = forwardRef((props, ref) => {
   const {
     className,
     handleClose,
@@ -26,57 +31,42 @@ const Modal = (props) => {
     width,
     position: initialPosition,
   } = props;
+  const bodyRef = useRef(null);
+  const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const modalRef = createRef();
-
-  const [modalContainer, setModalContainer] = useState(null);
   const [position, setPosition] = useState(initialPosition);
+
+  /**
+   * should put body as an state for two reasons,
+   * first to make it SSR friendly cause document is not allowd in component body
+   * and second, to re-render the component to make modal work for when you pass true visibility by parent as default prop
+   */
+  useEffect(() => {
+    bodyRef.current = document.body;
+    setIsBodyInitialized(true);
+  }, []);
 
   /**
    * Set scroll of body
    */
   useEffect(() => {
-    const handleVisibility = () => {
-      if (visibility) {
-        if (!!onOpen && typeof onOpen === 'function') {
-          onOpen();
-        }
-      } else if (!!handleClose && typeof handleClose === 'function') {
-        handleClose();
-      }
-    };
-
-    const body = document.getElementsByTagName('body')[0];
+    const { body } = document;
     body.style['overflow-y'] = 'hidden';
-    setModalContainer(document.createElement('div'));
 
-    handleVisibility();
+    if (visibility && !!onOpen && typeof onOpen === 'function') {
+      onOpen();
+    }
 
     return () => {
       body.style['overflow-y'] = 'auto';
     };
-  }, [handleClose, onOpen, visibility]);
-
-  /**
-   * Create container for modal portal
-   */
-  useEffect(() => {
-    const body = document.getElementsByTagName('body')[0];
-    if (modalContainer) {
-      body.appendChild(modalContainer);
-    }
-
-    return () => {
-      if (modalContainer) {
-        body.removeChild(modalContainer);
-      }
-    };
-  }, [modalContainer]);
+  }, [visibility]);
 
   /**
    * Define modal position based on  window size
    */
   useEffect(() => {
-    if (visibility && modalContainer) {
+    if (modalRef.current && visibility) {
       const {
         current: { offsetHeight: modalHeight },
       } = modalRef;
@@ -85,33 +75,59 @@ const Modal = (props) => {
         setPosition('top');
       }
     }
-  }, [position, modalContainer, visibility, modalRef]);
+  }, [position, visibility, modalRef]);
 
-  const render = () => visibility ? (
-    <StyledModalWrapper className={className}>
-      <StyledLightBox onClick={handleClose || undefined} />
-      <StyledModal width={width} position={position} ref={modalRef}>
-        {handleClose && typeof handleClose === 'function' && (
-          <StyledCloseModalButton
-            className="close-modal-button"
-            modifier="link"
-            icon={<CrossIcon />}
-            size="sm"
-            color="gray"
-            onClick={handleClose}
-          />
-        )}
-        {!!header && <StyledModalHeader>{header}</StyledModalHeader>}
-        {!!children && <StyledModalContent>{children}</StyledModalContent>}
-        {!!footer && <StyledModalFooter>{footer}</StyledModalFooter>}
-      </StyledModal>
-    </StyledModalWrapper>
-  ) : null;
-  if (modalContainer) {
-    return createPortal(render(), modalContainer);
+  const render = () =>
+    visibility ? (
+      <StyledModalWrapper
+        data-testid="modalWrapper"
+        className={className}
+        ref={ref}
+      >
+        <StyledLightBox data-testid="modalLightBox" onClick={handleClose || undefined} />
+        <StyledModal
+          data-testid="modal"
+          width={width}
+          position={position}
+          ref={modalRef}
+        >
+          {handleClose && typeof handleClose === 'function' && (
+            <StyledCloseModalButton
+              data-testid="closeModalButton"
+              className="close-modal-button"
+              modifier="link"
+              icon={<CrossIcon />}
+              size="sm"
+              color="gray"
+              onClick={handleClose}
+            />
+          )}
+          {!!header && (
+            <StyledModalHeader data-testid="modalHeader">
+              {header}
+            </StyledModalHeader>
+          )}
+          {!!children && (
+            <StyledModalContent data-testid="modalContent">
+              {children}
+            </StyledModalContent>
+          )}
+          {!!footer && (
+            <StyledModalFooter data-testid="modalFooter">
+              {footer}
+            </StyledModalFooter>
+          )}
+        </StyledModal>
+      </StyledModalWrapper>
+    ) : null;
+
+  // return createPortal(render(), document.body);
+
+  if (isBodyInitialized) {
+    return createPortal(render(), bodyRef.current);
   }
   return null;
-};
+});
 
 Modal.propTypes = {
   className: PropTypes.string,

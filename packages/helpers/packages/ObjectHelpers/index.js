@@ -1,67 +1,113 @@
-export const removeByKey = (haystack, needle) => Object.keys(haystack)
-  .filter((key) => parseInt(key, 0) !== parseInt(needle, 0))
-  .reduce((result, current) => {
-    // eslint-disable-next-line no-param-reassign
-    result[current] = haystack[current];
-    return result;
-  }, {});
+/**
+ * @function
+ * @name removeByKey
+ * @description returns an object without given key
+ * @param   haystack    {object}    object you want to remove key from
+ * @param   needle      {string}    key you want to remove from object
+ * @return  {object}
+ */
+export const removeByKey = (haystack, needle) =>
+  Object.keys(haystack)
+    .filter(key => {
+      if (Number.isInteger(needle))
+        return parseInt(key, 0) !== parseInt(needle, 0);
+      return key !== needle;
+    })
+    .reduce((result, current) => {
+      // eslint-disable-next-line no-param-reassign
+      result[current] = haystack[current];
+      return result;
+    }, {});
 
-export const flattenObject = (ob) => {
-  const toReturn = {};
+/**
+ * @function
+ * @name flattenObject
+ * @description recursively flattens an object, properties keys would be combination of parent and sub-object keys
+ * @param   object    {object}    object you want to make it single dimensional
+ * @return  {object}
+ */
+export const flattenObject = object => {
+  const result = {};
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const i in ob) {
-    // eslint-disable-next-line no-prototype-builtins,no-continue
-    if (!ob.hasOwnProperty(i)) continue;
-
-    if (typeof ob[i] === 'object' && ob[i] !== null) {
-      const flatObject = flattenObject(ob[i]);
-      // eslint-disable-next-line no-restricted-syntax
-      for (const x in flatObject) {
-        // eslint-disable-next-line no-prototype-builtins,no-continue
-        if (!flatObject.hasOwnProperty(x)) continue;
-
-        toReturn[`${i}.${x}`] = flatObject[x];
-      }
+  Object.keys(object).forEach(key => {
+    if (typeof object[key] === 'object' && object[key] !== null) {
+      const flatObject = flattenObject(object[key]);
+      Object.keys(flatObject).forEach(itemKey => {
+        result[`${key}.${itemKey}`] = flatObject[itemKey];
+      });
     } else {
-      toReturn[i] = ob[i];
+      result[key] = object[key];
     }
-  }
-  return toReturn;
-};
-
-export const makeCookieString = (cookies) => {
-  let cookieString = '';
-  Object.keys(cookies).forEach((cookie) => {
-    cookieString += `${cookie}=${cookies[cookie]}; `;
   });
-
-  cookieString = cookieString.substr(0, cookieString.length - 2);
-  return cookieString;
+  return result;
 };
 
 /**
- * Safe read object property
- * @param obj
- * @param key
- * @param defaultValue
- * @returns {*}
+ * @function
+ * @name safeObjectPropertyRead
+ * @description reads properties of an object safely and avoids to throw an error if property or object are undefined
+ * @param   object          {object}    object you want to get value from
+ * @param   key             {string}    key of the object you want to get it's value
+ * @param   defaultValue    {any}       default value of what you want if it was undefiend
+ * @returns {any}
  */
-export const safeObjectPropertyRead = (obj, key, defaultValue = undefined) => key.split('.').reduce((nestedObject, index) => {
-  if (nestedObject && index in nestedObject) {
-    return nestedObject[index];
-  }
-  return undefined;
-}, obj) || defaultValue;
+export const safeObjectPropertyRead = (
+  object,
+  key,
+  defaultValue = undefined,
+) => {
+  const result = key.split('.').reduce((nestedObject, index) => {
+    if (nestedObject && index in nestedObject) {
+      return nestedObject[index];
+    }
+    return undefined;
+  }, object);
+
+  return result !== undefined ? result : defaultValue;
+};
 
 /**
- * Get an object next property
- * @param obj
- * @param key
- * @returns {boolean|string|*}
+ * @function
+ * @name getNextProp
+ * @description returns the next property of given property in an object
+ * @param   object    {object}    object you want navigate through
+ * @param   key       {string}    name of the key you want to get next prop right after
+ * @returns {any}
  */
-export const getNextProp = (obj, key) => {
-  const keys = Object.keys(obj);
-  const i = keys.indexOf(key);
-  return i !== -1 && keys[i + 1] && obj[keys[i + 1]];
+export const getNextProp = (object, key) => {
+  const keys = Object.keys(object);
+  const index = keys.indexOf(key);
+  return index !== -1 && keys[index + 1] && object[keys[index + 1]];
+};
+
+/**
+ * @function
+ * @name serializeObject
+ * @description serializes the properties of given object
+ * @param   object    {object}    object to be serialized by keys
+ * @returns {string}
+ */
+export const serializeObject = object => {
+  if (!object || typeof object !== 'object') {
+    return '';
+  }
+  const result = [];
+  Object.keys(object).forEach(property => {
+    if (typeof object[property] === 'object') {
+      if (Array.isArray(object[property]) && object[property].length) {
+        object[property].forEach(item => result.push(`${property}[]=${item}`));
+      } else if (
+        !Array.isArray(object[property]) &&
+        Object.keys(object[property]).length
+      ) {
+        Object.keys(object[property]).forEach(key =>
+          result.push(`${property}[${key}]=${object[property][key]}`),
+        );
+      }
+    } else if (typeof object[property] !== 'undefined') {
+      result.push(`${property}=${object[property]}`);
+    }
+  });
+  return result.join('&');
 };

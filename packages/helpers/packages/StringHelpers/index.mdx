@@ -1,0 +1,121 @@
+---
+name: StringHelpers
+route: /helpers/StringHelpers
+menu: 6.Helpers
+---
+
+
+# String helpers
+> ✴ Methods that helps us to work with strings
+
+[![version](https://img.shields.io/npm/v/@snappmarket/string-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/string-helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/string-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/string-helpers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/string-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+## get started
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/string-helpers
+OR
+npm i @snappmarket/helpers
+```
+
+## methods
+|        |
+| ------ |
+| stringReplace                                                 |
+| bulkStringReplace                                                 |
+
+## usage
+```javascript
+import { METHOD_NAME } from '@snappmarket/string-helpers';
+// or
+// import { METHOD_NAME } from '@snappmarket/helpers';
+```
+``
+
+## Functions
+
+<dl>
+<dt><a href="#stringReplace">stringReplace(find, replace, string)</a> ⇒ string</dt>
+<dd><p>replace a string with another in a text</p>
+</dd>
+<dt><a href="#bulkStringReplace">bulkStringReplace(replacments, string)</a> ⇒ *</dt>
+<dd><p>replaces multiple strings in a text</p>
+</dd>
+<dt><a href="#autoLink">autoLink(string)</a> ⇒</dt>
+<dd><p>links urls in the string</p>
+</dd>
+<dt><a href="#getQueryParams">getQueryParams(url, parameter)</a> ⇒ string | null</dt>
+<dd><p>gets value of a query parameter</p>
+</dd>
+<dt><a href="#camelToSnakeCase">camelToSnakeCase(string)</a> ⇒ string</dt>
+<dd><p>Convert camelCase string to snake_case</p>
+</dd>
+</dl>
+
+<a name="stringReplace"></a>
+
+## stringReplace
+replace a string with another in a text
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| find | string | string you want to be replaced |
+| replace | string | string you wont to replace |
+| string | string | string you want to modify |
+
+<a name="bulkStringReplace"></a>
+
+## bulkStringReplace
+replaces multiple strings in a text
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| replacments | object | object of replacement, key is string you want to find, and value is the string you want to replace |
+| string | string | string you want to modify |
+
+<a name="autoLink"></a>
+
+## autoLink
+links urls in the string
+
+**Kind**: global function  
+**Returns**: string  
+**Author**: Reza Erami <reza@erami.name>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | string | string you want to make URLs linked |
+
+<a name="getQueryParams"></a>
+
+## getQueryParams
+gets value of a query parameter
+
+**Kind**: global function  
+
+| Param |
+| --- |
+| url | 
+| parameter | 
+
+<a name="camelToSnakeCase"></a>
+
+## camelToSnakeCase
+Convert camelCase string to snake_case
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | string | string you want to change from camel to snake case |
+

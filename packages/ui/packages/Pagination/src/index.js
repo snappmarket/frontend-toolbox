@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { persianNumber } from '@snappmarket/helpers';
-import { AngleLeftIcon, AngleRightIcon } from '@snappmarket/icons';
+import { AngleLeftIcon, AngleRightIcon } from '@snappmarket/icons/sprite';
 
 import {
   StyledPaginationWrapper,
@@ -10,7 +10,7 @@ import {
   StyledPaginationItem,
 } from './styles';
 
-const Pagination = (props) => {
+const Pagination = props => {
   const {
     limit,
     total,
@@ -22,9 +22,9 @@ const Pagination = (props) => {
     className,
   } = props;
 
-  const handlePaginate = (page) => {
+  const handlePaginate = page => {
     const newOffset = limit * page;
-    if (newOffset >= 0 && newOffset <= total && newOffset !== offset) {
+    if (newOffset >= 0 && newOffset < total && newOffset !== offset) {
       onPaginate(newOffset);
     }
   };
@@ -49,10 +49,11 @@ const Pagination = (props) => {
       pages.push(
         <StyledPaginationItem
           onClick={() => handlePaginate(i)}
-          className={currentPage === i ? 'active' : ''}
+          className={`page ${currentPage === i ? 'active' : ''}`}
           key={i}
+          data-testid="page"
         >
-          <span>{persianNumber(i + 1)}</span>
+          <span data-testid="pageNumber">{persianNumber(i + 1)}</span>
         </StyledPaginationItem>,
       );
     }
@@ -62,17 +63,21 @@ const Pagination = (props) => {
           <StyledNavigateButton
             onClick={() => handlePaginate(0)}
             disabled={!currentPage}
+            className="first-page"
+            data-testid="firstPage"
           >
-            <AngleRightIcon />
-            <AngleRightIcon />
+            <AngleRightIcon color="gray" />
+            <AngleRightIcon color="gray" />
           </StyledNavigateButton>
         )}
         {hasNavigateButtons && (
           <StyledNavigateButton
             onClick={() => handlePaginate(currentPage - 1)}
             disabled={!currentPage}
+            className="prev-page"
+            data-testid="prevPage"
           >
-            <AngleRightIcon />
+            <AngleRightIcon color="gray" />
           </StyledNavigateButton>
         )}
         {pages}
@@ -80,17 +85,21 @@ const Pagination = (props) => {
           <StyledNavigateButton
             onClick={() => handlePaginate(currentPage + 1)}
             disabled={(currentPage + 1) * limit >= total}
+            className="next-page"
+            data-testid="nextPage"
           >
-            <AngleLeftIcon />
+            <AngleLeftIcon color="gray" />
           </StyledNavigateButton>
         )}
         {hasSkipButtons && (
           <StyledNavigateButton
             onClick={() => handlePaginate(pagesCount - 1)}
             disabled={(currentPage + 1) * limit >= total}
+            className="last-page"
+            data-testid="lastPage"
           >
-            <AngleLeftIcon />
-            <AngleLeftIcon />
+            <AngleLeftIcon color="gray" />
+            <AngleLeftIcon color="gray" />
           </StyledNavigateButton>
         )}
       </StyledPaginationItemsWrapper>
@@ -99,7 +108,7 @@ const Pagination = (props) => {
 
   return (
     !!total && (
-      <StyledPaginationWrapper className={className}>
+      <StyledPaginationWrapper className={className} data-testid="paginationWrapper">
         {renderPaginationItems()}
       </StyledPaginationWrapper>
     )

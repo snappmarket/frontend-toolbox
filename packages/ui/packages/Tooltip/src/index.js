@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import { StyledToolbarWrapper, StyledToolbar } from './styles';
 
-const Tooltip = (props) => {
-  const {
-    className, position, title, children,
-  } = props;
+const Tooltip = props => {
+  const { className, position, title, children } = props;
 
   return (
-    <StyledToolbarWrapper className={className}>
+    <StyledToolbarWrapper data-testid="tooltipWrapper" className={className}>
       {children}
-      <StyledToolbar position={position}>{title}</StyledToolbar>
+      <StyledToolbar data-testid="tooltip" position={position}>
+        {title}
+      </StyledToolbar>
     </StyledToolbarWrapper>
   );
 };

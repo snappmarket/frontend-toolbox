@@ -1,0 +1,40 @@
+coverage:
+  status:
+    project:
+      target: 35%
+      threshold: 5%
+    Helpers:
+      target: 30%
+      flags:
+        - Helpers
+    Hooks:
+      target: 30%
+      flags:
+        - Hooks
+    Icons:
+      target: 90%
+      flags:
+        - Icons
+    UI:
+      target: 20%
+      flags:
+        - UI
+
+flags:
+  Helpers:
+    paths:
+      - packages/helpers
+  Hooks:
+    paths:
+      - packages/hooks
+  Icons:
+    paths:
+      - packages/icons
+  UI:
+    paths:
+      - packages/ui
+
+comment:
+  layout: "reach,diff,flags,tree"
+  behavior: default
+  require_changes: false

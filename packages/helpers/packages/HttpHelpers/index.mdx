@@ -1,0 +1,108 @@
+---
+name: HttpHelpers
+route: /helpers/HttpHelpers
+menu: 6.Helpers
+---
+
+
+# Http helpers
+> ✴ Methods that helps us to mange http request related things
+
+[![version](https://img.shields.io/npm/v/@snappmarket/http-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/http-helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/http-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/http-helpers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/http-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+## get started
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/http-helpers
+OR
+npm i @snappmarket/helpers
+```
+
+
+## methods
+|        |
+| ------ |
+| fetchWithTimeOut                                                 |
+| universalCall                                                 |
+
+## usage
+```javascript
+import { METHOD_NAME } from '@snappmarket/http-helpers';
+// or
+// import { METHOD_NAME } from '@snappmarket/helpers';
+```
+
+## Functions
+
+<dl>
+<dt><a href="#fetchWithTimeOut">fetchWithTimeOut(url, options, timeout)</a> ⇒ Promise.&lt;unknown&gt;</dt>
+<dd><p>fetches the request, if it takes to long, it will be timed out</p>
+</dd>
+<dt><a href="#universalCall">universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)</a> ⇒ Promise.&lt;any&gt;</dt>
+<dd><p>Call an api in universal way</p>
+</dd>
+</dl>
+
+<a name="fetchWithTimeOut"></a>
+
+## fetchWithTimeOut
+fetches the request, if it takes to long, it will be timed out
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | string | the URL you want to fetch |
+| options | object | the options such as get parameters, method etc... |
+| timeout | number | timeout in ms to kill the request if it's taking too long |
+
+<a name="universalCall"></a>
+
+## universalCall
+Call an api in universal way
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | string | the URL you want to fetch |
+| method | string | method of the request e.g. POST |
+| credentials | string | credentials to include the third party cookies or not e.g. same-origin |
+| data | object | object of the data you want to send, not for get |
+| headers | object | object of the request headers |
+| params | object | URL parameters |
+| jwtToken | string | the JWA token for end-points with authentication, Bearer prefix would be added automatically |
+| rest | any | any additional options which is supported by the isomorphic fetch |
+| timeout | number | timeout to kill the request if it's taking too long |
+| allowedNoContent | boolean | flag to allow the request be handle even if there is no content |
+
+
+* [universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)](#universalCall) ⇒ Promise.&lt;any&gt;
+    * [~callUrl](#universalCall..callUrl)
+    * [~result](#universalCall..result)
+    * [~response](#universalCall..response)
+
+<a name="universalCall..callUrl"></a>
+
+### universalCall~callUrl
+Make query parameters
+
+**Kind**: inner property of [universalCall](#universalCall)  
+<a name="universalCall..result"></a>
+
+### universalCall~result
+Parse server response json string
+
+**Kind**: inner property of [universalCall](#universalCall)  
+<a name="universalCall..response"></a>
+
+### universalCall~response
+Call universal request with options
+
+**Kind**: inner constant of [universalCall](#universalCall)  

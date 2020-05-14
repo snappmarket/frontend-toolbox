@@ -1,15 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
 import * as UiComponents from '../packages/index';
-
-import { makeTheme } from '../packages/Theme/src';
+import { Wrapper } from './test.helpers';
 
 // RENDER TEST
 describe('UI components render test : ', () => {
-  const EXCLUDED_PACKAGES = ['makeTheme', 'Carousel', 'Tab', 'TabPanel', 'TabSwitcher', 'JsonLD', 'Image', 'Grid', 'InputRange', 'Pagination', 'TextWrap', 'Accordion', 'AccordionContent', 'AccordionHead', 'Tooltip'];
-  const Wrapper = ({ children }) => <ThemeProvider theme={makeTheme()}>{children}</ThemeProvider>;
-  Object.keys(UiComponents).forEach((uiComponent) => {
+  const EXCLUDED_PACKAGES = [
+    'makeTheme',
+    'Carousel',
+    'Tab',
+    'TabPanel',
+    'TabSwitcher',
+    'JsonLD',
+    'Image',
+    'Grid',
+    'InputRange',
+    'Pagination',
+    'TextWrap',
+    'Accordion',
+    'AccordionContent',
+    'AccordionHead',
+    'Tooltip',
+  ];
+
+  /**
+   * Loop on all ui components and test them
+   */
+  Object.keys(UiComponents).forEach(uiComponent => {
     if (!EXCLUDED_PACKAGES.includes(uiComponent)) {
       it(`should render ${uiComponent} without crashing`, () => {
         const div = document.createElement('div');

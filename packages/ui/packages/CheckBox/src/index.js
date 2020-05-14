@@ -1,34 +1,33 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { CheckMarkIcon, CircleIcon, MinusIcon } from '@snappmarket/icons';
+import {
+  CheckMarkIcon,
+  CircleIcon,
+  MinusIcon,
+} from '@snappmarket/icons/sprite';
 
 import { StyledCheckboxWrapper } from './styles';
 
-const CheckBox = (props) => {
-  const {
-    status, selected, size, disabled, className, border,
-  } = props;
+const CheckBox = props => {
+  const { status, selected, size, disabled, className, border } = props;
 
   const render = () => (
     <StyledCheckboxWrapper
+      data-testid="checkBox"
+      role="checkbox"
+      tabIndex="0"
+      aria-checked={selected ? 'true' : 'false'}
       className={className}
       disabled={disabled}
+      type="button"
       size={size}
       status={status}
       border={border}
       selected={selected}
     >
       {selected && !disabled ? <CheckMarkIcon size={size} /> : ''}
-      {disabled && className !== 'circle' ? (
-        <MinusIcon size={size} />
-      ) : (
-        ''
-      )}
-      {className === 'circle' && disabled ? (
-        <CircleIcon size={size} />
-      ) : (
-        ''
-      )}
+      {disabled && className !== 'circle' ? <MinusIcon size={size} /> : ''}
+      {className === 'circle' && disabled ? <CircleIcon size={size} /> : ''}
     </StyledCheckboxWrapper>
   );
 

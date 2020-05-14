@@ -1,11 +1,12 @@
 ---
 name: Button
 route: /ui/button
-menu: Ui
+menu: 3.Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Row, Col, Button } from '..';
+import { Row, Col } from '..';
+import Button from './src/index';
 
 export const modifiers = ['primary', 'outline', 'link'];
 export const sizes = ['xl', 'lg', 'md', 'sm', 'xs'];
@@ -65,9 +66,9 @@ export const shades = ['dark', 'normal', 'light', 'ultra-light', 'bright'];
   <Button
     modifier="primary"
     color="blue"
+    title="Button"
     shade="normal"
     size="lg"
-    title="Button"
     onClick={() => alert('thanks for clicking me !')}
   />
 </Playground>

@@ -1,0 +1,39 @@
+---
+name: Image
+route: /ui/image
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col, Label } from '..';
+import { LogoAnimation } from '../Loading/src';
+import Image from './src/index';
+
+# Demo
+image has three different states, loading, loaded and error, in both loading and error states you can pass a component to show instead
+<Row className="justify-between">
+  <Col xs={12} sm={3} className="text-center">
+    <Image src="https://avatars3.githubusercontent.com/u/51505168?s=200&v=4" size={10}/>
+    <Label type="primary" color="green" className="text-center d-block">Loaded</Label>
+  </Col>
+  <Col xs={12} sm={3} className="text-center">
+    <LogoAnimation size={10} />
+    <Label type="primary" color="yellow" className="text-center d-block">Loading</Label>
+  </Col>
+  <Col xs={12} sm={3} className="text-center">
+    <LogoAnimation size={10} animate={false} />
+    <Label type="primary" color="red" className="text-center d-block">Error</Label>
+  </Col>
+</Row>
+
+<br />
+
+# Basic Usage
+<Playground>
+  <Image src="https://avatars3.githubusercontent.com/u/51505168?s=200&v=4" loader={<b>please wait...</b>} error={<b>something wrong...</b>} />
+  <Image src="https://img.not/exists" loader={<b>please wait...</b>} error={<b>something wrong...</b>} />
+</Playground>
+
+<br />
+
+# Props
+<Props of={Image} />

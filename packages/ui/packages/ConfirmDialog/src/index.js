@@ -12,7 +12,7 @@ import {
   StyledContentCol,
 } from './styles';
 
-const ConfirmDialog = (props) => {
+const ConfirmDialog = props => {
   const {
     title,
     description,
@@ -28,7 +28,7 @@ const ConfirmDialog = (props) => {
   return (
     <StyledConfirmDialog
       className="justify-center"
-      footer={(
+      footer={
         <StyledButtonWrapper className="justify-end">
           <Button
             size="sm"
@@ -45,19 +45,20 @@ const ConfirmDialog = (props) => {
             color="gray"
           />
         </StyledButtonWrapper>
-      )}
+      }
       {...rest}
     >
       <StyledConfirmDialogContainer>
         <Row>
           {!!icon && (
             <StyledIconCol className="align-center" sm={2}>
-              <div className="align-center justify-center circle">
-                {icon}
-              </div>
+              <div className="align-center justify-center circle">{icon}</div>
             </StyledIconCol>
           )}
-          <StyledContentCol className="justify-center flex-column" sm={!icon ? 12 : 10}>
+          <StyledContentCol
+            className="justify-center flex-column"
+            sm={!icon ? 12 : 10}
+          >
             <strong>{title}</strong>
             <p>{description}</p>
           </StyledContentCol>

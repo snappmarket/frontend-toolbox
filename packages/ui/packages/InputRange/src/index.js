@@ -3,24 +3,30 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactInputRange from 'react-hgs-input-range';
 
-import { currencyPrice } from '@snappmarket/helpers';
 import {
   StyledInputRangeWrapper,
   StyledRangeLabelWrapper,
   StyledInputRange,
 } from './styles';
 
-const InputRange = (props) => {
+const InputRange = props => {
   const {
-    value: initialValue, rangeValue, onChangeComplete, fromTitle, toTitle,
+    value: initialValue,
+    rangeValue,
+    onChangeComplete,
+    fromTitle,
+    toTitle,
+    rtl,
+    className,
+    ...rest
   } = props;
   const { min: initialMin, max: initialMax } = rangeValue;
   const [value, setValue] = useState(initialValue);
   const { min, max } = value;
 
   return (
-    <StyledInputRangeWrapper>
-      <StyledInputRange>
+    <StyledInputRangeWrapper className={className} data-testid="inputRangeWrapper">
+      <StyledInputRange data-testid="inputRange">
         <ReactInputRange
           minValue={initialMin}
           value={value}
@@ -28,19 +34,16 @@ const InputRange = (props) => {
           onChange={setValue}
           onChangeComplete={onChangeComplete}
           formatLabel={() => false}
-          rtl
+          rtl={rtl}
+          {...rest}
         />
       </StyledInputRange>
-      <StyledRangeLabelWrapper className="justify-between">
-        <span className="text-center">
-          {fromTitle}
-          {' '}
-          {currencyPrice(min)}
+      <StyledRangeLabelWrapper rtl={rtl} data-testid="inputRangeLabel" className="justify-between">
+        <span className="text-center" data-testid="inputRangeLabelItem">
+          {fromTitle(min)}
         </span>
         <span className="text-center">
-          {toTitle}
-          {' '}
-          {currencyPrice(max)}
+          {toTitle(max)}
         </span>
       </StyledRangeLabelWrapper>
     </StyledInputRangeWrapper>
@@ -48,9 +51,11 @@ const InputRange = (props) => {
 };
 
 InputRange.propTypes = {
-  fromTitle: PropTypes.string,
-  toTitle: PropTypes.string,
+  className: PropTypes.string,
+  fromTitle: PropTypes.func,
+  toTitle: PropTypes.func,
   onChangeComplete: PropTypes.func,
+  rtl: PropTypes.bool,
   rangeValue: PropTypes.shape({
     min: PropTypes.number,
     max: PropTypes.number,
@@ -61,16 +66,18 @@ InputRange.propTypes = {
   }),
 };
 InputRange.defaultProps = {
-  fromTitle: 'from',
-  toTitle: 'to',
+  className: '',
+  fromTitle: value => `from ${value}`,
+  toTitle: value => `to ${value}`,
   onChangeComplete: () => {},
+  rtl: true,
   rangeValue: {
     min: 0,
-    max: 0,
+    max: 1,
   },
   value: {
     min: 0,
-    max: 0,
+    max: 1,
   },
 };
 export default InputRange;

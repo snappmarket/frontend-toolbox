@@ -1,0 +1,34 @@
+---
+name: JsonLd
+route: /ui/json-ld
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import JsonLd from './src/index';
+
+# JsonLd
+<p>
+to make an schema for the elements in the webpage, you can use the JsonLd component, it renders an script which contains the schema you gave.
+go to the <a href="https://schema.org" target="_blank">schema.org</a> to see the full documentation.
+</p>
+
+# Basic Usage
+<Playground>
+<JsonLd
+  schema={{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "name": "JsonLD documentation",
+    "description": "this is the page to document the JsonLD component made by snappmarket",
+  }}
+/>
+</Playground>
+
+<br /><br />
+
+# Result
+<code>{`<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","name":"JsonLD documentation","description":"this is the page to document the JsonLD component made by snappmarket"}</script>`}</code>
+<br />
+
+# Props
+<Props of={JsonLd} />

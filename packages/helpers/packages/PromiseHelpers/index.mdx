@@ -1,0 +1,94 @@
+---
+name: PromiseHelpers
+route: /helpers/PromiseHelpers
+menu: 6.Helpers
+---
+
+
+# Promise helpers
+> ✴ Methods that helps us to work with promises
+
+[![version](https://img.shields.io/npm/v/@snappmarket/promise-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/promise-helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/promise-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/promise-helpers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/promise-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+## get started
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/promise-helpers
+OR
+npm i @snappmarket/helpers
+```
+
+## methods
+|        |
+| ------ |
+| racePromise                                                 |
+| makeTimeout                                                 |
+| emptyPromise                                                 |
+
+## usage
+```javascript
+import { METHOD_NAME } from '@snappmarket/promise-helpers';
+// or
+// import { METHOD_NAME } from '@snappmarket/helpers';
+```
+``
+
+## Functions
+
+<dl>
+<dt><a href="#racePromise">racePromise(timeout)</a> ⇒ Promise.&lt;unknown&gt;</dt>
+<dd><p>makes a race promise which returns rejection error on timeout</p>
+</dd>
+<dt><a href="#makeTimeout">makeTimeout(timeout)</a> ⇒ Promise.&lt;unknown&gt;</dt>
+<dd><p>returns a rejected promise with TIMEOUT message</p>
+</dd>
+<dt><a href="#Empty promise to use as default things">Empty promise to use as default things()</a> ⇒ Promise.&lt;any&gt;</dt>
+<dd></dd>
+<dt><a href="#sleep">sleep(delay)</a> ⇒ Promise.&lt;unknown&gt;</dt>
+<dd><p>makes a promise which resolves after a delay</p>
+</dd>
+</dl>
+
+<a name="racePromise"></a>
+
+## racePromise
+makes a race promise which returns rejection error on timeout
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| timeout | number | timout in ms to throw an error with resolve |
+
+<a name="makeTimeout"></a>
+
+## makeTimeout
+returns a rejected promise with TIMEOUT message
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| timeout | number | timout in ms to throw an error with promise reject |
+
+<a name="Empty promise to use as default things"></a>
+
+## Empty promise to use as default things
+**Kind**: global function  
+<a name="sleep"></a>
+
+## sleep
+makes a promise which resolves after a delay
+
+**Kind**: global function  
+
+| Param |
+| --- |
+| delay | 
+

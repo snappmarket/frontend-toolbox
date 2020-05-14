@@ -1,0 +1,109 @@
+---
+name: NumberHelpers
+route: /helpers/NumberHelpers
+menu: 6.Helpers
+---
+
+
+# Number helpers
+> ✴ Methods that helps us to control numbers
+
+[![version](https://img.shields.io/npm/v/@snappmarket/number-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/number-helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/number-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/number-helpers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/number-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+## get started
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/number-helpers
+OR
+npm i @snappmarket/helpers
+```
+
+## methods
+|        |
+| ------ |
+| persianNumber                                                 |
+| englishNumber                                                 |
+| generateKey                                                 |
+| cellphoneValidate                                                 |
+| cellphoneValidatePattern                                                 |
+| currencyPrice                                                 |
+
+## usage
+```javascript
+import { METHOD_NAME } from '@snappmarket/number-helpers';
+// or
+// import { METHOD_NAME } from '@snappmarket/helpers';
+```
+``
+
+## Functions
+
+<dl>
+<dt><a href="#persianNumber">persianNumber(string)</a> ⇒ string</dt>
+<dd><p>converts the english number to persian number</p>
+</dd>
+<dt><a href="#englishNumber">englishNumber(string)</a> ⇒ string</dt>
+<dd><p>converts both arabic-extended and arabic-indic numbers to english</p>
+</dd>
+<dt><a href="#generateKey">generateKey()</a> ⇒ string</dt>
+<dd><p>returns a key which is combination of a random number and timestamp</p>
+</dd>
+<dt><a href="#cellphoneValidate">cellphoneValidate()</a> ⇒ string</dt>
+<dd><p>returns a regular expression for validating cellphone number with format of cellphone numbers of Iran</p>
+</dd>
+<dt><a href="#currencyPrice">currencyPrice(amount)</a> ⇒ string</dt>
+<dd><p>turns number into currency formatted number in persian</p>
+</dd>
+</dl>
+
+<a name="persianNumber"></a>
+
+## persianNumber
+converts the english number to persian number
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | string | the string that contains the number  you want to convert to persian |
+
+<a name="englishNumber"></a>
+
+## englishNumber
+converts both arabic-extended and arabic-indic numbers to english
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | string | the string that contains the number  you want to convert to english |
+
+<a name="generateKey"></a>
+
+## generateKey
+returns a key which is combination of a random number and timestamp
+
+**Kind**: global function  
+<a name="cellphoneValidate"></a>
+
+## cellphoneValidate
+returns a regular expression for validating cellphone number with format of cellphone numbers of Iran
+
+**Kind**: global function  
+<a name="currencyPrice"></a>
+
+## currencyPrice
+turns number into currency formatted number in persian
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| amount | number | the english number you want to convert to currency formatted number in persian |
+

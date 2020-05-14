@@ -1,17 +1,19 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { MemoryRouter as Router } from 'react-router-dom';
 
 import GlobalStyles from '../resources/styles';
-import { makeTheme } from '../../../packages/ui/packages/Theme/src';
-import { MemoryRouter as Router } from 'react-router-dom';
+import { ToolboxProvider } from '../../../packages/config/packages';
 
 const Theme = ({ children }) => {
   return (
     <Router history={{}}>
-      <ThemeProvider theme={makeTheme()}>
+      <ToolboxProvider options={{
+        importSpriteSVG: false,
+        useSpriteFile: true,
+      }} >
         <GlobalStyles />
         {children}
-      </ThemeProvider>
+      </ToolboxProvider>
     </Router>
   );
 };

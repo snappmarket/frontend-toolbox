@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { AngleLeftIcon } from '@snappmarket/icons';
+import { AngleLeftIcon } from '@snappmarket/icons/sprite';
 
 import {
   StyledBreadcrumbWrapper,
@@ -10,24 +10,28 @@ import {
   StyledBreadcrumbItemWrapper,
 } from './styles';
 
-const Breadcrumb = (props) => {
+const Breadcrumb = props => {
   const { items, className, ...rest } = props;
   const breadcrumbItems = items.map((item, index) => (
     // eslint-disable-next-line react/no-array-index-key
     <StyledBreadcrumbItemWrapper key={index}>
       {!!index && (
         <StyledBreadcrumbItemSeparator>
-          <AngleLeftIcon />
+          <AngleLeftIcon size={1.3} color="gray" />
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>
-        <Link to={item.link}>{item.title}</Link>
+        {item.link ? 
+          <Link  data-testid="breadcrumbLink" to={item.link}>{item.title}</Link>
+          :
+          item.title
+        }
       </StyledBreadcrumbItem>
     </StyledBreadcrumbItemWrapper>
     /* eslint-enable indent */
   ));
   return (
-    <StyledBreadcrumbWrapper className={className} {...rest}>
+    <StyledBreadcrumbWrapper data-testid="breadcrumb" className={className} {...rest}>
       {breadcrumbItems}
     </StyledBreadcrumbWrapper>
   );

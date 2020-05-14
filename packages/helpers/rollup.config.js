@@ -11,6 +11,7 @@ const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
   'isomorphic-unfetch': 'isomorphicUnfetch',
+  '@snappmarket/config': 'snappmarketConfig',
 };
 const babelOptions = {
   exclude: /node_modules/,

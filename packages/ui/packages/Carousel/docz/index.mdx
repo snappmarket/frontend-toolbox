@@ -1,0 +1,268 @@
+---
+name: Carousel
+route: /ui/carousel
+menu: 3.Components
+---
+# Carousel ui component
+----
+
+[![version](https://img.shields.io/npm/v/@snappmarket/ui-carousel?style=flat-square)](https://www.npmjs.com/package/@snappmarket/ui-carousel)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/ui-carousel?style=flat-square)](http://www.npmtrends.com/@snappmarket/ui-carousel)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+## get started
+```bash 
+npm i @snappmarket/ui-carousel
+```
+import Carousel from './demo';
+import { Playground, Props } from 'docz';
+import { AngleLeftIcon, AngleRightIcon } from '../../../../icons';
+import { Button } from '../..';
+
+
+export const ProductsSliderNew = props => {
+  const slideConfig = {
+      customArrow: true,
+      nav: true,
+      drag: true,
+      rtl: false,
+      dots: true,
+      threshold: 50,
+      autoWidth: true,
+      responsive: {
+          0: {
+              items: 2,
+          },
+      },
+  };
+  return (
+    <Carousel 
+        slideConfig={slideConfig}
+        nextArrow={
+            <Button
+                icon={<AngleRightIcon />}
+                size="xs"
+                modifier="link"
+                color="gray"
+                shade="dark"
+            />
+        }
+        prevArrow={
+            <Button
+                icon={<AngleLeftIcon />}
+                size="xs"
+                modifier="link"
+                color="gray"
+                shade="dark"
+            />
+        }
+        >
+        <div class="slide">demo</div>
+        <div class="slide">demo demo</div>
+        <div class="slide">demo demo demo </div>
+        <div class="slide">demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo demo demo demo </div>
+    </Carousel>
+  )
+}
+
+export const ProductsSlider = props => {
+  const slideConfig = {
+      customArrow: true,
+      nav: true,
+      drag: true,
+      rtl: true,
+      dots: true,
+      threshold: 50,
+      autoWidth: true,
+      responsive: {
+          0: {
+              items: 2,
+          },
+      },
+  };
+  return (
+    <Carousel 
+        slideConfig={slideConfig}
+        nextArrow={
+            <Button
+                icon={<AngleRightIcon />}
+                size="xs"
+                modifier="link"
+                color="gray"
+                shade="dark"
+            />
+        }
+        prevArrow={
+            <Button
+                icon={<AngleLeftIcon />}
+                size="xs"
+                modifier="link"
+                color="gray"
+                shade="dark"
+            />
+        }
+        >
+        <div class="slide">demo</div>
+        <div class="slide">demo demo</div>
+        <div class="slide">demo demo demo </div>
+        <div class="slide">demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo demo demo </div>
+        <div class="slide">demo demo demo demo demo demo demo demo demo demo </div>
+    </Carousel>
+  )
+}
+
+export const ProductsSliderRtl = props => {
+  const slideConfig = {
+    infinite: true,
+    customArrow: true,
+    autoPlay: true,
+    nextSpeed: 2000,
+    nav: true,
+    dots: true,
+    rtl: true,
+    drag: true,
+    threshold: 50,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        576: {
+            items: 2,
+        },
+    },
+  };
+  return (
+    <Carousel 
+      slideConfig={slideConfig}
+      nextArrow={
+          <Button
+              icon={<AngleRightIcon />}
+              size="xs"
+              modifier="link"
+              color="gray"
+              shade="dark"
+          />
+      }
+      prevArrow={
+          <Button
+              icon={<AngleLeftIcon />}
+              size="xs"
+              modifier="link"
+              color="gray"
+              shade="dark"
+          />
+      }
+      >
+      <div class="slide">Slide 1</div>
+      <div class="slide">Slide 2</div>
+      <div class="slide">Slide 3</div>
+      <div class="slide">Slide 4</div>
+      <div class="slide">Slide 5</div>
+    </Carousel>
+  )
+}
+
+# Demo
+
+<ProductsSlider />
+ <br/>
+ <br/>
+ <br/>
+<ProductsSliderNew />
+ <br/>
+ <br/>
+ <br/>
+
+# Demo RTL
+
+<ProductsSliderRtl />
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+## usage
+```jsx
+import Carousel from 'ui-carousel';
+
+const ProductsSlider = props => {
+  const { product, refresh } = props;
+  // refresh true or false
+
+  // start from activeSlide position,
+  // you can create function for change position by click on showingSlide
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  // create config for init Carousel
+  const slideConfig = {
+    infinite: false,    // infinite Carousel true of false 
+    customArrow: true,  // true when use custom icon on arrows
+    nav: true,          // true or false showing nav arrows on Carousel
+    dots: false,        // true or false showing dots bottom of Carousel
+    autoPlay: false,    // true or false auto Carousel auto play
+    nextSpeed: 2000,    // auto play speed
+    rtl: false,         // true or false rtl mode
+    drag: true,         // true or false draggable on Carousel
+    threshold: 50,      // set threshold end and first of Carousel for fire actions (drag and calc position ,....)
+    responsive: {
+      0: {
+        items: 1.5,
+      },
+      560: {
+        items: 3,
+      },
+      760: {
+        items: 5,
+      },
+      1200: {
+        items: 8,
+      },
+    },
+  };
+
+  // for EX:
+  return (
+      <Carousel
+        slideConfig={slideConfig}
+        showingSlide={activeSlide}
+        refresh={refresh}
+        nextArrow={
+          <Button
+            icon={<AngleRightIcon />}
+            size="xs"
+            modifier="link"
+            color="gray"
+            shade="dark"
+          />
+        }
+        prevArrow={
+          <Button
+            icon={<AngleLeftIcon />}
+            size="xs"
+            modifier="link"
+            color="gray"
+            shade="dark"
+          />
+        }
+      >
+      {products.map(item => (
+        <div>{item}</div>
+      ))}
+    </Carousel>
+  )
+```

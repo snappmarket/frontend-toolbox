@@ -1,31 +1,48 @@
 // eslint-disable-next-line import/no-named-default
+import AbortController from 'abort-controller';
 import fetch from 'isomorphic-unfetch';
 
-import { ApiError, delog } from '../DebugHelpers';
-import { serializeObject } from '../ArrayHelpers';
+import { ApiError } from '../DebugHelpers';
+import { serializeObject } from '../ObjectHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
 /**
- * Fetch with options and timeout
- * @param url
- * @param options
- * @param timeout
+ * @function
+ * @name fetchWithTimeOut
+ * @description fetches the request, if it takes to long, it will be timed out
+ * @param   url         {string}    the URL you want to fetch
+ * @param   options     {object}    the options such as get parameters, method etc...
+ * @param   timeout     {number}    timeout in ms to kill the request if it's taking too long
  * @returns {Promise<unknown>}
  */
-export const fetchWithTimeOut = (url, options, timeout = 5000) => Promise.race([fetch(url, options), makeTimeout(timeout)]);
+export const fetchWithTimeOut = (url, options, timeout = 5000) => {
+  const controller = new AbortController();
+  const { signal } = controller;
+  const request = fetch(url, { ...options, signal });
+  const challenger = makeTimeout(timeout);
+  const race = Promise.race([request, challenger]);
+  race.catch(e => {
+    if (e.message === 'TIMEOUT') {
+      controller.abort();
+    }
+  });
+  return race;
+};
 
 /**
- * Call an api in universal way
- * @param url
- * @param method
- * @param credentials
- * @param data
- * @param headers
- * @param params
- * @param jwtToken
- * @param rest
- * @param timeout
- * @param allowedNoContent
+ * @function
+ * @name universalCall
+ * @description Call an api in universal way
+ * @param   url                   {string}    the URL you want to fetch
+ * @param   method                {string}    method of the request e.g. POST
+ * @param   credentials           {string}    credentials to include the third party cookies or not e.g. same-origin
+ * @param   data                  {object}    object of the data you want to send, not for get
+ * @param   headers               {object}    object of the request headers
+ * @param   params                {object}    URL parameters
+ * @param   jwtToken              {string}    the JWA token for end-points with authentication, Bearer prefix would be added automatically
+ * @param   rest                  {any}       any additional options which is supported by the isomorphic fetch
+ * @param   timeout               {number}    timeout to kill the request if it's taking too long
+ * @param   allowedNoContent      {boolean}   flag to allow the request be handle even if there is no content
  * @returns {Promise<any>}
  */
 export const universalCall = async ({
@@ -48,9 +65,6 @@ export const universalCall = async ({
     ...rest,
   };
 
-  // eslint-disable-next-line no-console
-  delog(`API called with : ${options.method} ${url}`);
-
   if (jwtToken) {
     // eslint-disable-next-line no-param-reassign
     headers.authorization = `Bearer ${jwtToken}`;
@@ -70,7 +84,7 @@ export const universalCall = async ({
   let callUrl = url;
   if (Object.keys(params).length > 0) {
     const queryParameters = serializeObject(params);
-    callUrl += `?${queryParameters}`;
+    callUrl += `?${decodeURIComponent(queryParameters)}`;
   }
 
   /**
@@ -90,7 +104,7 @@ export const universalCall = async ({
    * If we did not got json then throw error message
    */
   if (!contentType || !contentType.includes('application/json')) {
-    throw new ApiError('SERVER_CONTENT_TYPE_ERROR');
+    throw new ApiError(`SERVER_CONTENT_TYPE_ERROR:${url}`);
   }
 
   /**
@@ -100,7 +114,7 @@ export const universalCall = async ({
   try {
     result = await response.json();
   } catch (e) {
-    throw new ApiError('SERVER_CONTENT_PARSING_ERROR');
+    throw new ApiError(`SERVER_CONTENT_PARSING_ERROR:${url}`);
   }
 
   /**

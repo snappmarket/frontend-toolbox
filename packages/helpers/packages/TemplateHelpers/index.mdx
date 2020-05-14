@@ -1,0 +1,131 @@
+---
+name: TemplateHelpers
+route: /helpers/TemplateHelpers
+menu: 6.Helpers
+---
+
+
+# Template helpers
+> ✴ Methods that helps us to handle template making needs
+
+[![version](https://img.shields.io/npm/v/@snappmarket/template-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/template-helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/template-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/template-helpers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/template-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+## get started
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/template-helpers
+OR
+npm i @snappmarket/helpers
+```
+
+## methods
+|        |
+| ------ |
+| HexToRgb                                                 |
+| defineForegroundColor                                                 |
+| makeRgba                                                 |
+| decideMeasurement                                                 |
+| makeShadow                                                 |
+
+## usage
+```javascript
+import { METHOD_NAME } from '@snappmarket/template-helpers';
+// or
+// import { METHOD_NAME } from '@snappmarket/helpers';
+```
+``
+
+## Classes
+
+<dl>
+<dt><a href="#HexToRgb">HexToRgb</a></dt>
+<dd></dd>
+</dl>
+
+## Constants
+
+<dl>
+<dt><a href="#defineForegroundColor">defineForegroundColor</a> ⇒ string</dt>
+<dd><p>Decide between darkness and lightness</p>
+</dd>
+<dt><a href="#makeRgba">makeRgba</a> ⇒ string</dt>
+<dd><p>Make an rgba color from a hex</p>
+</dd>
+<dt><a href="#decideMeasurement">decideMeasurement</a> ⇒ string</dt>
+<dd><p>Decide between rem and percent values</p>
+</dd>
+<dt><a href="#makeShadow">makeShadow</a> ⇒ function</dt>
+<dd><p>Will create shadow in easy way</p>
+</dd>
+</dl>
+
+<a name="HexToRgb"></a>
+
+## HexToRgb
+**Kind**: global class  
+<a name="new_HexToRgb_new"></a>
+
+### new exports.HexToRgb
+Convert hex to rgba
+
+
+| Param |
+| --- |
+| hex | 
+
+<a name="defineForegroundColor"></a>
+
+## defineForegroundColor ⇒ string
+Decide between darkness and lightness
+
+**Kind**: global constant  
+
+| Param |
+| --- |
+| color | 
+
+<a name="makeRgba"></a>
+
+## makeRgba ⇒ string
+Make an rgba color from a hex
+
+**Kind**: global constant  
+
+| Param |
+| --- |
+| opacity | 
+| color | 
+
+<a name="decideMeasurement"></a>
+
+## decideMeasurement ⇒ string
+Decide between rem and percent values
+
+**Kind**: global constant  
+
+| Param |
+| --- |
+| measurement | 
+
+<a name="makeShadow"></a>
+
+## makeShadow ⇒ function
+Will create shadow in easy way
+
+**Kind**: global constant  
+
+| Param |
+| --- |
+| hOffset | 
+| vOffset | 
+| blur | 
+| spread | 
+| color | 
+| inset | 
+

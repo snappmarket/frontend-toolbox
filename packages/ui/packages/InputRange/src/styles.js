@@ -28,24 +28,24 @@ const StyledInputRangeWrapper = Styled.div`
     box-shadow: none;
     transform: none;
   }
-  
+
   .input-range__slider-container {
     transition: left 0.3s ease-out;
   }
-  
+
   .rtl .input-range__slider {
     margin-left: auto;
     margin-right: -0.5rem;
   }
-  
+
   .rtl .input-range__slider-container {
     transition: right 0.3s ease-out;
   }
-  
+
   .input-range__slider {
     margin-left: -0.5rem;
   }
-  
+
   .input-range__label {
     color: #aaaaaa;
     font-family: "Helvetica Neue", san-serif;
@@ -53,56 +53,56 @@ const StyledInputRangeWrapper = Styled.div`
     transform: translateZ(0);
     white-space: nowrap;
   }
-  
+
   .input-range__label--min,
   .input-range__label--max {
     bottom: -1.4rem;
     position: absolute;
   }
-  
+
   .input-range__label--min {
     left: 0;
   }
-  
+
   .input-range__label--max {
     right: 0;
   }
-  
+
   .input-range__label--value {
     position: absolute;
     top: -1.8rem;
   }
-  
+
   .rtl .input-range__label--min {
     left: auto;
     right: 0;
   }
-  
+
   .rtl .input-range__label--max {
     left: 0;
     right: auto;
   }
-  
+
   .input-range__label-container {
     left: -50%;
     position: relative;
   }
-    
+
   .input-range__label--max .input-range__label-container {
     left: 50%;
   }
-  
+
   .rtl .input-range__label-container {
     left: auto;
     right: -50%;
     position: relative;
   }
-  
+
   .input-range__label--max .rtl .input-range__label-container {
     left: auto;
     right: 50%;
   }
-  
+
   .input-range__track {
     background: #eeeeee;
     border-radius: 0.3rem;
@@ -114,7 +114,7 @@ const StyledInputRangeWrapper = Styled.div`
   .input-range--disabled .input-range__track {
     background: #eeeeee;
   }
-  
+
   .input-range__track--background {
     left: 0;
     margin-top: -0.15rem;
@@ -122,25 +122,25 @@ const StyledInputRangeWrapper = Styled.div`
     right: 0;
     top: 50%;
   }
-  
+
   .input-range__track--active {
     background: #3f51b5;
   }
-  
+
   .rtl .input-range__track {
     transition: right 0.3s ease-out, width 0.3s ease-out;
   }
-  
+
   .input-range__track {
     transition: left 0.3s ease-out, width 0.3s ease-out;
   }
-  
+
   .input-range {
     height: 1rem;
     position: relative;
     width: 100%;
   }
-  
+
   .rtl.input-range {
     direction: rtl;
   }
@@ -152,19 +152,20 @@ const StyledInputRange = Styled.div`
   margin-top: 0;
   transform: translateY(-60%);
   .input-range__slider {
-    border-color: ${(props) => props.theme.colors.blue.normal};
+    border-color: ${props => props.theme.colors.blue.normal};
   }
   .input-range__slider, .input-range__track--active {
-    background-color: ${(props) => props.theme.colors.blue.normal};
+    background-color: ${props => props.theme.colors.blue.normal};
   }
 `;
 
 const StyledRangeLabelWrapper = Styled.div`
-  font-size: calc(${(props) => props.theme.defaultRem} * 1);
-  margin-top: calc(${(props) => props.theme.defaultRem} * 2.4);
+  font-size: calc(${props => props.theme.defaultRem} * 1);
+  margin-top: calc(${props => props.theme.defaultRem} * 2.4);
+  direction: ${props => props.rtl ? 'rtl' : 'ltr'};
   > span{
-    font-size: calc(${(props) => props.theme.defaultRem} * 1.4);
-    color: ${(props) => props.theme.colors.gray.dark};
+    font-size: calc(${props => props.theme.defaultRem} * 1.4);
+    color: ${props => props.theme.colors.gray.dark};
   }
 `;
 export { StyledInputRangeWrapper, StyledRangeLabelWrapper, StyledInputRange };
