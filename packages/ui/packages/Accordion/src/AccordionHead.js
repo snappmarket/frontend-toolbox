@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useContext } from 'react';
+import {useContext, useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 
 import { context as accordionContext } from './context/accordionContext';
@@ -9,17 +9,21 @@ const AccordionHead = props => {
   const { id, children, onClick, onOpen, onClose, ...rest } = props;
   const { changeActive, activeAccordionId } = useContext(accordionContext);
   const isActive = activeAccordionId === id;
+  const isOpenedRef = useRef(false)
   const isChildFunction = typeof children === 'function';
   const open = () => changeActive(id);
   const close = () => changeActive('');
 
-  if (isActive && onOpen) {
-    onOpen();
-  }
-
-  if (!isActive && onClose) {
-    onClose();
-  }
+  useEffect(() => {
+    if (isActive && onOpen) {
+      isOpenedRef.current = true;
+      onOpen();
+    }
+    if (isOpenedRef.current && !isActive && onClose) {
+      isOpenedRef.current = false;
+      onClose();
+    }
+  }, [ activeAccordionId ]);
 
   return (
     <StyledAccordionHead
@@ -51,7 +55,5 @@ AccordionHead.propTypes = {
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
 };
-
-AccordionHead.defaultProps = {};
 
 export default AccordionHead;
