@@ -32,6 +32,7 @@ Provider.propTypes = {
     importSpriteSVG: PropTypes.bool,
     useSpriteFile: PropTypes.bool,
     publicPath: PropTypes.string,
+    spriteSvgName: PropTypes.string,
   }),
   children: PropTypes.node,
 };
