@@ -18,12 +18,16 @@ You can see demo at : https://ft-box.netlify.com/
 npm i @snappmarket/ui
 npm i @snappmarket/hooks
 npm i @snappmarket/helpers
+npm i @snappmarket/icons
+npm i @snappmarket/config
 
 // OR 
 
 yarn add @snappmarket/ui
 yarn add @snappmarket/hooks
 yarn add @snappmarket/helpers
+yarn add @snappmarket/icons
+yarn add @snappmarket/config
 ```
 
 
@@ -100,6 +104,8 @@ yarn add @snappmarket/helpers
 
 
 ## 💎 [Icons](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/icons) found here
+
+All icons has svg file, react component, and an special sprite svg
 
 - 💯 100% tested react 100+ svg icon components
 
