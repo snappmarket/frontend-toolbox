@@ -32,8 +32,9 @@ const Modal = forwardRef((props, ref) => {
     position: initialPosition,
   } = props;
   const bodyRef = useRef(null);
-  const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const modalRef = createRef();
+  const lightBoxRef = createRef();
+  const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const [position, setPosition] = useState(initialPosition);
 
   /**
@@ -70,6 +71,7 @@ const Modal = forwardRef((props, ref) => {
       const {
         current: { offsetHeight: modalHeight },
       } = modalRef;
+      lightBoxRef.current.style.height = `${modalHeight + 100}px`;
       const { innerHeight: windowHeight } = window;
       if (modalHeight - 20 >= windowHeight) {
         setPosition('top');
@@ -84,7 +86,7 @@ const Modal = forwardRef((props, ref) => {
         className={className}
         ref={ref}
       >
-        <StyledLightBox data-testid="modalLightBox" onClick={handleClose || undefined} />
+        <StyledLightBox ref={lightBoxRef} data-testid="modalLightBox" onClick={handleClose || undefined} />
         <StyledModal
           data-testid="modal"
           width={width}

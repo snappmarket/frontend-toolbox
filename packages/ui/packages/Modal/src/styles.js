@@ -14,7 +14,9 @@ const StyledModalWrapper = Styled.div`
   z-index: 1001;
   padding: calc(${props => props.theme.defaultRem} * 4) 0;
 `;
-const StyledLightBox = Styled(StyledModalWrapper)`
+const StyledLightBox = Styled.div`
+  position: absolute;
+  top: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1002;
