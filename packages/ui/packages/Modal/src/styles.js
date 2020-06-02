@@ -16,6 +16,7 @@ const StyledModalWrapper = Styled.div`
 `;
 const StyledLightBox = Styled.div`
   position: absolute;
+  min-height: 100vh;
   top: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
