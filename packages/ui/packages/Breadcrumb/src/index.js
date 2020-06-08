@@ -21,8 +21,8 @@ const Breadcrumb = props => {
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>
-        {item.link ? 
-          <Link  data-testid="breadcrumbLink" to={item.link}>{item.title}</Link>
+        {item.link ?
+          <Link data-testid="breadcrumbLink" to={item.link}>{item.title}</Link>
           :
           item.title
         }
