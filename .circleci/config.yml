@@ -17,7 +17,7 @@ aliases:
   - &run_yarn
     run:
       name: Link and Install Packages
-      command: yarn link && yarn --frozen-lockfile
+      command: yarn link && yarn
 
 jobs:
   main:

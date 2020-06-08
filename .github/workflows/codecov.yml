@@ -16,7 +16,7 @@ jobs:
       - name: Install Yarn
         run: npm install -g yarn
       - name: Install Dependencies
-        run: yarn link && yarn --frozen-lockfile
+        run: yarn link && yarn
       - name: Run Build
         run: yarn build
       - name: Run Jest Tests
