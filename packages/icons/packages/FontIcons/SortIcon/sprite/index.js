@@ -29,7 +29,7 @@ const SortIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#SortIcon`} />
+      <use data-testid="SortIconHref" xlinkHref={`${importPrefix}#SortIcon`} />
     </svg>
   );
 };

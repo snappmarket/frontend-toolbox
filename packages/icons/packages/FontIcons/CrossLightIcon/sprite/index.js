@@ -29,7 +29,10 @@ const CrossLightIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CrossLightIcon`} />
+      <use
+        data-testid="CrossLightIconHref"
+        xlinkHref={`${importPrefix}#CrossLightIcon`}
+      />
     </svg>
   );
 };

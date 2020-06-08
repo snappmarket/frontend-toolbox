@@ -29,7 +29,10 @@ const StoreIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#StoreIcon`} />
+      <use
+        data-testid="StoreIconHref"
+        xlinkHref={`${importPrefix}#StoreIcon`}
+      />
     </svg>
   );
 };

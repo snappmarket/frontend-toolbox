@@ -29,7 +29,10 @@ const LaughEmoji = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#LaughEmoji`} />
+      <use
+        data-testid="LaughEmojiHref"
+        xlinkHref={`${importPrefix}#LaughEmoji`}
+      />
     </svg>
   );
 };

@@ -29,7 +29,10 @@ const MotorcycleIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#MotorcycleIcon`} />
+      <use
+        data-testid="MotorcycleIconHref"
+        xlinkHref={`${importPrefix}#MotorcycleIcon`}
+      />
     </svg>
   );
 };

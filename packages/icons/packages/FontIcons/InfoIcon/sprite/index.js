@@ -29,7 +29,7 @@ const InfoIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#InfoIcon`} />
+      <use data-testid="InfoIconHref" xlinkHref={`${importPrefix}#InfoIcon`} />
     </svg>
   );
 };

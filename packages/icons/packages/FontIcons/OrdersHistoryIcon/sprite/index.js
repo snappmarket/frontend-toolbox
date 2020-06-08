@@ -29,7 +29,10 @@ const OrdersHistoryIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#OrdersHistoryIcon`} />
+      <use
+        data-testid="OrdersHistoryIconHref"
+        xlinkHref={`${importPrefix}#OrdersHistoryIcon`}
+      />
     </svg>
   );
 };

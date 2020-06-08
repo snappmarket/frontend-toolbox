@@ -29,7 +29,10 @@ const TrashIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#TrashIcon`} />
+      <use
+        data-testid="TrashIconHref"
+        xlinkHref={`${importPrefix}#TrashIcon`}
+      />
     </svg>
   );
 };

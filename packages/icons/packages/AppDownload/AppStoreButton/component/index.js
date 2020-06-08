@@ -4,9 +4,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const AppStore = ({ className, size }) => (
+const AppStoreButton = ({ className, size }) => (
   <svg
-    data-testid="AppStore"
+    data-testid="AppStoreButton"
     viewBox="44.2 -25 128 40"
     className={className}
     style={{
@@ -27,13 +27,13 @@ const AppStore = ({ className, size }) => (
   </svg>
 );
 
-AppStore.propTypes = {
+AppStoreButton.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-AppStore.defaultProps = {
+AppStoreButton.defaultProps = {
   size: 1.5,
 };
 
-export default AppStore;
+export default AppStoreButton;

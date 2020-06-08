@@ -29,7 +29,10 @@ const ArrowRightIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ArrowRightIcon`} />
+      <use
+        data-testid="ArrowRightIconHref"
+        xlinkHref={`${importPrefix}#ArrowRightIcon`}
+      />
     </svg>
   );
 };

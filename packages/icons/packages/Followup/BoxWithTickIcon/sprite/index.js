@@ -29,7 +29,10 @@ const BoxWithTickIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#BoxWithTickIcon`} />
+      <use
+        data-testid="BoxWithTickIconHref"
+        xlinkHref={`${importPrefix}#BoxWithTickIcon`}
+      />
     </svg>
   );
 };

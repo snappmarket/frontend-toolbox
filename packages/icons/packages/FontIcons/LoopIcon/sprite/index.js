@@ -29,7 +29,7 @@ const LoopIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#LoopIcon`} />
+      <use data-testid="LoopIconHref" xlinkHref={`${importPrefix}#LoopIcon`} />
     </svg>
   );
 };

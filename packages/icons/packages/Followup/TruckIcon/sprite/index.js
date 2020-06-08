@@ -29,7 +29,10 @@ const TruckIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#TruckIcon`} />
+      <use
+        data-testid="TruckIconHref"
+        xlinkHref={`${importPrefix}#TruckIcon`}
+      />
     </svg>
   );
 };

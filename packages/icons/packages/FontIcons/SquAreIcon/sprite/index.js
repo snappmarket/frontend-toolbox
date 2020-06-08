@@ -29,7 +29,10 @@ const SquAreIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#SquAreIcon`} />
+      <use
+        data-testid="SquAreIconHref"
+        xlinkHref={`${importPrefix}#SquAreIcon`}
+      />
     </svg>
   );
 };

@@ -29,7 +29,10 @@ const EmptyBasketIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#EmptyBasketIcon`} />
+      <use
+        data-testid="EmptyBasketIconHref"
+        xlinkHref={`${importPrefix}#EmptyBasketIcon`}
+      />
     </svg>
   );
 };

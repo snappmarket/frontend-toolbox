@@ -26,7 +26,7 @@
   "peerDependencies": {
     "react": "^16.8.6",
     "prop-types": "^15.0.0",
-    "@snappmarket/config": "^0.2.10"
+    "@snappmarket/config": "^0.2.13"
   },
   "engines": {
     "node": ">=8",

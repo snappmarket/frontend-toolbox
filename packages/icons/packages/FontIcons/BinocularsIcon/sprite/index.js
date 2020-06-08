@@ -29,7 +29,10 @@ const BinocularsIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#BinocularsIcon`} />
+      <use
+        data-testid="BinocularsIconHref"
+        xlinkHref={`${importPrefix}#BinocularsIcon`}
+      />
     </svg>
   );
 };

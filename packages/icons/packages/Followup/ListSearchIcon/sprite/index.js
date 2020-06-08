@@ -29,7 +29,10 @@ const ListSearchIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ListSearchIcon`} />
+      <use
+        data-testid="ListSearchIconHref"
+        xlinkHref={`${importPrefix}#ListSearchIcon`}
+      />
     </svg>
   );
 };

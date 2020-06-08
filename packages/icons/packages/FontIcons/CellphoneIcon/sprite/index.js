@@ -29,7 +29,10 @@ const CellphoneIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CellphoneIcon`} />
+      <use
+        data-testid="CellphoneIconHref"
+        xlinkHref={`${importPrefix}#CellphoneIcon`}
+      />
     </svg>
   );
 };

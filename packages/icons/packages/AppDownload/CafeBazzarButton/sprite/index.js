@@ -7,10 +7,10 @@ import { useOptions, GlobalConfig } from '@snappmarket/config';
 
 if (GlobalConfig.options.importSpriteSVG) {
   // eslint-disable-next-line global-require
-  require('./AppStore.svg');
+  require('./CafeBazzarButton.svg');
 }
 
-const AppStore = ({ className, size }) => {
+const CafeBazzarButton = ({ className, size }) => {
   const options = useOptions();
 
   let importPrefix = options.useSpriteFile ? `/${options.spriteSvgName}` : '';
@@ -20,8 +20,8 @@ const AppStore = ({ className, size }) => {
 
   return (
     <svg
-      data-testid="AppStore"
-      viewBox="0 0 128 40"
+      data-testid="CafeBazzarButton"
+      viewBox="0 0 182.7 54.8"
       className={className}
       style={{
         width: size * 10,
@@ -29,18 +29,21 @@ const AppStore = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#AppStore`} />
+      <use
+        data-testid="CafeBazzarButtonHref"
+        xlinkHref={`${importPrefix}#CafeBazzarButton`}
+      />
     </svg>
   );
 };
 
-AppStore.propTypes = {
+CafeBazzarButton.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-AppStore.defaultProps = {
+CafeBazzarButton.defaultProps = {
   size: 1.5,
 };
 
-export default AppStore;
+export default CafeBazzarButton;

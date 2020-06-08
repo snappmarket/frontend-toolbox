@@ -29,7 +29,7 @@ const SadEmoji = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#SadEmoji`} />
+      <use data-testid="SadEmojiHref" xlinkHref={`${importPrefix}#SadEmoji`} />
     </svg>
   );
 };

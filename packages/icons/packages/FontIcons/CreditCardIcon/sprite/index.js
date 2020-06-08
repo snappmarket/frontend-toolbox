@@ -29,7 +29,10 @@ const CreditCardIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CreditCardIcon`} />
+      <use
+        data-testid="CreditCardIconHref"
+        xlinkHref={`${importPrefix}#CreditCardIcon`}
+      />
     </svg>
   );
 };

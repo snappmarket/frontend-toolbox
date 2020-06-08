@@ -29,7 +29,10 @@ const FilterIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#FilterIcon`} />
+      <use
+        data-testid="FilterIconHref"
+        xlinkHref={`${importPrefix}#FilterIcon`}
+      />
     </svg>
   );
 };

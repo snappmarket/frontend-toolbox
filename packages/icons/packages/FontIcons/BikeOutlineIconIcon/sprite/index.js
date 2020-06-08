@@ -29,7 +29,10 @@ const BikeOutlineIconIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#BikeOutlineIconIcon`} />
+      <use
+        data-testid="BikeOutlineIconIconHref"
+        xlinkHref={`${importPrefix}#BikeOutlineIconIcon`}
+      />
     </svg>
   );
 };

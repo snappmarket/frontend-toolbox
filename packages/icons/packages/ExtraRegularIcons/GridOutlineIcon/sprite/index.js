@@ -29,7 +29,10 @@ const GridOutlineIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#GridOutlineIcon`} />
+      <use
+        data-testid="GridOutlineIconHref"
+        xlinkHref={`${importPrefix}#GridOutlineIcon`}
+      />
     </svg>
   );
 };

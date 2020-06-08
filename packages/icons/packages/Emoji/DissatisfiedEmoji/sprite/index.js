@@ -29,7 +29,10 @@ const DissatisfiedEmoji = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#DissatisfiedEmoji`} />
+      <use
+        data-testid="DissatisfiedEmojiHref"
+        xlinkHref={`${importPrefix}#DissatisfiedEmoji`}
+      />
     </svg>
   );
 };

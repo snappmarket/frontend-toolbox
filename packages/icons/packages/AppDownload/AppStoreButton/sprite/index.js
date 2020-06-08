@@ -7,10 +7,10 @@ import { useOptions, GlobalConfig } from '@snappmarket/config';
 
 if (GlobalConfig.options.importSpriteSVG) {
   // eslint-disable-next-line global-require
-  require('./GooglePlay.svg');
+  require('./AppStoreButton.svg');
 }
 
-const GooglePlay = ({ className, size }) => {
+const AppStoreButton = ({ className, size }) => {
   const options = useOptions();
 
   let importPrefix = options.useSpriteFile ? `/${options.spriteSvgName}` : '';
@@ -20,7 +20,7 @@ const GooglePlay = ({ className, size }) => {
 
   return (
     <svg
-      data-testid="GooglePlay"
+      data-testid="AppStoreButton"
       viewBox="0 0 128 40"
       className={className}
       style={{
@@ -29,18 +29,21 @@ const GooglePlay = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#GooglePlay`} />
+      <use
+        data-testid="AppStoreButtonHref"
+        xlinkHref={`${importPrefix}#AppStoreButton`}
+      />
     </svg>
   );
 };
 
-GooglePlay.propTypes = {
+AppStoreButton.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-GooglePlay.defaultProps = {
+AppStoreButton.defaultProps = {
   size: 1.5,
 };
 
-export default GooglePlay;
+export default AppStoreButton;

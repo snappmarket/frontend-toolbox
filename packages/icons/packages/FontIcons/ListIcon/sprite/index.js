@@ -29,7 +29,7 @@ const ListIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ListIcon`} />
+      <use data-testid="ListIconHref" xlinkHref={`${importPrefix}#ListIcon`} />
     </svg>
   );
 };

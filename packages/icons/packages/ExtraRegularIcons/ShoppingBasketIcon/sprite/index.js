@@ -29,7 +29,10 @@ const ShoppingBasketIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ShoppingBasketIcon`} />
+      <use
+        data-testid="ShoppingBasketIconHref"
+        xlinkHref={`${importPrefix}#ShoppingBasketIcon`}
+      />
     </svg>
   );
 };

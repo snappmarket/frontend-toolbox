@@ -29,7 +29,10 @@ const ClockOutlineIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ClockOutlineIcon`} />
+      <use
+        data-testid="ClockOutlineIconHref"
+        xlinkHref={`${importPrefix}#ClockOutlineIcon`}
+      />
     </svg>
   );
 };

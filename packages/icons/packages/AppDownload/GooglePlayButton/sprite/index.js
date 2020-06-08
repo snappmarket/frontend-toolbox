@@ -7,10 +7,10 @@ import { useOptions, GlobalConfig } from '@snappmarket/config';
 
 if (GlobalConfig.options.importSpriteSVG) {
   // eslint-disable-next-line global-require
-  require('./CafeBazzar.svg');
+  require('./GooglePlayButton.svg');
 }
 
-const CafeBazzar = ({ className, size }) => {
+const GooglePlayButton = ({ className, size }) => {
   const options = useOptions();
 
   let importPrefix = options.useSpriteFile ? `/${options.spriteSvgName}` : '';
@@ -20,8 +20,8 @@ const CafeBazzar = ({ className, size }) => {
 
   return (
     <svg
-      data-testid="CafeBazzar"
-      viewBox="0 0 182.7 54.8"
+      data-testid="GooglePlayButton"
+      viewBox="0 0 128 40"
       className={className}
       style={{
         width: size * 10,
@@ -29,18 +29,21 @@ const CafeBazzar = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CafeBazzar`} />
+      <use
+        data-testid="GooglePlayButtonHref"
+        xlinkHref={`${importPrefix}#GooglePlayButton`}
+      />
     </svg>
   );
 };
 
-CafeBazzar.propTypes = {
+GooglePlayButton.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-CafeBazzar.defaultProps = {
+GooglePlayButton.defaultProps = {
   size: 1.5,
 };
 
-export default CafeBazzar;
+export default GooglePlayButton;

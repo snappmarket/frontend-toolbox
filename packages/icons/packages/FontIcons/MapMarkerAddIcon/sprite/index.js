@@ -29,7 +29,10 @@ const MapMarkerAddIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#MapMarkerAddIcon`} />
+      <use
+        data-testid="MapMarkerAddIconHref"
+        xlinkHref={`${importPrefix}#MapMarkerAddIcon`}
+      />
     </svg>
   );
 };

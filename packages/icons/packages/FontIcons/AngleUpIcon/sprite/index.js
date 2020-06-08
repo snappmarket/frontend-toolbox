@@ -29,7 +29,10 @@ const AngleUpIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#AngleUpIcon`} />
+      <use
+        data-testid="AngleUpIconHref"
+        xlinkHref={`${importPrefix}#AngleUpIcon`}
+      />
     </svg>
   );
 };

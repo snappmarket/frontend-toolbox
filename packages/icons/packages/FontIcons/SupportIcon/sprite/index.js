@@ -29,7 +29,10 @@ const SupportIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#SupportIcon`} />
+      <use
+        data-testid="SupportIconHref"
+        xlinkHref={`${importPrefix}#SupportIcon`}
+      />
     </svg>
   );
 };

@@ -29,7 +29,10 @@ const DiscountIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#DiscountIcon`} />
+      <use
+        data-testid="DiscountIconHref"
+        xlinkHref={`${importPrefix}#DiscountIcon`}
+      />
     </svg>
   );
 };

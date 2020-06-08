@@ -29,7 +29,10 @@ const HappyEmoji = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#HappyEmoji`} />
+      <use
+        data-testid="HappyEmojiHref"
+        xlinkHref={`${importPrefix}#HappyEmoji`}
+      />
     </svg>
   );
 };

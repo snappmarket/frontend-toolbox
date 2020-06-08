@@ -29,7 +29,10 @@ const SpinnerIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#SpinnerIcon`} />
+      <use
+        data-testid="SpinnerIconHref"
+        xlinkHref={`${importPrefix}#SpinnerIcon`}
+      />
     </svg>
   );
 };

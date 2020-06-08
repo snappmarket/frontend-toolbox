@@ -29,7 +29,10 @@ const TwitterIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#TwitterIcon`} />
+      <use
+        data-testid="TwitterIconHref"
+        xlinkHref={`${importPrefix}#TwitterIcon`}
+      />
     </svg>
   );
 };
