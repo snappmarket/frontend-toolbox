@@ -29,7 +29,10 @@ const SnappMarketLogo = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#SnappMarketLogo`} />
+      <use
+        data-testid="SnappMarketLogoHref"
+        xlinkHref={`${importPrefix}#SnappMarketLogo`}
+      />
     </svg>
   );
 };

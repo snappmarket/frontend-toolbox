@@ -29,7 +29,7 @@ const EditIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#EditIcon`} />
+      <use data-testid="EditIconHref" xlinkHref={`${importPrefix}#EditIcon`} />
     </svg>
   );
 };

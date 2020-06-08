@@ -29,7 +29,7 @@ const HomeIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#HomeIcon`} />
+      <use data-testid="HomeIconHref" xlinkHref={`${importPrefix}#HomeIcon`} />
     </svg>
   );
 };

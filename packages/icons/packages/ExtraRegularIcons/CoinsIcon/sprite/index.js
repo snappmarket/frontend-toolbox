@@ -29,7 +29,10 @@ const CoinsIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CoinsIcon`} />
+      <use
+        data-testid="CoinsIconHref"
+        xlinkHref={`${importPrefix}#CoinsIcon`}
+      />
     </svg>
   );
 };

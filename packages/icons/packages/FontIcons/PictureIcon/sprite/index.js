@@ -29,7 +29,10 @@ const PictureIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#PictureIcon`} />
+      <use
+        data-testid="PictureIconHref"
+        xlinkHref={`${importPrefix}#PictureIcon`}
+      />
     </svg>
   );
 };

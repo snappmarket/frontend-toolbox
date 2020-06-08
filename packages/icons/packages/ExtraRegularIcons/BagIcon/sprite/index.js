@@ -29,7 +29,7 @@ const BagIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#BagIcon`} />
+      <use data-testid="BagIconHref" xlinkHref={`${importPrefix}#BagIcon`} />
     </svg>
   );
 };

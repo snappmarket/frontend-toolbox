@@ -29,7 +29,10 @@ const WarningSignIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#WarningSignIcon`} />
+      <use
+        data-testid="WarningSignIconHref"
+        xlinkHref={`${importPrefix}#WarningSignIcon`}
+      />
     </svg>
   );
 };

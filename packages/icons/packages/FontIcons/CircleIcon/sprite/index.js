@@ -29,7 +29,10 @@ const CircleIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CircleIcon`} />
+      <use
+        data-testid="CircleIconHref"
+        xlinkHref={`${importPrefix}#CircleIcon`}
+      />
     </svg>
   );
 };

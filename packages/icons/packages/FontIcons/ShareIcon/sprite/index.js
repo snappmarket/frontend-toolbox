@@ -29,7 +29,10 @@ const ShareIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ShareIcon`} />
+      <use
+        data-testid="ShareIconHref"
+        xlinkHref={`${importPrefix}#ShareIcon`}
+      />
     </svg>
   );
 };

@@ -29,7 +29,10 @@ const PaperRocketOutlineIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#PaperRocketOutlineIcon`} />
+      <use
+        data-testid="PaperRocketOutlineIconHref"
+        xlinkHref={`${importPrefix}#PaperRocketOutlineIcon`}
+      />
     </svg>
   );
 };

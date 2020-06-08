@@ -29,7 +29,10 @@ const PencilIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#PencilIcon`} />
+      <use
+        data-testid="PencilIconHref"
+        xlinkHref={`${importPrefix}#PencilIcon`}
+      />
     </svg>
   );
 };

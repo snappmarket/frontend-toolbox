@@ -29,7 +29,7 @@ const BoxIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#BoxIcon`} />
+      <use data-testid="BoxIconHref" xlinkHref={`${importPrefix}#BoxIcon`} />
     </svg>
   );
 };

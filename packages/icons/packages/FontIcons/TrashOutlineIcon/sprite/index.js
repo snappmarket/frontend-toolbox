@@ -29,7 +29,10 @@ const TrashOutlineIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#TrashOutlineIcon`} />
+      <use
+        data-testid="TrashOutlineIconHref"
+        xlinkHref={`${importPrefix}#TrashOutlineIcon`}
+      />
     </svg>
   );
 };

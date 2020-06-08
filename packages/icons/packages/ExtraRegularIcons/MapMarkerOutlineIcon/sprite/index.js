@@ -29,7 +29,10 @@ const MapMarkerOutlineIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#MapMarkerOutlineIcon`} />
+      <use
+        data-testid="MapMarkerOutlineIconHref"
+        xlinkHref={`${importPrefix}#MapMarkerOutlineIcon`}
+      />
     </svg>
   );
 };

@@ -29,7 +29,10 @@ const BoxingIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#BoxingIcon`} />
+      <use
+        data-testid="BoxingIconHref"
+        xlinkHref={`${importPrefix}#BoxingIcon`}
+      />
     </svg>
   );
 };

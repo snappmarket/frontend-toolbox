@@ -29,7 +29,10 @@ const NormalEmoji = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#NormalEmoji`} />
+      <use
+        data-testid="NormalEmojiHref"
+        xlinkHref={`${importPrefix}#NormalEmoji`}
+      />
     </svg>
   );
 };

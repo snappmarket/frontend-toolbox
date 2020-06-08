@@ -1,4 +1,4 @@
-export { default as AppStoreButton } from './AppStore/component';
-export { default as CafeBazzarButton } from './CafeBazzar/component';
-export { default as GooglePlayButton } from './GooglePlay/component';
-export { default as SibAppButton } from './SibApp/component';
+export { default as AppStoreButton } from './AppStoreButton/component';
+export { default as CafeBazzarButton } from './CafeBazzarButton/component';
+export { default as GooglePlayButton } from './GooglePlayButton/component';
+export { default as SibAppButton } from './SibAppButton/component';

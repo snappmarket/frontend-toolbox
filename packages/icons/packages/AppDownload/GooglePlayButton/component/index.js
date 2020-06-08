@@ -4,9 +4,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const GooglePlay = ({ className, size }) => (
+const GooglePlayButton = ({ className, size }) => (
   <svg
-    data-testid="GooglePlay"
+    data-testid="GooglePlayButton"
     viewBox="185.5 -25.5 128 40"
     className={className}
     style={{
@@ -65,13 +65,13 @@ const GooglePlay = ({ className, size }) => (
   </svg>
 );
 
-GooglePlay.propTypes = {
+GooglePlayButton.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-GooglePlay.defaultProps = {
+GooglePlayButton.defaultProps = {
   size: 1.5,
 };
 
-export default GooglePlay;
+export default GooglePlayButton;

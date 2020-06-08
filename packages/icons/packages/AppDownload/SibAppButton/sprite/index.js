@@ -7,10 +7,10 @@ import { useOptions, GlobalConfig } from '@snappmarket/config';
 
 if (GlobalConfig.options.importSpriteSVG) {
   // eslint-disable-next-line global-require
-  require('./SibApp.svg');
+  require('./SibAppButton.svg');
 }
 
-const SibApp = ({ className, size }) => {
+const SibAppButton = ({ className, size }) => {
   const options = useOptions();
 
   let importPrefix = options.useSpriteFile ? `/${options.spriteSvgName}` : '';
@@ -20,7 +20,7 @@ const SibApp = ({ className, size }) => {
 
   return (
     <svg
-      data-testid="SibApp"
+      data-testid="SibAppButton"
       viewBox="0 0 135 40"
       className={className}
       style={{
@@ -29,18 +29,21 @@ const SibApp = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#SibApp`} />
+      <use
+        data-testid="SibAppButtonHref"
+        xlinkHref={`${importPrefix}#SibAppButton`}
+      />
     </svg>
   );
 };
 
-SibApp.propTypes = {
+SibAppButton.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-SibApp.defaultProps = {
+SibAppButton.defaultProps = {
   size: 1.5,
 };
 
-export default SibApp;
+export default SibAppButton;

@@ -29,7 +29,10 @@ const ExportIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ExportIcon`} />
+      <use
+        data-testid="ExportIconHref"
+        xlinkHref={`${importPrefix}#ExportIcon`}
+      />
     </svg>
   );
 };

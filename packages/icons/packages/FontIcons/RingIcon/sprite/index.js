@@ -29,7 +29,7 @@ const RingIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#RingIcon`} />
+      <use data-testid="RingIconHref" xlinkHref={`${importPrefix}#RingIcon`} />
     </svg>
   );
 };

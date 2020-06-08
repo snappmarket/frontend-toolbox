@@ -4,9 +4,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const CafeBazzar = ({ className, size }) => (
+const CafeBazzarButton = ({ className, size }) => (
   <svg
-    data-testid="CafeBazzar"
+    data-testid="CafeBazzarButton"
     viewBox="0 0 182.7 54.8"
     className={className}
     style={{
@@ -33,13 +33,13 @@ const CafeBazzar = ({ className, size }) => (
   </svg>
 );
 
-CafeBazzar.propTypes = {
+CafeBazzarButton.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-CafeBazzar.defaultProps = {
+CafeBazzarButton.defaultProps = {
   size: 1.5,
 };
 
-export default CafeBazzar;
+export default CafeBazzarButton;

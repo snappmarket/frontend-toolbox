@@ -29,7 +29,10 @@ const LogoutIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#LogoutIcon`} />
+      <use
+        data-testid="LogoutIconHref"
+        xlinkHref={`${importPrefix}#LogoutIcon`}
+      />
     </svg>
   );
 };

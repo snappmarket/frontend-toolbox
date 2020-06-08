@@ -29,7 +29,10 @@ const HeartIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#HeartIcon`} />
+      <use
+        data-testid="HeartIconHref"
+        xlinkHref={`${importPrefix}#HeartIcon`}
+      />
     </svg>
   );
 };

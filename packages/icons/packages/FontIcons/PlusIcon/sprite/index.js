@@ -29,7 +29,7 @@ const PlusIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#PlusIcon`} />
+      <use data-testid="PlusIconHref" xlinkHref={`${importPrefix}#PlusIcon`} />
     </svg>
   );
 };

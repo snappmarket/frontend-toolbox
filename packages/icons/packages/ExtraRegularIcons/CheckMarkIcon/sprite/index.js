@@ -29,7 +29,10 @@ const CheckMarkIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CheckMarkIcon`} />
+      <use
+        data-testid="CheckMarkIconHref"
+        xlinkHref={`${importPrefix}#CheckMarkIcon`}
+      />
     </svg>
   );
 };

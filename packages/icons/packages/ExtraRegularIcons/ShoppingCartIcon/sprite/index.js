@@ -29,7 +29,10 @@ const ShoppingCartIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ShoppingCartIcon`} />
+      <use
+        data-testid="ShoppingCartIconHref"
+        xlinkHref={`${importPrefix}#ShoppingCartIcon`}
+      />
     </svg>
   );
 };

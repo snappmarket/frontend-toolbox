@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="40" width="128" version="1.1" viewBox="44.2 -25 128 40" id="AppStore">
+<svg xmlns="http://www.w3.org/2000/svg" height="40" width="128" version="1.1" viewBox="44.2 -25 128 40" id="AppStoreButton">
   <path fill="#000000"
     d="m 168.2,15 h -120 a 4,4 0 0 1 -4,-4 v -32 a 4,4 0 0 1 4,-4 h 120 a 4,4 0 0 1 4,4 v 32 a 4,4 0 0 1 -4,4 z"
   ></path>

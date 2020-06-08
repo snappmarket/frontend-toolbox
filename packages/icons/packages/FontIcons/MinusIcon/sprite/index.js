@@ -29,7 +29,10 @@ const MinusIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#MinusIcon`} />
+      <use
+        data-testid="MinusIconHref"
+        xlinkHref={`${importPrefix}#MinusIcon`}
+      />
     </svg>
   );
 };

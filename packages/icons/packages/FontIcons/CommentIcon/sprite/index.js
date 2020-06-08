@@ -29,7 +29,10 @@ const CommentIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CommentIcon`} />
+      <use
+        data-testid="CommentIconHref"
+        xlinkHref={`${importPrefix}#CommentIcon`}
+      />
     </svg>
   );
 };

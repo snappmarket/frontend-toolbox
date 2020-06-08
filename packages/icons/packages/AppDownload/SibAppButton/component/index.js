@@ -4,9 +4,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const SibApp = ({ className, size }) => (
+const SibAppButton = ({ className, size }) => (
   <svg
-    data-testid="SibApp"
+    data-testid="SibAppButton"
     viewBox="0 0 135 40"
     className={className}
     style={{
@@ -143,13 +143,13 @@ const SibApp = ({ className, size }) => (
   </svg>
 );
 
-SibApp.propTypes = {
+SibAppButton.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-SibApp.defaultProps = {
+SibAppButton.defaultProps = {
   size: 1.5,
 };
 
-export default SibApp;
+export default SibAppButton;

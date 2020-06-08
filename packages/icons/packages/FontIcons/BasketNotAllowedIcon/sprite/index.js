@@ -29,7 +29,10 @@ const BasketNotAllowedIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#BasketNotAllowedIcon`} />
+      <use
+        data-testid="BasketNotAllowedIconHref"
+        xlinkHref={`${importPrefix}#BasketNotAllowedIcon`}
+      />
     </svg>
   );
 };

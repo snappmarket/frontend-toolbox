@@ -1,4 +1,4 @@
-export { default as AppStoreButton } from './AppStore/sprite';
-export { default as CafeBazzarButton } from './CafeBazzar/sprite';
-export { default as GooglePlayButton } from './GooglePlay/sprite';
-export { default as SibAppButton } from './SibApp/sprite';
+export { default as AppStoreButton } from './AppStoreButton/sprite';
+export { default as CafeBazzarButton } from './CafeBazzarButton/sprite';
+export { default as GooglePlayButton } from './GooglePlayButton/sprite';
+export { default as SibAppButton } from './SibAppButton/sprite';

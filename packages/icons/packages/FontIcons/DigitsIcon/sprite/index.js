@@ -29,7 +29,10 @@ const DigitsIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#DigitsIcon`} />
+      <use
+        data-testid="DigitsIconHref"
+        xlinkHref={`${importPrefix}#DigitsIcon`}
+      />
     </svg>
   );
 };

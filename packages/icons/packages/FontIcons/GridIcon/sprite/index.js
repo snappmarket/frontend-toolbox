@@ -29,7 +29,7 @@ const GridIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#GridIcon`} />
+      <use data-testid="GridIconHref" xlinkHref={`${importPrefix}#GridIcon`} />
     </svg>
   );
 };

@@ -29,7 +29,10 @@ const WalletIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#WalletIcon`} />
+      <use
+        data-testid="WalletIconHref"
+        xlinkHref={`${importPrefix}#WalletIcon`}
+      />
     </svg>
   );
 };

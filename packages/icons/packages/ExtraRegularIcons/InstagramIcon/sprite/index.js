@@ -29,7 +29,10 @@ const InstagramIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#InstagramIcon`} />
+      <use
+        data-testid="InstagramIconHref"
+        xlinkHref={`${importPrefix}#InstagramIcon`}
+      />
     </svg>
   );
 };

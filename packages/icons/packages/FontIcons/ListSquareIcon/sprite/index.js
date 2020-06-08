@@ -29,7 +29,10 @@ const ListSquareIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ListSquareIcon`} />
+      <use
+        data-testid="ListSquareIconHref"
+        xlinkHref={`${importPrefix}#ListSquareIcon`}
+      />
     </svg>
   );
 };

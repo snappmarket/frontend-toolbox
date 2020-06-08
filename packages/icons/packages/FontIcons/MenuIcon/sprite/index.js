@@ -29,7 +29,7 @@ const MenuIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#MenuIcon`} />
+      <use data-testid="MenuIconHref" xlinkHref={`${importPrefix}#MenuIcon`} />
     </svg>
   );
 };

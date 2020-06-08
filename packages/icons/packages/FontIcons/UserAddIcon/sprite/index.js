@@ -29,7 +29,10 @@ const UserAddIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#UserAddIcon`} />
+      <use
+        data-testid="UserAddIconHref"
+        xlinkHref={`${importPrefix}#UserAddIcon`}
+      />
     </svg>
   );
 };

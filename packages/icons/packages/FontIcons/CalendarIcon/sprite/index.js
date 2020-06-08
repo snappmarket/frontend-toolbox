@@ -29,7 +29,10 @@ const CalendarIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#CalendarIcon`} />
+      <use
+        data-testid="CalendarIconHref"
+        xlinkHref={`${importPrefix}#CalendarIcon`}
+      />
     </svg>
   );
 };

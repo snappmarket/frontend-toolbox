@@ -29,7 +29,10 @@ const ClockIcon = ({ className, size }) => {
       }}
       fill="currentColor"
     >
-      <use xlinkHref={`${importPrefix}#ClockIcon`} />
+      <use
+        data-testid="ClockIconHref"
+        xlinkHref={`${importPrefix}#ClockIcon`}
+      />
     </svg>
   );
 };
