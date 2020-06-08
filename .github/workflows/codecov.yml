@@ -18,7 +18,7 @@ jobs:
       - name: Install Dependencies
         run: yarn link && yarn --frozen-lockfile
       - name: Run Build
-        run: yarn build
+        run: yarn build:packages
       - name: Run Jest Tests
         run: yarn test --coverage
       - name: Report Code Coverage
