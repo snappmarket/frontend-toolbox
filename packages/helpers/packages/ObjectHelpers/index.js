@@ -94,19 +94,17 @@ export const serializeObject = object => {
   }
   const result = [];
   Object.keys(object).forEach(property => {
-    if (typeof object[property] === 'object') {
-      if (Array.isArray(object[property]) && object[property].length) {
-        object[property].forEach(item => result.push(`${property}[]=${item}`));
-      } else if (
-        !Array.isArray(object[property]) &&
-        Object.keys(object[property]).length
-      ) {
-        Object.keys(object[property]).forEach(key =>
-          result.push(`${property}[${key}]=${object[property][key]}`),
+    const prop = object[property];
+    if (typeof prop === 'object' && prop !== null) {
+      if (Array.isArray(prop) && prop.length) {
+        prop.forEach(item => result.push(`${property}[]=${item}`));
+      } else if (!Array.isArray(prop) && Object.keys(prop).length) {
+        Object.keys(prop).forEach(key =>
+          result.push(`${property}[${key}]=${prop[key]}`),
         );
       }
-    } else if (typeof object[property] !== 'undefined') {
-      result.push(`${property}=${object[property]}`);
+    } else if (typeof prop !== 'undefined' && prop !== null) {
+      result.push(`${property}=${prop}`);
     }
   });
   return result.join('&');
