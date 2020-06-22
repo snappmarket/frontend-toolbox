@@ -109,3 +109,20 @@ export const serializeObject = object => {
   });
   return result.join('&');
 };
+
+/**
+ * @function
+ * @name removeManyByKeys
+ * @description returns an object without given keys
+ * @param   haystack    {object}            object you want to remove key from
+ * @param   needles     {Array.<string>}    keys you want to remove from object
+ * @return  {object}
+ */
+export const removeManyByKeys = (haystack, needles) =>
+  Object.keys(haystack)
+    .filter(key => !needles.includes(key))
+    .reduce((result, current) => {
+      // eslint-disable-next-line no-param-reassign
+      result[current] = haystack[current];
+      return result;
+    }, {});
