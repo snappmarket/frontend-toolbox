@@ -76,4 +76,10 @@ describe('ObjectHelpers', () => {
       expect(ObjectHelpers.serializeObject(null)).toEqual('');
     });
   });
+  describe('removeManyByKeys', () => {
+    it('should remove some keys from an object', () => {
+      const payload = { foo: 'bar', bar: 'bar', foobar: 'foobar' };
+      expect(ObjectHelpers.removeManyByKeys(payload, ['foo', 'bar'])).toEqual({ foobar: 'foobar' });
+    });
+  });
 });
