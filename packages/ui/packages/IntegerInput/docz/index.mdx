@@ -1,0 +1,79 @@
+---
+name: IntegerInput
+route: /ui/IntegerInput
+menu: 3.Components
+
+---
+# IntegerInput ui component
+----
+
+[![version](https://img.shields.io/npm/v/@snappmarket/ui-carousel?style=flat-square)](https://www.npmjs.com/package/@snappmarket/ui-carousel)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/ui-carousel?style=flat-square)](http://www.npmtrends.com/@snappmarket/ui-carousel)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+## get started
+```bash
+npm i @snappmarket/ui-integerInput
+```
+---
+import { Playground, Props } from 'docz';
+import DemoIntegerInput from './demo';
+
+# Demo
+
+<DemoIntegerInput />
+ <br/>
+
+
+# Basic Usage
+
+```jsx
+import React, { useState } from 'react';
+import {
+  persianNumber,
+} from '@snappmarket/helpers';
+
+import IntegerInput from 'components/Common/IntegerInput';
+
+const IntegerComponent = props => {
+  const [validationMessage, setValidationMessage] = useState('');
+  const [customSelected, setCustomSelected] = useState(0);
+  const [inputValid, setInputValid] = useState(false);
+
+  const handleCreditManualChange = inputValue => {
+    const { value, message, valid } = inputValue;
+    setCustomSelected(value);
+    setInputValid(valid);
+    setValidationMessage(message);
+  };
+
+  return (
+      <div>
+        <IntegerInput
+          className={`text-center ${inputValid ? 'valid' : 'invalid'}`}
+          min={1000}
+          max={5000000}
+          type="tel"
+          pattern="^-?[0-9]*$"
+          minMessage="min error message"
+          maxMessage="max error message"
+          nanMessage="please insert number"
+          placeholder="please insert number"
+          value={persianNumber(customSelected)}
+          onChange={inputValue =>
+            handleCreditManualChange(inputValue)
+          }
+        />
+        {!!setValidationMessage && <span>{validationMessage}</span>}
+      </div>
+  );
+};
+
+export default IntegerComponent;
+
+```
+
+<br />
