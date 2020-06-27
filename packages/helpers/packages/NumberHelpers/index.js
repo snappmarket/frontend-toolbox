@@ -54,3 +54,42 @@ export const currencyPrice = (amount, hasUnit = true) =>
   `${persianNumber(`${amount}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','))} ${
     hasUnit ? 'تومان' : ''
   }`;
+
+export const numericInputValidation = ({
+  inputValue,
+  validationMessages,
+  min,
+  max,
+}) => {
+  let returnFunction = {};
+  const newInputValue = inputValue.replace(/[^0-9]/g, '');
+  const isValid = () =>
+    newInputValue !== '' &&
+    (min === undefined || newInputValue >= min) &&
+    (max === undefined || newInputValue <= max);
+  const checkedIsValid = isValid();
+  const regexp = new RegExp(`^[0-9]*[1-9][0-9]*$`);
+
+  try {
+    if (!checkedIsValid && newInputValue === '')
+      throw validationMessages.nanMessage;
+    if (!checkedIsValid && newInputValue < min)
+      throw validationMessages.minMessage;
+    if (!checkedIsValid && newInputValue > min)
+      throw validationMessages.maxMessage;
+    if (regexp.test(newInputValue) || newInputValue === '') {
+      returnFunction = {
+        value: newInputValue,
+        isValid: checkedIsValid,
+        message: {},
+      };
+    }
+  } catch (err) {
+    returnFunction = {
+      value: newInputValue,
+      isValid: checkedIsValid,
+      message: err,
+    };
+  }
+  return returnFunction;
+};
