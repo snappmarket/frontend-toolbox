@@ -69,4 +69,99 @@ describe('NumberHelpers', () => {
       expect(NumberHelpers.currencyPrice(price, hasUnit)).toEqual('۱,۰۰۰,۰۰۰ ');
     });
   });
+
+  describe('integerInputValidation', () => {
+    const min = 1000;
+    const max = 50000;
+    const inputParams = {
+      validationMessages: {
+        minMessage: {
+          type: 'danger',
+          content: 'min',
+        },
+        maxMessage: {
+          type: 'danger',
+          content: 'max',
+        },
+        nanMessage: {
+          type: 'danger',
+          content: 'nan',
+        },
+      },
+      min,
+      max,
+    };
+    it('should return validation true for valid value', () => {
+      expect(
+        NumberHelpers.numericInputValidation({
+          ...inputParams,
+          inputValue: '1500',
+        }),
+      ).toEqual({
+        isValid: true,
+        message: {},
+        value: '1500',
+      });
+    });
+
+    it('should return max error', () => {
+      expect(
+        NumberHelpers.numericInputValidation({
+          ...inputParams,
+          inputValue: '50000000',
+        }),
+      ).toEqual({
+        isValid: false,
+        message: {
+          content: 'max',
+          type: 'danger',
+        },
+        value: '50000000',
+      });
+    });
+
+    it('should return min error', () => {
+      expect(
+        NumberHelpers.numericInputValidation({
+          ...inputParams,
+          inputValue: '100',
+        }),
+      ).toEqual({
+        isValid: false,
+        message: {
+          content: 'min',
+          type: 'danger',
+        },
+        value: '100',
+      });
+    });
+
+    it('should return nan error', () => {
+      expect(
+        NumberHelpers.numericInputValidation({
+          ...inputParams,
+          inputValue: 'hi',
+        }),
+      ).toEqual({
+        isValid: false,
+        message: {
+          content: 'nan',
+          type: 'danger',
+        },
+        value: '',
+      });
+    });
+
+    it('without min,max and error message', () => {
+      expect(
+        NumberHelpers.numericInputValidation({
+          inputValue: '10000',
+        }),
+      ).toEqual({
+        isValid: false,
+        message: {},
+        value: '10000',
+      });
+    });
+  });
 });
