@@ -21,6 +21,7 @@ const StyledToggleWrapper = Styled.button`
   }
   &.disabled {
     filter: grayscale(1);
+    cursor: not-allowed;
   }
   > span {
     width: ${props => `calc(${props.theme.defaultRem} * ${props.size})`};
