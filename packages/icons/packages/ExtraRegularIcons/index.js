@@ -1,5 +1,6 @@
 export { default as CoinsIcon } from './CoinsIcon/component';
 export { default as CrossBoldIcon } from './CrossBoldIcon/component';
+export { default as BasketIcon } from './BasketIcon/component';
 export { default as EditIcon } from './EditIcon/component';
 export { default as EmptyBasketIcon } from './EmptyBasketIcon/component';
 export { default as InstagramIcon } from './InstagramIcon/component';
@@ -14,6 +15,7 @@ export { default as ShoppingCartIcon } from './ShoppingCartIcon/component';
 export { default as GridOutlineIcon } from './GridOutlineIcon/component';
 export { default as CheckMarkIcon } from './CheckMarkIcon/component';
 export { default as TrashIcon } from './TrashIcon/component';
+export { default as TruckFlatIcon } from './TruckFlatIcon/component';
 export { default as TwitterIcon } from './TwitterIcon/component';
 export { default as UserIcon } from './UserIcon/component';
 export { default as BagIcon } from './BagIcon/component';
