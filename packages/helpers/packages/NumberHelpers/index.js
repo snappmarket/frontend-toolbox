@@ -57,16 +57,14 @@ export const currencyPrice = (amount, hasUnit = true) =>
 
 export const numericInputValidation = ({
   inputValue,
-  validationMessages,
   min,
   max,
+  validationMessages,
 }) => {
-  let returnFunction = {};
+  let result = {};
   const newInputValue = inputValue.replace(/[^0-9]/g, '');
   const isValid = () =>
-    newInputValue !== '' &&
-    (min === undefined || newInputValue >= min) &&
-    (max === undefined || newInputValue <= max);
+    newInputValue !== '' && newInputValue >= min && newInputValue <= max;
   const checkedIsValid = isValid();
   const regexp = new RegExp(`^[0-9]*[1-9][0-9]*$`);
 
@@ -78,18 +76,18 @@ export const numericInputValidation = ({
     if (!checkedIsValid && newInputValue > min)
       throw validationMessages.maxMessage;
     if (regexp.test(newInputValue) || newInputValue === '') {
-      returnFunction = {
+      result = {
         value: newInputValue,
-        isValid: checkedIsValid,
         message: {},
+        isValid: checkedIsValid,
       };
     }
   } catch (err) {
-    returnFunction = {
+    result = {
       value: newInputValue,
-      isValid: checkedIsValid,
       message: err,
+      isValid: checkedIsValid,
     };
   }
-  return returnFunction;
+  return result;
 };

@@ -151,5 +151,17 @@ describe('NumberHelpers', () => {
         value: '',
       });
     });
+
+    it('without min,max and error message', () => {
+      expect(
+        NumberHelpers.numericInputValidation({
+          inputValue: '10000',
+        }),
+      ).toEqual({
+        isValid: false,
+        message: {},
+        value: '10000',
+      });
+    });
   });
 });
