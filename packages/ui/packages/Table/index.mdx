@@ -6,10 +6,16 @@ menu: 3.Components
 import { Playground, Props } from 'docz';
 import Table from './src/index';
 
+# Table
+The table component accepts header, footer and data and renders them in given order, you can set the responsive classname, so the table will be responsive for medium viewports.
+
+<br />
+
 # Basic Usage
 
 <Playground>
   <Table
+    className="responsive"
     headers={['id', 'name', 'description', 'date']}
     data={[
       [1, 'foo', 'this is the description of the foo item', '2020-05-02'],
