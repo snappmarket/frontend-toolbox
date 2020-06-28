@@ -22,6 +22,7 @@ export { default as CreditCardIcon } from './CreditCardIcon/component';
 export { default as CrossLightIcon } from './CrossLightIcon/component';
 export { default as DigitsIcon } from './DigitsIcon/component';
 export { default as DiscountIcon } from './DiscountIcon/component';
+export { default as DiscountColorfulIcon } from './DiscountColorfulIcon/component';
 export { default as EnvelopeIcon } from './EnvelopeIcon/component';
 export { default as ExportIcon } from './ExportIcon/component';
 export { default as FilterIcon } from './FilterIcon/component';
