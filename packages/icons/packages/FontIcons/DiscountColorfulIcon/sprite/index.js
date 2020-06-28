@@ -7,10 +7,10 @@ import { useOptions, GlobalConfig } from '@snappmarket/config';
 
 if (GlobalConfig.options.importSpriteSVG) {
   // eslint-disable-next-line global-require
-  require('./DiscountColorfullIcon.svg');
+  require('./DiscountColorfulIcon.svg');
 }
 
-const DiscountColorfullIcon = ({ className, size }) => {
+const DiscountColorfulIcon = ({ className, size }) => {
   const options = useOptions();
 
   let importPrefix = options.useSpriteFile ? `/${options.spriteSvgName}` : '';
@@ -20,7 +20,7 @@ const DiscountColorfullIcon = ({ className, size }) => {
 
   return (
     <svg
-      data-testid="DiscountColorfullIcon"
+      data-testid="DiscountColorfulIcon"
       viewBox="0 0 16 16"
       className={className}
       style={{
@@ -30,20 +30,20 @@ const DiscountColorfullIcon = ({ className, size }) => {
       fill="currentColor"
     >
       <use
-        data-testid="DiscountColorfullIconHref"
-        xlinkHref={`${importPrefix}#DiscountColorfullIcon`}
+        data-testid="DiscountColorfulIconHref"
+        xlinkHref={`${importPrefix}#DiscountColorfulIcon`}
       />
     </svg>
   );
 };
 
-DiscountColorfullIcon.propTypes = {
+DiscountColorfulIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-DiscountColorfullIcon.defaultProps = {
+DiscountColorfulIcon.defaultProps = {
   size: 1.5,
 };
 
-export default DiscountColorfullIcon;
+export default DiscountColorfulIcon;

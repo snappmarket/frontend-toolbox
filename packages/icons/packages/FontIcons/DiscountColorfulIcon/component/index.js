@@ -4,9 +4,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const DiscountColorfullIcon = ({ className, size }) => (
+const DiscountColorfulIcon = ({ className, size }) => (
   <svg
-    data-testid="DiscountColorfullIcon"
+    data-testid="DiscountColorfulIcon"
     viewBox="0 0 16 16"
     className={className}
     style={{
@@ -53,13 +53,13 @@ const DiscountColorfullIcon = ({ className, size }) => (
   </svg>
 );
 
-DiscountColorfullIcon.propTypes = {
+DiscountColorfulIcon.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
 };
 
-DiscountColorfullIcon.defaultProps = {
+DiscountColorfulIcon.defaultProps = {
   size: 1.5,
 };
 
-export default DiscountColorfullIcon;
+export default DiscountColorfulIcon;
