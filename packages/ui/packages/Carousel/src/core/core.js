@@ -83,6 +83,12 @@ class SliderCore {
 
   getPosX1 = () => this.posX1;
 
+  setIntervalId = intervalId => {
+    this.intervalId = intervalId;
+  };
+
+  getIntervalId = () => this.intervalId;
+
   setInfinite = infinite => {
     this.infinite = infinite;
   };
@@ -293,7 +299,6 @@ class SliderCore {
     }
 
     if (autoPlay) {
-      let refreshIntervalId;
       let isIntervalRunning = false;
       const time = nextSpeed || 2000;
       const intervalNext = () => {
@@ -301,13 +306,13 @@ class SliderCore {
         this.next();
       };
       const intervalPlay = () => {
-        clearInterval(refreshIntervalId); // Clearing interval if for some reason it has not been cleared yet
+        clearInterval(this.getIntervalId()); // Clearing interval if for some reason it has not been cleared yet
         if (!isIntervalRunning) {
-          refreshIntervalId = setInterval(intervalNext, time);
+          this.setIntervalId(setInterval(intervalNext, time))
         }
       };
       const intervalPause = () => {
-        clearInterval(refreshIntervalId); // Clearing interval on window blur
+        clearInterval(this.getIntervalId()); // Clearing interval on window blur
         isIntervalRunning = false;
       };
       // toggle on mouseHover
@@ -316,7 +321,9 @@ class SliderCore {
       // toggle on blur and focus browser window tab
       window.addEventListener('blur', intervalPause);
       window.addEventListener('focus', intervalPlay);
-      intervalPlay();
+      if(!this.getIntervalId()){
+        intervalPlay();
+      }
     }
 
     this.sliderTrailer = new SliderTrailer({ core: this });
