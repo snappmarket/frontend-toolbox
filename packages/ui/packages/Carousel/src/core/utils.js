@@ -195,13 +195,8 @@ export const arrGenerator = (arr, part) => {
 };
 
 export const responsiveItemCount = getConfig => {
-  const resp = Object.keys(getConfig);
-  const newResp = resp.filter(item => {
-    if (item <= document.body.clientWidth) {
-      return item;
-    }
-    return [];
-  });
+  const resp = Object.keys(getConfig).sort();
+  const newResp = resp.filter(item => item <= document.body.clientWidth);
   return getConfig[parseInt(newResp.pop(), 10)].items;
 };
 
