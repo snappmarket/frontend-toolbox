@@ -68,7 +68,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
    * renders the default template of countdown in jsx
    */
   const handleDefaultTemplate = countdown => (
-    <StyledCountdownWrapper className={className} data-testid="countdown-wrapper">
+    <StyledCountdownWrapper data-testid="countdown-wrapper">
       {Object.keys(countdown).map(key => (
         <StyledCountDownItem key={key} data-testid="countdown-item">
           <span>{countdown[key]}</span>
@@ -78,7 +78,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
     </StyledCountdownWrapper>
   )
 
-  return <div ref={countdownRef} />;
+  return <div className={className} ref={countdownRef} data-testid="countdown" />;
 };
 
 Countdown.propTypes = {
