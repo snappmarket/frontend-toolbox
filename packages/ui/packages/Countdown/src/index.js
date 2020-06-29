@@ -34,6 +34,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
   /**
    * creates an instance of worker from countdownWorker that has been parsed by worker-plugin
    */
+  // @todo: use comlink instead to be able to expose the count down calculation, so the remaining time will be visible before the initialization
   const handleRegisterWorker = () => {
     // eslint-disable-next-line no-undef
     const worker = new Worker(countdownWorker);
