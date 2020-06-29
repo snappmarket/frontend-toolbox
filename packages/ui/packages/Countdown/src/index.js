@@ -57,6 +57,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
   /**
    * renders the countdown with given or default template without re-rendering the entire component
    */
+  // @todo: add ability to render styled component in children
   const handleRenderCountdown = countdown => {
     if(countdownRef.current) {
       const template = children(countdown) || handleDefaultTemplate(countdown);
