@@ -5,18 +5,6 @@ import '@testing-library/jest-dom/extend-expect';
 import { Wrapper } from '../../../test/test.helpers';
 import Countdown from '../index';
 
-class Worker {
-  constructor(stringUrl) {
-    this.url = stringUrl;
-    this.onmessage = () => {};
-  }
-  postMessage(msg) {
-    this.onmessage(msg);
-  }
-}
-beforeEach(() => {
-  global.Worker = Worker;
-});
 describe('Countdown ui component tests', () => {
   describe('Countdown rendering tests', () => {
     it('Should add classname to countdown', () => {
