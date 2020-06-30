@@ -3,11 +3,19 @@ const handlePostMessage = ({ key, value }) => {
   const lookup = {
     setDate: () => {
       dueDate = value.getTime();
+      const now = Date.now();
       // eslint-disable-next-line no-undef
       postMessage({
         key: 'start',
-        value: Date.now(),
+        value: now,
       });
+      if(dueDate > now) {
+        // eslint-disable-next-line no-undef
+        postMessage({
+          key: 'countdown',
+          value: handleCalculateCountDown(dueDate - now),
+        });
+      }
     },
   }
   if(lookup[key])
@@ -19,7 +27,7 @@ const handlePostMessage = ({ key, value }) => {
  */
 // eslint-disable-next-line no-restricted-globals,no-undef
 addEventListener('message', ({data}) => {
-  handlePostMessage(data)
+  handlePostMessage(data);
 })
 
 /**
@@ -35,13 +43,13 @@ const interval = setInterval(() => {
     postMessage({
       key: 'end',
       value: now,
-    })
+    });
   }
   // eslint-disable-next-line no-undef
   postMessage({
     key: 'countdown',
     value: handleCalculateCountDown(remaining),
-  })
+  });
 }, 1000);
 
 /**
