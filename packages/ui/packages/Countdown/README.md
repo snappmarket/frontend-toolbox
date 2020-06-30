@@ -17,7 +17,7 @@ npm i @snappmarket/ui
 
 ## usage
 ```javascript
-import Countdown from '@snappmarket/ui/countdown';
+import { Countdown } from '@snappmarket/ui';
 ```
 
 
