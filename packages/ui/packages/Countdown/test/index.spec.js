@@ -25,7 +25,7 @@ describe('Countdown ui component tests', () => {
           <Countdown className="foo" date={new Date()} />
         </Wrapper>,
       );
-      const countdown = getByTestId('countdown-wrapper');
+      const countdown = getByTestId('countdown');
 
       expect(countdown).toBeTruthy();
       expect(countdown).toHaveClass('foo');

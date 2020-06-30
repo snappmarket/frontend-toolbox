@@ -34,6 +34,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
   /**
    * creates an instance of worker from countdownWorker that has been parsed by worker-plugin
    */
+  // @todo: use comlink instead to be able to expose the count down calculation, so the remaining time will be visible before the initialization
   const handleRegisterWorker = () => {
     // eslint-disable-next-line no-undef
     const worker = new Worker(countdownWorker);
@@ -57,6 +58,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
   /**
    * renders the countdown with given or default template without re-rendering the entire component
    */
+  // @todo: add ability to render styled component in children
   const handleRenderCountdown = countdown => {
     if(countdownRef.current) {
       const template = children(countdown) || handleDefaultTemplate(countdown);
@@ -68,7 +70,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
    * renders the default template of countdown in jsx
    */
   const handleDefaultTemplate = countdown => (
-    <StyledCountdownWrapper className={className} data-testid="countdown-wrapper">
+    <StyledCountdownWrapper data-testid="countdown-wrapper">
       {Object.keys(countdown).map(key => (
         <StyledCountDownItem key={key} data-testid="countdown-item">
           <span>{countdown[key]}</span>
@@ -78,7 +80,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
     </StyledCountdownWrapper>
   )
 
-  return <div ref={countdownRef} />;
+  return <div className={className} ref={countdownRef} data-testid="countdown" />;
 };
 
 Countdown.propTypes = {

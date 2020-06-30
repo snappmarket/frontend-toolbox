@@ -11,13 +11,13 @@
 
 ## get started
 ```bash
-npm i @snappmarket/ui-countdown
+npm i @snappmarket/ui
 ```
 
 
 ## usage
 ```javascript
-import { COMPONENT } from '@snappmarket/ui-countdown';
+import Countdown from '@snappmarket/ui/countdown';
 ```
 
 
