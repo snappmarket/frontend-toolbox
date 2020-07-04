@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/config",
   "private": false,
-  "version": "0.2.17",
+  "version": "0.2.18",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
