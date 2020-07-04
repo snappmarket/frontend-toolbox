@@ -34,6 +34,7 @@ import {
   prevNone,
   nextBlock,
   nextNone,
+  sorter,
 } from '../src/core/utils';
 
 // real DOM generator
@@ -355,6 +356,10 @@ describe('Carousel ui component tests', () => {
 
   test('Check getTranslate3d from wrapper', () => {
     expect(getTranslate3d(stringToHTML(mockSlides))).toBe(0);
+  });
+
+  test('Check sorter', () => {
+    expect([0,960,450,1200].sort(sorter)).toStrictEqual([0,450,960,1200]);
   });
 
   test('Check current index', () => {
