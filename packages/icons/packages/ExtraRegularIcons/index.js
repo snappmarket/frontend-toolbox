@@ -20,3 +20,7 @@ export { default as TwitterIcon } from './TwitterIcon/component';
 export { default as UserIcon } from './UserIcon/component';
 export { default as BagIcon } from './BagIcon/component';
 export { default as SnappMarketLogo } from './SnappMarketLogo/component';
+export { default as EditBoldIcon } from './EditBoldIcon/component';
+export { default as TrashBoldIcon } from './TrashBoldIcon/component';
+export { default as PhoneIcon } from './PhoneIcon/component';
+export { default as MiniSearchIcon } from './MiniSearchIcon/component';
