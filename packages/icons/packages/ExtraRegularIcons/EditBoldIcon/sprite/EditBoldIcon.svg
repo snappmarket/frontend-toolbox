@@ -1,0 +1,16 @@
+<svg width="12px" height="11px" viewBox="0 0 12 11" version="1.1" xmlns="http://www.w3.org/2000/svg" id="EditBoldIcon">
+    <title>edit-bold</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="FontAwesome5Free-Regular, Font Awesome 5 Free" font-size="10" font-weight="normal">
+        <g transform="translate(-811.000000, -94.000000)" fill="#757575">
+            <g transform="translate(749.000000, 13.000000)">
+                <g transform="translate(24.000000, 24.000000)">
+                    <g transform="translate(0.000000, 44.000000)">
+                        <text id="edit">
+                            <tspan x="38.75" y="22">edit</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
