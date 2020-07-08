@@ -86,3 +86,42 @@ export const makeShadow = (
   )} ${decideMeasurement(blur)} ${decideMeasurement(spread)} ${color}${
     inset ? ' inset' : ''
   }`;
+
+/**
+ * Will handle every thing about rem, just supply the value
+ */
+export const rem = function remSizes() {
+  return props =>
+    // eslint-disable-next-line prefer-rest-params
+    [...arguments]
+      .map(size => (size ? props.theme.defaultRem.replace(/(.*)rem/g, `${size}rem`) : '0'))
+      .join(' ');
+};
+
+/**
+ * Same as rem but will not return `calc`
+ * @param size
+ * @returns {function(*): string}
+ */
+export const remOnly = size => props => `${props.theme.defaultRem} * ${size}`;
+
+/**
+ * Make a color, or a shade of color
+ * @param name
+ * @param shade
+ * @returns {function(*): string}
+ */
+export const color = (name, shade = false) => props =>
+  shade ? `${props.theme.colors[name][shade]}` : `${props.theme.colors[name]}`;
+
+/**
+ * Make rgba from a passed color
+ * @param opacity
+ * @param name
+ * @param shade
+ * @returns {function(*=): string}
+ */
+export const makeRgbaColor = (opacity, name, shade = false) => props => {
+  const rgb = hexToRgb(color(name, shade)(props));
+  return `rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, ${opacity})`;
+};
