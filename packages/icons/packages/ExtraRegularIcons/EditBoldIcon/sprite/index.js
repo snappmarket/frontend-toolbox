@@ -21,7 +21,7 @@ const EditBoldIcon = ({ className, size }) => {
   return (
     <svg
       data-testid="EditBoldIcon"
-      viewBox="0 0 12 11"
+      viewBox="0 0 576 512"
       className={className}
       style={{
         width: size * 10,
