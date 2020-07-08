@@ -21,7 +21,7 @@ const TrashBoldIcon = ({ className, size }) => {
   return (
     <svg
       data-testid="TrashBoldIcon"
-      viewBox="0 0 9 11"
+      viewBox="0 0 448 512"
       className={className}
       style={{
         width: size * 10,
