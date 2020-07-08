@@ -99,13 +99,6 @@ export const rem = function remSizes() {
 };
 
 /**
- * Same as rem but will not return `calc`
- * @param size
- * @returns {function(*): string}
- */
-export const remOnly = size => props => `${props.theme.defaultRem} * ${size}`;
-
-/**
  * Make a color, or a shade of color
  * @param name
  * @param shade
