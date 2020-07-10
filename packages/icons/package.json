@@ -15,7 +15,7 @@
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./packages --out-dir ./dist/es --copy-files",
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c",
     "build:copy-files": "node ../../scripts/copy-file/icons-packages-copy.js",
-    "generate": "node ../../scripts/icons/generateSvg.js",
+    "generate": "node ../../scripts/icons/generateSvg.js && node ../../scripts/icons/makeCollections.js",
     "change-version": "node ../../scripts/release/change-version.js",
     "publish-npm": "node ../../scripts/release/publish-npm.js",
     "prebuild": "rimraf ./dist",
