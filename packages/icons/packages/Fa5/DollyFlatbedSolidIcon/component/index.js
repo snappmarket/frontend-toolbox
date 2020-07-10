@@ -1,0 +1,32 @@
+/**
+ * THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+ */
+import * as React from 'react';
+import PropTypes from 'prop-types';
+
+const DollyFlatbedSolidIcon = ({ className, size }) => (
+  <svg
+    data-testid="DollyFlatbedSolidIcon"
+    viewBox="0 0 640 512"
+    className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
+    focusable="false"
+    fill="currentColor"
+  >
+    <path d="M208 320h384c8.8 0 16-7.2 16-16V48c0-8.8-7.2-16-16-16H448v128l-48-32-48 32V32H208c-8.8 0-16 7.2-16 16v256c0 8.8 7.2 16 16 16zm416 64H128V16c0-8.8-7.2-16-16-16H16C7.2 0 0 7.2 0 16v32c0 8.8 7.2 16 16 16h48v368c0 8.8 7.2 16 16 16h82.9c-1.8 5-2.9 10.4-2.9 16 0 26.5 21.5 48 48 48s48-21.5 48-48c0-5.6-1.2-11-2.9-16H451c-1.8 5-2.9 10.4-2.9 16 0 26.5 21.5 48 48 48s48-21.5 48-48c0-5.6-1.2-11-2.9-16H624c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16z"></path>
+  </svg>
+);
+
+DollyFlatbedSolidIcon.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+DollyFlatbedSolidIcon.defaultProps = {
+  size: 1.5,
+};
+
+export default DollyFlatbedSolidIcon;

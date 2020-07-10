@@ -4,35 +4,8 @@
  */
 const fs = require('fs');
 const path = require('path');
-const fsExtra = require("fs-extra");
+const fsExtra = require('fs-extra');
 
-const move = (oldPath, newPath, callback) => {
-  fs.rename(oldPath, newPath, (err) => {
-    if (err) {
-      if (err.code === 'EXDEV') {
-        copy();
-      } else {
-        callback(err);
-      }
-      return;
-    }
-    callback();
-  });
-
-  function copy() {
-    const readStream = fs.createReadStream(oldPath);
-    const writeStream = fs.createWriteStream(newPath);
-
-    readStream.on('error', callback);
-    writeStream.on('error', callback);
-
-    readStream.on('close', () => {
-      fs.unlink(oldPath, callback);
-    });
-
-    readStream.pipe(writeStream);
-  }
-};
 
 const walk = (dir, regExcludes, done) => {
   let results = [];
@@ -44,7 +17,7 @@ const walk = (dir, regExcludes, done) => {
     let pending = list.length;
     if (!pending) return done(null, results);
 
-    list.forEach((file) => {
+    list.forEach(file => {
       file = path.join(dir, file);
 
       let excluded = false;
@@ -69,35 +42,56 @@ const walk = (dir, regExcludes, done) => {
             walk(file, regExcludes, (err, res) => {
               results = results.concat(res);
 
-              if (!--pending) { done(null, results); }
+              if (!--pending) {
+                done(null, results);
+              }
             });
-          } else if (!--pending) { done(null, results); }
+          } else if (!--pending) {
+            done(null, results);
+          }
         });
-      } else if (!--pending) { done(null, results); }
+      } else if (!--pending) {
+        done(null, results);
+      }
     });
   });
 };
 
-const regExcludes = [/index\.js/, /js\/lib\.js/, /node_modules/];
+const regExcludes = [/index\.js/, /js\/lib\.js/, /node_modules/, /\.DS_Store/];
 
-walk('./packages', regExcludes, (err, results) => {
+
+/* eslint-disable indent */
+const asyncForEach = async (array, callback) => {
+  // eslint-disable-next-line no-plusplus
+  for (let index = 0; index < array.length; index++) {
+    // eslint-disable-next-line no-await-in-loop
+    await callback(array[index], index, array);
+  }
+};
+
+walk('./packages', regExcludes, async (err, results) => {
   if (err) {
     throw err;
   }
 
-  // eslint-disable-next-line array-callback-return
-  results.map(async (item) => {
-    const newDirName = item.replace('.js', '');
-    const newFileName = `${item.replace('.js', '')}/index.js`;
+  let content = '';
+  await asyncForEach(results, item => {
+    if (
+      item.indexOf('/component') > -1
+    ) {
+      const lastSlash = item.lastIndexOf('/');
+      const dirName = item.substr(lastSlash + 1).replace('.svg', '');
+      const pathDir = `${item.substr(0, lastSlash)}/${camelCase(dirName)}`;
 
-    fsExtra.ensureDirSync(newDirName);
-
-    move(item, newFileName, (error) => {
-      if (!error) {
-        console.log('moved');
-      } else {
-        console.log(error);
-      }
-    });
+      content += `
+${item}`;
+    }
   });
+
+  await fse.writeFile(
+    `ddddd.js`,
+    content,
+    'utf8',
+  );
+
 });

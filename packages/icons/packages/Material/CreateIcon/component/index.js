@@ -1,0 +1,32 @@
+/**
+ * THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+ */
+import * as React from 'react';
+import PropTypes from 'prop-types';
+
+const CreateIcon = ({ className, size }) => (
+  <svg
+    data-testid="CreateIcon"
+    viewBox="0 0 24 24"
+    className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
+    focusable="false"
+    fill="currentColor"
+  >
+    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+  </svg>
+);
+
+CreateIcon.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+CreateIcon.defaultProps = {
+  size: 1.5,
+};
+
+export default CreateIcon;

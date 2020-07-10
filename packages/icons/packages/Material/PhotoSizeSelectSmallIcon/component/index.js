@@ -1,0 +1,32 @@
+/**
+ * THIS IS AN AUTO GENERATED FILE, CHANGES WILL NOT APPLY
+ */
+import * as React from 'react';
+import PropTypes from 'prop-types';
+
+const PhotoSizeSelectSmallIcon = ({ className, size }) => (
+  <svg
+    data-testid="PhotoSizeSelectSmallIcon"
+    viewBox="0 0 24 24"
+    className={className}
+    style={{
+      width: size * 10,
+      height: size * 10,
+    }}
+    focusable="false"
+    fill="currentColor"
+  >
+    <path d="M23 15h-2v2h2v-2zm0-4h-2v2h2v-2zm0 8h-2v2c1 0 2-1 2-2zM15 3h-2v2h2V3zm8 4h-2v2h2V7zm-2-4v2h2c0-1-1-2-2-2zM3 21h8v-6H1v4c0 1.1.9 2 2 2zM3 7H1v2h2V7zm12 12h-2v2h2v-2zm4-16h-2v2h2V3zm0 16h-2v2h2v-2zM3 3C2 3 1 4 1 5h2V3zm0 8H1v2h2v-2zm8-8H9v2h2V3zM7 3H5v2h2V3z"></path>
+  </svg>
+);
+
+PhotoSizeSelectSmallIcon.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.number,
+};
+
+PhotoSizeSelectSmallIcon.defaultProps = {
+  size: 1.5,
+};
+
+export default PhotoSizeSelectSmallIcon;
