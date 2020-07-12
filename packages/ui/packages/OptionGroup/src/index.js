@@ -37,7 +37,7 @@ const OptionGroup = props => {
         <div
           className={`flex-row align-center ${
             option.value === selectedItem ? 'selected' : ''
-          }`}
+          } ${option.disabled ? 'disabled' : ''}`}
           key={option.value}
         >
           <StyledOptionItem
