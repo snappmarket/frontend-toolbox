@@ -63,7 +63,7 @@ describe('HttpHelpers', () => {
       const response = await HttpHelpers.universalCall({ url, params });
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
-      expect(response).toEqual(mockResponse);
+      expect(response.data).toEqual(mockResponse);
     });
 
     it('should call an API using universal fetch with jwtToken', async () => {
@@ -90,7 +90,7 @@ describe('HttpHelpers', () => {
           authorization: `Bearer ${jwtToken}`,
         },
       });
-      expect(response).toEqual(mockResponse);
+      expect(response.data).toEqual(mockResponse);
     });
 
     it('should call an API using universal fetch and get response', async () => {
@@ -109,7 +109,7 @@ describe('HttpHelpers', () => {
       });
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
-      expect(response).toEqual(mockResponse);
+      expect(response.data).toEqual(mockResponse);
     });
 
     it('should call an API using universal fetch and get empty response cause it is allowed to get empty response', async () => {
@@ -233,7 +233,7 @@ describe('HttpHelpers', () => {
       } catch (e) {
         expect(fetch).toHaveBeenCalledTimes(1);
         expect(fetch).toHaveBeenCalledWith(`${url}?foo=bar`, options);
-        expect(e).toEqual(error);
+        expect(e.data).toEqual(error);
       }
     });
   });

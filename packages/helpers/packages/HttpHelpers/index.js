@@ -107,25 +107,25 @@ export const universalCall = async ({
     throw new ApiError(`SERVER_CONTENT_TYPE_ERROR:${url}`);
   }
 
+  const result = {
+    headers: response.headers,
+    status: response.status,
+    ok: response.ok,
+    data: {},
+  };
   /**
    * Parse server response json string
    */
-  let result = {};
   try {
-    result = await response.json();
+    result.data = await response.json();
   } catch (e) {
     throw new ApiError(`SERVER_CONTENT_PARSING_ERROR:${url}`);
   }
 
   /**
-   * Add status to result
-   */
-  result.httpStatusCode = response.status;
-
-  /**
    * If result is not ok throw error
    */
-  if (!response.ok) {
+  if (!result.ok) {
     throw result;
   }
   return result;
