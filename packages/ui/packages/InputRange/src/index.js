@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactInputRange from 'react-hgs-input-range';
 
@@ -24,8 +24,18 @@ const InputRange = props => {
   const [value, setValue] = useState(initialValue);
   const { min, max } = value;
 
+  /**
+   * To reset value of range
+   */
+  useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue]);
+
   return (
-    <StyledInputRangeWrapper className={className} data-testid="inputRangeWrapper">
+    <StyledInputRangeWrapper
+      className={className}
+      data-testid="inputRangeWrapper"
+    >
       <StyledInputRange data-testid="inputRange">
         <ReactInputRange
           minValue={initialMin}
@@ -38,13 +48,15 @@ const InputRange = props => {
           {...rest}
         />
       </StyledInputRange>
-      <StyledRangeLabelWrapper rtl={rtl} data-testid="inputRangeLabel" className="justify-between">
+      <StyledRangeLabelWrapper
+        rtl={rtl}
+        data-testid="inputRangeLabel"
+        className="justify-between"
+      >
         <span className="text-center" data-testid="inputRangeLabelItem">
           {fromTitle(min)}
         </span>
-        <span className="text-center">
-          {toTitle(max)}
-        </span>
+        <span className="text-center">{toTitle(max)}</span>
       </StyledRangeLabelWrapper>
     </StyledInputRangeWrapper>
   );
