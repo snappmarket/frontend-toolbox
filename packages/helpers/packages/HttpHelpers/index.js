@@ -118,6 +118,11 @@ export const universalCall = async ({
   }
 
   /**
+   * Add status to result
+   */
+  result.httpStatusCode = response.status;
+
+  /**
    * If result is not ok throw error
    */
   if (!response.ok) {
