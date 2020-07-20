@@ -2,7 +2,7 @@
 import AbortController from 'abort-controller';
 import fetch from 'isomorphic-unfetch';
 
-import { ApiError } from '../DebugHelpers';
+import { delog } from '../DebugHelpers';
 import { serializeObject } from '../ObjectHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
@@ -87,6 +87,11 @@ export const universalCall = async ({
     callUrl += `?${decodeURIComponent(queryParameters)}`;
   }
 
+  if (process.env.DEBUG_MODE === 'true') {
+    // eslint-disable-next-line no-console
+    console.log({ callUrl, headers: options.headers });
+  }
+
   /**
    * Call universal request with options
    */
@@ -104,7 +109,7 @@ export const universalCall = async ({
    * If we did not got json then throw error message
    */
   if (!contentType || !contentType.includes('application/json')) {
-    throw new ApiError(`SERVER_CONTENT_TYPE_ERROR:${url}`);
+    delog(`SERVER_CONTENT_TYPE_IS_NOT_JSON:${url}`);
   }
 
   const result = {
@@ -119,7 +124,7 @@ export const universalCall = async ({
   try {
     result.data = await response.json();
   } catch (e) {
-    throw new ApiError(`SERVER_CONTENT_PARSING_ERROR:${url}`);
+    delog(`SERVER_CONTENT_PARSING_ERROR:${url}`);
   }
 
   /**
