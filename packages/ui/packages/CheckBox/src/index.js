@@ -4,7 +4,7 @@ import {
   CheckMarkIcon,
   CircleIcon,
   MinusIcon,
-} from '@snappmarket/icons/sprite';
+} from '@snappmarket/icons';
 
 import { StyledCheckboxWrapper } from './styles';
 
