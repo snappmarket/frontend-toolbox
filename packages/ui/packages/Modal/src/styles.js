@@ -38,7 +38,7 @@ const StyledModal = Styled.div`
     opacity: 0;
     overflow: hidden;
     visibility: collapse;
-    transform: translateZ(0) translateY(calc(${props.theme.defaultRem} * -1)) scale(0.9);
+    transform: translateZ(0) translateY(calc(${props => props.theme.defaultRem} * -1)) scale(0.9);
     transition: transform 0.2s ease-out, opacity 0.2s ease-out, max-height 0.2s ease-out, visibility 0.2s ease-out;
   
     &.visible {

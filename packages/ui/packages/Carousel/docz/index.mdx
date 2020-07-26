@@ -14,12 +14,12 @@ menu: 3.Components
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
 ## get started
-```bash 
+```bash
 npm i @snappmarket/ui-carousel
 ```
 import Carousel from './demo';
 import { Playground, Props } from 'docz';
-import { AngleLeftIcon, AngleRightIcon } from '../../../../icons';
+import { AngleLeftIcon, AngleRightIcon } from '@snappmarket/icons';
 import { Button } from '../..';
 
 
@@ -39,7 +39,7 @@ export const ProductsSliderNew = props => {
       },
   };
   return (
-    <Carousel 
+    <Carousel
         slideConfig={slideConfig}
         nextArrow={
             <Button
@@ -89,7 +89,7 @@ export const ProductsSlider = props => {
       },
   };
   return (
-    <Carousel 
+    <Carousel
         slideConfig={slideConfig}
         nextArrow={
             <Button
@@ -144,7 +144,7 @@ export const ProductsSliderRtl = props => {
     },
   };
   return (
-    <Carousel 
+    <Carousel
       slideConfig={slideConfig}
       nextArrow={
           <Button
@@ -210,7 +210,7 @@ const ProductsSlider = props => {
 
   // create config for init Carousel
   const slideConfig = {
-    infinite: false,    // infinite Carousel true of false 
+    infinite: false,    // infinite Carousel true of false
     customArrow: true,  // true when use custom icon on arrows
     nav: true,          // true or false showing nav arrows on Carousel
     dots: false,        // true or false showing dots bottom of Carousel
