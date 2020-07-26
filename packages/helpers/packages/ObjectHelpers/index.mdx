@@ -60,6 +60,9 @@ import { METHOD_NAME } from '@snappmarket/object-helpers';
 <dt><a href="#serializeObject">serializeObject(object)</a> ⇒ string</dt>
 <dd><p>serializes the properties of given object</p>
 </dd>
+<dt><a href="#removeManyByKeys">removeManyByKeys(haystack, needles)</a> ⇒ object</dt>
+<dd><p>returns an object without given keys</p>
+</dd>
 </dl>
 
 <a name="removeByKey"></a>
@@ -120,4 +123,16 @@ serializes the properties of given object
 | Param | Type | Description |
 | --- | --- | --- |
 | object | object | object to be serialized by keys |
+
+<a name="removeManyByKeys"></a>
+
+## removeManyByKeys
+returns an object without given keys
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| haystack | object | object you want to remove key from |
+| needles | Array.&lt;string&gt; | keys you want to remove from object |
 

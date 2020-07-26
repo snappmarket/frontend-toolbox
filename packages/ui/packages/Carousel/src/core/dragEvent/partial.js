@@ -171,7 +171,6 @@ export const dragStart = params => {
   } = params;
 
   e = e || window.event;
-  e.preventDefault();
   const posInitial = getTranslate3d(sliderItems);
   if (e.type === 'touchstart') {
     setPosInitial(posInitial);
@@ -183,6 +182,7 @@ export const dragStart = params => {
       }),
     );
   } else {
+    e.preventDefault();
     const dragActionParams = {
       e,
       rtl,

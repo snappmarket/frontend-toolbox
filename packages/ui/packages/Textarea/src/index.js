@@ -10,15 +10,15 @@ import {
 } from './styles';
 
 const Textarea = React.forwardRef((props, ref) => {
-  const { status, message, label, required, ...rest } = props;
+  const { className, status, message, label, required, onChange, ...rest } = props;
   return (
-    <StyledTextareaWrapper data-testid="textareaWrapper">
+    <StyledTextareaWrapper className={className} data-testid="textareaWrapper">
       {label && (
         <StyledLabel data-testid="textareaLabel" htmlFor={rest.id || ''}>
-          {label} {required && <StyledStar>*</StyledStar>}
+          {label} {required && <StyledStar data-testid="textareaLabelRequired">*</StyledStar>}
         </StyledLabel>
       )}
-      <StyledTextarea data-testid="textarea" status={status} ref={ref} {...rest} />
+      <StyledTextarea data-testid="textarea" status={status} ref={ref} onChange={onChange} {...rest} />
       {Object.keys(message).length > 0 && (
         <StyledMessage data-testid="textareaMessage" type={message.type}>{message.content}</StyledMessage>
       )}
@@ -37,7 +37,7 @@ Textarea.propTypes = {
     content: PropTypes.string,
   }),
   onChange: PropTypes.func,
-  Children: PropTypes.string,
+  children: PropTypes.string,
   required: PropTypes.bool,
 };
 
@@ -46,6 +46,7 @@ Textarea.defaultProps = {
   label: '',
   message: {},
   required: false,
+  onChange: f => f,
 };
 
 export default Textarea;

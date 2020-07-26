@@ -4,7 +4,7 @@ describe('PromiseHelpers', () => {
   describe('racePromise', () => {
     it('should get race timeout error', async () => {
       const racePromise = await PromiseHelpers.racePromise(0);
-      expect(racePromise.message).toEqual('RACE_TIMEOUT');
+      expect(racePromise).toEqual('RACE_TIMEOUT');
     });
   });
   describe('makeTimeout', () => {

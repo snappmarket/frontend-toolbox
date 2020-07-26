@@ -9,6 +9,9 @@ const Toggle = props => {
   const render = () => (
     <StyledToggleWrapper
       data-testid="toggle"
+      role="button"
+      tabIndex="0"
+      aria-pressed={selected ? 'true' : 'false'}
       className={`${className} ${selected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
       size={size}
       status={status}

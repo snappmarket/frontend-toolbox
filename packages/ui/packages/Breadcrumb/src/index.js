@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { AngleLeftIcon } from '@snappmarket/icons/sprite';
+import { AngleLeftIcon } from '@snappmarket/icons';
 
 import {
   StyledBreadcrumbWrapper,
@@ -21,8 +21,8 @@ const Breadcrumb = props => {
         </StyledBreadcrumbItemSeparator>
       )}
       <StyledBreadcrumbItem>
-        {item.link ? 
-          <Link  data-testid="breadcrumbLink" to={item.link}>{item.title}</Link>
+        {item.link ?
+          <Link data-testid="breadcrumbLink" to={item.link}>{item.title}</Link>
           :
           item.title
         }

@@ -89,4 +89,9 @@ describe('Tab switcher ui component tests', () => {
     fireEvent.click(getByTestId('tab-2'));
     expect(tabSwitcher).toContainElement(getByTestId('tabPanel-2'));
   });
+
+  it('Should test the callback of tab and tab switch', () => {
+    expect(T.TabSwitcher.defaultProps.onSwitch('foo')).toBe('foo');
+    expect(T.Tab.defaultProps.onChangeTab('foo')).toBe('foo');
+  });
 });

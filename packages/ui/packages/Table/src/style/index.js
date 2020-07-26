@@ -2,9 +2,44 @@
 import { default as Styled } from 'styled-components';
 const StyledTable = Styled.table`
   width: 100%;
-  border: solid calc(${props => props.theme.defaultRem} * 0.1) ${props =>
-  props.theme.colors.gray['ultra-light']};
+  border: solid calc(${props => props.theme.defaultRem} * 0.1) ${props => props.theme.colors.gray['ultra-light']};
   border-radius: calc(${props => props.theme.defaultRem} * 0.5);
+  
+  @media(max-width: ${props => props.theme.viewports.md - 1}px) {
+    &.responsive {
+      display: flex;
+      thead {
+        > tr {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          > * {
+            &:not(:last-child){
+             border-bottom: solid calc(${props => props.theme.defaultRem} * 0.1) ${props => props.theme.colors.gray['ultra-light']};
+            }
+          }
+        }
+      }
+      tbody {
+        display: flex;
+        flex: 1;
+        overflow-x: auto;
+        > tr {
+          display: flex;
+          flex-direction: column;
+          td {
+            white-space: nowrap;
+            &:not(:last-child){
+             border-bottom: solid calc(${props => props.theme.defaultRem} * 0.1) ${props => props.theme.colors.gray['ultra-light']};
+            }
+          }
+        }
+      }
+      tfoot {
+        display: none;
+      }
+    }
+  }
 `;
 
 const StyledTableHeader = Styled.thead`

@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { CrossIcon } from '@snappmarket/icons/sprite';
+import { CrossIcon } from '@snappmarket/icons';
 
 import {
   StyledModalWrapper,
@@ -32,8 +32,9 @@ const Modal = forwardRef((props, ref) => {
     position: initialPosition,
   } = props;
   const bodyRef = useRef(null);
-  const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const modalRef = createRef();
+  const lightBoxRef = createRef();
+  const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const [position, setPosition] = useState(initialPosition);
 
   /**
@@ -50,25 +51,17 @@ const Modal = forwardRef((props, ref) => {
    * Set scroll of body
    */
   useEffect(() => {
-    const handleVisibility = () => {
-      if (visibility) {
-        if (!!onOpen && typeof onOpen === 'function') {
-          onOpen();
-        }
-      } else if (!!handleClose && typeof handleClose === 'function') {
-        handleClose();
-      }
-    };
-
     const { body } = document;
     body.style['overflow-y'] = 'hidden';
 
-    handleVisibility();
+    if (visibility && !!onOpen && typeof onOpen === 'function') {
+      onOpen();
+    }
 
     return () => {
       body.style['overflow-y'] = 'auto';
     };
-  }, [handleClose, onOpen, visibility]);
+  }, [visibility]);
 
   /**
    * Define modal position based on  window size
@@ -78,6 +71,7 @@ const Modal = forwardRef((props, ref) => {
       const {
         current: { offsetHeight: modalHeight },
       } = modalRef;
+      lightBoxRef.current.style.height = `${modalHeight + 100}px`;
       const { innerHeight: windowHeight } = window;
       if (modalHeight - 20 >= windowHeight) {
         setPosition('top');
@@ -92,12 +86,13 @@ const Modal = forwardRef((props, ref) => {
         className={className}
         ref={ref}
       >
-        <StyledLightBox onClick={handleClose || undefined} />
+        <StyledLightBox ref={lightBoxRef} data-testid="modalLightBox" onClick={handleClose || undefined} />
         <StyledModal
           data-testid="modal"
           width={width}
           position={position}
           ref={modalRef}
+          className={`animate-visibility ${visibility ? 'visible' : ''}`}
         >
           {handleClose && typeof handleClose === 'function' && (
             <StyledCloseModalButton

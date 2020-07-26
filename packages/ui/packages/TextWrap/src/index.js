@@ -1,28 +1,27 @@
 import * as React from 'react';
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import PropTypes from 'prop-types';
 
 import { StyledTextWrap } from './styles';
 
 const TextWrap = ({ className, lines, children }) => {
-  const [height, setHeight] = useState(0);
   const textRef = useRef(null);
 
   useEffect(() => {
-    if(textRef.current){
-      const lineHeight = window.getComputedStyle(textRef.current).getPropertyValue('line-height');
-      setHeight(lines * (lineHeight ? parseInt(lineHeight, 10) : 0));
-    }
+    const lineHeight = window.getComputedStyle(textRef.current).getPropertyValue('line-height');
+    const height = lines * (lineHeight ? parseInt(lineHeight, 10) : 0);
+    textRef.current.style.height = `${height}px`;
   }, [textRef.current])
 
-  return <StyledTextWrap
-    ref={textRef}
-    data-testid="textWrap"
-    className={className}
-    height={height}
-  >
-    {children}
-  </StyledTextWrap>
+  return (
+    <StyledTextWrap
+      ref={textRef}
+      data-testid="textWrap"
+      className={className}
+    >
+      {children}
+    </StyledTextWrap>
+  )
 };
 
 TextWrap.propTypes = {

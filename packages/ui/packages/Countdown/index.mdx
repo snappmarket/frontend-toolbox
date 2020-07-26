@@ -1,0 +1,50 @@
+---
+name: Countdown
+route: /ui/countdown
+menu: 3.Components
+---
+
+import { Playground, Props } from 'docz';
+import Countdown from './src/index';
+
+# Countdown
+the countdown component is a useful countdown that gives you customization ability to implement the count down however you want.
+the remaining time renders using the render method of the react-dom instead of updating the state, so there's no worry about the re-rendering overheads.
+
+
+<br />
+
+# Basic Usage
+<Playground>
+  <Countdown date={new Date(Date.now() + (1000 *  60 * 60 * 24 * 10))} />
+</Playground>
+
+<br />
+
+# Customization
+you can simply pass a children function to customize the timer, it gives you days, hours, minutes and options as the children parameters in an object.
+
+<Playground>
+  <Countdown
+    date={new Date(Date.now() + (1000 *  60 * 60 * 24 * 10))}
+    onStart={date => console.log("start", date)}
+    onEnd={date => console.log("start", date)}
+  >
+    {({days, hours, minutes, seconds}) => (
+      <>
+        <h3>here is a 10 days countdown</h3>
+        <ul>
+          <li>days: {days}</li>
+          <li>hours: {hours}</li>
+          <li>minutes: {minutes}</li>
+          <li>seconds: {seconds}</li>
+        </ul>
+      </>
+    )}
+  </Countdown>
+</Playground>
+
+<br />
+
+# Props
+<Props of={Countdown} />

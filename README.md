@@ -18,12 +18,16 @@ You can see demo at : https://ft-box.netlify.com/
 npm i @snappmarket/ui
 npm i @snappmarket/hooks
 npm i @snappmarket/helpers
+npm i @snappmarket/icons
+npm i @snappmarket/config
 
 // OR 
 
 yarn add @snappmarket/ui
 yarn add @snappmarket/hooks
 yarn add @snappmarket/helpers
+yarn add @snappmarket/icons
+yarn add @snappmarket/config
 ```
 
 
@@ -101,6 +105,8 @@ yarn add @snappmarket/helpers
 
 ## 💎 [Icons](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/icons) found here
 
+All icons has svg file, react component, and an special sprite svg
+
 - 💯 100% tested react 100+ svg icon components
 
 
@@ -113,7 +119,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://sayjeyhi.com"><img src="https://avatars1.githubusercontent.com/u/6254009?v=4" width="100px;" alt=""/><br /><sub><b>Jafar Rezaei</b></sub></a><br /><a href="#infra-sayjeyhi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Code">💻</a></td>
+    <td align="center"><a href="http://sayjeyhi.com"><img src="https://avatars1.githubusercontent.com/u/6254009?v=4" width="100px;" alt=""/><br /><sub><b>Jafar Rezaei</b></sub></a><br /><a href="#infra-sayjeyhi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=sayjeyhi" title="Code">💻</a> <a href="#ideas-sayjeyhi" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-sayjeyhi" title="Maintenance">🚧</a> <a href="#platform-sayjeyhi" title="Packaging/porting to new platform">📦</a> <a href="https://github.com/snappmarket/frontend-toolbox/pulls?q=is%3Apr+reviewed-by%3Asayjeyhi" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="http://erami.name"><img src="https://avatars1.githubusercontent.com/u/29011692?v=4" width="100px;" alt=""/><br /><sub><b>Reza Erami</b></sub></a><br /><a href="#infra-rezaerami" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=rezaerami" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/mesbah68"><img src="https://avatars2.githubusercontent.com/u/21215334?v=4" width="100px;" alt=""/><br /><sub><b>mahsa mesbah</b></sub></a><br /><a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Documentation">📖</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=mesbah68" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/MostafaRastegar"><img src="https://avatars2.githubusercontent.com/u/13585454?v=4" width="100px;" alt=""/><br /><sub><b>Mostafa Rastegar</b></sub></a><br /><a href="#ideas-MostafaRastegar" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=MostafaRastegar" title="Tests">⚠️</a> <a href="https://github.com/snappmarket/frontend-toolbox/commits?author=MostafaRastegar" title="Code">💻</a></td>

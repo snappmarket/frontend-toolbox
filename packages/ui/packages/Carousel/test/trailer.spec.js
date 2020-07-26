@@ -90,10 +90,10 @@ describe('Partial Trailer', () => {
     };
     expect(setPageNumberOnChild(testParams)).toStrictEqual([
       '1',
-      '1',
-      '1',
-      '1',
-      '1',
+      '2',
+      '3',
+      '4',
+      '5',
     ]);
   });
   test('Check clone node append child', () => {

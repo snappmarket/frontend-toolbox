@@ -4,7 +4,7 @@ import {
   CheckMarkIcon,
   CircleIcon,
   MinusIcon,
-} from '@snappmarket/icons/sprite';
+} from '@snappmarket/icons';
 
 import { StyledCheckboxWrapper } from './styles';
 
@@ -14,8 +14,12 @@ const CheckBox = props => {
   const render = () => (
     <StyledCheckboxWrapper
       data-testid="checkBox"
+      role="checkbox"
+      tabIndex="0"
+      aria-checked={selected ? 'true' : 'false'}
       className={className}
       disabled={disabled}
+      type="button"
       size={size}
       status={status}
       border={border}

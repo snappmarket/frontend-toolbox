@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui",
   "private": false,
-  "version": "0.2.10-alpha.9",
+  "version": "0.3.5-alpha.1",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -21,19 +21,18 @@
     "start": "rollup -c -w"
   },
   "dependencies": {
-    "@snappmarket/config": "~0.2.10-alpha.8",
-    "@snappmarket/helpers": "^0.2.10-alpha.4",
-    "@snappmarket/hooks": "^0.2.10-alpha.4",
-    "@snappmarket/icons": "^0.2.10-alpha.4",
-    "polished": "^3.4.2",
+    "polished": "^3.6.5",
     "react-hgs-input-range": "^1.3.1",
     "react-image": "^2.2.2",
-    "react-router-dom": "^5.1.2",
-    "react-slick": "^0.25.2"
+    "react-router-dom": "^5.1.2"
   },
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "@snappmarket/config": "^0.2.10",
+    "@snappmarket/helpers": "^0.2.10",
+    "@snappmarket/hooks": "^0.2.10",
+    "@snappmarket/icons": "^0.2.10",
     "styled-components": "^4.2.0"
   },
   "engines": {

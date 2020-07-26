@@ -29,4 +29,16 @@ describe('Grid ui component tests', () => {
     const gridChild = getByTestId('gridChild');
     expect(getByTestId('grid')).toContainElement(gridChild);
   });
+
+  it('Should render responsive children', () => {
+    const { getByTestId } = render(
+      <Wrapper>
+        <Grid perRow={{xs: 12, md: 6}}>
+          <div data-testid="gridChild">test</div>
+        </Grid>
+      </Wrapper>,
+    );
+    const gridChild = getByTestId('gridChild');
+    expect(getByTestId('grid')).toContainElement(gridChild);
+  });
 });

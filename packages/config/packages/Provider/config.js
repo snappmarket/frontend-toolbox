@@ -4,6 +4,7 @@ const GlobalConfig = {
     importSpriteSVG: false,
     useSpriteFile: true,
     SSR: false,
+    spriteSvgName: 'sprite.svg',
   },
   theme: {},
   language: {},

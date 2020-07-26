@@ -58,7 +58,7 @@ if (GlobalConfig.options.importSpriteSVG) {
 const ${folderName} = ({ className, size }) => {
   const options = useOptions();
 
-  let importPrefix = options.useSpriteFile ? '/sprite.svg' : '';
+  let importPrefix = options.useSpriteFile ? \`/\${options.spriteSvgName}\` : '';
   if(options.publicPath !== '/') {
     importPrefix = \`/\${options.publicPath}\${importPrefix}\`;
   }
@@ -76,7 +76,7 @@ const ${folderName} = ({ className, size }) => {
         height: size * 10,
       }}
       fill="currentColor">
-      <use xlinkHref={\`\${importPrefix}#${folderName}\`} />
+      <use data-testid="${folderName}Href" xlinkHref={\`\${importPrefix}#${folderName}\`} />
     </svg>
   );
 };

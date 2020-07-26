@@ -194,14 +194,17 @@ export const arrGenerator = (arr, part) => {
   return newArry;
 };
 
+export const sorter = (a, b) => {
+  if (a < b) return -1; // any negative number works
+  if (a > b) return 1; // any positive number works
+  return 0; // equal values MUST yield zero
+};
+
 export const responsiveItemCount = getConfig => {
-  const resp = Object.keys(getConfig);
-  const newResp = resp.filter(item => {
-    if (item <= document.body.clientWidth) {
-      return item;
-    }
-    return [];
-  });
+  const resp = Object.keys(getConfig).map(el => parseInt(el, 10));
+  const newResp = resp
+    .sort(sorter)
+    .filter(item => item <= document.body.clientWidth);
   return getConfig[parseInt(newResp.pop(), 10)].items;
 };
 

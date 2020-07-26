@@ -21,7 +21,6 @@ const globals = {
   polished: 'polished',
   'polished/lib/color/lighten': 'polishedLighten',
   'polished/lib/color/darken': 'polishedDarken',
-  'react-slick': 'reactSlick',
   '@snappmarket/config': 'snappmarketConfig',
   '@snappmarket/helpers': 'snappmarketHelpers',
   '@snappmarket/hooks': 'snappmarketHooks',

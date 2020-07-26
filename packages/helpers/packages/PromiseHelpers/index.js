@@ -11,7 +11,7 @@ export const racePromise = timeout =>
   new Promise(resolve => {
     const wait = setTimeout(() => {
       clearTimeout(wait);
-      resolve(new ApiError('RACE_TIMEOUT'));
+      resolve('RACE_TIMEOUT');
     }, timeout);
   });
 

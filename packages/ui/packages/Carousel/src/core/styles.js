@@ -39,8 +39,11 @@ export const StyledSimpleCarousel = Styled.div`
     z-index: 2;
     align-items: center;
     justify-content: center;
-    display:flex;
     direction: ltr;
+    display: none;
+  }
+  .loaded .control {
+    display: flex;
   }
   .control svg {
     fill: #fff;

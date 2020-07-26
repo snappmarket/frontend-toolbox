@@ -8,7 +8,8 @@
     "start": "yarn docz:serve",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bootstrap:seprated": "lerna exec yarn",
-    "build": "lerna run --parallel build && yarn docz:build",
+    "build": "yarn build:packages && yarn docz:build",
+    "build:packages": "lerna run --parallel build",
     "build-lerna": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.spec.js",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
     "test": "cross-env BABEL_ENV=test jest",
@@ -103,11 +104,11 @@
     "rollup-plugin-typescript2": "^0.19.2",
     "rollup-plugin-url": "^2.1.0",
     "semver": "^7.1.3",
-    "shelljs": "^0.8.3",
-    "webpack": "^4.41.0"
+    "shelljs": "^0.8.3"
   },
   "dependencies": {
-    "@changesets/cli": "^2.6.2",
+    "@changesets/cli": "^2.9.2",
+    "@snappmarket/icons": "^0.2.22",
     "abort-controller": "^3.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.15",

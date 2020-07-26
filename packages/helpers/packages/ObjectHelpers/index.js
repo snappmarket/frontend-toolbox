@@ -94,20 +94,35 @@ export const serializeObject = object => {
   }
   const result = [];
   Object.keys(object).forEach(property => {
-    if (typeof object[property] === 'object') {
-      if (Array.isArray(object[property]) && object[property].length) {
-        object[property].forEach(item => result.push(`${property}[]=${item}`));
-      } else if (
-        !Array.isArray(object[property]) &&
-        Object.keys(object[property]).length
-      ) {
-        Object.keys(object[property]).forEach(key =>
-          result.push(`${property}[${key}]=${object[property][key]}`),
+    const prop = object[property];
+    if (typeof prop === 'object' && prop !== null) {
+      if (Array.isArray(prop) && prop.length) {
+        prop.forEach(item => result.push(`${property}[]=${item}`));
+      } else if (!Array.isArray(prop) && Object.keys(prop).length) {
+        Object.keys(prop).forEach(key =>
+          result.push(`${property}[${key}]=${prop[key]}`),
         );
       }
-    } else if (typeof object[property] !== 'undefined') {
-      result.push(`${property}=${object[property]}`);
+    } else if (typeof prop !== 'undefined' && prop !== null) {
+      result.push(`${property}=${prop}`);
     }
   });
   return result.join('&');
 };
+
+/**
+ * @function
+ * @name removeManyByKeys
+ * @description returns an object without given keys
+ * @param   haystack    {object}            object you want to remove key from
+ * @param   needles     {Array.<string>}    keys you want to remove from object
+ * @return  {object}
+ */
+export const removeManyByKeys = (haystack, needles) =>
+  Object.keys(haystack)
+    .filter(key => !needles.includes(key))
+    .reduce((result, current) => {
+      // eslint-disable-next-line no-param-reassign
+      result[current] = haystack[current];
+      return result;
+    }, {});

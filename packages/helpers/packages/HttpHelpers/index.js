@@ -2,7 +2,7 @@
 import AbortController from 'abort-controller';
 import fetch from 'isomorphic-unfetch';
 
-import { ApiError } from '../DebugHelpers';
+import { delog } from '../DebugHelpers';
 import { serializeObject } from '../ObjectHelpers';
 import { emptyPromise, makeTimeout } from '../PromiseHelpers';
 
@@ -43,7 +43,7 @@ export const fetchWithTimeOut = (url, options, timeout = 5000) => {
  * @param   rest                  {any}       any additional options which is supported by the isomorphic fetch
  * @param   timeout               {number}    timeout to kill the request if it's taking too long
  * @param   allowedNoContent      {boolean}   flag to allow the request be handle even if there is no content
- * @returns {Promise<any>}
+ * @returns {Promise<{headers: *, data: {}, ok: *, status: *}>}
  */
 export const universalCall = async ({
   url,
@@ -87,6 +87,11 @@ export const universalCall = async ({
     callUrl += `?${decodeURIComponent(queryParameters)}`;
   }
 
+  if (process.env.DEBUG_MODE === 'true') {
+    // eslint-disable-next-line no-console
+    console.log({ callUrl, headers: options.headers });
+  }
+
   /**
    * Call universal request with options
    */
@@ -104,23 +109,28 @@ export const universalCall = async ({
    * If we did not got json then throw error message
    */
   if (!contentType || !contentType.includes('application/json')) {
-    throw new ApiError(`SERVER_CONTENT_TYPE_ERROR:${url}`);
+    delog(`SERVER_CONTENT_TYPE_IS_NOT_JSON:${url}`);
   }
 
+  const result = {
+    headers: response.headers,
+    status: response.status,
+    ok: response.ok,
+    data: {},
+  };
   /**
    * Parse server response json string
    */
-  let result = {};
   try {
-    result = await response.json();
+    result.data = await response.json();
   } catch (e) {
-    throw new ApiError(`SERVER_CONTENT_PARSING_ERROR:${url}`);
+    delog(`SERVER_CONTENT_PARSING_ERROR:${url}`);
   }
 
   /**
    * If result is not ok throw error
    */
-  if (!response.ok) {
+  if (!result.ok) {
     throw result;
   }
   return result;
