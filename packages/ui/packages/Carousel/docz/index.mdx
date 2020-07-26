@@ -19,7 +19,7 @@ npm i @snappmarket/ui-carousel
 ```
 import Carousel from './demo';
 import { Playground, Props } from 'docz';
-import { AngleLeftIcon, AngleRightIcon } from '@snappmarket/icons';
+import { AngleLeftIcon, AngleRightIcon } from '../../../../icons';
 import { Button } from '../..';
 
 
@@ -127,7 +127,7 @@ export const ProductsSliderRtl = props => {
   const slideConfig = {
     infinite: true,
     customArrow: true,
-    autoPlay: false,
+    autoPlay: true,
     nextSpeed: 2000,
     nav: true,
     dots: true,
@@ -165,16 +165,25 @@ export const ProductsSliderRtl = props => {
           />
       }
       >
-      <a href="/salam" class="slide">Slide 1</a>
-      <a href="/salam" class="slide">Slide 2</a>
-      <a href="/salam" class="slide">Slide 3</a>
-      <a href="/salam" class="slide">Slide 4</a>
-      <a href="/salam" class="slide">Slide 5</a>
+      <div class="slide">Slide 1</div>
+      <div class="slide">Slide 2</div>
+      <div class="slide">Slide 3</div>
+      <div class="slide">Slide 4</div>
+      <div class="slide">Slide 5</div>
     </Carousel>
   )
 }
 
 # Demo
+
+<ProductsSlider />
+ <br/>
+ <br/>
+ <br/>
+<ProductsSliderNew />
+ <br/>
+ <br/>
+ <br/>
 
 # Demo RTL
 
