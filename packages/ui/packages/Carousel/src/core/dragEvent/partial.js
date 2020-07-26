@@ -231,10 +231,15 @@ export const dragAction = params => {
     }
   }
 
-  addClassToElement({
-    item: getSliderItems(),
-    className: 'avoid-clicks',
-  });
+  const startAvoidClicks = Posx => {
+    if( Posx > 5){
+      addClassToElement({
+        item: getSliderItems(),
+        className: 'avoid-clicks',
+      });
+    }
+    return Posx
+  }
 
   if (e.type === 'touchmove') {
     const dragActionTouchmovePosX2Params = {
@@ -243,6 +248,7 @@ export const dragAction = params => {
     };
     setPosX2(dragActionTouchmovePosX2(dragActionTouchmovePosX2Params));
     setPosX1(dragActionTouchmovePosX1(clientXParams));
+    startAvoidClicks(dragActionTouchmovePosX1(clientXParams));
   } else {
     const dragActionMousemoveParams = {
       posX1: getPosX1(),
@@ -250,6 +256,7 @@ export const dragAction = params => {
     };
     setPosX2(dragActionMousemove(dragActionMousemoveParams));
     setPosX1(dragActionMousemovePosX1(clientXParams));
+    startAvoidClicks(dragActionMousemovePosX1(clientXParams));
   }
 
   const dragActionCalcPositionParams = {
