@@ -24,8 +24,9 @@ const Modal = forwardRef((props, ref) => {
     visibility,
     width,
     position: initialPosition,
+    closeIcon,
   } = props;
-  const bodyRef = useRef(null)
+  const bodyRef = useRef(null);
   const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const modalRef = createRef();
   const [position, setPosition] = useState(initialPosition);
@@ -98,7 +99,7 @@ const Modal = forwardRef((props, ref) => {
               data-testid="closeModalButton"
               className="close-modal-button"
               modifier="link"
-              icon={<CrossIcon />}
+              icon={closeIcon || <CrossIcon />}
               size="sm"
               color="gray"
               onClick={handleClose}
@@ -141,6 +142,7 @@ Modal.propTypes = {
   footer: PropTypes.node,
   width: PropTypes.number,
   position: PropTypes.oneOf(['top', 'center', 'bottom']),
+  closeIcon: PropTypes.node,
 };
 
 Modal.defaultProps = {
