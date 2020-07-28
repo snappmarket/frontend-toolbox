@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { CrossIcon } from '@snappmarket/icons';
+import { CrossIcon } from '@snappmarket/icons_snappmarket';
 
 import {
   StyledModalWrapper,
