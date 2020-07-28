@@ -2598,10 +2598,10 @@
     escape-string-regexp "^1.0.5"
     lodash.deburr "^4.1.0"
 
-"@snappmarket/icons@^0.2.22":
-  version "0.2.22"
-  resolved "https://registry.yarnpkg.com/@snappmarket/icons/-/icons-0.2.22.tgz#91c68d9cd1e29fd0d5ea5dd2704f0a8f55a2eb0f"
-  integrity sha512-EY7wCt/te7IrFYVvRfN7aGXthVqsaxUH6YYt4wXkLFYzm0c1pVJ+HzrTNmtuqntB+u367FAnBLxU5Qy+dePpng==
+"@snappmarket/icons_snappmarket@1.0.1-alpha.3":
+  version "1.0.1-alpha.3"
+  resolved "https://registry.yarnpkg.com/@snappmarket/icons_snappmarket/-/icons_snappmarket-1.0.1-alpha.3.tgz#43bb655e73116639da6a09e44cefb0fa613fe8c2"
+  integrity sha512-LtDMc1d0B+VS4bDs04Sjp00DjDjPtUe8mrtCrwBq/m+eE9UOmJfByVcWiMyjwP89O1lqT9B7QlmoccVMm0L9Qg==
 
 "@styled-system/css@^5.0.16":
   version "5.1.5"
