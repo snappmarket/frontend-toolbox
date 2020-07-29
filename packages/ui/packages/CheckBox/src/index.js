@@ -4,14 +4,16 @@ import {
   CheckMarkIcon,
   CircleIcon,
   MinusIcon,
-} from '@snappmarket/icons';
+} from '@snappmarket/icons_snappmarket';
 
 import { StyledCheckboxWrapper } from './styles';
 
-const CheckBox = props => {
-  const { status, selected, size, disabled, className, border } = props;
+const CheckBox = ({ status, selected, size, disabled, className, border, selectedIcon, disabledIcon, disabledCircleIcon }) => {
+  const SelectedIcon = selectedIcon || <CheckMarkIcon size={size} />;
+  const DisabledIcon = disabledIcon || <MinusIcon size={size} />;
+  const DisabledCircleIcon = disabledCircleIcon || <CircleIcon size={size} />;
 
-  const render = () => (
+  return (
     <StyledCheckboxWrapper
       data-testid="checkBox"
       role="checkbox"
@@ -25,13 +27,11 @@ const CheckBox = props => {
       border={border}
       selected={selected}
     >
-      {selected && !disabled ? <CheckMarkIcon size={size} /> : ''}
-      {disabled && className !== 'circle' ? <MinusIcon size={size} /> : ''}
-      {className === 'circle' && disabled ? <CircleIcon size={size} /> : ''}
+      {selected && !disabled ? SelectedIcon : ''}
+      {/* eslint-disable-next-line no-nested-ternary */}
+      {disabled ? className.includes('circle') ? DisabledCircleIcon : DisabledIcon : ''}
     </StyledCheckboxWrapper>
   );
-
-  return render();
 };
 
 CheckBox.propTypes = {
@@ -41,12 +41,17 @@ CheckBox.propTypes = {
   selected: PropTypes.bool,
   size: PropTypes.number,
   disabled: PropTypes.bool,
+  selectedIcon: PropTypes.node,
+  disabledIcon: PropTypes.node,
+  disabledCircleIcon: PropTypes.node,
 };
+
 CheckBox.defaultProps = {
   size: 2,
   status: 'green',
   selected: false,
   border: true,
   disabled: false,
+  className: '',
 };
 export default CheckBox;
