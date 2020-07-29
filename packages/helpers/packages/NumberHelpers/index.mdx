@@ -60,6 +60,9 @@ import { METHOD_NAME } from '@snappmarket/number-helpers';
 <dt><a href="#currencyPrice">currencyPrice(amount)</a> ⇒ string</dt>
 <dd><p>turns number into currency formatted number in persian</p>
 </dd>
+<dt><a href="#zeroPadding">zeroPadding(number, padding)</a> ⇒ string</dt>
+<dd><p>adds starting zeros to numbers</p>
+</dd>
 </dl>
 
 <a name="persianNumber"></a>
@@ -67,7 +70,7 @@ import { METHOD_NAME } from '@snappmarket/number-helpers';
 ## persianNumber
 converts the english number to persian number
 
-**Kind**: global function
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -78,7 +81,7 @@ converts the english number to persian number
 ## englishNumber
 converts both arabic-extended and arabic-indic numbers to english
 
-**Kind**: global function
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -89,56 +92,33 @@ converts both arabic-extended and arabic-indic numbers to english
 ## generateKey
 returns a key which is combination of a random number and timestamp
 
-**Kind**: global function
+**Kind**: global function  
 <a name="cellphoneValidate"></a>
 
 ## cellphoneValidate
 returns a regular expression for validating cellphone number with format of cellphone numbers of Iran
 
-**Kind**: global function
+**Kind**: global function  
 <a name="currencyPrice"></a>
 
 ## currencyPrice
 turns number into currency formatted number in persian
 
-**Kind**: global function
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | amount | number | the english number you want to convert to currency formatted number in persian |
 
-## numericInputValidation
-**Kind**: global function
+<a name="zeroPadding"></a>
 
-check input value,then is number or not. and check min and max input value integer
-you can create a input by "tel" type and set onChenge for it,
-in onChange, pass min,max and inputValue to the numericInputValidation function and use that result;
+## zeroPadding
+adds starting zeros to numbers
 
-``` es6
-const { value, isValid, message } = numericInputValidation({
-  inputValue,
-  min,
-  max,
-  validationMessages: {
-    minMessage: {
-      type: 'danger',
-      content: 'min',
-    },
-    maxMessage: {
-      type: 'danger',
-      content: 'max',
-    },
-    nanMessage: {
-      type: 'danger',
-      content: 'nan',
-    },
-  }
-});
-```
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| min | number | the english number |
-| max | number | the english number |
-| inputValue | string | the english number string like "1000" |
-| validationMessages | shape | string for all like top example|
+| number | number | number you want to add zero to its start |
+| padding | number | count of zeros you want to add for a number to fix its length |
+

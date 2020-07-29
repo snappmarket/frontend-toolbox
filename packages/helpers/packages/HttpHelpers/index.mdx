@@ -44,7 +44,7 @@ import { METHOD_NAME } from '@snappmarket/http-helpers';
 <dt><a href="#fetchWithTimeOut">fetchWithTimeOut(url, options, timeout)</a> ⇒ Promise.&lt;unknown&gt;</dt>
 <dd><p>fetches the request, if it takes to long, it will be timed out</p>
 </dd>
-<dt><a href="#universalCall">universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)</a> ⇒ Promise.&lt;any&gt;</dt>
+<dt><a href="#universalCall">universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)</a> ⇒ Promise.&lt;{headers: *, data: {}, ok: *, status: *}&gt;</dt>
 <dd><p>Call an api in universal way</p>
 </dd>
 </dl>
@@ -83,21 +83,14 @@ Call an api in universal way
 | allowedNoContent | boolean | flag to allow the request be handle even if there is no content |
 
 
-* [universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)](#universalCall) ⇒ Promise.&lt;any&gt;
+* [universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)](#universalCall) ⇒ Promise.&lt;{headers: \*, data: {}, ok: \*, status: \*}&gt;
     * [~callUrl](#universalCall..callUrl)
-    * [~result](#universalCall..result)
     * [~response](#universalCall..response)
 
 <a name="universalCall..callUrl"></a>
 
 ### universalCall~callUrl
 Make query parameters
-
-**Kind**: inner property of [universalCall](#universalCall)  
-<a name="universalCall..result"></a>
-
-### universalCall~result
-Parse server response json string
 
 **Kind**: inner property of [universalCall](#universalCall)  
 <a name="universalCall..response"></a>

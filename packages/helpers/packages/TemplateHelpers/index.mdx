@@ -41,39 +41,77 @@ import { METHOD_NAME } from '@snappmarket/template-helpers';
 ```
 ``
 
-## Classes
-
-<dl>
-<dt><a href="#HexToRgb">HexToRgb</a></dt>
-<dd></dd>
-</dl>
-
 ## Constants
 
 <dl>
-<dt><a href="#defineForegroundColor">defineForegroundColor</a> ⇒ string</dt>
-<dd><p>Decide between darkness and lightness</p>
+<dt><a href="#rem">rem</a></dt>
+<dd><p>Will handle every thing about rem, just supply the value</p>
 </dd>
-<dt><a href="#makeRgba">makeRgba</a> ⇒ string</dt>
-<dd><p>Make an rgba color from a hex</p>
+<dt><a href="#color">color</a> ⇒ function</dt>
+<dd><p>Make a color, or a shade of color</p>
 </dd>
-<dt><a href="#decideMeasurement">decideMeasurement</a> ⇒ string</dt>
-<dd><p>Decide between rem and percent values</p>
-</dd>
-<dt><a href="#makeShadow">makeShadow</a> ⇒ function</dt>
-<dd><p>Will create shadow in easy way</p>
+<dt><a href="#makeRgbaColor">makeRgbaColor</a> ⇒ function</dt>
+<dd><p>Make rgba from a passed color</p>
 </dd>
 </dl>
 
-<a name="HexToRgb"></a>
+## Functions
 
-## HexToRgb
-**Kind**: global class  
-<a name="new_HexToRgb_new"></a>
+<dl>
+<dt><a href="#hexToRgb">hexToRgb(hex)</a> ⇒ Object</dt>
+<dd><p>Convert hex color to rgb color</p>
+</dd>
+<dt><a href="#defineForegroundColor">defineForegroundColor(backgroundColor)</a> ⇒ string</dt>
+<dd><p>Decide between dark or light color based on background color brightness</p>
+</dd>
+<dt><a href="#makeRgba">makeRgba(opacity, color)</a> ⇒ string</dt>
+<dd><p>Make an rgba color suitable for CSS from a hex color</p>
+</dd>
+<dt><a href="#decideMeasurement">decideMeasurement(measurement)</a> ⇒ string</dt>
+<dd><p>Decide</p>
+</dd>
+<dt><a href="#makeShadow">makeShadow(hOffset, vOffset, blur, spread, color, inset)</a> ⇒ string</dt>
+<dd><p>returns a shadow suitable for css</p>
+</dd>
+</dl>
 
-### new exports.HexToRgb
-Convert hex to rgba
+<a name="rem"></a>
 
+## rem
+Will handle every thing about rem, just supply the value
+
+**Kind**: global constant  
+<a name="color"></a>
+
+## color ⇒ function
+Make a color, or a shade of color
+
+**Kind**: global constant  
+
+| Param |
+| --- |
+| name | 
+| shade | 
+
+<a name="makeRgbaColor"></a>
+
+## makeRgbaColor ⇒ function
+Make rgba from a passed color
+
+**Kind**: global constant  
+
+| Param |
+| --- |
+| opacity | 
+| name | 
+| shade | 
+
+<a name="hexToRgb"></a>
+
+## hexToRgb
+Convert hex color to rgb color
+
+**Kind**: global function  
 
 | Param |
 | --- |
@@ -81,21 +119,21 @@ Convert hex to rgba
 
 <a name="defineForegroundColor"></a>
 
-## defineForegroundColor ⇒ string
-Decide between darkness and lightness
+## defineForegroundColor
+Decide between dark or light color based on background color brightness
 
-**Kind**: global constant  
+**Kind**: global function  
 
-| Param |
-| --- |
-| color | 
+| Param | Type | Description |
+| --- | --- | --- |
+| backgroundColor | string | background color in hex |
 
 <a name="makeRgba"></a>
 
-## makeRgba ⇒ string
-Make an rgba color from a hex
+## makeRgba
+Make an rgba color suitable for CSS from a hex color
 
-**Kind**: global constant  
+**Kind**: global function  
 
 | Param |
 | --- |
@@ -104,28 +142,28 @@ Make an rgba color from a hex
 
 <a name="decideMeasurement"></a>
 
-## decideMeasurement ⇒ string
-Decide between rem and percent values
+## decideMeasurement
+Decide
 
-**Kind**: global constant  
+**Kind**: global function  
 
-| Param |
-| --- |
-| measurement | 
+| Param | Description |
+| --- | --- |
+| measurement | what measurement to use, given measurement or multiplying it in rem unit |
 
 <a name="makeShadow"></a>
 
-## makeShadow ⇒ function
-Will create shadow in easy way
+## makeShadow
+returns a shadow suitable for css
 
-**Kind**: global constant  
+**Kind**: global function  
 
-| Param |
-| --- |
-| hOffset | 
-| vOffset | 
-| blur | 
-| spread | 
-| color | 
-| inset | 
+| Param | Type | Description |
+| --- | --- | --- |
+| hOffset | number \| string | horizontal offset of shadow, wil be multiplied in rem |
+| vOffset | number \| string | vertical offset of shadow, wil be multiplied in rem |
+| blur | number \| string | blur of the shadow, wil be multiplied in rem |
+| spread | number \| string | spread of the shadow, wil be multiplied in rem |
+| color | string | color of the shadow |
+| inset | boolean | blur of the shadow, wil be multiplied in rem |
 

@@ -164,4 +164,16 @@ describe('NumberHelpers', () => {
       });
     });
   });
+
+  describe('zeroPadding', () => {
+    it('should add starting zeros with default value of padding', () => {
+      expect(NumberHelpers.zeroPadding(2)).toEqual("02");
+    });
+    it('should add starting zeros with custom value of padding', () => {
+      expect(NumberHelpers.zeroPadding(2, 3)).toEqual("002");
+    });
+    it('should not add starting zeros cause the number length is more than the padding', () => {
+      expect(NumberHelpers.zeroPadding(100, 3)).toEqual("100");
+    });
+  });
 });
