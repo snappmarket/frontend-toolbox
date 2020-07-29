@@ -91,3 +91,18 @@ export const numericInputValidation = ({
   }
   return result;
 };
+
+/**
+ * @function
+ * @name zeroPadding
+ * @description adds starting zeros to numbers
+ * @param number    {number}  number you want to add zero to its start
+ * @param padding   {number}  count of zeros you want to add for a number to fix its length
+ * @returns {string}
+ */
+export const zeroPadding = (number, padding = 2) => {
+  const numberLength = `${number}`.length;
+  const zeroCount = numberLength < padding ? padding - numberLength : 0;
+
+  return `${[...Array(zeroCount)].map(() => '0').join('')}${number}`
+}

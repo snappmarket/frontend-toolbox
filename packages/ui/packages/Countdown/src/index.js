@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from 'prop-types';
+import { render } from "react-dom";
+import { zeroPadding as zeroPaddingHelper }  from "@snappmarket/helpers";
 
-import {render} from "react-dom";
 import { StyledCountdownWrapper, StyledCountDownItem } from './styles';
 
-const Countdown = ({ date, className, children, onStart, onEnd }) => {
+const Countdown = ({ date, zeroPadding, className, children, onStart, onEnd }) => {
   const countdownRef = useRef();
 
   /**
@@ -61,12 +62,17 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
     const hour = (minute * 60);
     const day = (hour * 24);
 
-    return {
+    const countdown = {
       days: Math.floor(remaining / day),
       hours: Math.floor((remaining % day) / hour),
       minutes: Math.floor((remaining % hour) / minute),
       seconds: Math.floor((remaining % minute) / second),
-    }
+    };
+    return Object.keys(countdown).reduce((result, key) => {
+      // eslint-disable-next-line no-param-reassign
+      result[key] = zeroPaddingHelper(countdown[key], zeroPadding)
+      return result
+    } , {});
   }
 
   /**
@@ -88,6 +94,7 @@ const Countdown = ({ date, className, children, onStart, onEnd }) => {
 
 Countdown.propTypes = {
   date: PropTypes.object.isRequired,
+  zeroPadding: PropTypes.number,
   className: PropTypes.string,
   children: PropTypes.func,
   onStart: PropTypes.func,
@@ -95,6 +102,7 @@ Countdown.propTypes = {
 };
 Countdown.defaultProps = {
   className: '',
+  zeroPadding: 2,
   children: () => false,
   onStart: f => f,
   onEnd: f => f,
