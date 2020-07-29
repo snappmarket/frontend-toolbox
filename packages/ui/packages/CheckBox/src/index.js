@@ -52,5 +52,6 @@ CheckBox.defaultProps = {
   selected: false,
   border: true,
   disabled: false,
+  className: '',
 };
 export default CheckBox;
