@@ -7,14 +7,12 @@ import CheckBox from '../index';
 
 describe('CheckBox ui component tests', () => {
   it('Find circle SVG on disable', () => {
-    const { getByTestId } = render(
+    const { getByText } = render(
       <Wrapper>
         <CheckBox disabled className="circle" />
       </Wrapper>,
     );
-    const selectSvgTitle = getByTestId('CircleIcon');
-    const convertValuesToArray = Object.values(selectSvgTitle).pop();
-    expect(convertValuesToArray.children).toBeTruthy();
+    expect(getByText('circle')).toBeTruthy();
   });
 
   it('Should change className to circle', () => {

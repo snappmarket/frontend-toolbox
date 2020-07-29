@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { CrossIcon } from '@snappmarket/icons';
+import { CrossIcon } from '@snappmarket/icons_snappmarket';
 
 import {
   StyledModalWrapper,
@@ -30,6 +30,7 @@ const Modal = forwardRef((props, ref) => {
     visibility,
     width,
     position: initialPosition,
+    closeIcon,
   } = props;
   const bodyRef = useRef(null);
   const modalRef = createRef();
@@ -99,7 +100,7 @@ const Modal = forwardRef((props, ref) => {
               data-testid="closeModalButton"
               className="close-modal-button"
               modifier="link"
-              icon={<CrossIcon />}
+              icon={closeIcon || <CrossIcon />}
               size="sm"
               color="gray"
               onClick={handleClose}
@@ -142,6 +143,7 @@ Modal.propTypes = {
   footer: PropTypes.node,
   width: PropTypes.number,
   position: PropTypes.oneOf(['top', 'center', 'bottom']),
+  closeIcon: PropTypes.node,
 };
 
 Modal.defaultProps = {

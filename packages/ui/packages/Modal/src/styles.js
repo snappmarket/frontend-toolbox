@@ -13,7 +13,16 @@ const StyledModalWrapper = Styled.div`
   overflow-y: auto;
   z-index: 1001;
   padding: calc(${props => props.theme.defaultRem} * 4) 0;
+
+  .animate-visibility {
+    will-change: transform, opacity, visibility;
+    opacity: 0;
+    overflow: hidden;
+    visibility: collapse;
+    transform: translateZ(0) translateY(calc(${props => props.theme.defaultRem} * -1)) scale(0.9);
+  }
 `;
+
 const StyledLightBox = Styled.div`
   position: absolute;
   min-height: 100vh;
@@ -22,6 +31,7 @@ const StyledLightBox = Styled.div`
   background: rgba(0, 0, 0, 0.6);
   z-index: 1002;
 `;
+
 const StyledModal = Styled.div`
   margin: 0 auto;
   max-width: calc(100% - calc(${props => props.theme.defaultRem} * 2));
@@ -31,25 +41,14 @@ const StyledModal = Styled.div`
   padding: calc(${props => props.theme.defaultRem});
   border-radius: calc(${props => props.theme.defaultRem} * 0.5);
   width: calc(${props => props.theme.defaultRem} * ${props => props.width});
-
-  .animate-visibility {
-    will-change: transform, opacity, max-height, visibility;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    visibility: collapse;
-    transform: translateZ(0) translateY(calc(${props => props.theme.defaultRem} * -1)) scale(0.9);
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out, max-height 0.2s ease-out, visibility 0.2s ease-out;
-  
-    &.visible {
-      opacity: 1;
-      max-height: 100%;
-      visibility: visible;
-      transform: translateZ(0) translateY(0) scale(1);
-      transition: transform 0.3s ease-in, opacity 0.3s ease-in, max-height 0.3s ease-in, visibility 0.3s ease-in;
-      overflow: auto !important;
-    }
-  };
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;    
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateZ(0) translateY(0) scale(1);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in, visibility 0.3s ease-in;
+    overflow: auto !important;
+  }
   ${props =>
     props.position === 'top' &&
     `

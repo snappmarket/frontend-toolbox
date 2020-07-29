@@ -10,7 +10,6 @@
     "bootstrap:seprated": "lerna exec yarn",
     "build": "yarn build:packages && yarn docz:build",
     "build:packages": "lerna run --parallel build",
-    "build-lerna": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.spec.js",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
     "test": "cross-env BABEL_ENV=test jest",
     "lint": "npm run lint:js && npm run lint:css",
@@ -20,13 +19,12 @@
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
     "prettify": "prettier --write \"packages/**/*.{js,jsx}\"",
-    "docz:dev": "yarn docz:generate:svg && cross-env BABEL_ENV=docz docz dev",
-    "docz:build": "yarn docz:generate:svg && cross-env BABEL_ENV=docz docz build",
-    "docz:serve": "yarn docz:generate:svg && cross-env BABEL_ENV=docz docz serve",
+    "docz:dev": "cross-env BABEL_ENV=docz docz dev",
+    "docz:build": "cross-env BABEL_ENV=docz docz build",
+    "docz:serve": "cross-env BABEL_ENV=docz docz serve",
     "docz:deploy": "surge .docz/dist",
     "release": "node ./scripts/release/release.js",
-    "jsdoc2docz": "node ./scripts/docs/jsdocs-to-docz.js",
-    "docz:generate:svg": "node scripts/docs/doczSvgSprite.js packages/icons/packages/**/sprite/*.svg .docz/public/sprite.svg"
+    "jsdoc2docz": "node ./scripts/docs/jsdocs-to-docz.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -108,7 +106,7 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.9.2",
-    "@snappmarket/icons": "^0.2.22",
+    "@snappmarket/icons_snappmarket": "1.0.1-alpha.3",
     "abort-controller": "^3.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.15",
