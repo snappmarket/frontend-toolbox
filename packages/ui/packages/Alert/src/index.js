@@ -6,9 +6,8 @@ import { CrossIcon } from '@snappmarket/icons_snappmarket';
 
 import { StyledAlertWrapper, StyledCloseButton } from './styles';
 
-const Alert = props => {
+const Alert = ({ status, closable, onClose, children, className, closeIcon }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const { status, closable, onClose, children, className } = props;
 
   let options = {};
   switch (status) {
@@ -69,7 +68,7 @@ const Alert = props => {
           <StyledCloseButton
             data-testid="close-button"
             onClick={handleCloseAlert}
-            icon={<CrossIcon className="closeIcon" />}
+            icon={closeIcon || <CrossIcon className="closeIcon" />}
             modifier="link"
             color="gray"
             className="circle d-inline-block pull-left closeBtn"
@@ -89,6 +88,7 @@ Alert.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   className: PropTypes.string,
   closable: PropTypes.bool,
+  closeIcon: PropTypes.node,
 };
 
 Alert.defaultProps = {
