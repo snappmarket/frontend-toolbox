@@ -5,20 +5,44 @@ menu: 3.Components
 ---
 import { Playground, Props } from 'docz';
 import { Row, Col } from '..';
-import Input from './src/index';
+import Select from './src/index';
 
-export const statuses = ['gray', 'red', 'blue', 'orange', 'green', 'yellow'];
+export const statuses = [
+      {
+        key: 'order',
+        title: 'order',
+        value: 'ORDER',
+      },
+      {
+        key: 'payment',
+        title: 'payment',
+        value: 'PAYMENT',
+      },
+      {
+        key: 'voucherCode',
+        title: 'vocher code',
+        value: 'VOUCHER_CODE',
+      },
+      {
+        key: 'technicalProblems',
+        title: 'technical Problems',
+        value: 'TECHNICAL_PROBLEMS',
+      },
+      {
+        key: 'others',
+        title: 'others',
+        value: 'OTHERS',
+      },
+    ];
 
 # Demo
 
 <div className="mb-4">
   <div>
-    <p>
-      Input supports 6 different colors, label on top, and a message bellow it to show anything you want like errors and info
-    </p>
     <Row>
     <Col xs={12} sm={6} md={4} className="mb-1">
         <Select
+          className="ltr"
           id="subject"
           name="subject"
           label="please select options"
@@ -37,9 +61,21 @@ export const statuses = ['gray', 'red', 'blue', 'orange', 'green', 'yellow'];
 <Playground>
         <Select
           id="subject"
+          className="ltr"
           name="subject"
           label="please select options"
-          options={['gray', 'red', 'blue']}
+          options={[
+                {
+                  key: 'order',
+                  title: 'order',
+                  value: 'ORDER',
+                },
+                {
+                  key: 'payment',
+                  title: 'payment',
+                  value: 'PAYMENT',
+                }
+              ]}
           autoComplete="off"
           message={{type: 'success', content:'this is a message'}}
         />

@@ -17,6 +17,12 @@ const StyledSelectIconWrapper = Styled.div`
     width: calc(${props => props.theme.defaultRem} * 1) !important;
     fill: ${props => props.theme.colors.gray.dark};
   }
+  &.ltr{
+    svg{      
+      right: calc(${props => props.theme.defaultRem} * 1);
+      left: auto;
+    }
+  }
 `;
 
 const StyledSelect = Styled.select`

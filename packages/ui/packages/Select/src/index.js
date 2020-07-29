@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { AngleDownIcon } from '@snappmarket/icons/sprite';
+import { AngleDownIcon } from '@snappmarket/icons_snappmarket';
 import {
   StyledSelectWrapper,
   StyledSelectIconWrapper,
@@ -30,12 +30,11 @@ const Select = React.forwardRef((props, ref) => {
           )}
         </StyledLabel>
       )}
-      <StyledSelectIconWrapper>
+      <StyledSelectIconWrapper className={className}>
         <AngleDownIcon />
         <StyledSelect
           name={label}
           ref={ref}
-          className={className}
           status={status}
           {...rest}
         >
