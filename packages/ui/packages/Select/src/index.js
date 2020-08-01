@@ -21,18 +21,19 @@ const Select = React.forwardRef((props, ref) => {
     ...rest
   } = props;
   return (
-    <StyledSelectWrapper data-testid="inputWrapper">
+    <StyledSelectWrapper data-testid="selectWrapper">
       {label && (
-        <StyledLabel data-testid="inputLabel" htmlFor={rest.id || ''}>
+        <StyledLabel data-testid="selectLabel" htmlFor={rest.id || ''}>
           {label}{' '}
           {required && (
             <StyledStar data-testid="labelRequiredFlag">*</StyledStar>
           )}
         </StyledLabel>
       )}
-      <StyledSelectIconWrapper className={className}>
+      <StyledSelectIconWrapper data-testid="selectIconWrapper" className={className}>
         <AngleDownIcon />
         <StyledSelect
+          data-testid="selectId"
           name={label}
           ref={ref}
           status={status}
@@ -46,7 +47,7 @@ const Select = React.forwardRef((props, ref) => {
         </StyledSelect>
       </StyledSelectIconWrapper>
       {Object.keys(message).length > 0 && (
-        <StyledMessage data-testid="inputMessages" type={message.type}>
+        <StyledMessage data-testid="selectMessages" type={message.type}>
           {message.content}
         </StyledMessage>
       )}
