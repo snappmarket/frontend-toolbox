@@ -10,14 +10,14 @@
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
 ## get started
-```bash 
-npm i @snappmarket/ui-input
+```bash
+npm i @snappmarket/ui-select
 ```
 
 
 ## usage
 ```javascript
-import { COMPONENT } from '@snappmarket/ui-input';
+import { COMPONENT } from '@snappmarket/ui-select';
 ```
 
 

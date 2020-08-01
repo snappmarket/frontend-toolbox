@@ -118,3 +118,6 @@ export const makeRgbaColor = (opacity, name, shade = false) => props => {
   const rgb = hexToRgb(color(name, shade)(props));
   return `rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, ${opacity})`;
 };
+
+export const viewport = (size, threshold = 0) => props =>
+  `${props.theme.viewports[size] - threshold}px`;
