@@ -82,4 +82,19 @@ describe('ObjectHelpers', () => {
       expect(ObjectHelpers.removeManyByKeys(payload, ['foo', 'bar'])).toEqual({ foobar: 'foobar' });
     });
   });
+  describe('deepMerge', () => {
+    it('merges two object in all levels', () => {
+      const primaryObject = { foo: 'bar', bar: {a: 1, b: [1, 2, 3]}, foobar: true };
+      const secondaryObject = { bar: {b: [4, 5, 6]}, foobar: false, snafu: 'cool' };
+      expect(ObjectHelpers.deepMerge(primaryObject, secondaryObject)).toEqual({
+        foo: "bar",
+        bar: {
+          a: 1,
+          b: [1, 2, 3, 4, 5, 6],
+        },
+        foobar: false,
+        snafu: 'cool',
+      });
+    });
+  });
 });
