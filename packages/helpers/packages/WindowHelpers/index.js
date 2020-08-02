@@ -1,3 +1,5 @@
+
+import { getAgent } from "@snappmarket/helpers"
 /**
  * @function
  * @name getPathName
@@ -38,6 +40,32 @@ export const isMobile = () => {
       navigator.userAgent.substr(0, 4),
     )
   ) {
+    return true;
+  }
+  return false;
+};
+
+/**
+ * @function
+ * @name scrollTop
+ * @description handle scroll to given position with smooth animation
+ * @returns {function}
+ */
+
+export const scrollTop = () =>
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
+/**
+ * @function
+ * @name detectBrowser
+ * @description 
+ * @param   agent  {string} get browser name
+ * @returns {boolean}
+ */  
+
+export const detectBrowser = agent => {
+  const { userAgent } = getAgent();
+  if (userAgent.toLowerCase().indexOf(agent) > -1) {
     return true;
   }
   return false;
