@@ -52,4 +52,17 @@ describe('TemplateHelpers', () => {
       ).toEqual('10px calc(1rem * 1) 1em calc(1rem * 2) #ffffff inset');
     });
   });
+  describe('viewport', () => {
+    it('should return viewport point with px', () => {
+      expect(
+        TemplateHelpers.viewport('md'),
+      ).toEqual('768px');
+    });
+    it('should return viewport point with px by threshold', () => {
+      expect(
+        TemplateHelpers.viewport('md', 1),
+      ).toEqual('767px');
+    });
+
+  });
 });
