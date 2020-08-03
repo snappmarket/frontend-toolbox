@@ -92,8 +92,7 @@ describe('Modal ui component tests', () => {
       )
       const modal = getByTestId('modal');
       expect(modal).toHaveStyle({
-        top: `50%`,
-        transform: `translateY(-50%)`,
+        transform: `translateZ(0) translateY(-50%) scale(1)`,
       });
     });
     it('Should render modal fixed on bottom of the page', () => {
@@ -104,8 +103,7 @@ describe('Modal ui component tests', () => {
       );
       const modal = getByTestId('modal');
       expect(modal).toHaveStyle({
-        top: `100%`,
-        transform: `translateY(calc(-100% - calc(${theme.defaultRem} * 1)))`,
+        transform: `translateZ(0) translateY(calc(-100% - calc(${theme.defaultRem} * 1))) scale(1)`,
       });
     });
     it('Should ignore the given position by prop and set the position to top cause window height is less than modal height', () => {

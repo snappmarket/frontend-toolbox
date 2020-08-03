@@ -93,7 +93,7 @@ const Modal = forwardRef((props, ref) => {
           width={width}
           position={position}
           ref={modalRef}
-          className={`animate-visibility ${visibility ? 'visible' : ''}`}
+          className={visibility ? 'visible' : ''}
         >
           {handleClose && typeof handleClose === 'function' && (
             <StyledCloseModalButton

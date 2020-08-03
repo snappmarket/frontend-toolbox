@@ -13,16 +13,7 @@ const StyledModalWrapper = Styled.div`
   overflow-y: auto;
   z-index: 1001;
   padding: calc(${props => props.theme.defaultRem} * 4) 0;
-
-  .animate-visibility {
-    will-change: transform, opacity, visibility;
-    opacity: 0;
-    overflow: hidden;
-    visibility: collapse;
-    transform: translateZ(0) translateY(calc(${props => props.theme.defaultRem} * -1)) scale(0.9);
-  }
 `;
-
 const StyledLightBox = Styled.div`
   position: absolute;
   min-height: 100vh;
@@ -31,7 +22,6 @@ const StyledLightBox = Styled.div`
   background: rgba(0, 0, 0, 0.6);
   z-index: 1002;
 `;
-
 const StyledModal = Styled.div`
   margin: 0 auto;
   max-width: calc(100% - calc(${props => props.theme.defaultRem} * 2));
@@ -41,31 +31,46 @@ const StyledModal = Styled.div`
   padding: calc(${props => props.theme.defaultRem});
   border-radius: calc(${props => props.theme.defaultRem} * 0.5);
   width: calc(${props => props.theme.defaultRem} * ${props => props.width});
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;    
+  opacity: 0;
+
   &.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateZ(0) translateY(0) scale(1);
-    transition: transform 0.3s ease-in, opacity 0.3s ease-in, visibility 0.3s ease-in;
-    overflow: auto !important;
+    animation: showing 1 linear 0.3s forwards;
+    ${props => props.position === 'top' && `
+      transform: translateZ(0) translateY(0) scale(1);
+    `}
+    ${props => props.position === 'center' && `
+      transform: translateZ(0) translateY(-50%) scale(1);
+    `}
+    ${props => props.position === 'bottom' &&  `
+      transform: translateZ(0) translateY(calc(-100% - calc(${props.theme.defaultRem} * 1))) scale(1);
+    `}
   }
-  ${props =>
-    props.position === 'top' &&
-    `
-    top: calc(${props.theme.defaultRem} * 1);
-  `}
-  ${props =>
-    props.position === 'center' &&
-    `
-    top:50%;
-    transform: translateY(-50%);
-  `}
-  ${props =>
-    props.position === 'bottom' &&
-    `
-    top: 100%;
-    transform: translateY(calc(-100% - calc(${props.theme.defaultRem} * 1)));
-  `}
+  @keyframes showing {
+    from {
+      opacity: 0;
+      ${props => props.position === 'top' && `
+        top: -50%;
+      `}
+      ${props => props.position === 'center' && `
+        top: 0;
+      `}
+      ${props => props.position === 'bottom' &&  `
+        top: 150%;
+      `}
+    }
+    to {
+      opacity: 1;
+      ${props => props.position === 'top' && `
+        top: calc(${props.theme.defaultRem} * 1);
+      `}
+      ${props => props.position === 'center' && `
+        top:50%;
+      `}
+      ${props => props.position === 'bottom' &&  `
+        top: 100%;
+      `}
+    }
+  }
 `;
 const StyledCloseModalButton = Styled(Button)`
   position: absolute;
