@@ -9,6 +9,7 @@ exports.onCreateWebpackConfig = args => {
         '@snappmarket/ui': path.resolve(__dirname, '../packages/ui/'),
         '@snappmarket/helpers': path.resolve(__dirname, '../packages/helpers/'),
         '@snappmarket/hooks': path.resolve(__dirname, '../packages/hooks/'),
+        '@snappmarket/config': path.resolve(__dirname, '../packages/config/'),
       }
     }
   });
