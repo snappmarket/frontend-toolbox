@@ -1,0 +1,84 @@
+---
+name: Select
+route: /ui/select
+menu: 3.Components
+---
+import { Playground, Props } from 'docz';
+import { Row, Col } from '..';
+import Select from './src/index';
+
+export const statuses = [
+      {
+        key: 'order',
+        title: 'order',
+        value: 'ORDER',
+      },
+      {
+        key: 'payment',
+        title: 'payment',
+        value: 'PAYMENT',
+      },
+      {
+        key: 'voucherCode',
+        title: 'vocher code',
+        value: 'VOUCHER_CODE',
+      },
+      {
+        key: 'technicalProblems',
+        title: 'technical Problems',
+        value: 'TECHNICAL_PROBLEMS',
+      },
+      {
+        key: 'others',
+        title: 'others',
+        value: 'OTHERS',
+      },
+    ];
+
+# Demo
+
+<div className="mb-4">
+  <div>
+    <Row>
+    <Col xs={12} sm={6} md={4} className="mb-1">
+        <Select
+          className="ltr"
+          id="subject"
+          name="subject"
+          label="please select options"
+          options={statuses}
+          autoComplete="off"
+          message={{type: 'success', content:'this is a message'}}
+        />
+      </Col>
+    </Row>
+  </div>
+</div>
+
+
+# Basic Usage
+
+<Playground>
+        <Select
+          id="subject"
+          className="ltr"
+          name="subject"
+          label="please select options"
+          options={[
+                {
+                  key: 'order',
+                  title: 'order',
+                  value: 'ORDER',
+                },
+                {
+                  key: 'payment',
+                  title: 'payment',
+                  value: 'PAYMENT',
+                }
+              ]}
+          autoComplete="off"
+          message={{type: 'success', content:'this is a message'}}
+        />
+</Playground>
+
+<br />

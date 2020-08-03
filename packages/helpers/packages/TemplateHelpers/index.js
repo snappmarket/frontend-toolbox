@@ -120,9 +120,12 @@ export const makeRgbaColor = (opacity, name, shade = false) => props => {
 };
 
 /**
- * Make a color, or a shade of color
+ * @function
+ * @name viewport
+ * @description returns the viewport width based on pixel
  * @param size
- * @returns {function(*): string}
+ * @param threshold
+ * @return {function(*): string}
  */
 export const viewport = (size, threshold = 0) => props =>
   `${props.theme.viewports[size] - threshold}px`;
