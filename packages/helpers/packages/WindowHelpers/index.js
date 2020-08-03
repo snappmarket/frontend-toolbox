@@ -1,5 +1,4 @@
-
-import { getAgent } from "@snappmarket/helpers"
+import {getAgent}  from '../OSHelpers'
 /**
  * @function
  * @name getPathName
@@ -58,10 +57,10 @@ export const scrollTop = () =>
 /**
  * @function
  * @name detectBrowser
- * @description 
+ * @description
  * @param   agent  {string} get browser name
  * @returns {boolean}
- */  
+ */
 
 export const detectBrowser = agent => {
   const { userAgent } = getAgent();
