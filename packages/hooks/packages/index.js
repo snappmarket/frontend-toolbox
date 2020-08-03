@@ -5,3 +5,4 @@ export { default as useForceUpdate } from './useForceUpdate/index';
 export { default as useGeoLocation } from './useGeoLocation/index';
 export { default as useRouteChange } from './useRouteChange/index';
 export { default as useTimer } from './useTimer/index';
+export { default as useTimeout } from './useTimeout/index';
