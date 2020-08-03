@@ -1,4 +1,5 @@
 import * as TemplateHelpers from '../index';
+import {theme} from '@snappmarket/config'
 
 describe('TemplateHelpers', () => {
   describe('hexToRgb', () => {
@@ -55,14 +56,13 @@ describe('TemplateHelpers', () => {
   describe('viewport', () => {
     it('should return viewport point with px', () => {
       expect(
-        TemplateHelpers.viewport('md'),
+        TemplateHelpers.viewport('md')({theme}),
       ).toEqual('768px');
     });
     it('should return viewport point with px by threshold', () => {
       expect(
-        TemplateHelpers.viewport('md', 1),
+        TemplateHelpers.viewport('md', 1)({theme}),
       ).toEqual('767px');
     });
-
   });
 });
