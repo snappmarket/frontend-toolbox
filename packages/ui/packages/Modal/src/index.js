@@ -8,7 +8,6 @@ import React, {
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { CrossIcon } from '@snappmarket/icons_snappmarket';
-import { useDebounce } from '@snappmarket/hooks';
 
 import {
   StyledModalWrapper,
@@ -38,7 +37,6 @@ const Modal = forwardRef((props, ref) => {
   const lightBoxRef = createRef();
   const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const [position, setPosition] = useState(initialPosition);
-  const animationState = useDebounce(visibility, 300);
 
   /**
    * should put body as an state for two reasons,
@@ -95,7 +93,7 @@ const Modal = forwardRef((props, ref) => {
           width={width}
           position={position}
           ref={modalRef}
-          className={`${animationState ? 'visible' : ''}`}
+          className={visibility ? 'visible' : ''}
         >
           {handleClose && typeof handleClose === 'function' && (
             <StyledCloseModalButton
@@ -111,7 +109,6 @@ const Modal = forwardRef((props, ref) => {
           {!!header && (
             <StyledModalHeader data-testid="modalHeader">
               {header}
-              asdasdasdas
             </StyledModalHeader>
           )}
           {!!children && (
