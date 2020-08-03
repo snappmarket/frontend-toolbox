@@ -119,5 +119,13 @@ export const makeRgbaColor = (opacity, name, shade = false) => props => {
   return `rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, ${opacity})`;
 };
 
+/**
+ * @function
+ * @name viewport
+ * @description returns the viewport width based on pixel
+ * @param size
+ * @param threshold
+ * @return {function(*): string}
+ */
 export const viewport = (size, threshold = 0) => props =>
   `${props.theme.viewports[size] - threshold}px`;

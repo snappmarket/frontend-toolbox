@@ -43,7 +43,7 @@ export const fetchWithTimeOut = (url, options, timeout = 5000) => {
  * @param   rest                  {any}       any additional options which is supported by the isomorphic fetch
  * @param   timeout               {number}    timeout to kill the request if it's taking too long
  * @param   allowedNoContent      {boolean}   flag to allow the request be handle even if there is no content
- * @returns {Promise<{headers: *, data: {}, ok: *, status: *}|*>}
+ * @returns {Promise}
  */
 export const universalCall = async ({
   url,
