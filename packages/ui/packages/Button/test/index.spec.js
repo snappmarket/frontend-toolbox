@@ -31,7 +31,6 @@ describe('Button ui component tests', () => {
     );
 
     expect(getByTestId('button')).toHaveStyle({
-      backgroundColor: '',
       color: theme.colors.blue.normal,
     });
 
