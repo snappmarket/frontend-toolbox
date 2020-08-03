@@ -62,7 +62,5 @@ const defaultTheme = {
   },
 };
 
-export const makeTheme = (theme = {}) => (
-  deepMerge(defaultTheme, theme)
-);
+export const makeTheme = (theme = {}) => deepMerge(defaultTheme, theme);
 export default defaultTheme;
