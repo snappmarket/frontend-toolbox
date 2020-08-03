@@ -1,3 +1,4 @@
+import { deepMerge } from '@snappmarket/helpers';
 const defaultTheme = {
   defaultRem: '1rem',
   defaultFont: 'IRANSans',
@@ -61,5 +62,7 @@ const defaultTheme = {
   },
 };
 
-export const makeTheme = (theme = {}) => ({ ...defaultTheme, ...theme });
+export const makeTheme = (theme = {}) => (
+  deepMerge(defaultTheme, theme)
+);
 export default defaultTheme;

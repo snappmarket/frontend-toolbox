@@ -1,4 +1,5 @@
 import * as TemplateHelpers from '../index';
+import {theme} from '@snappmarket/config'
 
 describe('TemplateHelpers', () => {
   describe('hexToRgb', () => {
@@ -50,6 +51,18 @@ describe('TemplateHelpers', () => {
       expect(
         TemplateHelpers.makeShadow('10px', 1, '1em', 2, '#ffffff', true),
       ).toEqual('10px calc(1rem * 1) 1em calc(1rem * 2) #ffffff inset');
+    });
+  });
+  describe('viewport', () => {
+    it('should return viewport point with px', () => {
+      expect(
+        TemplateHelpers.viewport('md')({theme}),
+      ).toEqual('768px');
+    });
+    it('should return viewport point with px by threshold', () => {
+      expect(
+        TemplateHelpers.viewport('md', 1)({theme}),
+      ).toEqual('767px');
     });
   });
 });

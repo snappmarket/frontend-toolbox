@@ -44,7 +44,7 @@ import { METHOD_NAME } from '@snappmarket/http-helpers';
 <dt><a href="#fetchWithTimeOut">fetchWithTimeOut(url, options, timeout)</a> ⇒ Promise.&lt;unknown&gt;</dt>
 <dd><p>fetches the request, if it takes to long, it will be timed out</p>
 </dd>
-<dt><a href="#universalCall">universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)</a> ⇒ Promise.&lt;()&gt;</dt>
+<dt><a href="#universalCall">universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)</a> ⇒ Promise</dt>
 <dd><p>Call an api in universal way</p>
 </dd>
 </dl>
@@ -54,7 +54,7 @@ import { METHOD_NAME } from '@snappmarket/http-helpers';
 ## fetchWithTimeOut
 fetches the request, if it takes to long, it will be timed out
 
-**Kind**: global function
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ fetches the request, if it takes to long, it will be timed out
 ## universalCall
 Call an api in universal way
 
-**Kind**: global function
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -83,7 +83,7 @@ Call an api in universal way
 | allowedNoContent | boolean | flag to allow the request be handle even if there is no content |
 
 
-* [universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)](#universalCall) ⇒ Promise.&lt;({headers: \*, data: {}, ok: \*, status: \*}\|\*)&gt;
+* [universalCall(url, method, credentials, data, headers, params, jwtToken, rest, timeout, allowedNoContent)](#universalCall) ⇒ Promise
     * [~callUrl](#universalCall..callUrl)
     * [~response](#universalCall..response)
 
@@ -92,10 +92,10 @@ Call an api in universal way
 ### universalCall~callUrl
 Make query parameters
 
-**Kind**: inner property of [universalCall](#universalCall)
+**Kind**: inner property of [universalCall](#universalCall)  
 <a name="universalCall..response"></a>
 
 ### universalCall~response
 Call universal request with options
 
-**Kind**: inner constant of [universalCall](#universalCall)
+**Kind**: inner constant of [universalCall](#universalCall)  

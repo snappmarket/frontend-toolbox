@@ -126,3 +126,30 @@ export const removeManyByKeys = (haystack, needles) =>
       result[current] = haystack[current];
       return result;
     }, {});
+
+/**
+ * @function
+ * @name deepMerge
+ * @description merges two object in all levels
+ * @param primaryObject       {object}      base object
+ * @param secondaryObject     {object}      other object you want to merge with base object
+ * @return {object}
+ */
+export const deepMerge = (primaryObject, secondaryObject) =>{
+  const primaryObjectClone = {...primaryObject};
+  Object.keys(secondaryObject).forEach(key => {
+    if(!primaryObjectClone[key]){
+      primaryObjectClone[key] = secondaryObject[key];
+    }
+    else if(Array.isArray(secondaryObject[key])){
+      primaryObjectClone[key] = [...primaryObjectClone[key], ...secondaryObject[key]]
+    }
+    else if(typeof secondaryObject[key] === "object"){
+      primaryObjectClone[key] = deepMerge(primaryObjectClone[key], secondaryObject[key]);
+    }
+    else {
+      primaryObjectClone[key] = secondaryObject[key]
+    }
+  });
+  return primaryObjectClone;
+}
