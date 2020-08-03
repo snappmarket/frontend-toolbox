@@ -81,7 +81,6 @@ describe('Label ui component tests', () => {
     );
 
     expect(getByTestId('label')).toHaveStyle({
-      border: 'none',
       borderRadius: '10px',
     });
   });

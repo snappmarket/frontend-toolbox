@@ -1,6 +1,3 @@
-// @todo: in next release we should make a config package to let the users use configs also
-// import theme from '../../../ui/packages/Theme/src/theme'
-
 /**
  * @function
  * @name hexToRgb
@@ -88,27 +85,9 @@ export const makeShadow = (
   }`;
 
 /**
- * Will handle every thing about rem, just supply the value
- */
-export const rem = function remSizes() {
-  return props =>
-    // eslint-disable-next-line prefer-rest-params
-    [...arguments]
-      .map(size => (size ? props.theme.defaultRem.replace(/(.*)rem/g, `${size}rem`) : '0'))
-      .join(' ');
-};
-
-/**
- * Make a color, or a shade of color
- * @param name
- * @param shade
- * @returns {function(*): string}
- */
-export const color = (name, shade = false) => props =>
-  shade ? `${props.theme.colors[name][shade]}` : `${props.theme.colors[name]}`;
-
-/**
- * Make rgba from a passed color
+ * @function
+ * @name makeRgbaColor
+ * @description Make rgba from a passed color
  * @param opacity
  * @param name
  * @param shade
@@ -121,11 +100,43 @@ export const makeRgbaColor = (opacity, name, shade = false) => props => {
 
 /**
  * @function
+ * @name rem
+ * @description Will handle every thing about rem, just supply the value
+ * @returns {function(*): string}
+ */
+export const rem = function remSizes() {
+  return props =>
+    // eslint-disable-next-line prefer-rest-params
+    [...arguments]
+      .map(size =>
+        // eslint-disable-next-line no-nested-ternary
+        size
+          ? typeof size !== 'number'
+            ? size
+            : props.theme.defaultRem.replace(/(.*)rem/g, `${size}rem`)
+          : '0',
+      )
+      .join(' ');
+};
+
+/**
+ * @function
+ * @name color
+ * @description Make a color, or a shade of color
+ * @param name
+ * @param shade
+ * @returns {function(*): string}
+ */
+export const color = (name, shade = false) => props =>
+  shade ? `${props.theme.colors[name][shade]}` : `${props.theme.colors[name]}`;
+
+/**
+ * @function
  * @name viewport
  * @description returns the viewport width based on pixel
  * @param size
  * @param threshold
- * @return {function(*): string}
+ * @returns {function(*): string}
  */
 export const viewport = (size, threshold = 0) => props =>
   `${props.theme.viewports[size] - threshold}px`;

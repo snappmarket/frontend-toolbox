@@ -17,6 +17,10 @@ module.exports = {
   moduleNameMapper: {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mock__/fileMock.js",
     "\\.(css|less|scss|sass)$": "<rootDir>/test/__mock__/styleMock.js",
+    "^@snappmarket\/ui(.*)$": "<rootDir>/packages/ui$1",
+    "^@snappmarket\/helpers(.*)$": "<rootDir>/packages/helpers$1",
+    "^@snappmarket\/hooks(.*)$": "<rootDir>/packages/hooks$1",
+    "^@snappmarket\/config(.*)$": "<rootDir>/packages/config$1",
   },
   rootDir: process.cwd(),
   roots: ['<rootDir>'],
