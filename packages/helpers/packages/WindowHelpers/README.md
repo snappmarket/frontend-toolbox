@@ -22,6 +22,8 @@ npm i @snappmarket/helpers
 | ------ |
 | getPathName                                                 |
 | getWindowSize                                                 |
+| scrollTop                                                 |
+| detectBrowser                                                 |
 
 ## usage
 ```javascript
