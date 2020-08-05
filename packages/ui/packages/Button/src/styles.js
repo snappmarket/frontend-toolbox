@@ -2,13 +2,15 @@
 import { default as Styled } from 'styled-components';
 import {
   defineForegroundColor,
-  makeRgba,
   getNextProp,
+  rem,
+  makeRgbaColor,
+  color,
 } from '@snappmarket/helpers';
 
 export const StyledButton = Styled.button`
   background: none;
-  border-radius: calc(${props => props.theme.defaultRem} * 0.5);
+  border-radius: ${rem(0.5)};
   font-family: ${props => props.theme.defaultFont};
   text-align: center;
   display: flex;
@@ -27,101 +29,67 @@ export const StyledButton = Styled.button`
   outline: none;
   border: none;
   padding: 0 1rem;
-  height: ${props => `calc(${props.height} * ${props.theme.defaultRem})`};
-  font-size: ${props => `calc(${props.fontSize} * ${props.theme.defaultRem})`};
-  min-width: ${props =>
-    props.fullWidth
-      ? '100%'
-      : `calc(${props.minWidth} * ${props.theme.defaultRem})`};
-  flex-direction: ${props =>
-    props.direction === 'right' ? 'row' : 'row-reverse'};
+  height: ${props => rem(props.height)(props)};
+  font-size: ${props => rem(props.fontSize)(props)};
+  min-width: ${props => props.fullWidth ? '100%' : `${rem(props.minWidth)(props)}`};
+  flex-direction: ${props => props.direction === 'right' ? 'row' : 'row-reverse'};
   svg {
-    max-height: ${props => `calc(${props.height} * ${props.theme.defaultRem})`};
+    max-height: ${props => rem(props.height)(props)};
   }
 `;
 
 export const StyledLabel = Styled.span`
   font-family: ${props => props.theme.defaultFont};
-  border-radius: calc(${props => props.theme.defaultRem});
-  font-size: calc(${props => props.theme.defaultRem} * 1.1);
-  padding: ${props =>
-    `calc(${props.theme.defaultRem} * 0.2) calc(${props.theme.defaultRem} * 0.8)`};
-  background: ${props =>
-    makeRgba(
-      0.25,
-      props.theme.colors[
-        defineForegroundColor(props.theme.colors[props.color].dark)
-      ],
-    )};
+  border-radius: ${rem(1)};
+  font-size: ${rem(1.1)};
+  padding: ${rem(0.2, 0.8)};
+  background: ${makeRgbaColor(0.25, defineForegroundColor(`${props => color(props.color, 'dark')(props)}`))};
 `;
 
 /* eslint-disable indent */
 export const StyledPrimaryButton = Styled(StyledButton)`
-  background-color: ${props => props.theme.colors[props.color][props.shade]};
+  background-color: ${props => color(props.color, props.shade)(props)};
   border: none;
-  color: ${props =>
-    props.theme.colors[
-      defineForegroundColor(props.theme.colors[props.color][props.shade])
-    ]};
+  color: ${color(defineForegroundColor(`${props => color(props.color, props.shade)(props)}`))};
   svg {
-    fill: ${props =>
-      props.theme.colors[
-        defineForegroundColor(props.theme.colors[props.color][props.shade])
-      ]};
+    fill: ${color(defineForegroundColor(`${props => color(props.color,props.shade)(props)}`))};
   }
   &:hover,
   &:active {
-    background-color: ${props =>
-      getNextProp(props.theme.colors[props.color], props.shade)};
+    background-color: ${props => getNextProp(color(props.color)(props), props.shade)};
   }
   &:focus,
   &:active {
-    box-shadow: 0 0 calc(${props => props.theme.defaultRem} * 1)
-      calc(${props => props.theme.defaultRem} * -0.1)
-      ${props => makeRgba(0.5, props.theme.colors[props.color][props.shade])};
+    box-shadow: ${rem(0,0, 1, -0.1)} ${props => makeRgbaColor(0.5, props.color, props.shade)(props)};
   }
   &:disabled {
     cursor: not-allowed;
-    background-color: ${props =>
-      props.theme.colors[props.color]['ultra-light']};
-    color: ${props =>
-      props.theme.colors[
-        defineForegroundColor(props.theme.colors[props.color].dark)
-      ]};
+    background-color: ${props => color(props.color, 'ultra-light')(props)};
+    color: ${color(defineForegroundColor(`${props => color(props.color, 'dark')}`))};
     svg {
-      fill: ${props =>
-        props.theme.colors[
-          defineForegroundColor(props.theme.colors[props.color].dark)
-        ]};
+      fill: ${color(defineForegroundColor(`${props => color(props.color, 'dark')}`))};
     }
   }
 `;
 
 export const StyledOutlineButton = Styled(StyledPrimaryButton)`
   background: none;
-  border: calc(${props => props.theme.defaultRem} * 0.1) solid ${props =>
-  props.theme.colors[props.color][props.shade]};
-  color: ${props => props.theme.colors[props.color][props.shade]};
+  border: ${rem(0.1)} solid ${props => color(props.color, props.shade)(props)};
+  color: ${props => color(props.color, props.shade)(props)};
   svg {
-    fill: ${props => props.theme.colors[props.color][props.shade]};
+    fill: ${props => color(props.color, props.shade)(props)};
   }
   &:hover,
   &:active {
-    color: ${props =>
-      props.theme.colors[
-        defineForegroundColor(props.theme.colors[props.color][props.shade])
-      ]};
+    color: ${color(defineForegroundColor(`${props => color(props.color, props.shade)(props)}`))};
     svg {
-      fill: ${props =>
-        props.theme.colors[
-          defineForegroundColor(props.theme.colors[props.color][props.shade])
-        ]};
+      fill: ${color(defineForegroundColor(`${props => color(props.color, props.shade)(props)}`))};
     }
   }
   &:disabled {
     background: none;
-    border-color: ${props => props.theme.colors.gray.light};
-    color: ${props => props.theme.colors.gray.light};
+    border-color: ${color('gray', 'light')};
+    color: ${color('gray', 'light')};
   }
 `;
 /* eslint-enable indent */
@@ -134,16 +102,16 @@ export const StyledLinkButton = Styled(StyledOutlineButton)`
     border-color: transparent;
     background: none;
     box-shadow: unset;
-    color: ${props => props.theme.colors[props.color][props.shade]};
+    color: ${props => color(props.color, props.shade)(props)};
     svg {
-      fill: ${props => props.theme.colors[props.color][props.shade]};
+      fill: ${props => color(props.color, props.shade)(props)};
     }
   }
   &:disabled {
-    color: ${props => props.theme.colors.gray.light};
+    color: ${color('gray', 'light')};
     border: none;
     svg {
-      fill: ${props => props.theme.colors.gray.light};
+      fill: ${color('gray', 'light')};
     }
   }
 `;
