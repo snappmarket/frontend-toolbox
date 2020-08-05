@@ -1515,6 +1515,11 @@
   resolved "https://registry.yarnpkg.com/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"
   integrity sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==
 
+"@iconbox/snappmarket@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@iconbox/snappmarket/-/snappmarket-1.0.3.tgz#57f5ab978d018ba9224e599d47bcf6671c859bf5"
+  integrity sha512-alUpFNWR8o/1u9etnKadc46AF53PFYX5J80fgxhnYILbmnaJyc6HbcuHm54eg4xKzsP5LzrKJW61GcxwF5UOPQ==
+
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.9.0.tgz#79b1bc06fb74a8cfb01cbdedf945584b1b9707f0"
@@ -2666,11 +2671,6 @@
   dependencies:
     escape-string-regexp "^1.0.5"
     lodash.deburr "^4.1.0"
-
-"@snappmarket/icons_snappmarket@1.0.1-alpha.3":
-  version "1.0.1-alpha.3"
-  resolved "https://registry.yarnpkg.com/@snappmarket/icons_snappmarket/-/icons_snappmarket-1.0.1-alpha.3.tgz#43bb655e73116639da6a09e44cefb0fa613fe8c2"
-  integrity sha512-LtDMc1d0B+VS4bDs04Sjp00DjDjPtUe8mrtCrwBq/m+eE9UOmJfByVcWiMyjwP89O1lqT9B7QlmoccVMm0L9Qg==
 
 "@styled-system/css@^5.0.16":
   version "5.1.5"

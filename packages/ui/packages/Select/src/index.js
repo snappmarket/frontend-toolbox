@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { AngleDownIcon } from '@snappmarket/icons_snappmarket';
+import { AngleDownIcon } from '@iconbox/snappmarket';
 import {
   StyledSelectWrapper,
   StyledSelectIconWrapper,

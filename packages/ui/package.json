@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui",
   "private": false,
-  "version": "0.3.6",
+  "version": "0.3.7",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -32,7 +32,7 @@
     "@snappmarket/config": "^0.2.10",
     "@snappmarket/helpers": "^0.2.10",
     "@snappmarket/hooks": "^0.2.10",
-    "@snappmarket/icons": "^0.2.10",
+    "@iconbox/snappmarket": "^1.0.3",
     "styled-components": "^4.2.0"
   },
   "engines": {
