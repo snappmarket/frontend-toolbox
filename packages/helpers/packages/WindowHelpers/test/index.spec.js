@@ -33,4 +33,20 @@ describe('WindowHelpers', () => {
       expect(WindowHelpers.isMobile()).toBe(true);
     });
   });
+  describe('detectBrowser', () => {
+    it('should get agent name', () => {
+      const userAgent =
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0';
+      jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue(userAgent);
+
+      expect(WindowHelpers.detectBrowser('firefox')).toBe(true);
+      expect(WindowHelpers.detectBrowser('chrome')).toBe(false);
+    });
+  });
+  describe('scrollTop', () => {
+    it('should scroll window to up with smooth mode', () => {
+      WindowHelpers.scrollTop();
+      expect(window.scrollY).toEqual(0);
+    });
+  });
 });
