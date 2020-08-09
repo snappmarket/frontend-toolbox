@@ -61,7 +61,7 @@ describe('TimeHelpers', () => {
   });
 
   describe('timeDiff', async () => {
-    it('should give date and return hour, minute, seconds, full seconds and full minutes ', async () => {
+    it('should give title and return different of startTime and endTime ', async () => {
       const title = 'example title';
       const actual = '';
       const startTime = Date.now();
@@ -71,6 +71,16 @@ describe('TimeHelpers', () => {
       const expected = TimeHelpers.timeDiff.show(title);
       const endTime = Date.now() - startTime;
       expect(expected).toBeLessThan(endTime + 1);
+    });
+    it('should give title and return different of startTime and endTime ', async () => {
+      const title = 'example title';
+      const actual = '';
+      const startTime = Date.now();
+      TimeHelpers.timeDiff.start(title);
+
+      await sleep(10);
+      const expected = TimeHelpers.timeDiff.show(title);
+      const endTime = Date.now() - startTime;
       expect(expected).toBeGreaterThanOrEqual(endTime - 1);
     });
   });
