@@ -65,4 +65,11 @@ describe('TemplateHelpers', () => {
       ).toEqual('767px');
     });
   });
+  // describe('makeRgbaColor', () => {
+  //   it('should make rgba color from given color', () => {
+  //     expect(
+  //       TemplateHelpers.makeRgbaColor(0.4,'#FF6550')(),
+  //     ).toEqual('rgba(255, 101, 80, 0.4)');
+  //   });
+  // });
 });

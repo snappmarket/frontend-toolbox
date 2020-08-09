@@ -33,4 +33,15 @@ describe('WindowHelpers', () => {
       expect(WindowHelpers.isMobile()).toBe(true);
     });
   });
+  describe('detectBrowser', () => {
+    it('should get agent name', () => {
+      const agent = 'firefox';
+      expect(WindowHelpers.detectBrowser(agent)).toBe(false);
+    });
+  });
+  // describe('scrollTop', () => {
+  //   it('should scroll window to up with smooth mode', () => {
+  //     expect(WindowHelpers.scrollTop()).toEqual({});
+  //   });
+  // });
 });
