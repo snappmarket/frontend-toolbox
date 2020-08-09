@@ -39,9 +39,10 @@ describe('WindowHelpers', () => {
       expect(WindowHelpers.detectBrowser(agent)).toBe(false);
     });
   });
-  // describe('scrollTop', () => {
-  //   it('should scroll window to up with smooth mode', () => {
-  //     expect(WindowHelpers.scrollTop()).toEqual({});
-  //   });
-  // });
+  describe('scrollTop', () => {
+    it('should scroll window to up with smooth mode', () => {
+      WindowHelpers.scrollTop();
+      expect(window.scrollY).toEqual(0);
+    });
+  });
 });

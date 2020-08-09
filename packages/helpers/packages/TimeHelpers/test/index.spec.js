@@ -3,17 +3,11 @@ import * as TimeHelpers from '../index';
 import { sleep } from '@snappmarket/helpers';
 
 describe('TimeHelpers', () => {
-  // describe('getTimeWithMilliSeconds', () => {
-  //   it('should return localTime and milliseconds ', async () => {
-  //     const localTime = new Date().toLocaleTimeString()
-  //     await sleep(0);
-  //     const localTimeMilliseconds = new Date().getMilliseconds() ;
-  //     const trimedTime = localTime.split(' ')[0];
-  //     const actual = `${trimedTime}:${localTimeMilliseconds}`;
-
-  //     expect(TimeHelpers.getTimeWithMilliSeconds()).toEqual(actual);
-  //   });
-  // });
+  describe('getTimeWithMilliSeconds', () => {
+    it('should return localTime and milliseconds ', async () => {
+      expect(TimeHelpers.getTimeWithMilliSeconds()).toContain(':');
+    });
+  });
 
   describe('getClock', () => {
     it('should give date and return hour, minute, seconds, full seconds and full minutes ', () => {
@@ -66,18 +60,18 @@ describe('TimeHelpers', () => {
     });
   });
 
-  // describe('timeDiff', () => {
-  //   it('should give date and return hour, minute, seconds, full seconds and full minutes ', () => {
-  //     const title = 'example title';
-  //     const actual = '';
-  //     expect(TimeHelpers.timeDiff.show(title)).toEqual(actual);
-  //   });
-  //   it('should give date and return hour, minute, seconds, full seconds and full minutes ', () => {
-  //     const title = 'example title';
-  //     const actual = '';
-  //     expect(TimeHelpers.timeDiff.start(title)).toEqual(actual);
-  //   });
-  // });
+  describe('timeDiff', async () => {
+    it('should give date and return hour, minute, seconds, full seconds and full minutes ', async () => {
+      const title = 'example title';
+      const actual = '';
+      const startTime = Date.now();
+      TimeHelpers.timeDiff.start(title);
 
-  
+      await sleep(20);
+      const expected = TimeHelpers.timeDiff.show(title);
+      const endTime = Date.now() - startTime;
+      expect(expected).toBeLessThan(endTime + 1);
+      expect(expected).toBeGreaterThanOrEqual(endTime - 1);
+    });
+  });
 });
