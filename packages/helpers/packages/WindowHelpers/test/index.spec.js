@@ -35,8 +35,12 @@ describe('WindowHelpers', () => {
   });
   describe('detectBrowser', () => {
     it('should get agent name', () => {
-      const agent = 'firefox';
-      expect(WindowHelpers.detectBrowser(agent)).toBe(false);
+      const userAgent =
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0';
+      jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue(userAgent);
+
+      expect(WindowHelpers.detectBrowser('firefox')).toBe(true);
+      expect(WindowHelpers.detectBrowser('chrome')).toBe(false);
     });
   });
   describe('scrollTop', () => {

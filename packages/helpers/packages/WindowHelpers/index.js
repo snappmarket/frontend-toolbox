@@ -61,10 +61,9 @@ export const scrollTop = () =>
  * @param   agent  {string} get browser name
  * @returns {boolean}
  */
-
 export const detectBrowser = agent => {
   const { userAgent } = getAgent();
-  if (userAgent.toLowerCase().indexOf(agent) > -1) {
+  if (userAgent.toLowerCase().indexOf(agent.toLowerCase()) > -1) {
     return true;
   }
   return false;
