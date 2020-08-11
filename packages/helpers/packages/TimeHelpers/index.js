@@ -1,4 +1,5 @@
-import { delog } from '@snappmarket/helpers';
+import { delog } from '../DebugHelpers';
+
 /**
  * @function
  * @name getTimeWithMilliSeconds
