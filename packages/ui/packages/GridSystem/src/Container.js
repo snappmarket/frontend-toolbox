@@ -9,7 +9,7 @@ const Container = props => {
   return (
     <StyledContainer
       data-testid="gridContainer"
-      className={className}
+      className={`ft-container ${className}`}
       {...rest}
     >
       {children}
