@@ -1,50 +1,52 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
+import {rem, color} from "@snappmarket/helpers";
+
 import Modal from '../../Modal/src';
 import { Container, Col } from '../../GridSystem/src';
 
 export const StyledConfirmDialog = Styled(Modal)`
   font-size: 14px;
-  footer{ 
+  footer{
     border-top: none;
   }
 `;
 
 export const StyledConfirmDialogContainer = Styled(Container)`
-  padding-top: calc(${props => props.theme.defaultRem} * 0.8);
-  padding-right: calc(${props => props.theme.defaultRem} * 0.8);
+  padding-top: ${rem(0.8)};
+  padding-right: ${rem(0.8)};
 `;
 
 export const StyledButtonWrapper = Styled(Container)`
-  padding-bottom: calc(${props => props.theme.defaultRem} * 1);
+  padding-bottom: ${rem(1)};
   button {
     width: auto !important;
     min-width: auto;
-    padding: 0 calc(${props => props.theme.defaultRem} * 2) !important;
+    padding: ${rem(0, 2)} !important;
   }
 `;
 
 export const StyledIconCol = Styled(Col)`
   > div {
-    background: ${props => props.theme.colors.blue.bright};
-    width: calc(${props => props.theme.defaultRem} * 6);
-    height: calc(${props => props.theme.defaultRem} * 6);
+    background: ${color('blue', 'bright')};
+    width:${rem(6)};
+    height: ${rem(6)};
     overflow: hidden;
     svg {
-      width: calc(${props => props.theme.defaultRem} * 3.5);
-      height: calc(${props => props.theme.defaultRem} * 3.5);
-      color: ${props => props.theme.colors.blue.normal};
+      width: ${rem(3.5)};
+      height: ${rem(3.5)};
+      color: ${color('blue', 'normal')};
     }
   }
 `;
 
 export const StyledContentCol = Styled(Col)`
-  margin-top: calc(${props => props.theme.defaultRem} * 0.8);
+  margin-top: ${rem(0.8)};
   strong {
-    color: ${props => props.theme.colors.gray.dark};
+    color: ${color('gray', 'dark')};
   }
   p {
-    color: ${props => props.theme.colors.gray.normal};
-    font-size: calc(${props => props.theme.defaultRem} * 1.3);
+    color: ${color('gray', 'normal')};
+    font-size: ${rem(1.3)};
   }
 `;
