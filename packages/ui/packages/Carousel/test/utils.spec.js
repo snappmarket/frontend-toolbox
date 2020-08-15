@@ -369,6 +369,7 @@ describe('Carousel ui component tests', () => {
       perSlide: 2,
       slideSize: 607.5,
       sliderMainWidth: 1215,
+      slidesLength: 5,
     };
     const testParams3d = {
       sliderItems: stringToHTML(mockTranslate3d),
@@ -376,6 +377,7 @@ describe('Carousel ui component tests', () => {
       perSlide: 2,
       slideSize: 607.5,
       sliderMainWidth: 1215,
+      slidesLength: 5,
     };
 
     expect(calcCurrentIndex(testParams)).toBe(0);

@@ -18,15 +18,16 @@ export const calcCurrentIndex = params => {
     perSlide,
     slideSize,
     sliderMainWidth,
+    slidesLength,
   } = params;
 
   if (infinite) {
-    return Math.abs(
-      Math.floor(
-        getTranslate3d(sliderItems) /
-          vdomArrayConvertor(sliderItems.children)[0].clientWidth,
-      ),
-    );
+    const getIndex = getTranslate3d(sliderItems) /
+          vdomArrayConvertor(sliderItems.children)[0].clientWidth;
+    if(getIndex >= 0) return Math.round(getIndex);
+    if(getIndex < 0){
+      return slidesLength + Math.round(getIndex);
+    }
   }
 
   if (Math.abs(getTranslate3d(sliderItems)) <= 1) {
