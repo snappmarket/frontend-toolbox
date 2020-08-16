@@ -13,11 +13,16 @@ import {
   removeAllChildren,
   infiniteChecker,
   dragChecker,
-  setSliderItemsPosition,
   calcAutoWidthAllSliderItems,
+  setTranslate3d,
+  calcFirstItemPosition,
+  directionSetter,
+  prevBlock,
+  calcCurrentIndex,
 } from './utils';
 
 import { shiftSlideIsDir } from './sliderArrows/partial';
+import { dragEnd } from './dragEvent/partial';
 
 import SliderDots from './sliderDots/index';
 import SliderTrailer from './slideTrailer/index';
@@ -308,7 +313,7 @@ class SliderCore {
       const intervalPlay = () => {
         clearInterval(this.getIntervalId()); // Clearing interval if for some reason it has not been cleared yet
         if (!isIntervalRunning) {
-          this.setIntervalId(setInterval(intervalNext, time))
+          this.setIntervalId(setInterval(intervalNext, time));
         }
       };
       const intervalPause = () => {
@@ -321,7 +326,7 @@ class SliderCore {
       // toggle on blur and focus browser window tab
       window.addEventListener('blur', intervalPause);
       window.addEventListener('focus', intervalPlay);
-      if(!this.getIntervalId()){
+      if (!this.getIntervalId()) {
         intervalPlay();
       }
     }
@@ -339,21 +344,75 @@ class SliderCore {
 
   goTo(newPosition) {
     const {
-      sliderItems,
+      config: { responsive, threshold, rtl, nav, autoWidth },
+      // getDrag,
+      getInfinite,
+      getSliderItems,
+      // setPosInitial,
+      // setPosX1,
+      // getPosX1,
+      // setPosX2,
+      // getPosX2,
+      getSlider,
+      // getPerSlide,
+      getSlidesLength,
+      // getIndex,
+      getSlideSize,
+      getSliderMainWidth,
       setIndex,
+      // setPosFinal,
+      // getPosFinal,
+      // setAllowShift,
+      transitionendWatcherCall,
       getSliderItemWidth,
-      config: { rtl },
     } = this;
+    const infinite = getInfinite();
+    const sliderItems = getSliderItems();
+
     // goTo slide position
-    setIndex(
-      setSliderItemsPosition({
-        indexItem: newPosition,
-        sliderItemWidth: getSliderItemWidth(),
-        sliderItems,
+    if (infinite) {
+      // console.log('fire');
+      // const fakeIndex = newPosition;
+      // const result = directionSetter({
+      //   rtl,
+      //   input:
+      //     -getSliderItemWidth() * (fakeIndex +
+      //     truncResponsiveItemCount(responsive) + 1),
+      // });
+      // // this.setIndex(Math.trunc(fakeIndex));
+      // sliderItems.style.transform = setTranslate3d(result);
+      // const calcIndex = calcCurrentIndex({
+      //   infinite,
+      //   perSlide: truncResponsiveItemCount(responsive),
+      //   slidesLength: getSlidesLength(),
+      //   slideSize: getSlideSize(),
+      //   sliderMainWidth: getSliderMainWidth(),
+      //   slider: getSlider(),
+      //   sliderItems,
+      // });
+      // setIndex(calcIndex);
+      // transitionendWatcherCall();
+    }
+
+    if (!infinite) {
+      const result = directionSetter({
         rtl,
-      }),
-    );
-    this.transitionendWatcherCall();
+        input: -getSliderItemWidth() * newPosition,
+      });
+      sliderItems.style.transform = setTranslate3d(result);
+      const calcIndex = calcCurrentIndex({
+        infinite,
+        perSlide: truncResponsiveItemCount(responsive),
+        slidesLength: getSlidesLength(),
+        slideSize: getSlideSize(),
+        sliderMainWidth: getSliderMainWidth(),
+        slider: getSlider(),
+        sliderItems,
+      });
+      setIndex(calcIndex);
+      transitionendWatcherCall();
+    }
+
   }
 
   refresh(flag) {

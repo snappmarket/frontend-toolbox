@@ -267,6 +267,8 @@ export const transitionendWatcher = params => {
     autoWidth,
   } = params;
 
+  console.log({index})
+
   const perSlide = truncResponsiveItemCount(responsive);
   if (
     infinite &&
