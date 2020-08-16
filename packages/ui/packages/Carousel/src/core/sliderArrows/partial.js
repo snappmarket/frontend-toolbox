@@ -83,8 +83,8 @@ export const shiftSlideNonDir = params => {
     slider,
     rtl,
     autoWidth,
+    slidesLength,
   } = params;
-
   const firstItemPosition = calcFirstItemPosition(params);
 
   if (autoWidth) {
@@ -108,6 +108,15 @@ export const shiftSlideNonDir = params => {
     return newIndex;
   }
 
+  if (infinite && newIndex < 0) {
+    const infiniteIndex = newIndex + slidesLength;
+    const result = directionSetter({
+      rtl,
+      input: -infiniteIndex * slideSize,
+    });
+    sliderItems.style.transform = setTranslate3d(result);
+    return infiniteIndex;
+  }
   const result = directionSetter({
     rtl,
     input: -newIndex * slideSize,
