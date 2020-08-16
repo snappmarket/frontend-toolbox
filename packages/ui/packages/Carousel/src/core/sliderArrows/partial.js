@@ -108,7 +108,7 @@ export const shiftSlideNonDir = params => {
     return newIndex;
   }
 
-  if (infinite && newIndex < 0) {
+  if (infinite && newIndex <= 0) {
     const infiniteIndex = newIndex + slidesLength;
     const result = directionSetter({
       rtl,
