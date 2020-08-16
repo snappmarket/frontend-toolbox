@@ -26,7 +26,7 @@ export const StyledLightBox = Styled.div`
 `;
 export const StyledModal = Styled.div`
   margin: 0 auto;
-  max-width: calc(100% - ${rem(2)}));
+  max-width: calc(100% - ${rem(2)});
   position: relative;
   z-index: 1003;
   background-color: ${color('white')};
