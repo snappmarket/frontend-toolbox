@@ -1,60 +1,42 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-import { defineForegroundColor } from '@snappmarket/helpers';
+import { defineForegroundColor, rem, color } from '@snappmarket/helpers';
 
-const StyledLabel = Styled.label`
+export const StyledLabel = Styled.label`
   text-align: center;
   display: inline-block;
   margin: 0;
-  padding: ${props =>
-    `calc(${props.theme.defaultRem} * 0.7) calc(${props.theme.defaultRem} * 0.7) calc(${props.theme.defaultRem} * 0.6) calc(${props.theme.defaultRem} * 0.7)`};
-  background: ${props => props.theme.colors[props.color]['ultra-light']};
+  padding: ${rem(0.7, 0.7, 0.6, 0.7)};
+  background: ${props => color(props.color, 'ultra-light')(props)};
   font-family: ${props => props.theme.defaultFont};
-  color: ${props => props.theme.colors[props.color].normal};
-  line-height: calc(${props => props.theme.defaultRem} * 1.5);
+  color: ${props => color(props.color, 'normal')(props)};
+  line-height: ${rem(1.5)};
   vertical-align: middle;
-  border: ${props =>
-    props.hasBorder
-      ? `calc(${props.theme.defaultRem} * 0.1) solid transparent`
-      : 'none'};
-  font-size: ${props => `calc(${props.fontSize} * ${props.theme.defaultRem})`};
-  border-radius: ${props =>
-    typeof props.radius === 'number'
-      ? `calc(${props.radius} * ${props.theme.defaultRem})`
-      : props.radius};
+  border: ${props => props.hasBorder ? `${rem(0.1)(props)} solid transparent` : 'none'};
+  font-size: ${props => rem(props.fontSize)(props)};
+  border-radius: ${props => typeof props.radius === 'number' ? rem(props.radius)(props) : props.radius};
 `;
 
-const StyledPrimaryLabel = Styled(StyledLabel)`
-  background-color: ${props => props.theme.colors[props.color].normal};
-  border-color: ${props => props.theme.colors[props.color].normal};
-  color: ${props =>
-    props.theme.colors[
-      defineForegroundColor(props.theme.colors[props.color].dark)
-    ]};
+export const StyledPrimaryLabel = Styled(StyledLabel)`
+  background-color: ${props => color(props.color, 'normal')(props)};
+  border-color: ${props => color(props.color, 'normal')(props)};
+  color: ${color(defineForegroundColor(`${props=> color(props.color, 'dark')(props)}`))};
 `;
 
-const StyledMaterialLabel = Styled(StyledLabel)`
-  background-color: ${props => props.theme.colors[props.color].bright};
-  border-color: ${props => props.theme.colors[props.color].bright};
-  color: ${props => props.theme.colors[props.color].normal};
+export const StyledMaterialLabel = Styled(StyledLabel)`
+  background-color: ${props => color(props.color, 'bright')(props)};
+  border-color: ${props => color(props.color, 'bright')(props)};
+  color: ${props => color(props.color, 'normal')(props)};
 `;
 
-const StyledOutlineLabel = Styled(StyledLabel)`
+export const StyledOutlineLabel = Styled(StyledLabel)`
   background-color: transparent;
-  border-color: ${props => props.theme.colors[props.color].normal};
-  color: ${props => props.theme.colors[props.color].normal};
+  border-color: ${props => color(props.color, 'normal')(props)};
+  color: ${props => color(props.color, 'normal')(props)};
 `;
 
-const StyledQuietLabel = Styled(StyledLabel)`
+export const StyledQuietLabel = Styled(StyledLabel)`
   background: none;
   border-color: transparent;
-  color: ${props => props.theme.colors[props.color].normal};
+  color: ${props => color(props.color, 'normal')(props)};
 `;
-
-export {
-  StyledLabel,
-  StyledPrimaryLabel,
-  StyledMaterialLabel,
-  StyledOutlineLabel,
-  StyledQuietLabel,
-};
