@@ -2,20 +2,19 @@
 import { default as Styled } from 'styled-components';
 import darken from 'polished/lib/color/darken';
 
-import { decideMeasurement } from '@snappmarket/helpers';
+import { decideMeasurement, rem, color } from '@snappmarket/helpers';
 
-const StyledBox = Styled.div`
-  background-color: ${props =>
-    props.justBorder
-      ? 'transparent'
-      : props.background || darken(0.06, props.theme.colors.white)};
-      ${props => typeof props.backgroundSize === 'string' ? `background-size: ${props.backgroundSize}` :
-    `background-size: calc(${props.theme.defaultRem} * ${props.backgroundSize})`};
+export const StyledBox = Styled.div`
+  background-color: ${props => props.justBorder ?
+    'transparent' :
+    props.background || darken(0.06, color('white')(props))};
+  background-size: ${props => typeof props.backgroundSize === 'string' ?
+    props.backgroundSize :
+    rem(props.backgroundSize)(props) };
   border-radius: ${props => decideMeasurement(props.radius)};
-  border:  ${props =>
-    props.justBorder
-      ? `2px solid ${darken(0.06, props.theme.colors.white)}`
-      : 'none'};
+  border: ${props => props.justBorder ?
+    `${rem(0.2)(props)} solid ${darken(0.06, color('white')(props))}` :
+    'none'};
   display: 'flex';
   justify-content: ${props => props.justifyContent ? props.justifyContent: 'center'};
   align-items: ${props => props.alignItems ? props.alignItems: 'center'};
@@ -23,16 +22,14 @@ const StyledBox = Styled.div`
   height: ${props => decideMeasurement(props.height)};
 `;
 
-const StyledImage = Styled(StyledBox)`
-  background:  linear-gradient(30deg, transparent 37%, #fff 37%),
-            linear-gradient(-30deg, transparent 37%, #fff 37%),
-            linear-gradient(to bottom, #ccc, #000);
+export const StyledImage = Styled(StyledBox)`
+  background: linear-gradient(30deg, transparent 37%, ${color('white')} 37%),
+    linear-gradient(-30deg, transparent 37%, ${color('white')} 37%),
+    linear-gradient(to bottom, ${color('gray', 'light')}, ${color('black')});
 `;
 
-const StyledMap = Styled(StyledBox)`
-  background:  linear-gradient(30deg, transparent 37%, #fff 37%),
-            linear-gradient(-30deg, transparent 37%, #fff 37%),
-            linear-gradient(to bottom, #ccc, #000);
+export const StyledMap = Styled(StyledBox)`
+  background: linear-gradient(30deg, transparent 37%, ${color('white')} 37%),
+    linear-gradient(-30deg, transparent 37%, ${color('white')} 37%),
+    linear-gradient(to bottom, ${color('gray', 'light')}, ${color('black')});
 `;
-
-export { StyledBox, StyledImage, StyledMap };
