@@ -125,7 +125,7 @@ export const ProductsSlider = props => {
 
 export const ProductsSliderRtl = props => {
   const slideConfig = {
-    infinite: true,
+    infinite: false,
     customArrow: true,
     nextSpeed: 2000,
     nav: true,
@@ -136,14 +136,13 @@ export const ProductsSliderRtl = props => {
             items: 1,
         },
         576: {
-            items: 2.5,
+            items: 2,
         },
     },
   };
   return (
     <Carousel
       slideConfig={slideConfig}
-      showingSlide={1.75}
       nextArrow={
           <Button
               icon={<AngleRightIcon />}
@@ -169,15 +168,10 @@ export const ProductsSliderRtl = props => {
       <div class="slide">Slide 4</div>
       <div class="slide">Slide 5</div>
       <div class="slide">Slide 6</div>
-      <div class="slide">Slide 7</div>
-      <div class="slide">Slide 8</div>
     </Carousel>
   )
 }
 
-# Demo RTL
-
-<ProductsSliderRtl />
 
 # Demo
 
@@ -191,6 +185,9 @@ export const ProductsSliderRtl = props => {
  <br/>
 
 
+# Demo RTL
+
+<ProductsSliderRtl />
 
 
 <br/>
