@@ -268,26 +268,27 @@ export const transitionendWatcher = params => {
   } = params;
 
   const perSlide = truncResponsiveItemCount(responsive);
-  console.log({ index, perSlide, slidesLength });
+
+  const calcIndex = calcCurrentIndex({
+    infinite,
+    perSlide: truncResponsiveItemCount(responsive),
+    slidesLength,
+    slideSize,
+    sliderMainWidth,
+    slider,
+    sliderItems,
+  });
+  setIndex(calcIndex);
   if (
     infinite &&
     !autoWidth &&
-    index > perSlide + slidesLength &&
+    calcIndex > perSlide + slidesLength &&
     Math.abs(getTranslate3d(sliderItems)) >=
       (perSlide + 1 + slidesLength) * sliderItemWidth
   ) {
-    console.log('index > ', perSlide + 1 + slidesLength);
-    console.log(
-      setSliderItemsPosition({
-        indexItem: index - slidesLength,
-        sliderItemWidth,
-        sliderItems,
-        rtl,
-      }),
-    );
     return setIndex(
       setSliderItemsPosition({
-        indexItem: index - slidesLength,
+        indexItem: calcIndex - slidesLength,
         sliderItemWidth,
         sliderItems,
         rtl,
@@ -296,16 +297,7 @@ export const transitionendWatcher = params => {
   }
 
   // if page-index === 1 && clone === true
-  if (infinite && !autoWidth && index === perSlide + 1 + slidesLength) {
-    console.log('index === ', perSlide + 1 + slidesLength);
-    console.log(
-      setSliderItemsPosition({
-        indexItem: perSlide + 1,
-        sliderItemWidth,
-        sliderItems,
-        rtl,
-      }),
-    );
+  if (infinite && !autoWidth && calcIndex === perSlide + 1 + slidesLength) {
     return setIndex(
       setSliderItemsPosition({
         indexItem: perSlide + 1,
@@ -325,7 +317,7 @@ export const transitionendWatcher = params => {
   ) {
     return setIndex(
       setSliderItemsPosition({
-        indexItem: slidesLength + index,
+        indexItem: slidesLength + calcIndex,
         sliderItemWidth,
         sliderItems,
         rtl,

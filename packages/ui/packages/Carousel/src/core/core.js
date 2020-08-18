@@ -343,75 +343,26 @@ class SliderCore {
   };
 
   goTo(newPosition) {
+  
     const {
-      config: { responsive, threshold, rtl, nav, autoWidth },
-      // getDrag,
-      getInfinite,
+      config: { responsive, rtl, infinite },
       getSliderItems,
-      // setPosInitial,
-      // setPosX1,
-      // getPosX1,
-      // setPosX2,
-      // getPosX2,
-      getSlider,
-      // getPerSlide,
-      getSlidesLength,
-      // getIndex,
-      getSlideSize,
-      getSliderMainWidth,
-      setIndex,
-      // setPosFinal,
-      // getPosFinal,
-      // setAllowShift,
       transitionendWatcherCall,
       getSliderItemWidth,
     } = this;
-    const infinite = getInfinite();
+
     const sliderItems = getSliderItems();
+    const newIndex = infinite
+      ? newPosition + responsiveItemCount(responsive) + 1
+      : newPosition;
+    const result = directionSetter({
+      rtl,
+      input: -getSliderItemWidth() * newIndex,
+    });
 
-    // goTo slide position
-    if (infinite) {
-      // console.log('fire');
-      // const fakeIndex = newPosition;
-      // const result = directionSetter({
-      //   rtl,
-      //   input:
-      //     -getSliderItemWidth() * (fakeIndex +
-      //     truncResponsiveItemCount(responsive) + 1),
-      // });
-      // // this.setIndex(Math.trunc(fakeIndex));
-      // sliderItems.style.transform = setTranslate3d(result);
-      // const calcIndex = calcCurrentIndex({
-      //   infinite,
-      //   perSlide: truncResponsiveItemCount(responsive),
-      //   slidesLength: getSlidesLength(),
-      //   slideSize: getSlideSize(),
-      //   sliderMainWidth: getSliderMainWidth(),
-      //   slider: getSlider(),
-      //   sliderItems,
-      // });
-      // setIndex(calcIndex);
-      // transitionendWatcherCall();
-    }
-
-    if (!infinite) {
-      const result = directionSetter({
-        rtl,
-        input: -getSliderItemWidth() * newPosition,
-      });
-      sliderItems.style.transform = setTranslate3d(result);
-      const calcIndex = calcCurrentIndex({
-        infinite,
-        perSlide: truncResponsiveItemCount(responsive),
-        slidesLength: getSlidesLength(),
-        slideSize: getSlideSize(),
-        sliderMainWidth: getSliderMainWidth(),
-        slider: getSlider(),
-        sliderItems,
-      });
-      setIndex(calcIndex);
-      transitionendWatcherCall();
-    }
+    sliderItems.style.transform = setTranslate3d(result);
+    transitionendWatcherCall();
+    return newIndex;
 
   }
 
