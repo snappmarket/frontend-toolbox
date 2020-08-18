@@ -34,6 +34,7 @@ class SliderCore {
     const {
       slider,
       infinite = false,
+      horizontal = 'default',
       responsive = {
         0: {
           items: 1,
@@ -66,6 +67,7 @@ class SliderCore {
       autoWidth,
       nextSpeed,
       threshold,
+      horizontal,
     };
   };
 
@@ -186,6 +188,7 @@ class SliderCore {
       nextSpeed,
       customArrow,
       autoWidth,
+      horizontal,
     } = this.getConfig();
 
     // reset Slider
@@ -327,6 +330,7 @@ class SliderCore {
     }
 
     this.sliderTrailer = new SliderTrailer({ core: this });
+
     // action drag event
     this.dragEvent = new DragEvent({ core: this });
 
@@ -334,11 +338,24 @@ class SliderCore {
       'transitionend',
       this.transitionendWatcherCall,
     );
+
+    // active center mode
+    if (
+      horizontal === 'center' &&
+      sliderLength < truncResponsiveItemCount(responsive)
+    ) {
+      const freeItems = truncResponsiveItemCount(responsive) - sliderLength;
+      const freeSpace = directionSetter({
+        rtl,
+        input: (freeItems * sliderItemWidth) / 2,
+      });
+      this.sliderItems.style.transform = setTranslate3d(freeSpace);
+    }
+
     this.windowResizeWatcher();
   };
 
   goTo(newPosition) {
-  
     const {
       config: { responsive, rtl, infinite },
       getSliderItems,
@@ -358,7 +375,6 @@ class SliderCore {
     sliderItems.style.transform = setTranslate3d(result);
     transitionendWatcherCall();
     return newIndex;
-
   }
 
   refresh(flag) {
