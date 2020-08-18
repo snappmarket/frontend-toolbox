@@ -370,6 +370,7 @@ export const transitionendWatcher = params => {
     item: sliderItems,
     className: 'shifting',
   });
+
   if (!autoWidth) {
     setActiveclassToCurrent({
       index,
@@ -386,6 +387,8 @@ export const transitionendWatcher = params => {
   if (dots) {
     dotActive(params);
   }
+
+  return calcIndex;
 };
 
 export const dotActive = params => {

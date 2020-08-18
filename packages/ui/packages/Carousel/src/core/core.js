@@ -15,15 +15,10 @@ import {
   dragChecker,
   calcAutoWidthAllSliderItems,
   setTranslate3d,
-  calcFirstItemPosition,
   directionSetter,
-  prevBlock,
-  calcCurrentIndex,
 } from './utils';
 
 import { shiftSlideIsDir } from './sliderArrows/partial';
-import { dragEnd } from './dragEvent/partial';
-
 import SliderDots from './sliderDots/index';
 import SliderTrailer from './slideTrailer/index';
 import SliderArrows from './sliderArrows/index';
