@@ -27,6 +27,7 @@ export default class SliderTrailer {
       config: { responsive, slider, rtl, autoWidth },
       getInfinite,
       getSliderItems,
+      getSlidesLength,
       getSliderItemWidth,
       getPerSlide,
       getSlideSize,
@@ -37,6 +38,7 @@ export default class SliderTrailer {
 
     const infinite = getInfinite();
     const sliderItems = getSliderItems();
+    const slidesLength = getSlidesLength();
     const slideSize = getSlideSize();
     const sliderItemWidth = getSliderItemWidth();
     const perSlide = getPerSlide();
@@ -80,6 +82,7 @@ export default class SliderTrailer {
         sliderMainWidth,
         index: getIndex(),
         infinite,
+        slidesLength,
       });
     }
 

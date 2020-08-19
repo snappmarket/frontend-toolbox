@@ -18,15 +18,17 @@ export const calcCurrentIndex = params => {
     perSlide,
     slideSize,
     sliderMainWidth,
+    slidesLength,
   } = params;
 
   if (infinite) {
-    return Math.abs(
-      Math.floor(
-        getTranslate3d(sliderItems) /
-          vdomArrayConvertor(sliderItems.children)[0].clientWidth,
-      ),
-    );
+    const getIndex =
+      getTranslate3d(sliderItems) /
+      vdomArrayConvertor(sliderItems.children)[0].clientWidth;
+    if (getIndex >= 0) return Math.round(getIndex);
+    if (getIndex < 0) {
+      return slidesLength + Math.round(getIndex);
+    }
   }
 
   if (Math.abs(getTranslate3d(sliderItems)) <= 1) {
@@ -254,7 +256,6 @@ export const transitionendWatcher = params => {
     rtl,
     index,
     sliderItems,
-    dotsSelector,
     slideSize,
     sliderMainWidth,
     setAllowShift,
@@ -267,16 +268,27 @@ export const transitionendWatcher = params => {
   } = params;
 
   const perSlide = truncResponsiveItemCount(responsive);
+
+  const calcIndex = calcCurrentIndex({
+    infinite,
+    perSlide: truncResponsiveItemCount(responsive),
+    slidesLength,
+    slideSize,
+    sliderMainWidth,
+    slider,
+    sliderItems,
+  });
+  setIndex(calcIndex);
   if (
     infinite &&
     !autoWidth &&
-    index > perSlide + slidesLength &&
+    calcIndex > perSlide + slidesLength &&
     Math.abs(getTranslate3d(sliderItems)) >=
       (perSlide + 1 + slidesLength) * sliderItemWidth
   ) {
-    setIndex(
+    return setIndex(
       setSliderItemsPosition({
-        indexItem: index - slidesLength,
+        indexItem: calcIndex - slidesLength,
         sliderItemWidth,
         sliderItems,
         rtl,
@@ -285,8 +297,8 @@ export const transitionendWatcher = params => {
   }
 
   // if page-index === 1 && clone === true
-  if (infinite && !autoWidth && index === perSlide + 1 + slidesLength) {
-    setIndex(
+  if (infinite && !autoWidth && calcIndex === perSlide + 1 + slidesLength) {
+    return setIndex(
       setSliderItemsPosition({
         indexItem: perSlide + 1,
         sliderItemWidth,
@@ -303,9 +315,9 @@ export const transitionendWatcher = params => {
     (Math.abs(getTranslate3d(sliderItems)) <= 1 ||
       Math.abs(getTranslate3d(sliderItems)) === sliderItemWidth)
   ) {
-    setIndex(
+    return setIndex(
       setSliderItemsPosition({
-        indexItem: slidesLength + index,
+        indexItem: slidesLength + calcIndex,
         sliderItemWidth,
         sliderItems,
         rtl,
@@ -358,11 +370,11 @@ export const transitionendWatcher = params => {
     item: sliderItems,
     className: 'shifting',
   });
+
   if (!autoWidth) {
     setActiveclassToCurrent({
       index,
       sliderItems,
-      dotsSelector,
       perSlide,
       infinite,
       slideSize,
@@ -375,6 +387,8 @@ export const transitionendWatcher = params => {
   if (dots) {
     dotActive(params);
   }
+
+  return calcIndex;
 };
 
 export const dotActive = params => {

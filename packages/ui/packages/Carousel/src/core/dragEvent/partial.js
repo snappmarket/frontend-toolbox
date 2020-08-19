@@ -341,6 +341,7 @@ export const dragEnd = params => {
     perSlide,
     slideSize,
     sliderMainWidth,
+    slidesLength,
   });
   setIndex(calcIndex);
 
