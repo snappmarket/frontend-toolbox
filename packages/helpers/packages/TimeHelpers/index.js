@@ -36,7 +36,7 @@ export const getClock = dateString => {
  * @function
  * @name getDiffInDays
  * @description get two date and calculate different of them
- * @param   date1    {string}
+ * @param   date1    {Date}
  * @param   date2    {string}
  * @returns {object}
  */
