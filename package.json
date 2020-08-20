@@ -120,7 +120,7 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.10.0",
-    "@iconbox/snappmarket": "^1.0.4",
+    "@iconbox/snappmarket": "^1.0.5",
     "abort-controller": "^3.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.19",
