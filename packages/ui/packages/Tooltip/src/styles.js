@@ -21,7 +21,7 @@ export const StyledToolbar = Styled.span`
   transition: all 0.3s ease 0.1s;
   &:after {
     position: absolute;
-    border: ${rem(1)} solid ${makeRgbaColor(0, 'black')};
+    border: ${rem(1)} solid ${makeRgbaColor(0.5, 'black')};
     content: "";
   }
   ${props =>
@@ -45,7 +45,7 @@ export const StyledToolbar = Styled.span`
     bottom: ${rem(-1)(props)};
     transform: translate(-50%, 100%);
     &:after {
-      border-bottom-color: ${makeRgbaColor(0, 'black')(props)};
+      border-bottom-color: ${makeRgbaColor(0.5, 'black')(props)};
       border-top: none;
       bottom: 100%;
       left: 50%;
@@ -59,7 +59,7 @@ export const StyledToolbar = Styled.span`
     top: 50%;
     transform: translate(-100%, -50%);
     &:after {
-      border-left-color: ${makeRgbaColor(0, 'black')(props)};
+      border-left-color: ${makeRgbaColor(0.5, 'black')(props)};
       border-right: none;
       top: 50%;
       left: 100%;
@@ -73,7 +73,7 @@ export const StyledToolbar = Styled.span`
     top: 50%;
     transform: translate(100%, -50%);
     &:after {
-      border-right-color: ${makeRgbaColor(0, 'black')(props)};
+      border-right-color: ${makeRgbaColor(0.5, 'black')(props)};
       border-left: none;
       top: 50%;
       right: 100%;
