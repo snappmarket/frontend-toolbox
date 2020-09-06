@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
+import { rem } from '@snappmarket/helpers';
 import Button from '../../Button/src';
 
 const StyledModalWrapper = Styled.div`
@@ -33,42 +34,55 @@ const StyledModal = Styled.div`
   width: calc(${props => props.theme.defaultRem} * ${props => props.width});
   opacity: 0;
 
-  &.visible {
-    animation: showing 1 linear 0.3s forwards;
-    ${props => props.position === 'top' && `
-      transform: translateZ(0) translateY(0) scale(1);
-    `}
-    ${props => props.position === 'center' && `
-      transform: translateZ(0) translateY(-50%) scale(1);
-    `}
-    ${props => props.position === 'bottom' &&  `
-      transform: translateZ(0) translateY(calc(-100% - calc(${props.theme.defaultRem} * 1))) scale(1);
-    `}
+  &.top {
+    top: ${rem(1)};
   }
-  @keyframes showing {
+  &.center {
+    top:50%;
+  }
+  &.bottom {
+    top: 100%;
+  }
+  &.visible {
+    display: block;
+    &.top {
+      animation: showTop 1 linear 0.3s forwards;
+    }
+    &.center {
+      animation: showCenter 1 linear 0.3s forwards;
+    }
+    &.bottom {
+      animation: showBottom 1 linear 0.3s forwards;
+    }
+  }
+  @keyframes showBottom {
     from {
       opacity: 0;
-      ${props => props.position === 'top' && `
-        top: -50%;
-      `}
-      ${props => props.position === 'center' && `
-        top: 0;
-      `}
-      ${props => props.position === 'bottom' &&  `
-        top: 150%;
-      `}
+      transform: scale(0.95) translateY(calc(-100% - ${rem(1)}));
     }
     to {
       opacity: 1;
-      ${props => props.position === 'top' && `
-        top: calc(${props.theme.defaultRem} * 1);
-      `}
-      ${props => props.position === 'center' && `
-        top:50%;
-      `}
-      ${props => props.position === 'bottom' &&  `
-        top: 100%;
-      `}
+      transform: scale(1) translateY(calc(-100% - ${rem(1)}));
+    }
+  }
+  @keyframes showTop {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  @keyframes showCenter {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(-50%);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(-50%);
     }
   }
 `;

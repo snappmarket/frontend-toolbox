@@ -91,9 +91,8 @@ const Modal = forwardRef((props, ref) => {
         <StyledModal
           data-testid="modal"
           width={width}
-          position={position}
           ref={modalRef}
-          className={visibility ? 'visible' : ''}
+          className={`${visibility ? 'visible' : ''} ${position}`}
         >
           {handleClose && typeof handleClose === 'function' && (
             <StyledCloseModalButton
