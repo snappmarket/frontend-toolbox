@@ -13,12 +13,12 @@ import {
   removeAllChildren,
   infiniteChecker,
   dragChecker,
-  setSliderItemsPosition,
   calcAutoWidthAllSliderItems,
+  setTranslate3d,
+  directionSetter,
 } from './utils';
 
 import { shiftSlideIsDir } from './sliderArrows/partial';
-
 import SliderDots from './sliderDots/index';
 import SliderTrailer from './slideTrailer/index';
 import SliderArrows from './sliderArrows/index';
@@ -34,6 +34,7 @@ class SliderCore {
     const {
       slider,
       infinite = false,
+      horizontal = 'default',
       responsive = {
         0: {
           items: 1,
@@ -66,6 +67,7 @@ class SliderCore {
       autoWidth,
       nextSpeed,
       threshold,
+      horizontal,
     };
   };
 
@@ -186,6 +188,7 @@ class SliderCore {
       nextSpeed,
       customArrow,
       autoWidth,
+      horizontal,
     } = this.getConfig();
 
     // reset Slider
@@ -308,7 +311,7 @@ class SliderCore {
       const intervalPlay = () => {
         clearInterval(this.getIntervalId()); // Clearing interval if for some reason it has not been cleared yet
         if (!isIntervalRunning) {
-          this.setIntervalId(setInterval(intervalNext, time))
+          this.setIntervalId(setInterval(intervalNext, time));
         }
       };
       const intervalPause = () => {
@@ -321,12 +324,13 @@ class SliderCore {
       // toggle on blur and focus browser window tab
       window.addEventListener('blur', intervalPause);
       window.addEventListener('focus', intervalPlay);
-      if(!this.getIntervalId()){
+      if (!this.getIntervalId()) {
         intervalPlay();
       }
     }
 
     this.sliderTrailer = new SliderTrailer({ core: this });
+
     // action drag event
     this.dragEvent = new DragEvent({ core: this });
 
@@ -334,26 +338,43 @@ class SliderCore {
       'transitionend',
       this.transitionendWatcherCall,
     );
+
+    // active center mode
+    if (
+      horizontal === 'center' &&
+      sliderLength < truncResponsiveItemCount(responsive)
+    ) {
+      const freeItems = truncResponsiveItemCount(responsive) - sliderLength;
+      const freeSpace = directionSetter({
+        rtl,
+        input: (freeItems * sliderItemWidth) / 2,
+      });
+      this.sliderItems.style.transform = setTranslate3d(freeSpace);
+    }
+
     this.windowResizeWatcher();
   };
 
   goTo(newPosition) {
     const {
-      sliderItems,
-      setIndex,
+      config: { responsive, rtl, infinite },
+      getSliderItems,
+      transitionendWatcherCall,
       getSliderItemWidth,
-      config: { rtl },
     } = this;
-    // goTo slide position
-    setIndex(
-      setSliderItemsPosition({
-        indexItem: newPosition,
-        sliderItemWidth: getSliderItemWidth(),
-        sliderItems,
-        rtl,
-      }),
-    );
-    this.transitionendWatcherCall();
+
+    const sliderItems = getSliderItems();
+    const newIndex = infinite
+      ? newPosition + responsiveItemCount(responsive) + 1
+      : newPosition;
+    const result = directionSetter({
+      rtl,
+      input: -getSliderItemWidth() * newIndex,
+    });
+
+    sliderItems.style.transform = setTranslate3d(result);
+    transitionendWatcherCall();
+    return newIndex;
   }
 
   refresh(flag) {
@@ -401,41 +422,32 @@ class SliderCore {
 
   transitionendWatcherCall = () => {
     const {
-      config: { slider, responsive, dots, nav, rtl, autoWidth },
-      getInfinite,
+      config: { slider, responsive, dots, nav, rtl, autoWidth, infinite },
       index,
-      getIndex,
-      setIndex,
-      dragAction,
-      setPosInitial,
-      setPosX1,
-      setAllowShift,
       sliderItems,
       slideSize,
       sliderMainWidth,
       slidesLength,
       sliderItemWidth,
+      setIndex,
+      setAllowShift,
     } = this;
     transitionendWatcher({
-      slider,
-      infinite: getInfinite(),
       responsive,
-      dots,
-      nav,
-      autoWidth,
+      infinite,
+      slider,
       rtl,
-      sliderItems,
-      dragAction,
-      setPosInitial,
-      setPosX1,
-      setAllowShift,
       index,
+      sliderItems,
       slideSize,
       sliderMainWidth,
+      dots,
       slidesLength,
       sliderItemWidth,
+      nav,
+      autoWidth,
+      setAllowShift,
       setIndex,
-      getIndex,
     });
   };
 
