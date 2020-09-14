@@ -1,20 +1,20 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
+import {viewport} from '@snappmarket/helpers'
 /* eslint-disable prettier/prettier */
 const StyledGrid = Styled.div`
   display: flex;
   flex-wrap: wrap;
   > * {
   ${props =>
-    typeof props.perRow === 'object'
-      ? Object.keys(props.perRow).map(
-          viewport => `
-    @media(min-width: ${props.theme.viewports[viewport]}px){
-      width: ${100 / props.perRow[viewport]}%;
-    }`,
-        )
-      : `
-    width: ${100 / props.perRow}%`}
+    typeof props.perRow === 'object' ?
+      Object.keys(props.perRow).map(size => `
+        @media(min-width: ${viewport(size)}){
+          width: ${100 / props.perRow[size]}%;
+        }`,
+      ) : `
+    width: ${100 / props.perRow}%`
+}
 `;
 /* eslint-enable prettier/prettier */
 export { StyledGrid };

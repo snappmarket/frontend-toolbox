@@ -1,9 +1,10 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-import { rem } from '@snappmarket/helpers';
+import {rem, makeRgbaColor, color} from '@snappmarket/helpers'
+
 import Button from '../../Button/src';
 
-const StyledModalWrapper = Styled.div`
+export const StyledModalWrapper = Styled.div`
   position: fixed;
   height: 100%;
   left: 0;
@@ -13,25 +14,25 @@ const StyledModalWrapper = Styled.div`
   text-align: right;
   overflow-y: auto;
   z-index: 1001;
-  padding: calc(${props => props.theme.defaultRem} * 4) 0;
+  padding: ${rem(4, 0)};
 `;
-const StyledLightBox = Styled.div`
+export const StyledLightBox = Styled.div`
   position: absolute;
   min-height: 100vh;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: ${makeRgbaColor(0.6, 'black')};
   z-index: 1002;
 `;
-const StyledModal = Styled.div`
+export const StyledModal = Styled.div`
   margin: 0 auto;
-  max-width: calc(100% - calc(${props => props.theme.defaultRem} * 2));
+  max-width: calc(100% - ${rem(2)});
   position: relative;
   z-index: 1003;
-  background-color: ${props => props.theme.colors.white};
-  padding: calc(${props => props.theme.defaultRem});
-  border-radius: calc(${props => props.theme.defaultRem} * 0.5);
-  width: calc(${props => props.theme.defaultRem} * ${props => props.width});
+  background-color: ${color('white')};
+  padding: ${rem(1)};
+  border-radius: ${rem(0.5)};
+  width: ${props => rem(props.width)(props)};
   opacity: 0;
 
   &.top {
@@ -86,36 +87,24 @@ const StyledModal = Styled.div`
     }
   }
 `;
-const StyledCloseModalButton = Styled(Button)`
+export const StyledCloseModalButton = Styled(Button)`
   position: absolute;
-  top: calc(${props => props.theme.defaultRem} * 0.8);
-  left: calc(${props => props.theme.defaultRem} * 0.8);
+  top: ${rem(0.8)};
+  left: ${rem(0.8)};
   min-width: auto;
   z-index: 9999;
 `;
-const StyledModalHeader = Styled.header`
-  border-bottom: solid calc(${props => props.theme.defaultRem} * 0.1) ${props =>
-  props.theme.colors.gray.bright};
-  padding-bottom: calc(${props => props.theme.defaultRem});
-  margin-bottom: calc(${props => props.theme.defaultRem});
+export const StyledModalHeader = Styled.header`
+  border-bottom: solid ${rem(0.1)} ${color('gray', 'bright')};
+  padding-bottom: ${rem(1)};
+  margin-bottom: ${rem(1)};
   h3 {
-    font-size: calc(${props => props.theme.defaultRem} * 1.6);
+    font-size: ${rem(1.6)};
   }
 `;
-const StyledModalContent = Styled.main``;
-const StyledModalFooter = Styled.footer`
-  border-top: solid calc(${props => props.theme.defaultRem} * 0.1) ${props =>
-  props.theme.colors.gray['ultra-light']};
-  padding-top: calc(${props => props.theme.defaultRem});
-  margin-top: calc(${props => props.theme.defaultRem});
+export const StyledModalContent = Styled.main``;
+export const StyledModalFooter = Styled.footer`
+  border-top: solid ${rem(0.1)} ${color('gray', 'ultra-light')};
+  padding-top: ${rem(1)};
+  margin-top: ${rem(1)};
  `;
-
-export {
-  StyledModalWrapper,
-  StyledLightBox,
-  StyledModal,
-  StyledCloseModalButton,
-  StyledModalHeader,
-  StyledModalContent,
-  StyledModalFooter,
-};

@@ -1,17 +1,18 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
+import { rem, color } from '@snappmarket/helpers'
 const StyledAccordion = Styled.div`
-  font-size: calc(1.4 * ${props => props.theme.defaultRem});
-  margin: ${props => `calc(1.6 * ${props.theme.defaultRem})`} 0;
-  border-radius: calc(${props => props.theme.defaultRem} * 0.5);
+  font-size: ${rem(1.4)};
+  margin: ${rem(1.6, 0)};
+  border-radius: ${rem(0.5)};
 `;
 
 const StyledAccordionHead = Styled.div`
   display: flex;
-  background: ${props => props.theme.colors.gray.white};
+  background: ${color('gray', 'bright')};
 `;
 
-const StyledAccordionContent = Styled.div`  
+const StyledAccordionContent = Styled.div`
   &.showAnimation {
     -webkit-animation: fadeInDown 0.2s ease-out both;
     -moz-animation: fadeInDown 0.2s ease-out both;
@@ -27,7 +28,7 @@ const StyledAccordionContent = Styled.div`
     0% {
       opacity: 0.2;
     }
-    
+
     100% {
       opacity: 1;
       -webkit-transform: none;

@@ -1,74 +1,74 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-/* eslint-disable indent */
+import {rem, color} from '@snappmarket/helpers'
+
 export const StyledLoading = Styled.div`
   &.loader,
   &.loader:before,
   &.loader:after {
     border-radius: 50%;
-    width: 0.7em;
-    height: 0.7em;
+    width: ${rem(0.7)};
+    height: ${rem(0.7)};
     animation-fill-mode: both;
     animation: loading 1.8s infinite ease-in-out;
     will-change: box-shadow;
     transform: translateZ(0);
   }
-  
+
   &.loader{
-    color: ${props => props.theme.colors.white};
+    color: ${color('white')};
     font-size: inherit;
     position: absolute;
     transform: translateZ(0);
     animation-delay: -0.16s;
     left: ${props => (props.direction === 'left' ? 0 : 'auto')};
     right: ${props => (props.direction === 'right' ? 0 : 'auto')};
-    margin-left: ${props => (props.direction === 'left' ? '2em' : 'auto')};
-    margin-right: ${props => (props.direction === 'right' ? '2em' : 'auto')};
-    margin-top: -1em;
+    margin-left: ${props => (props.direction === 'left' ? rem(2)(props) : 'auto')};
+    margin-right: ${props => (props.direction === 'right' ? rem(2)(props) : 'auto')};
+    margin-top: ${rem(-1)};
   }
-  
+
   &.loader:before, &.loader:after {
     content: '';
     position: absolute;
     top: 0;
   }
   &.loader:before {
-      left: -1em;
-      animation-delay: ${props =>
-        props.direction === 'right' ? '-0.32s;' : 0};
+      left: ${rem(-1)};
+      animation-delay: ${props => props.direction === 'right' ? '-0.32s;' : 0};
   }
   &.loader:after {
-      right: -1em;
+      right: ${rem(-1)};
       animation-delay: ${props => (props.direction === 'left' ? '-0.32s;' : 0)};
   }
   @-webkit-keyframes loading {
     0%,
     80%,
     100% {
-      box-shadow: 0 1em 0 -1em;
+      box-shadow: ${rem(0, 1, 0, -1)};
     }
     40% {
-      box-shadow: 0 1em 0 0;
+      box-shadow: ${rem(0, 1, 0, 0)};
     }
   }
   @keyframes loading {
     0%,
     80%,
     100% {
-      box-shadow: 0 1em 0 -1em;
+      box-shadow: ${rem(0, 1, 0, -1)};
     }
     40% {
-      box-shadow: 0 1em 0 0;
+      box-shadow: ${rem(0, 1, 0, 0)};
     }
   }
 `;
 
 export const StyledCircleWave = Styled.div`
-  width: ${props => `calc(${props.theme.defaultRem} * ${props.size})`};
-  height: ${props => `calc(${props.theme.defaultRem} * ${props.size})`};
-  margin: 0 calc(${props => props.theme.defaultRem} * 1.4);
+  width: ${props => rem(props.size)(props)};
+  height: ${props => rem(props.size)(props)};
+  margin: ${rem(0, 1.4)};
   border-radius: 50%;
-  background: ${props => props.theme.colors[props.color].normal};
+  background: ${props => color(props.color, 'normal')(props)};
   animation: fade-circle-wave 1.4s infinite;
   will-change: box-shadow;
   transform: translateZ(0);
@@ -77,12 +77,7 @@ export const StyledCircleWave = Styled.div`
       box-shadow: nones
     }
     50% {
-      box-shadow: 0 0 0 ${props =>
-        `calc(${props.theme.defaultRem} * 0.3) ${
-          props.theme.colors.white
-        },0 0 0 calc(${props.theme.defaultRem} * 0.6) ${
-          props.theme.colors[props.color].normal
-        }`};
+      box-shadow: ${rem(0, 0, 0, 0.3)} ${color('white')}, ${rem(0, 0, 0, 0.6)} ${props => color(props.color, 'normal')(props)};
     }
     100% {
       box-shadow: none
@@ -91,8 +86,8 @@ export const StyledCircleWave = Styled.div`
 `;
 
 export const StyledLogoAnimation = Styled.div`
-  min-width: ${props => `calc(${props.theme.defaultRem} * ${props.size * 2})`}; 
-  min-height: ${props => `calc(${props.theme.defaultRem} * ${props.size * 2})`};
+  min-width: ${props => rem(props.size * 2)(props)};
+  min-height: ${props => rem(props.size * 2)(props)};
   &.animating {
     animation: alertPulse 1.2s ease-out;
     animation-iteration-count: infinite;
@@ -100,12 +95,10 @@ export const StyledLogoAnimation = Styled.div`
     transform: translateZ(0);
   }
   svg {
-    width: ${props =>
-      `calc(${props.theme.defaultRem} * ${props.size * 2})`} !important; 
-    height: ${props =>
-      `calc(${props.theme.defaultRem} * ${props.size})`} !important; 
+    width: ${props => rem(props.size * 2)(props)} !important;
+    height: ${props => rem(props.size)(props)} !important;
     * {
-      fill: ${props => props.theme.colors.gray.light} !important; 
+      fill: ${color('gray', 'light')} !important;
     }
   }
   @keyframes alertPulse {
@@ -115,4 +108,3 @@ export const StyledLogoAnimation = Styled.div`
     100% {opacity: 1}
   }
 `;
-/* eslint-enable indent */
