@@ -1,30 +1,32 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-const StyledInputRangeWrapper = Styled.div`
+import { rem, color, makeRgbaColor } from '@snappmarket/helpers'
+
+export const StyledInputRangeWrapper = Styled.div`
   .input-range__slider {
     appearance: none;
-    background: #3f51b5;
-    border: 1px solid #3f51b5;
+    background: ${color('blue', 'normal')};
+    border: ${rem(0.1)} solid ${color('blue', 'normal')};
     border-radius: 100%;
     cursor: pointer;
     display: block;
-    height: 1rem;
-    margin-top: -0.65rem;
+    height: ${rem(1)};
+    margin-top: ${rem(-0.65)};
     outline: none;
     position: absolute;
     top: 50%;
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-    width: 1rem;
+    width: ${rem(1)};
   }
   .input-range__slider:active {
     transform: scale(1.3);
   }
   .input-range__slider:focus {
-    box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2);
+    box-shadow: ${rem(0,0,0,0.5)} ${makeRgbaColor(0.2, 'blue', 'normal')};
   }
   .input-range--disabled .input-range__slider {
-    background: #cccccc;
-    border: 1px solid #cccccc;
+    background: ${color('gray', 'light')};
+    border: ${rem(0.1)} solid ${color('gray', 'light')};
     box-shadow: none;
     transform: none;
   }
@@ -35,7 +37,7 @@ const StyledInputRangeWrapper = Styled.div`
 
   .rtl .input-range__slider {
     margin-left: auto;
-    margin-right: -0.5rem;
+    margin-right: ${rem(-0.5)};
   }
 
   .rtl .input-range__slider-container {
@@ -43,20 +45,19 @@ const StyledInputRangeWrapper = Styled.div`
   }
 
   .input-range__slider {
-    margin-left: -0.5rem;
+    margin-left: ${rem(-0.5)};
   }
 
   .input-range__label {
-    color: #aaaaaa;
-    font-family: "Helvetica Neue", san-serif;
-    font-size: 0.8rem;
+    color: ${color('gray', 'normal')};
+    font-size: ${rem(-0.8)};
     transform: translateZ(0);
     white-space: nowrap;
   }
 
   .input-range__label--min,
   .input-range__label--max {
-    bottom: -1.4rem;
+    bottom: ${rem(-1.4)};
     position: absolute;
   }
 
@@ -70,7 +71,7 @@ const StyledInputRangeWrapper = Styled.div`
 
   .input-range__label--value {
     position: absolute;
-    top: -1.8rem;
+    top: ${rem(-1.8)};
   }
 
   .rtl .input-range__label--min {
@@ -104,27 +105,27 @@ const StyledInputRangeWrapper = Styled.div`
   }
 
   .input-range__track {
-    background: #eeeeee;
-    border-radius: 0.3rem;
+    background: ${color('gray', 'light')};
+    border-radius: ${rem(0.3)};
     cursor: pointer;
     display: block;
-    height: 0.3rem;
+    height: ${rem(0.3)};
     position: relative;
   }
   .input-range--disabled .input-range__track {
-    background: #eeeeee;
+    background: ${color('gray', 'light')};
   }
 
   .input-range__track--background {
     left: 0;
-    margin-top: -0.15rem;
+    margin-top: ${rem(-1.5)};
     position: absolute;
     right: 0;
     top: 50%;
   }
 
   .input-range__track--active {
-    background: #3f51b5;
+    background: ${color('blue', 'normal')};
   }
 
   .rtl .input-range__track {
@@ -136,7 +137,7 @@ const StyledInputRangeWrapper = Styled.div`
   }
 
   .input-range {
-    height: 1rem;
+    height: ${rem(1)};
     position: relative;
     width: 100%;
   }
@@ -145,27 +146,26 @@ const StyledInputRangeWrapper = Styled.div`
     direction: rtl;
   }
 `;
-const StyledInputRange = Styled.div`
+export const StyledInputRange = Styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   margin-top: 0;
   transform: translateY(-60%);
   .input-range__slider {
-    border-color: ${props => props.theme.colors.blue.normal};
+    border-color: ${color('blue', 'normal')};
   }
   .input-range__slider, .input-range__track--active {
-    background-color: ${props => props.theme.colors.blue.normal};
+    background-color: ${color('blue', 'normal')};
   }
 `;
 
-const StyledRangeLabelWrapper = Styled.div`
-  font-size: calc(${props => props.theme.defaultRem} * 1);
-  margin-top: calc(${props => props.theme.defaultRem} * 2.4);
+export const StyledRangeLabelWrapper = Styled.div`
+  font-size: ${rem(1)};
+  margin-top: ${rem(2.4)};
   direction: ${props => props.rtl ? 'rtl' : 'ltr'};
   > span{
-    font-size: calc(${props => props.theme.defaultRem} * 1.4);
-    color: ${props => props.theme.colors.gray.dark};
+    font-size: ${rem(1.4)};
+    color: ${color('gray', 'dark')};
   }
 `;
-export { StyledInputRangeWrapper, StyledRangeLabelWrapper, StyledInputRange };

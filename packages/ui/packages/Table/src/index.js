@@ -8,7 +8,7 @@ import {
   StyledTableRow,
   StyledTableHeaderColumn,
   StyledTableColumn,
-} from './style';
+} from './styles';
 
 /* eslint-disable react/no-array-index-key */
 const Table = props => {

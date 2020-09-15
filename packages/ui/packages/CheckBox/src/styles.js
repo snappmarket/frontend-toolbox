@@ -1,39 +1,34 @@
-/* eslint-disable prettier/prettier */
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-const StyledCheckboxWrapper = Styled.button`
-  background-color: ${props =>
-    !props.selected ? 'transparent' : props.theme.colors[props.status].light};
-  display: flex;    
+import { rem, color } from '@snappmarket/helpers'
+
+export const StyledCheckboxWrapper = Styled.button`
+  background-color: ${props => !props.selected ? 'transparent' : color(props.status, 'light')(props)};
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: ${props => `calc(${props.size} * ${props.theme.defaultRem})`};
-  height: ${props => `calc(${props.size} * ${props.theme.defaultRem})`};
-  padding: calc(${props => props.theme.defaultRem} * 0.3);
-  border: ${props =>
-    props.border && !props.selected
-      ? `solid calc(${props.theme.defaultRem} * 0.1) ${props.theme.colors.gray.light}`
-      : 'none'};
-  color: ${props => props.theme.colors.white};
-  border-radius: calc(${props => props.theme.defaultRem} * 0.2);
+  width: ${props => rem(props.size)(props)};
+  height: ${props => rem(props.size)(props)};
+  padding: ${rem(0.3)};
+  border: ${props => props.border && !props.selected ? `solid ${rem(0.1)(props)} ${color('gray','light')(props)}` : 'none'};
+  color: ${color('white')};
+  border-radius: ${rem(0.2)};
   transition: all 0.5s ease 0s;
   &:hover {
-      border-color: ${props => props.theme.colors[props.status].light};
+      border-color: ${props => color(props.status, 'light')(color)};
   }
   &:disabled {
-      background-color: ${props => props.theme.colors.gray['ultra-light']};
-    border-color: ${props => props.theme.colors.gray['ultra-light']};
+      background-color: ${color('gray', 'ultra-light')};
+    border-color: ${color('gray', 'ultra-light')};
   }
   &:active {
     svg {
-      fill: ${props => props.theme.colors.white};
+      fill: ${color('white')};
     }
   }
   svg {
-    width: calc(${props => props.theme.defaultRem} * 1) !important;
-    height: calc(${props => props.theme.defaultRem} * 1) !important;
-    fill: ${props => props.theme.colors.white};
+    width: ${rem(1)} !important;
+    height:${rem(1)} !important;
+    fill: ${color('white')};
   }
 `;
-
-export { StyledCheckboxWrapper };

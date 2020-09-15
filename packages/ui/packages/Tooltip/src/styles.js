@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-const StyledToolbarWrapper = Styled.span`
+import {color, rem, makeRgbaColor} from '@snappmarket/helpers'
+
+export const StyledToolbarWrapper = Styled.span`
   position: relative;
   display: inline-block;
   &:hover {
@@ -9,28 +11,27 @@ const StyledToolbarWrapper = Styled.span`
     }
   }
 `;
-const StyledToolbar = Styled.span`
+export const StyledToolbar = Styled.span`
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: ${props => props.theme.colors.white};
-  padding: calc(${props => props.theme.defaultRem} * 0.8) calc(${props =>
-  props.theme.defaultRem} * 1.6);
-  border-radius: calc(${props => props.theme.defaultRem} * 0.5);
+  background-color: ${makeRgbaColor(0.5, 'black')};
+  color: ${color('white')};
+  padding: ${rem(0.8, 1.6)};
+  border-radius: ${rem(0.5)};
   opacity: 0;
   transition: all 0.3s ease 0.1s;
   &:after {
     position: absolute;
-    border: calc(${props => props.theme.defaultRem}) solid  rgba(0, 0, 0, 0);
+    border: ${rem(1)} solid ${makeRgbaColor(0.5, 'black')};
     content: "";
   }
   ${props =>
     props.position === 'top' &&
     `
     left: 50%;
-    top: calc(${props.theme.defaultRem} * -1);
+    top: ${rem(-1)(props)};
     transform: translate(-50%, -100%);
     &:after {
-      border-top-color: rgba(0, 0, 0, 0.5);
+      border-top-color: ${makeRgbaColor(0.5, 'black')(props)};
       border-bottom: none;
       top: 100%;
       left: 50%;
@@ -41,10 +42,10 @@ const StyledToolbar = Styled.span`
     props.position === 'bottom' &&
     `
     left: 50%;
-    bottom: calc(${props.theme.defaultRem} * -1);
+    bottom: ${rem(-1)(props)};
     transform: translate(-50%, 100%);
     &:after {
-      border-bottom-color:  rgba(0, 0, 0, 0.5);
+      border-bottom-color: ${makeRgbaColor(0.5, 'black')(props)};
       border-top: none;
       bottom: 100%;
       left: 50%;
@@ -54,11 +55,11 @@ const StyledToolbar = Styled.span`
   ${props =>
     props.position === 'left' &&
     `
-    left: calc(${props.theme.defaultRem} * -1);
+    left: ${rem(-1)(props)};
     top: 50%;
     transform: translate(-100%, -50%);
     &:after {
-      border-left-color: rgba(0, 0, 0, 0.5);
+      border-left-color: ${makeRgbaColor(0.5, 'black')(props)};
       border-right: none;
       top: 50%;
       left: 100%;
@@ -68,11 +69,11 @@ const StyledToolbar = Styled.span`
   ${props =>
     props.position === 'right' &&
     `
-    right: calc(${props.theme.defaultRem} * -1);
+    right: ${rem(-1)(props)};
     top: 50%;
     transform: translate(100%, -50%);
     &:after {
-      border-right-color: rgba(0, 0, 0, 0.5);
+      border-right-color: ${makeRgbaColor(0.5, 'black')(props)};
       border-left: none;
       top: 50%;
       right: 100%;
@@ -80,5 +81,3 @@ const StyledToolbar = Styled.span`
     }
    `}
 `;
-
-export { StyledToolbarWrapper, StyledToolbar };

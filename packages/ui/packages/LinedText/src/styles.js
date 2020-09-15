@@ -1,28 +1,28 @@
 // eslint-disable-next-line import/no-named-default
 import { default as Styled } from 'styled-components';
-const StyledLinedText = Styled.div`
+import {color, rem} from '@snappmarket/helpers'
+
+export const StyledLinedText = Styled.div`
   display: flex;
   flex-basis: 100%;
   align-items: center;
   width: 100%;
-  color: ${props => props.theme.colors.gray.dark}
-  margin: calc(${props => props.theme.defaultRem} * 0.8) 0px;
-  font-size: calc(${props => props.theme.defaultRem} * 1.6);
+  color: ${color('gray', 'dark')};
+  margin: ${rem(0.8, 0)};
+  font-size: ${rem(1.6)};
   &:before,
   &:after {
     content: "";
     flex-grow: 1;
-    background: ${props => props.theme.colors.gray['ultra-light']};
-    height: calc(${props => props.theme.defaultRem} * 0.1);
-    font-size: 0px;
-    line-height: 0px;
+    background: ${color('gray', 'ultra-light')};
+    height: ${rem(0.1)};
+    font-size: ${rem(0)};
+    line-height: ${rem(0)};
   }
   &:before {
-    margin-left: calc(${props => props.theme.defaultRem} * 2);
+    margin-left: ${rem(2)};
   }
   &:after {
-    margin-right: calc(${props => props.theme.defaultRem} * 2);
+    margin-right: ${rem(2)};
   }
 `;
-
-export { StyledLinedText };

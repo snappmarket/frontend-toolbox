@@ -51,7 +51,7 @@ describe('TimeHelpers', () => {
       const date1 = new Date(mockDate1);
       const date2 = new Date(mockDate2);
       const diffTime = 86461000;
-      const diffDays = 2;
+      const diffDays = 1;
       const actual = {
         "diffTime" : diffTime,
         "diffDays" : diffDays,
