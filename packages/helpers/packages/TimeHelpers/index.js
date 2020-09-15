@@ -42,7 +42,7 @@ export const getClock = dateString => {
  */
 export const getDiffInDays = (date1, date2 = new Date()) => {
   const diffTime = Math.abs(date1 - date2);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
   return {
     diffDays,
     diffTime,
