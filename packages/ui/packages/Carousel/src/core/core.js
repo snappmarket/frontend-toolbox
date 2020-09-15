@@ -51,6 +51,7 @@ class SliderCore {
       autoWidth = false,
       nextSpeed = 2000,
       threshold = 50,
+      freeScroll = false,
     } = config;
     this.config = {
       slider,
@@ -68,6 +69,7 @@ class SliderCore {
       nextSpeed,
       threshold,
       horizontal,
+      freeScroll,
     };
   };
 
@@ -422,7 +424,16 @@ class SliderCore {
 
   transitionendWatcherCall = () => {
     const {
-      config: { slider, responsive, dots, nav, rtl, autoWidth, infinite },
+      config: {
+        slider,
+        responsive,
+        dots,
+        nav,
+        rtl,
+        autoWidth,
+        infinite,
+        freeScroll,
+      },
       index,
       sliderItems,
       slideSize,
@@ -446,6 +457,7 @@ class SliderCore {
       sliderItemWidth,
       nav,
       autoWidth,
+      freeScroll,
       setAllowShift,
       setIndex,
     });
