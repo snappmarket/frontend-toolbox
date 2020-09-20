@@ -9,6 +9,7 @@ import {
   prevNone,
   nextNone,
   addClassToElement,
+  removeClassFromElement,
   vdomArrayConvertor,
   removeAllChildren,
   infiniteChecker,
@@ -52,6 +53,7 @@ class SliderCore {
       nextSpeed = 2000,
       threshold = 50,
       freeScroll = false,
+      callBack = () => {},
     } = config;
     this.config = {
       slider,
@@ -70,6 +72,7 @@ class SliderCore {
       threshold,
       horizontal,
       freeScroll,
+      callBack,
     };
   };
 
@@ -364,8 +367,11 @@ class SliderCore {
       transitionendWatcherCall,
       getSliderItemWidth,
     } = this;
-
     const sliderItems = getSliderItems();
+    addClassToElement({
+      item: sliderItems,
+      className: 'soft-transition',
+    });
     const newIndex = infinite
       ? newPosition + responsiveItemCount(responsive) + 1
       : newPosition;
@@ -376,6 +382,12 @@ class SliderCore {
 
     sliderItems.style.transform = setTranslate3d(result);
     transitionendWatcherCall();
+    setTimeout(() => {
+      removeClassFromElement({
+        item: sliderItems,
+        className: 'soft-transition',
+      });
+    }, 300);
     return newIndex;
   }
 
@@ -433,6 +445,7 @@ class SliderCore {
         autoWidth,
         infinite,
         freeScroll,
+        callBack,
       },
       index,
       sliderItems,
@@ -460,6 +473,7 @@ class SliderCore {
       freeScroll,
       setAllowShift,
       setIndex,
+      callBack,
     });
   };
 

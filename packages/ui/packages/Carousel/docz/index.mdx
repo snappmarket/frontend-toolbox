@@ -221,6 +221,9 @@ const ProductsSlider = props => {
     horizontal: 'default', // default or center, for Arrange items in the middle, when 'slider length' < 'responsive items'
     drag: true,            // true or false draggable on Carousel
     threshold: 50,         // set threshold end and first of Carousel for fire actions (drag and calc position ,....)
+    callBack: (index) => { // call after finish slider work and return current index
+      console.log(index)
+    }
     responsive: {
       0: {
         items: 1.5,

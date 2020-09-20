@@ -273,6 +273,7 @@ export const transitionendWatcher = params => {
     setIndex,
     autoWidth,
     freeScroll,
+    callBack,
   } = params;
 
   const perSlide = truncResponsiveItemCount(responsive);
@@ -398,7 +399,7 @@ export const transitionendWatcher = params => {
   if (dots) {
     dotActive(params);
   }
-
+  callBack(calcIndex);
   return calcIndex;
 };
 
