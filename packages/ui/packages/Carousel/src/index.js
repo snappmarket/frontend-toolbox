@@ -31,7 +31,7 @@ const SimpleCarousel = props => {
         slider: sliderRed.current,
         ...slideConfig,
       });
-      goToShowingSlide(showingSlide);
+      goTo(showingSlide);
     }
   }, [showingSlide]);
 
@@ -45,8 +45,8 @@ const SimpleCarousel = props => {
     }
   }, [refresh]);
 
-  const goToShowingSlide = index => {
-    newSlider.goToShowingSlide(index);
+  const goTo = index => {
+    newSlider.goTo(index);
   };
 
   const onRefresh = refreshFlag => {

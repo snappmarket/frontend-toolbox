@@ -1,5 +1,4 @@
 import { dragAction, dragEnd, dragStart } from './partial';
-import { getTranslate3d } from '../utils';
 
 export default class DragEvent {
   constructor(params) {
@@ -18,7 +17,7 @@ export default class DragEvent {
 
   initialize() {
     const {
-      config: { responsive, threshold, rtl, nav, autoWidth, freeScroll },
+      config: { responsive, threshold, rtl, nav, autoWidth },
       getDrag,
       getInfinite,
       getSliderItems,
@@ -33,7 +32,6 @@ export default class DragEvent {
       getIndex,
       getSlideSize,
       getSliderMainWidth,
-      getSliderItemWidth,
       setIndex,
       setPosFinal,
       getPosFinal,
@@ -44,7 +42,6 @@ export default class DragEvent {
     const infinite = getInfinite();
     const sliderItems = getSliderItems();
     const drag = getDrag();
-    let startTrans = null;
 
     const dragEndCall = () => {
       const dragStartParams = {
@@ -69,9 +66,6 @@ export default class DragEvent {
         setPosX1,
         setAllowShift,
         index: getIndex(),
-        sliderItemWidth: getSliderItemWidth(),
-        freeScroll,
-        startTrans,
       };
       dragEnd(dragStartParams);
     };
@@ -111,7 +105,6 @@ export default class DragEvent {
         rtl,
         autoWidth,
       };
-      startTrans = getTranslate3d(sliderItems);
       dragStart(dragStartParams);
     };
 

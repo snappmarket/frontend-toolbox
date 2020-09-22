@@ -131,14 +131,13 @@ export const ProductsSliderRtl = props => {
     nav: true,
     dots: true,
     rtl: true,
-    freeScroll: false,
-    horizontal: 'default',
+    horizontal: default,
     responsive: {
         0: {
-            items: 1.5,
+            items: 1,
         },
         576: {
-            items: 5.5,
+            items: 6,
         },
     },
   };
@@ -169,10 +168,6 @@ export const ProductsSliderRtl = props => {
       <div class="slide">Slide 3</div>
       <div class="slide">Slide 4</div>
       <div class="slide">Slide 5</div>
-      <div class="slide">Slide 6</div>
-      <div class="slide">Slide 7</div>
-      <div class="slide">Slide 8</div>
-      <div class="slide">Slide 9</div>
     </Carousel>
   )
 }
@@ -210,20 +205,16 @@ const ProductsSlider = props => {
 
   // create config for init Carousel
   const slideConfig = {
-    infinite: false,       // infinite Carousel true of false
-    customArrow: true,     // true when use custom icon on arrows
-    nav: true,             // true or false showing nav arrows on Carousel
-    dots: false,           // true or false showing dots bottom of Carousel
-    freeScroll: false,     // true or false for free scrolling when carousel not infinite
-    autoPlay: false,       // true or false auto Carousel auto play
-    nextSpeed: 2000,       // auto play speed
-    rtl: false,            // true or false rtl mode
-    horizontal: 'default', // default or center, for Arrange items in the middle, when 'slider length' < 'responsive items'
-    drag: true,            // true or false draggable on Carousel
-    threshold: 50,         // set threshold end and first of Carousel for fire actions (drag and calc position ,....)
-    callBack: (index) => { // call after finish slider work and return current index
-      console.log(index)
-    }
+    infinite: false,     // infinite Carousel true of false
+    customArrow: true,   // true when use custom icon on arrows
+    nav: true,           // true or false showing nav arrows on Carousel
+    dots: false,         // true or false showing dots bottom of Carousel
+    autoPlay: false,     // true or false auto Carousel auto play
+    nextSpeed: 2000,     // auto play speed
+    rtl: false,          // true or false rtl mode
+    horizontal: default, // default or center, for Arrange items in the middle, when 'slider length' < 'responsive items'
+    drag: true,          // true or false draggable on Carousel
+    threshold: 50,       // set threshold end and first of Carousel for fire actions (drag and calc position ,....)
     responsive: {
       0: {
         items: 1.5,
