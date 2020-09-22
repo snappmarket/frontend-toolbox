@@ -24,6 +24,22 @@ export const getWindowSize = () => {
 };
 
 /**
+ * Get full height of element
+ * @param el
+ * @returns {number}
+ */
+export const getAbsoluteHeight = (el) => {
+  // eslint-disable-next-line no-param-reassign
+  el = (typeof el === 'string') ? document.querySelector(el) : el;
+
+  const styles = window.getComputedStyle(el);
+  const margin = parseFloat(styles.marginTop) + parseFloat(styles.top) +
+    parseFloat(styles.marginBottom);
+
+  return Math.ceil(el.offsetHeight + margin);
+};
+
+/**
  * @function
  * @name isMobile
  * @description checks if the device of the user is a handheld device or not
