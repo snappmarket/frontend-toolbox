@@ -51,6 +51,9 @@ class SliderCore {
       autoWidth = false,
       nextSpeed = 2000,
       threshold = 50,
+      freeScroll = false,
+      paginationWrapper = null,
+      callBack = () => {},
     } = config;
     this.config = {
       slider,
@@ -68,6 +71,9 @@ class SliderCore {
       nextSpeed,
       threshold,
       horizontal,
+      freeScroll,
+      callBack,
+      paginationWrapper,
     };
   };
 
@@ -189,6 +195,7 @@ class SliderCore {
       customArrow,
       autoWidth,
       horizontal,
+      paginationWrapper,
     } = this.getConfig();
 
     // reset Slider
@@ -296,8 +303,10 @@ class SliderCore {
       }
     }
 
-    if (dots) {
-      elementCreator({ tag: 'Ul', wrapper: slider, className: 'dots' });
+    if (dots || paginationWrapper) {
+      if (dots) {
+        elementCreator({ tag: 'Ul', wrapper: slider, className: 'dots' });
+      }
       this.sliderDots = new SliderDots({ core: this });
     }
 
@@ -355,12 +364,15 @@ class SliderCore {
     this.windowResizeWatcher();
   };
 
-  goTo(newPosition) {
+  goToShowingSlide(newPosition) {
     const {
       config: { responsive, rtl, infinite },
       getSliderItems,
       transitionendWatcherCall,
       getSliderItemWidth,
+      setIndex,
+      setPosInitial,
+      setAllowShift,
     } = this;
 
     const sliderItems = getSliderItems();
@@ -372,8 +384,22 @@ class SliderCore {
       input: -getSliderItemWidth() * newIndex,
     });
 
+    setAllowShift(false);
+    const itemClassParams = {
+      item: getSliderItems(),
+      className: 'shifting',
+    };
+
+    addClassToElement(itemClassParams);
+
     sliderItems.style.transform = setTranslate3d(result);
-    transitionendWatcherCall();
+    setIndex(newIndex);
+    setPosInitial(result);
+
+    setTimeout(() => {
+      transitionendWatcherCall();
+      setAllowShift(false);
+    }, 100);
     return newIndex;
   }
 
@@ -422,7 +448,17 @@ class SliderCore {
 
   transitionendWatcherCall = () => {
     const {
-      config: { slider, responsive, dots, nav, rtl, autoWidth, infinite },
+      config: {
+        slider,
+        responsive,
+        dots,
+        nav,
+        rtl,
+        autoWidth,
+        infinite,
+        freeScroll,
+        callBack,
+      },
       index,
       sliderItems,
       slideSize,
@@ -446,8 +482,10 @@ class SliderCore {
       sliderItemWidth,
       nav,
       autoWidth,
+      freeScroll,
       setAllowShift,
       setIndex,
+      callBack,
     });
   };
 
