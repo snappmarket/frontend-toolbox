@@ -1,7 +1,7 @@
 {
   "name": "@snappmarket/ui",
   "private": false,
-  "version": "0.3.9",
+  "version": "0.3.10",
   "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
@@ -27,12 +27,12 @@
     "react-router-dom": "^5.1.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "@iconbox/snappmarket": "^1.0.3",
     "@snappmarket/config": "^0.2.10",
     "@snappmarket/helpers": "^0.2.10",
     "@snappmarket/hooks": "^0.2.10",
-    "@iconbox/snappmarket": "^1.0.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"
   },
   "engines": {
@@ -88,6 +88,9 @@
   "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/ui",
   "gitHead": "36dda3b65acbad094685d04eb869ce590c65c2b6",
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.8.3"
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "add": "^2.0.6",
+    "use-resize-observer": "^6.1.0",
+    "yarn": "^1.22.5"
   }
 }
