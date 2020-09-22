@@ -9,7 +9,6 @@ const StyledAccordion = Styled.div`
 
 const StyledAccordionHead = Styled.div`
   display: flex;
-  background: ${color('gray', 'bright')};
 `;
 
 const StyledAccordionContent = Styled.div`

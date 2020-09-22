@@ -1,14 +1,20 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import {
-  CheckMarkIcon,
-  CircleIcon,
-  MinusIcon,
-} from '@iconbox/snappmarket';
+import { CheckMarkIcon, CircleIcon, MinusIcon } from '@iconbox/snappmarket';
 
 import { StyledCheckboxWrapper } from './styles';
 
-const CheckBox = ({ status, selected, size, disabled, className, border, selectedIcon, disabledIcon, disabledCircleIcon }) => {
+const CheckBox = ({
+  status,
+  selected,
+  size,
+  disabled,
+  className,
+  border,
+  selectedIcon,
+  disabledIcon,
+  disabledCircleIcon,
+}) => {
   const SelectedIcon = selectedIcon || <CheckMarkIcon size={size} />;
   const DisabledIcon = disabledIcon || <MinusIcon size={size} />;
   const DisabledCircleIcon = disabledCircleIcon || <CircleIcon size={size} />;
@@ -19,7 +25,9 @@ const CheckBox = ({ status, selected, size, disabled, className, border, selecte
       role="checkbox"
       tabIndex="0"
       aria-checked={selected ? 'true' : 'false'}
-      className={className}
+      className={`${className} ${border ? 'has-border' : ''} ${
+        selected ? 'selected' : 'not-selected'
+      } `}
       disabled={disabled}
       type="button"
       size={size}
@@ -29,7 +37,11 @@ const CheckBox = ({ status, selected, size, disabled, className, border, selecte
     >
       {selected && !disabled ? SelectedIcon : ''}
       {/* eslint-disable-next-line no-nested-ternary */}
-      {disabled ? className.includes('circle') ? DisabledCircleIcon : DisabledIcon : ''}
+      {disabled
+        ? className.includes('circle')
+          ? DisabledCircleIcon
+          : DisabledIcon
+        : ''}
     </StyledCheckboxWrapper>
   );
 };
