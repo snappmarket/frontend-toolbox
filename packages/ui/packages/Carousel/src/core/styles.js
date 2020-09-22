@@ -6,7 +6,7 @@ export const StyledSimpleCarousel = Styled.div`
     position: relative;
     width: 5000000px;
   }
-  .slides.shifting, .slides.soft-transition {
+  .slides.shifting {
     transition: all 0.2s ease-out;
   }
   .avoid-clicks {

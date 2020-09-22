@@ -31,7 +31,7 @@ export default class SliderDots {
 
   initialize() {
     const {
-      config: { slider, responsive, nav, rtl, autoWidth, paginationWrapper },
+      config: { slider, responsive, nav, rtl, autoWidth },
       getInfinite,
       getSlidesLength,
       getSliderItemWidth,
@@ -45,27 +45,22 @@ export default class SliderDots {
     } = this.core;
 
     const sliderItems = getSliderItems();
-
-    const dotsSelector = paginationWrapper
-      ? paginationWrapper.current.querySelector('.slides')
-      : childFider({
-          wrapper: slider,
-          className: '.dots',
-        });
-    if (!paginationWrapper) {
-      // generate dots items
-      const dotsItemsParams = {
-        slidesLength: getSlidesLength(),
-        responsive,
-        dotsSelector,
-        sliderItems,
-        autoWidth,
-        sliderMainWidth: getSliderMainWidth(),
-      };
-      dotsItemsGenerator(dotsItemsParams);
-    }
+    const dotsSelector = childFider({
+      wrapper: slider,
+      className: '.dots',
+    });
+    // generate dots items
+    const dotsItemsParams = {
+      slidesLength: getSlidesLength(),
+      responsive,
+      dotsSelector,
+      sliderItems,
+      autoWidth,
+      sliderMainWidth: getSliderMainWidth(),
+    };
 
     // generate dots group per show slides
+    dotsItemsGenerator(dotsItemsParams);
 
     // dots item click for transition on active index
     vdomArrayConvertor(dotsSelector.children).forEach(item => {

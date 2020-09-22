@@ -232,14 +232,14 @@ export const dragAction = params => {
   }
 
   const startAvoidClicks = Posx => {
-    if (Posx > 5) {
+    if( Posx > 5){
       addClassToElement({
         item: getSliderItems(),
         className: 'avoid-clicks',
       });
     }
-    return Posx;
-  };
+    return Posx
+  }
 
   if (e.type === 'touchmove') {
     const dragActionTouchmovePosX2Params = {
@@ -288,25 +288,15 @@ export const dragEnd = params => {
     infinite,
     slideSize,
     sliderMainWidth,
-    sliderItemWidth,
     setIndex,
     transitionendWatcherCall,
     slider,
     setPosFinal,
-    posFinal,
+    getPosFinal,
     nav,
     rtl,
     autoWidth,
-    freeScroll,
-    index,
-    startTrans,
   } = params;
-
-  const disableEvent = () => {
-    mouseEventNull();
-    transitionendWatcherCall();
-  };
-
   removeClassFromElement({
     item: sliderItems,
     className: 'avoid-clicks',
@@ -352,89 +342,58 @@ export const dragEnd = params => {
     slideSize,
     sliderMainWidth,
     slidesLength,
-    freeScroll,
-    autoWidth,
-    index,
-    responsiveItemCount: responsiveItemCount(responsive),
   });
-
-  const currentPosition = getTranslate3d(sliderItems);
-
   setIndex(calcIndex);
-  if (infinite && calcIndex + perSlide === perSlide) {
+
+  if (
+    (!infinite &&
+      calcIndex > slidesLength &&
+      calcIndex < slidesLength + perSlide) ||
+    (infinite && calcIndex + perSlide === perSlide)
+  ) {
     sliderItems.style.transform = setTranslate3d(finalItemPosition);
-    disableEvent();
-    return finalItemPosition;
   }
 
-  if (!infinite) {
+  if (!infinite && nav) {
+    prevBlock(slider);
+    nextBlock(slider);
+  }
+
+  if (!infinite && calcIndex === slidesLength + perSlide) {
+    sliderItems.style.transform = setTranslate3d(
+      getPosFinal() - sliderItems.children[0].clientWidth,
+    );
+  }
+
+  if (
+    (!infinite &&
+      getTranslate3d(sliderItems) <= thresholdNew() &&
+      getTranslate3d(sliderItems) >= 0) ||
+    (rtl && getTranslate3d(sliderItems) <= 0)
+  ) {
+    sliderItems.style.transform = setTranslate3d(0);
     if (nav) {
-      prevBlock(slider);
+      prevNone(slider);
       nextBlock(slider);
     }
-    if (calcIndex > slidesLength && calcIndex < slidesLength + perSlide) {
-      sliderItems.style.transform = setTranslate3d(finalItemPosition);
-      disableEvent();
-      return finalItemPosition;
-    }
-    if (calcIndex === slidesLength + perSlide) {
-      const result = posFinal - sliderItemWidth;
-      sliderItems.style.transform = setTranslate3d(result);
-      disableEvent();
-      return result;
-    }
-    if (
-      (getTranslate3d(sliderItems) <= thresholdNew() &&
-        getTranslate3d(sliderItems) >= 0) ||
-      (rtl && getTranslate3d(sliderItems) <= 0)
-    ) {
-      sliderItems.style.transform = setTranslate3d(0);
-      if (nav) {
-        prevNone(slider);
-        nextBlock(slider);
-      }
-      disableEvent();
-      return 0;
-    }
+  }
 
-    if (!rtl && getTranslate3d(sliderItems) <= finalItemPosition) {
-      sliderItems.style.transform = setTranslate3d(finalItemPosition);
-      if (nav) {
-        nextNone(slider);
-        prevBlock(slider);
-      }
-      disableEvent();
-      return finalItemPosition;
-    }
-
-    if (rtl && getTranslate3d(sliderItems) >= finalItemPosition) {
-      sliderItems.style.transform = setTranslate3d(finalItemPosition);
-      if (nav) {
-        nextNone(slider);
-        prevBlock(slider);
-      }
-      disableEvent();
-      return finalItemPosition;
-    }
-
-    if (startTrans !== currentPosition && !freeScroll && !autoWidth) {
-      addClassToElement({
-        item: sliderItems,
-        className: 'soft-transition',
-      });
-      const result = directionSetter({
-        rtl,
-        input: -sliderItemWidth * calcIndex,
-      });
-      sliderItems.style.transform = setTranslate3d(result);
-      setTimeout(() => {
-        removeClassFromElement({
-          item: sliderItems,
-          className: 'soft-transition',
-        });
-      }, 300);
-      disableEvent();
-      return result;
+  if (!infinite && !rtl && getTranslate3d(sliderItems) <= finalItemPosition) {
+    sliderItems.style.transform = setTranslate3d(finalItemPosition);
+    if (nav) {
+      nextNone(slider);
+      prevBlock(slider);
     }
   }
+
+  if (!infinite && rtl && getTranslate3d(sliderItems) >= finalItemPosition) {
+    sliderItems.style.transform = setTranslate3d(finalItemPosition);
+    if (nav) {
+      nextNone(slider);
+      prevBlock(slider);
+    }
+  }
+
+  mouseEventNull();
+  transitionendWatcherCall();
 };
