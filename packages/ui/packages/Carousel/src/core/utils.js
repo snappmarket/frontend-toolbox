@@ -19,16 +19,12 @@ export const calcCurrentIndex = params => {
     slideSize,
     sliderMainWidth,
     slidesLength,
-    freeScroll,
-    autoWidth,
-    responsiveItemCount,
   } = params;
 
-  const getIndex =
-    getTranslate3d(sliderItems) /
-    vdomArrayConvertor(sliderItems.children)[0].clientWidth;
-
   if (infinite) {
+    const getIndex =
+      getTranslate3d(sliderItems) /
+      vdomArrayConvertor(sliderItems.children)[0].clientWidth;
     if (getIndex >= 0) return Math.round(getIndex);
     if (getIndex < 0) {
       return slidesLength + Math.round(getIndex);
@@ -41,9 +37,6 @@ export const calcCurrentIndex = params => {
 
   if (Math.abs(getTranslate3d(sliderItems)) > 0) {
     const scroll = Math.abs(getTranslate3d(sliderItems));
-    if (!freeScroll && !autoWidth && responsiveItemCount === 1) {
-      return Math.round((scroll + sliderMainWidth) / slideSize - perSlide);
-    }
     return Math.trunc((scroll + sliderMainWidth) / slideSize - perSlide);
   }
 };
@@ -272,8 +265,6 @@ export const transitionendWatcher = params => {
     nav,
     setIndex,
     autoWidth,
-    freeScroll,
-    callBack,
   } = params;
 
   const perSlide = truncResponsiveItemCount(responsive);
@@ -286,8 +277,6 @@ export const transitionendWatcher = params => {
     sliderMainWidth,
     slider,
     sliderItems,
-    freeScroll,
-    autoWidth,
   });
   setIndex(calcIndex);
   if (
@@ -391,7 +380,6 @@ export const transitionendWatcher = params => {
       slideSize,
       sliderMainWidth,
       autoWidth,
-      freeScroll,
     });
   }
   setAllowShift(true);
@@ -399,7 +387,7 @@ export const transitionendWatcher = params => {
   if (dots) {
     dotActive(params);
   }
-  callBack(calcIndex);
+
   return calcIndex;
 };
 
