@@ -11,6 +11,8 @@ export const StyledCheckboxWrapper = Styled.button`
   padding: ${rem(0.3)};
   color: ${color('white')};
   border-radius: ${rem(0.2)};
+  border-width: ${rem(0.1)};
+  border-style: solid;
   transition: all 0.5s ease 0s;
   &.has-border.not-selected {
     border: solid ${rem(0.1)} ${color('gray','light')};
@@ -20,6 +22,7 @@ export const StyledCheckboxWrapper = Styled.button`
   }
   &.selected {
     background-color: ${props => color(props.status, 'light')(props)}
+    border-color: ${props => color(props.status, 'light')(props)}
   }
   &:hover {
     border-color: ${props => color(props.status, 'light')};
