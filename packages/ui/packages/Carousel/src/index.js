@@ -31,6 +31,7 @@ const SimpleCarousel = props => {
         slider: sliderRed.current,
         ...slideConfig,
       });
+      // change goto to goToShowingSlide
       goToShowingSlide(showingSlide);
     }
   }, [showingSlide]);
