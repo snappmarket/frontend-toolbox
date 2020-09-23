@@ -7,6 +7,8 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
+import useResizeObserver from 'use-resize-observer';
+import { getAbsoluteHeight } from '@snappmarket/helpers';
 import { CrossIcon } from '@iconbox/snappmarket';
 
 import {
@@ -37,6 +39,14 @@ const Modal = forwardRef((props, ref) => {
   const lightBoxRef = createRef();
   const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const [position, setPosition] = useState(initialPosition);
+  const { height: modelHeight } = useResizeObserver({ ref: visibility ? modalRef : null });
+
+  console.log({ modelHeight });
+  useEffect(() => {
+    if(lightBoxRef.current) {
+      lightBoxRef.current.style.height = `${modelHeight + 100}px`;
+    }
+  }, [modelHeight]);
 
   /**
    * should put body as an state for two reasons,
@@ -69,10 +79,7 @@ const Modal = forwardRef((props, ref) => {
    */
   useEffect(() => {
     if (modalRef.current && visibility) {
-      const {
-        current: { offsetHeight: modalHeight },
-      } = modalRef;
-      lightBoxRef.current.style.height = `${modalHeight + 100}px`;
+      const modalHeight = getAbsoluteHeight(modalRef.current);
       const { innerHeight: windowHeight } = window;
       if (modalHeight - 20 >= windowHeight) {
         setPosition('top');
@@ -87,7 +94,11 @@ const Modal = forwardRef((props, ref) => {
         className={className}
         ref={ref}
       >
-        <StyledLightBox ref={lightBoxRef} data-testid="modalLightBox" onClick={handleClose || undefined} />
+        <StyledLightBox
+          ref={lightBoxRef}
+          data-testid="modalLightBox"
+          onClick={handleClose || undefined}
+        />
         <StyledModal
           data-testid="modal"
           width={width}

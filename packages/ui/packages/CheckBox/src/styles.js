@@ -3,22 +3,32 @@ import { default as Styled } from 'styled-components';
 import { rem, color } from '@snappmarket/helpers'
 
 export const StyledCheckboxWrapper = Styled.button`
-  background-color: ${props => !props.selected ? 'transparent' : color(props.status, 'light')(props)};
   display: flex;
   align-items: center;
   justify-content: center;
   width: ${props => rem(props.size)(props)};
   height: ${props => rem(props.size)(props)};
   padding: ${rem(0.3)};
-  border: ${props => props.border && !props.selected ? `solid ${rem(0.1)(props)} ${color('gray','light')(props)}` : 'none'};
   color: ${color('white')};
   border-radius: ${rem(0.2)};
+  border-width: ${rem(0.1)};
+  border-style: solid;
   transition: all 0.5s ease 0s;
+  &.has-border.not-selected {
+    border: solid ${rem(0.1)} ${color('gray','light')};
+  }
+  &.not-selected {
+    background-color: transparent;
+  }
+  &.selected {
+    background-color: ${props => color(props.status, 'light')(props)};
+    border-color: ${props => color(props.status, 'light')(props)}
+  }
   &:hover {
-      border-color: ${props => color(props.status, 'light')(color)};
+    border-color: ${props => color(props.status, 'light')};
   }
   &:disabled {
-      background-color: ${color('gray', 'ultra-light')};
+    background-color: ${color('gray', 'ultra-light')};
     border-color: ${color('gray', 'ultra-light')};
   }
   &:active {
