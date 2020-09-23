@@ -21,7 +21,7 @@ export const StyledCheckboxWrapper = Styled.button`
     background-color: transparent;
   }
   &.selected {
-    background-color: ${props => color(props.status, 'light')(props)}
+    background-color: ${props => color(props.status, 'light')(props)};
     border-color: ${props => color(props.status, 'light')(props)}
   }
   &:hover {
