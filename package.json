@@ -119,7 +119,7 @@
     "shelljs": "^0.8.3"
   },
   "dependencies": {
-    "@changesets/cli": "^2.10.2",
+    "@changesets/cli": "^2.10.3",
     "@iconbox/snappmarket": "^1.0.5",
     "abort-controller": "^3.0.0",
     "isomorphic-unfetch": "^3.0.0",
