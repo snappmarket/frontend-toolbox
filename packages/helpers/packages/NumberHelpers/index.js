@@ -63,8 +63,16 @@ export const numericInputValidation = ({
 }) => {
   let result = {};
   const newInputValue = inputValue.replace(/[^0-9]/g, '');
-  const isValid = () =>
-    newInputValue !== '' && newInputValue >= min && newInputValue <= max;
+
+  const isValid = () => {
+    if (max) {
+      return (
+        newInputValue !== '' && newInputValue >= min && newInputValue <= max
+      );
+    }
+    return newInputValue !== '' && newInputValue >= min;
+  };
+
   const checkedIsValid = isValid();
   const regexp = new RegExp(`^[0-9]*[1-9][0-9]*$`);
 
@@ -104,5 +112,5 @@ export const zeroPadding = (number, padding = 2) => {
   const numberLength = `${number}`.length;
   const zeroCount = numberLength < padding ? padding - numberLength : 0;
 
-  return `${[...Array(zeroCount)].map(() => '0').join('')}${number}`
-}
+  return `${[...Array(zeroCount)].map(() => '0').join('')}${number}`;
+};
