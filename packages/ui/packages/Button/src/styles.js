@@ -43,21 +43,21 @@ export const StyledLabel = Styled.span`
   border-radius: ${rem(1)};
   font-size: ${rem(1.1)};
   padding: ${rem(0.2, 0.8)};
-  background: ${makeRgbaColor(0.25, defineForegroundColor(`${props => color(props.color, 'dark')(props)}`))};
+  background: ${props => makeRgbaColor(0.25, defineForegroundColor(`${color(props.color, 'dark')(props)}`))};
 `;
 
 /* eslint-disable indent */
 export const StyledPrimaryButton = Styled(StyledButton)`
   background-color: ${props => color(props.color, props.shade)(props)};
   border: none;
-  color: ${color(defineForegroundColor(`${props => color(props.color, props.shade)(props)}`))};
+  color: ${props => color(defineForegroundColor(`${color(props.color, props.shade)(props)}`))};
   svg {
-    fill: ${color(defineForegroundColor(`${props => color(props.color,props.shade)(props)}`))};
+    fill: ${props => color(defineForegroundColor(`${color(props.color,props.shade)(props)}`))};
   }
   &:hover,
   &:active {
-    background-color: ${props => getNextProp(color(props.color)(props), props.shade)};
-  }
+    background-color: ${props =>
+    getNextProp(props.theme.colors[props.color], props.shade)};  }
   &:focus,
   &:active {
     box-shadow: ${rem(0,0, 1, -0.1)} ${props => makeRgbaColor(0.5, props.color, props.shade)(props)};
@@ -65,9 +65,9 @@ export const StyledPrimaryButton = Styled(StyledButton)`
   &:disabled {
     cursor: not-allowed;
     background-color: ${props => color(props.color, 'ultra-light')(props)};
-    color: ${color(defineForegroundColor(`${props => color(props.color, 'dark')}`))};
+    color: ${props => color(defineForegroundColor(`${color(props.color, 'dark')}`))};
     svg {
-      fill: ${color(defineForegroundColor(`${props => color(props.color, 'dark')}`))};
+      fill: ${props => color(defineForegroundColor(`${color(props.color, 'dark')}`))};
     }
   }
 `;
