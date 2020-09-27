@@ -81,9 +81,9 @@ export const StyledOutlineButton = Styled(StyledPrimaryButton)`
   }
   &:hover,
   &:active {
-    color: ${color(defineForegroundColor(`${props => color(props.color, props.shade)(props)}`))};
+    color: ${props => color(defineForegroundColor(`${color(props.color, props.shade)(props)}`))};
     svg {
-      fill: ${color(defineForegroundColor(`${props => color(props.color, props.shade)(props)}`))};
+      fill: ${props => color(defineForegroundColor(`${color(props.color, props.shade)(props)}`))};
     }
   }
   &:disabled {

@@ -20,7 +20,7 @@ export const StyledLabel = Styled.label`
 export const StyledPrimaryLabel = Styled(StyledLabel)`
   background-color: ${props => color(props.color, 'normal')(props)};
   border-color: ${props => color(props.color, 'normal')(props)};
-  color: ${color(defineForegroundColor(`${props=> color(props.color, 'dark')(props)}`))};
+  color: ${props => color(defineForegroundColor(`${color(props.color, 'dark')(props)}`))};
 `;
 
 export const StyledMaterialLabel = Styled(StyledLabel)`
