@@ -303,7 +303,7 @@ class SliderCore {
       }
     }
 
-    if (dots || paginationWrapper) {
+    if (dots || (paginationWrapper && paginationWrapper.current)) {
       if (dots) {
         elementCreator({ tag: 'Ul', wrapper: slider, className: 'dots' });
       }
@@ -373,8 +373,12 @@ class SliderCore {
       setIndex,
       setPosInitial,
       setAllowShift,
+      getSlidesLength,
     } = this;
 
+    if (getSlidesLength() <= responsiveItemCount(responsive)) {
+      return false;
+    }
     const sliderItems = getSliderItems();
     const newIndex = infinite
       ? newPosition + responsiveItemCount(responsive) + 1
