@@ -54,12 +54,12 @@ export const StyledTableFooter = Styled.tfoot`
 
 export const StyledTableRow = Styled.tr`
   &:not(:last-child){
-    border-bottom: solid ${rem(0.1)} ${rem('gray', 'ultra-light')};
+    border-bottom: solid ${rem(0.1)} ${color('gray', 'ultra-light')};
   }
   > * {
     padding: ${rem(1)};
     &:not(:first-child){
-      border-right: solid ${rem(0.1)} ${rem('gray', 'ultra-light')};
+      border-right: solid ${rem(0.1)} ${color('gray', 'ultra-light')};
     }
   }
 `;
