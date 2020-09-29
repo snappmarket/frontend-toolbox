@@ -16,6 +16,7 @@ import {
   calcAutoWidthAllSliderItems,
   setTranslate3d,
   directionSetter,
+  calcFinalItemPosition,
 } from './utils';
 
 import { shiftSlideIsDir } from './sliderArrows/partial';
@@ -366,14 +367,16 @@ class SliderCore {
 
   goToShowingSlide(newPosition) {
     const {
-      config: { responsive, rtl, infinite },
+      config: { responsive, rtl, infinite, slider, nav, autoWidth },
       getSliderItems,
       transitionendWatcherCall,
       getSliderItemWidth,
       setIndex,
       setPosInitial,
-      setAllowShift,
       getSlidesLength,
+      slideSize,
+      sliderMainWidth,
+      perSlide,
     } = this;
 
     if (getSlidesLength() <= responsiveItemCount(responsive)) {
@@ -388,22 +391,36 @@ class SliderCore {
       input: -getSliderItemWidth() * newIndex,
     });
 
-    setAllowShift(false);
-    const itemClassParams = {
-      item: getSliderItems(),
-      className: 'shifting',
-    };
+    const finalItemPosition = calcFinalItemPosition({
+      indexItem: newIndex,
+      slideSize,
+      sliderItems,
+      sliderMainWidth,
+      perSlide,
+      slidesLength: getSlidesLength(),
+      infinite,
+      slider,
+      nav,
+      rtl,
+      autoWidth,
+    });
 
-    addClassToElement(itemClassParams);
+    if (Math.abs(result) < Math.abs(finalItemPosition)) {
+      sliderItems.style.transform = setTranslate3d(result);
+      setIndex(newIndex);
+      setPosInitial(result);
 
-    sliderItems.style.transform = setTranslate3d(result);
+      setTimeout(() => {
+        transitionendWatcherCall();
+      }, 0);
+      return newIndex;
+    }
+    sliderItems.style.transform = setTranslate3d(-finalItemPosition);
     setIndex(newIndex);
-    setPosInitial(result);
-
+    setPosInitial(-finalItemPosition);
     setTimeout(() => {
       transitionendWatcherCall();
-      setAllowShift(false);
-    }, 100);
+    }, 0);
     return newIndex;
   }
 
