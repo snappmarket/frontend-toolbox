@@ -34,6 +34,13 @@ const Accordion = ({
     }
   }, [activeAccordionId]);
 
+  useDidUpdateEffect(() => {
+    /**
+     * notify accordion has been triggered from the outside
+     */
+    changeActive(initialAccordion);
+  }, [initialAccordion]);
+
   return (
     <StyledAccordion {...rest}>
       <AccordionProvider
