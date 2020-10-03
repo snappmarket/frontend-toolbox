@@ -122,7 +122,7 @@
     "@changesets/cli": "^2.10.2",
     "@iconbox/snappmarket": "^1.0.5",
     "abort-controller": "^3.0.0",
-    "isomorphic-unfetch": "^3.0.0",
+    "isomorphic-unfetch": "^3.1.0",
     "lodash": "^4.17.19",
     "mitt": "^2.1.0",
     "polished": "^3.6.7",
