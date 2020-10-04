@@ -35,6 +35,7 @@ import {
   nextBlock,
   nextNone,
   sorter,
+  isFloat,
 } from '../src/core/utils';
 
 // real DOM generator
@@ -73,9 +74,17 @@ const mockSlides = `
     </div>
 `;
 const mockTranslate3d = `
-    <div class="slides" style="transform: translate3d(1000px, 0px, 0px);"></div>
-`;
+    <div class="slides" style="transform: translate3d(1000px, 0px, 0px);">
+      <span class="slide active" data-page="1" style="width: 607.5px;">Slide 1</span>
+      <span class="slide active" data-page="1" style="width: 607.5px;">Slide 2</span>
+      <span class="slide" data-page="2" style="width: 607.5px;">Slide 3</span>
+      <span class="slide" data-page="2" style="width: 607.5px;">Slide 4</span>
+      <span class="slide" data-page="3" style="width: 607.5px;">Slide 5</span>
+    </div>`;
 
+test('shoult number is float', () => {
+  expect(isFloat(2.5)).toBe(true);
+});
 test('responsiveItemCount 0:{items:2.5} to equal 2.5', () => {
   const config = {
     0: {
@@ -359,7 +368,7 @@ describe('Carousel ui component tests', () => {
   });
 
   test('Check sorter', () => {
-    expect([0,960,450,1200].sort(sorter)).toStrictEqual([0,450,960,1200]);
+    expect([0, 960, 450, 1200].sort(sorter)).toStrictEqual([0, 450, 960, 1200]);
   });
 
   test('Check current index', () => {
@@ -370,6 +379,9 @@ describe('Carousel ui component tests', () => {
       slideSize: 607.5,
       sliderMainWidth: 1215,
       slidesLength: 5,
+      freeScroll: false,
+      autoWidth: false,
+      responsiveItemCount: 2,
     };
     const testParams3d = {
       sliderItems: stringToHTML(mockTranslate3d),
@@ -378,10 +390,13 @@ describe('Carousel ui component tests', () => {
       slideSize: 607.5,
       sliderMainWidth: 1215,
       slidesLength: 5,
+      freeScroll: false,
+      autoWidth: false,
+      responsiveItemCount: 2,
     };
 
     expect(calcCurrentIndex(testParams)).toBe(0);
-    expect(calcCurrentIndex(testParams3d)).toBe(1);
+    expect(calcCurrentIndex(testParams3d)).toBe(2);
   });
 
   test('Check setSliderItemsPosition', () => {
