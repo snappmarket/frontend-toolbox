@@ -408,6 +408,8 @@ export const dragEnd = params => {
 
   if (
     !infinite &&
+    Math.abs(currentPosition) < Math.abs(finalItemPosition) &&
+    currentPosition > 0 &&
     startTrans !== currentPosition &&
     !freeScroll &&
     !autoWidth

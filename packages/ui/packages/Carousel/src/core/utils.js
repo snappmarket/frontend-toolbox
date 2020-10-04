@@ -10,6 +10,8 @@ export const removeClassFromElement = params => {
   return item;
 };
 
+export const isFloat = n => Number(n) === n && n % 1 !== 0;
+
 // eslint-disable-next-line consistent-return
 export const calcCurrentIndex = params => {
   const {
@@ -41,7 +43,7 @@ export const calcCurrentIndex = params => {
 
   if (Math.abs(getTranslate3d(sliderItems)) > 0) {
     const scroll = Math.abs(getTranslate3d(sliderItems));
-    if (!freeScroll && !autoWidth && responsiveItemCount === 1) {
+    if (!freeScroll && !autoWidth && !isFloat(responsiveItemCount)) {
       return Math.round((scroll + sliderMainWidth) / slideSize - perSlide);
     }
     return Math.trunc((scroll + sliderMainWidth) / slideSize - perSlide);
