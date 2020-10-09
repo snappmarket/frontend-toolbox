@@ -41,7 +41,6 @@ const Modal = forwardRef((props, ref) => {
   const [position, setPosition] = useState(initialPosition);
   const { height: modelHeight } = useResizeObserver({ ref: visibility ? modalRef : null });
 
-  console.log({ modelHeight });
   useEffect(() => {
     if(lightBoxRef.current) {
       lightBoxRef.current.style.height = `${modelHeight + 100}px`;
