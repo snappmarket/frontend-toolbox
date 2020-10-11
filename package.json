@@ -24,6 +24,7 @@
     "docz:serve": "cross-env BABEL_ENV=docz docz serve",
     "docz:deploy": "surge .docz/dist",
     "release": "node ./scripts/release/release.js",
+    "release:note": "cd ./scripts/changeLog/ && bash index.sh",
     "jsdoc2docz": "node ./scripts/docs/jsdocs-to-docz.js"
   },
   "devDependencies": {
