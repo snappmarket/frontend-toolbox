@@ -107,10 +107,18 @@ export const StyledSimpleCarousel = Styled.div`
   .flex-scroll-on{
     .wrapper{
       overflow-x: auto !important;
+      touch-action: pan-y pan-x manipulation;
+      &::-webkit-scrollbar {
+        width: 0;
+        background: transparent; / make scrollbar transparent /
+      }
     }
     .slides{
       width: auto !important;
       transform: translate3d(0px, 0px, 0px) !important;
+      > * {
+        flex: 0 0 auto;
+      }
     }
     .control, .dots{
       display: none !important;
