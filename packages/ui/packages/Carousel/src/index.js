@@ -13,6 +13,7 @@ const SimpleCarousel = props => {
     refresh,
     nextArrow,
     prevArrow,
+    flexScroll,
   } = props;
   const sliderRed = useRef(null);
   const { customArrow } = slideConfig;
@@ -57,7 +58,9 @@ const SimpleCarousel = props => {
     <StyledSimpleCarousel>
       <div
         data-testid="carousel"
-        className={`slider ${className}`}
+        className={`slider ${className} ${
+          flexScroll ? 'flex-scroll-on' : 'flex-scroll-off'
+        }`}
         ref={sliderRed}
       >
         <div className="wrapper">
@@ -81,8 +84,10 @@ SimpleCarousel.propTypes = {
   refresh: PropTypes.bool,
   nextArrow: PropTypes.node,
   prevArrow: PropTypes.node,
+  flexScroll: PropTypes.node,
 };
 SimpleCarousel.defaultProps = {
   className: '',
+  flexScroll: false,
 };
 export default SimpleCarousel;
