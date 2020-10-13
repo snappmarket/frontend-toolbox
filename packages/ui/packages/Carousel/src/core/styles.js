@@ -104,4 +104,16 @@ export const StyledSimpleCarousel = Styled.div`
     left:auto;
     right:10px;
   }
+  .flex-scroll-on{
+    .wrapper{
+      overflow-x: auto !important;
+    }
+    .slides{
+      width: auto !important;
+      transform: translate3d(0px, 0px, 0px) !important;
+    }
+    .control, .dots{
+      display: none !important;
+    }
+  }
 `;
