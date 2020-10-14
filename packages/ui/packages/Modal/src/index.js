@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import useResizeObserver from 'use-resize-observer';
+import { useResizeObserver } from '@snappmarket/hooks';
 import { getAbsoluteHeight } from '@snappmarket/helpers';
 import { CrossIcon } from '@iconbox/snappmarket';
 
@@ -39,10 +39,12 @@ const Modal = forwardRef((props, ref) => {
   const lightBoxRef = createRef();
   const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const [position, setPosition] = useState(initialPosition);
-  const { height: modelHeight } = useResizeObserver({ ref: visibility ? modalRef : null });
+  const { height: modelHeight } = useResizeObserver(
+    visibility ? modalRef : null,
+  );
 
   useEffect(() => {
-    if(lightBoxRef.current) {
+    if (lightBoxRef.current) {
       lightBoxRef.current.style.height = `${modelHeight + 100}px`;
     }
   }, [modelHeight]);
