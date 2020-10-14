@@ -1,0 +1,42 @@
+---
+name: useResizeObserver
+route: /hooks/useResizeObserver
+menu: 5.Hooks
+---
+
+# useResizeObserver
+> 🏹 detect when react window size changes
+
+[![version](https://img.shields.io/npm/v/@snappmarket/use-route-change.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-route-change)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/use-route-change.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/use-route-change)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/use-route-change.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+
+## get started
+We provide two way of using this package `single` or `multi` :
+```bash
+npm i @snappmarket/use-resize-observer
+OR
+npm i @snappmarket/hooks
+```
+
+## usage
+```javascript
+import useResizeObserver from '@snappmarket/use-resize-observer';
+// or
+// import { useResizeObserver } from '@snappmarket/hooks';
+
+
+const MyComponenet = props => {
+  const { height, width, left, top } = useResizeObserver(ref);
+  /***
+    **
+   add other component codes  
+  **
+  */
+};
+```
