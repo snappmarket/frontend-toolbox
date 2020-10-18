@@ -39,9 +39,7 @@ const Modal = forwardRef((props, ref) => {
   const lightBoxRef = createRef();
   const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const [position, setPosition] = useState(initialPosition);
-  const { height: modelHeight } = useResizeObserver(
-    visibility ? modalRef : null,
-  );
+  const { height: modelHeight } = useResizeObserver({ ref: visibility ? modalRef : null });	
 
   useEffect(() => {
     if (lightBoxRef.current) {
