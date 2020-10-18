@@ -23,7 +23,7 @@ function useResolvedElement(subscriber, refOrElement) {
     if (callbackRefElement.current) {
       element = callbackRefElement.current;
     } else if (refElement.current) {
-      element = refElement.current;ب
+      element = refElement.current;
     } else if (refOrElement instanceof HTMLElement) {
       element = refOrElement;
     }
@@ -63,7 +63,7 @@ function useResizeObserver(opts = {}) {
   // Saving the callback as a ref. With this, I don't need to put onResize in the
   // effect dep array, and just passing in an anonymous function without memoising
   // will not reinstantiate the hook's ResizeObserver
-  const onResize = opts.onResize;
+  const { onResize } = opts;
   const onResizeRef = useRef(undefined);
   onResizeRef.current = onResize;
   // Using a single instance throughout the hook's lifetime
@@ -75,11 +75,12 @@ function useResizeObserver(opts = {}) {
   // In certain edge cases the RO might want to report a size change just after
   // the component unmounted.
   const didUnmount = useRef(false);
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       didUnmount.current = true;
-    };
-  }, []);
+    },
+    [],
+  );
   // Using a ref to track the previous width / height to avoid unnecessary renders
   const previous = useRef({
     width: undefined,
