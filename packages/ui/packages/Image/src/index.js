@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'react-image';
+import { Img } from 'react-image';
 
 import { LogoAnimation } from '../../Loading/src';
 
