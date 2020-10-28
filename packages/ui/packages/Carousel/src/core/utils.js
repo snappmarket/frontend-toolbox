@@ -26,9 +26,8 @@ export const calcCurrentIndex = params => {
     responsiveItemCount,
   } = params;
 
-  const getIndex =
-    getTranslate3d(sliderItems) /
-    vdomArrayConvertor(sliderItems.children)[0].clientWidth;
+  const firstChild = vdomArrayConvertor(sliderItems.children)[0] || {};
+  const getIndex = getTranslate3d(sliderItems) / (firstChild.clientWidth || 1);
 
   if (infinite) {
     if (getIndex >= 0) return Math.round(getIndex);
