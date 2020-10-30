@@ -1,30 +1,11 @@
 {
-  "name": "@snappmarket/use-resize-observer",
   "private": false,
-  "version": "0.1.0",
-  "author": "Mostafa Rastegar <m.rastegar991@gmail.com>",
   "main": "index.js",
   "module": "index.js",
   "scripts": {
     "test": "cross-env BABEL_ENV=test jest --config ../../../../jest.config.js",
     "test:coverage": "cross-env BABEL_ENV=test jest --config ../../../../jest.config.js --coverage=true"
   },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "resize-observer-polyfill": "^1.5.1"
-  },
   "license": "MIT",
-  "keywords": [
-    "hook",
-    "react-hooks",
-    "custom-hook",
-    "useResizeObserver"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/snappmarket/frontend-toolbox"
-  },
-  "sideEffects": false,
-  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useResizeObserver",
-  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e"
+  "sideEffects": false
 }
