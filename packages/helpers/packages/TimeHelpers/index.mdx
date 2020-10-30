@@ -22,21 +22,66 @@ We provide two way of using this package `single` or `multi` :
 npm i @snappmarket/helpers
 ```
 
-## methods
-|        |
-| ------ |
-getTimeWithMilliSeconds                                                 |
-| getClock                                                 |
-| getDiffInDays                                                 |
-| timeDiff                                                  |
-
-
 ## usage
 ```javascript
 import { METHOD_NAME } from '@snappmarket/helpers';
 ```
 
 <!-- doc -->
+## Functions
 
+<dl>
+<dt><a href="#getTimeWithMilliSeconds">getTimeWithMilliSeconds()</a> ⇒ object</dt>
+<dd><p>get time with milli seconds</p>
+</dd>
+<dt><a href="#getClock">getClock(dateString)</a> ⇒ object</dt>
+<dd><p>get date minute and seconds</p>
+</dd>
+<dt><a href="#getDiffInDays">getDiffInDays(date1, date2)</a> ⇒ object</dt>
+<dd><p>get two date and calculate different of them</p>
+</dd>
+<dt><a href="#timeDiff">timeDiff(title)</a></dt>
+<dd><p>different time</p>
+</dd>
+</dl>
 
+<a name="getTimeWithMilliSeconds"></a>
+
+## getTimeWithMilliSeconds
+get time with milli seconds
+
+**Kind**: global function  
+<a name="getClock"></a>
+
+## getClock
+get date minute and seconds
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| dateString | string | given dateString to convert Date format with minutes and seconds |
+
+<a name="getDiffInDays"></a>
+
+## getDiffInDays
+get two date and calculate different of them
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| date1 | Date | 
+| date2 | string | 
+
+<a name="timeDiff"></a>
+
+## timeDiff
+different time
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| title | string | 
 

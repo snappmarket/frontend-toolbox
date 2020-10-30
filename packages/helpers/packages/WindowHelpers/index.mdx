@@ -19,25 +19,15 @@ menu: 6.Helpers
 ## get started
 We provide two way of using this package `single` or `multi` :
 ```bash
-npm i @snappmarket/window-helpers
-OR
-npm i @snappmarket/helpers
+yarn add @snappmarket/helpers
 ```
-
-## methods
-|        |
-| ------ |
-| getPathName                                                 |
-| getWindowSize                                                 |
-| scrollTop                                                 |
-| detectBrowser                                                 |
 
 ## usage
 ```javascript
 import { METHOD_NAME } from '@snappmarket/helpers';
 ```
-``
 
+<!-- doc -->
 ## Functions
 
 <dl>
@@ -47,8 +37,17 @@ import { METHOD_NAME } from '@snappmarket/helpers';
 <dt><a href="#getWindowSize">getWindowSize()</a> ⇒ Object</dt>
 <dd><p>gets dimension  of the window</p>
 </dd>
+<dt><a href="#getAbsoluteHeight">getAbsoluteHeight(el)</a> ⇒ number</dt>
+<dd><p>Get full height of element</p>
+</dd>
 <dt><a href="#isMobile">isMobile()</a> ⇒ boolean</dt>
 <dd><p>checks if the device of the user is a handheld device or not</p>
+</dd>
+<dt><a href="#scrollTop">scrollTop()</a> ⇒ function</dt>
+<dd><p>handle scroll to given position with smooth animation</p>
+</dd>
+<dt><a href="#detectBrowser">detectBrowser(browser)</a> ⇒ boolean</dt>
+<dd><p>check given browser is in userAgant or not</p>
 </dd>
 </dl>
 
@@ -57,7 +56,7 @@ import { METHOD_NAME } from '@snappmarket/helpers';
 ## getPathName
 gets last part of URL and adds _page suffix to it
 
-**Kind**: global function
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -68,10 +67,38 @@ gets last part of URL and adds _page suffix to it
 ## getWindowSize
 gets dimension  of the window
 
-**Kind**: global function
+**Kind**: global function  
+<a name="getAbsoluteHeight"></a>
+
+## getAbsoluteHeight
+Get full height of element
+
+**Kind**: global function  
+
+| Param |
+| --- |
+| el | 
+
 <a name="isMobile"></a>
 
 ## isMobile
 checks if the device of the user is a handheld device or not
 
-**Kind**: global function
+**Kind**: global function  
+<a name="scrollTop"></a>
+
+## scrollTop
+handle scroll to given position with smooth animation
+
+**Kind**: global function  
+<a name="detectBrowser"></a>
+
+## detectBrowser
+check given browser is in userAgant or not
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| browser | string | get browser name |
+

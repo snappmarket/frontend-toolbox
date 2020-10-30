@@ -1,17 +1,7 @@
 {
-  "name": "@snappmarket/time-helpers",
   "private": false,
   "main": "index.js",
   "module": "index.js",
   "license": "MIT",
-  "keywords": [
-    "helpers",
-    "custom-functions",
-    "loadash",
-    "low-size-lodash",
-    "time-helpers"
-  ],
-  "sideEffects": false,
-  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/TimeHelpers",
-  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e"
+  "sideEffects": false
 }

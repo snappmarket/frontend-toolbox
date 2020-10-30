@@ -107,7 +107,9 @@ export const arraySeparator = (array, separators, noDuplicates = false) => {
 };
 
 /**
- * mixes two arrays and based on a key places the items in correct spot
+ * @function
+ * @name arrayMixture
+ * @description mixes two arrays and based on a key places the items in correct spot
  * @param primaryArray
  * @param secondaryArray
  * @param key

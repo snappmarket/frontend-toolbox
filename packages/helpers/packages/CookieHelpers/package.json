@@ -3,12 +3,5 @@
   "main": "index.js",
   "module": "index.js",
   "license": "MIT",
-  "keywords": [
-    "helpers",
-    "custom-functions",
-    "loadash",
-    "low-size-lodash",
-    "cookie-helpers"
-  ],
   "sideEffects": false
 }

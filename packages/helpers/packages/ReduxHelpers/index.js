@@ -26,24 +26,20 @@ export const normalizeActionType = type => {
 /**
  * @function
  * @name configPersistor
- * @desription A simple persistor
+ * @description A simple persistor
  * @param   config    {object}    configuration of the persistor such as prefix for the localstorage key or whitelist to make the reducer persisted
  * @return {{makeInitialState: (function(Object): {}), getMiddleware: (function(*=): function(*): function(...[*]=))}}
  */
 export const configPersistor = config => {
   /**
-   * @function
-   * @name makeItemName
-   * @description concatenates the name of the reducer with the given prefix
+   * Concatenates the name of the reducer with the given prefix
    * @param  name    {string}    name of the reducer
    * @return {string}
    */
   const makeItemName = name => `${config.prefix}${name}`;
 
   /**
-   * @function
-   * @name makeInitialState
-   * @description Get persisted state and join it with initial state
+   * Get persisted state and join it with initial state
    * @param initialState    {object}    default state of the application
    * @returns {object}
    */
@@ -63,9 +59,7 @@ export const configPersistor = config => {
   };
 
   /**
-   * @function
-   * @name getMiddleware
-   * @description Make a middleware for our persistor
+   * Make a middleware for our persistor
    * @param store
    * @return {function(*): function(...[*]=)}
    */
