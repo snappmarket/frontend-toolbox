@@ -17,7 +17,7 @@
 
 ## get started 
 ```bash 
-npm i @snappmarket/hooks
+yarn add @snappmarket/hooks
 ```
 
 
@@ -43,3 +43,4 @@ const SampleComponent = props => {
   // use hook here
 };
 ```
+<!-- doc -->

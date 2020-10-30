@@ -32,3 +32,5 @@
 | [TemplateHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/TemplateHelpers)   | `HexToRgb`, `defineForegroundColor`, `makeRgba`, `decideMeasurement`, `makeShadow`  |
 | [WindowHelpers](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/WindowHelpers)       | `getPathName`, `getWindowSize`    |
 
+
+<!-- doc -->
