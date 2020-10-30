@@ -1,11 +1,13 @@
 import { useRef, useEffect } from 'react';
 
 /**
- * Calls function on component update or inputs change phase
+ * @function
+ * @name useDidUpdateEffect
+ * @description Calls function on component update or inputs change phase
  * @param fn
  * @param inputs
  */
-export default (fn, inputs) => {
+export default function useDidUpdateEffect(fn, inputs) {
   const didMountRef = useRef(false);
 
   useEffect(() => {

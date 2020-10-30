@@ -5,7 +5,7 @@ menu: 5.Hooks
 ---
 
 # useTimeout
-> ⏰ manage timeout easily
+> ⏰ run a callback after a delay
 
 [![version](https://img.shields.io/npm/v/@snappmarket/hooks.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/hooks)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/hooks.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/hooks)
@@ -30,7 +30,9 @@ import { useTimeout } from '@snappmarket/hooks';
 
 const SampleComponent = props => {
   useTimeout(() => {
-    // do sth here
-  });
+    // do a callback
+  }, [200]);
 };
 ```
+
+<!-- doc -->

@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * Will count till time or increase time
+ * @function
+ * @name useTimer
+ * @description Will count till time or increase time
  * @param config
  * @returns {{start: *, reset: *, time: *, pause: *}}
  */
-export default config => {
+export default function useTimer(config) {
   const initialConfig = {
     endTime: null,
     initialTime: 0,

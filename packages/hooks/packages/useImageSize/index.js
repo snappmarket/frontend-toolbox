@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 
 /**
- * Gets image url and returns [width, height]
+ * @function
+ * @name useImageSize
+ * @description Gets image url and returns [width, height]
  * @param {string} url - The image url
+ * @returns {array} width, height
  */
-export default url => {
+export default function useImageSize(url) {
   const [size, setSize] = useState([0, 0]);
 
   useEffect(() => {

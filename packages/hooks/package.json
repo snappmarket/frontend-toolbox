@@ -26,7 +26,8 @@
   "peerDependencies": {
     "react": "^16.8.6",
     "react-router-dom": "^5.1.2",
-    "@snappmarket/config": "^0.2.10"
+    "@snappmarket/config": "^0.2.10",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "engines": {
     "node": ">=8",

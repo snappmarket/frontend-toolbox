@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 
 /**
- * Use window scroll
+ * @function
+ * @name useWindowScroll
+ * @description Use window scroll
  * @param callback
  * @param hasMore
  * @param threshold
  */
-export default ({ callback = () => {}, hasMore = true, threshold = 100 }) => {
+export default function useWindowScroll({ callback = () => {}, hasMore = true, threshold = 100 }) {
   const handleScroll = () => {
     if (
       document.body.scrollHeight <=

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
 /**
- * Debounce setting a value
+ * @function
+ * @name useDebounce
+ * @description Debounce setting a value
  * @param value
  * @param delay
  * @returns {[string, fn, fn]}

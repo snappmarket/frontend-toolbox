@@ -1,18 +1,20 @@
 import {useEffect} from 'react';
 
 /**
- * Use elemenet scroll
+ * @function
+ * @name useElementScroll
+ * @description Use elemenet scroll
  * @param reference
  * @param callback
  * @param hasMore
  * @param threshold
  */
-export default ({
+export default function useElementScroll({
   reference,
   callback = () => {},
   hasMore = true,
   threshold = 100,
-}) => {
+}) {
   const handleScroll = () => {
     if (
       reference.current.scrollHeight <=

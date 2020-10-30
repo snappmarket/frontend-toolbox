@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 /* eslint-disable no-console */
 
 const args = process.argv.slice(2);
-const path = args[0] || './packages/helpers/packages/*/*.js';
+const path = args[0] || './packages/hooks/packages/*/*.js';
 glob(path, (err, files) => {
   files.forEach(file => {
     const fileParentDir = file.substr(0, file.lastIndexOf('/'));

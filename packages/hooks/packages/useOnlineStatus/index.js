@@ -7,7 +7,13 @@ function getOnlineStatus() {
     : true;
 }
 
-const useOnlineStatus = () => {
+/**
+ * @function
+ * @name useOnlineStatus
+ * @description returns user connection status
+ * @returns {boolean} onlineStatus
+ */
+export default function useOnlineStatus() {
   const [onlineStatus, setOnlineStatus] = useState(getOnlineStatus());
 
   const goOnline = () => setOnlineStatus(true);
@@ -25,5 +31,3 @@ const useOnlineStatus = () => {
 
   return onlineStatus;
 };
-
-export default useOnlineStatus;

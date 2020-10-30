@@ -1,15 +1,8 @@
 import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
-// This of course could've been more streamlined with internal state instead of
-// refs, but then host hooks / components could not opt out of renders.
-// This could've been exported to its own module, but the current build doesn't
-// seem to work with module imports and I had no more time to spend on this...
 function useResolvedElement(subscriber, refOrElement) {
-  // The default ref has to be non-conditionally declared here whether or not
-  // it'll be used as that's how hooks work.
-  // @see https://reactjs.org/docs/hooks-rules.html#explanation
-  let ref = useRef(null); // Default ref
+  let ref = useRef(null);
   const refElement = useRef(null);
   const callbackRefElement = useRef(null);
   const callbackRef = useCallback(element => {
@@ -59,7 +52,15 @@ function useResolvedElement(subscriber, refOrElement) {
     callbackRef,
   };
 }
-function useResizeObserver(opts = {}) {
+
+/**
+ * @function
+ * @name useResizeObserver
+ * @description a hook that uses Resize Observer API to observe changes
+ * @param opts
+ * @returns {{ref: *, width: *, callbackRef: *, height: *}}
+ */
+export default function useResizeObserver(opts = {}) {
   // Saving the callback as a ref. With this, I don't need to put onResize in the
   // effect dep array, and just passing in an anonymous function without memoising
   // will not reinstantiate the hook's ResizeObserver
@@ -135,4 +136,3 @@ function useResizeObserver(opts = {}) {
     [ref, callbackRef, size ? size.width : null, size ? size.height : null],
   );
 }
-export default useResizeObserver;
