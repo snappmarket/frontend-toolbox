@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 /**
  * @function
  * @name useFocus
- * @description Focus on a ref after render
+ * @description A hook that focus on a ref after render
  * @param initialRef
  * @returns {React.MutableRefObject<*>}
  */

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 /**
  * @function
  * @name useTimer
- * @description Will count till time or increase time
+ * @description A hook that count till time or increase time
  * @param config
  * @returns {{start: *, reset: *, time: *, pause: *}}
  */

@@ -10,7 +10,7 @@ function getOnlineStatus() {
 /**
  * @function
  * @name useOnlineStatus
- * @description returns user connection status
+ * @description A hook that returns user connection status
  * @returns {boolean} onlineStatus
  */
 export default function useOnlineStatus() {

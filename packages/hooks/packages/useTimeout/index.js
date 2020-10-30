@@ -3,7 +3,7 @@ import { useEffect, useRef, useCallback } from 'react';
 /**
  * @function
  * @name useTimeout
- * @description call a callback after a delay
+ * @description A hook that calls a callback after a delay
  * @param callback
  * @param delay
  * @returns {{reset: *}}

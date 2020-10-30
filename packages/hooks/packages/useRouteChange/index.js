@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 /**
  * @function
  * @name useRouteChange
- * @description Detect react router dom route change
+ * @description A hook that detect react router dom route change
  * @param fn
  */
 export default function useRouteChange(fn) {

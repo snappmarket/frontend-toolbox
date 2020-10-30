@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react';
 /**
  * @function
  * @name useDidUpdateEffect
- * @description Calls function on component update or inputs change phase
+ * @description A hook that calls function on component update or inputs change phase
  * @param fn
  * @param inputs
  */

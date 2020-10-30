@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 /**
  * @function
  * @name useWindowSize
- * @description Give window size and re-render component
+ * @description A hook that gives window size and re-render component
  * @returns {{width: string, height: string}}
  */
 export default function useWindowSize() {

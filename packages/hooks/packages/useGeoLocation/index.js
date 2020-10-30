@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 /**
  * @function
  * @name useGeoLocation
- * @description Get access to geo location based on timeout
+ * @description A hook that get access to geo location based on timeout
  * @note : if timeout error it will send TIMEOUT as error
  * @param timeout number
  * @param options object for getCurrentPosition options

@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react';
 /**
  * @function
  * @name usePreviousValue
- * @description Remember a variables previous value
+ * @description A hook that remembers a variables previous value
  * @param value
  * @returns {undefined}
  */

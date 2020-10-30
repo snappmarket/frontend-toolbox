@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 /**
  * @function
  * @name useDebounce
- * @description Debounce setting a value
+ * @description A hook that debounce setting a value
  * @param value
  * @param delay
- * @returns {[string, fn, fn]}
+ * @returns {Array}
  */
 export default function useDebounce(value, delay) {
   // State and setters for debounced value

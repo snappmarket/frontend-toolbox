@@ -56,7 +56,7 @@ function useResolvedElement(subscriber, refOrElement) {
 /**
  * @function
  * @name useResizeObserver
- * @description a hook that uses Resize Observer API to observe changes
+ * @description A hook that uses Resize Observer API to observe changes
  * @param opts
  * @returns {{ref: *, width: *, callbackRef: *, height: *}}
  */

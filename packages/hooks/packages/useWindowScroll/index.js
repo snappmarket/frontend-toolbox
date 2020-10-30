@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 /**
  * @function
  * @name useWindowScroll
- * @description Use window scroll
+ * @description A hook that make easier to make infinity scroll on window
  * @param callback
  * @param hasMore
  * @param threshold

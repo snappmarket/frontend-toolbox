@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 /**
  * @function
  * @name useForceUpdate
- * @description Force component re-render
+ * @description A hook that forces component re-render
  * @returns {Function}
  */
 export default function useForceUpdate() {

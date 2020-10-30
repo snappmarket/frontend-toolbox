@@ -3,7 +3,7 @@ import {useEffect} from 'react';
 /**
  * @function
  * @name useElementScroll
- * @description Use elemenet scroll
+ * @description A hook that make easier to make infinity scroll on specific element
  * @param reference
  * @param callback
  * @param hasMore

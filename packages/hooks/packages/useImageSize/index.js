@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 /**
  * @function
  * @name useImageSize
- * @description Gets image url and returns [width, height]
+ * @description A hook that gets image url and returns [width, height]
  * @param {string} url - The image url
  * @returns {array} width, height
  */
