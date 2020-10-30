@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 
 /**
- * Debounce setting a value
+ * @function
+ * @name useDebounce
+ * @description A hook that debounce setting a value
  * @param value
  * @param delay
- * @returns {[string, fn, fn]}
+ * @returns {Array}
  */
 export default function useDebounce(value, delay) {
   // State and setters for debounced value

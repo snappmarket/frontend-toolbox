@@ -105,3 +105,33 @@ export const arraySeparator = (array, separators, noDuplicates = false) => {
   });
   return result;
 };
+
+/**
+ * @function
+ * @name arrayMixture
+ * @description mixes two arrays and based on a key places the items in correct spot
+ * @param primaryArray
+ * @param secondaryArray
+ * @param key
+ * @return {[]}
+ */
+export const arrayMixture = (
+  primaryArray,
+  secondaryArray,
+  key = 'position',
+) => {
+  let result = [];
+  primaryArray.forEach((primaryArrayItem, index) => {
+    const stack = secondaryArray.filter(
+      item => item[key] <= index && item[key] > index - 1,
+    );
+    result = [...result, ...stack, primaryArrayItem];
+    if (index === primaryArray.length - 1) {
+      const rest = secondaryArray.filter(
+        item => item[key] > primaryArray.length - 1,
+      );
+      result = [...result, ...rest];
+    }
+  });
+  return result;
+};

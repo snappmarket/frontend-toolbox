@@ -8,117 +8,26 @@ menu: 6.Helpers
 # ArrayHelpers
 > ✴ Methods that helps us with arrays
 
-[![version](https://img.shields.io/npm/v/@snappmarket/array-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/array-helpers)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/array-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/array-helpers)
+[![version](https://img.shields.io/npm/v/@snappmarket/helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/helpers.svg?style=flat-square)](https://www.npmtrends.com/@snappmarket/helpers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/array-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/blob/develop/packages/ui/index.mdx)
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
 ## get started
-We provide two way of using this package `single` or `multi` :
+
+Easily install `@snappmarket/helpers` first, then use any helper you want in your components with fully
+tree-shakable code.
+
 ```bash
-npm i @snappmarket/array-helpers
-OR
 npm i @snappmarket/helpers
 ```
 
-## methods
-|        |
-| ------ |
-| arrayItemAddProp                                                 |
-| flattenArray                                                 |
-| stringifyArray                                                 |
-| deepFlatten                                                 |
-
-
 ## usage
 ```javascript
-import { METHOD_NAME } from '@snappmarket/array-helpers';
-// or
-// import { METHOD_NAME } from '@snappmarket/helpers';
+import { METHOD_NAME } from '@snappmarket/helpers';
 ```
 
-## Functions
-
-<dl>
-<dt><a href="#arrayItemAddProp">arrayItemAddProp(baseArray, props)</a> ⇒ array</dt>
-<dd><p>adds similar properties to children of an array</p>
-</dd>
-<dt><a href="#flattenArray">flattenArray(array, property)</a> ⇒ array</dt>
-<dd><p>makes a flat array from sub-arrays of an array</p>
-</dd>
-<dt><a href="#stringifyArray">stringifyArray(array, properties)</a> ⇒ string</dt>
-<dd><p>Create string from array</p>
-</dd>
-<dt><a href="#deepFlatten">deepFlatten(array, property, levelKey)</a> ⇒ Array</dt>
-<dd><p>Deep flatten an array</p>
-</dd>
-<dt><a href="#arraySeparator">arraySeparator(array, separators, noDuplicates)</a> ⇒ object</dt>
-<dd><p>separates an array based on criterion into several groups</p>
-</dd>
-</dl>
-
-<a name="arrayItemAddProp"></a>
-
-## arrayItemAddProp
-adds similar properties to children of an array
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| baseArray | array | the given array to add property to items |
-| props | object | object that should be attached to each item |
-
-<a name="flattenArray"></a>
-
-## flattenArray
-makes a flat array from sub-arrays of an array
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| array | array | given array to flatten sub-objects |
-| property | string | name of the key of the of the sub-objects that want to be merged |
-
-<a name="stringifyArray"></a>
-
-## stringifyArray
-Create string from array
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| array | array | base array that wants to be stringify |
-| properties | array | list of properties that want to be in stringified result |
-
-<a name="deepFlatten"></a>
-
-## deepFlatten
-Deep flatten an array
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| array | array | the multi dimensional array that want to be flatten |
-| property | string | name of the property of array that want to navigate through |
-| levelKey | string | name of the property you want to store the level of item |
-
-<a name="arraySeparator"></a>
-
-## arraySeparator
-separates an array based on criterion into several groups
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| array | array | array of strings |
-| separators | object | object of regex separators |
-| noDuplicates | boolean | flag to remove duplicates |
-
+<!-- doc -->

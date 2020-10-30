@@ -7,64 +7,43 @@ menu: 5.Hooks
 # useRouteChange
 > 🏹 detect when react router dom route changes
 
-[![version](https://img.shields.io/npm/v/@snappmarket/use-route-change.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/use-route-change)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/use-route-change.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/use-route-change)
+[![version](https://img.shields.io/npm/v/@snappmarket/hooks.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/hooks)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/hooks.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/hooks)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/use-route-change.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/hooks.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/blob/develop/packages/ui/index.mdx)
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
 
 ## get started
-We provide two way of using this package `single` or `multi` :
+Easily install `@snappmarket/hooks` first, then use any hook you want in your components with fully
+tree-shakable code.
+
 ```bash
-npm i @snappmarket/use-route-change
-OR
-npm i @snappmarket/hooks
+yarn add @snappmarket/hooks
 ```
 
 ## usage
 ```javascript
-import useRouteChange from '@snappmarket/use-route-change';
-// or
-// import { useRouteChange } from '@snappmarket/hooks';
+import { useRouteChange } from '@snappmarket/hooks';
 
-
-const MyComponenet = props => {
+const SampleComponent = props => {
   useRouteChange(() => {
     // do sth here
   });
 };
 ```
 
-### source code
-```javascript
-import { useState, useEffect } from 'react';
+<!-- doc -->
+<a name="useRouteChange"></a>
 
-/**
- * Debounce setting a value
- * @param value
- * @param delay
- * @returns {[string, fn, fn]}
- */
-export default function useDebounce(value, delay) {
-  // State and setters for debounced value
-  const [debouncedValue, setDebouncedValue] = useState(value);
+## useRouteChange
+A hook that detect react router dom route change
 
-  let handler;
-  const canceller = () => {
-    clearTimeout(handler);
-  };
+**Kind**: global function  
 
-  useEffect(() => {
-    handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
+| Param |
+| --- |
+| fn | 
 
-    return canceller;
-  }, [value]);
-
-  return [debouncedValue, canceller, setDebouncedValue];
-}
-```

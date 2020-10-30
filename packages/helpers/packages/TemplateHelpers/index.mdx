@@ -8,53 +8,29 @@ menu: 6.Helpers
 # Template helpers
 > ✴ Methods that helps us to handle template making needs
 
-[![version](https://img.shields.io/npm/v/@snappmarket/template-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/template-helpers)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/template-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/template-helpers)
+[![version](https://img.shields.io/npm/v/@snappmarket/helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/helpers.svg?style=flat-square)](https://www.npmtrends.com/@snappmarket/helpers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/template-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/blob/develop/packages/ui/index.mdx)
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
 ## get started
-We provide two way of using this package `single` or `multi` :
+
+Easily install `@snappmarket/helpers` first, then use any helper you want in your components with fully
+tree-shakable code.
+
 ```bash
-npm i @snappmarket/template-helpers
-OR
 npm i @snappmarket/helpers
 ```
 
-## methods
-|        |
-| ------ |
-| HexToRgb                                                 |
-| defineForegroundColor                                                 |
-| makeRgba                                                 |
-| decideMeasurement                                                 |
-| makeShadow                                                 |
-
 ## usage
 ```javascript
-import { METHOD_NAME } from '@snappmarket/template-helpers';
-// or
-// import { METHOD_NAME } from '@snappmarket/helpers';
+import { METHOD_NAME } from '@snappmarket/helpers';
 ```
-``
 
-## Constants
-
-<dl>
-<dt><a href="#rem">rem</a></dt>
-<dd><p>Will handle every thing about rem, just supply the value</p>
-</dd>
-<dt><a href="#color">color</a> ⇒ function</dt>
-<dd><p>Make a color, or a shade of color</p>
-</dd>
-<dt><a href="#makeRgbaColor">makeRgbaColor</a> ⇒ function</dt>
-<dd><p>Make rgba from a passed color</p>
-</dd>
-</dl>
-
+<!-- doc -->
 ## Functions
 
 <dl>
@@ -73,59 +49,37 @@ import { METHOD_NAME } from '@snappmarket/template-helpers';
 <dt><a href="#makeShadow">makeShadow(hOffset, vOffset, blur, spread, color, inset)</a> ⇒ string</dt>
 <dd><p>returns a shadow suitable for css</p>
 </dd>
+<dt><a href="#makeRgbaColor">makeRgbaColor(opacity, name, shade)</a> ⇒ function</dt>
+<dd><p>Make rgba from a passed color</p>
+</dd>
+<dt><a href="#rem">rem()</a> ⇒ function</dt>
+<dd><p>Will handle every thing about rem, just supply the value</p>
+</dd>
+<dt><a href="#color">color(name, shade)</a> ⇒ function</dt>
+<dd><p>Make a color, or a shade of color</p>
+</dd>
 <dt><a href="#viewport">viewport(size, threshold)</a> ⇒ function</dt>
 <dd><p>returns the viewport width based on pixel</p>
 </dd>
 </dl>
-
-<a name="rem"></a>
-
-## rem
-Will handle every thing about rem, just supply the value
-
-**Kind**: global constant  
-<a name="color"></a>
-
-## color ⇒ function
-Make a color, or a shade of color
-
-**Kind**: global constant  
-
-| Param |
-| --- |
-| name | 
-| shade | 
-
-<a name="makeRgbaColor"></a>
-
-## makeRgbaColor ⇒ function
-Make rgba from a passed color
-
-**Kind**: global constant  
-
-| Param |
-| --- |
-| opacity | 
-| name | 
-| shade | 
 
 <a name="hexToRgb"></a>
 
 ## hexToRgb
 Convert hex color to rgb color
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param |
 | --- |
-| hex | 
+| hex |
 
 <a name="defineForegroundColor"></a>
 
 ## defineForegroundColor
 Decide between dark or light color based on background color brightness
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -136,19 +90,19 @@ Decide between dark or light color based on background color brightness
 ## makeRgba
 Make an rgba color suitable for CSS from a hex color
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param |
 | --- |
-| opacity | 
-| color | 
+| opacity |
+| color |
 
 <a name="decideMeasurement"></a>
 
 ## decideMeasurement
 Decide
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param | Description |
 | --- | --- |
@@ -159,7 +113,7 @@ Decide
 ## makeShadow
 returns a shadow suitable for css
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -170,15 +124,46 @@ returns a shadow suitable for css
 | color | string | color of the shadow |
 | inset | boolean | blur of the shadow, wil be multiplied in rem |
 
+<a name="makeRgbaColor"></a>
+
+## makeRgbaColor
+Make rgba from a passed color
+
+**Kind**: global function
+
+| Param |
+| --- |
+| opacity |
+| name |
+| shade |
+
+<a name="rem"></a>
+
+## rem
+Will handle every thing about rem, just supply the value
+
+**Kind**: global function
+<a name="color"></a>
+
+## color
+Make a color, or a shade of color
+
+**Kind**: global function
+
+| Param |
+| --- |
+| name |
+| shade |
+
 <a name="viewport"></a>
 
 ## viewport
 returns the viewport width based on pixel
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param |
 | --- |
-| size | 
-| threshold | 
+| size |
+| threshold |
 

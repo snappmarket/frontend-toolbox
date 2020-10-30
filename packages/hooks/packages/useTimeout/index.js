@@ -1,6 +1,14 @@
 import { useEffect, useRef, useCallback } from 'react';
 
-const useTimeout = (callback, delay) => {
+/**
+ * @function
+ * @name useTimeout
+ * @description A hook that calls a callback after a delay
+ * @param callback
+ * @param delay
+ * @returns {{reset: *}}
+ */
+export default function useTimeout(callback, delay) {
   // save id in a ref
   const timeoutId = useRef('');
 
@@ -29,5 +37,3 @@ const useTimeout = (callback, delay) => {
 
   return { reset };
 };
-
-export default useTimeout;

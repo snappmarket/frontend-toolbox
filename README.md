@@ -2,7 +2,7 @@
 [![version](https://img.shields.io/npm/v/@snappmarket/ui.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/ui)
 [![downloads](https://img.shields.io/npm/dm/@snappmarket/ui.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/ui)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/ui.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/ui.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/blob/develop/packages/ui/index.mdx)
 [![CodeFactor](https://www.codefactor.io/repository/github/snappmarket/frontend-toolbox/badge/develop)](https://www.codefactor.io/repository/github/snappmarket/frontend-toolbox/overview/develop)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)

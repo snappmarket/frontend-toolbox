@@ -24,7 +24,9 @@ export const getWindowSize = () => {
 };
 
 /**
- * Get full height of element
+ * @function
+ * @name getAbsoluteHeight
+ * @description Get full height of element
  * @param el
  * @returns {number}
  */
@@ -66,7 +68,6 @@ export const isMobile = () => {
  * @description handle scroll to given position with smooth animation
  * @returns {function}
  */
-
 export const scrollTop = () =>
   window.scrollTo(0, 0);
 

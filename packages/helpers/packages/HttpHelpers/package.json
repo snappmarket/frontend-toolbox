@@ -1,30 +1,7 @@
 {
-  "name": "@snappmarket/http-helpers",
   "private": false,
-  "version": "0.2.5",
-  "author": "Jafar Rezaei (SayJeyHi) <jafar.rezaei.ard@gmail.com>",
   "main": "index.js",
   "module": "index.js",
-  "scripts": {
-    "release:child": "node ../../../../scripts/release/release-childs.js"
-  },
-  "engines": {
-    "node": ">=8",
-    "npm": ">=5"
-  },
   "license": "MIT",
-  "keywords": [
-    "helpers",
-    "custom-functions",
-    "loadash",
-    "low-size-lodash",
-    "http-helpers"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/snappmarket/frontend-toolbox"
-  },
-  "sideEffects": false,
-  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/helpers/packages/HttpHelpers",
-  "gitHead": "a5f063027da3f3200d940137c39f875842280b46"
+  "sideEffects": false
 }

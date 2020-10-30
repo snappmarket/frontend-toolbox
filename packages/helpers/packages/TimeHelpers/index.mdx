@@ -8,37 +8,83 @@ menu: 6.Helpers
 # TimeHelpers
 > ✴ Methods that helps us to get time and date
 
-[![version](https://img.shields.io/npm/v/@snappmarket/time-helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/time-helpers)
-[![downloads](https://img.shields.io/npm/dm/@snappmarket/time-helpers.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/time-helpers)
+[![version](https://img.shields.io/npm/v/@snappmarket/helpers.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/helpers)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/helpers.svg?style=flat-square)](https://www.npmtrends.com/@snappmarket/helpers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![MIT License](https://img.shields.io/npm/l/@snappmarket/time-helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/tree/master/packages/useDidUpdateEffect/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/helpers.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/blob/develop/packages/ui/index.mdx)
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
 
 ## get started
-We provide two way of using this package `single` or `multi` :
+
+Easily install `@snappmarket/helpers` first, then use any helper you want in your components with fully
+tree-shakable code.
+
 ```bash
-npm i @snappmarket/time-helpers
-OR
 npm i @snappmarket/helpers
 ```
 
-## methods
-|        |
-| ------ |
-getTimeWithMilliSeconds                                                 |
-| getClock                                                 |
-| getDiffInDays                                                 |
-| timeDiff                                                  |
-
-
 ## usage
 ```javascript
-import { METHOD_NAME } from '@snappmarket/time-helpers';
-// or
-// import { METHOD_NAME } from '@snappmarket/helpers';
+import { METHOD_NAME } from '@snappmarket/helpers';
 ```
 
+<!-- doc -->
+## Functions
 
+<dl>
+<dt><a href="#getTimeWithMilliSeconds">getTimeWithMilliSeconds()</a> ⇒ object</dt>
+<dd><p>get time with milli seconds</p>
+</dd>
+<dt><a href="#getClock">getClock(dateString)</a> ⇒ object</dt>
+<dd><p>get date minute and seconds</p>
+</dd>
+<dt><a href="#getDiffInDays">getDiffInDays(date1, date2)</a> ⇒ object</dt>
+<dd><p>get two date and calculate different of them</p>
+</dd>
+<dt><a href="#timeDiff">timeDiff(title)</a></dt>
+<dd><p>different time</p>
+</dd>
+</dl>
+
+<a name="getTimeWithMilliSeconds"></a>
+
+## getTimeWithMilliSeconds
+get time with milli seconds
+
+**Kind**: global function
+<a name="getClock"></a>
+
+## getClock
+get date minute and seconds
+
+**Kind**: global function
+
+| Param | Type | Description |
+| --- | --- | --- |
+| dateString | string | given dateString to convert Date format with minutes and seconds |
+
+<a name="getDiffInDays"></a>
+
+## getDiffInDays
+get two date and calculate different of them
+
+**Kind**: global function
+
+| Param | Type |
+| --- | --- |
+| date1 | Date |
+| date2 | string |
+
+<a name="timeDiff"></a>
+
+## timeDiff
+different time
+
+**Kind**: global function
+
+| Param | Type |
+| --- | --- |
+| title | string |
 
