@@ -9,10 +9,6 @@
     "test": "cross-env BABEL_ENV=test jest --config ../../../../jest.config.js",
     "test:coverage": "cross-env BABEL_ENV=test jest --config ../../../../jest.config.js --coverage=true"
   },
-  "engines": {
-    "node": ">=8",
-    "npm": ">=5"
-  },
   "peerDependencies": {
     "react": "^16.8.6",
     "resize-observer-polyfill": "^1.5.1"

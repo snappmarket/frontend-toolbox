@@ -1,0 +1,35 @@
+---
+name: usePreviousValue
+route: /hooks/usePreviousValue
+menu: 5.Hooks
+---
+
+# usePreviousValue
+> 🧠 remember a variables previous value
+
+[![version](https://img.shields.io/npm/v/@snappmarket/hooks.svg?style=flat-square)](https://www.npmjs.com/package/@snappmarket/hooks)
+[![downloads](https://img.shields.io/npm/dm/@snappmarket/hooks.svg?style=flat-square)](http://www.npmtrends.com/@snappmarket/hooks)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/npm/l/@snappmarket/hooks.svg?style=flat-square)](https://github.com/snappmarket/frontend-toolbox/blob/develop/packages/ui/index.mdx)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/snappmarket/frontend-toolbox.svg?style=social)](https://github.com/snappmarket/frontend-toolbox/stargazers)
+
+
+## get started
+Easily install `@snappmarket/hooks` first, then use any hook you want in your components with fully
+tree-shakable code.
+
+```bash
+yarn add @snappmarket/hooks
+```
+
+## usage
+```javascript
+import { usePreviousValue } from '@snappmarket/hooks';
+
+const SampleComponent = props => {
+  const prevLocation = usePreviousValue(location);
+
+};
+```

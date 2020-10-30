@@ -9,13 +9,6 @@
     "test": "cross-env BABEL_ENV=test jest --config ../../../../jest.config.js",
     "test:coverage": "cross-env BABEL_ENV=test jest --config ../../../../jest.config.js --coverage=true"
   },
-  "engines": {
-    "node": ">=8",
-    "npm": ">=5"
-  },
-  "peerDependencies": {
-    "react": "^16.8.6"
-  },
   "license": "MIT",
   "keywords": [
     "hook",
@@ -28,7 +21,5 @@
     "type": "git",
     "url": "https://github.com/snappmarket/frontend-toolbox"
   },
-  "sideEffects": false,
-  "homepage": "https://github.com/snappmarket/frontend-toolbox/tree/master/packages/hooks/packages/useTimer",
-  "gitHead": "9153735fe6c0577252a9b12e7e08fc526b39968e"
+  "sideEffects": false
 }
