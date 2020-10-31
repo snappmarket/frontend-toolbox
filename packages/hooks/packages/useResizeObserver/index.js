@@ -17,8 +17,6 @@ function useResolvedElement(subscriber, refOrElement) {
       element = callbackRefElement.current;
     } else if (refElement.current) {
       element = refElement.current;
-    } else if (refOrElement instanceof HTMLElement) {
-      element = refOrElement;
     }
     if (lastReportedElementRef.current === element) {
       return;
@@ -32,7 +30,7 @@ function useResolvedElement(subscriber, refOrElement) {
       cleanupRef.current = subscriber(element);
     }
   };
-  if (refOrElement && !(refOrElement instanceof HTMLElement)) {
+  if (refOrElement) {
     // Overriding the default ref with the given one
     ref = refOrElement;
   }
@@ -61,9 +59,6 @@ function useResolvedElement(subscriber, refOrElement) {
  * @returns {{ref: *, width: *, callbackRef: *, height: *}}
  */
 export default function useResizeObserver(opts = {}) {
-  // Saving the callback as a ref. With this, I don't need to put onResize in the
-  // effect dep array, and just passing in an anonymous function without memoising
-  // will not reinstantiate the hook's ResizeObserver
   const { onResize } = opts;
   const onResizeRef = useRef(undefined);
   onResizeRef.current = onResize;
