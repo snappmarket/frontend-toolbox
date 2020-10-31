@@ -20,11 +20,13 @@ const SimpleCarousel = props => {
   let newSlider = null;
 
   useEffect(() => {
-    newSlider = new Slider({
-      slider: sliderRed.current,
-      ...slideConfig,
-    });
-  }, []);
+    if (children && children.length) {
+      newSlider = new Slider({
+        slider: sliderRed.current,
+        ...slideConfig,
+      });
+    }
+  }, [children]);
 
   useEffect(() => {
     if (typeof showingSlide === 'number' || showingSlide >= 0) {
@@ -55,25 +57,33 @@ const SimpleCarousel = props => {
   };
 
   return (
-    <StyledSimpleCarousel>
-      <div
-        data-testid="carousel"
-        className={`slider ${className} ${
-          flexScroll ? 'flex-scroll-on' : 'flex-scroll-off'
-        }`}
-        ref={sliderRed}
-      >
-        <div className="wrapper">
-          <div className="slides">{children}</div>
-        </div>
-        {customArrow && (
-          <>
-            {!!nextArrow && <span className="control next">{nextArrow}</span>}
-            {!!prevArrow && <span className="control prev">{prevArrow}</span>}
-          </>
-        )}
-      </div>
-    </StyledSimpleCarousel>
+    <>
+      {children && children.length && (
+        <StyledSimpleCarousel>
+          <div
+            data-testid="carousel"
+            className={`slider ${className} ${
+              flexScroll ? 'flex-scroll-on' : 'flex-scroll-off'
+            }`}
+            ref={sliderRed}
+          >
+            <div className="wrapper">
+              <div className="slides">{children}</div>
+            </div>
+            {customArrow && (
+              <>
+                {!!nextArrow && (
+                  <span className="control next">{nextArrow}</span>
+                )}
+                {!!prevArrow && (
+                  <span className="control prev">{prevArrow}</span>
+                )}
+              </>
+            )}
+          </div>
+        </StyledSimpleCarousel>
+      )}
+    </>
   );
 };
 SimpleCarousel.propTypes = {

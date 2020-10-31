@@ -20,11 +20,13 @@ const SimpleCarouselDemo = props => {
   let newSlider = null;
 
   useEffect(() => {
-    newSlider = new Slider({
-      slider: sliderRed.current,
-      ...slideConfig,
-    });
-  }, []);
+    if (children && children.length) {
+      newSlider = new Slider({
+        slider: sliderRed.current,
+        ...slideConfig,
+      });
+    }
+  }, [children]);
 
   useEffect(() => {
     if (typeof showingSlide === 'number' || showingSlide >= 0) {
@@ -56,23 +58,29 @@ const SimpleCarouselDemo = props => {
 
   return (
     <StyledCarouselDemo>
-      <StyledSimpleCarousel>
-        <div
-          data-testid="carousel"
-          className={`slider ${className}`}
-          ref={sliderRed}
-        >
-          <div className="wrapper">
-            <div className="slides">{children}</div>
+      {children && children.length && (
+        <StyledSimpleCarousel>
+          <div
+            data-testid="carousel"
+            className={`slider ${className}`}
+            ref={sliderRed}
+          >
+            <div className="wrapper">
+              <div className="slides">{children}</div>
+            </div>
+            {customArrow && (
+              <>
+                {!!nextArrow && (
+                  <span className="control next">{nextArrow}</span>
+                )}
+                {!!prevArrow && (
+                  <span className="control prev">{prevArrow}</span>
+                )}
+              </>
+            )}
           </div>
-          {customArrow && (
-            <>
-              {!!nextArrow && <span className="control next">{nextArrow}</span>}
-              {!!prevArrow && <span className="control prev">{prevArrow}</span>}
-            </>
-          )}
-        </div>
-      </StyledSimpleCarousel>
+        </StyledSimpleCarousel>
+      )}
     </StyledCarouselDemo>
   );
 };
