@@ -53,9 +53,9 @@ export const cellphoneValidate = () =>
 export const currencyPrice = (amount, hasUnit = true) =>
   `${persianNumber(`${amount}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','))} ${
     hasUnit ? 'تومان' : ''
-  }`; /**
+  }`;
 
-
+/**
  * @function
  * @name decimalsPriceLimiter
  * @description Convert a number into a string, rounding the number to keep only limit (default is 2) decimals
