@@ -26,7 +26,7 @@ const SimpleCarousel = props => {
         ...slideConfig,
       });
     }
-  }, [children]);
+  }, [children.length]);
 
   useEffect(() => {
     if (typeof showingSlide === 'number' || showingSlide >= 0) {

@@ -232,7 +232,7 @@ export const dragAction = params => {
   }
 
   const startAvoidClicks = Posx => {
-    if (Posx > 5) {
+    if (Math.abs(Posx) > 2) {
       addClassToElement({
         item: getSliderItems(),
         className: 'avoid-clicks',
@@ -248,7 +248,7 @@ export const dragAction = params => {
     };
     setPosX2(dragActionTouchmovePosX2(dragActionTouchmovePosX2Params));
     setPosX1(dragActionTouchmovePosX1(clientXParams));
-    startAvoidClicks(dragActionTouchmovePosX1(clientXParams));
+    startAvoidClicks(dragActionTouchmovePosX2(dragActionTouchmovePosX2Params));
   } else {
     const dragActionMousemoveParams = {
       posX1: getPosX1(),
@@ -256,7 +256,7 @@ export const dragAction = params => {
     };
     setPosX2(dragActionMousemove(dragActionMousemoveParams));
     setPosX1(dragActionMousemovePosX1(clientXParams));
-    startAvoidClicks(dragActionMousemovePosX1(clientXParams));
+    startAvoidClicks(dragActionMousemove(dragActionMousemoveParams));
   }
 
   const dragActionCalcPositionParams = {
