@@ -17,6 +17,7 @@ flag  |  description
 -----------------------------------------------------
 -h    |  show help
 -r    |  *{string} git repo url e.g: git.com/project.git
+-b    |  {string} main branch to pull and push, default is 'master'
 -f    |  {string} a file path to set version init with -s search format e.g: 'docker-compose.yml'
 -s    |  {string} search pattern in version file e.g: '- DEPLOY_VERSION=[0-9]*\.[0-9]*\.[0-9]*'
 -p    |  {string} search replace pattern in version file e.g: '- DEPLOY_VERSION='
@@ -112,7 +113,7 @@ if [ "$1" == "-h" ]; then
 fi
 
 
-while getopts :f:u:g:v:c:r:s:p: flag
+while getopts :f:u:g:v:c:r:s:p:b: flag
 do
   # shellcheck disable=SC2220
   case "${flag}" in
@@ -122,6 +123,7 @@ do
     v) VERSION_BUMP_TYPE=${OPTARG};;
     c) GENERATE_CHANGES_LOG=${OPTARG};;
     r) GIT_REPO=${OPTARG};;
+    b) MAIN_BRANCH=${OPTARG};;
     s) FILE_SEARCH_PATTERN=${OPTARG};;
     p) FILE_REPLACE_PATTERN=${OPTARG};;
     :) printf "missing argument for -%s\n" "$OPTARG" >&2
@@ -139,8 +141,15 @@ done
 echo "$usage"
 
 # update current local git
+echo "✔ Checking if master is master or main! (github patch)"
+exists="git show-ref refs/heads/$MAIN_BRANCH"
+master="main"
+if [ -n "$exists" ]; then
+  master="$MAIN_BRANCH"
+fi
+
 echo "✔ Pulling changes from repo"
-git pull origin master
+git pull origin "$master" --rebase > /dev/null 2>&1
 
 echo "✔ Calculating lastest version and new version"
 CURRENT_GIT_VERSION=$(git tag| sort -V | tail -n1 || '1.0.0')
@@ -205,14 +214,14 @@ git commit "${commitParams[@]}" > /dev/null 2>&1
 
 
 echo "✔ Pushing changes to git repo..."
-git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" HEAD:master -o ci.skip --follow-tags > /dev/null 2>&1
+git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" "HEAD:$MAIN_BRANCH" -o ci.skip --follow-tags > /dev/null 2>&1
 
 
 # add release tag and note
 if [ "${ADD_GIT_TAG+1}" ] && [ "$ADD_GIT_TAG" != "0" ]; then
   echo "✔ Adding tag $NEW_GIT_VERSION to git..."
   git tag -a "$NEW_GIT_VERSION" -m "$NEW_TAG_CHANGES"
-  git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" HEAD:master --tags -o ci.skip > /dev/null 2>&1
+  git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" "HEAD:$MAIN_BRANCH" --tags -o ci.skip > /dev/null 2>&1
 fi
 
 # Show message of push
