@@ -139,8 +139,15 @@ done
 echo "$usage"
 
 # update current local git
+echo "✔ Checking if master is master or main! (github patch)"
+exists="git show-ref refs/heads/master"
+master="main"
+if [ -n "$exists" ]; then
+  master="master"
+fi
+
 echo "✔ Pulling changes from repo"
-git pull origin master
+git pull origin "$master" --rebase > /dev/null 2>&1
 
 echo "✔ Calculating lastest version and new version"
 CURRENT_GIT_VERSION=$(git tag| sort -V | tail -n1 || '1.0.0')
