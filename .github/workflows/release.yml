@@ -17,4 +17,4 @@ jobs:
           fetch-depth: 0
 
       - name: Generate changeslog
-        run: bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git'
+        run: bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git' -b 'develop'
