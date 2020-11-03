@@ -16,14 +16,5 @@ jobs:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
-      - name: Setup Node.js 12.x
-        uses: actions/setup-node@master
-        with:
-          node-version: 12.x
-
-      - name: Install Dependencies
-        run: yarn
-
-      - name: Install Dependencies
-        run: yarn release:note
-
+      - name: Generate changeslog
+        run: bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git'
