@@ -140,7 +140,7 @@ echo "$usage"
 
 # update current local git
 echo "✔ Pulling changes from repo"
-git pull origin master > /dev/null 2>&1
+git pull origin master
 
 echo "✔ Calculating lastest version and new version"
 CURRENT_GIT_VERSION=$(git tag| sort -V | tail -n1 || '1.0.0')
