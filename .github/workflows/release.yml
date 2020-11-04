@@ -20,7 +20,8 @@ jobs:
         run: |
           git config --global user.email "git@snapp.market"
           git config --global user.name "snappmarket" 
-          git remote add origin https://github.com/snappmarket/frontend-toolbox.git
+          git config http.postBuffer 524288000
+          git config receive.advertisePushOptions true
 
       - name: Generate changeslog
         run: bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git' -b 'develop'
