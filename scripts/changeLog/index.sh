@@ -13,7 +13,7 @@ info="
 
   v: $version - https://github.con/sayjeyhi/chanjelog
   An open source hack by @sayjeyhi - https://sayjeyhi.com
-  
+
 "
 usage="
 
@@ -157,10 +157,10 @@ git pull origin "$master" --rebase > /dev/null 2>&1
 
 echo "✔ Calculating lastest version and new version"
 CURRENT_GIT_VERSION=$(git tag| sort -V | tail -n1 || '1.0.0')
-echo "  🦍 Cuurent version is: $CURRENT_GIT_VERSION"
+echo "  🔥 Cuurent version is: $CURRENT_GIT_VERSION"
 
 NEW_GIT_VERSION=$(generateVersion "$VERSION_BUMP_TYPE" "$CURRENT_GIT_VERSION")
-echo "  🕺 New version will be: $CURRENT_GIT_VERSION"
+echo "  🔥 New version will be: $CURRENT_GIT_VERSION"
 
 NEW_TAG_CHANGES=$(git log --no-merges --pretty=format:"- %s (**%cn** - %cr)" HEAD..."$CURRENT_GIT_VERSION")
 
@@ -216,7 +216,7 @@ fi
 commitParams+=(-m "🎉 Release v$NEW_GIT_VERSION [skip ci]")
 
 echo "✔ Committing changes..."
-git commit "${commitParams[@]}" 
+git commit "${commitParams[@]}" > /dev/null 2>&1
 
 
 echo "✔ Pushing changes to git repo..."
