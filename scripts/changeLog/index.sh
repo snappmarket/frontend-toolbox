@@ -220,7 +220,7 @@ git commit "${commitParams[@]}" > /dev/null 2>&1
 
 
 echo "✔ Pushing changes to git repo..."
-git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" "HEAD:$MAIN_BRANCH" -o ci.skip --follow-tags > /dev/null 2>&1
+git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" "HEAD:$MAIN_BRANCH" -o ci.skip --follow-tags
 
 
 # add release tag and note
