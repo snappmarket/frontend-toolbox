@@ -3,7 +3,7 @@
 version=1.3.0
 set -o errexit -o nounset -o pipefail
 
-usage="
+info="
    ___ _                  _        __
   / __\ |__   __ _ _ __  (_) ___  / /  ___   __ _
  / /  | '_ \ / _' | '_ \ | |/ _ \/ /  / _ \ / _' |
@@ -12,6 +12,10 @@ usage="
                        |__/                 |___/
 
   v: $version - https://github.con/sayjeyhi/chanjelog
+  An open source hack by @sayjeyhi - https://sayjeyhi.com
+  
+"
+usage="
 
 flag  |  description
 -----------------------------------------------------
@@ -28,8 +32,8 @@ flag  |  description
 
 
 You should have CI_USER and CI_ACCESS_TOKEN variables to allow ci to update your git.
----
-An open source hack by @sayjeyhi - https://sayjeyhi.com with SemVer2.0.0
+----
+
 "
 
 
@@ -108,7 +112,7 @@ function generateVersion {
 }
 
 if [ "$1" == "-h" ]; then
-  echo "$usage"
+  echo "$info $usage"
   exit 0
 fi
 
@@ -138,7 +142,7 @@ do
 done
 
 
-echo "$usage"
+echo "$info"
 
 # update current local git
 echo "✔ Checking if master is master or main! (github patch)"
@@ -212,7 +216,7 @@ fi
 commitParams+=(-m "🎉 Release v$NEW_GIT_VERSION [skip ci]")
 
 echo "✔ Committing changes..."
-git commit "${commitParams[@]}" > /dev/null 2>&1
+git commit "${commitParams[@]}" 
 
 
 echo "✔ Pushing changes to git repo..."
