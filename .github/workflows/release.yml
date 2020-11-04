@@ -21,3 +21,6 @@ jobs:
 
       - name: Generate changeslog
         run: bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git' -b 'develop'
+        env:
+          CI_USER: ${{ secrets.CI_USER }}
+          CI_ACCESS_TOKEN: ${{ secrets.CI_ACCESS_TOKEN }}
