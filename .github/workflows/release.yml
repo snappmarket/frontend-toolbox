@@ -16,5 +16,8 @@ jobs:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
+      - name: Pre-config
+        run: git config --global user.email "git@snapp.market" && git config --global user.name "snappmarket"
+
       - name: Generate changeslog
         run: bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git' -b 'develop'
