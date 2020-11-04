@@ -17,7 +17,10 @@ jobs:
           fetch-depth: 0
 
       - name: Pre-config
-        run: git config --global user.email "git@snapp.market" && git config --global user.name "snappmarket"
+        run: |
+          git config --global user.email "git@snapp.market"
+          git config --global user.name "snappmarket" 
+          git remote add origin https://github.com/snappmarket/frontend-toolbox.git
 
       - name: Generate changeslog
         run: bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git' -b 'develop'
