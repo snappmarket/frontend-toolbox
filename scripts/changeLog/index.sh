@@ -130,6 +130,7 @@ do
     b) MAIN_BRANCH=${OPTARG};;
     s) FILE_SEARCH_PATTERN=${OPTARG};;
     p) FILE_REPLACE_PATTERN=${OPTARG};;
+    d) FILE_REPLACE_PATTERN=${OPTARG};;
     :) printf "missing argument for -%s\n" "$OPTARG" >&2
      echo "$usage" >&2
      exit 1
@@ -220,14 +221,14 @@ git commit "${commitParams[@]}" > /dev/null 2>&1
 
 
 echo "✔ Pushing changes to git repo..."
-git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" "HEAD:$MAIN_BRANCH" -o ci.skip --follow-tags
+git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" -o ci.skip --follow-tags
 
 
 # add release tag and note
 if [ "${ADD_GIT_TAG+1}" ] && [ "$ADD_GIT_TAG" != "0" ]; then
   echo "✔ Adding tag $NEW_GIT_VERSION to git..."
   git tag -a "$NEW_GIT_VERSION" -m "$NEW_TAG_CHANGES"
-  git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" "HEAD:$MAIN_BRANCH" --tags -o ci.skip > /dev/null 2>&1
+  git push "http://$CI_USER:$CI_ACCESS_TOKEN@$GIT_REPO" --tags -o ci.skip > /dev/null 2>&1
 fi
 
 # Show message of push
