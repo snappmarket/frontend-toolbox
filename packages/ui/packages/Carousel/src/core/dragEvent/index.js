@@ -117,8 +117,22 @@ export default class DragEvent {
 
     // Mouse events
     sliderItems.addEventListener('mousedown', dragStartCall);
+
     // Touch events
-    sliderItems.addEventListener('touchstart', dragStartCall);
+    let supportsPassive = false;
+    try {
+      const opts = Object.defineProperty({}, 'passive', {
+        // eslint-disable-next-line getter-return
+        get() {
+          supportsPassive = true;
+        },
+      });
+      window.addEventListener("testPassive", null, opts);
+      window.removeEventListener("testPassive", null, opts);
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
+
+    sliderItems.addEventListener('touchstart', dragStartCall, supportsPassive ? { passive: true } : false);
     sliderItems.addEventListener('touchend', dragEndCall);
     sliderItems.addEventListener('touchmove', dragActionCall);
   }
