@@ -55,6 +55,16 @@ export const currencyPrice = (amount, hasUnit = true) =>
     hasUnit ? 'تومان' : ''
   }`;
 
+/**
+ * @function
+ * @name decimalsPriceLimiter
+ * @description Convert a number into a string, rounding the number to keep only limit (default is 2) decimals
+ * @param   limit    {number}
+ * @return  {string}
+ */
+export const decimalsPriceLimiter = (price, limit = 2) =>
+  price % 1 !== 0 ? parseFloat(price.toFixed(limit), 10) : price;
+
 export const numericInputValidation = ({
   inputValue,
   min,

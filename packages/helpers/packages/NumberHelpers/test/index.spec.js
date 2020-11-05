@@ -70,6 +70,19 @@ describe('NumberHelpers', () => {
     });
   });
 
+  describe('decimalsPriceLimiter', () => {
+    it('should check Price have decimals number', () => {
+      const price = 3795;
+      expect(NumberHelpers.decimalsPriceLimiter(price)).toEqual(price);
+    });
+
+    it('should price parseFloat number with limit number', () => {
+      const price = 3795.5223669;
+      expect(NumberHelpers.decimalsPriceLimiter(price)).toEqual(3795.52);
+      expect(NumberHelpers.decimalsPriceLimiter(price, 3)).toEqual(3795.522);
+    });
+  });
+
   describe('integerInputValidation', () => {
     const min = 1000;
     const max = 50000;
@@ -167,13 +180,13 @@ describe('NumberHelpers', () => {
 
   describe('zeroPadding', () => {
     it('should add starting zeros with default value of padding', () => {
-      expect(NumberHelpers.zeroPadding(2)).toEqual("02");
+      expect(NumberHelpers.zeroPadding(2)).toEqual('02');
     });
     it('should add starting zeros with custom value of padding', () => {
-      expect(NumberHelpers.zeroPadding(2, 3)).toEqual("002");
+      expect(NumberHelpers.zeroPadding(2, 3)).toEqual('002');
     });
     it('should not add starting zeros cause the number length is more than the padding', () => {
-      expect(NumberHelpers.zeroPadding(100, 3)).toEqual("100");
+      expect(NumberHelpers.zeroPadding(100, 3)).toEqual('100');
     });
   });
 });
