@@ -221,7 +221,7 @@ git commit "${commitParams[@]}" > /dev/null 2>&1
 
 
 echo "✔ Pushing changes to git repo..."
-git push --set-upstream origin "$MAIN_BRANCH" -o ci.skip --follow-tags
+git push --set-upstream origin develop -o ci.skip --follow-tags
 
 
 # add release tag and note
