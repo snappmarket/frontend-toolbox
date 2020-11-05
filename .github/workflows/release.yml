@@ -11,18 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
+          token: ${{ secrets.CI_ACCESS_TOKEN }}
 
       - name: Pre-config
         run: |
           git config --global user.email "git@snapp.market"
           git config --global user.name "snappmarket" 
-          git remote remove origin
-          git remote add origin https://${{ secrets.CI_USER }}:${{ secrets.CI_ACCESS_TOKEN }}@github.com/snappmarket/frontend-toolbox.git
-          git remote show origin
+          git remote -v
           
       - name: Generate changeslog
         run: bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git' -b 'develop'
