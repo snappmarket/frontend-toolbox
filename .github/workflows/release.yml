@@ -20,4 +20,5 @@ jobs:
           git config --global user.email "git@snapp.market"
           git config --global user.name "snappmarket" 
           git remote -v
+          git push
           bash ./scripts/changeLog/index.sh -r 'github.com/snappmarket/frontend-toolbox.git' -b 'develop'
