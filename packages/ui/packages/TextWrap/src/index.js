@@ -10,7 +10,7 @@ const TextWrap = ({ className, lines, children }) => {
   useEffect(() => {
     const lineHeight = window.getComputedStyle(textRef.current).getPropertyValue('line-height');
     const height = lines * (lineHeight ? parseInt(lineHeight, 10) : 0);
-    textRef.current.style.height = `${height}px`;
+    textRef.current.style['max-height'] = `${height}px`;
   }, [textRef.current])
 
   return (
