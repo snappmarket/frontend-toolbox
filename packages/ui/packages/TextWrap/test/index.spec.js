@@ -31,7 +31,7 @@ describe('TextWrap ui component tests', () => {
     jest.spyOn(window, 'getComputedStyle').mockImplementation(originalGetComputedStyle)
 
     expect(getByTestId('textWrap')).toContainHTML('content');
-    expect(getByTestId('textWrap')).toHaveStyle('height: 40px;');
+    expect(getByTestId('textWrap')).toHaveStyle('max-height: 40px;');
   });
 
   it('Should render with the className', () => {
