@@ -33,6 +33,7 @@ const Modal = forwardRef((props, ref) => {
     width,
     position: initialPosition,
     closeIcon,
+    animation,
   } = props;
   const bodyRef = useRef(null);
   const modalRef = createRef();
@@ -102,7 +103,7 @@ const Modal = forwardRef((props, ref) => {
           data-testid="modal"
           width={width}
           ref={modalRef}
-          className={`${visibility ? 'visible' : ''} ${position}`}
+          className={`${visibility ? 'visible' : ''} ${animation ? 'animation' : ''} ${position}`}
         >
           {handleClose && typeof handleClose === 'function' && (
             <StyledCloseModalButton
@@ -145,6 +146,7 @@ const Modal = forwardRef((props, ref) => {
 Modal.propTypes = {
   className: PropTypes.string,
   visibility: PropTypes.bool,
+  animation: PropTypes.bool,
   handleClose: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
   onOpen: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
   header: PropTypes.node,
@@ -165,6 +167,7 @@ Modal.defaultProps = {
   footer: null,
   width: 70,
   position: 'center',
+  animation: true,
 };
 
 export default Modal;
