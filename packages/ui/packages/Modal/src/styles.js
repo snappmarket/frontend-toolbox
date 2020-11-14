@@ -33,7 +33,7 @@ export const StyledModal = Styled.div`
   padding: ${rem(1)};
   border-radius: ${rem(0.5)};
   width: ${props => rem(props.width)(props)};
-  opacity: 0;
+  opacity: ${props => props.animation ? '0' : '1'};
 
   &.top {
     top: ${rem(1)};
@@ -46,14 +46,16 @@ export const StyledModal = Styled.div`
   }
   &.visible {
     display: block;
-    &.top {
-      animation: showTop 1 linear 0.3s forwards;
-    }
-    &.center {
-      animation: showCenter 1 linear 0.3s forwards;
-    }
-    &.bottom {
-      animation: showBottom 1 linear 0.3s forwards;
+    &.animation {
+      &.top {
+        animation: showTop 1 linear 0.3s forwards;
+      }
+      &.center {
+        animation: showCenter 1 linear 0.3s forwards;
+      }
+      &.bottom {
+        animation: showBottom 1 linear 0.3s forwards;
+      }
     }
   }
   @keyframes showBottom {
