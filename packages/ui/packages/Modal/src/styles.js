@@ -18,7 +18,7 @@ export const StyledModalWrapper = Styled.div`
 `;
 export const StyledLightBox = Styled.div`
   position: absolute;
-  min-height: ${props => `${props.overWriteHeight}px`};
+  min-height: ${props => props.overWriteHeight};
   top: 0;
   width: 100%;
   background: ${makeRgbaColor(0.6, 'black')};
