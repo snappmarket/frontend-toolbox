@@ -31,6 +31,7 @@ const Modal = forwardRef((props, ref) => {
     footer,
     visibility,
     width,
+    overWriteHeight,
     position: initialPosition,
     closeIcon,
     animation,
@@ -92,12 +93,14 @@ const Modal = forwardRef((props, ref) => {
       <StyledModalWrapper
         data-testid="modalWrapper"
         className={className}
+        overWriteHeight={overWriteHeight}
         ref={ref}
       >
         <StyledLightBox
           ref={lightBoxRef}
           data-testid="modalLightBox"
           onClick={handleClose || undefined}
+          overWriteHeight={overWriteHeight}
         />
         <StyledModal
           data-testid="modal"
@@ -153,6 +156,7 @@ Modal.propTypes = {
   children: PropTypes.node,
   footer: PropTypes.node,
   width: PropTypes.number,
+  overWriteHeight: PropTypes.number,
   position: PropTypes.oneOf(['top', 'center', 'bottom']),
   closeIcon: PropTypes.node,
 };
