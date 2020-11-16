@@ -6,7 +6,7 @@ import Button from '../../Button/src';
 
 export const StyledModalWrapper = Styled.div`
   position: fixed;
-  height: ${props => `${props.overWriteHeight}px`};
+  height: ${props => props.overWriteHeight};
   left: 0;
   right: 0;
   top: 0;

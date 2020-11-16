@@ -156,7 +156,7 @@ Modal.propTypes = {
   children: PropTypes.node,
   footer: PropTypes.node,
   width: PropTypes.number,
-  overWriteHeight: PropTypes.number,
+  overWriteHeight: PropTypes.string,
   position: PropTypes.oneOf(['top', 'center', 'bottom']),
   closeIcon: PropTypes.node,
 };
@@ -172,6 +172,7 @@ Modal.defaultProps = {
   width: 70,
   position: 'center',
   animation: true,
+  overWriteHeight: '100vh',
 };
 
 export default Modal;
