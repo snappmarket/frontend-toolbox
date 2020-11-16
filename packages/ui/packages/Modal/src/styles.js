@@ -6,7 +6,7 @@ import Button from '../../Button/src';
 
 export const StyledModalWrapper = Styled.div`
   position: fixed;
-  height: 100%;
+  height: ${props => props.overWriteHeight};
   left: 0;
   right: 0;
   top: 0;
@@ -18,7 +18,7 @@ export const StyledModalWrapper = Styled.div`
 `;
 export const StyledLightBox = Styled.div`
   position: absolute;
-  min-height: 100vh;
+  min-height: ${props => `${props.overWriteHeight}px`};
   top: 0;
   width: 100%;
   background: ${makeRgbaColor(0.6, 'black')};
