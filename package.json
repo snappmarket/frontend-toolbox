@@ -96,6 +96,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-error-overlay": "^6.0.7",
+    "react-image-webp": "^0.7.0",
     "react-test-renderer": "^16.10.2",
     "redux-mock-store": "^1.5.4",
     "rimraf": "^3.0.2",
