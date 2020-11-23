@@ -31,7 +31,6 @@ const Modal = forwardRef((props, ref) => {
     footer,
     visibility,
     width,
-    overWriteHeight,
     position: initialPosition,
     closeIcon,
     animation,
@@ -41,7 +40,7 @@ const Modal = forwardRef((props, ref) => {
   const lightBoxRef = createRef();
   const [isBodyInitialized, setIsBodyInitialized] = useState(false);
   const [position, setPosition] = useState(initialPosition);
-  const { height: modelHeight } = useResizeObserver({ ref: visibility ? modalRef : null });	
+  const { height: modelHeight } = useResizeObserver({ ref: visibility ? modalRef : null });
 
   useEffect(() => {
     if (lightBoxRef.current) {
@@ -93,14 +92,12 @@ const Modal = forwardRef((props, ref) => {
       <StyledModalWrapper
         data-testid="modalWrapper"
         className={className}
-        overWriteHeight={overWriteHeight}
         ref={ref}
       >
         <StyledLightBox
           ref={lightBoxRef}
           data-testid="modalLightBox"
           onClick={handleClose || undefined}
-          overWriteHeight={overWriteHeight}
         />
         <StyledModal
           data-testid="modal"
@@ -156,7 +153,6 @@ Modal.propTypes = {
   children: PropTypes.node,
   footer: PropTypes.node,
   width: PropTypes.number,
-  overWriteHeight: PropTypes.string,
   position: PropTypes.oneOf(['top', 'center', 'bottom']),
   closeIcon: PropTypes.node,
 };
@@ -172,7 +168,6 @@ Modal.defaultProps = {
   width: 70,
   position: 'center',
   animation: true,
-  overWriteHeight: '100vh',
 };
 
 export default Modal;
