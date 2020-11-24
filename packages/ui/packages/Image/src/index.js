@@ -88,7 +88,7 @@ const Image = ({ src, size, loader, error, ...rest }) => {
 };
 
 Image.propTypes = {
-  src: PropTypes.oneOf([
+  src: PropTypes.oneOfType([
     PropTypes.string.isRequired,
     PropTypes.arrayOf(
       PropTypes.shape({
