@@ -5,7 +5,7 @@ menu: 3.Components
 ---
 import { Playground, Props } from 'docz';
 import { Row, Col } from '..';
-import { LoadingSpinner, CircleWaveAnimation, LogoAnimation } from './src/index';
+import { LoadingSpinner, CircleWaveAnimation, LogoAnimation, LoadingBar } from './src/index';
 
 # Loading
 There are three different loading for different purposes
@@ -25,6 +25,15 @@ There are three different loading for different purposes
 # CircleWaveAnimation
 <Playground>
   <CircleWaveAnimation className="foobar" size={1.4} color="green" />
+</Playground>
+
+<br />
+
+# LoadingBar
+<Playground>
+  <LoadingBar />
+  <br />
+  <LoadingBar rainbow />
 </Playground>
 
 <br />

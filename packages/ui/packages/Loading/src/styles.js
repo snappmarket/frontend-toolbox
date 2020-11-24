@@ -108,3 +108,108 @@ export const StyledLogoAnimation = Styled.div`
     100% {opacity: 1}
   }
 `;
+
+
+export const StyleLoadingBarWrapper = Styled.div`
+  width: 100%;
+  height: ${props => rem(props.height)(props)};
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+`;
+
+export const StyledLoadingLine = Styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  width: 100%;
+  height: 100%;
+  transform-origin: 100% 0%;
+  animation: loading-bar ${props => props.duration}s cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
+  
+  .loading-line-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: 100%;
+    background: ${color('black')};
+    transform-origin: 0% 0%;
+    &.rainbow {
+      background: red; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet); /* Standard syntax (must be last) */
+    }
+  }
+
+  .loading-line-inner-1 {
+    opacity: 0;  // change for inner line opacity, currently 0/hidden
+    animation: loading-bar-inner-1 ${props => props.duration}s cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
+  }
+
+  .loading-line-inner-2 {
+    opacity: 1;
+    animation: loading-bar-inner-2 ${props => props.duration}s cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
+  }
+
+  .loading-line-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transform-origin: 0% 0%;
+  }
+
+  @keyframes loading-bar {
+    0% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
+    }
+  }
+
+
+  @keyframes loading-bar-inner-1 {
+    0% {
+      transform: scaleX(0);
+    }
+    25% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+    
+  
+  @keyframes loading-bar-inner-2 {
+    0% {
+      transform: scaleX(0);
+    }
+    25% {
+      transform: scaleX(0);
+    }
+    50% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+`;
