@@ -211,7 +211,7 @@ class SliderCore {
     // ----------- start init variables  -----
     this.setSlider(slider);
 
-    const sliderClienWidth = this.getSlider().clientWidth;
+    const sliderClienWidth = this.getSlider().getBoundingClientRect().width;
     this.setSliderMainWidth(sliderClienWidth);
 
     const sliderSlidesSelector = childFider({
