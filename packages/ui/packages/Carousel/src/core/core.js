@@ -344,10 +344,10 @@ class SliderCore {
     // action drag event
     this.dragEvent = new DragEvent({ core: this });
 
-    sliderSlidesSelector.addEventListener(
-      'transitionend',
-      this.transitionendWatcherCall,
-    );
+    sliderSlidesSelector.addEventListener('transitionend', e => {
+      if (e.target !== sliderSlidesSelector) return;
+      this.transitionendWatcherCall();
+    });
 
     // active center mode
     if (
