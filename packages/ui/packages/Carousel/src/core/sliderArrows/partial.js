@@ -167,8 +167,13 @@ export const shiftSlideIsDirAutoWidth = params => {
     rtl,
     input: sliderMainWidth + Math.abs(getTranslate3d(sliderItems)),
   });
+  const lastChildWidth = sliderItems.lastChild.clientWidth;
 
-  if (!infinite && Math.abs(result) >= Math.abs(FinalItemPosition)) {
+  if (
+    !infinite &&
+    // If more than half of lastChild is in viewPort
+    lastChildWidth / 2 + Math.abs(result) >= Math.abs(FinalItemPosition)
+  ) {
     sliderItems.style.transform = setTranslate3d(
       directionSetter({
         rtl,
