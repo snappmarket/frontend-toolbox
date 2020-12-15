@@ -56,18 +56,19 @@ const Image = ({ src, size, loader, error, ...rest }) => {
   const renderPicture = image => {
     const address = image.address || image;
     const type = address.split('.').pop();
-    const sourceTypes = [
+    const sourceTagTypes = [
       { extension: 'avif', type: 'image/avif' },
       { extension: 'webp', type: 'image/webp' },
     ];
-    const isSource = sourceTypes.filter(t => t.extension === type).length;
+    const sourceTag = sourceTagTypes.filter(t => t.extension === type);
     const props = type.props || {};
 
-    return !isSource ? (
+    // eslint-disable-next-line no-nested-ternary
+    return !sourceTag.length ? (
       <img src={address} alt={props.alt || ''} {...rest} />
-    ) : (
-      <source srcSet={address} {...props} />
-    );
+    ) : hasWebPSupport ? (
+      <source srcSet={address} type={sourceTag.type} {...props} />
+    ) : null;
   };
 
   const Loader = loader || <LogoAnimation size={size} />;
